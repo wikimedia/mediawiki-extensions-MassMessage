@@ -9,11 +9,9 @@
 
 $messages = array();
 
-
 /** English
  * @author Kunal Mehta
  */
-
 $messages['en'] = array(
 	'massmessage' => 'Send mass message',
 	'massmessage-desc' => 'Allows users to easily send a message to a list of users',
@@ -31,7 +29,7 @@ $messages['en'] = array(
 	'right-massmessage-global' => 'Send a message to multiple users on different wikis at once',
 	'log-name-massmessage' => 'Mass message log',
 	'log-description-massmessage' => 'These events track users sending messages through [[Special:MassMessage]].',
-	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3'
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3',
 );
 
 /** Message documentation
@@ -54,5 +52,5 @@ $messages['qqq'] = array(
 	'right-massmessage-global' => '{{doc-right|massmessage-global}}',
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
-	'logentry-massmessage-send' => '{{logentry}}'
+	'logentry-massmessage-send' => '{{logentry}}',
 );
