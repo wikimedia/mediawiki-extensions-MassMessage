@@ -32,7 +32,7 @@ $messages['en'] = array(
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3',
 );
 
-/** Message documentation
+/** Message documentation (Message documentation)
  * @author Kunal Mehta
  */
 $messages['qqq'] = array(
@@ -53,4 +53,27 @@ $messages['qqq'] = array(
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
 	'logentry-massmessage-send' => '{{logentry}}',
+);
+
+/** German (Deutsch)
+ * @author Metalhead64
+ */
+$messages['de'] = array(
+	'massmessage' => 'Massennachricht senden',
+	'massmessage-desc' => 'Ermöglicht Benutzern das einfache Versenden von Nachrichten an eine Benutzerliste',
+	'massmessage-sender' => 'NachrichtenBot',
+	'massmessage-form-spamlist' => 'Seite, die eine Seitenliste zum Hinterlassen einer Nachricht beinhaltet.',
+	'massmessage-form-subject' => 'Betreff der Nachricht. Wird auch als Bearbeitungszusammenfassung verwendet.',
+	'massmessage-form-message' => 'Der Textbereich der Nachricht.',
+	'massmessage-form-global' => 'Dies ist eine globale Nachricht.',
+	'massmessage-form-submit' => 'Senden',
+	'massmessage-submitted' => 'Deine Nachricht wurde versandt!',
+	'massmessage-account-blocked' => 'Das zum Versenden von Nachrichten benutzte Benutzerkonto wurde gesperrt.',
+	'massmessage-spamlist-doesnotexist' => 'Die Seiteneingabeliste ist nicht vorhanden.',
+	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
+	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
+	'right-massmessage-global' => 'Gleichzeitig Nachrichten an mehrere Benutzer auf unterschiedlichen Wikis senden',
+	'log-name-massmessage' => 'Massennachrichten-Logbuch',
+	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
 );
