@@ -55,5 +55,4 @@ $messages['qqq'] = array(
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
 	'logentry-massmessage-send' => '{{logentry}}'
-
 );
