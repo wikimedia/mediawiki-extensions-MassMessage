@@ -34,6 +34,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Kunal Mehta
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
 	'massmessage' => '{{doc-special|MassMessage}}',
@@ -41,18 +42,43 @@ $messages['qqq'] = array(
 	'massmessage-sender' => 'Username of the account which sends out messages.',
 	'massmessage-form-spamlist' => 'Label for an inputbox on the special page.',
 	'massmessage-form-subject' => 'Label for an inputbox on the special page.',
-	'massmessage-form-message' => 'Label for an inputbox on the special page.',
+	'massmessage-form-message' => 'Used as label for a textarea on the special page.',
 	'massmessage-form-global' => 'Label for a checkbox on the special page.',
-	'massmessage-form-submit' => 'Label for the submit button on the special page.',
+	'massmessage-form-submit' => 'Label for the submit button on the special page.
+{{Identical|Send}}',
 	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully.',
 	'massmessage-account-blocked' => 'Error message the user sees if the bot account has been blocked.',
-	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.',
-	'right-massmessage' => '{{doc-right|massmessage}}',
+	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.
+
+spamlist?
+
+This message probably means "The specified page which contains list of pages, does not exist".',
+	'right-massmessage' => '{{doc-right|massmessage}}
+See also:
+* {{msg-mw|Right-massmessage-global}}',
 	'action-massmessage' => '{{doc-action|massmessage}}',
-	'right-massmessage-global' => '{{doc-right|massmessage-global}}',
+	'right-massmessage-global' => '{{doc-right|massmessage-global}}
+See also:
+* {{msg-mw|Right-massmessage}}',
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
 	'logentry-massmessage-send' => '{{logentry}}',
+);
+
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'massmessage' => 'গণ বার্তা পাঠাও',
+	'massmessage-desc' => 'একটি তালিকার ব্যবহারকারীদের সহজে কোনো বার্তা পাঠানোর সহজ ব্যবস্থা',
+	'massmessage-sender' => 'ম্যাজেঞ্জারবট',
+	'massmessage-form-spamlist' => 'পাতাটিতে একটি পাতার তালিকা রয়েছে যেখানে বার্তা রাখতে হবে।',
+	'massmessage-form-subject' => 'বার্তার বিষয়। সম্পাদনা সারাংশ হিসেবেও ব্যবহৃত হবে।',
+	'massmessage-form-message' => 'বার্তার মূল অংশ।',
+	'massmessage-form-global' => 'এটি একটি বৈশ্বিক বার্তা।',
+	'massmessage-form-submit' => 'পাঠাও',
+	'massmessage-submitted' => 'আপনার বার্তাটি পাঠানো হয়েছে!',
+	'massmessage-account-blocked' => 'বার্তা পাঠাতে ব্যবহৃত অ্যাকাউন্ট বাঁধা প্রদান করা হয়েছে।',
 );
 
 /** German (Deutsch)
@@ -69,11 +95,124 @@ $messages['de'] = array(
 	'massmessage-form-submit' => 'Senden',
 	'massmessage-submitted' => 'Deine Nachricht wurde versandt!',
 	'massmessage-account-blocked' => 'Das zum Versenden von Nachrichten benutzte Benutzerkonto wurde gesperrt.',
-	'massmessage-spamlist-doesnotexist' => 'Die Seiteneingabeliste ist nicht vorhanden.',
+	'massmessage-spamlist-doesnotexist' => 'Die Seiteneingabeliste ist nicht vorhanden.', # Fuzzy
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'right-massmessage-global' => 'Gleichzeitig Nachrichten an mehrere Benutzer auf unterschiedlichen Wikis senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
 	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
+);
+
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'massmessage' => 'メッセージの一斉送信',
+	'massmessage-desc' => '利用者が複数の利用者に簡単にメッセージを送信できるようにする',
+	'massmessage-sender' => 'メッセンジャーボット',
+	'massmessage-form-spamlist' => 'メッセージを書き込むページの一覧を含むページ',
+	'massmessage-form-subject' => 'メッセージの件名 (編集の要約としても使用されます)',
+	'massmessage-form-message' => 'メッセージの本文',
+	'massmessage-form-global' => 'グローバル メッセージ',
+	'massmessage-form-submit' => '送信',
+	'massmessage-submitted' => 'メッセージを送信しました。',
+	'massmessage-account-blocked' => 'メッセージの送信に使用するアカウントがブロックされています。',
+	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。', # Fuzzy
+	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
+	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
+	'right-massmessage-global' => '異なるウィキの複数の利用者に一度にメッセージを送信',
+	'log-name-massmessage' => '一斉メッセージ記録',
+	'log-description-massmessage' => 'これらのイベントは、利用者による [[Special:MassMessage]] でのメッセージの送信を追跡します。',
+	'logentry-massmessage-send' => '$1 が $3 に{{GENDER:$2|メッセージを送信しました}}',
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'massmessage' => 'Испраќање на масовна порака',
+	'massmessage-desc' => 'Овозможува корисниците да испраќаат масовни пораки на списоци од корисници',
+	'massmessage-sender' => 'БотГласник',
+	'massmessage-form-spamlist' => 'Страница со список од страници на кои треба да се остави пораката.',
+	'massmessage-form-subject' => 'Наслов на пораката. Ќе се користи и како опис на уредувањето.',
+	'massmessage-form-message' => 'Текст на пораката.',
+	'massmessage-form-global' => 'Ова е глобална порака.',
+	'massmessage-form-submit' => 'Испрати',
+	'massmessage-submitted' => 'Пораката е испратена!',
+	'massmessage-account-blocked' => 'Сметката со која се доставуваат пораки е блокирана.',
+	'massmessage-spamlist-doesnotexist' => 'Вносниот список на страници не постои.', # Fuzzy
+	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
+	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
+	'right-massmessage-global' => 'Испраќање на порака на повеќе корисници на разни викија наеднаш.',
+	'log-name-massmessage' => 'Дневник на масовни пораки',
+	'log-description-massmessage' => 'Овој дневник следи испраќања на пораки преку [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|испрати порака}} до $3',
+);
+
+/** Marathi (मराठी)
+ * @author V.narsikar
+ */
+$messages['mr'] = array(
+	'massmessage' => 'एकगठ्ठा संदेश पाठवा',
+	'massmessage-desc' => 'सदस्यांच्या यादीत असलेल्या सदस्यांना, सोप्या रितीने संदेश पाठविण्यास वापरकर्त्यास  परवानगी देते.',
+	'massmessage-sender' => 'संदेश-सांगकाम्या',
+	'massmessage-form-spamlist' => 'या पानावर संदेश देण्यायोग्य असलेल्या पानांची यादी आहे.',
+	'massmessage-form-subject' => 'संदेशाचा विषय. याचा वापर संपादन सारांश म्हणुनही होईल.',
+	'massmessage-form-message' => 'संदेशाचे अंग',
+	'massmessage-form-global' => 'हा वैश्विक संदेश आहे.',
+	'massmessage-form-submit' => 'पाठवा',
+	'massmessage-submitted' => 'आपला संदेश पाठविल्या गेला आहे!',
+	'massmessage-account-blocked' => 'संदेश देण्यासाठी वापरण्यात येणारे खाते अवरुद्ध करण्यात आले आहे.',
+	'massmessage-spamlist-doesnotexist' => 'निविष्ट (ईनपूट) पानांची यादी अस्तित्वात नाही.', # Fuzzy
+	'right-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
+	'action-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
+	'right-massmessage-global' => 'वेगवेगळ्या विकिंवर असलेल्या बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
+	'log-name-massmessage' => 'एकगठ्ठा संदेशाच्या नोंदी',
+	'log-description-massmessage' => 'हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.',
+	'logentry-massmessage-send' => '$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}',
+);
+
+/** Dutch (Nederlands)
+ * @author Konovalov
+ */
+$messages['nl'] = array(
+	'massmessage-form-submit' => 'Verzenden',
+	'massmessage-submitted' => 'Uw bericht is verstuurd!',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'massmessage' => 'ډله ايز پيغام لېږل',
+	'massmessage-form-message' => 'د پيغام جوسه',
+	'massmessage-form-global' => 'دا يو نړيوال پيغام دی',
+	'massmessage-form-submit' => 'لېږل',
+	'massmessage-submitted' => 'ستاسو پيغام ولېږل شو!',
+	'log-name-massmessage' => 'ډله ايز پيغام يادښت',
+	'logentry-massmessage-send' => '$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}',
+);
+
+/** Swedish (svenska)
+ * @author Jopparn
+ */
+$messages['sv'] = array(
+	'massmessage' => 'Skicka massmeddelande',
+	'massmessage-desc' => 'Tillåter användare att enkelt skicka ett meddelande till en lista över användare',
+	'massmessage-sender' => 'MessengerBot',
+	'massmessage-form-spamlist' => 'Sidan innehåller en lista över sidor att lämna ett meddelande på.',
+	'massmessage-form-subject' => 'Ämnet för meddelandet. Används också som redigeringskommentar.',
+	'massmessage-form-message' => 'Meddelandetexten.',
+	'massmessage-form-global' => 'Detta är ett globalt meddelande.',
+	'massmessage-form-submit' => 'Skicka',
+	'massmessage-submitted' => 'Ditt meddelande har skickats!',
+	'massmessage-account-blocked' => 'Kontot som används för att leverera meddelanden har blockerats.',
+	'massmessage-spamlist-doesnotexist' => 'Den angivna sidan, som innehåller listan med sidor, existerar inte.', # Fuzzy
+	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
+	'action-massmessage' => 'skicka ett meddelande till flera användare på en gång',
+	'right-massmessage-global' => 'Skicka ett meddelande till flera användare på olika wikis på en gång',
+	'log-name-massmessage' => 'Massmeddelandelogg',
+	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
 );
