@@ -44,7 +44,7 @@ class MassMessage {
 		}
 
 		// Make the user a bot so it doesn't look weird
-		$user->addGroup( 'sysop' );
+		$user->addGroup( 'bot' );
 
 		return $user;
 	}
