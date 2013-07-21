@@ -34,6 +34,14 @@ $wgNamespacesToPostIn = array( NS_PROJECT, NS_USER_TALK );
  */
 $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
 
+/*
+ * Username of the messenger bot
+ *
+ * This ensures that local administrators cannot change the bot's username
+ * by editing a system message, which would interfere with global messages
+ */
+$wgMassMessageAccountUsername = 'MessengerBot';
+
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'MassMessage',
@@ -56,6 +64,8 @@ $wgJobClasses['massmessageJob'] = 'MassMessageJob';
 
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
 $wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';
+$wgHooks['RenameUserPreRename'][] = 'MassMessageHooks::onRenameUserPreRename';
+$wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
 
 $wgResourceModules['ext.MassMessage.special'] = array(
@@ -69,6 +79,8 @@ $wgResourceModules['ext.MassMessage.special'] = array(
 
 $wgLogTypes[] = 'massmessage';
 $wgLogActionsHandlers['massmessage/*'] = 'LogFormatter';
+
+// User rights
 $wgAvailableRights[] = 'massmessage'; // Local messaging
 $wgAvailableRights[] = 'massmessage-global'; // Cross-wiki messaging
 $wgGroupPermissions['messenger']['massmessage'] = true;

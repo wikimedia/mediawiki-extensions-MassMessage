@@ -13,7 +13,6 @@ class MassMessageHooks {
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setFunctionHook( 'target', 'MassMessageHooks::ParserFunction' );
-
 		return true;
 	}
 
@@ -49,6 +48,32 @@ class MassMessageHooks {
 		}
 
 		return array( $msg, 'noparse' => false );
+	}
+
+	/**
+	 * Add our username to the list of reserved ones
+	 * @param $reservedUsernames array
+	 * @return bool
+	 */
+	public static function onUserGetReservedNames( &$reservedUsernames ) {
+		global $wgMassMessageAccountUsername;
+		$reservedUsernames[] = $wgMassMessageAccountUsername;
+		return true;
+	}
+
+	/**
+	 * If someone is trying to rename the bot, don't let them.
+	 * @param $uid int
+	 * @param $oldName string
+	 * @param $newName string
+	 * @return bool|string
+	 */
+	public static function onRenameUserPreRename( $uid, $oldName, $newName ) {
+		global $wgMassMessageAccountUsername;
+		if ( $oldName == $wgMassMessageAccountUsername ) {
+			return wfMessage( 'massmessage-cannot-rename' )->text() ;
+		}
+		return true;
 	}
 
 	/**
