@@ -75,6 +75,15 @@ class MassMessageJob extends Job {
 			$text = $textContent . "\n" . $text;
 		}
 
+		// If we're sending to a User talk: page, make sure the user exists.
+		// Redirects are automatically followed in getLocalTargets
+		if ( $this->title->getNamespace() == NS_USER_TALK ) {
+			$user = User::newFromName( $this->title->getBaseText() );
+			if ( !$user->getId() ) { // Does not exist
+				return true; // Should we log anything here?
+			}
+		}
+
 		// Check that the sender isn't blocked before we send the message
 		// This lets a sysop stop the job if needed.
 		$user = MassMessage::getMessengerUser();
