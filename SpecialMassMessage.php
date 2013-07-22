@@ -135,7 +135,7 @@ class SpecialMassMessage extends SpecialPage {
 	function submit( $data ) {
 		// Check that the spamlist exists.
 		$spamlist = Title::newFromText( $data['spamlist'] );
-		$global = $data['global']; // If the message delivery is global
+		$global = isset( $data['global'] ) && $data['global']; // If the message delivery is global
 		$status = new Status();
 		$errors = array();
 		if ( $spamlist === null || $spamlist->getArticleID() == 0 ) {
