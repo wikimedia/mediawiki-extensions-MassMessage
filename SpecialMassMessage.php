@@ -138,7 +138,7 @@ class SpecialMassMessage extends SpecialPage {
 		$global = $data['global']; // If the message delivery is global
 		$status = new Status();
 		$errors = array();
-		if ( $spamlist->getArticleID() == 0 ) {
+		if ( $spamlist === null || $spamlist->getArticleID() == 0 ) {
 			$status->fatal( 'massmessage-spamlist-doesnotexist' );
 		}
 
