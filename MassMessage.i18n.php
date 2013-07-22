@@ -95,13 +95,36 @@ $messages['de'] = array(
 	'massmessage-form-submit' => 'Senden',
 	'massmessage-submitted' => 'Deine Nachricht wurde versandt!',
 	'massmessage-account-blocked' => 'Das zum Versenden von Nachrichten benutzte Benutzerkonto wurde gesperrt.',
-	'massmessage-spamlist-doesnotexist' => 'Die Seiteneingabeliste ist nicht vorhanden.', # Fuzzy
+	'massmessage-spamlist-doesnotexist' => 'Die angegebene Seitenlistenseite ist nicht vorhanden.',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'right-massmessage-global' => 'Gleichzeitig Nachrichten an mehrere Benutzer auf unterschiedlichen Wikis senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
 	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
+);
+
+/** French (français)
+ * @author Gomoko
+ */
+$messages['fr'] = array(
+	'massmessage' => 'Envoyer un message de masse',
+	'massmessage-desc' => 'Permet aux utilisateurs d’envoyer facilement un message à une liste d’utilisateurs',
+	'massmessage-sender' => 'MessengerBot',
+	'massmessage-form-spamlist' => 'Page contenant la liste des pages sur lesquelles laisser un message :',
+	'massmessage-form-subject' => 'Sujet du message (utilisé également dans le résumé de la modification) :',
+	'massmessage-form-message' => 'Corps du message :',
+	'massmessage-form-global' => 'Ceci est un message global.',
+	'massmessage-form-submit' => 'Envoyer',
+	'massmessage-submitted' => 'Votre message a été envoyé !',
+	'massmessage-account-blocked' => 'Le compte utilisé pour envoyer les messages a été bloqué.',
+	'massmessage-spamlist-doesnotexist' => 'La page de liste de pages spécifiée n’existe pas.',
+	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
+	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
+	'right-massmessage-global' => 'Envoyer un message à plusieurs utilisateurs de différents wikis à la fois',
+	'log-name-massmessage' => 'Journal des messages de masse',
+	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages via [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|a envoyé un message}} à $3',
 );
 
 /** Japanese (日本語)
@@ -111,14 +134,14 @@ $messages['ja'] = array(
 	'massmessage' => 'メッセージの一斉送信',
 	'massmessage-desc' => '利用者が複数の利用者に簡単にメッセージを送信できるようにする',
 	'massmessage-sender' => 'メッセンジャーボット',
-	'massmessage-form-spamlist' => 'メッセージを書き込むページの一覧を含むページ',
-	'massmessage-form-subject' => 'メッセージの件名 (編集の要約としても使用されます)',
-	'massmessage-form-message' => 'メッセージの本文',
+	'massmessage-form-spamlist' => 'メッセージを書き込むページの一覧を含むページ:',
+	'massmessage-form-subject' => 'メッセージの件名 (編集の要約としても使用されます):',
+	'massmessage-form-message' => 'メッセージの本文:',
 	'massmessage-form-global' => 'グローバル メッセージ',
 	'massmessage-form-submit' => '送信',
 	'massmessage-submitted' => 'メッセージを送信しました。',
 	'massmessage-account-blocked' => 'メッセージの送信に使用するアカウントがブロックされています。',
-	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。', # Fuzzy
+	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'right-massmessage-global' => '異なるウィキの複数の利用者に一度にメッセージを送信',
@@ -141,7 +164,7 @@ $messages['mk'] = array(
 	'massmessage-form-submit' => 'Испрати',
 	'massmessage-submitted' => 'Пораката е испратена!',
 	'massmessage-account-blocked' => 'Сметката со која се доставуваат пораки е блокирана.',
-	'massmessage-spamlist-doesnotexist' => 'Вносниот список на страници не постои.', # Fuzzy
+	'massmessage-spamlist-doesnotexist' => 'Укажаната страница со список од страници не постои.',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'right-massmessage-global' => 'Испраќање на порака на повеќе корисници на разни викија наеднаш.',
@@ -175,10 +198,11 @@ $messages['mr'] = array(
 
 /** Dutch (Nederlands)
  * @author Konovalov
+ * @author Siebrand
  */
 $messages['nl'] = array(
 	'massmessage-form-submit' => 'Verzenden',
-	'massmessage-submitted' => 'Uw bericht is verstuurd!',
+	'massmessage-submitted' => 'Uw bericht is verzonden!',
 );
 
 /** Pashto (پښتو)
@@ -208,11 +232,32 @@ $messages['sv'] = array(
 	'massmessage-form-submit' => 'Skicka',
 	'massmessage-submitted' => 'Ditt meddelande har skickats!',
 	'massmessage-account-blocked' => 'Kontot som används för att leverera meddelanden har blockerats.',
-	'massmessage-spamlist-doesnotexist' => 'Den angivna sidan, som innehåller listan med sidor, existerar inte.', # Fuzzy
+	'massmessage-spamlist-doesnotexist' => 'Den angivna sidan, som innehåller listan med sidor, existerar inte.',
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
 	'action-massmessage' => 'skicka ett meddelande till flera användare på en gång',
 	'right-massmessage-global' => 'Skicka ett meddelande till flera användare på olika wikis på en gång',
 	'log-name-massmessage' => 'Massmeddelandelogg',
 	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Qiyue2001
+ */
+$messages['zh-hans'] = array(
+	'massmessage' => '发送批量消息',
+	'massmessage-desc' => '允许用户能够轻松地向列表中的用户发送消息',
+	'massmessage-form-subject' => '消息主题（还用作编辑摘要）：',
+	'massmessage-form-message' => '消息正文：',
+	'massmessage-form-global' => '这是一个全域信息。',
+	'massmessage-form-submit' => '发送',
+	'massmessage-submitted' => '您的消息已经发出！',
+	'massmessage-account-blocked' => '用来传递消息的帐户已被阻止。',
+	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
+	'right-massmessage' => '一次将消息发送到多个用户',
+	'action-massmessage' => '一次将消息发送到多个用户',
+	'right-massmessage-global' => '一次将消息发送到不同wiki上的多个用户',
+	'log-name-massmessage' => '批量消息日志',
+	'log-description-massmessage' => '这些事件跟踪用户使用[[Special:MassMessage]]发送消息。',
+	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到$3',
 );
