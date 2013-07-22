@@ -45,32 +45,37 @@ class SpecialMassMessage extends SpecialPage {
 
 	function createForm() {
 		global $wgUser;
+		$request = $this->getRequest();
 		$m = array();
 		// Who to send to
 		$m['spamlist'] = array(
 			'id' => 'form-spamlist',
 			'type' => 'text',
-			'label-message' => 'massmessage-form-spamlist'
+			'label-message' => 'massmessage-form-spamlist',
+			'default' => $request->getText( 'spamlist' )
 		);
 		// The subject line
 		$m['subject'] = array(
 			'id' => 'form-subject',
 			'type' => 'text',
-			'label-message' => 'massmessage-form-subject'
+			'label-message' => 'massmessage-form-subject',
+			'default' => $request->getText( 'subject' )
 		);
 
 		// The message to send
 		$m['message'] = array(
 			'id' => 'form-message',
 			'type' => 'textarea',
-			'label-message' => 'massmessage-form-message'
+			'label-message' => 'massmessage-form-message',
+			'default' => $request->getText( 'message' )
 		);
 
 		if ( $wgUser->isAllowed( 'massmessage-global' ) ) {
 			$m['global'] = array(
 				'id' => 'form-global',
 				'type' => 'check',
-				'label-message' => 'massmessage-form-global'
+				'label-message' => 'massmessage-form-global',
+				'default' => $request->getText( 'global' ) == 'yes' ? true : false
 			);
 		}
 
