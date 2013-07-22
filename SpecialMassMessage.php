@@ -138,8 +138,16 @@ class SpecialMassMessage extends SpecialPage {
 		$global = isset( $data['global'] ) && $data['global']; // If the message delivery is global
 		$status = new Status();
 		$errors = array();
-		if ( $spamlist === null || $spamlist->getArticleID() == 0 ) {
+		if ( $spamlist === null || !$spamlist->exists() ) {
 			$status->fatal( 'massmessage-spamlist-doesnotexist' );
+		}
+
+		// Follow a redirect if possible
+		$target = MassMessage::followRedirect( $spamlist );
+		if ( $target === null || !$target->exists() ) {
+			$status->fatal( 'massmessage-spamlist-doesnotexist' ); // Interwiki redirect or non-existent page.
+		} else {
+			$spamlist = $target;
 		}
 
 		// Check that our account hasn't been blocked.
