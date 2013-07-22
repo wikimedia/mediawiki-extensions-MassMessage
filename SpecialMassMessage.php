@@ -107,7 +107,11 @@ class SpecialMassMessage extends SpecialPage {
 			if ( isset( $wgNamespacesToConvert[$ns] ) ) {
 				$ns = $wgNamespacesToConvert[$ns];
 			}
-			$pages[] = Title::makeTitle( $ns, $row->pl_title );
+			$title = Title::makeTitle( $ns, $row->pl_title );
+			$title = MassMessage:followRedirect( $title );
+			if ( $title !== null ) { // Skip interwiki redirects
+				$pages[$title] = true; // Use an assoc array to quickly and easily filter out duplicates
+			}
 		}
 		return $pages;
 	}
@@ -171,7 +175,7 @@ class SpecialMassMessage extends SpecialPage {
 		$this->logToWiki( $spamlist, $data['subject'] );
 
 		// Insert it into the job queue.
-		$pages = $this->getLocalTargets( $spamlist );
+		$pages = array_keys( $this->getLocalTargets( $spamlist ) );
 		foreach ( $pages as $page ) {
 			$job = new MassMessageJob( $page, $data );
 			JobQueueGroup::singleton()->push( $job );
