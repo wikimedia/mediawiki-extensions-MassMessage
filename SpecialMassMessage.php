@@ -69,7 +69,7 @@ class SpecialMassMessage extends SpecialPage {
 		if ( $wgUser->isAllowed( 'massmessage-global' ) ) {
 			$m['global'] = array(
 				'id' => 'form-global',
-				'type' => 'checkbox',
+				'type' => 'check',
 				'label-message' => 'massmessage-form-global'
 			);
 		}
