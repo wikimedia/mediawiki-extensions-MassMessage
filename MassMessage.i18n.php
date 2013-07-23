@@ -21,7 +21,7 @@ $messages['en'] = array(
 	'massmessage-form-message' => 'Body of the message:',
 	'massmessage-form-global' => 'This is a global message.',
 	'massmessage-form-submit' => 'Send',
-	'massmessage-submitted' => 'Your message has been sent!',
+	'massmessage-submitted' => 'Your message has been queued.',
 	'massmessage-account-blocked' => 'The account used to deliver messages has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'The specified page-list page does not exist.',
 	'right-massmessage' => 'Send a message to multiple users at once',
@@ -46,7 +46,7 @@ $messages['qqq'] = array(
 	'massmessage-form-global' => 'Label for a checkbox on the special page.',
 	'massmessage-form-submit' => 'Label for the submit button on the special page.
 {{Identical|Send}}',
-	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully.',
+	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.',
 	'massmessage-account-blocked' => 'Error message the user sees if the bot account has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.
 
