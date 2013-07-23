@@ -24,6 +24,8 @@ $messages['en'] = array(
 	'massmessage-submitted' => 'Your message has been sent!',
 	'massmessage-account-blocked' => 'The account used to deliver messages has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'The specified page-list page does not exist.',
+	'massmessage-empty-subject' => 'The subject line is empty.',
+	'massmessage-empty-message' => 'The message body is empty.',
 	'right-massmessage' => 'Send a message to multiple users at once',
 	'action-massmessage' => 'send a message to multiple users at once',
 	'right-massmessage-global' => 'Send a message to multiple users on different wikis at once',
@@ -53,6 +55,8 @@ $messages['qqq'] = array(
 spamlist?
 
 This message probably means "The specified page which contains list of pages, does not exist".',
+	'massmessage-empty-subject' => 'Error message the user sees if the "subject" field is empty.',
+	'massmessage-empty-message' => 'Error message the user sees if the "message" field is empty.',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
 * {{msg-mw|Right-massmessage-global}}',

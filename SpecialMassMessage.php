@@ -166,6 +166,14 @@ class SpecialMassMessage extends SpecialPage {
 			$status->fatal( 'massmessage-account-blocked' );
 		}
 
+		if ( trim( $data['subject'] ) === '' ) {
+			$status->fatal( 'massmessage-empty-subject' );
+		}
+
+		if ( trim( $data['message'] ) === '' ) {
+			$status->fatal( 'massmessage-empty-message' );
+		}
+
 		// If we have any errors, abort.
 		if ( !$status->isOK() ) {
 			return $status;
