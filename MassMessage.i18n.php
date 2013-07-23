@@ -218,6 +218,16 @@ $messages['ps'] = array(
 	'logentry-massmessage-send' => '$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas
+ */
+$messages['pt-br'] = array(
+	'massmessage-form-message' => 'Corpo da mensagem:',
+	'massmessage-form-global' => 'Esta é uma mensagem global.',
+	'massmessage-form-submit' => 'Enviar',
+	'massmessage-submitted' => 'Sua mensagem foi enviada!',
+);
+
 /** Swedish (svenska)
  * @author Jopparn
  */
@@ -247,6 +257,7 @@ $messages['sv'] = array(
 $messages['zh-hans'] = array(
 	'massmessage' => '发送批量消息',
 	'massmessage-desc' => '允许用户能够轻松地向列表中的用户发送消息',
+	'massmessage-form-spamlist' => '页面包含了留言的页面列表：',
 	'massmessage-form-subject' => '消息主题（还用作编辑摘要）：',
 	'massmessage-form-message' => '消息正文：',
 	'massmessage-form-global' => '这是一个全域信息。',
