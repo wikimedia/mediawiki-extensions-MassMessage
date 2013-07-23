@@ -108,7 +108,7 @@ class SpecialMassMessage extends SpecialPage {
 				$ns = $wgNamespacesToConvert[$ns];
 			}
 			$title = Title::makeTitle( $ns, $row->pl_title );
-			$title = MassMessage:followRedirect( $title );
+			$title = MassMessage::followRedirect( $title );
 			if ( $title !== null ) { // Skip interwiki redirects
 				$pages[$title] = true; // Use an assoc array to quickly and easily filter out duplicates
 			}
