@@ -149,15 +149,16 @@ class SpecialMassMessage extends SpecialPage {
 		$errors = array();
 		if ( $spamlist === null || !$spamlist->exists() ) {
 			$status->fatal( 'massmessage-spamlist-doesnotexist' );
+		} else {
+			// Page exists, follow a redirect if possible
+			$target = MassMessage::followRedirect( $spamlist );
+			if ( $target === null || !$target->exists() ) {
+				$status->fatal( 'massmessage-spamlist-doesnotexist' ); // Interwiki redirect or non-existent page.
+			} else {
+				$spamlist = $target;
+			}
 		}
 
-		// Follow a redirect if possible
-		$target = MassMessage::followRedirect( $spamlist );
-		if ( $target === null || !$target->exists() ) {
-			$status->fatal( 'massmessage-spamlist-doesnotexist' ); // Interwiki redirect or non-existent page.
-		} else {
-			$spamlist = $target;
-		}
 
 		// Check that our account hasn't been blocked.
 		$user = MassMessage::getMessengerUser();
