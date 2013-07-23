@@ -13,6 +13,26 @@
 
 
 class MassMessage {
+	/*
+	 * Function to follow redirects
+	 *
+	 * @param $title Title
+	 * @return Title|null null if the page is an interwiki redirect
+	 */
+	public static function followRedirect( $title ) {
+		if ( !$title->isRedirect() ) {
+			return $title;
+		}
+		$wikipage = WikiPage::factory( $title );
+
+		$target = $wikipage->followRedirect();
+		if ( $target instanceof Title ) {
+			return $target;
+		} else {
+			return null; // Interwiki redirect
+		}
+	}
+
 
 	/*
 	 * Sets up the messenger account for our use if it hasn't been already.
