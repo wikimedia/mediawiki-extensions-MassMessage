@@ -59,6 +59,15 @@ $wgAutoloadClasses['SpecialMassMessage'] = "$dir/SpecialMassMessage.php";
 $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
 $wgJobClasses['massmessageJob'] = 'MassMessageJob';
 
+$wgResourceModules['ext.MassMessage.special'] = array(
+		'scripts' => 'ext.MassMessage.special.js',
+		'dependencies' => array(
+				'jquery.byteLimit',
+		),
+
+		'localBasePath' => $dir,
+);
+
 $wgLogTypes[] = 'massmessage';
 $wgLogActionsHandlers['massmessage/*'] = 'LogFormatter';
 $wgAvailableRights[] = 'massmessage'; // Local messaging

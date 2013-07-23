@@ -19,6 +19,7 @@ class SpecialMassMessage extends SpecialPage {
 	function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
+		$output->addModules( 'ext.MassMessage.special' );
 		$this->setHeaders();
 		$this->outputHeader();
 		$this->checkPermissions();
@@ -60,7 +61,8 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'form-subject',
 			'type' => 'text',
 			'label-message' => 'massmessage-form-subject',
-			'default' => $request->getText( 'subject' )
+			'default' => $request->getText( 'subject' ),
+			'maxlength' => 240
 		);
 
 		// The message to send
