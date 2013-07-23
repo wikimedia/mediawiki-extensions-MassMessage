@@ -26,6 +26,7 @@ class SpecialMassMessage extends SpecialPage {
 		$form = new HtmlForm( $this->createForm(), $context );
 		$form->setId( 'massmessage-form' );
 		$form->setDisplayFormat( 'div' );
+		$form->setHeaderText( wfMessage( 'massmessage-form-header' )->text()  );
 		$form->setSubmitText( $context->msg( 'massmessage-form-submit' )->text() );
 		$form->setSubmitId( 'massmessage-submit' );
 		$form->setSubmitCallback( array( $this, 'submit' ) );
