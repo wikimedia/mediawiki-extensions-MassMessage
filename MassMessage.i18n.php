@@ -83,12 +83,13 @@ $messages['bn'] = array(
 	'massmessage-form-message' => 'বার্তার মূল অংশ।',
 	'massmessage-form-global' => 'এটি একটি বৈশ্বিক বার্তা।',
 	'massmessage-form-submit' => 'পাঠাও',
-	'massmessage-submitted' => 'আপনার বার্তাটি পাঠানো হয়েছে!',
+	'massmessage-submitted' => 'আপনার বার্তাটি পাঠানো হয়েছে!', # Fuzzy
 	'massmessage-account-blocked' => 'বার্তা পাঠাতে ব্যবহৃত অ্যাকাউন্ট বাঁধা প্রদান করা হয়েছে।',
 );
 
 /** German (Deutsch)
  * @author Metalhead64
+ * @author Se4598
  */
 $messages['de'] = array(
 	'massmessage' => 'Massennachricht senden',
@@ -99,15 +100,24 @@ $messages['de'] = array(
 	'massmessage-form-message' => 'Der Textbereich der Nachricht.',
 	'massmessage-form-global' => 'Dies ist eine globale Nachricht.',
 	'massmessage-form-submit' => 'Senden',
-	'massmessage-submitted' => 'Deine Nachricht wurde versandt!',
+	'massmessage-submitted' => 'Deine Nachricht wurde in die Sendewarteschlange eingefügt!',
 	'massmessage-account-blocked' => 'Das zum Versenden von Nachrichten benutzte Benutzerkonto wurde gesperrt.',
 	'massmessage-spamlist-doesnotexist' => 'Die angegebene Seitenlistenseite ist nicht vorhanden.',
+	'massmessage-empty-subject' => 'Die Betreffszeile ist leer.',
+	'massmessage-empty-message' => 'Der Nachrichtenkörper ist leer.',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'right-massmessage-global' => 'Gleichzeitig Nachrichten an mehrere Benutzer auf unterschiedlichen Wikis senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
 	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
+);
+
+/** Basque (euskara)
+ * @author An13sa
+ */
+$messages['eu'] = array(
+	'massmessage-form-submit' => 'Bidali',
 );
 
 /** French (français)
@@ -122,9 +132,11 @@ $messages['fr'] = array(
 	'massmessage-form-message' => 'Corps du message :',
 	'massmessage-form-global' => 'Ceci est un message global.',
 	'massmessage-form-submit' => 'Envoyer',
-	'massmessage-submitted' => 'Votre message a été envoyé !',
+	'massmessage-submitted' => 'Votre message a été envoyé !', # Fuzzy
 	'massmessage-account-blocked' => 'Le compte utilisé pour envoyer les messages a été bloqué.',
 	'massmessage-spamlist-doesnotexist' => 'La page de liste de pages spécifiée n’existe pas.',
+	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
+	'massmessage-empty-message' => 'Le corps du message est vide.',
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
 	'right-massmessage-global' => 'Envoyer un message à plusieurs utilisateurs de différents wikis à la fois',
@@ -145,15 +157,32 @@ $messages['ja'] = array(
 	'massmessage-form-message' => 'メッセージの本文:',
 	'massmessage-form-global' => 'グローバル メッセージ',
 	'massmessage-form-submit' => '送信',
-	'massmessage-submitted' => 'メッセージを送信しました。',
+	'massmessage-submitted' => 'メッセージを送信しました。', # Fuzzy
 	'massmessage-account-blocked' => 'メッセージの送信に使用するアカウントがブロックされています。',
 	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。',
+	'massmessage-empty-subject' => '件名を入力していません。',
+	'massmessage-empty-message' => 'メッセージの本文を入力していません。',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'right-massmessage-global' => '異なるウィキの複数の利用者に一度にメッセージを送信',
 	'log-name-massmessage' => '一斉メッセージ記録',
 	'log-description-massmessage' => 'これらのイベントは、利用者による [[Special:MassMessage]] でのメッセージの送信を追跡します。',
 	'logentry-massmessage-send' => '$1 が $3 に{{GENDER:$2|メッセージを送信しました}}',
+);
+
+/** Korean (한국어)
+ * @author Kwj2772
+ */
+$messages['ko'] = array(
+	'massmessage' => '메시지 대량 발송하기',
+	'massmessage-desc' => '목록에 있는 사용자에게 쉽게 메시지를 보낼 수 있도록 함',
+	'massmessage-sender' => '메신저봇',
+	'massmessage-form-spamlist' => '메시지를 남길 문서의 목록이 있는 문서:',
+	'massmessage-form-subject' => '메시지의 제목 (편집 요약에도 쓰임):',
+	'massmessage-form-message' => '메시지 내용:',
+	'massmessage-form-submit' => '보내기',
+	'massmessage-submitted' => '메시지를 보냈습니다!', # Fuzzy
+	'massmessage-account-blocked' => '메시지를 전송하기 위한 계정이 차단되었습니다.',
 );
 
 /** Macedonian (македонски)
@@ -168,15 +197,25 @@ $messages['mk'] = array(
 	'massmessage-form-message' => 'Текст на пораката.',
 	'massmessage-form-global' => 'Ова е глобална порака.',
 	'massmessage-form-submit' => 'Испрати',
-	'massmessage-submitted' => 'Пораката е испратена!',
+	'massmessage-submitted' => 'Пораката е испратена!', # Fuzzy
 	'massmessage-account-blocked' => 'Сметката со која се доставуваат пораки е блокирана.',
 	'massmessage-spamlist-doesnotexist' => 'Укажаната страница со список од страници не постои.',
+	'massmessage-empty-subject' => 'Насловот е празен.',
+	'massmessage-empty-message' => 'Порака нема текст.',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'right-massmessage-global' => 'Испраќање на порака на повеќе корисници на разни викија наеднаш.',
 	'log-name-massmessage' => 'Дневник на масовни пораки',
 	'log-description-massmessage' => 'Овој дневник следи испраќања на пораки преку [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|испрати порака}} до $3',
+);
+
+/** Malayalam (മലയാളം)
+ * @author Akhilan
+ */
+$messages['ml'] = array(
+	'massmessage-form-submit' => 'അയക്കൂ',
+	'massmessage-submitted' => 'താങ്കളുടെ ഇമെയിൽ അയച്ചു കഴിഞ്ഞിരിക്കുന്നു.', # Fuzzy
 );
 
 /** Marathi (मराठी)
@@ -191,7 +230,7 @@ $messages['mr'] = array(
 	'massmessage-form-message' => 'संदेशाचे अंग',
 	'massmessage-form-global' => 'हा वैश्विक संदेश आहे.',
 	'massmessage-form-submit' => 'पाठवा',
-	'massmessage-submitted' => 'आपला संदेश पाठविल्या गेला आहे!',
+	'massmessage-submitted' => 'आपला संदेश पाठविल्या गेला आहे!', # Fuzzy
 	'massmessage-account-blocked' => 'संदेश देण्यासाठी वापरण्यात येणारे खाते अवरुद्ध करण्यात आले आहे.',
 	'massmessage-spamlist-doesnotexist' => 'निविष्ट (ईनपूट) पानांची यादी अस्तित्वात नाही.', # Fuzzy
 	'right-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
@@ -208,7 +247,7 @@ $messages['mr'] = array(
  */
 $messages['nl'] = array(
 	'massmessage-form-submit' => 'Verzenden',
-	'massmessage-submitted' => 'Uw bericht is verzonden!',
+	'massmessage-submitted' => 'Uw bericht is verzonden!', # Fuzzy
 );
 
 /** Pashto (پښتو)
@@ -219,7 +258,7 @@ $messages['ps'] = array(
 	'massmessage-form-message' => 'د پيغام جوسه',
 	'massmessage-form-global' => 'دا يو نړيوال پيغام دی',
 	'massmessage-form-submit' => 'لېږل',
-	'massmessage-submitted' => 'ستاسو پيغام ولېږل شو!',
+	'massmessage-submitted' => 'ستاسو پيغام ولېږل شو!', # Fuzzy
 	'log-name-massmessage' => 'ډله ايز پيغام يادښت',
 	'logentry-massmessage-send' => '$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}',
 );
@@ -231,7 +270,32 @@ $messages['pt-br'] = array(
 	'massmessage-form-message' => 'Corpo da mensagem:',
 	'massmessage-form-global' => 'Esta é uma mensagem global.',
 	'massmessage-form-submit' => 'Enviar',
-	'massmessage-submitted' => 'Sua mensagem foi enviada!',
+	'massmessage-submitted' => 'Sua mensagem foi enviada!', # Fuzzy
+);
+
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'massmessage' => 'Manne messàgge de masse',
+	'massmessage-desc' => "Permette a l'utinde de mannà messàgge de masse facile facile a 'n'elenghe de utinde",
+	'massmessage-sender' => 'MessengerBot',
+	'massmessage-form-spamlist' => "Pàgene ca tène 'n'elenghe de pàggene pe lassà 'nu messàgge sus a:",
+	'massmessage-form-subject' => "Oggette d'u messàgge (pure ausate cumme riepiloghe d'u cangiamende):",
+	'massmessage-form-message' => "Cuèrpe d'u messàgge:",
+	'massmessage-form-global' => "Quiste jè 'nu messàgge globbale.",
+	'massmessage-form-submit' => 'Manne',
+	'massmessage-submitted' => "'U messàgge tune ha state mannate!", # Fuzzy
+	'massmessage-account-blocked' => "'U cunde ausate pe mannà le messàgge ha state bloccate.",
+	'massmessage-spamlist-doesnotexist' => "'A pàgene de l'elenghe specificate de le pàggene non g'esiste.",
+	'massmessage-empty-subject' => "'A linèe de l'oggette jè vacande.",
+	'massmessage-empty-message' => "'U cuèrpe d'u messàgge jè vacande.",
+	'right-massmessage' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
+	'action-massmessage' => "manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
+	'right-massmessage-global' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte sus a uicchi diverse",
+	'log-name-massmessage' => 'Archivije de le messàgge de masse',
+	'log-description-massmessage' => "Ste avveneminde traccene l'utinde ca mannane messàgge cu [[Special:MassMessage]].",
+	'logentry-massmessage-send' => "$1 {{GENDER:$2|mannate 'nu messàgge}} a $3",
 );
 
 /** Swedish (svenska)
@@ -246,7 +310,7 @@ $messages['sv'] = array(
 	'massmessage-form-message' => 'Meddelandetexten.',
 	'massmessage-form-global' => 'Detta är ett globalt meddelande.',
 	'massmessage-form-submit' => 'Skicka',
-	'massmessage-submitted' => 'Ditt meddelande har skickats!',
+	'massmessage-submitted' => 'Ditt meddelande har skickats!', # Fuzzy
 	'massmessage-account-blocked' => 'Kontot som används för att leverera meddelanden har blockerats.',
 	'massmessage-spamlist-doesnotexist' => 'Den angivna sidan, som innehåller listan med sidor, existerar inte.',
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
@@ -268,7 +332,7 @@ $messages['zh-hans'] = array(
 	'massmessage-form-message' => '消息正文：',
 	'massmessage-form-global' => '这是一个全域信息。',
 	'massmessage-form-submit' => '发送',
-	'massmessage-submitted' => '您的消息已经发出！',
+	'massmessage-submitted' => '您的消息已经发出！', # Fuzzy
 	'massmessage-account-blocked' => '用来传递消息的帐户已被阻止。',
 	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
 	'right-massmessage' => '一次将消息发送到多个用户',
