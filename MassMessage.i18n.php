@@ -20,8 +20,11 @@ $messages['en'] = array(
 	'massmessage-form-subject' => 'Subject of the message (Also used as the edit summary):',
 	'massmessage-form-message' => 'Body of the message:',
 	'massmessage-form-global' => 'This is a global message.',
+	'massmessage-form-preview' => 'Preview',
 	'massmessage-form-submit' => 'Send',
+	'massmessage-fieldset-preview' => 'Preview',
 	'massmessage-submitted' => 'Your message has been queued.',
+	'massmessage-just-preview' => 'This is just a preview. Press "{{int:massmessage-form-submit}}" to send the message.',
 	'massmessage-account-blocked' => 'The account used to deliver messages has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'The specified page-list page does not exist.',
 	'massmessage-empty-subject' => 'The subject line is empty.',
@@ -47,9 +50,13 @@ $messages['qqq'] = array(
 	'massmessage-form-subject' => 'Label for an inputbox on the special page.',
 	'massmessage-form-message' => 'Used as label for a textarea on the special page.',
 	'massmessage-form-global' => 'Label for a checkbox on the special page.',
+	'massmessage-form-preview' => 'Label for the preview button on the special page.
+{{Identical|Preview}}',
 	'massmessage-form-submit' => 'Label for the submit button on the special page.
 {{Identical|Send}}',
+	'massmessage-fieldset-preview' => 'Label for the fieldset box around the page preview.',
 	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.',
+	'massmessage-just-preview' => 'Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.',
 	'massmessage-account-blocked' => 'Error message the user sees if the bot account has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.
 
