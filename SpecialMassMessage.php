@@ -133,13 +133,11 @@ class SpecialMassMessage extends SpecialPage {
 	function getLocalTargets( $spamlist ) {
 		// Something.
 		global $wgNamespacesToExtractLinksFor, $wgNamespacesToConvert;
-		$pageID = $spamlist->getArticleID();
-		$namespaces = '(' . implode( ', ', $wgNamespacesToExtractLinksFor ) . ')';
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'pagelinks',
 			array( 'pl_namespace', 'pl_title' ),
-			array( "pl_from=$pageID", "pl_namespace in $namespaces" ),
+			array( 'pl_from' => $spamlist->getArticleID(), 'pl_namespace' => $wgNamespacesToExtractLinksFor ),
 			__METHOD__,
 			array()
 		);
