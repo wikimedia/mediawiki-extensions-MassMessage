@@ -42,12 +42,12 @@ $wgMassMessageAccountPassword = '';
 
  
 $wgExtensionCredits[ 'specialpage' ][] = array(
-		'path' => __FILE__,
-		'name' => 'MassMessage',
-		'author' => 'Kunal Mehta',
-		'url' => 'https://www.mediawiki.org/wiki/Extension:MassMessage',
-		'descriptionmsg' => 'massmessage-desc',
-		'version' => '0.0.1',
+	'path' => __FILE__,
+	'name' => 'MassMessage',
+	'author' => 'Kunal Mehta',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:MassMessage',
+	'descriptionmsg' => 'massmessage-desc',
+	'version' => '0.0.1',
 );
  $dir = dirname(__FILE__);
 
@@ -60,12 +60,12 @@ $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
 $wgJobClasses['massmessageJob'] = 'MassMessageJob';
 
 $wgResourceModules['ext.MassMessage.special'] = array(
-		'scripts' => 'ext.MassMessage.special.js',
-		'dependencies' => array(
-				'jquery.byteLimit',
-		),
+	'scripts' => 'ext.MassMessage.special.js',
+	'dependencies' => array(
+			'jquery.byteLimit',
+	),
 
-		'localBasePath' => $dir,
+	'localBasePath' => $dir,
 );
 
 $wgLogTypes[] = 'massmessage';

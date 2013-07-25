@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Form to allow users to send messages
  * to a lot of users at once.
  * Based on code from TranslationNotifications
@@ -12,6 +12,13 @@
  */
 
 class SpecialMassMessage extends SpecialPage {
+
+	/**
+	 * @var Status
+	 */
+	protected $status;
+	protected $state;
+
 	function __construct() {
 		parent::__construct( 'MassMessage', 'massmessage' );
 	}
@@ -60,6 +67,9 @@ class SpecialMassMessage extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	function createForm() {
 		$request = $this->getRequest();
 		$context = $this->getContext();
@@ -114,7 +124,7 @@ class SpecialMassMessage extends SpecialPage {
 		return $m;
 	}
 
-	/*
+	/**
 	 * Get a list of pages to spam
 	 *
 	 * @param $spamlist Title
@@ -147,7 +157,8 @@ class SpecialMassMessage extends SpecialPage {
 		}
 		return $pages;
 	}
-	/*
+
+	/**
 	 * Log the spamming to Special:Log/massmessage
 	 *
 	 * @param $spamlist Title
@@ -166,7 +177,7 @@ class SpecialMassMessage extends SpecialPage {
 
 	}
 
-	/*
+	/**
 	 * Callback function
 	 * Does some basic verification of data
 	 * Decides whether to show the preview screen
@@ -191,7 +202,8 @@ class SpecialMassMessage extends SpecialPage {
 			return $this->preview( $data );
 		}
 	}
-	/*
+
+	/**
 	 * Parse and normalize the spamlist
 	 *
 	 * @param $title string
@@ -214,7 +226,7 @@ class SpecialMassMessage extends SpecialPage {
 
 	}
 
-	/*
+	/**
 	 * Sanity check the data, throwing any errors if necessary
 	 *
 	 * @param $data Array
@@ -248,7 +260,7 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 
-	/*
+	/**
 	 * A preview/confirmation screen
 	 *
 	 * @param $data Array
@@ -257,7 +269,7 @@ class SpecialMassMessage extends SpecialPage {
 	function preview( $data ) {
 
 		$spamlist = $this->getLocalSpamlist( $data['spamlist'] );
-		$targets = $this->getLocalTargets( $spamlist );
+		// $targets = $this->getLocalTargets( $spamlist );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
 		$firstTarget = Title::newFromText( 'User talk:Example' );
 		$article = Article::newFromTitle( $firstTarget, $this->getContext() );
@@ -289,10 +301,9 @@ class SpecialMassMessage extends SpecialPage {
 		$wrapFieldset = Xml::fieldset( $fieldsetMessage, $previewHTML );
 		$this->getOutput()->addHTML( $wrapFieldset );
 		return false;
-
 	}
 
-	/*
+	/**
 	 * Send out the message
 	 *
 	 * @param $data Array
@@ -307,7 +318,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Insert it into the job queue.
 		$pages = $this->getLocalTargets( $spamlist );
-		foreach ( $pages as $title => $page ) {
+		foreach ( $pages as /*$title => */$page ) {
 			$job = new MassMessageJob( $page, $data );
 			JobQueueGroup::singleton()->push( $job );
 		}
