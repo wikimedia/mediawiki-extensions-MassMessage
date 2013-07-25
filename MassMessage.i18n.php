@@ -106,12 +106,16 @@ $messages['de'] = array(
 	'massmessage-form-subject' => 'Betreff der Nachricht. Wird auch als Bearbeitungszusammenfassung verwendet.',
 	'massmessage-form-message' => 'Der Textbereich der Nachricht.',
 	'massmessage-form-global' => 'Dies ist eine globale Nachricht.',
+	'massmessage-form-preview' => 'Vorschau',
 	'massmessage-form-submit' => 'Senden',
+	'massmessage-fieldset-preview' => 'Vorschau',
 	'massmessage-submitted' => 'Deine Nachricht wurde in die Sendewarteschlange eingefügt!',
+	'massmessage-just-preview' => 'Dies ist nur eine Vorschau. Klicke auf „{{int:massmessage-form-submit}}“, um die Nachricht abzusenden.',
 	'massmessage-account-blocked' => 'Das zum Versenden von Nachrichten benutzte Benutzerkonto wurde gesperrt.',
 	'massmessage-spamlist-doesnotexist' => 'Die angegebene Seitenlistenseite ist nicht vorhanden.',
 	'massmessage-empty-subject' => 'Die Betreffszeile ist leer.',
 	'massmessage-empty-message' => 'Der Nachrichtenkörper ist leer.',
+	'massmessage-form-header' => 'Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich.',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'right-massmessage-global' => 'Gleichzeitig Nachrichten an mehrere Benutzer auf unterschiedlichen Wikis senden',
@@ -139,11 +143,12 @@ $messages['fr'] = array(
 	'massmessage-form-message' => 'Corps du message :',
 	'massmessage-form-global' => 'Ceci est un message global.',
 	'massmessage-form-submit' => 'Envoyer',
-	'massmessage-submitted' => 'Votre message a été envoyé !', # Fuzzy
+	'massmessage-submitted' => 'Votre message a été mis en file !',
 	'massmessage-account-blocked' => 'Le compte utilisé pour envoyer les messages a été bloqué.',
 	'massmessage-spamlist-doesnotexist' => 'La page de liste de pages spécifiée n’existe pas.',
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
 	'massmessage-empty-message' => 'Le corps du message est vide.',
+	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires.',
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
 	'right-massmessage-global' => 'Envoyer un message à plusieurs utilisateurs de différents wikis à la fois',
@@ -164,11 +169,12 @@ $messages['ja'] = array(
 	'massmessage-form-message' => 'メッセージの本文:',
 	'massmessage-form-global' => 'グローバル メッセージ',
 	'massmessage-form-submit' => '送信',
-	'massmessage-submitted' => 'メッセージを送信しました。', # Fuzzy
+	'massmessage-submitted' => 'メッセージを待ち行列に登録しました。',
 	'massmessage-account-blocked' => 'メッセージの送信に使用するアカウントがブロックされています。',
 	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。',
 	'massmessage-empty-subject' => '件名を入力していません。',
 	'massmessage-empty-message' => 'メッセージの本文を入力していません。',
+	'massmessage-form-header' => 'このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です。',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'right-massmessage-global' => '異なるウィキの複数の利用者に一度にメッセージを送信',
@@ -204,11 +210,12 @@ $messages['mk'] = array(
 	'massmessage-form-message' => 'Текст на пораката.',
 	'massmessage-form-global' => 'Ова е глобална порака.',
 	'massmessage-form-submit' => 'Испрати',
-	'massmessage-submitted' => 'Пораката е испратена!', # Fuzzy
+	'massmessage-submitted' => 'Пораката е ставена во редица.',
 	'massmessage-account-blocked' => 'Сметката со која се доставуваат пораки е блокирана.',
 	'massmessage-spamlist-doesnotexist' => 'Укажаната страница со список од страници не постои.',
 	'massmessage-empty-subject' => 'Насловот е празен.',
 	'massmessage-empty-message' => 'Порака нема текст.',
+	'massmessage-form-header' => 'Образецов служи за испраќање на пораки на укажан список на примачи. Сите полиња се задолжителни.',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'right-massmessage-global' => 'Испраќање на порака на повеќе корисници на разни викија наеднаш.',
@@ -234,12 +241,15 @@ $messages['mr'] = array(
 	'massmessage-sender' => 'संदेश-सांगकाम्या',
 	'massmessage-form-spamlist' => 'या पानावर संदेश देण्यायोग्य असलेल्या पानांची यादी आहे.',
 	'massmessage-form-subject' => 'संदेशाचा विषय. याचा वापर संपादन सारांश म्हणुनही होईल.',
-	'massmessage-form-message' => 'संदेशाचे अंग',
+	'massmessage-form-message' => 'संदेशाचा मायना',
 	'massmessage-form-global' => 'हा वैश्विक संदेश आहे.',
 	'massmessage-form-submit' => 'पाठवा',
-	'massmessage-submitted' => 'आपला संदेश पाठविल्या गेला आहे!', # Fuzzy
+	'massmessage-submitted' => 'आपल्या संदेशास रांगेत ठेविल्या गेले आहे!',
 	'massmessage-account-blocked' => 'संदेश देण्यासाठी वापरण्यात येणारे खाते अवरुद्ध करण्यात आले आहे.',
-	'massmessage-spamlist-doesnotexist' => 'निविष्ट (ईनपूट) पानांची यादी अस्तित्वात नाही.', # Fuzzy
+	'massmessage-spamlist-doesnotexist' => 'उल्लेखित पान-यादी असलेले पान अस्तित्वात नाही.',
+	'massmessage-empty-subject' => 'विषय रिकामा आहे.',
+	'massmessage-empty-message' => 'संदेशाचा मायना रिकामा आहे.',
+	'massmessage-form-header' => 'खालील निवेदन एका उल्लेखित यादीस संदेश पाठविण्यास वापरा.सर्व क्षेत्रे आवश्यक आहेत.',
 	'right-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
 	'action-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
 	'right-massmessage-global' => 'वेगवेगळ्या विकिंवर असलेल्या बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
@@ -254,7 +264,37 @@ $messages['mr'] = array(
  */
 $messages['nl'] = array(
 	'massmessage-form-submit' => 'Verzenden',
-	'massmessage-submitted' => 'Uw bericht is verzonden!', # Fuzzy
+	'massmessage-submitted' => 'Uw bericht is in de wachtrij geplaatst.',
+);
+
+/** Polish (polski)
+ * @author WTM
+ * @author Woytecr
+ */
+$messages['pl'] = array(
+	'massmessage' => 'Wyślij masową wiadomość',
+	'massmessage-desc' => 'Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników',
+	'massmessage-sender' => 'MessengerBot',
+	'massmessage-form-spamlist' => 'Strona zawierająca listę stron, na których zostawić wiadomość:',
+	'massmessage-form-subject' => 'Temat wiadomości (Także używany jako podsumowanie edycji):',
+	'massmessage-form-message' => 'Treść wiadomości:',
+	'massmessage-form-global' => 'To jest globalna wiadomość.',
+	'massmessage-form-preview' => 'Podgląd',
+	'massmessage-form-submit' => 'Wyślij',
+	'massmessage-fieldset-preview' => 'Podgląd',
+	'massmessage-submitted' => 'Twoja wiadomość została umieszczona w kolejce.',
+	'massmessage-just-preview' => 'To jest tylko podgląd. Naciśnij "{{int:massmessage-form-submit}}" aby wysłać wiadomość.',
+	'massmessage-account-blocked' => 'To konto używane do dostarczania wiadomości zostało zablokowane.',
+	'massmessage-spamlist-doesnotexist' => 'Określona strona z listą stron nie istnieje.',
+	'massmessage-empty-subject' => 'Pole tematu jest puste.',
+	'massmessage-empty-message' => 'Treść wiadomości jest pusta.',
+	'massmessage-form-header' => 'Użyj poniższego formularza aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane.',
+	'right-massmessage' => 'Wyślij wiadomość do wielu użytkowników jednocześnie',
+	'action-massmessage' => 'wyślij wiadomość do wielu użytkowników jednocześnie',
+	'right-massmessage-global' => 'Wyślij wiadomość do wielu użytkowników na różnych wiki za jednym razem',
+	'log-name-massmessage' => 'Log masowych wiadomości',
+	'log-description-massmessage' => 'To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości poprzez [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3',
 );
 
 /** Pashto (پښتو)
@@ -292,11 +332,12 @@ $messages['roa-tara'] = array(
 	'massmessage-form-message' => "Cuèrpe d'u messàgge:",
 	'massmessage-form-global' => "Quiste jè 'nu messàgge globbale.",
 	'massmessage-form-submit' => 'Manne',
-	'massmessage-submitted' => "'U messàgge tune ha state mannate!", # Fuzzy
+	'massmessage-submitted' => "'U messàgge tune ha state mise in code.",
 	'massmessage-account-blocked' => "'U cunde ausate pe mannà le messàgge ha state bloccate.",
 	'massmessage-spamlist-doesnotexist' => "'A pàgene de l'elenghe specificate de le pàggene non g'esiste.",
 	'massmessage-empty-subject' => "'A linèe de l'oggette jè vacande.",
 	'massmessage-empty-message' => "'U cuèrpe d'u messàgge jè vacande.",
+	'massmessage-form-header' => "Ause 'u module aqquà sotte pe mannà messàgge a 'n'elenghe specifiche. Tutte le cambe sò richieste.",
 	'right-massmessage' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'action-massmessage' => "manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'right-massmessage-global' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte sus a uicchi diverse",
@@ -326,6 +367,31 @@ $messages['sv'] = array(
 	'log-name-massmessage' => 'Massmeddelandelogg',
 	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
+);
+
+/** Turkish (Türkçe)
+ * @author Emperyan
+ */
+$messages['tr'] = array(
+	'massmessage' => 'Toplu ileti gönderin',
+	'massmessage-sender' => 'HaberciBot',
+	'massmessage-form-subject' => 'İleti konusu (Değişiklik özeti olarak da kullanılır)',
+	'massmessage-form-message' => 'İleti metni:',
+	'massmessage-form-global' => 'Bu küresel bir iletidir.',
+	'massmessage-form-preview' => 'Ön izleme',
+	'massmessage-form-submit' => 'Gönder',
+	'massmessage-fieldset-preview' => 'Ön izleme',
+	'massmessage-submitted' => 'İletiniz sıraya eklendi.',
+	'massmessage-just-preview' => 'Bu yalnızca bir ön izlemedir. İletiyi göndermek için "{{int:massmessage-form-submit}}" düğmesine basınız.',
+	'massmessage-account-blocked' => 'İletileri göndermek için kullanılan kullanıcı hesabı engellendi.',
+	'massmessage-spamlist-doesnotexist' => 'Belirtilen sayfa-liste sayfası yok.',
+	'massmessage-empty-subject' => 'Konu satırı boş.',
+	'massmessage-empty-message' => 'İleti metni boş.',
+	'massmessage-form-header' => 'Belirtilen listeye ileti göndermek için aşağıdaki formu kullanın. Bütün alanların doldurulması zorunludur.',
+	'right-massmessage' => 'Aynı anda birden fazla kullanıcıya ileti gönder',
+	'action-massmessage' => 'aynı anda birden fazla kullanıcıya ileti gönder',
+	'right-massmessage-global' => 'Aynı anda farklı vikilerdeki birden fazla kullanıcıya ileti gönder',
+	'log-name-massmessage' => 'Toplu ileti günlüğü',
 );
 
 /** Simplified Chinese (中文（简体）‎)
