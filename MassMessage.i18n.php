@@ -54,9 +54,12 @@ $messages['qqq'] = array(
 {{Identical|Preview}}',
 	'massmessage-form-submit' => 'Label for the submit button on the special page.
 {{Identical|Send}}',
-	'massmessage-fieldset-preview' => 'Label for the fieldset box around the page preview.',
+	'massmessage-fieldset-preview' => 'Label for the fieldset box around the page preview.
+{{Identical|Preview}}',
 	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.',
-	'massmessage-just-preview' => 'Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.',
+	'massmessage-just-preview' => 'Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.
+
+Refers the message {{msg-mw|Massmessage-form-submit}}.',
 	'massmessage-account-blocked' => 'Error message the user sees if the bot account has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.
 
@@ -142,8 +145,11 @@ $messages['fr'] = array(
 	'massmessage-form-subject' => 'Sujet du message (utilisé également dans le résumé de la modification) :',
 	'massmessage-form-message' => 'Corps du message :',
 	'massmessage-form-global' => 'Ceci est un message global.',
+	'massmessage-form-preview' => 'Aperçu',
 	'massmessage-form-submit' => 'Envoyer',
+	'massmessage-fieldset-preview' => 'Aperçu',
 	'massmessage-submitted' => 'Votre message a été mis en file !',
+	'massmessage-just-preview' => 'Ceci est simplement un aperçu. Appuyez sur « {{int:massmessage-form-submit}} » pour envoyer le message.',
 	'massmessage-account-blocked' => 'Le compte utilisé pour envoyer les messages a été bloqué.',
 	'massmessage-spamlist-doesnotexist' => 'La page de liste de pages spécifiée n’existe pas.',
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
@@ -168,8 +174,11 @@ $messages['ja'] = array(
 	'massmessage-form-subject' => 'メッセージの件名 (編集の要約としても使用されます):',
 	'massmessage-form-message' => 'メッセージの本文:',
 	'massmessage-form-global' => 'グローバル メッセージ',
+	'massmessage-form-preview' => 'プレビュー',
 	'massmessage-form-submit' => '送信',
+	'massmessage-fieldset-preview' => 'プレビュー',
 	'massmessage-submitted' => 'メッセージを待ち行列に登録しました。',
+	'massmessage-just-preview' => 'これはプレビューしているだけに過ぎません。メッセージを送信するには「{{int:massmessage-form-submit}}」をクリックしてください。',
 	'massmessage-account-blocked' => 'メッセージの送信に使用するアカウントがブロックされています。',
 	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。',
 	'massmessage-empty-subject' => '件名を入力していません。',
@@ -185,17 +194,32 @@ $messages['ja'] = array(
 
 /** Korean (한국어)
  * @author Kwj2772
+ * @author 아라
  */
 $messages['ko'] = array(
-	'massmessage' => '메시지 대량 발송하기',
-	'massmessage-desc' => '목록에 있는 사용자에게 쉽게 메시지를 보낼 수 있도록 함',
+	'massmessage' => '메시지 대량 보내기',
+	'massmessage-desc' => '목록에 있는 사용자에게 쉽게 메시지를 보낼 수 있습니다',
 	'massmessage-sender' => '메신저봇',
 	'massmessage-form-spamlist' => '메시지를 남길 문서의 목록이 있는 문서:',
 	'massmessage-form-subject' => '메시지의 제목 (편집 요약에도 쓰임):',
-	'massmessage-form-message' => '메시지 내용:',
+	'massmessage-form-message' => '메시지 본문:',
+	'massmessage-form-global' => '전역 메시지입니다.',
+	'massmessage-form-preview' => '미리 보기',
 	'massmessage-form-submit' => '보내기',
-	'massmessage-submitted' => '메시지를 보냈습니다!', # Fuzzy
+	'massmessage-fieldset-preview' => '미리 보기',
+	'massmessage-submitted' => '메시지가 대기되었습니다.',
+	'massmessage-just-preview' => '이것은 미리보기입니다. 메시지를 보내려면 "{{int:massmessage-form-submit}}"를 누르세요.',
 	'massmessage-account-blocked' => '메시지를 전송하기 위한 계정이 차단되었습니다.',
+	'massmessage-spamlist-doesnotexist' => '지정한 문서 목록의 문서가 존재하지 않습니다.',
+	'massmessage-empty-subject' => '제목 줄이 비어 있습니다.',
+	'massmessage-empty-message' => '메시지 본문이 비어 있습니다.',
+	'massmessage-form-header' => '지정된 목록에서 메시지를 보내려면 아래 양식을 사용하세요. 모든 필드는 필수입니다.',
+	'right-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
+	'action-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
+	'right-massmessage-global' => '한 번에 다른 위키에 있는 여러 사용자에게 메시지 보내기',
+	'log-name-massmessage' => '대량 메시지 기록',
+	'log-description-massmessage' => '이 이벤트는 [[Special:MassMessage]]를 통해 메시지를 보낸 사용자를 추적합니다.',
+	'logentry-massmessage-send' => '$1 사용자가 $3에 {{GENDER:$2|메시지를 보냈습니다}}',
 );
 
 /** Macedonian (македонски)
@@ -209,8 +233,11 @@ $messages['mk'] = array(
 	'massmessage-form-subject' => 'Наслов на пораката. Ќе се користи и како опис на уредувањето.',
 	'massmessage-form-message' => 'Текст на пораката.',
 	'massmessage-form-global' => 'Ова е глобална порака.',
+	'massmessage-form-preview' => 'Преглед',
 	'massmessage-form-submit' => 'Испрати',
+	'massmessage-fieldset-preview' => 'Преглед',
 	'massmessage-submitted' => 'Пораката е ставена во редица.',
+	'massmessage-just-preview' => 'Ова е само преглед. Стиснете на „{{int:massmessage-form-submit}}“ за да ја испратите пораката.',
 	'massmessage-account-blocked' => 'Сметката со која се доставуваат пораки е блокирана.',
 	'massmessage-spamlist-doesnotexist' => 'Укажаната страница со список од страници не постои.',
 	'massmessage-empty-subject' => 'Насловот е празен.',
@@ -311,13 +338,32 @@ $messages['ps'] = array(
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Fúlvio
  * @author Luckas
  */
 $messages['pt-br'] = array(
+	'massmessage' => 'Enviar mensagem em massa',
+	'massmessage-desc' => 'Permite que os usuários enviem facilmente uma mensagem para uma lista de usuários',
+	'massmessage-sender' => 'MessengerBot',
+	'massmessage-form-spamlist' => 'Página que contêm a lista de páginas para enviar uma mensagem em:',
+	'massmessage-form-subject' => 'Assunto da mensagem (Também usado como sumário de edição):',
 	'massmessage-form-message' => 'Corpo da mensagem:',
 	'massmessage-form-global' => 'Esta é uma mensagem global.',
+	'massmessage-form-preview' => 'Visualizar',
 	'massmessage-form-submit' => 'Enviar',
-	'massmessage-submitted' => 'Sua mensagem foi enviada!', # Fuzzy
+	'massmessage-fieldset-preview' => 'Visualização',
+	'massmessage-submitted' => 'Sua mensagem foi adicionada à fila.',
+	'massmessage-just-preview' => 'Esta é apenas uma visualização. Pressione "{{int:massmessage-form-submit}}" para enviar a mensagem.',
+	'massmessage-account-blocked' => 'A conta usada para enviar mensagens foi bloqueada.',
+	'massmessage-spamlist-doesnotexist' => 'A lista de páginas especificada não existe.',
+	'massmessage-empty-subject' => 'O espaço do assunto está vazio.',
+	'massmessage-empty-message' => 'O corpo da mensagem está vazio.',
+	'massmessage-form-header' => 'Use o formulário abaixo para enviar mensagens a uma lista específcia. Todos os campos são obrigatórios.',
+	'right-massmessage' => 'Envie uma mensagem para vários usuários ao mesmo tempo',
+	'action-massmessage' => 'envie uma mensagem para vários usuários ao mesmo tempo',
+	'right-massmessage-global' => 'Envie uma mensagem para vários usuários, em diferentes wikis, ao mesmo tempo',
+	'log-name-massmessage' => 'Registro de mensagens em massa',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|envie uma mensagem}} para $3',
 );
 
 /** tarandíne (tarandíne)
@@ -331,8 +377,11 @@ $messages['roa-tara'] = array(
 	'massmessage-form-subject' => "Oggette d'u messàgge (pure ausate cumme riepiloghe d'u cangiamende):",
 	'massmessage-form-message' => "Cuèrpe d'u messàgge:",
 	'massmessage-form-global' => "Quiste jè 'nu messàgge globbale.",
+	'massmessage-form-preview' => 'Andeprime',
 	'massmessage-form-submit' => 'Manne',
+	'massmessage-fieldset-preview' => 'Andeprime',
 	'massmessage-submitted' => "'U messàgge tune ha state mise in code.",
+	'massmessage-just-preview' => "Queste jè sulamende 'n'andeprime. Cazze \"{{int:massmessage-form-submit}}\" pe mannà 'u messàgge.",
 	'massmessage-account-blocked' => "'U cunde ausate pe mannà le messàgge ha state bloccate.",
 	'massmessage-spamlist-doesnotexist' => "'A pàgene de l'elenghe specificate de le pàggene non g'esiste.",
 	'massmessage-empty-subject' => "'A linèe de l'oggette jè vacande.",
