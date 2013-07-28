@@ -92,9 +92,13 @@ $messages['bn'] = array(
 	'massmessage-form-subject' => 'বার্তার বিষয়। সম্পাদনা সারাংশ হিসেবেও ব্যবহৃত হবে।',
 	'massmessage-form-message' => 'বার্তার মূল অংশ।',
 	'massmessage-form-global' => 'এটি একটি বৈশ্বিক বার্তা।',
+	'massmessage-form-preview' => 'প্রাকদর্শন',
 	'massmessage-form-submit' => 'পাঠাও',
-	'massmessage-submitted' => 'আপনার বার্তাটি পাঠানো হয়েছে!', # Fuzzy
+	'massmessage-fieldset-preview' => 'প্রাকদর্শন',
+	'massmessage-submitted' => 'আপনার বার্তাটি অপেক্ষমান রয়েছে।',
 	'massmessage-account-blocked' => 'বার্তা পাঠাতে ব্যবহৃত অ্যাকাউন্ট বাঁধা প্রদান করা হয়েছে।',
+	'massmessage-empty-subject' => 'বিষয় লাইনটি খালি।',
+	'massmessage-empty-message' => 'বার্তার মূল অংশ খালি।',
 );
 
 /** German (Deutsch)
@@ -125,6 +129,28 @@ $messages['de'] = array(
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
 	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
+);
+
+/** Esperanto (Esperanto)
+ * @author KuboF
+ */
+$messages['eo'] = array(
+	'massmessage' => 'Sendi amasmesaĝon',
+	'massmessage-desc' => 'Permesi al uzantoj facile sendi mesaĝon al listo de uzantoj',
+	'massmessage-form-spamlist' => 'Paĝo kun listo de paĝoj en kiuj estu postasita mesaĝo:',
+	'massmessage-form-message' => 'Teksto de la mesaĝo:',
+	'massmessage-form-global' => 'Tio ĉi estas tutvikia mesaĝo.',
+	'massmessage-form-preview' => 'Antaŭvidi',
+	'massmessage-form-submit' => 'Sendi',
+	'massmessage-fieldset-preview' => 'Antaŭvidi',
+	'massmessage-account-blocked' => 'La konto uzata por liveradi mesaĝojn estis forbarita.',
+	'massmessage-spamlist-doesnotexist' => 'La specifita paĝo kun paĝolisto ne ekzistas.',
+	'massmessage-empty-message' => 'La mesaĝo ne enhavas tekston.',
+	'massmessage-form-header' => 'Uzu la suban formularon por sendi mesaĝon al specifita listo. Ĉiuj kampoj estas postulataj.',
+	'right-massmessage' => 'Sendi mesaĝon al multaj uzantoj samtempe',
+	'action-massmessage' => 'sendi mesaĝon al multaj uzantoj samtempe',
+	'right-massmessage-global' => 'Sendi mesaĝon al multaj uzantoj en diversaj vikioj samtempe',
+	'log-name-massmessage' => 'Protokolo de amasmesaĝoj',
 );
 
 /** Basque (euskara)
@@ -161,6 +187,35 @@ $messages['fr'] = array(
 	'log-name-massmessage' => 'Journal des messages de masse',
 	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|a envoyé un message}} à $3',
+);
+
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'massmessage' => 'Enviar unha mensaxe en masa',
+	'massmessage-desc' => 'Permite aos usuarios enviar facilmente unha mensaxe a unha lista de usuarios',
+	'massmessage-sender' => 'Bot de mensaxes',
+	'massmessage-form-spamlist' => 'Páxina que conteña a lista de páxinas nas que deixar a mensaxe:',
+	'massmessage-form-subject' => 'Asunto da mensaxe (tamén se usa de resumo de edición):',
+	'massmessage-form-message' => 'Corpo da mensaxe:',
+	'massmessage-form-global' => 'Esta é unha mensaxe global.',
+	'massmessage-form-preview' => 'Vista previa',
+	'massmessage-form-submit' => 'Enviar',
+	'massmessage-fieldset-preview' => 'Vista previa',
+	'massmessage-submitted' => 'A súa mensaxe púxose á cola.',
+	'massmessage-just-preview' => 'Isto só é unha vista previa. Prema en "{{int:massmessage-form-submit}}" para enviar a mensaxe.',
+	'massmessage-account-blocked' => 'A conta empregada para entregar as mensaxes está bloqueada.',
+	'massmessage-spamlist-doesnotexist' => 'A páxina especificada coa lista de páxinas non existe.',
+	'massmessage-empty-subject' => 'A liña do asunto está baleira.',
+	'massmessage-empty-message' => 'O corpo da mensaxe está baleiro.',
+	'massmessage-form-header' => 'Utilice o formulario inferior para enviar mensaxes a unha lista especificada. Todos os campos son obrigatorios.',
+	'right-massmessage' => 'Enviar unha mensaxe a varios usuarios á vez',
+	'action-massmessage' => 'enviar unha mensaxe a varios usuarios á vez',
+	'right-massmessage-global' => 'Enviar unha mensaxe a varios usuarios de diferentes wikis á vez',
+	'log-name-massmessage' => 'Rexistro de mensaxes en masa',
+	'log-description-massmessage' => 'Este rexistro garda os usuarios que enviaron mensaxes mediante [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|enviou unha mensaxe}} a $3',
 );
 
 /** Japanese (日本語)
@@ -208,7 +263,7 @@ $messages['ko'] = array(
 	'massmessage-form-submit' => '보내기',
 	'massmessage-fieldset-preview' => '미리 보기',
 	'massmessage-submitted' => '메시지가 대기되었습니다.',
-	'massmessage-just-preview' => '이것은 미리보기입니다. 메시지를 보내려면 "{{int:massmessage-form-submit}}"를 누르세요.',
+	'massmessage-just-preview' => '이것은 미리보기일 뿐입니다. 메시지를 보내려면 "{{int:massmessage-form-submit}}"를 누르세요.',
 	'massmessage-account-blocked' => '메시지를 전송하기 위한 계정이 차단되었습니다.',
 	'massmessage-spamlist-doesnotexist' => '지정한 문서 목록의 문서가 존재하지 않습니다.',
 	'massmessage-empty-subject' => '제목 줄이 비어 있습니다.',
@@ -453,8 +508,10 @@ $messages['zh-hans'] = array(
 	'massmessage-form-subject' => '消息主题（还用作编辑摘要）：',
 	'massmessage-form-message' => '消息正文：',
 	'massmessage-form-global' => '这是一个全域信息。',
+	'massmessage-form-preview' => '预览',
 	'massmessage-form-submit' => '发送',
-	'massmessage-submitted' => '您的消息已经发出！', # Fuzzy
+	'massmessage-fieldset-preview' => '预览',
+	'massmessage-submitted' => '您的消息已添加到队列！',
 	'massmessage-account-blocked' => '用来传递消息的帐户已被阻止。',
 	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
 	'right-massmessage' => '一次将消息发送到多个用户',
