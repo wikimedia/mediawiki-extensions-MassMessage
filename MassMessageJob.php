@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Job Queue class to send a message to
  * a user.
  * Based on code from TranslationNotifications
@@ -30,7 +30,8 @@ class MassMessageJob extends Job {
 
 		return true;
 	}
-	/*
+
+	/**
 	 * Log any message failures on the submission site.
 	 *
 	 * @param $title Title
@@ -52,7 +53,7 @@ class MassMessageJob extends Job {
 
 	}
 
-	/*
+	/**
 	 * Send a message to a user on the same wiki.
 	 * Modified from the TranslationNotification extension
 	 *
