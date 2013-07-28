@@ -16,20 +16,21 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 /*
- * Namespaces to extract links for
+ * Namespaces to post in
  *
- * From your spamlist, only links to these
- * domains will be checked.
- * Only applies to local messages.
+ * Only let the bot post in these namespaces regardless
+ * of what the user specificed in the input list. This is checked
+ * after $wgNamespacesToConvert is applied.
+ * Applies to both local and global messages.
  */
-$wgNamespacesToExtractLinksFor = array( NS_PROJECT, NS_USER, NS_USER_TALK );
+$wgNamespacesToPostIn = array( NS_PROJECT, NS_USER_TALK );
 
 /*
  * Namespaces to convert
  *
  * If you want users to be able to provide a link to a User: page,
  * but have the bot post on their User talk: page you can define that here.
- * Only applies to local messages.
+ * Applies to both local and global messages.
  */
 $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
 
@@ -54,10 +55,14 @@ $wgExtensionCredits[ 'specialpage' ][] = array(
 $wgSpecialPages[ 'MassMessage' ] = 'SpecialMassMessage';
 $wgExtensionMessagesFiles['MassMessage'] = "$dir/MassMessage.i18n.php";
 $wgExtensionMessagesFiles['MassMessageAlias'] = "$dir/MassMessage.alias.php";
+$wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php";
 $wgAutoloadClasses['MassMessage'] = "$dir/MassMessage.body.php";
+$wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/SpecialMassMessage.php";
 $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
 $wgJobClasses['massmessageJob'] = 'MassMessageJob';
+
+$wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
 
 $wgResourceModules['ext.MassMessage.special'] = array(
 	'scripts' => 'ext.MassMessage.special.js',

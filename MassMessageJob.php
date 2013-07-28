@@ -30,6 +30,21 @@ class MassMessageJob extends Job {
 
 		return true;
 	}
+	/**
+	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn
+	 * @param  Title $title
+	 * @return Title|null null if we shouldn't post on that title
+	 */
+	function normalizeTitle( $title ) {
+		global $wgNamespacesToPostIn, $wgNamespacesToConvert;
+		if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
+			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
+		}
+		if ( !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
+			$title = null;
+		}
+		return $title;
+	}
 
 	/**
 	 * Log any message failures on the submission site.
@@ -60,9 +75,14 @@ class MassMessageJob extends Job {
 	 * @return bool
 	 */
 	function sendLocalMessage() {
+		$title = $this->normalizeTitle( $this->title );
+		if ( $title === null ) {
+			return true; // Skip it
+		}
+
 		$text = "== " . $this->params['subject'] . " ==\n\n" . $this->params['message'];
 
-		$talkPage = WikiPage::factory( $this->title );
+		$talkPage = WikiPage::factory( $title );
 		$flags = $talkPage->checkFlags( 0 );
 		if ( $flags & EDIT_UPDATE ) {
 			$content = $talkPage->getContent( Revision::RAW );
@@ -78,8 +98,8 @@ class MassMessageJob extends Job {
 
 		// If we're sending to a User talk: page, make sure the user exists.
 		// Redirects are automatically followed in getLocalTargets
-		if ( $this->title->getNamespace() == NS_USER_TALK ) {
-			$user = User::newFromName( $this->title->getBaseText() );
+		if ( $title->getNamespace() == NS_USER_TALK ) {
+			$user = User::newFromName( $title->getBaseText() );
 			if ( !$user->getId() ) { // Does not exist
 				return true; // Should we log anything here?
 			}
