@@ -123,6 +123,39 @@ class SpecialMassMessage extends SpecialPage {
 
 		return $m;
 	}
+	/**
+	 * Get an array of targets via the #target parser function
+	 * @param  Title $spamlist
+	 * @return array
+	 */
+	function getParserFunctionTargets( $spamlist ) {
+		$page = WikiPage::factory( $spamlist );
+		$content = $page->getContent( Revision::RAW );
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} else {
+			// Spamlist input isn't a text page
+			$this->status->fatal( 'massmessage-spamlist-doesnotexist' );
+			return array();
+		}
+
+		// Prep the parser
+		define( 'MASSMESSAGE_PARSE', true );
+		$article = Article::newFromTitle( $spamlist, $this->getContext() );
+		$parserOptions = $article->makeParserOptions( $article->getContext() );
+		$parser = new Parser();
+
+		// Parse
+		$output = $parser->parse( $text, $spamlist, $parserOptions );
+		$data = $output->getProperty( 'massmessage-targets' );
+
+		if ( $data ) {
+			return $data;
+		} else {
+			return array();  // No parser functions on page
+		}
+
+	}
 
 	/**
 	 * Get a list of pages to spam
@@ -232,7 +265,7 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	function verifyData( $data ) {
 
-		$global = isset( $data['global'] ) && $data['global']; // If the message delivery is global
+		$this->isGlobal = isset( $data['global'] ) && $data['global']; // If the message delivery is global
 
 		$spamlist = $this->getLocalSpamlist( $data['spamlist'] );
 		if ( !( $spamlist instanceof Title ) ) {
@@ -241,8 +274,8 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Check that our account hasn't been blocked.
 		$user = MassMessage::getMessengerUser();
-		if ( !$global && $user->isBlocked() ) {
-			// If our delivery is global, it doesnt matter if our local account is blocked
+		if ( !$this->isGlobal && $user->isBlocked() ) {
+			// If our delivery is global, it doesn't matter if our local account is blocked
 			$this->status->fatal( 'massmessage-account-blocked' );
 		}
 
@@ -308,17 +341,18 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	function submit( $data ) {
-
 		$spamlist = $this->getLocalSpamlist( $data['spamlist'] );
 
 		// Log it.
 		$this->logToWiki( $spamlist, $data['subject'] );
 
 		// Insert it into the job queue.
-		$pages = $this->getLocalTargets( $spamlist );
-		foreach ( $pages as /*$title => */$page ) {
-			$job = new MassMessageJob( $page, $data );
-			JobQueueGroup::singleton()->push( $job );
+		$pages = $this->getParserFunctionTargets( $spamlist );
+		$pages = MassMessage::normalizeSpamList( $pages, !$this->isGlobal );
+		foreach ( $pages as $page ) {
+			$title = Title::newFromText( $page['title'] );
+			$job = new MassMessageJob( $title, $data );
+			JobQueueGroup::singleton( $dbname )->push( $job );
 		}
 		return $this->status;
 	}

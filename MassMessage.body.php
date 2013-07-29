@@ -13,6 +13,13 @@
 
 
 class MassMessage {
+
+	/**
+	 * A mapping of hostname to database name
+	 * @var array
+	 */
+	protected $dbnames = array();
+
 	/**
 	 * Function to follow redirects
 	 *
@@ -67,5 +74,80 @@ class MassMessage {
 		$user->addGroup( 'bot' );
 
 		return $user;
+	}
+	/**
+	 * Returns the basic hostname and port using wfParseUrl
+	 * @param  string $url URL to parse
+	 * @return string
+	 */
+	public static function getBaseUrl( $url ) {
+		$parse = wfParseUrl( $url );
+		$site = $parse['host'];
+		if ( isset( $parse['port'] ) ) {
+			$site .= ':' . $parse['port'];
+		}
+		return $site;
+	}
+
+	/**
+	 * Get database name from URL hostname
+	 * Requires Extension:SiteMatrix. If not available will return null.
+	 * @param  string $host
+	 * @return string
+	 */
+	public static function getDBName( $host ) {
+		if ( isset( $this->dbnames[$host] ) ) {
+			return $this->dbnames[$host];
+		}
+		if ( !class_exists( 'SiteMatrix' ) ) {
+			return null;
+		}
+		$matrix = new SiteMatrix();
+		foreach ( $matrix->hosts as $dbname => $url ) {
+			$parse = wfParseUrl( $url );
+			if ( $parse['host'] == $host ) {
+				$this->dbnames[$host] = $dbname; // Store it for later
+				return $dbname;
+			}
+		}
+		return null; // Couldn't find anything
+	}
+
+	/**
+	 * Normalizes an array of page/site combos
+	 * Also removes some dupes
+	 * @param  array $pages
+	 * @param  bool $isLocal
+	 * @return array
+	 * @fixme Follow redirects on other sites
+	 */
+	public static function normalizeSpamList( $pages, $isLocal ) {
+		global $wgDBname;
+		$data = array();
+		foreach ( $pages as $page ) {
+			if ( $isLocal ) {
+				$title = Title::newFromText( $page['title'] );
+				$title = self::followRedirect( $title );
+				if ( $title == null ) {
+					continue; // Interwiki redirect
+				}
+				$page['title'] = $title->getFullText();
+			}
+			if ( !isset( $page['dbname'] ) ) {
+				$dbname = self::getDBName( $page['site'] );
+				if ( $dbname == null ) { // Not in the site matrix?
+					continue;
+				}
+				$page['dbname'] = $dbname;
+			}
+			// Use an assoc array to clear dupes
+			if ( $page['dbname'] == $wgDBname || !$isLocal ) {
+				// If the delivery is local, only allow requests on the same site.
+				$data[$page['title'] . $page['site']] = $page;
+			}
+
+		}
+
+		return $data;
 	}
 }
