@@ -324,7 +324,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
 
-		$content = $content->preSaveTransform( $firstTarget, $this->getUser(), $parserOptions );
+		$content = $content->preSaveTransform( $firstTarget, MassMessage::getMessengerUser(), $parserOptions );
 		$parserOutput = $content->getParserOutput( $firstTarget, null, $parserOptions );
 		$previewHTML = $parserOutput->getText();
 		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
