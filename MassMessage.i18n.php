@@ -40,6 +40,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Kunal Mehta
+ * @author Nemo bis
  * @author Shirayuki
  */
 $messages['qqq'] = array(
@@ -63,9 +64,9 @@ Refers the message {{msg-mw|Massmessage-form-submit}}.',
 	'massmessage-account-blocked' => 'Error message the user sees if the bot account has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.
 
-spamlist?
+The spamlist is is the page containing list of pages to leave a message on.
 
-This message probably means "The specified page which contains list of pages, does not exist".',
+This message probably means that said page, as provided by the user, does not exist.',
 	'massmessage-empty-subject' => 'Error message the user sees if the "subject" field is empty.',
 	'massmessage-empty-message' => 'Error message the user sees if the "message" field is empty.',
 	'massmessage-form-header' => 'Introduction text at the top of the form.',
@@ -308,9 +309,10 @@ $messages['mk'] = array(
 
 /** Malayalam (മലയാളം)
  * @author Akhilan
+ * @author Praveenp
  */
 $messages['ml'] = array(
-	'massmessage-form-submit' => 'അയക്കൂ',
+	'massmessage-form-submit' => 'അയക്കുക',
 	'massmessage-submitted' => 'താങ്കളുടെ ഇമെയിൽ അയച്ചു കഴിഞ്ഞിരിക്കുന്നു.', # Fuzzy
 );
 
@@ -471,6 +473,13 @@ $messages['sv'] = array(
 	'log-name-massmessage' => 'Massmeddelandelogg',
 	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'massmessage-form-submit' => 'పంపించు',
 );
 
 /** Turkish (Türkçe)
