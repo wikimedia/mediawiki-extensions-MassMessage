@@ -21,7 +21,7 @@ class MassMessageJob extends Job {
 	 * @return bool
 	 */
 	public function run() {
-		$status = $this->sendLocalMessage();
+		$status = $this->sendMessage();
 
 		if ( $status !== true ) {
 			$this->setLastError( $status );
@@ -69,12 +69,12 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Send a message to a user on the same wiki.
+	 * Send a message to a user
 	 * Modified from the TranslationNotification extension
 	 *
 	 * @return bool
 	 */
-	function sendLocalMessage() {
+	function sendMessage() {
 		$title = $this->normalizeTitle( $this->title );
 		if ( $title === null ) {
 			return true; // Skip it

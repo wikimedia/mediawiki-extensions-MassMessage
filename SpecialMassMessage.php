@@ -158,38 +158,6 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
-	 * Get a list of pages to spam
-	 *
-	 * @param $spamlist Title
-	 * @return Array
-	 */
-	function getLocalTargets( $spamlist ) {
-		// Something.
-		global $wgNamespacesToExtractLinksFor, $wgNamespacesToConvert;
-		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select(
-			'pagelinks',
-			array( 'pl_namespace', 'pl_title' ),
-			array( 'pl_from' => $spamlist->getArticleID(), 'pl_namespace' => $wgNamespacesToExtractLinksFor ),
-			__METHOD__,
-			array()
-		);
-		$pages = array();
-		foreach ( $res as $row ) {
-			$ns = $row->pl_namespace;
-			if ( isset( $wgNamespacesToConvert[$ns] ) ) {
-				$ns = $wgNamespacesToConvert[$ns];
-			}
-			$title = Title::makeTitle( $ns, $row->pl_title );
-			$title = MassMessage::followRedirect( $title );
-			if ( $title !== null ) { // Skip interwiki redirects
-				$pages[$title->getFullText()] = $title; // Use an assoc array to quickly and easily filter out duplicates
-			}
-		}
-		return $pages;
-	}
-
-	/**
 	 * Log the spamming to Special:Log/massmessage
 	 *
 	 * @param $spamlist Title
@@ -240,7 +208,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $title string
 	 * @return Title|string string will be a error message key
 	 */
-	function getLocalSpamlist( $title ) {
+	function getSpamlist( $title ) {
 		$spamlist = Title::newFromText( $title );
 		if ( $spamlist === null || !$spamlist->exists() ) {
 			return 'massmessage-spamlist-doesnotexist' ;
@@ -267,7 +235,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		$this->isGlobal = isset( $data['global'] ) && $data['global']; // If the message delivery is global
 
-		$spamlist = $this->getLocalSpamlist( $data['spamlist'] );
+		$spamlist = $this->getSpamlist( $data['spamlist'] );
 		if ( !( $spamlist instanceof Title ) ) {
 			$this->status->fatal( $spamlist );
 		}
@@ -299,8 +267,8 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	function preview( $data ) {
 
-		$spamlist = $this->getLocalSpamlist( $data['spamlist'] );
-		// $targets = $this->getLocalTargets( $spamlist );
+		$spamlist = $this->getSpamlist( $data['spamlist'] );
+		// $targets = $this->getParserFunctionTargets( $spamlist );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
 		$firstTarget = Title::newFromText( 'User talk:Example' );
 		$article = Article::newFromTitle( $firstTarget, $this->getContext() );
@@ -341,7 +309,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	function submit( $data ) {
-		$spamlist = $this->getLocalSpamlist( $data['spamlist'] );
+		$spamlist = $this->getSpamlist( $data['spamlist'] );
 
 		// Log it.
 		$this->logToWiki( $spamlist, $data['subject'] );
