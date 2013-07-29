@@ -53,7 +53,7 @@ $wgExtensionCredits[ 'specialpage' ][] = array(
 
 $wgSpecialPages[ 'MassMessage' ] = 'SpecialMassMessage';
 $wgExtensionMessagesFiles['MassMessage'] = "$dir/MassMessage.i18n.php";
-//$wgExtensionMessagesFiles['MassMessageAlias'] = "$dir/MassMessage.alias.php";
+$wgExtensionMessagesFiles['MassMessageAlias'] = "$dir/MassMessage.alias.php";
 $wgAutoloadClasses['MassMessage'] = "$dir/MassMessage.body.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/SpecialMassMessage.php";
 $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
