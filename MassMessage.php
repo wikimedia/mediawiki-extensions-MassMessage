@@ -63,6 +63,7 @@ $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
 $wgJobClasses['massmessageJob'] = 'MassMessageJob';
 
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
+$wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';
 
 $wgResourceModules['ext.MassMessage.special'] = array(
 	'scripts' => 'ext.MassMessage.special.js',

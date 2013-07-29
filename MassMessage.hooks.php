@@ -49,4 +49,23 @@ class MassMessageHooks {
 
 		return array( $msg, 'noparse' => false );
 	}
+
+	/**
+	 * Add a row with the number of queued messages to Special:Statistics
+	 * @param  array $extraStats
+	 * @return bool
+	 */
+	public static function onSpecialStatsAddExtra( &$extraStats ) {
+		// from runJobs.php --group
+		$group = JobQueueGroup::singleton();
+		$queue = $group->get( 'massmessageJob' );
+		$pending = $queue->getSize();
+		$claimed = $queue->getAcquiredCount();
+		$abandoned = $queue->getAbandonedCount();
+		$active = ( $claimed - $abandoned );
+
+		$queued = $active + $pending;
+		$extraStats['massmessage-queued-count'] = $queued;
+		return true;
+	}
 }

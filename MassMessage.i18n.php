@@ -31,6 +31,7 @@ $messages['en'] = array(
 	'massmessage-empty-message' => 'The message body is empty.',
 	'massmessage-form-header' => 'Use the form below to send messages to a specified list. All fields are required.',
 	'massmessage-target' => '[//$1$2?title={{urlencode:$3|WIKI}} $3]',
+	'massmessage-queued-count' => 'Queued [[Special:MassMessage|mass messages]]',
 	'right-massmessage' => 'Send a message to multiple users at once',
 	'action-massmessage' => 'send a message to multiple users at once',
 	'right-massmessage-global' => 'Send a message to multiple users on different wikis at once',
@@ -75,6 +76,7 @@ This message probably means that said page, as provided by the user, does not ex
 * $1 is the domain (example: "en.wikipedia.org")
 * $2 is <code>$wgScriptPath</code> (example: "/w/index.php")
 * $3 the page name (example: "User talk:Example")',
+	'massmessage-queued-count' => 'Text for row on Special:Statistics',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
 * {{msg-mw|Right-massmessage-global}}',
