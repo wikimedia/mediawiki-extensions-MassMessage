@@ -123,39 +123,6 @@ class SpecialMassMessage extends SpecialPage {
 
 		return $m;
 	}
-	/**
-	 * Get an array of targets via the #target parser function
-	 * @param  Title $spamlist
-	 * @return array
-	 */
-	function getParserFunctionTargets( $spamlist ) {
-		$page = WikiPage::factory( $spamlist );
-		$content = $page->getContent( Revision::RAW );
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-		} else {
-			// Spamlist input isn't a text page
-			$this->status->fatal( 'massmessage-spamlist-doesnotexist' );
-			return array();
-		}
-
-		// Prep the parser
-		define( 'MASSMESSAGE_PARSE', true );
-		$article = Article::newFromTitle( $spamlist, $this->getContext() );
-		$parserOptions = $article->makeParserOptions( $article->getContext() );
-		$parser = new Parser();
-
-		// Parse
-		$output = $parser->parse( $text, $spamlist, $parserOptions );
-		$data = $output->getProperty( 'massmessage-targets' );
-
-		if ( $data ) {
-			return $data;
-		} else {
-			return array();  // No parser functions on page
-		}
-
-	}
 
 	/**
 	 * Log the spamming to Special:Log/massmessage
@@ -268,7 +235,7 @@ class SpecialMassMessage extends SpecialPage {
 	function preview( $data ) {
 
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
-		// $targets = $this->getParserFunctionTargets( $spamlist );
+		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
 		$firstTarget = Title::newFromText( 'User talk:Example' );
 		$article = Article::newFromTitle( $firstTarget, $this->getContext() );
@@ -315,7 +282,7 @@ class SpecialMassMessage extends SpecialPage {
 		$this->logToWiki( $spamlist, $data['subject'] );
 
 		// Insert it into the job queue.
-		$pages = $this->getParserFunctionTargets( $spamlist );
+		$pages = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		$pages = MassMessage::normalizeSpamList( $pages, !$this->isGlobal );
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
