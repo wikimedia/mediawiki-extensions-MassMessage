@@ -12,3 +12,8 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'MassMessage' => array( 'MassMessage' ),
 );
+
+/** Macedonian (македонски) */
+$specialPageAliases['mk'] = array(
+	'MassMessage' => array( 'МасовнаПорака' ),
+);

@@ -65,7 +65,7 @@ Refers the message {{msg-mw|Massmessage-form-submit}}.',
 	'massmessage-account-blocked' => 'Error message the user sees if the bot account has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.
 
-The spamlist is is the page containing list of pages to leave a message on.
+The spamlist is the page containing list of pages to leave a message on.
 
 This message probably means that said page, as provided by the user, does not exist.',
 	'massmessage-empty-subject' => 'Error message the user sees if the "subject" field is empty.',
@@ -352,8 +352,27 @@ $messages['mr'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
+	'massmessage-sender' => 'Berichtenbot',
+	'massmessage-form-spamlist' => "Pagina met een lijst met pagina's om een bericht op te plaatsen:",
+	'massmessage-form-subject' => 'Onderwerp voor bericht (ook gebruikt als bewerkingssamenvatting):',
+	'massmessage-form-message' => 'Hoofdtekst van bericht:',
+	'massmessage-form-global' => 'Dit is een globaal bericht.',
+	'massmessage-form-preview' => 'Voorvertoning',
 	'massmessage-form-submit' => 'Verzenden',
+	'massmessage-fieldset-preview' => 'Voorvertoning',
 	'massmessage-submitted' => 'Uw bericht is in de wachtrij geplaatst.',
+	'massmessage-just-preview' => 'Dit is enkel een voorvertoning. Klik op "{{int:massmessage-form-submit}}" om het bericht te verzenden.',
+	'massmessage-account-blocked' => 'De gebruiker om de berichten te bezorgen is geblokkeerd.',
+	'massmessage-spamlist-doesnotexist' => 'De opgegeven paginalijst bestaat niet.',
+	'massmessage-empty-subject' => 'Het onderwerp is leeg.',
+	'massmessage-empty-message' => 'De hoofdtekst is leeg.',
+	'massmessage-form-header' => 'Gebruiker het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht.',
+	'right-massmessage' => 'Berichten verzenden aan meerdere ontvangers tegelijk',
+	'action-massmessage' => 'berichten te verzenden aan meerdere ontvangers tegelijk',
+	'right-massmessage-global' => "Berichten verzenden aan meerdere ontvangers op meerdere wiki's tegelijk",
+	'log-name-massmessage' => 'Bulkberichtenlogboek',
+	'log-description-massmessage' => 'Deze gebeurtenissen zijn gerelateerd aan verzonden berichten via de functie [[Special:MassMessage|bulkberichten]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|heeft}} een bericht geplaatst op $3',
 );
 
 /** Polish (polski)
