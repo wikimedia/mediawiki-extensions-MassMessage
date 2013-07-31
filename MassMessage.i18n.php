@@ -354,6 +354,8 @@ $messages['mr'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
+	'massmessage' => 'Bulkberichten verzenden',
+	'massmessage-desc' => 'Maakt het mogelijk om berichten naar een lijst ontvangers te verzenden',
 	'massmessage-sender' => 'Berichtenbot',
 	'massmessage-form-spamlist' => "Pagina met een lijst met pagina's om een bericht op te plaatsen:",
 	'massmessage-form-subject' => 'Onderwerp voor bericht (ook gebruikt als bewerkingssamenvatting):',
@@ -414,7 +416,9 @@ $messages['ps'] = array(
 	'massmessage' => 'ډله ايز پيغام لېږل',
 	'massmessage-form-message' => 'د پيغام جوسه',
 	'massmessage-form-global' => 'دا يو نړيوال پيغام دی',
+	'massmessage-form-preview' => 'مخليدنه',
 	'massmessage-form-submit' => 'لېږل',
+	'massmessage-fieldset-preview' => 'مخليدنه',
 	'massmessage-submitted' => 'ستاسو پيغام ولېږل شو!', # Fuzzy
 	'log-name-massmessage' => 'ډله ايز پيغام يادښت',
 	'logentry-massmessage-send' => '$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}',
