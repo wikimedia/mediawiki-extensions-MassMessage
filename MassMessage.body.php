@@ -150,4 +150,41 @@ class MassMessage {
 
 		return $data;
 	}
+
+	/**
+	 * Get an array of targets via the #target parser function
+	 * @param  Title $spamlist
+	 * @param  IContextSource $context
+	 * @return array
+	 */
+	public static function getParserFunctionTargets( $spamlist, $context ) {
+		$page = WikiPage::factory( $spamlist );
+		$content = $page->getContent( Revision::RAW );
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} else {
+			// Spamlist input isn't a text page
+			// @fixme
+			// $this->status->fatal( 'massmessage-spamlist-doesnotexist' );
+			return array();
+		}
+
+		// Prep the parser
+		define( 'MASSMESSAGE_PARSE', true );
+		$article = Article::newFromTitle( $spamlist, $context );
+		$parserOptions = $article->makeParserOptions( $article->getContext() );
+		$parser = new Parser();
+
+		// Parse
+		$output = $parser->parse( $text, $spamlist, $parserOptions );
+		$data = $output->getProperty( 'massmessage-targets' );
+
+		if ( $data ) {
+			return $data;
+		} else {
+			return array();  // No parser functions on page
+		}
+
+	}
+
 }
