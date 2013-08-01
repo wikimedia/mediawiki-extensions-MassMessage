@@ -13,6 +13,11 @@ $specialPageAliases['en'] = array(
 	'MassMessage' => array( 'MassMessage' ),
 );
 
+/** German (Deutsch) */
+$specialPageAliases['de'] = array(
+	'MassMessage' => array( 'Massennachrichten' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'MassMessage' => array( 'МасовнаПорака' ),

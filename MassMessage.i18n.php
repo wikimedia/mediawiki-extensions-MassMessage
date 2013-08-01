@@ -131,6 +131,7 @@ $messages['de'] = array(
 	'massmessage-empty-subject' => 'Die Betreffszeile ist leer.',
 	'massmessage-empty-message' => 'Der Nachrichtenkörper ist leer.',
 	'massmessage-form-header' => 'Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Massennachrichten]] in der Warteschlange',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'right-massmessage-global' => 'Gleichzeitig Nachrichten an mehrere Benutzer auf unterschiedlichen Wikis senden',
@@ -170,6 +171,8 @@ $messages['eu'] = array(
 
 /** French (français)
  * @author Gomoko
+ * @author Rastus Vernon
+ * @author Sherbrooke
  */
 $messages['fr'] = array(
 	'massmessage' => 'Envoyer un message de masse',
@@ -185,10 +188,11 @@ $messages['fr'] = array(
 	'massmessage-submitted' => 'Votre message a été mis en file !',
 	'massmessage-just-preview' => 'Ceci est simplement un aperçu. Appuyez sur « {{int:massmessage-form-submit}} » pour envoyer le message.',
 	'massmessage-account-blocked' => 'Le compte utilisé pour envoyer les messages a été bloqué.',
-	'massmessage-spamlist-doesnotexist' => 'La page de liste de pages spécifiée n’existe pas.',
+	'massmessage-spamlist-doesnotexist' => 'La page de listes de pages spécifiée n’existe pas.',
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
 	'massmessage-empty-message' => 'Le corps du message est vide.',
 	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires.',
+	'massmessage-queued-count' => "[[Special:MassMessage|Messages de masse]] en file d'attente",
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
 	'right-massmessage-global' => 'Envoyer un message à plusieurs utilisateurs de différents wikis à la fois',
@@ -218,12 +222,43 @@ $messages['gl'] = array(
 	'massmessage-empty-subject' => 'A liña do asunto está baleira.',
 	'massmessage-empty-message' => 'O corpo da mensaxe está baleiro.',
 	'massmessage-form-header' => 'Utilice o formulario inferior para enviar mensaxes a unha lista especificada. Todos os campos son obrigatorios.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Mensaxes en masa]] na cola de espera',
 	'right-massmessage' => 'Enviar unha mensaxe a varios usuarios á vez',
 	'action-massmessage' => 'enviar unha mensaxe a varios usuarios á vez',
 	'right-massmessage-global' => 'Enviar unha mensaxe a varios usuarios de diferentes wikis á vez',
 	'log-name-massmessage' => 'Rexistro de mensaxes en masa',
 	'log-description-massmessage' => 'Este rexistro garda os usuarios que enviaron mensaxes mediante [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|enviou unha mensaxe}} a $3',
+);
+
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'massmessage' => 'שליחת הודעה לאנשים מרובים',
+	'massmessage-desc' => 'אפשרות לשלוח בקלות הודעה לרשימת משתמשים',
+	'massmessage-sender' => 'MessengerBot',
+	'massmessage-form-spamlist' => 'דף שמכיל רשימת דפים שאליהם תישלח ההודעה:',
+	'massmessage-form-subject' => 'כותרת ההודעה (משמשת גם כתקציר עריכה):',
+	'massmessage-form-message' => 'גוף ההודעה:',
+	'massmessage-form-global' => 'זוהי הודעה גלובלית.',
+	'massmessage-form-preview' => 'תצוגה מקדימה',
+	'massmessage-form-submit' => 'שליחה',
+	'massmessage-fieldset-preview' => 'תצוגה מקדימה',
+	'massmessage-submitted' => 'ההודעה שלך נוספה לתור.',
+	'massmessage-just-preview' => 'זוהי רק תצוגה מקדימה. יש ללחות "{{int:massmessage-form-submit}}" כדי לשלוח את ההודעה.',
+	'massmessage-account-blocked' => 'החשבון שמשמש לשליחת הודעות נחסם.',
+	'massmessage-spamlist-doesnotexist' => 'הדף עם רשימת הדפים אינו קיים.',
+	'massmessage-empty-subject' => 'שורת הנושא ריקה.',
+	'massmessage-empty-message' => 'גוף ההודעה ריק.',
+	'massmessage-form-header' => 'נא להשתמש בטופס להלן כדי לשלוח הודעות לרשימה מוגדרת. כל השדות נדרשים.',
+	'massmessage-queued-count' => '[[Special:MassMessage|הודעות המוניות]] בתור',
+	'right-massmessage' => 'שליחה של הודעות למשתמשים מרובים',
+	'action-massmessage' => 'לשלוח הודעות למשתמשים רבים',
+	'right-massmessage-global' => 'שליחת הודעות למשתמשים באתרי ויקי שונים',
+	'log-name-massmessage' => 'יומן הודעות המוניות',
+	'log-description-massmessage' => 'האירועים האלה עוקבים אחרי שליחת הודעות דרך [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3',
 );
 
 /** Japanese (日本語)
@@ -247,6 +282,7 @@ $messages['ja'] = array(
 	'massmessage-empty-subject' => '件名を入力していません。',
 	'massmessage-empty-message' => 'メッセージの本文を入力していません。',
 	'massmessage-form-header' => 'このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です。',
+	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'right-massmessage-global' => '異なるウィキの複数の利用者に一度にメッセージを送信',
@@ -306,6 +342,7 @@ $messages['mk'] = array(
 	'massmessage-empty-subject' => 'Насловот е празен.',
 	'massmessage-empty-message' => 'Порака нема текст.',
 	'massmessage-form-header' => 'Образецов служи за испраќање на пораки на укажан список на примачи. Сите полиња се задолжителни.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Масовни пораки]] во редица',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'right-massmessage-global' => 'Испраќање на порака на повеќе корисници на разни викија наеднаш.',
@@ -551,8 +588,12 @@ $messages['zh-hans'] = array(
 	'massmessage-form-submit' => '发送',
 	'massmessage-fieldset-preview' => '预览',
 	'massmessage-submitted' => '您的消息已添加到队列！',
+	'massmessage-just-preview' => '这只是预览。点击“{{int:massmessage-form-submit}}”来发送消息。',
 	'massmessage-account-blocked' => '用来传递消息的帐户已被阻止。',
 	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
+	'massmessage-empty-subject' => '主题为空。',
+	'massmessage-empty-message' => '消息正文为空。',
+	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
 	'right-massmessage' => '一次将消息发送到多个用户',
 	'action-massmessage' => '一次将消息发送到多个用户',
 	'right-massmessage-global' => '一次将消息发送到不同wiki上的多个用户',
