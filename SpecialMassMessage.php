@@ -22,7 +22,7 @@ class SpecialMassMessage extends SpecialPage {
 	function __construct() {
 		parent::__construct( 'MassMessage', 'massmessage' );
 	}
- 
+
 	function execute( $par ) {
 		$request = $this->getRequest();
 		$context = $this->getContext();
@@ -55,7 +55,7 @@ class SpecialMassMessage extends SpecialPage {
 		$form->suppressDefaultSubmit(); // We use our own buttons.
 		$form->setSubmitCallback( array( $this, 'callback' ) );
 		$form->setMethod( 'post' );
-		
+
 		$form->prepareForm();
 		$result = $form->tryAuthorizedSubmit();
 		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
@@ -197,7 +197,7 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	function logToWiki( $spamlist, $subject ) {
 		// $title->getLatestRevID()
-	
+
 		$logEntry = new ManualLogEntry( 'massmessage', 'send' );
 		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $spamlist );

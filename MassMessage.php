@@ -41,7 +41,7 @@ $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
  */
 $wgMassMessageAccountPassword = '';
 
- 
+
 $wgExtensionCredits[ 'specialpage' ][] = array(
 	'path' => __FILE__,
 	'name' => 'MassMessage',
