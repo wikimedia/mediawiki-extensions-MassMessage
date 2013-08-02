@@ -34,13 +34,6 @@ $wgNamespacesToPostIn = array( NS_PROJECT, NS_USER_TALK );
  */
 $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
 
-/*
- * Remote account's password
- *
- * Only required for global messages.
- */
-$wgMassMessageAccountPassword = '';
-
 
 $wgExtensionCredits[ 'specialpage' ][] = array(
 	'path' => __FILE__,
