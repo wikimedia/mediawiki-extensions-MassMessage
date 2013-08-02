@@ -387,6 +387,7 @@ $messages['mr'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Hansmuller
  * @author Konovalov
  * @author Siebrand
  */
@@ -405,8 +406,8 @@ $messages['nl'] = array(
 	'massmessage-just-preview' => 'Dit is enkel een voorvertoning. Klik op "{{int:massmessage-form-submit}}" om het bericht te verzenden.',
 	'massmessage-account-blocked' => 'De gebruiker om de berichten te bezorgen is geblokkeerd.',
 	'massmessage-spamlist-doesnotexist' => 'De opgegeven paginalijst bestaat niet.',
-	'massmessage-empty-subject' => 'Het onderwerp is leeg.',
-	'massmessage-empty-message' => 'De hoofdtekst is leeg.',
+	'massmessage-empty-subject' => 'Er wordt geen onderwerp aangegeven.',
+	'massmessage-empty-message' => 'Het bericht bevat geen tekst.',
 	'massmessage-form-header' => 'Gebruiker het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht.',
 	'right-massmessage' => 'Berichten verzenden aan meerdere ontvangers tegelijk',
 	'action-massmessage' => 'berichten te verzenden aan meerdere ontvangers tegelijk',
