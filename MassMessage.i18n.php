@@ -109,6 +109,20 @@ $messages['bn'] = array(
 	'massmessage-empty-message' => 'বার্তার মূল অংশ খালি।',
 );
 
+/** Breton (brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'massmessage' => 'Kas ur gemennadenn a-vras',
+	'massmessage-form-preview' => 'Rakwelet',
+	'massmessage-form-submit' => 'Kas',
+	'massmessage-fieldset-preview' => 'Rakwelet',
+	'massmessage-submitted' => 'Lakaet eo bet ho kemennadenn er roll gortoz.',
+	'massmessage-just-preview' => 'N\'eo nemet ur rakweladenn. Pouezit war " {{int:massmessage-form-submit}} " evit kas ar gemennadenn.',
+	'massmessage-account-blocked' => "Stanket eo bet ar gont implijet evit kas ar c'hemennadennoù.",
+	'right-massmessage' => "Kas ur gemennadenn da veur a implijer d'un taol.",
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  * @author Se4598

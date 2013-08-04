@@ -18,6 +18,11 @@ $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'MassMessage' => array( '대량메시지' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'MassMessage' => array( 'МасовнаПорака' ),
