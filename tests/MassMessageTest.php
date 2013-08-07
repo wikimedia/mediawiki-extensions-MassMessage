@@ -1,7 +1,6 @@
 <?php
 
 class MassMessageTest extends MediaWikiTestCase {
-
 	protected function setUp() {
 		parent::setUp();
 		$this->title = Title::newfromText( 'Input list' );
@@ -14,11 +13,13 @@ class MassMessageTest extends MediaWikiTestCase {
 
 	/**
 	 * Updates $this->title with the provided text
-	 * @param  string $text
+	 * @param WikiPage $page
+	 * @param string $text
 	 */
 	public static function updatePage( $page, $text ) {
 		$user = new User();
-		$page->doEdit( $text, "summary", 0, false, $user );
+		$content = ContentHandler::makeContent( $text, $page->getTitle() );
+		$page->doEditContent( $content, "summary", 0, false, $user );
 	}
 
 	/**
