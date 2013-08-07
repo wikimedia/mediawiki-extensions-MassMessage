@@ -233,7 +233,7 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	function preview( $data ) {
 
-		$spamlist = $this->getSpamlist( $data['spamlist'] );
+		// $spamlist = $this->getSpamlist( $data['spamlist'] );
 		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
 		$firstTarget = Title::newFromText( 'User talk:Example' );
