@@ -10,8 +10,6 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-
-
 class MassMessage {
 
 	/**
@@ -39,7 +37,6 @@ class MassMessage {
 			return null; // Interwiki redirect
 		}
 	}
-
 
 	/**
 	 * Sets up the messenger account for our use if it hasn't been already.
@@ -75,6 +72,7 @@ class MassMessage {
 
 		return $user;
 	}
+
 	/**
 	 * Returns the basic hostname and port using wfParseUrl
 	 * @param  string $url URL to parse
@@ -86,6 +84,7 @@ class MassMessage {
 		if ( isset( $parse['port'] ) ) {
 			$site .= ':' . $parse['port'];
 		}
+
 		return $site;
 	}
 
@@ -110,6 +109,7 @@ class MassMessage {
 				return $dbname;
 			}
 		}
+
 		return null; // Couldn't find anything
 	}
 
@@ -145,7 +145,6 @@ class MassMessage {
 				// If the delivery is local, only allow requests on the same site.
 				$data[$page['title'] . $page['site']] = $page;
 			}
-
 		}
 
 		return $data;
@@ -184,9 +183,7 @@ class MassMessage {
 		if ( $data ) {
 			return $data;
 		} else {
-			return array();  // No parser functions on page
+			return array(); // No parser functions on page
 		}
-
 	}
-
 }

@@ -1,11 +1,11 @@
 <?php
 
 /**
-* Translations and stuff.
-*
-* @file
-* @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
-*/
+ * Translations and stuff.
+ *
+ * @file
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 $messages = array();
 

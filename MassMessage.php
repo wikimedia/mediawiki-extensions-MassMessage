@@ -34,8 +34,7 @@ $wgNamespacesToPostIn = array( NS_PROJECT, NS_USER_TALK );
  */
 $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
 
-
-$wgExtensionCredits[ 'specialpage' ][] = array(
+$wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'MassMessage',
 	'author' => 'Kunal Mehta',
@@ -43,9 +42,9 @@ $wgExtensionCredits[ 'specialpage' ][] = array(
 	'descriptionmsg' => 'massmessage-desc',
 	'version' => '0.0.1',
 );
- $dir = dirname(__FILE__);
+$dir = dirname( __FILE__ );
 
-$wgSpecialPages[ 'MassMessage' ] = 'SpecialMassMessage';
+$wgSpecialPages['MassMessage'] = 'SpecialMassMessage';
 $wgExtensionMessagesFiles['MassMessage'] = "$dir/MassMessage.i18n.php";
 $wgExtensionMessagesFiles['MassMessageAlias'] = "$dir/MassMessage.alias.php";
 $wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php";
@@ -62,7 +61,7 @@ $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
 $wgResourceModules['ext.MassMessage.special'] = array(
 	'scripts' => 'ext.MassMessage.special.js',
 	'dependencies' => array(
-			'jquery.byteLimit',
+		'jquery.byteLimit',
 	),
 
 	'localBasePath' => $dir,

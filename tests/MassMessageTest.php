@@ -11,6 +11,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	protected function tearDown() {
 		parent::tearDown();
 	}
+
 	/**
 	 * Updates $this->title with the provided text
 	 * @param  string $text
@@ -27,6 +28,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	 */
 	public static function provideGetParserFunctionTargets() {
 		global $wgDBname;
+
 		return array(
 			array( '{{#target:User talk:Example}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Example' ), ),
 		);

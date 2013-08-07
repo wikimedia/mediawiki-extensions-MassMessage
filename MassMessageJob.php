@@ -25,11 +25,13 @@ class MassMessageJob extends Job {
 
 		if ( $status !== true ) {
 			$this->setLastError( $status );
+
 			return false;
 		}
 
 		return true;
 	}
+
 	/**
 	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn
 	 * @param  Title $title
@@ -43,6 +45,7 @@ class MassMessageJob extends Job {
 		if ( !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
 			$title = null;
 		}
+
 		return $title;
 	}
 
@@ -58,14 +61,13 @@ class MassMessageJob extends Job {
 		$logEntry = new ManualLogEntry( 'massmessage', 'failure' );
 		$logEntry->setPerformer( MassMessage::getMessengerUser() );
 		$logEntry->setTarget( $title );
-		$logEntry->setComment( $subject ); 
+		$logEntry->setComment( $subject );
 		$logEntry->setParameters( array(
 			'4::reason' => $reason,
 		) );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
-
 	}
 
 	/**
@@ -111,6 +113,7 @@ class MassMessageJob extends Job {
 		if ( $user->isBlocked() ) {
 			// Log it so we know which users didn't get the message.
 			$this->logLocalFailure( $this->title, $this->params['subject'], 'massmessage-account-blocked' );
+
 			return true;
 		}
 

@@ -6,5 +6,5 @@
 $magicWords = array();
 
 $magicWords['en'] = array(
-   'target' => array( 0, 'target' ),
+	'target' => array( 0, 'target' ),
 );

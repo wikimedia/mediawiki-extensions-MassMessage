@@ -41,7 +41,7 @@ class SpecialMassMessage extends SpecialPage {
 			$this->state = 'submit';
 		} elseif ( $request->getText( 'wppreview-button' ) == $context->msg( 'massmessage-form-preview' )->text() ) {
 			$this->state = 'preview';
-		} else{
+		} else {
 			$this->state = 'form';
 		}
 
@@ -136,11 +136,10 @@ class SpecialMassMessage extends SpecialPage {
 		$logEntry = new ManualLogEntry( 'massmessage', 'send' );
 		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $spamlist );
-		$logEntry->setComment( $subject ); 
+		$logEntry->setComment( $subject );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
-
 	}
 
 	/**
@@ -159,6 +158,7 @@ class SpecialMassMessage extends SpecialPage {
 		// Die on errors.
 		if ( !$this->status->isOK() ) {
 			$this->state = 'form';
+
 			return $this->status;
 		}
 
@@ -178,18 +178,18 @@ class SpecialMassMessage extends SpecialPage {
 	function getSpamlist( $title ) {
 		$spamlist = Title::newFromText( $title );
 		if ( $spamlist === null || !$spamlist->exists() ) {
-			return 'massmessage-spamlist-doesnotexist' ;
+			return 'massmessage-spamlist-doesnotexist';
 		} else {
 			// Page exists, follow a redirect if possible
 			$target = MassMessage::followRedirect( $spamlist );
 			if ( $target === null || !$target->exists() ) {
-				return 'massmessage-spamlist-doesnotexist' ; // Interwiki redirect or non-existent page.
+				return 'massmessage-spamlist-doesnotexist'; // Interwiki redirect or non-existent page.
 			} else {
 				$spamlist = $target;
 			}
 		}
-		return $spamlist;
 
+		return $spamlist;
 	}
 
 	/**
@@ -224,7 +224,6 @@ class SpecialMassMessage extends SpecialPage {
 
 		return $this->status;
 	}
-
 
 	/**
 	 * A preview/confirmation screen
@@ -266,6 +265,7 @@ class SpecialMassMessage extends SpecialPage {
 		$fieldsetMessage = $this->getContext()->msg( 'massmessage-fieldset-preview' )->text();
 		$wrapFieldset = Xml::fieldset( $fieldsetMessage, $previewHTML );
 		$this->getOutput()->addHTML( $wrapFieldset );
+
 		return false;
 	}
 
@@ -289,6 +289,7 @@ class SpecialMassMessage extends SpecialPage {
 			$job = new MassMessageJob( $title, $data );
 			JobQueueGroup::singleton( $dbname )->push( $job );
 		}
+
 		return $this->status;
 	}
 }
