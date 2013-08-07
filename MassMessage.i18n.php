@@ -34,7 +34,6 @@ $messages['en'] = array(
 	'massmessage-queued-count' => 'Queued [[Special:MassMessage|mass messages]]',
 	'right-massmessage' => 'Send a message to multiple users at once',
 	'action-massmessage' => 'send a message to multiple users at once',
-	'right-massmessage-global' => 'Send a message to multiple users on different wikis at once',
 	'log-name-massmessage' => 'Mass message log',
 	'log-description-massmessage' => 'These events track users sending messages through [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3',

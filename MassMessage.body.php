@@ -119,7 +119,6 @@ class MassMessage {
 	 * @fixme Follow redirects on other sites
 	 */
 	public static function normalizeSpamList( $pages, $isLocal ) {
-		global $wgDBname;
 		$data = array();
 		foreach ( $pages as $page ) {
 			if ( $isLocal ) {
@@ -137,11 +136,9 @@ class MassMessage {
 				}
 				$page['dbname'] = $dbname;
 			}
+
 			// Use an assoc array to clear dupes
-			if ( $page['dbname'] == $wgDBname || !$isLocal ) {
-				// If the delivery is local, only allow requests on the same site.
-				$data[$page['title'] . $page['site']] = $page;
-			}
+			$data[$page['title'] . $page['site']] = $page;
 		}
 
 		return $data;

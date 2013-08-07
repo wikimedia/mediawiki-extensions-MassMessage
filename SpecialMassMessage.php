@@ -23,11 +23,6 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected $state;
 
-	/**
-	 * @var bool
-	 */
-	protected $isGlobal;
-
 	function __construct() {
 		parent::__construct( 'MassMessage', 'massmessage' );
 	}
@@ -106,15 +101,6 @@ class SpecialMassMessage extends SpecialPage {
 			'label-message' => 'massmessage-form-message',
 			'default' => $request->getText( 'message' )
 		);
-
-		if ( $this->getUser()->isAllowed( 'massmessage-global' ) ) {
-			$m['global'] = array(
-				'id' => 'form-global',
-				'type' => 'check',
-				'label-message' => 'massmessage-form-global',
-				'default' => $request->getText( 'global' ) == 'yes' ? true : false
-			);
-		}
 
 		$m['preview-button'] = array(
 			'id' => 'form-preview-button',
@@ -209,18 +195,9 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	function verifyData( $data ) {
 
-		$this->isGlobal = isset( $data['global'] ) && $data['global']; // If the message delivery is global
-
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
 		if ( !( $spamlist instanceof Title ) ) {
 			$this->status->fatal( $spamlist );
-		}
-
-		// Check that our account hasn't been blocked.
-		$user = MassMessage::getMessengerUser();
-		if ( !$this->isGlobal && $user->isBlocked() ) {
-			// If our delivery is global, it doesn't matter if our local account is blocked
-			$this->status->fatal( 'massmessage-account-blocked' );
 		}
 
 		if ( trim( $data['subject'] ) === '' ) {
@@ -290,7 +267,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Insert it into the job queue.
 		$pages = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
-		$pages = MassMessage::normalizeSpamList( $pages, !$this->isGlobal );
+		$pages = MassMessage::normalizeSpamList( $pages );
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			$job = new MassMessageJob( $title, $data );

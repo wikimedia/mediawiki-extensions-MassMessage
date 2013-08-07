@@ -70,5 +70,4 @@ $wgResourceModules['ext.MassMessage.special'] = array(
 $wgLogTypes[] = 'massmessage';
 $wgLogActionsHandlers['massmessage/*'] = 'LogFormatter';
 $wgAvailableRights[] = 'massmessage'; // Local messaging
-$wgAvailableRights[] = 'massmessage-global'; // Cross-wiki messaging
 $wgGroupPermissions['sysop']['massmessage'] = true;
