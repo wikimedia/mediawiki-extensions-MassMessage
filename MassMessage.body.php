@@ -152,6 +152,27 @@ class MassMessage {
 	}
 
 	/**
+	 * Perform various normalization functions on the target data
+	 * @param  array $data
+	 * @return array
+	 */
+	public static function normalizeTargets( $data ) {
+		$targets = array();
+		foreach ( $data as $target ) {
+			// Check invalid titles
+			$title = Title::newFromText( $target['title'] );
+			if ( $title === null ) {
+				// This checks against the local wiki's invalid list, not foreign wiki
+				continue;
+			}
+
+			$targets[] = $target;
+		}
+
+		return $targets;
+	}
+
+	/**
 	 * Get an array of targets via the #target parser function
 	 * @param  Title $spamlist
 	 * @param  IContextSource $context
@@ -182,7 +203,7 @@ class MassMessage {
 		$data = unserialize( $output->getProperty( 'massmessage-targets' ) );
 
 		if ( $data ) {
-			return $data;
+			return MassMessage::normalizeTargets( $data );
 		} else {
 			return array();  // No parser functions on page
 		}
