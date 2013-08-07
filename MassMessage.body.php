@@ -170,7 +170,9 @@ class MassMessage {
 		}
 
 		// Prep the parser
-		define( 'MASSMESSAGE_PARSE', true );
+		if ( !defined( 'MASSMESSAGE_PARSE' ) ) { // Unit tests call this function multiple times
+			define( 'MASSMESSAGE_PARSE', true );
+		}
 		$article = Article::newFromTitle( $spamlist, $context );
 		$parserOptions = $article->makeParserOptions( $article->getContext() );
 		$parser = new Parser();
