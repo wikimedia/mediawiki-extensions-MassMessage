@@ -41,9 +41,9 @@ class MassMessageHooks {
 		// Store the data in case we're parsing it manually
 		if ( defined( 'MASSMESSAGE_PARSE' ) ) {
 			if ( !$output->getProperty( 'massmessage-targets' ) ) {
-				$output->setProperty( 'massmessage-targets', array( $data ) );
+				$output->setProperty( 'massmessage-targets', serialize( array( $data ) ) );
 			} else {
-				$output->setProperty( 'massmessage-targets' , array_merge( $output->getProperty( 'massmessage-targets' ),  array( $data ) ) );
+				$output->setProperty( 'massmessage-targets' , serialize( array_merge( unserialize( $output->getProperty( 'massmessage-targets' ) ),  array( $data ) ) ) );
 			}
 		}
 
