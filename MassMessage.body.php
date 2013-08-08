@@ -13,12 +13,6 @@
 class MassMessage {
 
 	/**
-	 * A mapping of hostname to database name
-	 * @var array
-	 */
-	protected $dbnames = array();
-
-	/**
 	 * Function to follow redirects
 	 *
 	 * @param $title Title
@@ -90,22 +84,25 @@ class MassMessage {
 
 	/**
 	 * Get database name from URL hostname
-	 * Requires Extension:SiteMatrix. If not available will return null.
+	 * Requires $wgConf to be set up properly
+	 * Tries to read from cache if possible
 	 * @param  string $host
 	 * @return string
 	 */
 	public static function getDBName( $host ) {
-		if ( isset( $this->dbnames[$host] ) ) {
-			return $this->dbnames[$host];
+		global $wgConf, $wgMemc;
+		$key = wfMemcKey( 'massmessage', 'urltodb', $host );
+		$data = $wgMemc->get( $key );
+		if ( $data !== false ) {
+			return $data;
 		}
-		if ( !class_exists( 'SiteMatrix' ) ) {
-			return null;
-		}
-		$matrix = new SiteMatrix();
-		foreach ( $matrix->hosts as $dbname => $url ) {
+		$dbs = $wgConf->getLocalDatabases();
+		foreach ( $dbs as $dbname ) {
+			$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
 			$parse = wfParseUrl( $url );
 			if ( $parse['host'] == $host ) {
-				$this->dbnames[$host] = $dbname; // Store it for later
+				// Cache it for a week
+				$wgMemc->set( $key, $dbname, 60 * 60 * 24 * 7 );
 				return $dbname;
 			}
 		}
