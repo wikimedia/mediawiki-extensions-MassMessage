@@ -236,7 +236,7 @@ class SpecialMassMessage extends SpecialPage {
 		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
 		$firstTarget = Title::newFromText( 'User talk:Example' );
-		$article = WikiPage::factory( $firstTarget );
+		$wikipage = WikiPage::factory( $firstTarget );
 
 		// Hacked up from EditPage.php
 		// Is this really the best way to do this???
@@ -248,7 +248,7 @@ class SpecialMassMessage extends SpecialPage {
 		$content = ContentHandler::makeContent( $message, $firstTarget );
 
 		// Parser stuff. Taken from EditPage::getPreviewText()
-		$parserOptions = $article->makeParserOptions( $this->getContext() );
+		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setEditSection( false );
 		$parserOptions->setIsPreview( true );
 		$parserOptions->setIsSectionPreview( false );
