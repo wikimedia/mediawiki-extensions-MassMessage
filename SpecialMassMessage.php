@@ -232,12 +232,11 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	function preview( $data ) {
-
 		// $spamlist = $this->getSpamlist( $data['spamlist'] );
 		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
 		$firstTarget = Title::newFromText( 'User talk:Example' );
-		$article = Article::newFromTitle( $firstTarget, $this->getContext() );
+		$article = WikiPage::factory( $firstTarget );
 
 		// Hacked up from EditPage.php
 		// Is this really the best way to do this???
@@ -249,8 +248,7 @@ class SpecialMassMessage extends SpecialPage {
 		$content = ContentHandler::makeContent( $message, $firstTarget );
 
 		// Parser stuff. Taken from EditPage::getPreviewText()
-
-		$parserOptions = $article->makeParserOptions( $article->getContext() );
+		$parserOptions = $article->makeParserOptions( $this->getContext() );
 		$parserOptions->setEditSection( false );
 		$parserOptions->setIsPreview( true );
 		$parserOptions->setIsSectionPreview( false );
@@ -287,6 +285,7 @@ class SpecialMassMessage extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			$job = new MassMessageJob( $title, $data );
+			// @todo FIXME Undefined variable name $dbname
 			JobQueueGroup::singleton( $dbname )->push( $job );
 		}
 
