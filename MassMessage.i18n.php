@@ -368,9 +368,11 @@ $messages['mk'] = array(
 
 /** Malayalam (മലയാളം)
  * @author Akhilan
+ * @author Kavya Manohar
  * @author Praveenp
  */
 $messages['ml'] = array(
+	'massmessage-form-preview' => 'എങ്ങനെയുണ്ടെന്നു കാണുക',
 	'massmessage-form-submit' => 'അയക്കുക',
 	'massmessage-submitted' => 'താങ്കളുടെ ഇമെയിൽ അയച്ചു കഴിഞ്ഞിരിക്കുന്നു.', # Fuzzy
 );
@@ -386,8 +388,11 @@ $messages['mr'] = array(
 	'massmessage-form-subject' => 'संदेशाचा विषय. याचा वापर संपादन सारांश म्हणुनही होईल.',
 	'massmessage-form-message' => 'संदेशाचा मायना',
 	'massmessage-form-global' => 'हा वैश्विक संदेश आहे.',
+	'massmessage-form-preview' => 'झलक',
 	'massmessage-form-submit' => 'पाठवा',
+	'massmessage-fieldset-preview' => 'झलक',
 	'massmessage-submitted' => 'आपल्या संदेशास रांगेत ठेविल्या गेले आहे!',
+	'massmessage-just-preview' => 'ही फक्त झलक आहे. संदेश पाठविण्यास "{{int:massmessage-form-submit}}" हे बटन दाबा.',
 	'massmessage-account-blocked' => 'संदेश देण्यासाठी वापरण्यात येणारे खाते अवरुद्ध करण्यात आले आहे.',
 	'massmessage-spamlist-doesnotexist' => 'उल्लेखित पान-यादी असलेले पान अस्तित्वात नाही.',
 	'massmessage-empty-subject' => 'विषय रिकामा आहे.',
