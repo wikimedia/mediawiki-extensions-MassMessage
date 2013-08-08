@@ -285,8 +285,7 @@ class SpecialMassMessage extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			$job = new MassMessageJob( $title, $data );
-			// @todo FIXME Undefined variable name $dbname
-			JobQueueGroup::singleton( $dbname )->push( $job );
+			JobQueueGroup::singleton( $page['dbname'] )->push( $job );
 		}
 
 		return $this->status;
