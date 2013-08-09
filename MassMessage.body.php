@@ -138,7 +138,7 @@ class MassMessage {
 			}
 
 			// Use an assoc array to clear dupes
-			$data[$page['title'] . $page['site']] = $page;
+			$data[$page['title'] . $page['dbname']] = $page;
 		}
 
 		return $data;
