@@ -132,7 +132,7 @@ class MassMessage {
 			}
 			if ( !isset( $page['dbname'] ) ) {
 				$dbname = self::getDBName( $page['site'] );
-				if ( $dbname == null ) { // Not in the site matrix?
+				if ( $dbname == null ) { // Not set in $wgConf?
 					continue;
 				}
 				$page['dbname'] = $dbname;
