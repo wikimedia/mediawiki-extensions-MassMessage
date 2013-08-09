@@ -2,8 +2,6 @@
 
 /**
  * Some core functions needed by the ex.
- * Based on code from AbuseFilter
- * https://mediawiki.org/wiki/Extension:AbuseFilter
  *
  * @file
  * @author Kunal Mehta
@@ -34,6 +32,8 @@ class MassMessage {
 
 	/**
 	 * Sets up the messenger account for our use if it hasn't been already.
+	 * Based on code from AbuseFilter
+	 * https://mediawiki.org/wiki/Extension:AbuseFilter
 	 *
 	 * @return User
 	 * @fixme This should use the langage for the target site, not submission site
