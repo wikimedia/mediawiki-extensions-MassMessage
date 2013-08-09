@@ -17,7 +17,16 @@ class SpecialMassMessage extends SpecialPage {
 	 * @var Status
 	 */
 	protected $status;
+
+	/**
+	 * @var string
+	 */
 	protected $state;
+
+	/**
+	 * @var bool
+	 */
+	protected $isGlobal;
 
 	function __construct() {
 		parent::__construct( 'MassMessage', 'massmessage' );
