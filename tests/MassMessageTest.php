@@ -22,6 +22,17 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
+	 * Runs a job to edit the given title
+	 * @param $title Title
+	 */
+	public static function simulateJob( $title ) {
+		$params = array( 'subject' => 'Subject line', 'message' => 'This is a message.', );
+		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/wiki/Spamlist' );
+		$job = new MassMessageJob( $title, $params );
+		$job->run();
+	}
+
+	/**
 	 * First value is the page text to create
 	 * Second is the values we should check in the first array
 	 * @return array
@@ -124,14 +135,24 @@ class MassMessageTest extends MediaWikiTestCase {
 			$wikipage = WikiPage::factory( $target );
 			$wikipage->doDeleteArticleReal( 'reason' );
 		}
-		$params = array( 'subject' => 'Subject line', 'message' => 'This is a message.', );
-		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/wiki/Spamlist' );
-		$job = new MassMessageJob( $target, $params );
-		$job->run();
+		self::simulateJob( $target );
 		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		$this->assertEquals( $text, "== Subject line ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/wiki/Spamlist -->" );
 
+	}
+
+	/**
+	 * Tests MassMessageJob::isOptedOut and MassMessage::sendMessage
+	 */
+	public function testOptOut() {
+		$target = Title::newFromText( 'Project:Opt out test page' );
+		self::updatePage( $target, '[[Category:Opted-out of message delivery]]');
+		$this->assertTrue( MassMessageJob::isOptedOut( $target ) );
+		$this->assertFalse( MassMessageJob::isOptedOut( Title::newFromText( 'Project:Some random page' ) ) );
+		self::simulateJob( $target ); // Try posting a message to this page
+		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
+		$this->assertEquals( $text, '[[Category:Opted-out of message delivery]]' ); // Nothing should be updated
 	}
 }

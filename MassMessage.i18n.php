@@ -30,6 +30,7 @@ $messages['en'] = array(
 	'massmessage-target' => '[//$1$2?title={{urlencode:$3|WIKI}} $3]',
 	'massmessage-queued-count' => 'Queued [[Special:MassMessage|mass messages]]',
 	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
+	'massmessage-optout-category' => 'Opted-out of message delivery',
 	'right-massmessage' => 'Send a message to multiple users at once',
 	'action-massmessage' => 'send a message to multiple users at once',
 	'log-name-massmessage' => 'Mass message log',
@@ -76,6 +77,7 @@ This message probably means that said page, as provided by the user, does not ex
 * $1 is the username of the user who sent the message
 * $2 is the database name of the wiki from where the message was sent
 * $3 is the url of the input list that was used to send the message',
+	'massmessage-optout-category' => 'Name of category which users add pages to that will opt-it out of receiving messages.',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
 * {{msg-mw|Right-massmessage-global}}',

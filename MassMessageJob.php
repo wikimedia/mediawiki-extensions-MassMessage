@@ -50,6 +50,24 @@ class MassMessageJob extends Job {
 	}
 
 	/**
+	 * Checks whether the target page is in an opt-out category
+	 *
+	 * @param $title Title
+	 * @return bool
+	 */
+	public static function isOptedOut( $title) {
+		$wikipage = WikiPage::factory( $title );
+		$categories = $wikipage->getCategories();
+		$category = Title::makeTitle( NS_CATEGORY, wfMessage( 'massmessage-optout-category')->inContentLanguage()->text() );
+		foreach ( $categories as $cat ) {
+			if ( $category->equals( $cat ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
 	 * Log any message failures on the submission site.
 	 *
 	 * @param $title Title
@@ -80,6 +98,10 @@ class MassMessageJob extends Job {
 		$title = $this->normalizeTitle( $this->title );
 		if ( $title === null ) {
 			return true; // Skip it
+		}
+
+		if ( self::isOptedOut( $this->title ) ) {
+			return true; // Oh well.
 		}
 
 		// If we're sending to a User talk: page, make sure the user exists.
