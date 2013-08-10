@@ -335,6 +335,16 @@ $messages['ko'] = array(
 	'logentry-massmessage-send' => '$1 사용자가 $3에 {{GENDER:$2|메시지를 보냈습니다}}',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'massmessage-desc' => 'Erlaabt et Benotzer fir einfach Messagen un eng Lëscht vu Benotzer ze schécken',
+	'massmessage-form-global' => 'Dëst ass e globale Message.',
+	'massmessage-form-submit' => 'Schécken',
+	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
