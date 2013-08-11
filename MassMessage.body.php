@@ -118,23 +118,26 @@ class MassMessage {
 	 * @return array
 	 * @fixme Follow redirects on other sites
 	 */
-	public static function normalizeSpamList( $pages, $isLocal ) {
+	public static function normalizeSpamList( $pages ) {
+		global $wgDBname;
 		$data = array();
 		foreach ( $pages as $page ) {
-			if ( $isLocal ) {
-				$title = Title::newFromText( $page['title'] );
-				$title = self::followRedirect( $title );
-				if ( $title == null ) {
-					continue; // Interwiki redirect
-				}
-				$page['title'] = $title->getFullText();
-			}
+
 			if ( !isset( $page['dbname'] ) ) {
 				$dbname = self::getDBName( $page['site'] );
 				if ( $dbname == null ) { // Not set in $wgConf?
 					continue;
 				}
 				$page['dbname'] = $dbname;
+			}
+
+			if ( $page['dbname'] == $wgDBname ) {
+				$title = Title::newFromText( $page['title'] );
+				$title = self::followRedirect( $title );
+				if ( $title == null ) {
+					continue; // Interwiki redirect
+				}
+				$page['title'] = $title->getFullText();
 			}
 
 			// Use an assoc array to clear dupes
