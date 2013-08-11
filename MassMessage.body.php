@@ -114,7 +114,6 @@ class MassMessage {
 	 * Normalizes an array of page/site combos
 	 * Also removes some dupes
 	 * @param  array $pages
-	 * @param  bool $isLocal
 	 * @return array
 	 * @fixme Follow redirects on other sites
 	 */
