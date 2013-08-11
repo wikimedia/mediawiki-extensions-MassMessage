@@ -82,22 +82,6 @@ class MassMessageJob extends Job {
 			return true; // Skip it
 		}
 
-		$text = "== " . $this->params['subject'] . " ==\n\n" . $this->params['message'];
-
-		$talkPage = WikiPage::factory( $title );
-		$flags = $talkPage->checkFlags( 0 );
-		if ( $flags & EDIT_UPDATE ) {
-			$content = $talkPage->getContent( Revision::RAW );
-			if ( $content instanceof TextContent ) {
-				$textContent = $content->getNativeData();
-			} else {
-				// Cannot do anything with non-TextContent pages. Shouldn't happen.
-				return true;
-			}
-
-			$text = $textContent . "\n" . $text;
-		}
-
 		// If we're sending to a User talk: page, make sure the user exists.
 		// Redirects are automatically followed in getLocalTargets
 		if ( $title->getNamespace() == NS_USER_TALK ) {
@@ -105,16 +89,6 @@ class MassMessageJob extends Job {
 			if ( !$user->getId() ) { // Does not exist
 				return true; // Should we log anything here?
 			}
-		}
-
-		// Check that the sender isn't blocked before we send the message
-		// This lets a sysop stop the job if needed.
-		$user = MassMessage::getMessengerUser();
-		if ( $user->isBlocked() ) {
-			// Log it so we know which users didn't get the message.
-			$this->logLocalFailure( $this->title, $this->params['subject'], 'massmessage-account-blocked' );
-
-			return true;
 		}
 
 		$this->editPage();
