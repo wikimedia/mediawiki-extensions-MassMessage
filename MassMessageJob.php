@@ -117,17 +117,37 @@ class MassMessageJob extends Job {
 			return true;
 		}
 
-		// Mark the edit as bot
-		$flags = $flags | EDIT_FORCE_BOT;
+		$this->editPage();
 
-		$status = $talkPage->doEditContent(
-			ContentHandler::makeContent( $text, $this->title ),
-			$this->params['subject'],
-			$flags,
-			false,
-			$user
+		return true;
+	}
+
+	function editPage() {
+		global $wgUser, $wgRequest;
+		$user = MassMessage::getMessengerUser();
+		$wgUser = $user; // Is this safe? We need to do this for EditPage.php
+		$api = new ApiMain(
+			new DerivativeRequest(
+				$wgRequest,
+				array(
+					'action' => 'edit',
+					'title' => $this->title->getPrefixedText(),
+					'section' => 'new',
+					'summary' => $this->params['subject'],
+					'text' => $this->params['message'],
+					'notminor' => true,
+					'bot' => true,
+					'token' => $user->getEditToken()
+				),
+				true // was posted?
+			),
+			true // enable write?
 		);
-
-		return $status->isGood();
+		$api->getContext()->setUser( $user );
+		try {
+			$api->execute();
+		} catch ( UsageException $e ) {
+			$this->logLocalFailure( $this->title, $this->params['subject'], $e->getCodeString() );
+		}
 	}
 }
