@@ -32,6 +32,7 @@ class MassMessageTest extends MediaWikiTestCase {
 
 		return array(
 			array( '{{#target:User talk:Example}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Example' ), ),
+			array( '{{#target:User:<><}}', array(), ),
 		);
 	}
 
@@ -44,9 +45,14 @@ class MassMessageTest extends MediaWikiTestCase {
 	public function testGetParserFunctionTargets( $text, $check ) {
 		self::updatePage( $this->page, $text );
 		$data = MassMessage::getParserFunctionTargets( $this->title, RequestContext::getMain() );
-		$data = $data[0]; // We're just testing the first value
-		foreach ( $check as $key => $value ) {
-			$this->assertEquals( $data[$key], $value );
+		if ( empty( $check ) ) {
+			// Check that the spamlist is empty
+			$this->assertTrue( empty( $data ) );
+		} else {
+			$data = $data[0]; // We're just testing the first value
+			foreach ( $check as $key => $value ) {
+				$this->assertEquals( $data[$key], $value );
+			}
 		}
 	}
 
