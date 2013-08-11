@@ -3,8 +3,6 @@
 class MassMessageTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
-		$this->title = Title::newfromText( 'Input list' );
-		$this->page = WikiPage::factory( $this->title );
 	}
 
 	protected function tearDown() {
@@ -12,12 +10,13 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * Updates $this->title with the provided text
-	 * @param WikiPage $page
+	 * Updates $title with the provided $text
+	 * @param Title title
 	 * @param string $text
 	 */
-	public static function updatePage( $page, $text ) {
+	public static function updatePage( $title, $text ) {
 		$user = new User();
+		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
 		$page->doEditContent( $content, "summary", 0, false, $user );
 	}
@@ -43,8 +42,9 @@ class MassMessageTest extends MediaWikiTestCase {
 	 * @param  array $check Stuff to check against
 	 */
 	public function testGetParserFunctionTargets( $text, $check ) {
-		self::updatePage( $this->page, $text );
-		$data = MassMessage::getParserFunctionTargets( $this->title, RequestContext::getMain() );
+		$title = Title::newFromText( 'Input list ');
+		self::updatePage( $title, $text );
+		$data = MassMessage::getParserFunctionTargets( $title, RequestContext::getMain() );
 		if ( empty( $check ) ) {
 			// Check that the spamlist is empty
 			$this->assertTrue( empty( $data ) );
@@ -77,5 +77,18 @@ class MassMessageTest extends MediaWikiTestCase {
 	public function testGetBaseUrl( $url, $expected ) {
 		$output = MassMessage::getBaseUrl( $url );
 		$this->assertEquals( $output, $expected );
+	}
+
+	/**
+	 * Tests MassMessage::followRedirect
+	 */
+	public function testFollowRedirect() {
+		$title = Title::newfromtext( 'R1' );
+		self::updatePage( $title, '#REDIRECT [[R2]]' );
+		$title2 = Title::newfromtext( 'R2' );
+		self::updatePage( $title2, 'foo' );
+
+		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title )->getFullText() );
+		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title2)->getFullText() );
 	}
 }
