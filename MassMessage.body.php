@@ -36,11 +36,11 @@ class MassMessage {
 	 * https://mediawiki.org/wiki/Extension:AbuseFilter
 	 *
 	 * @return User
-	 * @fixme This should use the langage for the target site, not submission site
 	 */
 	public static function getMessengerUser() {
+		global $wgMassMessageAccountUsername;
 		// Function kinda copied from the AbuseFilter
-		$user = User::newFromName( wfMessage( 'massmessage-sender' )->inContentLanguage()->text() );
+		$user = User::newFromName( $wgMassMessageAccountUsername );
 		$user->load();
 		if ( $user->getId() && $user->mPassword == '' ) {
 			// We've already stolen the account

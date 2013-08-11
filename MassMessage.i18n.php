@@ -15,7 +15,6 @@ $messages = array();
 $messages['en'] = array(
 	'massmessage' => 'Send mass message',
 	'massmessage-desc' => 'Allows users to easily send a message to a list of users',
-	'massmessage-sender' => 'MessengerBot',
 	'massmessage-form-spamlist' => 'Page containing list of pages to leave a message on:',
 	'massmessage-form-subject' => 'Subject of the message (Also used as the edit summary):',
 	'massmessage-form-message' => 'Body of the message:',
@@ -37,6 +36,7 @@ $messages['en'] = array(
 	'log-name-massmessage' => 'Mass message log',
 	'log-description-massmessage' => 'These events track users sending messages through [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3',
+	'massmessage-cannot-rename' => 'This is a system account and cannot be renamed.',
 );
 
 /** Message documentation (Message documentation)
@@ -86,6 +86,7 @@ See also:
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
 	'logentry-massmessage-send' => '{{logentry}}',
+	'massmessage-cannot-rename' => 'Error message a user sees when they try renaming the bot account.',
 );
 
 /** Bengali (বাংলা)
