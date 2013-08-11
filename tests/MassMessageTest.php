@@ -125,12 +125,13 @@ class MassMessageTest extends MediaWikiTestCase {
 			$wikipage->doDeleteArticleReal( 'reason' );
 		}
 		$params = array( 'subject' => 'Subject line', 'message' => 'This is a message.', );
+		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/wiki/Spamlist' );
 		$job = new MassMessageJob( $target, $params );
 		$job->run();
 		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
-		$this->assertEquals( $text, "== Subject line ==\n\nThis is a message." );
+		$this->assertEquals( $text, "== Subject line ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/wiki/Spamlist -->" );
 
 	}
 }

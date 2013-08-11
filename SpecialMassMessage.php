@@ -260,7 +260,11 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	function submit( $data ) {
+		global $wgDBname;
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
+
+		// Prep the HTML comment message
+		$data['comment'] = array( $this->getUser()->getName(), $wgDBname, $spamlist->getFullURL() );
 
 		// Log it.
 		$this->logToWiki( $spamlist, $data['subject'] );

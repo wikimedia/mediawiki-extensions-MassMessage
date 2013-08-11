@@ -29,6 +29,7 @@ $messages['en'] = array(
 	'massmessage-form-header' => 'Use the form below to send messages to a specified list. All fields are required.',
 	'massmessage-target' => '[//$1$2?title={{urlencode:$3|WIKI}} $3]',
 	'massmessage-queued-count' => 'Queued [[Special:MassMessage|mass messages]]',
+	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
 	'right-massmessage' => 'Send a message to multiple users at once',
 	'action-massmessage' => 'send a message to multiple users at once',
 	'log-name-massmessage' => 'Mass message log',
@@ -71,6 +72,10 @@ This message probably means that said page, as provided by the user, does not ex
 * $2 is <code>$wgScriptPath</code> (example: "/w/index.php")
 * $3 the page name (example: "User talk:Example")',
 	'massmessage-queued-count' => 'Text for row on [[Special:Statistics]].',
+	'massmessage-hidden-comment' => 'A hidden HTML comment that is appended after the message.
+* $1 is the username of the user who sent the message
+* $2 is the database name of the wiki from where the message was sent
+* $3 is the url of the input list that was used to send the message',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
 * {{msg-mw|Right-massmessage-global}}',
