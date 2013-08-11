@@ -47,7 +47,6 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'massmessage' => '{{doc-special|MassMessage}}',
 	'massmessage-desc' => '{{desc|name=MassMessage|url=https://www.mediawiki.org/wiki/Extension:MassMessage}}',
-	'massmessage-sender' => 'Username of the account which sends out messages.',
 	'massmessage-form-spamlist' => 'Label for an inputbox on the special page.',
 	'massmessage-form-subject' => 'Label for an inputbox on the special page.',
 	'massmessage-form-message' => 'Used as label for a textarea on the special page.',
@@ -80,9 +79,6 @@ This message probably means that said page, as provided by the user, does not ex
 See also:
 * {{msg-mw|Right-massmessage-global}}',
 	'action-massmessage' => '{{doc-action|massmessage}}',
-	'right-massmessage-global' => '{{doc-right|massmessage-global}}
-See also:
-* {{msg-mw|Right-massmessage}}',
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
 	'logentry-massmessage-send' => '{{logentry}}',
@@ -312,7 +308,6 @@ $messages['ja'] = array(
 $messages['ko'] = array(
 	'massmessage' => '메시지 대량 보내기',
 	'massmessage-desc' => '목록에 있는 사용자에게 쉽게 메시지를 보낼 수 있습니다',
-	'massmessage-sender' => '메신저봇',
 	'massmessage-form-spamlist' => '메시지를 남길 문서의 목록이 있는 문서:',
 	'massmessage-form-subject' => '메시지의 제목 (편집 요약에도 쓰임):',
 	'massmessage-form-message' => '메시지 본문:',
@@ -330,7 +325,6 @@ $messages['ko'] = array(
 	'massmessage-queued-count' => '대기 중인 [[Special:MassMessage|대량 메시지]]',
 	'right-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
 	'action-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
-	'right-massmessage-global' => '한 번에 다른 위키에 있는 여러 사용자에게 메시지 보내기',
 	'log-name-massmessage' => '대량 메시지 기록',
 	'log-description-massmessage' => '이 이벤트는 [[Special:MassMessage]]를 통해 메시지를 보낸 사용자를 추적합니다.',
 	'logentry-massmessage-send' => '$1 사용자가 $3에 {{GENDER:$2|메시지를 보냈습니다}}',
@@ -341,8 +335,12 @@ $messages['ko'] = array(
  */
 $messages['lb'] = array(
 	'massmessage-desc' => 'Erlaabt et Benotzer fir einfach Messagen un eng Lëscht vu Benotzer ze schécken',
+	'massmessage-form-spamlist' => 'Säit mat der Lëscht vu Säiten op déi e Message geschriwwe gi soll:',
 	'massmessage-form-global' => 'Dëst ass e globale Message.',
+	'massmessage-form-preview' => 'Kucken ouni ze späicheren',
 	'massmessage-form-submit' => 'Schécken',
+	'massmessage-fieldset-preview' => 'Kucken ouni ze späicheren',
+	'massmessage-empty-subject' => "D'Linn mam Sujet ass eidel.",
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
 );
 
@@ -393,7 +391,6 @@ $messages['ml'] = array(
 $messages['mr'] = array(
 	'massmessage' => 'एकगठ्ठा संदेश पाठवा',
 	'massmessage-desc' => 'सदस्यांच्या यादीत असलेल्या सदस्यांना, सोप्या रितीने संदेश पाठविण्यास वापरकर्त्यास  परवानगी देते.',
-	'massmessage-sender' => 'संदेश-सांगकाम्या',
 	'massmessage-form-spamlist' => 'या पानावर संदेश देण्यायोग्य असलेल्या पानांची यादी आहे.',
 	'massmessage-form-subject' => 'संदेशाचा विषय. याचा वापर संपादन सारांश म्हणुनही होईल.',
 	'massmessage-form-message' => 'संदेशाचा मायना',
@@ -411,7 +408,6 @@ $messages['mr'] = array(
 	'massmessage-queued-count' => 'रांगेतील [[Special:MassMessage|एकगठ्ठा संदेश]]',
 	'right-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
 	'action-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
-	'right-massmessage-global' => 'वेगवेगळ्या विकिंवर असलेल्या बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
 	'log-name-massmessage' => 'एकगठ्ठा संदेशाच्या नोंदी',
 	'log-description-massmessage' => 'हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.',
 	'logentry-massmessage-send' => '$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}',
@@ -455,7 +451,6 @@ $messages['nl'] = array(
 $messages['pl'] = array(
 	'massmessage' => 'Wyślij masową wiadomość',
 	'massmessage-desc' => 'Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników',
-	'massmessage-sender' => 'MessengerBot',
 	'massmessage-form-spamlist' => 'Strona zawierająca listę stron, na których zostawić wiadomość:',
 	'massmessage-form-subject' => 'Temat wiadomości (Także używany jako podsumowanie edycji):',
 	'massmessage-form-message' => 'Treść wiadomości:',
@@ -472,7 +467,6 @@ $messages['pl'] = array(
 	'massmessage-form-header' => 'Użyj poniższego formularza aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane.',
 	'right-massmessage' => 'Wyślij wiadomość do wielu użytkowników jednocześnie',
 	'action-massmessage' => 'wyślij wiadomość do wielu użytkowników jednocześnie',
-	'right-massmessage-global' => 'Wyślij wiadomość do wielu użytkowników na różnych wiki za jednym razem',
 	'log-name-massmessage' => 'Log masowych wiadomości',
 	'log-description-massmessage' => 'To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości poprzez [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3',
@@ -528,7 +522,6 @@ $messages['pt-br'] = array(
 $messages['roa-tara'] = array(
 	'massmessage' => 'Manne messàgge de masse',
 	'massmessage-desc' => "Permette a l'utinde de mannà messàgge de masse facile facile a 'n'elenghe de utinde",
-	'massmessage-sender' => 'MessengerBot',
 	'massmessage-form-spamlist' => "Pàgene ca tène 'n'elenghe de pàggene pe lassà 'nu messàgge sus a:",
 	'massmessage-form-subject' => "Oggette d'u messàgge (pure ausate cumme riepiloghe d'u cangiamende):",
 	'massmessage-form-message' => "Cuèrpe d'u messàgge:",
@@ -546,7 +539,6 @@ $messages['roa-tara'] = array(
 	'massmessage-queued-count' => 'Accodate [[Special:MassMessage|messàgge de masse]]',
 	'right-massmessage' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'action-massmessage' => "manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
-	'right-massmessage-global' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte sus a uicchi diverse",
 	'log-name-massmessage' => 'Archivije de le messàgge de masse',
 	'log-description-massmessage' => "Ste avveneminde traccene l'utinde ca mannane messàgge cu [[Special:MassMessage]].",
 	'logentry-massmessage-send' => "$1 {{GENDER:$2|mannate 'nu messàgge}} a $3",
@@ -605,6 +597,29 @@ $messages['tr'] = array(
 	'action-massmessage' => 'aynı anda birden fazla kullanıcıya ileti gönder',
 	'right-massmessage-global' => 'Aynı anda farklı vikilerdeki birden fazla kullanıcıya ileti gönder',
 	'log-name-massmessage' => 'Toplu ileti günlüğü',
+);
+
+/** Ukrainian (українська)
+ * @author Andriykopanytsia
+ */
+$messages['uk'] = array(
+	'massmessage' => 'Відправити масове повідомлення',
+	'massmessage-desc' => 'Дозволяє користувачам легко відправляти повідомлення списку користувачів',
+	'massmessage-form-spamlist' => 'Сторінки, яка містить список сторінок, щоб залишити повідомлення на:',
+	'massmessage-form-subject' => 'Тема повідомлення (також використовується в якості резюме редагування):',
+	'massmessage-form-message' => 'Текст повідомлення:',
+	'massmessage-form-global' => 'Це глобальне повідомлення.',
+	'massmessage-form-preview' => 'Попередній перегляд',
+	'massmessage-form-submit' => 'Надіслати',
+	'massmessage-fieldset-preview' => 'Попередній перегляд',
+	'massmessage-submitted' => 'Ваше повідомлення поставлене в чергу.',
+	'massmessage-just-preview' => 'Це тільки попередній перегляд. Натисніть "{{int:massmessage-form-submit}}", щоб відправити повідомлення.',
+	'massmessage-empty-subject' => 'Рядок теми порожній.',
+	'massmessage-empty-message' => 'Тіла повідомлення порожнє.',
+	'massmessage-queued-count' => 'У черзі [[Special:MassMessage|масових повідомлень]]',
+	'right-massmessage' => 'Надіслати повідомлення кільком користувачам одночасно',
+	'action-massmessage' => 'надіслати повідомлення кільком користувачам одночасно',
+	'log-name-massmessage' => 'Журнал масових повідомлень',
 );
 
 /** Simplified Chinese (中文（简体）‎)
