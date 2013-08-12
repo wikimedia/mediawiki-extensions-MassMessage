@@ -60,6 +60,7 @@ $wgAutoloadClasses['MassMessage'] = "$dir/MassMessage.body.php";
 $wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/SpecialMassMessage.php";
 $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
+$wgAutoloadClasses['MassMessageLogFormatter'] = "$dir/MassMessageLogFormatter.php";
 $wgJobClasses['massmessageJob'] = 'MassMessageJob';
 
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
@@ -79,6 +80,7 @@ $wgResourceModules['ext.MassMessage.special'] = array(
 
 $wgLogTypes[] = 'massmessage';
 $wgLogActionsHandlers['massmessage/*'] = 'LogFormatter';
+$wgLogActionsHandlers['massmessage/failure'] = 'MassMessageLogFormatter';
 
 // User rights
 $wgAvailableRights[] = 'massmessage'; // Local messaging
