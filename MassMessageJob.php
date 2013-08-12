@@ -104,6 +104,8 @@ class MassMessageJob extends Job {
 			return true; // Skip it
 		}
 
+		$this->title = $title;
+
 		if ( self::isOptedOut( $this->title ) ) {
 			return true; // Oh well.
 		}
@@ -117,37 +119,79 @@ class MassMessageJob extends Job {
 			}
 		}
 
-		$this->editPage();
+		// See if we should use LiquidThreads
+		if ( class_exists( 'LqtDispatch' ) && LqtDispatch::isLqtPage( $title ) ) { // This is the same check that LQT uses internally
+			$this->addLQTThread();
+		} else {
+			$this->editPage();
+		}
 
 		return true;
 	}
 
 	function editPage() {
-		global $wgUser, $wgRequest;
 		$user = MassMessage::getMessengerUser();
-		$wgUser = $user; // Is this safe? We need to do this for EditPage.php
+		$params = array(
+			'action' => 'edit',
+			'title' => $this->title->getPrefixedText(),
+			'section' => 'new',
+			'summary' => $this->params['subject'],
+			'text' => $this->makeText(),
+			'notminor' => true,
+			'bot' => true,
+			'token' => $user->getEditToken()
+		);
 
+		$this->makeAPIRequest( $params );
+	}
+
+	function addLQTThread() {
+		$user = MassMessage::getMessengerUser();
+		$params = array(
+			'action' => 'threadaction',
+			'threadaction' => 'newthread',
+			'talkpage' => $this->title,
+			'subject' => $this->params['subject'],
+			'text' => $this->makeText(),
+			'token' => $user->getEditToken()
+		); // LQT will automatically mark the edit as bot if we're a bot
+
+		$this->makeAPIRequest( $params );
+	}
+
+	/**
+	 * Add some stuff to the end of the message
+	 * @return string
+	 */
+	function makeText() {
 		$text = $this->params['message'];
 		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )->params( $this->params['comment'] )->text();
+		return $text;
+	}
+
+	function makeAPIRequest( $params ) {
+		global $wgUser, $wgRequest;
+
+		$wgRequest = new DerivativeRequest(
+			$wgRequest,
+			$params,
+			true // was posted?
+		);
+		$wgUser = MassMessage::getMessengerUser();
+		// New user objects will use $wgRequest, so we set that
+		// to our DerivativeRequest, so we don't run into any issues
+
+		RequestContext::getMain()->setUser( $wgUser );
+		RequestContext::getMain()->setRequest( $wgRequest );
+		// All further internal API requests will use the main
+		// RequestContext, so setting it here will fix it for
+		// all other internal uses, like how LQT does
 
 		$api = new ApiMain(
-			new DerivativeRequest(
-				$wgRequest,
-				array(
-					'action' => 'edit',
-					'title' => $this->title->getPrefixedText(),
-					'section' => 'new',
-					'summary' => $this->params['subject'],
-					'text' => $text,
-					'notminor' => true,
-					'bot' => true,
-					'token' => $user->getEditToken()
-				),
-				true // was posted?
-			),
+			$wgRequest,
 			true // enable write?
 		);
-		$api->getContext()->setUser( $user );
+
 		try {
 			$api->execute();
 		} catch ( UsageException $e ) {
