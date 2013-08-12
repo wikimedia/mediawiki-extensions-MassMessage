@@ -46,7 +46,7 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'massmessage' => '{{doc-special|MassMessage}}',
-	'massmessage-desc' => '{{desc|name=MassMessage|url=https://www.mediawiki.org/wiki/Extension:MassMessage}}',
+	'massmessage-desc' => '{{desc|name=Mass Message|url=http://www.mediawiki.org/wiki/Extension:MassMessage}}',
 	'massmessage-form-spamlist' => 'Label for an inputbox on the special page.',
 	'massmessage-form-subject' => 'Label for an inputbox on the special page.',
 	'massmessage-form-message' => 'Used as label for a textarea on the special page.',
@@ -74,7 +74,7 @@ This message probably means that said page, as provided by the user, does not ex
 * $1 is the domain (example: "en.wikipedia.org")
 * $2 is <code>$wgScriptPath</code> (example: "/w/index.php")
 * $3 the page name (example: "User talk:Example")',
-	'massmessage-queued-count' => 'Text for row on Special:Statistics',
+	'massmessage-queued-count' => 'Text for row on [[Special:Statistics]].',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
 * {{msg-mw|Right-massmessage-global}}',
@@ -126,7 +126,6 @@ $messages['br'] = array(
 $messages['de'] = array(
 	'massmessage' => 'Massennachricht senden',
 	'massmessage-desc' => 'Ermöglicht Benutzern das einfache Versenden von Nachrichten an eine Benutzerliste',
-	'massmessage-sender' => 'NachrichtenBot',
 	'massmessage-form-spamlist' => 'Seite, die eine Seitenliste zum Hinterlassen einer Nachricht beinhaltet.',
 	'massmessage-form-subject' => 'Betreff der Nachricht. Wird auch als Bearbeitungszusammenfassung verwendet.',
 	'massmessage-form-message' => 'Der Textbereich der Nachricht.',
@@ -144,10 +143,10 @@ $messages['de'] = array(
 	'massmessage-queued-count' => '[[Special:MassMessage|Massennachrichten]] in der Warteschlange',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
-	'right-massmessage-global' => 'Gleichzeitig Nachrichten an mehrere Benutzer auf unterschiedlichen Wikis senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
 	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
+	'massmessage-cannot-rename' => 'Dies ist ein Systemkonto und kann nicht umbenannt werden.',
 );
 
 /** Esperanto (Esperanto)
@@ -187,7 +186,6 @@ $messages['eu'] = array(
 $messages['fr'] = array(
 	'massmessage' => 'Envoyer un message de masse',
 	'massmessage-desc' => 'Permet aux utilisateurs d’envoyer facilement un message à une liste d’utilisateurs',
-	'massmessage-sender' => 'MessengerBot',
 	'massmessage-form-spamlist' => 'Page contenant la liste des pages sur lesquelles laisser un message :',
 	'massmessage-form-subject' => 'Sujet du message (utilisé également dans le résumé de la modification) :',
 	'massmessage-form-message' => 'Corps du message :',
@@ -205,10 +203,10 @@ $messages['fr'] = array(
 	'massmessage-queued-count' => "[[Special:MassMessage|Messages de masse]] en file d'attente",
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
-	'right-massmessage-global' => 'Envoyer un message à plusieurs utilisateurs de différents wikis à la fois',
 	'log-name-massmessage' => 'Journal des messages de masse',
 	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|a envoyé un message}} à $3',
+	'massmessage-cannot-rename' => 'Ceci est un compte système qui ne peut être renommé.',
 );
 
 /** Galician (galego)
@@ -277,7 +275,6 @@ $messages['he'] = array(
 $messages['ja'] = array(
 	'massmessage' => 'メッセージの一斉送信',
 	'massmessage-desc' => '利用者が複数の利用者に簡単にメッセージを送信できるようにする',
-	'massmessage-sender' => 'メッセンジャーボット',
 	'massmessage-form-spamlist' => 'メッセージを書き込むページの一覧を含むページ:',
 	'massmessage-form-subject' => 'メッセージの件名 (編集の要約としても使用されます):',
 	'massmessage-form-message' => 'メッセージの本文:',
@@ -295,10 +292,10 @@ $messages['ja'] = array(
 	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
-	'right-massmessage-global' => '異なるウィキの複数の利用者に一度にメッセージを送信',
 	'log-name-massmessage' => '一斉メッセージ記録',
 	'log-description-massmessage' => 'これらのイベントは、利用者による [[Special:MassMessage]] でのメッセージの送信を追跡します。',
 	'logentry-massmessage-send' => '$1 が $3 に{{GENDER:$2|メッセージを送信しました}}',
+	'massmessage-cannot-rename' => 'これはシステム アカウントであるため、名前を変更できません。',
 );
 
 /** Korean (한국어)
@@ -342,6 +339,7 @@ $messages['lb'] = array(
 	'massmessage-fieldset-preview' => 'Kucken ouni ze späicheren',
 	'massmessage-empty-subject' => "D'Linn mam Sujet ass eidel.",
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
+	'massmessage-cannot-rename' => 'Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.',
 );
 
 /** Macedonian (македонски)
@@ -350,7 +348,6 @@ $messages['lb'] = array(
 $messages['mk'] = array(
 	'massmessage' => 'Испраќање на масовна порака',
 	'massmessage-desc' => 'Овозможува корисниците да испраќаат масовни пораки на списоци од корисници',
-	'massmessage-sender' => 'БотГласник',
 	'massmessage-form-spamlist' => 'Страница со список од страници на кои треба да се остави пораката.',
 	'massmessage-form-subject' => 'Наслов на пораката. Ќе се користи и како опис на уредувањето.',
 	'massmessage-form-message' => 'Текст на пораката.',
@@ -368,10 +365,10 @@ $messages['mk'] = array(
 	'massmessage-queued-count' => '[[Special:MassMessage|Масовни пораки]] во редица',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
-	'right-massmessage-global' => 'Испраќање на порака на повеќе корисници на разни викија наеднаш.',
 	'log-name-massmessage' => 'Дневник на масовни пораки',
 	'log-description-massmessage' => 'Овој дневник следи испраќања на пораки преку [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|испрати порака}} до $3',
+	'massmessage-cannot-rename' => 'Ова е системска сметка и затоа не може да се преименува.',
 );
 
 /** Malayalam (മലയാളം)
@@ -542,6 +539,7 @@ $messages['roa-tara'] = array(
 	'log-name-massmessage' => 'Archivije de le messàgge de masse',
 	'log-description-massmessage' => "Ste avveneminde traccene l'utinde ca mannane messàgge cu [[Special:MassMessage]].",
 	'logentry-massmessage-send' => "$1 {{GENDER:$2|mannate 'nu messàgge}} a $3",
+	'massmessage-cannot-rename' => "Quiste jè 'nu cunde de sisteme e non ge pò essere renominate.",
 );
 
 /** Swedish (svenska)
