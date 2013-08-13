@@ -198,7 +198,7 @@ class MassMessage {
 		$data = unserialize( $output->getProperty( 'massmessage-targets' ) );
 
 		if ( $data ) {
-			return MassMessage::normalizeTargets( $data );
+			return self::normalizeTargets( $data );
 		} else {
 			return array(); // No parser functions on page
 		}
