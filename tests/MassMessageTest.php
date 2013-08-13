@@ -89,6 +89,6 @@ class MassMessageTest extends MediaWikiTestCase {
 		self::updatePage( $title2, 'foo' );
 
 		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title )->getFullText() );
-		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title2)->getFullText() );
+		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title2 )->getFullText() );
 	}
 }
