@@ -18,7 +18,6 @@ $messages['en'] = array(
 	'massmessage-form-spamlist' => 'Page containing list of pages to leave a message on:',
 	'massmessage-form-subject' => 'Subject of the message (Also used as the edit summary):',
 	'massmessage-form-message' => 'Body of the message:',
-	'massmessage-form-global' => 'This is a global message.',
 	'massmessage-form-preview' => 'Preview',
 	'massmessage-form-submit' => 'Send',
 	'massmessage-fieldset-preview' => 'Preview',
