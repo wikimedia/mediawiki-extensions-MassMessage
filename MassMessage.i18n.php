@@ -117,6 +117,13 @@ $messages['br'] = array(
 	'right-massmessage' => "Kas ur gemennadenn da veur a implijer d'un taol.",
 );
 
+/** Czech (česky)
+ * @author Mormegil
+ */
+$messages['cs'] = array(
+	'massmessage-cannot-rename' => 'Toto je systémový účet, který nemůže být přejmenován.',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  * @author Se4598
@@ -328,11 +335,17 @@ $messages['ko'] = array(
 $messages['lb'] = array(
 	'massmessage-desc' => 'Erlaabt et Benotzer fir einfach Messagen un eng Lëscht vu Benotzer ze schécken',
 	'massmessage-form-spamlist' => 'Säit mat der Lëscht vu Säiten op déi e Message geschriwwe gi soll:',
+	'massmessage-form-subject' => 'Sujet vum Message (Gëtt och fir de Resumé vun der Ännerung benotzt):',
 	'massmessage-form-preview' => 'Kucken ouni ze späicheren',
 	'massmessage-form-submit' => 'Schécken',
 	'massmessage-fieldset-preview' => 'Kucken ouni ze späicheren',
+	'massmessage-account-blocked' => "De Benotzerkont dee fir d'Verschécke vu Message benotzt gëtt gouf gespaart.",
 	'massmessage-empty-subject' => "D'Linn mam Sujet ass eidel.",
+	'massmessage-empty-message' => 'Den Inhalt vum Message ass eidel.',
+	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch.',
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
+	'action-massmessage' => 'e Message u verschidde Benotzer gläichzäiteg schécken',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt',
 	'massmessage-cannot-rename' => 'Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.',
 );
 
