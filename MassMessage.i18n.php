@@ -614,12 +614,18 @@ $messages['uk'] = array(
 	'massmessage-fieldset-preview' => 'Попередній перегляд',
 	'massmessage-submitted' => 'Ваше повідомлення поставлене в чергу.',
 	'massmessage-just-preview' => 'Це тільки попередній перегляд. Натисніть "{{int:massmessage-form-submit}}", щоб відправити повідомлення.',
+	'massmessage-account-blocked' => 'Обліковий запис для доставки повідомлень був заблокований.',
+	'massmessage-spamlist-doesnotexist' => 'Указаної сторінки з переліком сторінок не існує.',
 	'massmessage-empty-subject' => 'Рядок теми порожній.',
 	'massmessage-empty-message' => 'Тіла повідомлення порожнє.',
+	'massmessage-form-header' => "Використовуйте форму нижче, щоб надсилати повідомлення до вказаного списку. Всі поля обов'язкові для заповнення.",
 	'massmessage-queued-count' => 'У черзі [[Special:MassMessage|масових повідомлень]]',
 	'right-massmessage' => 'Надіслати повідомлення кільком користувачам одночасно',
 	'action-massmessage' => 'надіслати повідомлення кільком користувачам одночасно',
 	'log-name-massmessage' => 'Журнал масових повідомлень',
+	'log-description-massmessage' => 'Ці події відстежують надсилання повідомлень користувачами через [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3',
+	'massmessage-cannot-rename' => 'Це - системний обліковий запис і його не можна перейменувати.',
 );
 
 /** Simplified Chinese (中文（简体）‎)
