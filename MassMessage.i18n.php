@@ -23,7 +23,6 @@ $messages['en'] = array(
 	'massmessage-fieldset-preview' => 'Preview',
 	'massmessage-submitted' => 'Your message has been queued.',
 	'massmessage-just-preview' => 'This is just a preview. Press "{{int:massmessage-form-submit}}" to send the message.',
-	'massmessage-account-blocked' => 'The account used to deliver messages has been blocked.',
 	'massmessage-spamlist-doesnotexist' => 'The specified page-list page does not exist.',
 	'massmessage-empty-subject' => 'The subject line is empty.',
 	'massmessage-empty-message' => 'The message body is empty.',
