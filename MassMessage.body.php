@@ -179,10 +179,7 @@ class MassMessage {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
 		} else {
-			// Spamlist input isn't a text page
-			// @fixme
-			// $this->status->fatal( 'massmessage-spamlist-doesnotexist' );
-			return array();
+			return 'massmessage-spamlist-doesnotexist';
 		}
 
 		// Prep the parser

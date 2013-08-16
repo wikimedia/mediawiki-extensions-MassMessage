@@ -267,6 +267,10 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Insert it into the job queue.
 		$pages = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
+		if ( !is_array( $pages ) ) {
+			$this->status->fatal( $pages );
+			return $this->status;
+		}
 		$pages = MassMessage::normalizeSpamList( $pages );
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
