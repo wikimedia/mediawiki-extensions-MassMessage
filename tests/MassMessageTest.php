@@ -79,6 +79,28 @@ class MassMessageTest extends MediaWikiTestCase {
 		$this->assertEquals( $output, $expected );
 	}
 
+	public static function provideGetMessengerUser() {
+		return array(
+			array( 'MessengerBot' ),
+			array( 'EdwardsBot' ),
+			array( 'Blah blah blah' ),
+		);
+	}
+
+	/**
+	 * Tests MassMessage::getMessengerUser
+	 * @dataProvider provideGetMessengerUser
+	 * @param $name
+	 */
+	public function testGetMessengerUser( $name ) {
+		global $wgMassMessageAccountUsername;
+		$wgMassMessageAccountUsername = $name;
+		$user = MassMessage::getMessengerUser();
+		$this->assertEquals( $user->getName(), $name );
+		$this->assertTrue( in_array( 'bot' , $user->getGroups() ) );
+		$this->assertEquals( $user->mPassword, '' );
+	}
+
 	/**
 	 * Tests MassMessage::followRedirect
 	 */
