@@ -61,8 +61,17 @@ class MassMessageTest extends MediaWikiTestCase {
 		global $wgDBname;
 
 		return array(
+			// project page, no site provided
+			array( '{{#target:Project:Example}}', array( 'title' => 'Project:Example', 'dbname' => $wgDBname ), ),
+			// user talk page, no site provided
 			array( '{{#target:User talk:Example}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Example' ), ),
+			// invalid titles
 			array( '{{#target:User:<><}}', array(), ),
+			array( '{{#target:Project:!!!<><><><>', array(), ),
+			// project page and site
+			array( '{{#target:Project:Testing|en.wikipedia.org}}', array( 'title' => 'Project:Testing', 'site' => 'en.wikipedia.org' ), ),
+			// user page and site
+			array( '{{#target:User talk:Test|fr.wikipedia.org}}', array( 'title' => 'User talk:Test', 'site' => 'fr.wikipedia.org' ), ),
 		);
 	}
 
