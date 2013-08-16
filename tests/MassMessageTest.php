@@ -2,6 +2,19 @@
 
 class MassMessageTest extends MediaWikiTestCase {
 	protected function setUp() {
+		// $wgConf ewwwww
+		global $wgConf, $wgLocalDatabases;
+		$wgConf = new SiteConfiguration;
+		$wgConf->wikis = array( 'enwiki', 'dewiki', 'frwiki', 'wiki' );
+		$wgConf->suffixes = array( 'wiki' );
+		$wgConf->settings = array(
+			'wgServer' => array(
+				'enwiki' => '//en.wikipedia.org',
+				'dewiki' => '//de.wikipedia.org',
+				'frwiki' => '//fr.wikipedia.org',
+			),
+		);
+		$wgLocalDatabases =& $wgConf->getLocalDatabases();
 		parent::setUp();
 	}
 
@@ -19,6 +32,24 @@ class MassMessageTest extends MediaWikiTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
 		$page->doEditContent( $content, "summary", 0, false, $user );
+	}
+
+	public static function provideGetDBName() {
+		return array(
+			array( 'en.wikipedia.org', 'enwiki' ),
+			array( 'fr.wikipedia.org', 'frwiki' ),
+			array( 'de.wikipedia.org', 'dewiki' ),
+		);
+	}
+	/**
+	 * Tests MassMessage::getDBName
+	 * @dataProvider provideGetDBName
+	 * @param $url
+	 * @param $expected
+	 */
+	public function testGetDBName( $url, $expected ) {
+		$dbname = MassMessage::getDBName( $url );
+		$this->assertEquals( $dbname, $expected );
 	}
 
 	/**
