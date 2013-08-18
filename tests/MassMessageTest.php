@@ -113,4 +113,24 @@ class MassMessageTest extends MediaWikiTestCase {
 		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title )->getFullText() );
 		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title2 )->getFullText() );
 	}
+
+	/**
+	 * Tests MassMessageJob::sendMessage and MassMessageJob::editPage
+	 */
+	public function testMessageSending() {
+		$target = Title::newFromText( 'Project:Testing1234' );
+		if ( $target->exists() ) {
+			// Clear it
+			$wikipage = WikiPage::factory( $target );
+			$wikipage->doDeleteArticleReal( 'reason' );
+		}
+		$params = array( 'subject' => 'Subject line', 'message' => 'This is a message.', );
+		$job = new MassMessageJob( $target, $params );
+		$job->run();
+		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
+		//$this->assertTrue( $target->exists() ); // Message was created
+		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
+		$this->assertEquals( $text, "== Subject line ==\n\nThis is a message." );
+
+	}
 }
