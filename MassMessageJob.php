@@ -100,6 +100,10 @@ class MassMessageJob extends Job {
 		global $wgUser, $wgRequest;
 		$user = MassMessage::getMessengerUser();
 		$wgUser = $user; // Is this safe? We need to do this for EditPage.php
+
+		$text = $this->params['message'];
+		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )->params( $this->params['comment'] )->text();
+
 		$api = new ApiMain(
 			new DerivativeRequest(
 				$wgRequest,
@@ -108,7 +112,7 @@ class MassMessageJob extends Job {
 					'title' => $this->title->getPrefixedText(),
 					'section' => 'new',
 					'summary' => $this->params['subject'],
-					'text' => $this->params['message'],
+					'text' => $text,
 					'notminor' => true,
 					'bot' => true,
 					'token' => $user->getEditToken()
