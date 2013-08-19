@@ -73,10 +73,10 @@ This message probably means that said page, as provided by the user, does not ex
 * $2 is <code>$wgScriptPath</code> (example: "/w/index.php")
 * $3 the page name (example: "User talk:Example")',
 	'massmessage-queued-count' => 'Text for row on [[Special:Statistics]].',
-	'massmessage-hidden-comment' => 'A hidden HTML comment that is appended after the message.
-* $1 is the username of the user who sent the message
-* $2 is the database name of the wiki from where the message was sent
-* $3 is the url of the input list that was used to send the message',
+	'massmessage-hidden-comment' => 'A hidden HTML comment that is appended after the message. Parameters:
+* $1 - the username of the user who sent the message
+* $2 - the database name of the wiki from where the message was sent
+* $3 - the url of the input list that was used to send the message',
 	'massmessage-optout-category' => 'Name of category which users add pages to that will opt-it out of receiving messages.',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
@@ -149,6 +149,8 @@ $messages['de'] = array(
 	'massmessage-empty-message' => 'Der Nachrichtenkörper ist leer.',
 	'massmessage-form-header' => 'Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Massennachrichten]] in der Warteschlange',
+	'massmessage-hidden-comment' => '<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->',
+	'massmessage-optout-category' => 'Von der Nachrichtenzustellung abgemeldet',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
@@ -207,6 +209,8 @@ $messages['fr'] = array(
 	'massmessage-empty-message' => 'Le corps du message est vide.',
 	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires.',
 	'massmessage-queued-count' => "[[Special:MassMessage|Messages de masse]] en file d'attente",
+	'massmessage-hidden-comment' => '<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->',
+	'massmessage-optout-category' => 'Désengagé de la réception de messages',
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
 	'log-name-massmessage' => 'Journal des messages de masse',
@@ -294,6 +298,7 @@ $messages['ja'] = array(
 	'massmessage-empty-message' => 'メッセージの本文を入力していません。',
 	'massmessage-form-header' => 'このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です。',
 	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
+	'massmessage-hidden-comment' => '<!-- User:$1@$2 が $3 のリストを使用して送信したメッセージ -->',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'log-name-massmessage' => '一斉メッセージ記録',
@@ -368,6 +373,8 @@ $messages['mk'] = array(
 	'massmessage-empty-message' => 'Порака нема текст.',
 	'massmessage-form-header' => 'Образецов служи за испраќање на пораки на укажан список на примачи. Сите полиња се задолжителни.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Масовни пораки]] во редица',
+	'massmessage-hidden-comment' => '<!-- Пораката ја испрати Корисник:$1@$2 преку списокот на $3 -->',
+	'massmessage-optout-category' => 'Одлучиле да не примаат известувања',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'log-name-massmessage' => 'Дневник на масовни пораки',
@@ -535,6 +542,8 @@ $messages['roa-tara'] = array(
 	'massmessage-empty-message' => "'U cuèrpe d'u messàgge jè vacande.",
 	'massmessage-form-header' => "Ause 'u module aqquà sotte pe mannà messàgge a 'n'elenghe specifiche. Tutte le cambe sò richieste.",
 	'massmessage-queued-count' => 'Accodate [[Special:MassMessage|messàgge de masse]]',
+	'massmessage-hidden-comment' => "<!-- Messàgge mannate da l'Utende:$1@$2 ausanne l'elenghe a $3 -->",
+	'massmessage-optout-category' => "Scartate da l'invie de le messàgge",
 	'right-massmessage' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'action-massmessage' => "manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'log-name-massmessage' => 'Archivije de le messàgge de masse',
@@ -617,6 +626,8 @@ $messages['uk'] = array(
 	'massmessage-empty-message' => 'Тіла повідомлення порожнє.',
 	'massmessage-form-header' => "Використовуйте форму нижче, щоб надсилати повідомлення до вказаного списку. Всі поля обов'язкові для заповнення.",
 	'massmessage-queued-count' => 'У черзі [[Special:MassMessage|масових повідомлень]]',
+	'massmessage-hidden-comment' => '<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->',
+	'massmessage-optout-category' => 'Відмова від доставки повідомлень',
 	'right-massmessage' => 'Надіслати повідомлення кільком користувачам одночасно',
 	'action-massmessage' => 'надіслати повідомлення кільком користувачам одночасно',
 	'log-name-massmessage' => 'Журнал масових повідомлень',
