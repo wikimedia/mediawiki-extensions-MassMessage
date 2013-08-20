@@ -10,6 +10,11 @@ $magicWords['en'] = array(
 	'target' => array( 0, 'target' ),
 );
 
+/** Czech (česky) */
+$magicWords['cs'] = array(
+	'target' => array( 0, 'cíl' ),
+);
+
 /** Korean (한국어) */
 $magicWords['ko'] = array(
 	'target' => array( 0, '대상' ),
