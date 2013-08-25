@@ -636,6 +636,13 @@ $messages['uk'] = array(
 	'massmessage-cannot-rename' => 'Це - системний обліковий запис і його не можна перейменувати.',
 );
 
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'massmessage-hidden-comment' => '<!-- אנזאג געשיקט דורך User:$1@$2 ניצנדיק די ליסטער ביי $3 -->',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Qiyue2001
  */
