@@ -70,18 +70,16 @@ class MassMessageJob extends Job {
 	/**
 	 * Log any message failures on the submission site.
 	 *
-	 * @param $title Title
-	 * @param $subject string
 	 * @param $reason string
 	 */
-	function logLocalFailure( $title, $subject, $reason ) {
+	function logLocalFailure( $reason ) {
 
 		$logEntry = new ManualLogEntry( 'massmessage', 'failure' );
 		$logEntry->setPerformer( MassMessage::getMessengerUser() );
-		$logEntry->setTarget( $title );
-		$logEntry->setComment( $subject );
+		$logEntry->setTarget( $this->title );
 		$logEntry->setParameters( array(
-			'4::reason' => $reason,
+			'4::subject' => $this->params['subject'],
+			'5::reason' => $reason,
 		) );
 
 		$logid = $logEntry->insert();
@@ -147,7 +145,7 @@ class MassMessageJob extends Job {
 		try {
 			$api->execute();
 		} catch ( UsageException $e ) {
-			$this->logLocalFailure( $this->title, $this->params['subject'], $e->getCodeString() );
+			$this->logLocalFailure( $e->getCodeString() );
 		}
 	}
 }

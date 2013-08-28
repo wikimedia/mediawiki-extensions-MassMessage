@@ -36,6 +36,7 @@ $messages['en'] = array(
 	'log-name-massmessage' => 'Mass message log',
 	'log-description-massmessage' => 'These events track users sending messages through [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3',
+	'logentry-massmessage-failure' => 'Delivery of "$4" to $3 failed with an error code of <code>$5</code>',
 	'massmessage-cannot-rename' => 'This is a system account and cannot be renamed.',
 );
 
@@ -85,6 +86,9 @@ See also:
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
 	'logentry-massmessage-send' => '{{logentry}}',
+	'logentry-massmessage-failure' => '{{logentry}}
+* $4 is the subject line of the message
+* $5 is the API error code. This will always be in English.',
 	'massmessage-cannot-rename' => 'Error message a user sees when they try renaming the bot account.',
 );
 
