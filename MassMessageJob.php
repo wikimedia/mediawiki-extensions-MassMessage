@@ -84,6 +84,10 @@ class MassMessageJob extends Job {
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
+
+		// stick it in the debug log
+		$text = 'Target: ' . $title->getPrefixedText() . ' Subject: ' . $subject . ' Reason: ' . $reason;
+		wfDebugLog( 'massmessage', $text );
 	}
 
 	/**
