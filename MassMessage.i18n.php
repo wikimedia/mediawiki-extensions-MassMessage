@@ -160,6 +160,7 @@ $messages['de'] = array(
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
 	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
+	'logentry-massmessage-failure' => 'Versand von „$4“ nach $3 fehlgeschlagen mit dem Fehlercode <code>$5</code>',
 	'massmessage-cannot-rename' => 'Dies ist ein Systemkonto und kann nicht umbenannt werden.',
 );
 
@@ -220,6 +221,7 @@ $messages['fr'] = array(
 	'log-name-massmessage' => 'Journal des messages de masse',
 	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|a envoyé un message}} à $3',
+	'logentry-massmessage-failure' => 'La livraison de « $4 » sur $3 a échoué avec un code d’erreur de <code>$5</code>',
 	'massmessage-cannot-rename' => 'Ceci est un compte système qui ne peut être renommé.',
 );
 
@@ -249,6 +251,7 @@ $messages['gl'] = array(
 	'log-name-massmessage' => 'Rexistro de mensaxes en masa',
 	'log-description-massmessage' => 'Este rexistro garda os usuarios que enviaron mensaxes mediante [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|enviou unha mensaxe}} a $3',
+	'logentry-massmessage-failure' => 'A entrega de "$4" a $3 fallou e devolveu o código de erro <code>$5</code>',
 	'massmessage-cannot-rename' => 'Esta é unha conta do sistema e non se lle pode mudar o nome.',
 );
 
@@ -307,6 +310,7 @@ $messages['ja'] = array(
 	'log-name-massmessage' => '一斉メッセージ記録',
 	'log-description-massmessage' => 'これらのイベントは、利用者による [[Special:MassMessage]] でのメッセージの送信を追跡します。',
 	'logentry-massmessage-send' => '$1 が $3 に{{GENDER:$2|メッセージを送信しました}}',
+	'logentry-massmessage-failure' => '$3 に「$4」の送信する際にコード <code>$5</code> のエラーが発生しました',
 	'massmessage-cannot-rename' => 'これはシステム アカウントであるため、名前を変更できません。',
 );
 
@@ -351,9 +355,11 @@ $messages['lb'] = array(
 	'massmessage-empty-subject' => "D'Linn mam Sujet ass eidel.",
 	'massmessage-empty-message' => 'Den Inhalt vum Message ass eidel.',
 	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch.',
+	'massmessage-hidden-comment' => "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
 	'action-massmessage' => 'e Message u verschidde Benotzer gläichzäiteg schécken',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt',
+	'logentry-massmessage-failure' => 'D\'Schécke vu(n) "$4" op $3 huet net fonctionnéiert: de Feelercode ass <code>$5</code>',
 	'massmessage-cannot-rename' => 'Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.',
 );
 
@@ -383,6 +389,7 @@ $messages['mk'] = array(
 	'log-name-massmessage' => 'Дневник на масовни пораки',
 	'log-description-massmessage' => 'Овој дневник следи испраќања на пораки преку [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|испрати порака}} до $3',
+	'logentry-massmessage-failure' => 'Испраќањето на „$4“ на $3 не успеа, со грешка бр. <code>$5</code>',
 	'massmessage-cannot-rename' => 'Ова е системска сметка и затоа не може да се преименува.',
 );
 
@@ -453,6 +460,16 @@ $messages['nl'] = array(
 	'log-name-massmessage' => 'Bulkberichtenlogboek',
 	'log-description-massmessage' => 'Deze gebeurtenissen zijn gerelateerd aan verzonden berichten via de functie [[Special:MassMessage|bulkberichten]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|heeft}} een bericht geplaatst op $3',
+);
+
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'massmessage' => 'Mandar un messatge de massa',
+	'massmessage-form-preview' => 'Apercebut',
+	'massmessage-form-submit' => 'Mandar',
+	'massmessage-fieldset-preview' => 'Apercebut',
 );
 
 /** Polish (polski)
@@ -552,6 +569,7 @@ $messages['roa-tara'] = array(
 	'log-name-massmessage' => 'Archivije de le messàgge de masse',
 	'log-description-massmessage' => "Ste avveneminde traccene l'utinde ca mannane messàgge cu [[Special:MassMessage]].",
 	'logentry-massmessage-send' => "$1 {{GENDER:$2|mannate 'nu messàgge}} a $3",
+	'logentry-massmessage-failure' => 'Invìe de "$4" a $3 fallite cu \'nu codece de errore <code>$5</code>',
 	'massmessage-cannot-rename' => "Quiste jè 'nu cunde de sisteme e non ge pò essere renominate.",
 );
 
@@ -636,6 +654,7 @@ $messages['uk'] = array(
 	'log-name-massmessage' => 'Журнал масових повідомлень',
 	'log-description-massmessage' => 'Ці події відстежують надсилання повідомлень користувачами через [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3',
+	'logentry-massmessage-failure' => 'Доставка „$4“ на $3 провалилася з кодом помилки<code>$5</code>',
 	'massmessage-cannot-rename' => 'Це - системний обліковий запис і його не можна перейменувати.',
 );
 
