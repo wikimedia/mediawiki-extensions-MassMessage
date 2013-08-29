@@ -81,14 +81,14 @@ class SpecialMassMessage extends SpecialPage {
 		$m = array();
 		// Who to send to
 		$m['spamlist'] = array(
-			'id' => 'form-spamlist',
+			'id' => 'mw-massmessage-form-spamlist',
 			'type' => 'text',
 			'label-message' => 'massmessage-form-spamlist',
 			'default' => $request->getText( 'spamlist' )
 		);
 		// The subject line
 		$m['subject'] = array(
-			'id' => 'form-subject',
+			'id' => 'mw-massmessage-form-subject',
 			'type' => 'text',
 			'label-message' => 'massmessage-form-subject',
 			'default' => $request->getText( 'subject' ),
@@ -97,7 +97,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		// The message to send
 		$m['message'] = array(
-			'id' => 'form-message',
+			'id' => 'mw-massmessage-form-message',
 			'type' => 'textarea',
 			'label-message' => 'massmessage-form-message',
 			'default' => $request->getText( 'message' )
@@ -105,14 +105,14 @@ class SpecialMassMessage extends SpecialPage {
 
 		if ( $this->state == 'preview' ) {
 			$m['submit-button'] = array(
-				'id' => 'form-submit-button',
+				'id' => 'mw-massmessage-form-submit-button',
 				'type' => 'submit',
 				'default' => $context->msg( 'massmessage-form-submit' )->text()
 			);
 		}
 
 		$m['preview-button'] = array(
-			'id' => 'form-preview-button',
+			'id' => 'mw-massmessage-form-preview-button',
 			'type' => 'submit',
 			'default' => $context->msg( 'massmessage-form-preview' )->text()
 		);
