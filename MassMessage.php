@@ -74,13 +74,14 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 	'dependencies' => array(
 		'jquery.byteLimit',
 	),
-
 	'localBasePath' => $dir,
+	'remoteExtPath' => 'MassMessage',
 );
 
 $wgResourceModules['ext.MassMessage.special'] = array(
 	'styles' => 'ext.MassMessage.special.css',
 	'localBasePath' => $dir,
+	'remoteExtPath' => 'MassMessage',
 );
 
 $wgLogTypes[] = 'massmessage';
