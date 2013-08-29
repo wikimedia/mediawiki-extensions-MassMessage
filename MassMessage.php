@@ -69,12 +69,17 @@ $wgHooks['RenameUserPreRename'][] = 'MassMessageHooks::onRenameUserPreRename';
 $wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
 
-$wgResourceModules['ext.MassMessage.special'] = array(
+$wgResourceModules['ext.MassMessage.special.js'] = array(
 	'scripts' => 'ext.MassMessage.special.js',
 	'dependencies' => array(
 		'jquery.byteLimit',
 	),
 
+	'localBasePath' => $dir,
+);
+
+$wgResourceModules['ext.MassMessage.special'] = array(
+	'styles' => 'ext.MassMessage.special.css',
 	'localBasePath' => $dir,
 );
 

@@ -1,0 +1,9 @@
+/*
+Formats the Save/Preview buttons to show up on the same line
+@author wctaiwan
+*/
+.mw-htmlform-field-HTMLSubmitField,
+.mw-htmlform-field-HTMLSubmitField .mw-label,
+.mw-htmlform-field-HTMLSubmitField .mw-input {
+    display: inline;
+}

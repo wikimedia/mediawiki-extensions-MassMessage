@@ -32,7 +32,8 @@ class SpecialMassMessage extends SpecialPage {
 		$context = $this->getContext();
 		$output = $this->getOutput();
 
-		$output->addModules( 'ext.MassMessage.special' );
+		$output->addModules( 'ext.MassMessage.special.js' );
+		$output->addModuleStyles( 'ext.MassMessage.special' );
 		$this->setHeaders();
 		$this->outputHeader();
 		$this->checkPermissions();
@@ -102,12 +103,6 @@ class SpecialMassMessage extends SpecialPage {
 			'default' => $request->getText( 'message' )
 		);
 
-		$m['preview-button'] = array(
-			'id' => 'form-preview-button',
-			'type' => 'submit',
-			'default' => $context->msg( 'massmessage-form-preview' )->text()
-		);
-
 		if ( $this->state == 'preview' ) {
 			$m['submit-button'] = array(
 				'id' => 'form-submit-button',
@@ -115,6 +110,12 @@ class SpecialMassMessage extends SpecialPage {
 				'default' => $context->msg( 'massmessage-form-submit' )->text()
 			);
 		}
+
+		$m['preview-button'] = array(
+			'id' => 'form-preview-button',
+			'type' => 'submit',
+			'default' => $context->msg( 'massmessage-form-preview' )->text()
+		);
 
 		return $m;
 	}
