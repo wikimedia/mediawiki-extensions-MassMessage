@@ -43,6 +43,7 @@ class MassMessageJob extends Job {
 			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
 		}
 		if ( !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
+			$this->logLocalSkip( 'skipbadns');
 			$title = null;
 		}
 
@@ -68,7 +69,25 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Log any message failures on the submission site.
+	 * Log any skips on the target site
+	 *
+	 * @param $reason string log subtype
+	 */
+	function logLocalSkip( $reason ) {
+		$logEntry = new ManualLogEntry( 'massmessage', $reason );
+		$logEntry->setPerformer( MassMessage::getMessengerUser() );
+		$logEntry->setTarget( $this->title );
+		$logEntry->setParameters( array(
+			'4::subject' => $this->params['subject']
+		) );
+
+		$logid = $logEntry->insert();
+		$logEntry->publish( $logid );
+	}
+
+
+	/**
+	 * Log any message failures on the target site.
 	 *
 	 * @param $reason string
 	 */
@@ -107,6 +126,7 @@ class MassMessageJob extends Job {
 		$this->title = $title;
 
 		if ( self::isOptedOut( $this->title ) ) {
+			$this->logLocalSkip( 'skipoptout' );
 			return true; // Oh well.
 		}
 
@@ -115,7 +135,8 @@ class MassMessageJob extends Job {
 		if ( $title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK ) {
 			$user = User::newFromName( $title->getBaseText() );
 			if ( !$user->getId() ) { // Does not exist
-				return true; // Should we log anything here?
+				$this->logLocalSkip( 'skipnouser' );
+				return true;
 			}
 		}
 
