@@ -264,7 +264,11 @@ class SpecialMassMessage extends SpecialPage {
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
 
 		// Prep the HTML comment message
-		$data['comment'] = array( $this->getUser()->getName(), $wgDBname, $spamlist->getFullURL() );
+		$data['comment'] = array(
+			$this->getUser()->getName(),
+			$wgDBname,
+			$spamlist->getFullURL( $proto = PROTO_CANONICAL )
+		);
 
 		// Log it.
 		$this->logToWiki( $spamlist, $data['subject'] );
