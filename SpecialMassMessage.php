@@ -51,7 +51,7 @@ class SpecialMassMessage extends SpecialPage {
 		}
 
 		$form = new HtmlForm( $this->createForm(), $context );
-		$form->setId( 'massmessage-form' );
+		$form->setId( 'mw-massmessage-form' );
 		$form->setDisplayFormat( 'div' );
 		if ( $this->state == 'form' ) {
 			$form->addPreText( $context->msg( 'massmessage-form-header' )->parse() );
