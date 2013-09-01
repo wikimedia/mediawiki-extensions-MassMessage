@@ -77,7 +77,7 @@ This message probably means that said page, as provided by the user, does not ex
 	'massmessage-hidden-comment' => 'A hidden HTML comment that is appended after the message. Parameters:
 * $1 - the username of the user who sent the message
 * $2 - the database name of the wiki from where the message was sent
-* $3 - the url of the input list that was used to send the message',
+* $3 - the URL of the input list that was used to send the message',
 	'massmessage-optout-category' => 'Name of category which users add pages to that will opt-it out of receiving messages.',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
@@ -184,6 +184,24 @@ $messages['eo'] = array(
 	'action-massmessage' => 'sendi mesaĝon al multaj uzantoj samtempe',
 	'right-massmessage-global' => 'Sendi mesaĝon al multaj uzantoj en diversaj vikioj samtempe',
 	'log-name-massmessage' => 'Protokolo de amasmesaĝoj',
+);
+
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'massmessage-form-message' => 'Cuerpo del mensaje:',
+	'massmessage-form-preview' => 'Previsualizar',
+	'massmessage-form-submit' => 'Enviar',
+	'massmessage-fieldset-preview' => 'Previsualización',
+	'massmessage-empty-subject' => 'El asunto está vacío.',
+	'massmessage-empty-message' => 'El cuerpo del mensaje está vacío.',
+	'massmessage-hidden-comment' => '<!-- Mensaje enviado por Usuario:$1@$2 mediante la lista en $3 -->',
+	'right-massmessage' => 'Enviar un mensaje a varios usuarios a la vez',
+	'action-massmessage' => 'enviar un mensaje a varios usuarios a la vez',
+	'logentry-massmessage-send' => '$1 ha enviado un mensaje a $3', # Fuzzy
+	'logentry-massmessage-failure' => 'Ha fallado la entrega de «$4» a $3 con el código de error <code>$5</code>',
+	'massmessage-cannot-rename' => 'Esta es una cuenta del sistema y no se puede renombrar.',
 );
 
 /** Basque (euskara)
