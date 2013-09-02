@@ -593,22 +593,19 @@ $messages['roa-tara'] = array(
 
 /** Swedish (svenska)
  * @author Jopparn
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'massmessage' => 'Skicka massmeddelande',
 	'massmessage-desc' => 'Tillåter användare att enkelt skicka ett meddelande till en lista över användare',
-	'massmessage-sender' => 'MessengerBot',
 	'massmessage-form-spamlist' => 'Sidan innehåller en lista över sidor att lämna ett meddelande på.',
 	'massmessage-form-subject' => 'Ämnet för meddelandet. Används också som redigeringskommentar.',
 	'massmessage-form-message' => 'Meddelandetexten.',
-	'massmessage-form-global' => 'Detta är ett globalt meddelande.',
 	'massmessage-form-submit' => 'Skicka',
-	'massmessage-submitted' => 'Ditt meddelande har skickats!', # Fuzzy
-	'massmessage-account-blocked' => 'Kontot som används för att leverera meddelanden har blockerats.',
+	'massmessage-submitted' => 'Ditt meddelande har placerats i kö.',
 	'massmessage-spamlist-doesnotexist' => 'Den angivna sidan, som innehåller listan med sidor, existerar inte.',
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
 	'action-massmessage' => 'skicka ett meddelande till flera användare på en gång',
-	'right-massmessage-global' => 'Skicka ett meddelande till flera användare på olika wikis på en gång',
 	'log-name-massmessage' => 'Massmeddelandelogg',
 	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
