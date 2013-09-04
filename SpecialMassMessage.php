@@ -158,6 +158,13 @@ class SpecialMassMessage extends SpecialPage {
 			return $this->status;
 		}
 
+		// Add a global footer
+		$footer = $this->msg( 'massmessage-message-footer' )->inContentLanguage()->parse();
+		if ( trim( $footer ) ) {
+			// Only add the footer if it is not just whitespace
+			$data['message'] .= "\n" . $footer;
+		}
+
 		if ( $this->state == 'submit' ) {
 			return $this->submit( $data );
 		} else { // $this->state can only be 'preview' here

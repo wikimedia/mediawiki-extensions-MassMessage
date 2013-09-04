@@ -38,6 +38,7 @@ $messages['en'] = array(
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3',
 	'logentry-massmessage-failure' => 'Delivery of "$4" to $3 failed with an error code of <code>$5</code>',
 	'massmessage-cannot-rename' => 'This is a system account and cannot be renamed.',
+	'massmessage-message-footer' => '',
 );
 
 /** Message documentation (Message documentation)
@@ -90,6 +91,7 @@ See also:
 * $4 is the subject line of the message
 * $5 is the API error code. This will always be in English.',
 	'massmessage-cannot-rename' => 'Error message a user sees when they try renaming the bot account.',
+	'massmessage-message-footer' => 'The footer that is by added at the end of very message. It is left blank so individual wikis can customize it.',
 );
 
 /** Bengali (বাংলা)
