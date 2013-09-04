@@ -70,9 +70,13 @@ $wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
 
 $wgResourceModules['ext.MassMessage.special.js'] = array(
-	'scripts' => 'ext.MassMessage.special.js',
+	'scripts' => array(
+		'ext.MassMessage.special.js',
+		'ext.MassMessage.autocomplete.js',
+	),
 	'dependencies' => array(
 		'jquery.byteLimit',
+		'jquery.ui.autocomplete'
 	),
 	'localBasePath' => $dir,
 	'remoteExtPath' => 'MassMessage',
