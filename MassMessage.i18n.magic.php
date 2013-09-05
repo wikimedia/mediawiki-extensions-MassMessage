@@ -19,3 +19,8 @@ $magicWords['cs'] = array(
 $magicWords['ko'] = array(
 	'target' => array( 0, '대상' ),
 );
+
+/** Macedonian (македонски) */
+$magicWords['mk'] = array(
+	'target' => array( 0, 'цел' ),
+);
