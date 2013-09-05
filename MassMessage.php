@@ -73,10 +73,13 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 	'scripts' => array(
 		'ext.MassMessage.special.js',
 		'ext.MassMessage.autocomplete.js',
+		'ext.MassMessage.badhtml.js',
 	),
+	'messages' => array( 'massmessage-badhtml' ),
 	'dependencies' => array(
 		'jquery.byteLimit',
-		'jquery.ui.autocomplete'
+		'jquery.ui.autocomplete',
+		'jquery.delayedBind',
 	),
 	'localBasePath' => $dir,
 	'remoteExtPath' => 'MassMessage',
