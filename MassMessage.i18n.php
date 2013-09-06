@@ -80,13 +80,13 @@ This message probably means that said page, as provided by the user, does not ex
 * $2 - the database name of the wiki from where the message was sent
 * $3 - the URL of the input list that was used to send the message',
 	'massmessage-optout-category' => 'Name of category which users add pages to that will opt-it out of receiving messages.',
-	'right-massmessage' => '{{doc-right|massmessage}}
-See also:
-* {{msg-mw|Right-massmessage-global}}',
 	'massmessage-badhtml' => 'Shown in a JavaScript popup if we detect unclosed HTML tags
 
 * $1 - comma separated list of unclosed HTML tags
 * $2 - number of unclosed HTML tags',
+	'right-massmessage' => '{{doc-right|massmessage}}
+See also:
+* {{msg-mw|Right-massmessage-global}}',
 	'action-massmessage' => '{{doc-action|massmessage}}',
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
@@ -160,6 +160,7 @@ $messages['de'] = array(
 	'massmessage-queued-count' => '[[Special:MassMessage|Massennachrichten]] in der Warteschlange',
 	'massmessage-hidden-comment' => '<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->',
 	'massmessage-optout-category' => 'Von der Nachrichtenzustellung abgemeldet',
+	'massmessage-badhtml' => 'Deine Nachricht enthält möglicherweise {{PLURAL:$2|ein nicht geschlossenes HTML-Tag|nicht geschlossene HTML-Tags}}: $1.',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
@@ -490,9 +491,29 @@ $messages['nl'] = array(
  */
 $messages['oc'] = array(
 	'massmessage' => 'Mandar un messatge de massa',
+	'massmessage-desc' => 'Permet als utilizaires de mandar aisadament un messatge a una lista d’utilizaires',
+	'massmessage-form-spamlist' => 'Pagina que conten la lista de las paginas sus las qualas cal daissar un messatge :',
+	'massmessage-form-subject' => 'Subjècte del messatge (utilizat tanben dins lo resumit de la modificacion) :',
+	'massmessage-form-message' => 'Còs del messatge :',
 	'massmessage-form-preview' => 'Apercebut',
 	'massmessage-form-submit' => 'Mandar',
 	'massmessage-fieldset-preview' => 'Apercebut',
+	'massmessage-submitted' => "Vòstre mandadís es estat mes dins la fila d'espèra.",
+	'massmessage-just-preview' => "Aquò's simplament un apercebut. Quichatz sus « {{int:massmessage-form-submit}} » per mandar lo messatge.",
+	'massmessage-spamlist-doesnotexist' => 'La pagina de listas de paginas especificada existís pas.',
+	'massmessage-empty-subject' => 'La linha del subjècte es voida.',
+	'massmessage-empty-message' => 'Lo còs del messatge es void.',
+	'massmessage-form-header' => 'Utilizatz lo formulari çaijós per mandar de messatges a una lista indicada. Totes los camps son obligatòris.',
+	'massmessage-queued-count' => "[[Special:MassMessage|Messatges de massa]] en fila d'espèra",
+	'massmessage-hidden-comment' => '<!-- Message mandat per User:$1@$2 en utilizant la lista a $3 -->',
+	'massmessage-optout-category' => 'Desengatjat de la recepcion de messatges',
+	'right-massmessage' => "Mandar un messatge a mantun utilizaire a l'encòp",
+	'action-massmessage' => "mandar un messatge a mantun utilizaire a l'encòp",
+	'log-name-massmessage' => 'Jornal dels messatges de massa',
+	'log-description-massmessage' => "Aqueles eveniments traçan los utilizaires qu'an mandat de messatges via [[Special:MassMessage]].",
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|a mandat un messatge}} a $3',
+	'logentry-massmessage-failure' => 'La liurason de « $4 » sus $3 a fracassat amb un còde d’error de <code>$5</code>',
+	'massmessage-cannot-rename' => "Aquò's un compte sistèma que pòt pas èsser renomenat.",
 );
 
 /** Polish (polski)
@@ -679,6 +700,7 @@ $messages['uk'] = array(
 	'massmessage-queued-count' => 'У черзі [[Special:MassMessage|масових повідомлень]]',
 	'massmessage-hidden-comment' => '<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->',
 	'massmessage-optout-category' => 'Відмова від доставки повідомлень',
+	'massmessage-badhtml' => 'Ваше повідомлення, можливо, має {{PLURAL:$2|незакритий теґ HTML|незакриті теґи HTML}}:  $1 .',
 	'right-massmessage' => 'Надіслати повідомлення кільком користувачам одночасно',
 	'action-massmessage' => 'надіслати повідомлення кільком користувачам одночасно',
 	'log-name-massmessage' => 'Журнал масових повідомлень',
