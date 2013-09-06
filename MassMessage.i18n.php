@@ -31,6 +31,7 @@ $messages['en'] = array(
 	'massmessage-queued-count' => 'Queued [[Special:MassMessage|mass messages]]',
 	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
 	'massmessage-optout-category' => 'Opted-out of message delivery',
+	'massmessage-badhtml' => 'Your message may have {{PLURAL:$2|an unclosed HTML tag|unclosed HTML tags}}: $1.',
 	'right-massmessage' => 'Send a message to multiple users at once',
 	'action-massmessage' => 'send a message to multiple users at once',
 	'log-name-massmessage' => 'Mass message log',
@@ -82,6 +83,10 @@ This message probably means that said page, as provided by the user, does not ex
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
 * {{msg-mw|Right-massmessage-global}}',
+	'massmessage-badhtml' => 'Shown in a JavaScript popup if we detect unclosed HTML tags
+
+* $1 - comma separated list of unclosed HTML tags
+* $2 - number of unclosed HTML tags',
 	'action-massmessage' => '{{doc-action|massmessage}}',
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
