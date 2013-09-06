@@ -4,6 +4,7 @@
  */
 ( function ( mw, $ ) {
     $( function () {
+        'use strict';
         $( '#mw-massmessage-form-message' ).delayedBind( 500, 'keyup', function( ) {
             var code, regex, matches, tags, possibles, tag;
             code = $.trim( $( '#mw-massmessage-form-message' ).val() );
