@@ -5,6 +5,7 @@
  */
 ( function ( mw, $ ) {
     $( function () {
+        'use strict';
         $( '#mw-massmessage-form-spamlist' ).autocomplete({
             source: function( request, response ) {
                 var api = new mw.Api();
