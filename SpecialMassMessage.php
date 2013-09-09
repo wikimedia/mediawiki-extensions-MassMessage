@@ -202,17 +202,21 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	function verifyData( $data ) {
+		// Trim all the things!
+		foreach ( $data as $k => $v ) {
+			$data[$k] = trim( $v );
+		}
 
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
 		if ( !( $spamlist instanceof Title ) ) {
 			$this->status->fatal( $spamlist );
 		}
 
-		if ( trim( $data['subject'] ) === '' ) {
+		if ( $data['subject'] === '' ) {
 			$this->status->fatal( 'massmessage-empty-subject' );
 		}
 
-		if ( trim( $data['message'] ) === '' ) {
+		if ( $data['message'] === '' ) {
 			$this->status->fatal( 'massmessage-empty-message' );
 		}
 
