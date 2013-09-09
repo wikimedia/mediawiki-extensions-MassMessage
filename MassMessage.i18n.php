@@ -39,6 +39,7 @@ $messages['en'] = array(
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sent a message}} to $3',
 	'logentry-massmessage-failure' => 'Delivery of "$4" to $3 failed with an error code of <code>$5</code>',
 	'massmessage-cannot-rename' => 'This is a system account and cannot be renamed.',
+	'massmessage-message-footer' => '',
 );
 
 /** Message documentation (Message documentation)
@@ -95,6 +96,7 @@ See also:
 * $4 is the subject line of the message
 * $5 is the API error code. This will always be in English.',
 	'massmessage-cannot-rename' => 'Error message a user sees when they try renaming the bot account.',
+	'massmessage-message-footer' => 'The footer that is by added at the end of very message. It is left blank so individual wikis can customize it.',
 );
 
 /** Bengali (বাংলা)
@@ -270,6 +272,7 @@ $messages['gl'] = array(
 	'massmessage-queued-count' => '[[Special:MassMessage|Mensaxes en masa]] na cola de espera',
 	'massmessage-hidden-comment' => '<!-- Mensaxe enviada por User:$1@$2 mediante a lista presente en $3 -->',
 	'massmessage-optout-category' => 'Excluídos da recepción de mensaxes',
+	'massmessage-badhtml' => 'A súa mensaxe pode ter {{PLURAL:$2|unha etiqueta HTML|varias etiquetas HTML}} sen pechar: $1.',
 	'right-massmessage' => 'Enviar unha mensaxe a varios usuarios á vez',
 	'action-massmessage' => 'enviar unha mensaxe a varios usuarios á vez',
 	'log-name-massmessage' => 'Rexistro de mensaxes en masa',
@@ -409,6 +412,7 @@ $messages['mk'] = array(
 	'massmessage-queued-count' => '[[Special:MassMessage|Масовни пораки]] во редица',
 	'massmessage-hidden-comment' => '<!-- Пораката ја испрати Корисник:$1@$2 преку списокот на $3 -->',
 	'massmessage-optout-category' => 'Одлучиле да не примаат известувања',
+	'massmessage-badhtml' => 'Пораката може да има {{PLURAL:$2|незатворена ознака за HTML tag|незатворени ознаки за HTML}}: $1.',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'log-name-massmessage' => 'Дневник на масовни пораки',
