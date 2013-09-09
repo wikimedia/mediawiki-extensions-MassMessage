@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Tests for the MassMessage extension...
+ *
+ * @group Database
+ */
+
 class MassMessageTest extends MediaWikiTestCase {
 	protected function setUp() {
 		// $wgConf ewwwww
