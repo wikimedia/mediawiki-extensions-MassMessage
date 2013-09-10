@@ -116,10 +116,8 @@ class MassMessage {
 	 * @return array
 	 */
 	public static function normalizeTargets( $data ) {
-		global $wgDBname;
 		$targets = array();
 		foreach ( $data as $target ) {
-
 			if ( !isset( $target['dbname'] ) ) {
 				$dbname = self::getDBName( $target['site'] );
 				if ( $dbname == null ) {
@@ -129,7 +127,7 @@ class MassMessage {
 				$target['dbname'] = $dbname;
 			}
 
-			if ( $target['dbname'] == $wgDBname ) {
+			if ( $target['dbname'] == wfWikiID() ) {
 				$title = Title::newFromText( $target['title'] );
 				if ( $title === null ) {
 					continue;
