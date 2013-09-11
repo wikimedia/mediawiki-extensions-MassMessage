@@ -242,6 +242,7 @@ $messages['fr'] = array(
 	'massmessage-queued-count' => "[[Special:MassMessage|Messages de masse]] en file d'attente",
 	'massmessage-hidden-comment' => '<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->',
 	'massmessage-optout-category' => 'Désengagé de la réception de messages',
+	'massmessage-badhtml' => 'Votre message semble contenir {{PLURAL:$2|une balise HTML mal fermée|des balises HTML mal fermées}} :  $1.',
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
 	'log-name-massmessage' => 'Journal des messages de masse',
@@ -564,30 +565,28 @@ $messages['ps'] = array(
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
  * @author Fúlvio
  * @author Luckas
  */
 $messages['pt-br'] = array(
 	'massmessage' => 'Enviar mensagem em massa',
 	'massmessage-desc' => 'Permite que os usuários enviem facilmente uma mensagem para uma lista de usuários',
-	'massmessage-sender' => 'MessengerBot',
 	'massmessage-form-spamlist' => 'Página que contêm a lista de páginas para enviar uma mensagem em:',
 	'massmessage-form-subject' => 'Assunto da mensagem (Também usado como sumário de edição):',
 	'massmessage-form-message' => 'Corpo da mensagem:',
-	'massmessage-form-global' => 'Esta é uma mensagem global.',
 	'massmessage-form-preview' => 'Visualizar',
 	'massmessage-form-submit' => 'Enviar',
 	'massmessage-fieldset-preview' => 'Visualização',
 	'massmessage-submitted' => 'Sua mensagem foi adicionada à fila.',
 	'massmessage-just-preview' => 'Esta é apenas uma visualização. Pressione "{{int:massmessage-form-submit}}" para enviar a mensagem.',
-	'massmessage-account-blocked' => 'A conta usada para enviar mensagens foi bloqueada.',
 	'massmessage-spamlist-doesnotexist' => 'A lista de páginas especificada não existe.',
 	'massmessage-empty-subject' => 'O espaço do assunto está vazio.',
 	'massmessage-empty-message' => 'O corpo da mensagem está vazio.',
 	'massmessage-form-header' => 'Use o formulário abaixo para enviar mensagens a uma lista específcia. Todos os campos são obrigatórios.',
+	'massmessage-hidden-comment' => '<!-- Mensagem enviada pelo usuário:$1@$2 utilizando a lista $3 -->',
 	'right-massmessage' => 'Envie uma mensagem para vários usuários ao mesmo tempo',
 	'action-massmessage' => 'envie uma mensagem para vários usuários ao mesmo tempo',
-	'right-massmessage-global' => 'Envie uma mensagem para vários usuários, em diferentes wikis, ao mesmo tempo',
 	'log-name-massmessage' => 'Registro de mensagens em massa',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|envie uma mensagem}} para $3',
 );
