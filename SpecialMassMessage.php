@@ -291,7 +291,6 @@ class SpecialMassMessage extends SpecialPage {
 			$this->status->fatal( $pages );
 			return $this->status;
 		}
-		$pages = MassMessage::normalizeSpamList( $pages );
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			$job = new MassMessageJob( $title, $data );
