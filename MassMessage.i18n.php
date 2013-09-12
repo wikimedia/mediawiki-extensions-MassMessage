@@ -56,13 +56,15 @@ $messages['qqq'] = array(
 	'massmessage-form-preview' => 'Label for the preview button on the special page.
 {{Identical|Preview}}',
 	'massmessage-form-submit' => 'Label for the submit button on the special page.
+
+Used in {{msg-mw|Massmessage-just-preview}}.
 {{Identical|Send}}',
 	'massmessage-fieldset-preview' => 'Label for the fieldset box around the page preview.
 {{Identical|Preview}}',
 	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.',
 	'massmessage-just-preview' => 'Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.
 
-Refers the message {{msg-mw|Massmessage-form-submit}}.',
+Refers to {{msg-mw|Massmessage-form-submit}}.',
 	'massmessage-spamlist-doesnotexist' => 'Error message the user sees if an invalid spamlist is provided.
 
 The spamlist is the page containing list of pages to leave a message on.
