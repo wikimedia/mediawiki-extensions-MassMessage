@@ -15,6 +15,12 @@ class MassMessageTest extends MediaWikiTestCase {
 			),
 		);
 		$wgLocalDatabases =& $wgConf->getLocalDatabases();
+
+		// Create a redirect
+		$r = Title::newFromText( 'User talk:Redirect target' );
+		self::updatePage( $r, 'blank' );
+		$r2 = Title::newFromText( 'User talk:Is a redirect' );
+		self::updatePage( $r2, '#REDIRECT [[User talk:Redirect target]]' );
 		parent::setUp();
 	}
 
@@ -69,13 +75,16 @@ class MassMessageTest extends MediaWikiTestCase {
 	 * @return array
 	 */
 	public static function provideGetParserFunctionTargets() {
-		global $wgDBname;
+		global $wgDBname, $wgContLang;
+		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
 		return array(
 			// project page, no site provided
-			array( '{{#target:Project:Example}}', array( 'title' => 'Project:Example', 'dbname' => $wgDBname ), ),
+			array( '{{#target:Project:Example}}', array( 'title' => $proj . ':Example', 'dbname' => $wgDBname ), ),
 			// user talk page, no site provided
 			array( '{{#target:User talk:Example}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Example' ), ),
+			// local redirect being followed
+			array( '{{#target:User talk:Is a redirect}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Redirect target' ) ),
 			// invalid titles
 			array( '{{#target:User:<><}}', array(), ),
 			array( '{{#target:Project:!!!<><><><>', array(), ),
@@ -100,6 +109,7 @@ class MassMessageTest extends MediaWikiTestCase {
 			// Check that the spamlist is empty
 			$this->assertTrue( empty( $data ) );
 		} else {
+			$data = array_values( $data );
 			$data = $data[0]; // We're just testing the first value
 			foreach ( $check as $key => $value ) {
 				$this->assertEquals( $data[$key], $value );

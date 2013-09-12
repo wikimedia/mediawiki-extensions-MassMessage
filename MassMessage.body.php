@@ -111,57 +111,38 @@ class MassMessage {
 	}
 
 	/**
-	 * Normalizes an array of page/site combos
-	 * Also removes some dupes
-	 * @param  array $pages
-	 * @return array
-	 * @fixme Follow redirects on other sites
-	 */
-	public static function normalizeSpamList( $pages ) {
-		global $wgDBname;
-		$data = array();
-		foreach ( $pages as $page ) {
-
-			if ( !isset( $page['dbname'] ) ) {
-				$dbname = self::getDBName( $page['site'] );
-				if ( $dbname == null ) { // Not set in $wgConf?
-					continue;
-				}
-				$page['dbname'] = $dbname;
-			}
-
-			if ( $page['dbname'] == $wgDBname ) {
-				$title = Title::newFromText( $page['title'] );
-				$title = self::followRedirect( $title );
-				if ( $title == null ) {
-					continue; // Interwiki redirect
-				}
-				$page['title'] = $title->getFullText();
-			}
-
-			// Use an assoc array to clear dupes
-			$data[$page['title'] . $page['dbname']] = $page;
-		}
-
-		return $data;
-	}
-
-	/**
 	 * Perform various normalization functions on the target data
 	 * @param  array $data
 	 * @return array
 	 */
 	public static function normalizeTargets( $data ) {
+		global $wgDBname;
 		$targets = array();
 		foreach ( $data as $target ) {
-			// Check invalid titles
-			$title = Title::newFromText( $target['title'] );
-			if ( $title === null ) {
-				// This checks against the local wiki's invalid list, not foreign wiki
-				continue;
+
+			if ( !isset( $target['dbname'] ) ) {
+				$dbname = self::getDBName( $target['site'] );
+				if ( $dbname == null ) {
+					// Not set in $wgConf
+					continue;
+				}
+				$target['dbname'] = $dbname;
 			}
 
-			$targets[] = $target;
+			if ( $target['dbname'] == $wgDBname ) {
+				$title = Title::newFromText( $target['title'] );
+				if ( $title === null ) {
+					continue;
+				}
+				$title = self::followRedirect( $title );
+				if ( $title === null ) {
+					continue; // Interwiki redirect
+				}
+				$target['title'] = $title->getPrefixedText();
+			}
+
+			// Use an assoc array to clear dupes
+			$targets[$target['title'] . $target['dbname']] = $target;
 		}
 
 		return $targets;
