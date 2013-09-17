@@ -23,6 +23,11 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected $state;
 
+	/**
+	 * @var int
+	 */
+	protected $count;
+
 	function __construct() {
 		parent::__construct( 'MassMessage', 'massmessage' );
 	}
@@ -65,7 +70,8 @@ class SpecialMassMessage extends SpecialPage {
 		$result = $form->tryAuthorizedSubmit();
 		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
 			if ( $this->state == 'submit' ) { // If it's preview, everything is shown already.
-				$this->getOutput()->addWikiMsg( 'massmessage-submitted' );
+				$msg = $this->msg( 'massmessage-submitted' )->params( $this->count )->plain();
+				$this->getOutput()->addWikiText( $msg );
 			}
 		} else {
 			$form->displayForm( $result );
@@ -291,10 +297,12 @@ class SpecialMassMessage extends SpecialPage {
 			$this->status->fatal( $pages );
 			return $this->status;
 		}
+		$this->count = 0;
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			$job = new MassMessageJob( $title, $data );
 			JobQueueGroup::singleton( $page['dbname'] )->push( $job );
+			$this->count += 1;
 		}
 
 		return $this->status;

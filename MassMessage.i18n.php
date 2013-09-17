@@ -21,7 +21,7 @@ $messages['en'] = array(
 	'massmessage-form-preview' => 'Preview',
 	'massmessage-form-submit' => 'Send',
 	'massmessage-fieldset-preview' => 'Preview',
-	'massmessage-submitted' => 'Your message has been queued.',
+	'massmessage-submitted' => 'Your message delivery to {{PLURAL:$1|$1 page|$1 pages}} has been queued.',
 	'massmessage-just-preview' => 'This is just a preview. Press "{{int:massmessage-form-submit}}" to send the message.',
 	'massmessage-spamlist-doesnotexist' => 'The specified page-list page does not exist.',
 	'massmessage-empty-subject' => 'The subject line is empty.',
@@ -64,7 +64,9 @@ Used in {{msg-mw|Massmessage-just-preview}}.
 {{Identical|Send}}',
 	'massmessage-fieldset-preview' => 'Label for the fieldset box around the page preview.
 {{Identical|Preview}}',
-	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.',
+	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.
+
+* $1 is the number of deliveries that have been queued.',
 	'massmessage-just-preview' => 'Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.
 
 Refers to {{msg-mw|Massmessage-form-submit}}.',
