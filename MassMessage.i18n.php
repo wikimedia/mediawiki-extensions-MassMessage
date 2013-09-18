@@ -103,11 +103,11 @@ See also:
 * $4 is the subject line of the message
 * $5 is the API error code. This will always be in English.',
 	'logentry-massmessage-skipbadns' => '{{logentry}}
-* $4 is the subject line of the message',
+* $4 - the subject line of the message',
 	'logentry-massmessage-skipoptout' => '{{logentry}}
-* $4 is the subject line of the message',
+* $4 - the subject line of the message',
 	'logentry-massmessage-skipnouser' => '{{logentry}}
-* $4 is the subject line of the message',
+* $4 - the subject line of the message',
 	'massmessage-cannot-rename' => 'Error message a user sees when they try renaming the bot account.',
 	'massmessage-message-footer' => 'The footer that is by added at the end of very message. It is left blank so individual wikis can customize it.',
 );
@@ -166,7 +166,7 @@ $messages['de'] = array(
 	'massmessage-form-preview' => 'Vorschau',
 	'massmessage-form-submit' => 'Senden',
 	'massmessage-fieldset-preview' => 'Vorschau',
-	'massmessage-submitted' => 'Deine Nachricht wurde in die Sendewarteschlange eingefügt!',
+	'massmessage-submitted' => 'Dein Nachrichtenversand an {{PLURAL:$1|eine Seite|$1 Seiten}} wurde in die Sendewarteschlange eingefügt!',
 	'massmessage-just-preview' => 'Dies ist nur eine Vorschau. Klicke auf „{{int:massmessage-form-submit}}“, um die Nachricht abzusenden.',
 	'massmessage-spamlist-doesnotexist' => 'Die angegebene Seitenlistenseite ist nicht vorhanden.',
 	'massmessage-empty-subject' => 'Die Betreffszeile ist leer.',
@@ -182,6 +182,9 @@ $messages['de'] = array(
 	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
 	'logentry-massmessage-failure' => 'Versand von „$4“ nach $3 fehlgeschlagen mit dem Fehlercode <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Der Versand von „$4“ an $3 wurde übersprungen, da sich das Ziel in einem Namensraum befindet, in dem keine Nachrichten gespeichert werden können.',
+	'logentry-massmessage-skipoptout' => 'Der Versand von „$4“ an $3 wurde übersprungen, da das Ziel vom Nachrichtenversand ausgeschlossen wurde.',
+	'logentry-massmessage-skipnouser' => 'Der Versand von „$4“ an $3 wurde übersprungen, da das Benutzerkonto nicht vorhanden ist.',
 	'massmessage-cannot-rename' => 'Dies ist ein Systemkonto und kann nicht umbenannt werden.',
 );
 
@@ -246,7 +249,7 @@ $messages['fr'] = array(
 	'massmessage-form-preview' => 'Aperçu',
 	'massmessage-form-submit' => 'Envoyer',
 	'massmessage-fieldset-preview' => 'Aperçu',
-	'massmessage-submitted' => 'Votre message a été mis en file !',
+	'massmessage-submitted' => 'Votre message a été mis en file !', # Fuzzy
 	'massmessage-just-preview' => 'Ceci est simplement un aperçu. Appuyez sur « {{int:massmessage-form-submit}} » pour envoyer le message.',
 	'massmessage-spamlist-doesnotexist' => 'La page de listes de pages spécifiée n’existe pas.',
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
@@ -277,7 +280,7 @@ $messages['gl'] = array(
 	'massmessage-form-preview' => 'Vista previa',
 	'massmessage-form-submit' => 'Enviar',
 	'massmessage-fieldset-preview' => 'Vista previa',
-	'massmessage-submitted' => 'A súa mensaxe púxose á cola.',
+	'massmessage-submitted' => 'A entrega da súa mensaxe a {{PLURAL:$1|unha páxina|$1 páxinas}} púxose á cola.',
 	'massmessage-just-preview' => 'Isto só é unha vista previa. Prema en "{{int:massmessage-form-submit}}" para enviar a mensaxe.',
 	'massmessage-spamlist-doesnotexist' => 'A páxina especificada coa lista de páxinas non existe.',
 	'massmessage-empty-subject' => 'A liña do asunto está baleira.',
@@ -293,6 +296,9 @@ $messages['gl'] = array(
 	'log-description-massmessage' => 'Este rexistro garda os usuarios que enviaron mensaxes mediante [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|enviou unha mensaxe}} a $3',
 	'logentry-massmessage-failure' => 'A entrega de "$4" a $3 fallou e devolveu o código de erro <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'A entrega de "$4" a $3 saltouse porque o destino estaba nun espazo de nomes no que non se pode publicar',
+	'logentry-massmessage-skipoptout' => 'A entrega de "$4" a $3 saltouse porque o destino retirouse da entrega de mensaxes',
+	'logentry-massmessage-skipnouser' => 'A entrega de "$4" a $3 saltouse porque a conta de usuario non existe',
 	'massmessage-cannot-rename' => 'Esta é unha conta do sistema e non se lle pode mudar o nome.',
 );
 
@@ -338,7 +344,7 @@ $messages['ja'] = array(
 	'massmessage-form-preview' => 'プレビュー',
 	'massmessage-form-submit' => '送信',
 	'massmessage-fieldset-preview' => 'プレビュー',
-	'massmessage-submitted' => 'メッセージを待ち行列に登録しました。',
+	'massmessage-submitted' => '{{PLURAL:$1|$1 件のページ}}へのメッセージ配信を待ち行列に登録しました。',
 	'massmessage-just-preview' => 'これはプレビューしているだけに過ぎません。メッセージを送信するには「{{int:massmessage-form-submit}}」をクリックしてください。',
 	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。',
 	'massmessage-empty-subject' => '件名を入力していません。',
@@ -417,7 +423,7 @@ $messages['mk'] = array(
 	'massmessage-form-preview' => 'Преглед',
 	'massmessage-form-submit' => 'Испрати',
 	'massmessage-fieldset-preview' => 'Преглед',
-	'massmessage-submitted' => 'Пораката е ставена во редица.',
+	'massmessage-submitted' => 'Испраќањето на пораката на {{PLURAL:$1|$1 страница|$1 страници}} е ставено во редица.',
 	'massmessage-just-preview' => 'Ова е само преглед. Стиснете на „{{int:massmessage-form-submit}}“ за да ја испратите пораката.',
 	'massmessage-spamlist-doesnotexist' => 'Укажаната страница со список од страници не постои.',
 	'massmessage-empty-subject' => 'Насловот е празен.',
@@ -433,6 +439,9 @@ $messages['mk'] = array(
 	'log-description-massmessage' => 'Овој дневник следи испраќања на пораки преку [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|испрати порака}} до $3',
 	'logentry-massmessage-failure' => 'Испраќањето на „$4“ на $3 не успеа, со грешка бр. <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Испраќањето на „$4“ на $3 е изоставено бидејќи целта беше во именски простор што не прима пораки',
+	'logentry-massmessage-skipoptout' => 'Испраќањето на „$4“ на $3 е изоставено бидејќи целната личност одлучила да не прима пораки',
+	'logentry-massmessage-skipnouser' => 'Испраќањето на „$4“ на $3 е изоставено бидејќи корисничката сметка не постои',
 	'massmessage-cannot-rename' => 'Ова е системска сметка и затоа не може да се преименува.',
 );
 
@@ -591,7 +600,7 @@ $messages['pt-br'] = array(
 	'massmessage-form-preview' => 'Visualizar',
 	'massmessage-form-submit' => 'Enviar',
 	'massmessage-fieldset-preview' => 'Visualização',
-	'massmessage-submitted' => 'Sua mensagem foi adicionada à fila.',
+	'massmessage-submitted' => 'Sua mensagem foi adicionada à fila.', # Fuzzy
 	'massmessage-just-preview' => 'Esta é apenas uma visualização. Pressione "{{int:massmessage-form-submit}}" para enviar a mensagem.',
 	'massmessage-spamlist-doesnotexist' => 'A lista de páginas especificada não existe.',
 	'massmessage-empty-subject' => 'O espaço do assunto está vazio.',
@@ -616,7 +625,7 @@ $messages['roa-tara'] = array(
 	'massmessage-form-preview' => 'Andeprime',
 	'massmessage-form-submit' => 'Manne',
 	'massmessage-fieldset-preview' => 'Andeprime',
-	'massmessage-submitted' => "'U messàgge tune ha state mise in code.",
+	'massmessage-submitted' => "'U messàgge tune ha state mannate a  {{PLURAL:$1|$1 pàgene|$1 pàggene}} in code.",
 	'massmessage-just-preview' => "Queste jè sulamende 'n'andeprime. Cazze \"{{int:massmessage-form-submit}}\" pe mannà 'u messàgge.",
 	'massmessage-spamlist-doesnotexist' => "'A pàgene de l'elenghe specificate de le pàggene non g'esiste.",
 	'massmessage-empty-subject' => "'A linèe de l'oggette jè vacande.",
