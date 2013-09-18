@@ -301,7 +301,12 @@ class SpecialMassMessage extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			$job = new MassMessageJob( $title, $data );
-			JobQueueGroup::singleton( $page['dbname'] )->push( $job );
+			if ( $page['dbname'] == $wgDBname ) {
+				$dbname = wfWikiID();
+			} else {
+				$dbname = $page['dbname'];
+			}
+			JobQueueGroup::singleton( $dbname )->push( $job );
 			$this->count += 1;
 		}
 

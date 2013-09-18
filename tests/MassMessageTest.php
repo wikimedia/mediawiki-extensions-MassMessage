@@ -2,6 +2,8 @@
 
 /**
  * Tests for the MassMessage extension...
+ *
+ * @group Database
  */
 
 class MassMessageTest extends MediaWikiTestCase {
@@ -79,16 +81,16 @@ class MassMessageTest extends MediaWikiTestCase {
 	 * @return array
 	 */
 	public static function provideGetParserFunctionTargets() {
-		global $wgContLang;
+		global $wgDBname, $wgContLang;
 		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
 		return array(
 			// project page, no site provided
-			array( '{{#target:Project:Example}}', array( 'title' => $proj . ':Example', 'dbname' => wfWikiID() ), ),
+			array( '{{#target:Project:Example}}', array( 'title' => $proj . ':Example', 'dbname' => $wgDBname ), ),
 			// user talk page, no site provided
-			array( '{{#target:User talk:Example}}', array( 'dbname' => wfWikiID(), 'title' => 'User talk:Example' ), ),
+			array( '{{#target:User talk:Example}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Example' ), ),
 			// local redirect being followed
-			array( '{{#target:User talk:Is a redirect}}', array( 'dbname' => wfWikiID(), 'title' => 'User talk:Redirect target' ) ),
+			array( '{{#target:User talk:Is a redirect}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Redirect target' ) ),
 			// invalid titles
 			array( '{{#target:User:<><}}', array(), ),
 			array( '{{#target:Project:!!!<><><><>', array(), ),

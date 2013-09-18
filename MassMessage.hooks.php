@@ -29,10 +29,10 @@ class MassMessageHooks {
 		$data = array( 'site' => $site, 'title' => $page );
 		if ( trim( $site ) === '' ) {
 			// Assume it's a local delivery
-			global $wgServer;
+			global $wgServer, $wgDBname;
 			$site = MassMessage::getBaseUrl( $wgServer );
 			$data['site'] = $site;
-			$data['dbname'] = wfWikiID();
+			$data['dbname'] = $wgDBname;
 		}
 		// Use a message so wikis can customize the output
 		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();
