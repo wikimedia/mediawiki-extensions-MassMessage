@@ -249,7 +249,7 @@ $messages['fr'] = array(
 	'massmessage-form-preview' => 'Aperçu',
 	'massmessage-form-submit' => 'Envoyer',
 	'massmessage-fieldset-preview' => 'Aperçu',
-	'massmessage-submitted' => 'Votre message a été mis en file !', # Fuzzy
+	'massmessage-submitted' => 'Votre message envoyé à {{PLURAL:$1|$1 page|$1 pages}} a été mis en file.',
 	'massmessage-just-preview' => 'Ceci est simplement un aperçu. Appuyez sur « {{int:massmessage-form-submit}} » pour envoyer le message.',
 	'massmessage-spamlist-doesnotexist' => 'La page de listes de pages spécifiée n’existe pas.',
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
@@ -265,6 +265,9 @@ $messages['fr'] = array(
 	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|a envoyé un message}} à $3',
 	'logentry-massmessage-failure' => 'La livraison de « $4 » sur $3 a échoué avec un code d’erreur de <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'L’envoi de « $4 » à $3 a été sauté parce que la cible était dans un espace de noms qui ne peut pas recevoir de message',
+	'logentry-massmessage-skipoptout' => 'L’envoi de « $4 » à $3 a été sauté parce que la cible a choisi de ne pas recevoir de messages',
+	'logentry-massmessage-skipnouser' => 'L’envoi de « $4 » à $3 a été sauté parce que le compte utilisateur n’existe pas',
 	'massmessage-cannot-rename' => 'Ceci est un compte système qui ne peut être renommé.',
 );
 
@@ -344,7 +347,7 @@ $messages['ja'] = array(
 	'massmessage-form-preview' => 'プレビュー',
 	'massmessage-form-submit' => '送信',
 	'massmessage-fieldset-preview' => 'プレビュー',
-	'massmessage-submitted' => '{{PLURAL:$1|$1 件のページ}}へのメッセージ配信を待ち行列に登録しました。',
+	'massmessage-submitted' => '{{PLURAL:$1|$1 件のページ}}へのメッセージ送信を待ち行列に登録しました。',
 	'massmessage-just-preview' => 'これはプレビューしているだけに過ぎません。メッセージを送信するには「{{int:massmessage-form-submit}}」をクリックしてください。',
 	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。',
 	'massmessage-empty-subject' => '件名を入力していません。',
@@ -358,7 +361,9 @@ $messages['ja'] = array(
 	'log-name-massmessage' => '一斉メッセージ記録',
 	'log-description-massmessage' => 'これらのイベントは、利用者による [[Special:MassMessage]] でのメッセージの送信を追跡します。',
 	'logentry-massmessage-send' => '$1 が $3 に{{GENDER:$2|メッセージを送信しました}}',
-	'logentry-massmessage-failure' => '$3 に「$4」の送信する際にコード <code>$5</code> のエラーが発生しました',
+	'logentry-massmessage-failure' => '$3 に「$4」を送信する際にコード <code>$5</code> のエラーが発生しました',
+	'logentry-massmessage-skipbadns' => '宛先の名前空間には投稿できないため、$3 への「$4」の送信がスキップされました',
+	'logentry-massmessage-skipnouser' => '利用者アカウントが存在しないため、$3 への「$4」の送信がスキップされました',
 	'massmessage-cannot-rename' => 'これはシステム アカウントであるため、名前を変更できません。',
 );
 
@@ -657,7 +662,7 @@ $messages['sv'] = array(
 	'massmessage-form-preview' => 'Förhandsgranska',
 	'massmessage-form-submit' => 'Skicka',
 	'massmessage-fieldset-preview' => 'Förhandsgranska',
-	'massmessage-submitted' => 'Ditt meddelande har placerats i kö.',
+	'massmessage-submitted' => 'Ditt meddelandeleverans till {{PLURAL:$1|$1 sida|$1 sidor}} har placerats i kö.',
 	'massmessage-just-preview' => 'Detta är bara en förhandsgranskning. Tryck på "{{int:massmessage-form-skicka}}" för att skicka meddelandet.',
 	'massmessage-spamlist-doesnotexist' => 'Den angivna sidan, som innehåller listan med sidor, existerar inte.',
 	'massmessage-empty-subject' => 'Ämnesraden är tom.',
@@ -718,7 +723,7 @@ $messages['uk'] = array(
 	'massmessage-form-preview' => 'Попередній перегляд',
 	'massmessage-form-submit' => 'Надіслати',
 	'massmessage-fieldset-preview' => 'Попередній перегляд',
-	'massmessage-submitted' => 'Ваше повідомлення поставлене в чергу.',
+	'massmessage-submitted' => 'Доставка вашого повідомлення на {{PLURAL:$1|$1 сторінку|$1 сторінки|$1 сторінок}} поставлена в чергу.',
 	'massmessage-just-preview' => 'Це тільки попередній перегляд. Натисніть "{{int:massmessage-form-submit}}", щоб відправити повідомлення.',
 	'massmessage-spamlist-doesnotexist' => 'Указаної сторінки з переліком сторінок не існує.',
 	'massmessage-empty-subject' => 'Рядок теми порожній.',
@@ -734,6 +739,9 @@ $messages['uk'] = array(
 	'log-description-massmessage' => 'Ці події відстежують надсилання повідомлень користувачами через [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3',
 	'logentry-massmessage-failure' => 'Доставка „$4“ на $3 провалилася з кодом помилки<code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Доставка "$4" до $3 була пропущена, бо ціль була в просторі імен, які не можуть бути розміщені в',
+	'logentry-massmessage-skipoptout' => 'Доставка "$4" до $3 була пропущена, бо ціль відмовила у доставці повідомлень',
+	'logentry-massmessage-skipnouser' => 'Доставка „$4“ до  $3  була пропущено, бо обліковий запис користувача відсутній',
 	'massmessage-cannot-rename' => 'Це - системний обліковий запис і його не можна перейменувати.',
 );
 
