@@ -24,3 +24,8 @@ $magicWords['ko'] = array(
 $magicWords['mk'] = array(
 	'target' => array( 0, 'цел' ),
 );
+
+/** Malayalam (മലയാളം) */
+$magicWords['ml'] = array(
+	'target' => array( 0, 'ലക്ഷ്യം' ),
+);
