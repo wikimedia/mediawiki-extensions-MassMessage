@@ -91,7 +91,7 @@ class MassMessage {
 	 */
 	public static function getDBName( $host ) {
 		global $wgConf, $wgMemc;
-		$key = 'massmessage:urltodb:' . $host; // Don't use wfMemcKey since it splits cache per wiki
+		$key = 'massmessage:urltodb:' . md5( $host ); // Don't use wfMemcKey since it splits cache per wiki
 		$data = $wgMemc->get( $key );
 		if ( $data !== false ) {
 			return $data;
