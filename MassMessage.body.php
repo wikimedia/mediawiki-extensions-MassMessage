@@ -142,7 +142,9 @@ class MassMessage {
 			}
 
 			// Use an assoc array to clear dupes
-			$targets[$target['title'] . $target['dbname']] = $target;
+			$targets[$target['title'] . '<' . $target['dbname']] = $target;
+			// Use a funky delimiter so people can't mess with it by using
+			// "creative" page names
 		}
 
 		return $targets;
