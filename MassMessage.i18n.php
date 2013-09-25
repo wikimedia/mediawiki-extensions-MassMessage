@@ -32,6 +32,8 @@ $messages['en'] = array(
 	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
 	'massmessage-optout-category' => 'Opted-out of message delivery',
 	'massmessage-badhtml' => 'Your message may have {{PLURAL:$2|an unclosed HTML tag|unclosed HTML tags}}: $1.',
+	'massmessage-parse-badurl' => '"$1" is not a valid site',
+	'massmessage-parse-badpage' => '"$1" is not a valid page title',
 	'right-massmessage' => 'Send a message to multiple users at once',
 	'action-massmessage' => 'send a message to multiple users at once',
 	'log-name-massmessage' => 'Mass message log',
@@ -92,6 +94,10 @@ This message probably means that said page, as provided by the user, does not ex
 
 * $1 - comma separated list of unclosed HTML tags
 * $2 - number of unclosed HTML tags',
+	'massmessage-parse-badurl' => 'Error message shown when the url that the user provides is invalid.
+* $1 is the url the user provided',
+	'massmessage-parse-badpage' => 'Error message shown when the page name that the user provides is invalid.
+* $1 is the page title the user provided',
 	'right-massmessage' => '{{doc-right|massmessage}}
 See also:
 * {{msg-mw|Right-massmessage-global}}',

@@ -33,6 +33,14 @@ class MassMessageHooks {
 			$site = MassMessage::getBaseUrl( $wgServer );
 			$data['site'] = $site;
 			$data['dbname'] = $wgDBname;
+		} elseif ( filter_var( 'http://' . $site, FILTER_VALIDATE_URL ) === false ) {
+			// Try and see if the site provided is not valid
+			// We can just prefix http:// in front since it needs some kind of protocol
+			return MassMessage::parserError( 'massmessage-parse-badurl', $site );
+		}
+		if ( is_null( Title::newFromText( $page ) ) ) {
+			// Check if the page provided is not valid
+			return MassMessage::parserError( 'massmessage-parse-badpage', $page );
 		}
 		// Use a message so wikis can customize the output
 		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();

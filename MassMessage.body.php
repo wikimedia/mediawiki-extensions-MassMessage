@@ -181,4 +181,20 @@ class MassMessage {
 			return array(); // No parser functions on page
 		}
 	}
+
+	/**
+	 * Helper function for MassMessageHooks::ParserFunction
+	 * Inspired from the Cite extension
+	 * @param $msg string message key
+	 * @param $param string parameter for the message
+	 * @return array
+	 */
+	public static function parserError( $msg, $param ) {
+		return array (
+			'<strong class="error">' .
+			wfMessage( $msg )->params( $param )->plain() .
+			'</strong>',
+			'noparse' => false
+		);
+	}
 }
