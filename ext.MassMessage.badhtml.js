@@ -5,16 +5,23 @@
 ( function ( mw, $ ) {
 	$( function () {
 		'use strict';
-		$( '#mw-massmessage-form-message' ).delayedBind( 500, 'keyup', function( ) {
-			var code, regex, matches, tags, possibles, tag;
+		var msg, warnings;
+		msg = $( '#mw-massmessage-form-message');
+		warnings = $('<div></div>').attr('id', 'mw-massmessage-form-warnings').attr('class', 'warningbox');
+		msg.after(warnings);
+		warnings.hide();
+		msg.delayedBind( 500, 'keyup', function( ) {
+			var code, regex, matches, tags, possibles, tag, warnings;
 			code = $.trim( $( '#mw-massmessage-form-message' ).val() );
 			if( code === '' ) {
+				$('#mw-massmessage-form-warnings').hide();
 				return;
 			}
 
 			regex = /<.*?>/g;
 			matches = code.match(regex);
 			if( !matches.length ) {
+				$('#mw-massmessage-form-warnings').hide();
 				return;
 			}
 
@@ -51,11 +58,12 @@
 					possibles.push( '<' + tag + '>' );
 				}
 			}
+			warnings = $('#mw-massmessage-form-warnings');
 			if (possibles.length) {
-				mw.notify(
-					mw.message( 'massmessage-badhtml', possibles.join(', '), possibles.length ).text(),
-					{ tag: 'massmessage-html-warning' }  // Show only one notification at a time
-				);
+				warnings.show();
+				warnings.text(mw.message( 'massmessage-badhtml', possibles.join(', '), possibles.length ).text());
+			} else {
+				warnings.hide();
 			}
 		});
 	});
