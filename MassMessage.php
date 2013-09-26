@@ -80,6 +80,7 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 		'jquery.byteLimit',
 		'jquery.ui.autocomplete',
 		'jquery.delayedBind',
+		'mediawiki.jqueryMsg',
 	),
 	'localBasePath' => $dir,
 	'remoteExtPath' => 'MassMessage',
