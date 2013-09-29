@@ -182,6 +182,8 @@ $messages['de'] = array(
 	'massmessage-hidden-comment' => '<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->',
 	'massmessage-optout-category' => 'Von der Nachrichtenzustellung abgemeldet',
 	'massmessage-badhtml' => 'Deine Nachricht enthält möglicherweise {{PLURAL:$2|ein nicht geschlossenes HTML-Tag|nicht geschlossene HTML-Tags}}: $1.',
+	'massmessage-parse-badurl' => '„$1“ ist keine gültige Website',
+	'massmessage-parse-badpage' => '„$1“ ist kein gültiger Seitentitel',
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
@@ -218,6 +220,7 @@ $messages['eo'] = array(
 
 /** Spanish (español)
  * @author Fitoschido
+ * @author Ovruni
  */
 $messages['es'] = array(
 	'massmessage-form-message' => 'Cuerpo del mensaje:',
@@ -227,6 +230,8 @@ $messages['es'] = array(
 	'massmessage-empty-subject' => 'El asunto está vacío.',
 	'massmessage-empty-message' => 'El cuerpo del mensaje está vacío.',
 	'massmessage-hidden-comment' => '<!-- Mensaje enviado por Usuario:$1@$2 mediante la lista en $3 -->',
+	'massmessage-parse-badurl' => '"$1" no es un sitio válido',
+	'massmessage-parse-badpage' => '"$1" no es un título de página valido',
 	'right-massmessage' => 'Enviar un mensaje a varios usuarios a la vez',
 	'action-massmessage' => 'enviar un mensaje a varios usuarios a la vez',
 	'logentry-massmessage-send' => '$1 ha enviado un mensaje a $3', # Fuzzy
@@ -265,6 +270,8 @@ $messages['fr'] = array(
 	'massmessage-hidden-comment' => '<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->',
 	'massmessage-optout-category' => 'Désengagé de la réception de messages',
 	'massmessage-badhtml' => 'Votre message semble contenir {{PLURAL:$2|une balise HTML mal fermée|des balises HTML mal fermées}} :  $1.',
+	'massmessage-parse-badurl' => '« $1 » n’est pas un site valide',
+	'massmessage-parse-badpage' => '« $1 » n’est pas un titre de page valide',
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
 	'log-name-massmessage' => 'Journal des messages de masse',
@@ -299,6 +306,8 @@ $messages['gl'] = array(
 	'massmessage-hidden-comment' => '<!-- Mensaxe enviada por User:$1@$2 mediante a lista presente en $3 -->',
 	'massmessage-optout-category' => 'Excluídos da recepción de mensaxes',
 	'massmessage-badhtml' => 'A súa mensaxe pode ter {{PLURAL:$2|unha etiqueta HTML|varias etiquetas HTML}} sen pechar: $1.',
+	'massmessage-parse-badurl' => '"$1" non é un sitio válido',
+	'massmessage-parse-badpage' => '"$1" non é un título de páxina válido',
 	'right-massmessage' => 'Enviar unha mensaxe a varios usuarios á vez',
 	'action-massmessage' => 'enviar unha mensaxe a varios usuarios á vez',
 	'log-name-massmessage' => 'Rexistro de mensaxes en masa',
@@ -362,6 +371,8 @@ $messages['ja'] = array(
 	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
 	'massmessage-hidden-comment' => '<!-- User:$1@$2 が $3 のリストを使用して送信したメッセージ -->',
 	'massmessage-badhtml' => 'メッセージ内に、{{PLURAL:$2|閉じられていない HTML タグ}}があります: $1',
+	'massmessage-parse-badurl' => '「$1」は有効なサイトではありません',
+	'massmessage-parse-badpage' => '「$1」は有効なページ名ではありません',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'log-name-massmessage' => '一斉メッセージ記録',
@@ -393,7 +404,7 @@ $messages['ko'] = array(
 	'massmessage-empty-message' => '메시지 본문이 비어 있습니다.',
 	'massmessage-form-header' => '지정된 목록에서 메시지를 보내려면 아래 양식을 사용하세요. 모든 필드는 필수입니다.',
 	'massmessage-queued-count' => '대기 중인 [[Special:MassMessage|대량 메시지]]',
-	'massmessage-hidden-comment' => '<!-- $3의 목록을 이용해 User:$1@$2이 메시지를 발송했습니다 -->',
+	'massmessage-hidden-comment' => '<!-- $3의 목록을 사용해 User:$1@$2님이 보낸 메시지 -->',
 	'massmessage-optout-category' => '메시지 전달을 받지 않는 사용자',
 	'massmessage-badhtml' => '당신의 메시지에 {{PLURAL:$2|닫히지 않은 HTML 태그}}가 포함되었을 수 있습니다: $1.',
 	'right-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
@@ -401,7 +412,7 @@ $messages['ko'] = array(
 	'log-name-massmessage' => '대량 메시지 기록',
 	'log-description-massmessage' => '이 이벤트는 [[Special:MassMessage]]를 통해 메시지를 보낸 사용자를 추적합니다.',
 	'logentry-massmessage-send' => '$1 사용자가 $3에 {{GENDER:$2|메시지를 보냈습니다}}',
-	'logentry-massmessage-failure' => "메시지 ''$4''를 $3으로 전송하지 못했으며 오류 코드는 <code>$5</code>입니다.",
+	'logentry-massmessage-failure' => '$3에 "$4"(을)를 보내지 못했으며 오류 코드는 <code>$5</code>입니다',
 	'massmessage-cannot-rename' => '이 계정은 시스템 계정이고 이름을 바꿀 수 없습니다.',
 );
 
@@ -419,6 +430,7 @@ $messages['lb'] = array(
 	'massmessage-empty-message' => 'Den Inhalt vum Message ass eidel.',
 	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch.',
 	'massmessage-hidden-comment' => "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
+	'massmessage-parse-badurl' => '"$1" ass kee valabele Site',
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
 	'action-massmessage' => 'e Message u verschidde Benotzer gläichzäiteg schécken',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt',
@@ -448,6 +460,8 @@ $messages['mk'] = array(
 	'massmessage-hidden-comment' => '<!-- Пораката ја испрати Корисник:$1@$2 преку списокот на $3 -->',
 	'massmessage-optout-category' => 'Одлучиле да не примаат известувања',
 	'massmessage-badhtml' => 'Пораката може да има {{PLURAL:$2|незатворена ознака за HTML tag|незатворени ознаки за HTML}}: $1.',
+	'massmessage-parse-badurl' => '„$1“ не претставува важечко мрежно место',
+	'massmessage-parse-badpage' => '„$1“ не претставува важечки наслов на страница',
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'log-name-massmessage' => 'Дневник на масовни пораки',
@@ -496,6 +510,14 @@ $messages['mr'] = array(
 	'log-name-massmessage' => 'एकगठ्ठा संदेशाच्या नोंदी',
 	'log-description-massmessage' => 'हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.',
 	'logentry-massmessage-send' => '$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}',
+);
+
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'massmessage-parse-badurl' => '"$1" bukan laman web yang sah',
+	'massmessage-parse-badpage' => '"$1" bukan tajuk halaman yang sah',
 );
 
 /** Dutch (Nederlands)
@@ -560,6 +582,7 @@ $messages['oc'] = array(
 );
 
 /** Polish (polski)
+ * @author Chrumps
  * @author WTM
  * @author Woytecr
  */
@@ -572,13 +595,13 @@ $messages['pl'] = array(
 	'massmessage-form-preview' => 'Podgląd',
 	'massmessage-form-submit' => 'Wyślij',
 	'massmessage-fieldset-preview' => 'Podgląd',
-	'massmessage-submitted' => 'Twoja wiadomość została umieszczona w kolejce.',
+	'massmessage-submitted' => 'Twoja wiadomość została umieszczona w kolejce.', # Fuzzy
 	'massmessage-just-preview' => 'To jest tylko podgląd. Naciśnij "{{int:massmessage-form-submit}}" aby wysłać wiadomość.',
-	'massmessage-account-blocked' => 'To konto używane do dostarczania wiadomości zostało zablokowane.',
 	'massmessage-spamlist-doesnotexist' => 'Określona strona z listą stron nie istnieje.',
 	'massmessage-empty-subject' => 'Pole tematu jest puste.',
 	'massmessage-empty-message' => 'Treść wiadomości jest pusta.',
 	'massmessage-form-header' => 'Użyj poniższego formularza aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane.',
+	'massmessage-parse-badpage' => '„$1” nie jest poprawnym tytułem strony',
 	'right-massmessage' => 'Wyślij wiadomość do wielu użytkowników jednocześnie',
 	'action-massmessage' => 'wyślij wiadomość do wielu użytkowników jednocześnie',
 	'log-name-massmessage' => 'Log masowych wiadomości',
@@ -650,13 +673,34 @@ $messages['roa-tara'] = array(
 	'massmessage-hidden-comment' => "<!-- Messàgge mannate da l'Utende:$1@$2 ausanne l'elenghe a $3 -->",
 	'massmessage-optout-category' => "Scartate da l'invie de le messàgge",
 	'massmessage-badhtml' => "'U messàgge tune pò tenè {{PLURAL:$2|'nu tag HTML non achiuse|tag HTML non achiuse}}: $1.",
+	'massmessage-parse-badurl' => '"$1" non g\'è \'nu site valide',
+	'massmessage-parse-badpage' => '"$1" non g\'è \'nu titole d\'a vôsce valide',
 	'right-massmessage' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'action-massmessage' => "manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'log-name-massmessage' => 'Archivije de le messàgge de masse',
 	'log-description-massmessage' => "Ste avveneminde traccene l'utinde ca mannane messàgge cu [[Special:MassMessage]].",
 	'logentry-massmessage-send' => "$1 {{GENDER:$2|mannate 'nu messàgge}} a $3",
 	'logentry-massmessage-failure' => 'Invìe de "$4" a $3 fallite cu \'nu codece de errore <code>$5</code>',
+	'logentry-massmessage-skipbadns' => '\'A spedizione de "$4" a $3 ha state zumbate purcé \'a destinazione stè jndr\'à \'nu namespace ca non ge pozze mannà',
+	'logentry-massmessage-skipoptout' => '\'A spedizione de "$4" a $3 ha state zumbate purcé \'a destinazione non ge vole le messàgge de masse',
+	'logentry-massmessage-skipnouser' => '\'A spedizione de "$4" a $3 ha state zumbate purcé \'u cunde utende non g\'esiste',
 	'massmessage-cannot-rename' => "Quiste jè 'nu cunde de sisteme e non ge pò essere renominate.",
+);
+
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'massmessage-desc' => 'Позволяет легко отправить сообщение списку пользователей',
+	'massmessage-form-spamlist' => 'Страница, содержащая список страниц, на которых необходимо оставить сообщение:',
+	'massmessage-form-subject' => 'Тема сообщения (также используется для описания изменений):',
+	'massmessage-form-message' => 'Текст сообщения:',
+	'massmessage-form-preview' => 'Предпросмотр',
+	'massmessage-form-submit' => 'Отправить',
+	'massmessage-fieldset-preview' => 'Предпросмотр',
+	'massmessage-hidden-comment' => '<!-- Сообщение отправил Участник:$1@$2, используя список на странице $3 -->',
+	'massmessage-badhtml' => 'Ваше сообщение может содержать {{PLURAL:$2|незакрытый HTML-тег|незакрытые HTML-теги}}: $1.',
+	'massmessage-cannot-rename' => 'Это системная учётная запись, и она не может быть переименована.',
 );
 
 /** Swedish (svenska)
@@ -680,6 +724,8 @@ $messages['sv'] = array(
 	'massmessage-form-header' => 'Använd formuläret nedan för att skicka meddelanden till en angiven lista. Alla fält är obligatoriska.',
 	'massmessage-queued-count' => 'Köade [[Special:MassMessage|massmeddelanden]]',
 	'massmessage-hidden-comment' => '<!-- Meddelande skickades av User:$1@$2 med hjälp av listan på $3 -->',
+	'massmessage-parse-badurl' => '"$1" är inte en giltig webbplats',
+	'massmessage-parse-badpage' => '"$1" är inte en giltig sidtitel',
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
 	'action-massmessage' => 'skicka ett meddelande till flera användare på en gång',
 	'log-name-massmessage' => 'Massmeddelandelogg',
@@ -743,6 +789,8 @@ $messages['uk'] = array(
 	'massmessage-hidden-comment' => '<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->',
 	'massmessage-optout-category' => 'Відмова від доставки повідомлень',
 	'massmessage-badhtml' => 'Ваше повідомлення, можливо, має {{PLURAL:$2|незакритий теґ HTML|незакриті теґи HTML}}:  $1 .',
+	'massmessage-parse-badurl' => '"$1" не є коректним сайтом',
+	'massmessage-parse-badpage' => '"$1" не є коректною назвою сторінки',
 	'right-massmessage' => 'Надіслати повідомлення кільком користувачам одночасно',
 	'action-massmessage' => 'надіслати повідомлення кільком користувачам одночасно',
 	'log-name-massmessage' => 'Журнал масових повідомлень',
@@ -763,6 +811,7 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Liuxinyu970226
  * @author Qiyue2001
  */
 $messages['zh-hans'] = array(
@@ -771,20 +820,19 @@ $messages['zh-hans'] = array(
 	'massmessage-form-spamlist' => '页面包含了留言的页面列表：',
 	'massmessage-form-subject' => '消息主题（还用作编辑摘要）：',
 	'massmessage-form-message' => '消息正文：',
-	'massmessage-form-global' => '这是一个全域信息。',
 	'massmessage-form-preview' => '预览',
 	'massmessage-form-submit' => '发送',
 	'massmessage-fieldset-preview' => '预览',
-	'massmessage-submitted' => '您的消息已添加到队列！',
+	'massmessage-submitted' => '您要发送到{{PLURAL:$1|$1 page|$1个页面}}的消息已开始排队。',
 	'massmessage-just-preview' => '这只是预览。点击“{{int:massmessage-form-submit}}”来发送消息。',
-	'massmessage-account-blocked' => '用来传递消息的帐户已被阻止。',
 	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
 	'massmessage-empty-subject' => '主题为空。',
 	'massmessage-empty-message' => '消息正文为空。',
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
+	'massmessage-parse-badurl' => '"$1"不是一个有效的站点',
+	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题',
 	'right-massmessage' => '一次将消息发送到多个用户',
 	'action-massmessage' => '一次将消息发送到多个用户',
-	'right-massmessage-global' => '一次将消息发送到不同wiki上的多个用户',
 	'log-name-massmessage' => '批量消息日志',
 	'log-description-massmessage' => '这些事件跟踪用户使用[[Special:MassMessage]]发送消息。',
 	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到$3',
