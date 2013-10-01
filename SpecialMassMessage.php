@@ -71,7 +71,8 @@ class SpecialMassMessage extends SpecialPage {
 		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
 			if ( $this->state == 'submit' ) { // If it's preview, everything is shown already.
 				$msg = $this->msg( 'massmessage-submitted' )->params( $this->count )->plain();
-				$this->getOutput()->addWikiText( $msg );
+				$output->addWikiText( $msg );
+				$output->addWikiMsg( 'massmessage-nextsteps' );
 			}
 		} else {
 			$form->displayForm( $result );
