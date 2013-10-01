@@ -42,6 +42,9 @@ class MassMessageHooks {
 			// Check if the page provided is not valid
 			return MassMessage::parserError( 'massmessage-parse-badpage', $page );
 		}
+		if ( !isset( $data['dbname'] ) && MassMessage::getDBName( $data['site'] ) === null ) {
+			return MassMessage::parserError( 'massmessage-parse-badurl', $site );
+		}
 		// Use a message so wikis can customize the output
 		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();
 		$output = $parser->getOutput();
