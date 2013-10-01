@@ -418,6 +418,7 @@ $messages['ko'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'massmessage-desc' => 'Erlaabt et Benotzer fir einfach Messagen un eng Lëscht vu Benotzer ze schécken',
@@ -434,7 +435,7 @@ $messages['lb'] = array(
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
 	'action-massmessage' => 'e Message u verschidde Benotzer gläichzäiteg schécken',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt',
-	'logentry-massmessage-failure' => 'D\'Schécke vu(n) "$4" op $3 huet net fonctionnéiert: de Feelercode ass <code>$5</code>',
+	'logentry-massmessage-failure' => 'D\'Schécke vu(n) "$4" op $3 huet net funktionéiert: de Feelercode ass <code>$5</code>',
 	'massmessage-cannot-rename' => 'Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.',
 );
 
