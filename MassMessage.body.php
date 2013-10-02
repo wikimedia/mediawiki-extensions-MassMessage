@@ -372,4 +372,53 @@ class MassMessage {
 		return count( $pages );
 	}
 
+	/*
+	 * Gets a regular expression that will match this wiki's
+	 * timestamps as given by ~~~~.
+	 *
+	 * Modified from the Echo extension
+	 *
+	 * @throws MWException
+	 * @return String regular expression fragment.
+	 */
+	public static function getTimestampRegex() {
+		global $wgMemc, $wgParser;
+
+		$key = wfMemcKey( 'massmessage', 'timestamp' );
+		$regex = $wgMemc->get( $key );
+		if ( $regex !== false ) {
+			return $regex;
+		}
+
+		// Step 1: Get an exemplar timestamp
+		$title = Title::newMainPage();
+		$user = User::newFromName( 'Test' );
+		$options = new ParserOptions;
+
+		/** @var Parser $wgParser */
+		$exemplarTimestamp = $wgParser->preSaveTransform( '~~~~~', $title, $user, $options );
+
+		// Step 2: Generalise it
+		// Trim off the timezone to replace at the end
+		$output = $exemplarTimestamp;
+		$tzRegex = '/\s*\(\w+\)\s*$/';
+		$tzMatches = array();
+		preg_match( $tzRegex, $output, $tzMatches );
+		$output = preg_replace( $tzRegex, '', $output );
+		$output = preg_quote( $output, '/' );
+		$output = preg_replace( '/[^\d\W]+/u', '[^\d\W]+', $output );
+		$output = preg_replace( '/\d+/u', '\d+', $output );
+
+		$output .= preg_quote( $tzMatches[0] );
+
+		if ( !preg_match( "/$output/u", $exemplarTimestamp ) ) {
+			throw new MWException( "Timestamp regex does not match exemplar" );
+		}
+
+		$output = "/$output/";
+
+		$wgMemc->set( $key, $output );
+
+		return $output;
+	}
 }

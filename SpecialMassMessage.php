@@ -234,6 +234,11 @@ class SpecialMassMessage extends SpecialPage {
 			$this->status->fatal( 'massmessage-unescaped-langlinks' );
 		}
 
+		// Check for no timestamp (Bug 54848)
+		if ( !preg_match( MassMessage::getTimestampRegex(), $content->getNativeData() ) ) {
+			$this->status->fatal( 'massmessage-no-timestamp' );
+		}
+
 		return false;
 	}
 }
