@@ -262,7 +262,7 @@ class SpecialMassMessage extends SpecialPage {
 		// $spamlist = $this->getSpamlist( $data['spamlist'] );
 		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
-		$firstTarget = Title::newFromText( 'User talk:Example' );
+		$firstTarget = Title::newFromText( 'Project:Example' );
 		$wikipage = WikiPage::factory( $firstTarget );
 
 		// Hacked up from EditPage.php
