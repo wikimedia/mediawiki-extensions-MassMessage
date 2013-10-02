@@ -68,6 +68,7 @@ $wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';
 $wgHooks['RenameUserPreRename'][] = 'MassMessageHooks::onRenameUserPreRename';
 $wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
+$wgHooks['BeforeEchoEventInsert'][] = 'MassMessageHooks::onBeforeEchoEventInsert';
 
 $wgResourceModules['ext.MassMessage.special.js'] = array(
 	'scripts' => array(

@@ -112,4 +112,21 @@ class MassMessageHooks {
 
 		return true;
 	}
+
+	/**
+	 * Echo!
+	 *
+	 * @param $event EchoEvent
+	 * @return bool
+	 */
+	public static function onBeforeEchoEventInsert( $event ) {
+		// Don't spam a user with mention notifications if it's a MassMessage
+		if ( $event->getType() == 'mention' && $event->getAgent() && // getAgent() can return null
+			$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId() ) {
+			return false;
+		}
+
+		return true;
+	}
+
 }
