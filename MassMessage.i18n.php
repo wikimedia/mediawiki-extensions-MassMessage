@@ -517,8 +517,36 @@ $messages['mr'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
+	'massmessage' => 'Hantar pesanan beramai-ramai',
+	'massmessage-desc' => 'Membenarkan pengguna untuk menghantar pesanan dengan mudah kepada satu senarai pengguna',
+	'massmessage-form-spamlist' => 'Halaman yang mengandungi senarai halaman untuk ditinggalkan pesanan:',
+	'massmessage-form-subject' => 'Tajuk pesanan (juga digunakan sebagai ringkasan suntingan):',
+	'massmessage-form-message' => 'Isi kandungan pesanan:',
+	'massmessage-form-preview' => 'Pralihat',
+	'massmessage-form-submit' => 'Hantar',
+	'massmessage-fieldset-preview' => 'Pralihat',
+	'massmessage-submitted' => 'Pengiriman pesanan anda kepada $1 halaman telah dibaris-gilirkan.',
+	'massmessage-just-preview' => 'Ini sekadar pratayangan. Tekan "{{int:massmessage-form-submit}}" untuk menghantar pesanan.',
+	'massmessage-spamlist-doesnotexist' => 'Halaman senarai halaman yang dinyatakan tidak wujud.',
+	'massmessage-empty-subject' => 'Baris tajuk kosong.',
+	'massmessage-empty-message' => 'Ruangan isi pesanan kosong.',
+	'massmessage-form-header' => 'Gunakan borang yang berikut untuk mengirim pesanan kepada senarai yang tertentu. semua ruangan wajib diisi.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Pesanan beramai-ramai]] terbaris gilir',
+	'massmessage-hidden-comment' => '<!-- Pesanan dihantar oleh Pengguna:$1@$2 yang menggunakan senarai di $3 -->',
+	'massmessage-optout-category' => 'Terkecuali dari pengiriman pesanan',
+	'massmessage-badhtml' => 'Pesanan anda mungkin mengandungi {{PLURAL:$2|suatu teg HTML yang tidak tertutup|teg-teg HTML yang tidak tertutup}}: $1.',
 	'massmessage-parse-badurl' => '"$1" bukan laman web yang sah',
 	'massmessage-parse-badpage' => '"$1" bukan tajuk halaman yang sah',
+	'right-massmessage' => 'Mengirim pesanan kepada berbilang pengguna sekali gus',
+	'action-massmessage' => 'menghantar pesanan kepada berbilang pengguna sekali gus',
+	'log-name-massmessage' => 'Log pesanan beramai-ramai',
+	'log-description-massmessage' => 'Peristiwa-peristiwa ini menjejak pengguna yang mengirim pesanan melalui [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 telah {{GENDER:$2|menghantar}} pesanan kepada $3',
+	'logentry-massmessage-failure' => '"$4" gagal dikirim kepada $3 dengan kod ralat <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Pengiriman "$4" kepada $3 dilangkau kerana sasaran tergolong dalam ruang nama yang tidak boleh dikirimi',
+	'logentry-massmessage-skipoptout' => 'Pengiriman "$4" kepada $3 dilangkau kerana sasaran mengecualikan diri daripada pengiriman pesanan.',
+	'logentry-massmessage-skipnouser' => 'Pengiriman "$4" kepada $3 dilangkau kerana akaun pengguna tidak wujud',
+	'massmessage-cannot-rename' => 'Ini ialah akaun sistem yang tidak boleh ditukar namanya.',
 );
 
 /** Dutch (Nederlands)
