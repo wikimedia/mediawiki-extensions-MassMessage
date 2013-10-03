@@ -350,6 +350,42 @@ $messages['he'] = array(
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3',
 );
 
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'massmessage' => 'Invia messaggi massivamente',
+	'massmessage-desc' => 'Consente agli utenti di inviare facilmente un messaggio a un elenco di utenti',
+	'massmessage-form-spamlist' => "Pagina contenente l'elenco delle pagine su cui lasciare un messaggio:",
+	'massmessage-form-subject' => "Oggetto del messaggio (anche usato come l'oggetto della modifica):",
+	'massmessage-form-message' => 'Corpo del messaggio:',
+	'massmessage-form-preview' => 'Anteprima',
+	'massmessage-form-submit' => 'Invia',
+	'massmessage-fieldset-preview' => 'Anteprima',
+	'massmessage-submitted' => "L'invio del tuo messaggio su {{PLURAL:$1|$1 pagina|$1 pagine}} è stato accodato.",
+	'massmessage-just-preview' => 'Questa è solo un anteprima. Premi "{{int:massmessage-form-submit}}" per inviare il messaggio.',
+	'massmessage-spamlist-doesnotexist' => "La pagina con l'elenco indicata non esiste.",
+	'massmessage-empty-subject' => "La riga dell'oggetto è vuota.",
+	'massmessage-empty-message' => 'Il corpo del messaggio è vuoto.',
+	'massmessage-form-header' => 'Utilizza il modulo sottostante per inviare messaggi a un elenco specificato. Tutti i campi sono obbligatori.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Messaggi massivi]] accodati',
+	'massmessage-hidden-comment' => "<!-- Messaggio inviato da User:$1@$2 usando l'elenco su $3 -->",
+	'massmessage-optout-category' => 'Esclusione dalla ricezione di messaggi massivi',
+	'massmessage-badhtml' => 'Il tuo messaggio potrebbe avere {{PLURAL:$2|un|alcuni}} tag HTML non {{PLURAL:$2|chiuso|chiusi}}: $1.',
+	'massmessage-parse-badurl' => '"$1" non è un sito valido',
+	'massmessage-parse-badpage' => '"$1" non è un titolo di pagina valido',
+	'right-massmessage' => 'Invia un messaggio a più utenti contemporaneamente',
+	'action-massmessage' => 'inviare un messaggio a più utenti contemporaneamente',
+	'log-name-massmessage' => 'Messaggi massivi',
+	'log-description-massmessage' => "Questi eventi registrano l'invio di messaggi ad utenti tramite [[Special:MassMessage]].",
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|ha inviato un messaggio}} a $3',
+	'logentry-massmessage-failure' => 'Consegna di "$4" a $3 non riuscita con codice di errore<code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Consegna di "$4" a $3 omessa poiché la destinazione si trova in un namespace su cui non può essere pubblicato',
+	'logentry-massmessage-skipoptout' => 'Consegna di "$4" a $3 omessa poiché la destinazione è esclusa dalla ricezione di messaggi massivi',
+	'logentry-massmessage-skipnouser' => 'Consegna di "$4" a $3 omessa poiché l\'utenza non esiste',
+	'massmessage-cannot-rename' => "Questa è un'utenza di sistema e non può essere rinominata.",
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
