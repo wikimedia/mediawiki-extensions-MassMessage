@@ -79,6 +79,28 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
+	 * @return string
+	 */
+	function getState() {
+		return $this->state;
+	}
+
+	/**
+	 * @return Status
+	 */
+	function getStatus() {
+		return $this->status;
+	}
+
+	/**
+	 * Note that this won't be initalized unless submit is called
+	 * @return int
+	 */
+	function getCount() {
+		return $this->count;
+	}
+
+	/**
 	 * @return array
 	 */
 	function createForm() {
