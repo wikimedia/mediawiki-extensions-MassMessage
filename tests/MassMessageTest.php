@@ -30,10 +30,6 @@ class MassMessageTest extends MediaWikiTestCase {
 		parent::setUp();
 	}
 
-	protected function tearDown() {
-		parent::tearDown();
-	}
-
 	/**
 	 * Updates $title with the provided $text
 	 * @param Title title
