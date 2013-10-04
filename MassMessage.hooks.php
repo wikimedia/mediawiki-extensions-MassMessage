@@ -25,7 +25,7 @@ class MassMessageHooks {
 	 * @return array
 	 */
 	public static function ParserFunction( $parser, $page, $site = '' ) {
-		global $wgScript;
+		global $wgScript, $wgAllowGlobalMessaging;
 		$data = array( 'site' => $site, 'title' => $page );
 		if ( trim( $site ) === '' ) {
 			// Assume it's a local delivery
@@ -42,8 +42,14 @@ class MassMessageHooks {
 			// Check if the page provided is not valid
 			return MassMessage::parserError( 'massmessage-parse-badpage', $page );
 		}
-		if ( !isset( $data['wiki'] ) && MassMessage::getDBName( $data['site'] ) === null ) {
-			return MassMessage::parserError( 'massmessage-parse-badurl', $site );
+		if ( !isset( $data['wiki'] ) ) {
+			$data['wiki'] = MassMessage::getDBName( $data['site'] );
+			if ( $data['wiki'] === null ) {
+				return MassMessage::parserError( 'massmessage-parse-badurl', $site );
+			}
+		}
+		if ( !$wgAllowGlobalMessaging && $data['wiki'] != wfWikiID() ) {
+			return MassMessage::parserError( 'massmessage-global-disallowed' );
 		}
 		// Use a message so wikis can customize the output
 		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();

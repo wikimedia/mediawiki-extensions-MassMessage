@@ -42,6 +42,15 @@ $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
  */
 $wgMassMessageAccountUsername = 'MessengerBot';
 
+/**
+ * Whether to allow sending messages to another wiki
+ *
+ * This can be enabled on a "central" wiki to make it
+ * easier to keep track of where messages are being sent
+ * from.
+ */
+$wgAllowGlobalMessaging = true;
+
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'MassMessage',
