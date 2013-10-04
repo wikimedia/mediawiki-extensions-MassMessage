@@ -167,6 +167,9 @@ class SpecialMassMessage extends SpecialPage {
 		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $spamlist );
 		$logEntry->setComment( $subject );
+		$logEntry->setParameters( array(
+			'4::revid' => $spamlist->getLatestRevID(),
+		) );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
