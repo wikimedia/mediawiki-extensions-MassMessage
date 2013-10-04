@@ -28,11 +28,11 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected $count;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'MassMessage', 'massmessage' );
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		$request = $this->getRequest();
 		$context = $this->getContext();
 		$output = $this->getOutput();
@@ -82,14 +82,14 @@ class SpecialMassMessage extends SpecialPage {
 	/**
 	 * @return string
 	 */
-	function getState() {
+	public function getState() {
 		return $this->state;
 	}
 
 	/**
 	 * @return Status
 	 */
-	function getStatus() {
+	public function getStatus() {
 		return $this->status;
 	}
 
@@ -97,14 +97,14 @@ class SpecialMassMessage extends SpecialPage {
 	 * Note that this won't be initalized unless submit is called
 	 * @return int
 	 */
-	function getCount() {
+	public function getCount() {
 		return $this->count;
 	}
 
 	/**
 	 * @return array
 	 */
-	function createForm() {
+	protected function createForm() {
 		$request = $this->getRequest();
 		$context = $this->getContext();
 		$m = array();
@@ -160,7 +160,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $spamlist Title
 	 * @param $subject string
 	 */
-	function logToWiki( $spamlist, $subject ) {
+	protected function logToWiki( $spamlist, $subject ) {
 		// $title->getLatestRevID()
 
 		$logEntry = new ManualLogEntry( 'massmessage', 'send' );
@@ -181,7 +181,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	function callback( $data ) {
+	public function callback( $data ) {
 
 		$this->verifyData( $data );
 
@@ -212,7 +212,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $title string
 	 * @return Title|string string will be a error message key
 	 */
-	function getSpamlist( $title ) {
+	protected function getSpamlist( $title ) {
 		$spamlist = Title::newFromText( $title );
 		if ( $spamlist === null || !$spamlist->exists() ) {
 			return 'massmessage-spamlist-doesnotexist';
@@ -235,7 +235,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	function verifyData( $data ) {
+	protected function verifyData( $data ) {
 		// Trim all the things!
 		foreach ( $data as $k => $v ) {
 			$data[$k] = trim( $v );
@@ -263,7 +263,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	function preview( $data ) {
+	protected function preview( $data ) {
 		// $spamlist = $this->getSpamlist( $data['spamlist'] );
 		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
@@ -305,7 +305,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	function submit( $data ) {
+	protected function submit( $data ) {
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
 
 		// Prep the HTML comment message
