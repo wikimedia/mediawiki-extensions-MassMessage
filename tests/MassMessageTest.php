@@ -54,7 +54,7 @@ class MassMessageTest extends MediaWikiTestCase {
 		);
 	}
 	/**
-	 * Tests MassMessage::getDBName
+	 * @covers MassMessage::getDBName
 	 * @dataProvider provideGetDBName
 	 * @param $url
 	 * @param $expected
@@ -102,7 +102,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * Tests MassMessage::getParserFunctionTargets
+	 * @covers MassMessage::getParserFunctionTargets
 	 * @dataProvider provideGetParserFunctionTargets
 	 * @param  string $text  Text of the page to create
 	 * @param  array $check Stuff to check against
@@ -136,7 +136,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * Tests MassMessage::getBaseUrl
+	 * @covers MassMessage::getBaseUrl
 	 * @dataProvider provideGetBaseUrl
 	 * @param  string $url      raw url to parse
 	 * @param  string $expected expected value
@@ -155,7 +155,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * Tests MassMessage::getMessengerUser
+	 * @covers MassMessage::getMessengerUser
 	 * @dataProvider provideGetMessengerUser
 	 * @param $name
 	 */
@@ -169,7 +169,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * Tests MassMessage::followRedirect
+	 * @covers MassMessage::followRedirect
 	 */
 	public function testFollowRedirect() {
 		$title = Title::newfromtext( 'R1' );
@@ -182,7 +182,8 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * Tests MassMessageJob::sendMessage and MassMessageJob::editPage
+	 * @covers MassMessageJob::sendMessage
+	 * @covers MassMessageJob::editPage
 	 */
 	public function testMessageSending() {
 		$target = Title::newFromText( 'Project:Testing1234' );
@@ -200,7 +201,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * Tests MassMessageJob::isOptedOut and MassMessage::sendMessage
+	 * @covers MassMessageJob::isOptedOut
 	 */
 	public function testOptOut() {
 		$target = Title::newFromText( 'Project:Opt out test page' );
