@@ -308,7 +308,7 @@ class SpecialMassMessage extends SpecialPage {
 		$data['comment'] = array(
 			$this->getUser()->getName(),
 			$wgDBname,
-			$spamlist->getFullURL( $proto = PROTO_CANONICAL )
+			$spamlist->getFullURL( '', false, PROTO_CANONICAL )
 		);
 
 		// Log it.
