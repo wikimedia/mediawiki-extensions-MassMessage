@@ -93,17 +93,17 @@ class MassMessageHooks {
 	 * @return bool
 	 */
 	public static function onSpecialStatsAddExtra( &$extraStats ) {
-		// from runJobs.php --group
-		$group = JobQueueGroup::singleton();
-		$queue = $group->get( 'massmessageJob' );
-		$pending = $queue->getSize();
-		$claimed = $queue->getAcquiredCount();
-		$abandoned = $queue->getAbandonedCount();
-		$active = ( $claimed - $abandoned );
+		$extraStats['massmessage-queued-count'] = MassMessage::getQueuedCount();
+		return true;
+	}
 
-		$queued = $active + $pending;
-		$extraStats['massmessage-queued-count'] = $queued;
-
+	/**
+	 * Add the number of queued messages to &meta=siteinfo&siprop=statistics
+	 * @param $result array
+	 * @return bool
+	 */
+	public static function onAPIQuerySiteInfoStatisticsInfo( &$result ) {
+		$result['queued-massmessages'] = MassMessage::getQueuedCount();
 		return true;
 	}
 

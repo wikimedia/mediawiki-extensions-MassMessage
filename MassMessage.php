@@ -65,6 +65,7 @@ $wgJobClasses['massmessageJob'] = 'MassMessageJob';
 
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
 $wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';
+$wgHooks['APIQuerySiteInfoStatisticsInfo'][] = 'MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo';
 $wgHooks['RenameUserPreRename'][] = 'MassMessageHooks::onRenameUserPreRename';
 $wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
