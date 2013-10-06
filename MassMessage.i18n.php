@@ -9,7 +9,7 @@
 
 $messages = array();
 
-/** English
+/** English (English)
  * @author Kunal Mehta
  */
 $messages['en'] = array(
@@ -44,7 +44,6 @@ $messages['en'] = array(
 	'logentry-massmessage-skipoptout' => 'Delivery of "$4" to $3 was skipped because target has opted-out of message delivery',
 	'logentry-massmessage-skipnouser' => 'Delivery of "$4" to $3 was skipped because user account does not exist',
 	'massmessage-cannot-rename' => 'This is a system account and cannot be renamed.',
-	'massmessage-message-footer' => '',
 	'massmessage-nextsteps' => '[[Special:MassMessage|Send another message]] or [[Special:Statistics|view how many messages are queued]].',
 );
 
@@ -105,7 +104,9 @@ See also:
 	'action-massmessage' => '{{doc-action|massmessage}}',
 	'log-name-massmessage' => 'Log page title',
 	'log-description-massmessage' => 'Log page description',
-	'logentry-massmessage-send' => '{{logentry}}',
+	'logentry-massmessage-send' => '$3 here is the title of a page containing a list of recipients, so an example log entry would look like "Legoktm sent a message to Wikipedia:Wikipedia Signpost/Subscriptions (Signpost for Aug 14, 2013)".
+----
+{{logentry}}',
 	'logentry-massmessage-failure' => '{{logentry}}
 * $4 is the subject line of the message
 * $5 is the API error code. This will always be in English.',
@@ -117,7 +118,7 @@ See also:
 * $4 - the subject line of the message',
 	'massmessage-cannot-rename' => 'Error message a user sees when they try renaming the bot account.',
 	'massmessage-message-footer' => 'The footer that is by added at the end of very message. It is left blank so individual wikis can customize it.',
-	'massmessage-nextsteps' => 'Message after {{mw-msg|massmessage-submitted}} on the special page once the form has been submitted. ',
+	'massmessage-nextsteps' => 'Message after {{mw-msg|massmessage-submitted}} on the special page once the form has been submitted.',
 );
 
 /** Bengali (বাংলা)
@@ -196,6 +197,7 @@ $messages['de'] = array(
 	'logentry-massmessage-skipoptout' => 'Der Versand von „$4“ an $3 wurde übersprungen, da das Ziel vom Nachrichtenversand ausgeschlossen wurde.',
 	'logentry-massmessage-skipnouser' => 'Der Versand von „$4“ an $3 wurde übersprungen, da das Benutzerkonto nicht vorhanden ist.',
 	'massmessage-cannot-rename' => 'Dies ist ein Systemkonto und kann nicht umbenannt werden.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Eine weitere Nachricht versenden]] oder [[Special:Statistics|die Anzahl der Nachrichten in der Warteschlange ansehen]].',
 );
 
 /** Esperanto (Esperanto)
@@ -249,6 +251,7 @@ $messages['eu'] = array(
 );
 
 /** French (français)
+ * @author DavidL
  * @author Gomoko
  * @author Rastus Vernon
  * @author Sherbrooke
@@ -284,6 +287,7 @@ $messages['fr'] = array(
 	'logentry-massmessage-skipoptout' => 'L’envoi de « $4 » à $3 a été sauté parce que la cible a choisi de ne pas recevoir de messages',
 	'logentry-massmessage-skipnouser' => 'L’envoi de « $4 » à $3 a été sauté parce que le compte utilisateur n’existe pas',
 	'massmessage-cannot-rename' => 'Ceci est un compte système qui ne peut être renommé.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Envoyer un autre message]] ou [[Special:Statistics|voir combien de messages sont en attente]].',
 );
 
 /** Galician (galego)
@@ -409,8 +413,8 @@ $messages['ja'] = array(
 	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
 	'massmessage-hidden-comment' => '<!-- User:$1@$2 が $3 のリストを使用して送信したメッセージ -->',
 	'massmessage-badhtml' => 'メッセージ内に、{{PLURAL:$2|閉じられていない HTML タグ}}があります: $1',
-	'massmessage-parse-badurl' => '「$1」は有効なサイトではありません',
-	'massmessage-parse-badpage' => '「$1」は有効なページ名ではありません',
+	'massmessage-parse-badurl' => '「$1」は有効なサイトではありません。',
+	'massmessage-parse-badpage' => '「$1」は有効なページ名ではありません。',
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'log-name-massmessage' => '一斉メッセージ記録',
@@ -420,9 +424,11 @@ $messages['ja'] = array(
 	'logentry-massmessage-skipbadns' => '宛先の名前空間には投稿できないため、$3 への「$4」の送信がスキップされました',
 	'logentry-massmessage-skipnouser' => '利用者アカウントが存在しないため、$3 への「$4」の送信がスキップされました',
 	'massmessage-cannot-rename' => 'これはシステム アカウントであるため、名前を変更できません。',
+	'massmessage-nextsteps' => '[[Special:MassMessage|別のメッセージを送信できます]]。[[Special:Statistics|待ち行列内のメッセージ数を閲覧することもできます]]。',
 );
 
 /** Korean (한국어)
+ * @author Hym411
  * @author Kwj2772
  * @author 아라
  */
@@ -445,13 +451,19 @@ $messages['ko'] = array(
 	'massmessage-hidden-comment' => '<!-- $3의 목록을 사용해 User:$1@$2님이 보낸 메시지 -->',
 	'massmessage-optout-category' => '메시지 전달을 받지 않는 사용자',
 	'massmessage-badhtml' => '당신의 메시지에 {{PLURAL:$2|닫히지 않은 HTML 태그}}가 포함되었을 수 있습니다: $1.',
+	'massmessage-parse-badurl' => '"$1"은 올바른 사이트가 아닙니다.',
+	'massmessage-parse-badpage' => '"$1"은 올바른 문서 제목이 아닙니다.',
 	'right-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
 	'action-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
 	'log-name-massmessage' => '대량 메시지 기록',
 	'log-description-massmessage' => '이 이벤트는 [[Special:MassMessage]]를 통해 메시지를 보낸 사용자를 추적합니다.',
 	'logentry-massmessage-send' => '$1 사용자가 $3에 {{GENDER:$2|메시지를 보냈습니다}}',
 	'logentry-massmessage-failure' => '$3에 "$4"(을)를 보내지 못했으며 오류 코드는 <code>$5</code>입니다',
+	'logentry-massmessage-skipbadns' => '"$4"의 $3으로의 배달은 해당 이름공간에 문서를 쓸 수 없었기 때문에 넘어갔습니다.',
+	'logentry-massmessage-skipoptout' => '"$4"의 $3으로의 배달이 목표가 메시지 배달을 받지 않도록 설정했기 때문에 넘어갔습니다.',
+	'logentry-massmessage-skipnouser' => '"$4"의 "$3"으로의 배달이 사용자 계정이 존재하지 않기 때문에 넘어갔습니다.',
 	'massmessage-cannot-rename' => '이 계정은 시스템 계정이고 이름을 바꿀 수 없습니다.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|다른 메시지 보내기]] 혹은 [[Special:Statistics|얼마나 많은 메시지들이 대기 중인지 보기]]',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -470,11 +482,13 @@ $messages['lb'] = array(
 	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch.',
 	'massmessage-hidden-comment' => "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
 	'massmessage-parse-badurl' => '"$1" ass kee valabele Site',
+	'massmessage-parse-badpage' => '"$1" ass kee valabelen Titel fir eng Säit',
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
 	'action-massmessage' => 'e Message u verschidde Benotzer gläichzäiteg schécken',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt',
 	'logentry-massmessage-failure' => 'D\'Schécke vu(n) "$4" op $3 huet net funktionéiert: de Feelercode ass <code>$5</code>',
 	'massmessage-cannot-rename' => 'Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.',
+	'massmessage-nextsteps' => "[[Special:MassMessage|Nach e Message schécken]] oder [[Special:Statistics|d'Zuel vu Message weisen déi drop waarde geschéckt ze ginn]].",
 );
 
 /** Macedonian (македонски)
@@ -511,6 +525,7 @@ $messages['mk'] = array(
 	'logentry-massmessage-skipoptout' => 'Испраќањето на „$4“ на $3 е изоставено бидејќи целната личност одлучила да не прима пораки',
 	'logentry-massmessage-skipnouser' => 'Испраќањето на „$4“ на $3 е изоставено бидејќи корисничката сметка не постои',
 	'massmessage-cannot-rename' => 'Ова е системска сметка и затоа не може да се преименува.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Испратете друга порака]] или [[Special:Statistics|погледајте колку пораки стојат во ред]].',
 );
 
 /** Malayalam (മലയാളം)
@@ -880,6 +895,44 @@ $messages['uk'] = array(
 	'logentry-massmessage-skipoptout' => 'Доставка "$4" до $3 була пропущена, бо ціль відмовила у доставці повідомлень',
 	'logentry-massmessage-skipnouser' => 'Доставка „$4“ до  $3  була пропущено, бо обліковий запис користувача відсутній',
 	'massmessage-cannot-rename' => 'Це - системний обліковий запис і його не можна перейменувати.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Надіслати інше повідомлення]] або [[Special:Statistics|переглянути скільки повідомлень у черзі]].',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'massmessage' => 'Nhắn tin cho nhiều người',
+	'massmessage-desc' => 'Cho phép người dùng nhắn tin dễ dàng cho một danh sách người dùng',
+	'massmessage-form-spamlist' => 'Trang chứa danh sách các trang để nhắn tin:',
+	'massmessage-form-subject' => 'Tiêu đề tin nhắn (cũng tóm lược sửa đổi):',
+	'massmessage-form-message' => 'Nội dung tin nhắn:',
+	'massmessage-form-preview' => 'Xem trước',
+	'massmessage-form-submit' => 'Nhắn',
+	'massmessage-fieldset-preview' => 'Xem trước',
+	'massmessage-submitted' => 'Tin nhắn của bạn cho $1 trang đã được xếp hàng đợi.',
+	'massmessage-just-preview' => 'Đây chỉ là một bản xem trước. Hãy bấm “{{int:massmessage-form-submit}}” để gửi tin nhắn.',
+	'massmessage-spamlist-doesnotexist' => 'Trang để lấy danh sách trang không tồn tại.',
+	'massmessage-empty-subject' => 'Tin nhắn không có tiêu đề.',
+	'massmessage-empty-message' => 'Tin nhắn không có nội dung.',
+	'massmessage-form-header' => 'Hãy điền biểu mẫu sau để nhắn tin cho một danh sách được định rõ. Tất cả các trường là bắt buộc.',
+	'massmessage-queued-count' => 'Số [[Special:MassMessage|tin nhắn cho nhiều người]] trong hàng đợi',
+	'massmessage-hidden-comment' => '<!-- Tin nhắn của Thành viên:$1@$2 gửi cho mọi người trong danh sách tại $3 -->',
+	'massmessage-optout-category' => 'Đã chọn không nhận tin nhắn',
+	'massmessage-badhtml' => 'Tin nhắn của bạn có thể không đóng {{PLURAL:$2|một thẻ HTML|các thẻ HTML}}: $1.',
+	'massmessage-parse-badurl' => '“$1” không phải là trang Web hợp lệ.',
+	'massmessage-parse-badpage' => '“$1” không phải là tên trang hợp lệ.',
+	'right-massmessage' => 'Nhắn tin cho nhiều người một lúc',
+	'action-massmessage' => 'nhắn tin cho nhiều người một lúc',
+	'log-name-massmessage' => 'Nhật trình nhắn tin cho nhiều người',
+	'log-description-massmessage' => 'Nhật trình này có các tin nhắn được gửi cho nhiều người dùng [[Special:MassMessage]].',
+	'logentry-massmessage-send' => '$1 đã {{GENDER:$2}}nhắn tin cho $3',
+	'logentry-massmessage-failure' => 'Việc gửi “$4” cho $3 bị thất bại với mã lỗi <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Không thể gửi “$4” cho $3 vì trang nằm trong một không gian tên không cho phép nhắn tin',
+	'logentry-massmessage-skipoptout' => 'Không thể gửi “$4” cho $3 vì người dùng đã chọn không nhận tin nhắn',
+	'logentry-massmessage-skipnouser' => 'Không thể gửi “$4” cho $3 vì tài khoản người dùng này không tồn tại',
+	'massmessage-cannot-rename' => 'Không thể đổi tên của tài khoản hệ thống này.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Nhắn tin khác]] hoặc [[Special:Statistics|xem hàng đợi có bao nhiêu tin nhắn]].',
 );
 
 /** Yiddish (ייִדיש)
@@ -915,4 +968,5 @@ $messages['zh-hans'] = array(
 	'log-name-massmessage' => '批量消息日志',
 	'log-description-massmessage' => '这些事件跟踪用户使用[[Special:MassMessage]]发送消息。',
 	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到$3',
+	'massmessage-nextsteps' => '[[Special:MassMessage|发送其他信息]]或者[[Special:Statistics|查看多少信息等待排队]]。',
 );

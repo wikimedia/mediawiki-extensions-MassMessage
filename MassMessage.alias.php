@@ -5,6 +5,7 @@
  * @file
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+// @codingStandardsIgnoreFile
 
 $specialPageAliases = array();
 
@@ -26,4 +27,9 @@ $specialPageAliases['ko'] = array(
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'MassMessage' => array( 'МасовнаПорака' ),
+);
+
+/** Dutch (Nederlands) */
+$specialPageAliases['nl'] = array(
+	'MassMessage' => array( 'BerichtenVerzenden' ),
 );
