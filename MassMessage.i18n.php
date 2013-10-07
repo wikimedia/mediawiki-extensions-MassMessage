@@ -391,6 +391,7 @@ $messages['it'] = array(
 	'logentry-massmessage-skipoptout' => 'Consegna di "$4" a $3 omessa poiché la destinazione è esclusa dalla ricezione di messaggi massivi',
 	'logentry-massmessage-skipnouser' => 'Consegna di "$4" a $3 omessa poiché l\'utenza non esiste',
 	'massmessage-cannot-rename' => "Questa è un'utenza di sistema e non può essere rinominata.",
+	'massmessage-nextsteps' => '[[Special:MassMessage|Invia un altro messaggio]] o [[Special:Statistics|vedi quanti messaggi sono accodati]].',
 );
 
 /** Japanese (日本語)
