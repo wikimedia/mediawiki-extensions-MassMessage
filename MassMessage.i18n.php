@@ -197,6 +197,16 @@ $messages['de'] = array(
 	'massmessage-nextsteps' => '[[Special:MassMessage|Eine weitere Nachricht versenden]] oder [[Special:Statistics|die Anzahl der Nachrichten in der Warteschlange ansehen]].',
 );
 
+/** Zazaki (Zazaki)
+ * @author Gorizon
+ */
+$messages['diq'] = array(
+	'massmessage' => 'Mass mesac bırş',
+	'massmessage-form-preview' => 'Verqayt',
+	'massmessage-form-submit' => 'Bırş',
+	'massmessage-fieldset-preview' => 'Verqayt',
+);
+
 /** Esperanto (Esperanto)
  * @author KuboF
  */
@@ -613,11 +623,14 @@ $messages['nl'] = array(
 	'massmessage-empty-subject' => 'Er wordt geen onderwerp aangegeven.',
 	'massmessage-empty-message' => 'Het bericht bevat geen tekst.',
 	'massmessage-form-header' => 'Gebruiker het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht.',
+	'massmessage-parse-badurl' => '"$1" is geen geldige site.',
+	'massmessage-parse-badpage' => '"$1" is geen geldige paginanaam.',
 	'right-massmessage' => 'Berichten verzenden aan meerdere ontvangers tegelijk',
 	'action-massmessage' => 'berichten te verzenden aan meerdere ontvangers tegelijk',
 	'log-name-massmessage' => 'Bulkberichtenlogboek',
 	'log-description-massmessage' => 'Deze gebeurtenissen zijn gerelateerd aan verzonden berichten via de functie [[Special:MassMessage|bulkberichten]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|heeft}} een bericht geplaatst op $3',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Nog een bericht verzenden]] of [[Special:Statistics|bekijken hoeveel berichten er in de wachtrij staan]].',
 );
 
 /** Occitan (occitan)
