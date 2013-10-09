@@ -19,6 +19,11 @@ $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
 );
 
+/** Galician (galego) */
+$specialPageAliases['gl'] = array(
+	'MassMessage' => array( 'Mensaxe_en_masa' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'MassMessage' => array( '대량메시지' ),
