@@ -201,7 +201,7 @@ class MassMessage {
 		}
 		return array (
 			'<strong class="error">' .
-			$msg->plain() .
+			$msg->inContentLanguage()->plain() .
 			'</strong>',
 			'noparse' => false
 		);
