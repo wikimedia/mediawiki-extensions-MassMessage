@@ -91,22 +91,27 @@ class MassMessage {
 	 */
 	public static function getDBName( $host ) {
 		global $wgConf, $wgMemc;
-		$key = 'massmessage:urltodb:' . md5( $host ); // Don't use wfMemcKey since it splits cache per wiki
-		$data = $wgMemc->get( $key );
-		if ( $data !== false ) {
-			return $data;
-		}
-		$dbs = $wgConf->getLocalDatabases();
-		foreach ( $dbs as $dbname ) {
-			$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
-			$parse = wfParseUrl( $url );
-			if ( $parse['host'] == $host ) {
-				// Cache it for a week
-				$wgMemc->set( $key, $dbname, 60 * 60 * 24 * 7 );
-				return $dbname;
+		static $mapping = null;
+		if ( $mapping === null ) {
+			// Don't use wfMemcKey since it splits cache per wiki
+			$key = 'massmessage:urltodb';
+			$data = $wgMemc->get( $key );
+			if ( $data === false ) {
+				$dbs = $wgConf->getLocalDatabases();
+				$mapping = array();
+				foreach ( $dbs as $dbname ) {
+					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
+					$parse = wfParseUrl( $url );
+					$mapping[$parse['host']] = $dbname;
+				}
+				$wgMemc->set( $key, $mapping, 60 * 60 * 24 * 7 );
+			} else {
+				$mapping = $data;
 			}
 		}
-
+		if ( isset( $mapping[$host] ) ) {
+			return $mapping[$host];
+		}
 		return null; // Couldn't find anything
 	}
 
