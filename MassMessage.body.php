@@ -169,8 +169,7 @@ class MassMessage {
 		if ( !defined( 'MASSMESSAGE_PARSE' ) ) { // Unit tests call this function multiple times
 			define( 'MASSMESSAGE_PARSE', true );
 		}
-		$wikipage = WikiPage::factory( $spamlist );
-		$parserOptions = $wikipage->makeParserOptions( $context );
+		$parserOptions = $page->makeParserOptions( $context );
 		$parser = new Parser();
 
 		// Parse
