@@ -324,13 +324,10 @@ class SpecialMassMessage extends SpecialPage {
 			$this->status->fatal( $pages );
 			return $this->status;
 		}
-		$this->count = 0;
-		foreach ( $pages as $page ) {
-			$title = Title::newFromText( $page['title'] );
-			$job = new MassMessageJob( $title, $data );
-			JobQueueGroup::singleton( $page['wiki'] )->push( $job );
-			$this->count += 1;
-		}
+		$params = array( 'data' => $data, 'pages' => $pages );
+		$job = new MassMessageSubmitJob( $spamlist, $params );
+		JobQueueGroup::singleton()->push( $job );
+		$this->count = count( $pages );
 
 		return $this->status;
 	}
