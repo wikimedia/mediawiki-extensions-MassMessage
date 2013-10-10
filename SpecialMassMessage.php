@@ -306,13 +306,12 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	function submit( $data ) {
-		global $wgDBname;
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
 
 		// Prep the HTML comment message
 		$data['comment'] = array(
 			$this->getUser()->getName(),
-			$wgDBname,
+			wfWikiID(),
 			$spamlist->getFullURL( '', false, PROTO_CANONICAL )
 		);
 
@@ -329,12 +328,7 @@ class SpecialMassMessage extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			$job = new MassMessageJob( $title, $data );
-			if ( $page['dbname'] == $wgDBname ) {
-				$dbname = wfWikiID();
-			} else {
-				$dbname = $page['dbname'];
-			}
-			JobQueueGroup::singleton( $dbname )->push( $job );
+			JobQueueGroup::singleton( $page['wiki'] )->push( $job );
 			$this->count += 1;
 		}
 

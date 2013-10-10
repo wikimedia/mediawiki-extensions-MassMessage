@@ -77,23 +77,23 @@ class MassMessageTest extends MediaWikiTestCase {
 	 * @return array
 	 */
 	public static function provideGetParserFunctionTargets() {
-		global $wgDBname, $wgContLang;
+		global $wgContLang;
 		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
 		return array(
 			// project page, no site provided
-			array( '{{#target:Project:Example}}', array( 'title' => $proj . ':Example', 'dbname' => $wgDBname ), ),
+			array( '{{#target:Project:Example}}', array( 'title' => $proj . ':Example' ), ),
 			// user talk page, no site provided
-			array( '{{#target:User talk:Example}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Example' ), ),
+			array( '{{#target:User talk:Example}}', array('title' => 'User talk:Example' ), ),
 			// local redirect being followed
-			array( '{{#target:User talk:Is a redirect}}', array( 'dbname' => $wgDBname, 'title' => 'User talk:Redirect target' ) ),
+			array( '{{#target:User talk:Is a redirect}}', array('title' => 'User talk:Redirect target' ) ),
 			// invalid titles
 			array( '{{#target:User:<><}}', array(), ),
 			array( '{{#target:Project:!!!<><><><>', array(), ),
 			// project page and site
-			array( '{{#target:Project:Testing|en.wikipedia.org}}', array( 'title' => 'Project:Testing', 'site' => 'en.wikipedia.org' ), ),
+			array( '{{#target:Project:Testing|en.wikipedia.org}}', array( 'title' => 'Project:Testing', 'site' => 'en.wikipedia.org', 'wiki' => 'enwiki' ), ),
 			// user page and site
-			array( '{{#target:User talk:Test|fr.wikipedia.org}}', array( 'title' => 'User talk:Test', 'site' => 'fr.wikipedia.org' ), ),
+			array( '{{#target:User talk:Test|fr.wikipedia.org}}', array( 'title' => 'User talk:Test', 'site' => 'fr.wikipedia.org', 'wiki' => 'frwiki' ), ),
 		);
 	}
 
@@ -115,6 +115,11 @@ class MassMessageTest extends MediaWikiTestCase {
 			$data = $data[0]; // We're just testing the first value
 			foreach ( $check as $key => $value ) {
 				$this->assertEquals( $data[$key], $value );
+			}
+			if ( !isset( $check['wiki'] ) ) {
+				$this->assertEquals( $data['wiki'], wfWikiID() );
+				// Using wfWikiId() within @dataProviders returns a different result
+				// than when we use wfWikiId() within a test
 			}
 		}
 	}

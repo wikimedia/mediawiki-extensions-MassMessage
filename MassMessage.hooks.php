@@ -29,10 +29,10 @@ class MassMessageHooks {
 		$data = array( 'site' => $site, 'title' => $page );
 		if ( trim( $site ) === '' ) {
 			// Assume it's a local delivery
-			global $wgServer, $wgDBname;
+			global $wgServer;
 			$site = MassMessage::getBaseUrl( $wgServer );
 			$data['site'] = $site;
-			$data['dbname'] = $wgDBname;
+			$data['wiki'] = wfWikiID();
 		} elseif ( filter_var( 'http://' . $site, FILTER_VALIDATE_URL ) === false ) {
 			// Try and see if the site provided is not valid
 			// We can just prefix http:// in front since it needs some kind of protocol
@@ -42,7 +42,7 @@ class MassMessageHooks {
 			// Check if the page provided is not valid
 			return MassMessage::parserError( 'massmessage-parse-badpage', $page );
 		}
-		if ( !isset( $data['dbname'] ) && MassMessage::getDBName( $data['site'] ) === null ) {
+		if ( !isset( $data['wiki'] ) && MassMessage::getDBName( $data['site'] ) === null ) {
 			return MassMessage::parserError( 'massmessage-parse-badurl', $site );
 		}
 		// Use a message so wikis can customize the output

@@ -121,20 +121,19 @@ class MassMessage {
 	 * @return array
 	 */
 	public static function normalizeTargets( $data ) {
-		global $wgDBname;
 		$targets = array();
 		foreach ( $data as $target ) {
 
-			if ( !isset( $target['dbname'] ) ) {
-				$dbname = self::getDBName( $target['site'] );
-				if ( $dbname == null ) {
+			if ( !isset( $target['wiki'] ) ) {
+				$wiki = self::getDBName( $target['site'] );
+				if ( $wiki == null ) {
 					// Not set in $wgConf
 					continue;
 				}
-				$target['dbname'] = $dbname;
+				$target['wiki'] = $wiki;
 			}
 
-			if ( $target['dbname'] == $wgDBname ) {
+			if ( $target['wiki'] == wfWikiID() ) {
 				$title = Title::newFromText( $target['title'] );
 				if ( $title === null ) {
 					continue;
@@ -147,7 +146,7 @@ class MassMessage {
 			}
 
 			// Use an assoc array to clear dupes
-			$targets[$target['title'] . '<' . $target['dbname']] = $target;
+			$targets[$target['title'] . '<' . $target['wiki']] = $target;
 			// Use a funky delimiter so people can't mess with it by using
 			// "creative" page names
 		}
