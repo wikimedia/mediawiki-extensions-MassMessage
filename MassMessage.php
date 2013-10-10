@@ -83,14 +83,14 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 		'jquery.delayedBind',
 		'mediawiki.jqueryMsg',
 	),
-	'localBasePath' => $dir,
-	'remoteExtPath' => 'MassMessage',
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
 );
 
 $wgResourceModules['ext.MassMessage.special'] = array(
 	'styles' => 'ext.MassMessage.special.css',
-	'localBasePath' => $dir,
-	'remoteExtPath' => 'MassMessage',
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
 );
 
 $wgLogTypes[] = 'massmessage';
