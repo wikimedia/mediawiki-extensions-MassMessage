@@ -47,9 +47,9 @@ class SpecialMassMessage extends SpecialPage {
 		$this->status = new Status();
 
 		// Figure out what state we're in.
-		if ( $request->getText( 'wpsubmit-button' ) == $context->msg( 'massmessage-form-submit' )->text() ) {
+		if ( $request->getText( 'submit-button' ) == $context->msg( 'massmessage-form-submit' )->text() ) {
 			$this->state = 'submit';
-		} elseif ( $request->getText( 'wppreview-button' ) == $context->msg( 'massmessage-form-preview' )->text() ) {
+		} elseif ( $request->getText( 'preview-button' ) == $context->msg( 'massmessage-form-preview' )->text() ) {
 			$this->state = 'preview';
 		} else {
 			$this->state = 'form';
@@ -111,6 +111,7 @@ class SpecialMassMessage extends SpecialPage {
 		// Who to send to
 		$m['spamlist'] = array(
 			'id' => 'mw-massmessage-form-spamlist',
+			'name' => 'spamlist',
 			'type' => 'text',
 			'label-message' => 'massmessage-form-spamlist',
 			'default' => $request->getText( 'spamlist' )
@@ -118,6 +119,7 @@ class SpecialMassMessage extends SpecialPage {
 		// The subject line
 		$m['subject'] = array(
 			'id' => 'mw-massmessage-form-subject',
+			'name' => 'subject',
 			'type' => 'text',
 			'label-message' => 'massmessage-form-subject',
 			'default' => $request->getText( 'subject' ),
@@ -127,6 +129,7 @@ class SpecialMassMessage extends SpecialPage {
 		// The message to send
 		$m['message'] = array(
 			'id' => 'mw-massmessage-form-message',
+			'name' => 'message',
 			'type' => 'textarea',
 			'label-message' => 'massmessage-form-message',
 			'default' => $request->getText( 'message' )
@@ -135,6 +138,7 @@ class SpecialMassMessage extends SpecialPage {
 		if ( $this->state == 'preview' ) {
 			$m['submit-button'] = array(
 				'id' => 'mw-massmessage-form-submit-button',
+				'name' => 'submit-button',
 				'type' => 'submit',
 				'default' => $context->msg( 'massmessage-form-submit' )->text()
 			);
@@ -142,6 +146,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		$m['preview-button'] = array(
 			'id' => 'mw-massmessage-form-preview-button',
+			'name' => 'preview-button',
 			'type' => 'submit',
 			'default' => $context->msg( 'massmessage-form-preview' )->text()
 		);
