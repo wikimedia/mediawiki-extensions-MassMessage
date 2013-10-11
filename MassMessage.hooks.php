@@ -12,24 +12,20 @@ class MassMessageHooks {
 	 * @return bool
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
-		$parser->setFunctionHook( 'target', 'MassMessageHooks::ParserFunction' );
+		$parser->setFunctionHook( 'target', 'MassMessageHooks::outputParserFunction' );
 		return true;
 	}
 
 	/**
-	 * Parser function for {{#target:User talk:Example|en.wikipedia.org}}
-	 * Hostname is optional for local delivery
-	 * @param Parser $parser
-	 * @param string $site
+	 * Verifies the user submitted data to check it's valid
 	 * @param string $page
+	 * @param string $site
 	 * @return array
 	 */
-	public static function ParserFunction( $parser, $page, $site = '' ) {
-		global $wgScript, $wgAllowGlobalMessaging;
+	public static function verifyPFData( $page, $site ) {
+		global $wgServer, $wgAllowGlobalMessaging;
 		$data = array( 'site' => $site, 'title' => $page );
 		if ( trim( $site ) === '' ) {
-			// Assume it's a local delivery
-			global $wgServer;
 			$site = MassMessage::getBaseUrl( $wgServer );
 			$data['site'] = $site;
 			$data['wiki'] = wfWikiID();
@@ -51,20 +47,56 @@ class MassMessageHooks {
 		if ( !$wgAllowGlobalMessaging && $data['wiki'] != wfWikiID() ) {
 			return MassMessage::parserError( 'massmessage-global-disallowed' );
 		}
-		// Use a message so wikis can customize the output
-		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();
-		$output = $parser->getOutput();
+		return $data;
+	}
 
-		// Store the data in case we're parsing it manually
-		if ( defined( 'MASSMESSAGE_PARSE' ) ) {
-			if ( !$output->getProperty( 'massmessage-targets' ) ) {
-				$output->setProperty( 'massmessage-targets', serialize( array( $data ) ) );
-			} else {
-				$output->setProperty( 'massmessage-targets' , serialize( array_merge( unserialize( $output->getProperty( 'massmessage-targets' ) ),  array( $data ) ) ) );
-			}
+	/**
+	 * Main parser function for {{#target:User talk:Example|en.wikipedia.org}}
+	 * Prepares the human facing output
+	 * Hostname is optional for local delivery
+	 * @param Parser $parser
+	 * @param string $site
+	 * @param string $page
+	 * @return array
+	 */
+	public static function outputParserFunction( $parser, $page, $site = '' ) {
+		global $wgScript;
+
+		$data = self::verifyPFData( $page, $site );
+		if ( isset( $data['error'] ) ) {
+			return $data;
 		}
 
+		$site = $data['site'];
+		$page = $data['title'];
+
+		// Use a message so wikis can customize the output
+		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();
+
 		return array( $msg, 'noparse' => false );
+	}
+
+	/**
+	 * Reads the parser function and extracts the data from it
+	 * @param Parser $parser
+	 * @param string $page
+	 * @param string $site
+	 * @return string
+	 */
+	public static function storeDataParserFunction( $parser, $page, $site = '' ) {
+		$data = self::verifyPFData( $page, $site );
+		if ( isset( $data['error'] ) ) {
+			return ''; // Output doesn't matter
+		}
+		$output = $parser->getOutput();
+		$current = $output->getProperty( 'massmessage-targets' );
+		if ( !$current ) {
+			$output->setProperty( 'massmessage-targets', serialize( array( $data ) ) );
+		} else {
+			$output->setProperty( 'massmessage-targets' , serialize(
+				array_merge( unserialize( $current ),  array( $data ) ) ) );
+		}
+		return '';
 	}
 
 	/**

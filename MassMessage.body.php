@@ -170,11 +170,10 @@ class MassMessage {
 		}
 
 		// Prep the parser
-		if ( !defined( 'MASSMESSAGE_PARSE' ) ) { // Unit tests call this function multiple times
-			define( 'MASSMESSAGE_PARSE', true );
-		}
 		$parserOptions = $page->makeParserOptions( $context );
 		$parser = new Parser();
+		$parser->firstCallInit(); // So our intial parser function is added
+		$parser->setFunctionHook( 'target', 'MassMessageHooks::storeDataParserFunction' ); // Now overwrite it
 
 		// Parse
 		$output = $parser->parse( $text, $spamlist, $parserOptions );
@@ -203,7 +202,8 @@ class MassMessage {
 			'<strong class="error">' .
 			$msg->inContentLanguage()->plain() .
 			'</strong>',
-			'noparse' => false
+			'noparse' => false,
+			'error' => true,
 		);
 	}
 
