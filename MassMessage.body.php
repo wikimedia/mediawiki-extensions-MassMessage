@@ -16,7 +16,7 @@ class MassMessage {
 	 * @param $title Title
 	 * @return Title|null null if the page is an interwiki redirect
 	 */
-	public static function followRedirect( $title ) {
+	public static function followRedirect( Title $title ) {
 		if ( !$title->isRedirect() ) {
 			return $title;
 		}
@@ -120,7 +120,7 @@ class MassMessage {
 	 * @param  array $data
 	 * @return array
 	 */
-	public static function normalizeTargets( $data ) {
+	public static function normalizeTargets( array $data ) {
 		$targets = array();
 		foreach ( $data as $target ) {
 
@@ -160,7 +160,7 @@ class MassMessage {
 	 * @param  IContextSource $context
 	 * @return array
 	 */
-	public static function getParserFunctionTargets( $spamlist, $context ) {
+	public static function getParserFunctionTargets( Title $spamlist, $context ) {
 		$page = WikiPage::factory( $spamlist );
 		$content = $page->getContent( Revision::RAW );
 		if ( $content instanceof TextContent ) {

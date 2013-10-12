@@ -9,7 +9,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class MassMessageSubmitJob extends Job {
-	public function __construct( $title, $params, $id = 0 ) {
+	public function __construct( Title $title, array $params, $id = 0 ) {
 		parent::__construct( 'massmessagesubmitJob', $title, $params, $id );
 	}
 

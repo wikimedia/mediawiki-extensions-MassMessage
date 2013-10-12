@@ -11,7 +11,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class MassMessageJob extends Job {
-	public function __construct( $title, $params, $id = 0 ) {
+	public function __construct( Title $title, array $params, $id = 0 ) {
 		parent::__construct( 'massmessageJob', $title, $params, $id );
 	}
 
@@ -37,7 +37,7 @@ class MassMessageJob extends Job {
 	 * @param  Title $title
 	 * @return Title|null null if we shouldn't post on that title
 	 */
-	function normalizeTitle( $title ) {
+	function normalizeTitle( Title $title ) {
 		global $wgNamespacesToPostIn, $wgNamespacesToConvert;
 		if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
 			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
@@ -56,7 +56,7 @@ class MassMessageJob extends Job {
 	 * @param $title Title
 	 * @return bool
 	 */
-	public static function isOptedOut( $title) {
+	public static function isOptedOut( Title $title) {
 		$wikipage = WikiPage::factory( $title );
 		$categories = $wikipage->getCategories();
 		$category = Title::makeTitle( NS_CATEGORY, wfMessage( 'massmessage-optout-category')->inContentLanguage()->text() );
@@ -190,7 +190,7 @@ class MassMessageJob extends Job {
 		return $text;
 	}
 
-	function makeAPIRequest( $params ) {
+	function makeAPIRequest( array $params ) {
 		global $wgUser, $wgRequest;
 
 		$wgRequest = new DerivativeRequest(

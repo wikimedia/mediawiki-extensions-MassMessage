@@ -59,7 +59,7 @@ class MassMessageHooks {
 	 * @param string $page
 	 * @return array
 	 */
-	public static function outputParserFunction( $parser, $page, $site = '' ) {
+	public static function outputParserFunction( Parser $parser, $page, $site = '' ) {
 		global $wgScript;
 
 		$data = self::verifyPFData( $page, $site );
@@ -83,7 +83,7 @@ class MassMessageHooks {
 	 * @param string $site
 	 * @return string
 	 */
-	public static function storeDataParserFunction( $parser, $page, $site = '' ) {
+	public static function storeDataParserFunction( Parser $parser, $page, $site = '' ) {
 		$data = self::verifyPFData( $page, $site );
 		if ( isset( $data['error'] ) ) {
 			return ''; // Output doesn't matter
@@ -160,7 +160,7 @@ class MassMessageHooks {
 	 * @param $event EchoEvent
 	 * @return bool
 	 */
-	public static function onBeforeEchoEventInsert( $event ) {
+	public static function onBeforeEchoEventInsert( EchoEvent $event ) {
 		// Don't spam a user with mention notifications if it's a MassMessage
 		if ( $event->getType() == 'mention' && $event->getAgent() && // getAgent() can return null
 			$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId() ) {

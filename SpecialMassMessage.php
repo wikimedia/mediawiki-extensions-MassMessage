@@ -160,7 +160,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $spamlist Title
 	 * @param $subject string
 	 */
-	protected function logToWiki( $spamlist, $subject ) {
+	protected function logToWiki( Title $spamlist, $subject ) {
 		// $title->getLatestRevID()
 
 		$logEntry = new ManualLogEntry( 'massmessage', 'send' );
@@ -181,7 +181,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	public function callback( $data ) {
+	public function callback( array $data ) {
 
 		$this->verifyData( $data );
 
@@ -235,7 +235,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	protected function verifyData( $data ) {
+	protected function verifyData( array $data ) {
 		// Trim all the things!
 		foreach ( $data as $k => $v ) {
 			$data[$k] = trim( $v );
@@ -263,7 +263,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	protected function preview( $data ) {
+	protected function preview( array $data ) {
 		// $spamlist = $this->getSpamlist( $data['spamlist'] );
 		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
@@ -305,7 +305,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @param $data Array
 	 * @return Status
 	 */
-	protected function submit( $data ) {
+	protected function submit( array $data ) {
 		$spamlist = $this->getSpamlist( $data['spamlist'] );
 
 		// Prep the HTML comment message
