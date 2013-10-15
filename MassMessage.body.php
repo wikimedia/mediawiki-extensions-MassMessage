@@ -202,4 +202,21 @@ class MassMessage {
 			'noparse' => false
 		);
 	}
+
+	/**
+	 * Get the number of Queued messages on this site
+	 * Taken from runJobs.php --group
+	 * @return int
+	 */
+	public static function getQueuedCount() {
+		$group = JobQueueGroup::singleton();
+		$queue = $group->get( 'massmessageJob' );
+		$pending = $queue->getSize();
+		$claimed = $queue->getAcquiredCount();
+		$abandoned = $queue->getAbandonedCount();
+		$active = max( $claimed - $abandoned, 0 );
+
+		$queued = $active + $pending;
+		return $queued;
+	}
 }
