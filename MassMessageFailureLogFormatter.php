@@ -5,7 +5,7 @@
  * This lets us use <code></code> tags in the message
  */
 
-class MassMessageLogFormatter extends LogFormatter {
+class MassMessageFailureLogFormatter extends LogFormatter {
 
 	/**
 	 * getActionMessage() typically returns a Message object, but

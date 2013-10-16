@@ -70,7 +70,8 @@ $wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/SpecialMassMessage.php";
 $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
 $wgAutoloadClasses['MassMessageSubmitJob'] = "$dir/MassMessageSubmitJob.php";
-$wgAutoloadClasses['MassMessageLogFormatter'] = "$dir/MassMessageLogFormatter.php";
+$wgAutoloadClasses['MassMessageFailureLogFormatter'] = "$dir/MassMessageFailureLogFormatter.php";
+$wgAutoloadClasses['MassMessageSendLogFormatter'] = "$dir/MassMessageSendLogFormatter.php";
 $wgJobClasses['massmessageJob'] = 'MassMessageJob';
 $wgJobClasses['massmessagesubmitJob'] = 'MassMessageSubmitJob';
 
@@ -107,7 +108,8 @@ $wgResourceModules['ext.MassMessage.special'] = array(
 
 $wgLogTypes[] = 'massmessage';
 $wgLogActionsHandlers['massmessage/*'] = 'LogFormatter';
-$wgLogActionsHandlers['massmessage/failure'] = 'MassMessageLogFormatter';
+$wgLogActionsHandlers['massmessage/send'] = 'MassMessageSendLogFormatter';
+$wgLogActionsHandlers['massmessage/failure'] = 'MassMessageFailureLogFormatter';
 
 // User rights
 $wgAvailableRights[] = 'massmessage'; // Local messaging
