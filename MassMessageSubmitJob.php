@@ -21,10 +21,15 @@ class MassMessageSubmitJob extends Job {
 	public function run() {
 		$data = $this->params['data'];
 		$pages = $this->params['pages'];
+		$jobsByTarget = array();
+
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
-			$job = new MassMessageJob( $title, $data );
-			JobQueueGroup::singleton( $page['wiki'] )->push( $job );
+			$jobsByTarget[$page['wiki']][] = new MassMessageJob( $title, $data );
+		}
+
+		foreach ( $jobsByTarget as $wiki => $jobs ) {
+			JobQueueGroup::singleton( $wiki )->push( $jobs );
 		}
 
 		return true;
