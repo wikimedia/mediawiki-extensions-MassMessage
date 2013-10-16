@@ -136,6 +136,7 @@ class SpecialMassMessage extends SpecialPage {
 		);
 
 		if ( $this->state == 'preview' ) {
+			$m['message']['help'] = $this->makeCopyrightWarning(); // Adds it right before the 'Send' button
 			$m['submit-button'] = array(
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',
@@ -152,6 +153,25 @@ class SpecialMassMessage extends SpecialPage {
 		);
 
 		return $m;
+	}
+
+	/**
+	 * Wrapper around EditPage::getCopyrightWarning to return HTML, not wikitext
+	 *
+	 * Basically from OutputPage::addWikiTextTitle
+	 * @return string HTML output
+	 */
+	function makeCopyrightWarning() {
+		global $wgParser;
+		$title = Title::newFromText( 'Special:MassMessage' );
+		$text = EditPage::getCopyrightWarning( $title );
+		$opts = ParserOptions::newFromContext( $this->getContext() );
+		$opts->setEditSection( false );
+		$parserOutput = $wgParser->parse(
+			$text, $title, $opts,
+			true, true
+		);
+		return $parserOutput->getText();
 	}
 
 	/**
