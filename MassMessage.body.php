@@ -172,7 +172,7 @@ class MassMessage {
 		// Prep the parser
 		$parserOptions = $page->makeParserOptions( $context );
 		$parser = new Parser();
-		$parser->firstCallInit(); // So our intial parser function is added
+		$parser->firstCallInit(); // So our initial parser function is added
 		$parser->setFunctionHook( 'target', 'MassMessageHooks::storeDataParserFunction' ); // Now overwrite it
 
 		// Parse
