@@ -462,6 +462,7 @@ $messages['ko'] = array(
 	'massmessage-badhtml' => '당신의 메시지에 {{PLURAL:$2|닫히지 않은 HTML 태그}}가 포함되었을 수 있습니다: $1.',
 	'massmessage-parse-badurl' => '"$1"은 올바른 사이트가 아닙니다.',
 	'massmessage-parse-badpage' => '"$1"은 올바른 문서 제목이 아닙니다.',
+	'massmessage-global-disallowed' => '메시지는 이 위키 내의 문서로만 보낼 수 있습니다.',
 	'right-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
 	'action-massmessage' => '한 번에 여러 사용자에게 메시지 보내기',
 	'log-name-massmessage' => '대량 메시지 기록',
