@@ -124,6 +124,13 @@ See also:
 	'massmessage-nextsteps' => 'Message after {{mw-msg|massmessage-submitted}} on the special page once the form has been submitted.',
 );
 
+/** Bulgarian (български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'massmessage-parse-badurl' => '„$1“ не е валиден сайт.',
+);
+
 /** Bengali (বাংলা)
  * @author Bellayet
  */
@@ -487,6 +494,7 @@ $messages['lb'] = array(
 	'massmessage-form-preview' => 'Kucken ouni ze späicheren',
 	'massmessage-form-submit' => 'Schécken',
 	'massmessage-fieldset-preview' => 'Kucken ouni ze späicheren',
+	'massmessage-just-preview' => 'De Message gëtt just gewisen. Klickt "{{int:massmessage-form-submit}}" fir de Message ze schécken.',
 	'massmessage-empty-subject' => "D'Linn mam Sujet ass eidel.",
 	'massmessage-empty-message' => 'Den Inhalt vum Message ass eidel.',
 	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch.',
@@ -968,6 +976,7 @@ $messages['zh-hans'] = array(
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
 	'massmessage-parse-badurl' => '"$1"不是一个有效的站点',
 	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题',
+	'massmessage-global-disallowed' => '消息只可以发送至本地页面。',
 	'right-massmessage' => '一次将消息发送到多个用户',
 	'action-massmessage' => '一次将消息发送到多个用户',
 	'log-name-massmessage' => '批量消息日志',
