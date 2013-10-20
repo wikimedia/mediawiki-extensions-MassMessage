@@ -47,9 +47,9 @@ class SpecialMassMessage extends SpecialPage {
 		$this->status = new Status();
 
 		// Figure out what state we're in.
-		if ( $request->getText( 'submit-button' ) == $context->msg( 'massmessage-form-submit' )->text() ) {
+		if ( $request->getText( 'submit-button' ) == $this->msg( 'massmessage-form-submit' )->text() ) {
 			$this->state = 'submit';
-		} elseif ( $request->getText( 'preview-button' ) == $context->msg( 'massmessage-form-preview' )->text() ) {
+		} elseif ( $request->getText( 'preview-button' ) == $this->msg( 'massmessage-form-preview' )->text() ) {
 			$this->state = 'preview';
 		} else {
 			$this->state = 'form';
@@ -59,7 +59,7 @@ class SpecialMassMessage extends SpecialPage {
 		$form->setId( 'mw-massmessage-form' );
 		$form->setDisplayFormat( 'div' );
 		if ( $this->state == 'form' ) {
-			$form->addPreText( $context->msg( 'massmessage-form-header' )->parse() );
+			$form->addPreText( $this->msg( 'massmessage-form-header' )->parse() );
 		}
 		$form->setWrapperLegendMsg( 'massmessage' );
 		$form->suppressDefaultSubmit(); // We use our own buttons.
@@ -141,7 +141,7 @@ class SpecialMassMessage extends SpecialPage {
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',
 				'type' => 'submit',
-				'default' => $context->msg( 'massmessage-form-submit' )->text()
+				'default' => $this->msg( 'massmessage-form-submit' )->text()
 			);
 		}
 
@@ -149,7 +149,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-preview-button',
 			'name' => 'preview-button',
 			'type' => 'submit',
-			'default' => $context->msg( 'massmessage-form-preview' )->text()
+			'default' => $this->msg( 'massmessage-form-preview' )->text()
 		);
 
 		return $m;
@@ -315,7 +315,7 @@ class SpecialMassMessage extends SpecialPage {
 		$parserOutput = $content->getParserOutput( $firstTarget, null, $parserOptions );
 		$previewHTML = $parserOutput->getText();
 		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
-		$fieldsetMessage = $this->getContext()->msg( 'massmessage-fieldset-preview' )->text();
+		$fieldsetMessage = $this->msg( 'massmessage-fieldset-preview' )->text();
 		$wrapFieldset = Xml::fieldset( $fieldsetMessage, $previewHTML );
 		$this->getOutput()->addHTML( $wrapFieldset );
 
