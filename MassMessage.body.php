@@ -214,7 +214,7 @@ class MassMessage {
 	 */
 	public static function getQueuedCount() {
 		$group = JobQueueGroup::singleton();
-		$queue = $group->get( 'massmessageJob' );
+		$queue = $group->get( 'MassMessageJob' );
 		$pending = $queue->getSize();
 		$claimed = $queue->getAcquiredCount();
 		$abandoned = $queue->getAbandonedCount();

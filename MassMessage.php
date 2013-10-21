@@ -72,8 +72,8 @@ $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
 $wgAutoloadClasses['MassMessageSubmitJob'] = "$dir/MassMessageSubmitJob.php";
 $wgAutoloadClasses['MassMessageFailureLogFormatter'] = "$dir/MassMessageFailureLogFormatter.php";
 $wgAutoloadClasses['MassMessageSendLogFormatter'] = "$dir/MassMessageSendLogFormatter.php";
-$wgJobClasses['massmessageJob'] = 'MassMessageJob';
-$wgJobClasses['massmessagesubmitJob'] = 'MassMessageSubmitJob';
+$wgJobClasses['MassMessageJob'] = 'MassMessageJob';
+$wgJobClasses['MassMessageSubmitJob'] = 'MassMessageSubmitJob';
 
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
 $wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';

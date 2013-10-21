@@ -12,7 +12,7 @@
  */
 class MassMessageJob extends Job {
 	public function __construct( Title $title, array $params, $id = 0 ) {
-		parent::__construct( 'massmessageJob', $title, $params, $id );
+		parent::__construct( 'MassMessageJob', $title, $params, $id );
 	}
 
 	/**
