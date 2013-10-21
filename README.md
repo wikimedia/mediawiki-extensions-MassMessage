@@ -16,6 +16,10 @@ This allows a user to specify a page in the User: namespace, and the bot will au
 
 The account name that the bot will post with. If this is an existing account, the extension will automatically take it over.
 
+    $wgAllowGlobalMessaging = true;
+
+Whether to enable sending messages from one wiki to another. Can be disabled on all wikis except one "central wiki" which will keep the log entries in one location.
+
 Messages are delivered using the [job queue](https://www.mediawiki.org/wiki/Manual:Job_queue). It is recommended that you set up a cron job to empty the queue rather than relying on web requests. You can view how many MassMessage jobs are still queued by visiting `Special:Version` on your wiki.
 
 
