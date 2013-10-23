@@ -959,22 +959,24 @@ $messages['yi'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Liuxinyu970226
  * @author Qiyue2001
+ * @author Shizhao
  */
 $messages['zh-hans'] = array(
-	'massmessage' => '发送批量消息',
-	'massmessage-desc' => '允许用户能够轻松地向列表中的用户发送消息',
+	'massmessage' => '发送大量消息',
+	'massmessage-desc' => '使用户可以轻松将消息发送给列表中的用户',
 	'massmessage-form-spamlist' => '页面包含了留言的页面列表：',
 	'massmessage-form-subject' => '消息主题（还用作编辑摘要）：',
 	'massmessage-form-message' => '消息正文：',
 	'massmessage-form-preview' => '预览',
 	'massmessage-form-submit' => '发送',
 	'massmessage-fieldset-preview' => '预览',
-	'massmessage-submitted' => '您要发送到{{PLURAL:$1|$1 page|$1个页面}}的消息已开始排队。',
+	'massmessage-submitted' => '您要发送到{{PLURAL:$1|该页面|$1个页面}}的消息已开始排队。',
 	'massmessage-just-preview' => '这只是预览。点击“{{int:massmessage-form-submit}}”来发送消息。',
 	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
 	'massmessage-empty-subject' => '主题为空。',
 	'massmessage-empty-message' => '消息正文为空。',
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
+	'massmessage-queued-count' => '[[Special:MassMessage|大量消息]]已排队',
 	'massmessage-parse-badurl' => '"$1"不是一个有效的站点',
 	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题',
 	'massmessage-global-disallowed' => '消息只可以发送至本地页面。',
