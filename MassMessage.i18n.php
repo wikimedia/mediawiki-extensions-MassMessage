@@ -815,6 +815,7 @@ $messages['sl'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Bengt B
  * @author Jopparn
  * @author WikiPhoenix
  */
@@ -835,6 +836,8 @@ $messages['sv'] = array(
 	'massmessage-form-header' => 'Använd formuläret nedan för att skicka meddelanden till en angiven lista. Alla fält är obligatoriska.',
 	'massmessage-queued-count' => 'Köade [[Special:MassMessage|massmeddelanden]]',
 	'massmessage-hidden-comment' => '<!-- Meddelande skickades av User:$1@$2 med hjälp av listan på $3 -->',
+	'massmessage-optout-category' => 'Valt bort meddelandeleverans',
+	'massmessage-badhtml' => 'Ditt meddelande kan ha {{PLURAL:$2|oavslutat HTML-tagg|oavslutade HTML-taggar}}: $1.',
 	'massmessage-parse-badurl' => '"$1" är inte en giltig webbplats',
 	'massmessage-parse-badpage' => '"$1" är inte en giltig sidtitel',
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
@@ -936,6 +939,7 @@ $messages['vi'] = array(
 	'massmessage-badhtml' => 'Tin nhắn của bạn có thể không đóng {{PLURAL:$2|một thẻ HTML|các thẻ HTML}}: $1.',
 	'massmessage-parse-badurl' => '“$1” không phải là trang Web hợp lệ.',
 	'massmessage-parse-badpage' => '“$1” không phải là tên trang hợp lệ.',
+	'massmessage-global-disallowed' => 'Chỉ có thể gửi thông điệp cho những người trong một trang địa phương.',
 	'right-massmessage' => 'Nhắn tin cho nhiều người một lúc',
 	'action-massmessage' => 'nhắn tin cho nhiều người một lúc',
 	'log-name-massmessage' => 'Nhật trình nhắn tin cho nhiều người',
