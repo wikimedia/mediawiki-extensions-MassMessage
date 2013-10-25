@@ -840,13 +840,18 @@ $messages['sv'] = array(
 	'massmessage-badhtml' => 'Ditt meddelande kan ha {{PLURAL:$2|oavslutat HTML-tagg|oavslutade HTML-taggar}}: $1.',
 	'massmessage-parse-badurl' => '"$1" är inte en giltig webbplats',
 	'massmessage-parse-badpage' => '"$1" är inte en giltig sidtitel',
+	'massmessage-global-disallowed' => 'Meddelanden kan bara skickas till lokala sidor.',
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
 	'action-massmessage' => 'skicka ett meddelande till flera användare på en gång',
 	'log-name-massmessage' => 'Massmeddelandelogg',
 	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
 	'logentry-massmessage-failure' => 'Leveransen av "$4" till $3 misslyckades med felkoden <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Leverans av "$4" till $3 hoppades över eftersom målet var i en namnrymd där det inte kan publiceras',
+	'logentry-massmessage-skipoptout' => 'Leverans av "$4" till $3 hoppades över eftersom målet har valt att inte ta emot meddelanden',
+	'logentry-massmessage-skipnouser' => 'Leverans av "$4" till $3 hoppades över eftersom användarkontot inte existerar',
 	'massmessage-cannot-rename' => 'Detta är ett systemkonto och kan inte byta namn.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Skicka ett annat meddelande]] eller [[Special:Statistics|se hur många meddelanden som är köade]].',
 );
 
 /** Telugu (తెలుగు)
