@@ -9,7 +9,7 @@
 class MassMessageTest extends MediaWikiTestCase {
 	protected function setUp() {
 		// $wgConf ewwwww
-		global $wgConf, $wgLocalDatabases;
+		global $wgConf, $wgLocalDatabases, $wgLqtPages, $wgContLang;
 		$wgConf = new SiteConfiguration;
 		$wgConf->wikis = array( 'enwiki', 'dewiki', 'frwiki', 'wiki' );
 		$wgConf->suffixes = array( 'wiki' );
@@ -21,7 +21,8 @@ class MassMessageTest extends MediaWikiTestCase {
 			),
 		);
 		$wgLocalDatabases =& $wgConf->getLocalDatabases();
-
+		$proj = $wgContLang->getFormattedNsText( NS_PROJECT );
+		$wgLqtPages[] = $proj . ':LQT test';
 		// Create a redirect
 		$r = Title::newFromText( 'User talk:Redirect target' );
 		self::updatePage( $r, 'blank' );
@@ -65,10 +66,12 @@ class MassMessageTest extends MediaWikiTestCase {
 	 * @param $title Title
 	 */
 	public static function simulateJob( $title ) {
-		$params = array( 'subject' => 'Subject line', 'message' => 'This is a message.', );
+		$subject = md5( MWCryptRand::generateHex( 15 ) );
+		$params = array( 'subject' => $subject, 'message' => 'This is a message.', );
 		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/wiki/Spamlist' );
 		$job = new MassMessageJob( $title, $params );
 		$job->run();
+		return $subject;
 	}
 
 	/**
@@ -193,11 +196,28 @@ class MassMessageTest extends MediaWikiTestCase {
 			$wikipage = WikiPage::factory( $target );
 			$wikipage->doDeleteArticleReal( 'reason' );
 		}
-		self::simulateJob( $target );
+		$subj = self::simulateJob( $target );
 		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
-		$this->assertEquals( $text, "== Subject line ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/wiki/Spamlist -->" );
+		$this->assertEquals( $text, "== ". $subj . " ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/wiki/Spamlist -->" );
+
+	}
+
+	/**
+	 * Tests MassMessageJob::sendMessage and MassMessageJob::addLQTThread
+	 */
+	public function testLQTMessageSending() {
+		global $wgContLang;
+		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
+
+		if ( !class_exists( 'LqtDispatch') ) {
+			$this->markTestSkipped( "This test requires the LiquidThreads extension" );
+		}
+		$target = Title::newFromText( 'Project:LQT test' );
+		//$this->assertTrue( LqtDispatch::isLqtPage( $target ) ); // Check that it worked
+		$subject = self::simulateJob( $target );
+		$this->assertTrue( Title::newFromText( 'Thread:' . $proj . ':LQT test/' . $subject )->exists() );
 
 	}
 
