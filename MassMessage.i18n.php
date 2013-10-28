@@ -368,7 +368,7 @@ $messages['he'] = array(
 	'right-massmessage' => 'שליחה של הודעות למשתמשים מרובים',
 	'action-massmessage' => 'לשלוח הודעות למשתמשים רבים',
 	'log-name-massmessage' => 'יומן הודעות המוניות',
-	'log-description-massmessage' => 'האירועים האלה עוקבים אחרי שליחת הודעות דרך [[Special:MassMessage]].',
+	'log-description-massmessage' => 'האירועים האלה עוקבים אחרי שליחת הודעות דרך [[Special:MassMessage]].', # Fuzzy
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3',
 );
 
@@ -846,7 +846,7 @@ $messages['sv'] = array(
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
 	'action-massmessage' => 'skicka ett meddelande till flera användare på en gång',
 	'log-name-massmessage' => 'Massmeddelandelogg',
-	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].',
+	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].', # Fuzzy
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
 	'logentry-massmessage-failure' => 'Leveransen av "$4" till $3 misslyckades med felkoden <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Leverans av "$4" till $3 hoppades över eftersom målet var i en namnrymd där det inte kan publiceras',
@@ -950,7 +950,7 @@ $messages['vi'] = array(
 	'right-massmessage' => 'Nhắn tin cho nhiều người một lúc',
 	'action-massmessage' => 'nhắn tin cho nhiều người một lúc',
 	'log-name-massmessage' => 'Nhật trình nhắn tin cho nhiều người',
-	'log-description-massmessage' => 'Nhật trình này có các tin nhắn được gửi cho nhiều người dùng [[Special:MassMessage]].',
+	'log-description-massmessage' => 'Nhật trình này có các tin nhắn được gửi cho nhiều người dùng [[Special:MassMessage]].', # Fuzzy
 	'logentry-massmessage-send' => '$1 đã {{GENDER:$2}}nhắn tin cho $3',
 	'logentry-massmessage-failure' => 'Việc gửi “$4” cho $3 bị thất bại với mã lỗi <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Không thể gửi “$4” cho $3 vì trang nằm trong một không gian tên không cho phép nhắn tin',
@@ -994,7 +994,7 @@ $messages['zh-hans'] = array(
 	'right-massmessage' => '一次将消息发送到多个用户',
 	'action-massmessage' => '一次将消息发送到多个用户',
 	'log-name-massmessage' => '批量消息日志',
-	'log-description-massmessage' => '这些事件跟踪用户使用[[Special:MassMessage]]发送消息。',
+	'log-description-massmessage' => '这些事件跟踪用户使用[[Special:MassMessage]]发送消息。', # Fuzzy
 	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到$3',
 	'massmessage-nextsteps' => '[[Special:MassMessage|发送其他信息]]或者[[Special:Statistics|查看多少信息等待排队]]。',
 );
