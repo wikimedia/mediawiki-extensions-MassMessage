@@ -75,6 +75,9 @@ class SpecialMassMessage extends SpecialPage {
 				$output->addWikiMsg( 'massmessage-nextsteps' );
 			}
 		} else {
+			if ( $this->state == 'preview' ) {
+				$result = $this->status;
+			}
 			$form->displayForm( $result );
 		}
 	}
@@ -283,7 +286,6 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Convert into a content object
 		$content = ContentHandler::makeContent( $message, $firstTarget );
-
 		// Parser stuff. Taken from EditPage::getPreviewText()
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setEditSection( false );
@@ -300,6 +302,11 @@ class SpecialMassMessage extends SpecialPage {
 		$fieldsetMessage = $this->msg( 'massmessage-fieldset-preview' )->text();
 		$wrapFieldset = Xml::fieldset( $fieldsetMessage, $previewHTML );
 		$this->getOutput()->addHTML( $wrapFieldset );
+
+		// Check if we have unescaped langlinks (Bug 54846)
+		if ( $parserOutput->getLanguageLinks() ) {
+			$this->status->fatal( 'massmessage-unescaped-langlinks' );
+		}
 
 		return false;
 	}

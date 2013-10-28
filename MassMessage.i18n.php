@@ -26,6 +26,7 @@ $messages['en'] = array(
 	'massmessage-spamlist-doesnotexist' => 'The specified page-list page does not exist.',
 	'massmessage-empty-subject' => 'The subject line is empty.',
 	'massmessage-empty-message' => 'The message body is empty.',
+	'massmessage-unescaped-langlinks' => 'Warning: There are unescaped language links in your message.',
 	'massmessage-form-header' => 'Use the form below to send messages to a specified list. All fields are required.',
 	'massmessage-target' => '[//$1$2?title={{urlencode:$3|WIKI}} $3]',
 	'massmessage-queued-count' => 'Queued [[Special:MassMessage|mass messages]]',
@@ -81,6 +82,7 @@ The spamlist is the page containing list of pages to leave a message on.
 This message probably means that said page, as provided by the user, does not exist.',
 	'massmessage-empty-subject' => 'Error message the user sees if the "subject" field is empty.',
 	'massmessage-empty-message' => 'Error message the user sees if the "message" field is empty.',
+	'massmessage-unescaped-langlinks' => 'Warning shown to user when previewing if their message text has unescaped language links.',
 	'massmessage-form-header' => 'Introduction text at the top of the form.',
 	'massmessage-target' => 'Used to display the {{#target}} parserfunction.
 * $1 is the domain (example: "en.wikipedia.org")
