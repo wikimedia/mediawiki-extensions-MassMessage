@@ -126,6 +126,14 @@ See also:
 	'massmessage-nextsteps' => 'Message after {{mw-msg|massmessage-submitted}} on the special page once the form has been submitted.',
 );
 
+/** Arabic (العربية)
+ * @author Claw eg
+ */
+$messages['ar'] = array(
+	'massmessage-unescaped-langlinks' => 'تحذير: هناك روابط لغة ملغاة في الرسالة الخاصة بك.',
+	'log-description-massmessage' => 'هذه الأحداث تتعقب المستخدمين الذين يرسلون الرسائل.',
+);
+
 /** Bulgarian (български)
  * @author DCLXVI
  */
@@ -188,6 +196,7 @@ $messages['de'] = array(
 	'massmessage-spamlist-doesnotexist' => 'Die angegebene Seitenlistenseite ist nicht vorhanden.',
 	'massmessage-empty-subject' => 'Die Betreffszeile ist leer.',
 	'massmessage-empty-message' => 'Der Nachrichtenkörper ist leer.',
+	'massmessage-unescaped-langlinks' => 'Warnung: Deine Nachricht enthält ungültige Sprachlinks.',
 	'massmessage-form-header' => 'Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Massennachrichten]] in der Warteschlange',
 	'massmessage-hidden-comment' => '<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->',
@@ -199,7 +208,7 @@ $messages['de'] = array(
 	'right-massmessage' => 'Gleichzeitig Nachrichten an mehrere Benutzer senden',
 	'action-massmessage' => 'gleichzeitig Nachrichten an mehrere Benutzer zu senden',
 	'log-name-massmessage' => 'Massennachrichten-Logbuch',
-	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten von [[Special:MassMessage]] versandt haben.',
+	'log-description-massmessage' => 'Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten versandt haben.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|sandte eine Nachricht}} an $3',
 	'logentry-massmessage-failure' => 'Versand von „$4“ nach $3 fehlgeschlagen mit dem Fehlercode <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Der Versand von „$4“ an $3 wurde übersprungen, da sich das Ziel in einem Namensraum befindet, in dem keine Nachrichten gespeichert werden können.',
@@ -266,6 +275,13 @@ $messages['eu'] = array(
 	'massmessage-form-submit' => 'Bidali',
 );
 
+/** Finnish (suomi)
+ * @author Nike
+ */
+$messages['fi'] = array(
+	'log-description-massmessage' => 'Nämä tapahtumat seuraavat käyttäjiä, jotka lähettävät viestejä.',
+);
+
 /** French (français)
  * @author DavidL
  * @author Gomoko
@@ -286,6 +302,7 @@ $messages['fr'] = array(
 	'massmessage-spamlist-doesnotexist' => 'La page de listes de pages spécifiée n’existe pas.',
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
 	'massmessage-empty-message' => 'Le corps du message est vide.',
+	'massmessage-unescaped-langlinks' => 'Attention : Il y a des liens de langue non échappés dans votre message.',
 	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires.',
 	'massmessage-queued-count' => "[[Special:MassMessage|Messages de masse]] en file d'attente",
 	'massmessage-hidden-comment' => '<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->',
@@ -297,7 +314,7 @@ $messages['fr'] = array(
 	'right-massmessage' => 'Envoyer un message à plusieurs utilisateurs à la fois',
 	'action-massmessage' => 'envoyer un message à plusieurs utilisateurs à la fois',
 	'log-name-massmessage' => 'Journal des messages de masse',
-	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages via [[Special:MassMessage]].',
+	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|a envoyé un message}} à $3',
 	'logentry-massmessage-failure' => 'La livraison de « $4 » sur $3 a échoué avec un code d’erreur de <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'L’envoi de « $4 » à $3 a été sauté parce que la cible était dans un espace de noms qui ne peut pas recevoir de message',
@@ -427,6 +444,7 @@ $messages['ja'] = array(
 	'massmessage-spamlist-doesnotexist' => 'ページ一覧として指定したページは存在しません。',
 	'massmessage-empty-subject' => '件名を入力していません。',
 	'massmessage-empty-message' => 'メッセージの本文を入力していません。',
+	'massmessage-unescaped-langlinks' => '警告: メッセージ内にエスケープされていない言語リンクがあります。',
 	'massmessage-form-header' => 'このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です。',
 	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
 	'massmessage-hidden-comment' => '<!-- User:$1@$2 が $3 のリストを使用して送信したメッセージ -->',
@@ -437,7 +455,7 @@ $messages['ja'] = array(
 	'right-massmessage' => '複数の利用者に一度にメッセージを送信',
 	'action-massmessage' => '複数の利用者へのメッセージの一斉送信',
 	'log-name-massmessage' => '一斉メッセージ記録',
-	'log-description-massmessage' => 'これらのイベントは、利用者による [[Special:MassMessage]] でのメッセージの送信を追跡します。',
+	'log-description-massmessage' => 'これらのイベントは、利用者によるメッセージの送信を追跡します。',
 	'logentry-massmessage-send' => '$1 が $3 に{{GENDER:$2|メッセージを送信しました}}',
 	'logentry-massmessage-failure' => '$3 に「$4」を送信する際にコード <code>$5</code> のエラーが発生しました',
 	'logentry-massmessage-skipbadns' => '宛先の名前空間には投稿できないため、$3 への「$4」の送信がスキップされました',
@@ -529,6 +547,7 @@ $messages['mk'] = array(
 	'massmessage-spamlist-doesnotexist' => 'Укажаната страница со список од страници не постои.',
 	'massmessage-empty-subject' => 'Насловот е празен.',
 	'massmessage-empty-message' => 'Порака нема текст.',
+	'massmessage-unescaped-langlinks' => 'Предупредување: Во пораката имате неекранизирани јазични врски.',
 	'massmessage-form-header' => 'Образецов служи за испраќање на пораки на укажан список на примачи. Сите полиња се задолжителни.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Масовни пораки]] во редица',
 	'massmessage-hidden-comment' => '<!-- Пораката ја испрати Корисник:$1@$2 преку списокот на $3 -->',
@@ -540,7 +559,7 @@ $messages['mk'] = array(
 	'right-massmessage' => 'Испраќање на порака на повеќе корисници наеднаш.',
 	'action-massmessage' => 'испраќање порака на повеќе корисници наеднаш',
 	'log-name-massmessage' => 'Дневник на масовни пораки',
-	'log-description-massmessage' => 'Овој дневник следи испраќања на пораки преку [[Special:MassMessage]].',
+	'log-description-massmessage' => 'Овие настани следат корисници што испраќаат пораки.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|испрати порака}} до $3',
 	'logentry-massmessage-failure' => 'Испраќањето на „$4“ на $3 не успеа, со грешка бр. <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Испраќањето на „$4“ на $3 е изоставено бидејќи целта беше во именски простор што не прима пораки',
@@ -901,6 +920,7 @@ $messages['uk'] = array(
 	'massmessage-spamlist-doesnotexist' => 'Указаної сторінки з переліком сторінок не існує.',
 	'massmessage-empty-subject' => 'Рядок теми порожній.',
 	'massmessage-empty-message' => 'Тіла повідомлення порожнє.',
+	'massmessage-unescaped-langlinks' => 'Увага: наявні неекрановані мовні посилання в повідомленні.',
 	'massmessage-form-header' => "Використовуйте форму нижче, щоб надсилати повідомлення до вказаного списку. Всі поля обов'язкові для заповнення.",
 	'massmessage-queued-count' => 'У черзі [[Special:MassMessage|масових повідомлень]]',
 	'massmessage-hidden-comment' => '<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->',
@@ -912,7 +932,7 @@ $messages['uk'] = array(
 	'right-massmessage' => 'Надіслати повідомлення кільком користувачам одночасно',
 	'action-massmessage' => 'надіслати повідомлення кільком користувачам одночасно',
 	'log-name-massmessage' => 'Журнал масових повідомлень',
-	'log-description-massmessage' => 'Ці події відстежують надсилання повідомлень користувачами через [[Special:MassMessage]].',
+	'log-description-massmessage' => 'Ці події відстежують надсилання повідомлень користувачами.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3',
 	'logentry-massmessage-failure' => 'Доставка „$4“ на $3 провалилася з кодом помилки<code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Доставка "$4" до $3 була пропущена, бо ціль була в просторі імен, які не можуть бути розміщені в',
