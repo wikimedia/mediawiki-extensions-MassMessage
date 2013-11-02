@@ -406,6 +406,7 @@ $messages['it'] = array(
 	'massmessage-spamlist-doesnotexist' => "La pagina con l'elenco indicata non esiste.",
 	'massmessage-empty-subject' => "La riga dell'oggetto è vuota.",
 	'massmessage-empty-message' => 'Il corpo del messaggio è vuoto.',
+	'massmessage-unescaped-langlinks' => 'Attenzione: ci sono collegamenti di lingua senza escape nel tuo messaggio.',
 	'massmessage-form-header' => 'Utilizza il modulo sottostante per inviare messaggi a un elenco specificato. Tutti i campi sono obbligatori.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Messaggi massivi]] accodati',
 	'massmessage-hidden-comment' => "<!-- Messaggio inviato da User:$1@$2 usando l'elenco su $3 -->",

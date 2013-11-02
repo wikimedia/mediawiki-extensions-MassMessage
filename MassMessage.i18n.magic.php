@@ -15,7 +15,7 @@ $magicWords['ar'] = array(
 	'target' => array( 0, 'هدف' ),
 );
 
-/** Czech (česky) */
+/** Czech (čeština) */
 $magicWords['cs'] = array(
 	'target' => array( 0, 'cíl' ),
 );
