@@ -813,6 +813,7 @@ $messages['roa-tara'] = array(
  * @author Okras
  */
 $messages['ru'] = array(
+	'massmessage' => 'Отправить массовое сообщение',
 	'massmessage-desc' => 'Позволяет легко отправить сообщение списку пользователей',
 	'massmessage-form-spamlist' => 'Страница, содержащая список страниц, на которых необходимо оставить сообщение:',
 	'massmessage-form-subject' => 'Тема сообщения (также используется для описания изменений):',
@@ -820,9 +821,31 @@ $messages['ru'] = array(
 	'massmessage-form-preview' => 'Предпросмотр',
 	'massmessage-form-submit' => 'Отправить',
 	'massmessage-fieldset-preview' => 'Предпросмотр',
+	'massmessage-submitted' => 'Доставка вашего сообщения на {{PLURAL:$1|$1 страницу|$1 страницы|$1 страниц}} была поставлена в очередь.',
+	'massmessage-just-preview' => 'Это только предварительный просмотр. Нажмите «{{int:massmessage-form-submit}}» для отправки сообщения.',
+	'massmessage-spamlist-doesnotexist' => 'Указанная страница со списком страниц не существует.',
+	'massmessage-empty-subject' => 'Строка с темой не заполнена.',
+	'massmessage-empty-message' => 'Отсутствует текст сообщения.',
+	'massmessage-unescaped-langlinks' => 'Предупреждение: в вашем сообщении есть неэкранированные языковые ссылки.',
+	'massmessage-form-header' => 'Используйте форму ниже для отправки сообщения по указанному списку. Все поля обязательны для заполнения.',
+	'massmessage-queued-count' => 'Поставленные в очередь [[Special:MassMessage|массовые сообщения]]',
 	'massmessage-hidden-comment' => '<!-- Сообщение отправил Участник:$1@$2, используя список на странице $3 -->',
+	'massmessage-optout-category' => 'Отказано в доставке сообщений',
 	'massmessage-badhtml' => 'Ваше сообщение может содержать {{PLURAL:$2|незакрытый HTML-тег|незакрытые HTML-теги}}: $1.',
+	'massmessage-parse-badurl' => '«$1» не является корректным адресом сайта',
+	'massmessage-parse-badpage' => '«$1» не является корректным заголовком страницы.',
+	'massmessage-global-disallowed' => 'Сообщения могут быть отправлены только на локальные страницы.',
+	'right-massmessage' => 'Отправка сообщения нескольким пользователям одновременно',
+	'action-massmessage' => 'отправку сообщения нескольким пользователям одновременно',
+	'log-name-massmessage' => 'Журнал массовых сообщений',
+	'log-description-massmessage' => 'Эти события отслеживают пользователей, отправляющих сообщения.',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|отправил|отправила}} сообщение на $3',
+	'logentry-massmessage-failure' => 'Доставка «$4» для $3 потерпела неудачу, вернув код ошибки <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Доставка «$4» для $3 была пропущена, поскольку целевая страница находится в пространстве имён, в котором не может быть опубликовано сообщение',
+	'logentry-massmessage-skipoptout' => 'Доставка «$4» для $3 была пропущена, поскольку целевой страницей отказано в доставке сообщения',
+	'logentry-massmessage-skipnouser' => 'Доставка «$4» для $3 была пропущена, поскольку учётная запись пользователя не существует',
 	'massmessage-cannot-rename' => 'Это системная учётная запись, и она не может быть переименована.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Отправить другое сообщение]] или [[Special:Statistics|посмотреть, сколько сообщений поставлено в очередь]].',
 );
 
 /** Slovenian (slovenščina)
@@ -867,7 +890,7 @@ $messages['sv'] = array(
 	'right-massmessage' => 'Skicka ett meddelande till flera användare på en gång',
 	'action-massmessage' => 'skicka ett meddelande till flera användare på en gång',
 	'log-name-massmessage' => 'Massmeddelandelogg',
-	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden via [[Special:MassMessage]].', # Fuzzy
+	'log-description-massmessage' => 'Dessa händelser spårar användare som skickar meddelanden.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|skicka ett meddelande}} till $3',
 	'logentry-massmessage-failure' => 'Leveransen av "$4" till $3 misslyckades med felkoden <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Leverans av "$4" till $3 hoppades över eftersom målet var i en namnrymd där det inte kan publiceras',
