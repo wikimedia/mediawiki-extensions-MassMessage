@@ -389,6 +389,46 @@ $messages['he'] = array(
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3',
 );
 
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'massmessage' => 'Agipatulod ti adu a mensahe',
+	'massmessage-desc' => 'Agipalubos kadagiti agar-aramat ti nalaka a panangipatulod ti mensahe iti listaan dagiti agar-aramat',
+	'massmessage-form-spamlist' => 'Panid nga aglaon ti listaan ti pampanid a pangibatian ti mensahe:',
+	'massmessage-form-subject' => 'Suheto iti mensahe (mausar pay a kas ti pakabuklan ti inurnos):',
+	'massmessage-form-message' => 'Bagi ti mensahe:',
+	'massmessage-form-preview' => 'Ipadas',
+	'massmessage-form-submit' => 'Ipatulod',
+	'massmessage-fieldset-preview' => 'Ipadas',
+	'massmessage-submitted' => 'Ti pannakaipatulod ti mensahe iti {{PLURAL:$1|$1 panid|$1 pampanid}} ket naiyur-urayen.',
+	'massmessage-just-preview' => 'Daytoy ket panagpadas laeng. Talmegan ti "{{int:massmessage-form-submit}}" tapno maipatulod ti mensahe.',
+	'massmessage-spamlist-doesnotexist' => 'Awan ti nainaganan a panid ti listaan.',
+	'massmessage-empty-subject' => 'Awan ti linaon daytoy a linia ti suheto.',
+	'massmessage-empty-message' => 'Awan ti linaon ti bagi ti mensahe.',
+	'massmessage-unescaped-langlinks' => 'Ballaag: Adda dagiti di napatalawan a silpo ti pagsasao iti mensahem.',
+	'massmessage-form-header' => 'Usaren ti porma dita baba tapno makaipatulod kadagiti mensahe iti nainaganan a listaan.
+Nasken a maikkan amin dagiti pagikabilan.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Dagiti adu a mensahe]] a naiyur-uray',
+	'massmessage-hidden-comment' => '<!-- Mensahe nga inpatulod babaen ti Agar-aramat:$1@$2 a nagusar ti listaan iti $3 -->',
+	'massmessage-optout-category' => 'Di nagkayat iti panagipatulod ti mensahe',
+	'massmessage-badhtml' => 'Ti mensahem ken ket mabalin nga adda {{PLURAL:$2|maysa a saan a narikepan nga etiketa ti HTML|dagiti saan a narikepan nga etiketa ti HTML}}: $1.',
+	'massmessage-parse-badurl' => 'Ti "$1" ket saan nga umiso a sitio.',
+	'massmessage-parse-badpage' => 'Ti "$1" ket saan nga umiso a titulo ti panid.',
+	'massmessage-global-disallowed' => 'Dagiti mensahe ket mabalin laeng a maipatulod kadagiti lokal a panid.',
+	'right-massmessage' => 'Maminsan nga agipatulod ti mensahe kadagiti adu nga agar-aramat',
+	'action-massmessage' => 'maminsan nga agipatulod ti mensahe kadagiti adu nga agar-aramat',
+	'log-name-massmessage' => 'Listaan ti adu a mensahe',
+	'log-description-massmessage' => 'Dagitoy a pasamak ket surotenna dagiti agar-aramat a nagipatulod kadagiti mensahe.',
+	'logentry-massmessage-send' => 'Ni $1 {{GENDER:$2|ket nagipatulod ti mensahe}} idiay $3',
+	'logentry-massmessage-failure' => 'Napaay ti pannakaipatulod iti "$4" idiay $3 nga adda ti biddut a kodigo iti <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Nalabsan idi ti pannakaipatulod iti "$4" idiay $3 gaputa ti puntaan ket adda idi iti nagan ti espasio a saan a mabalin a pagipablaakan',
+	'logentry-massmessage-skipoptout' => 'Nalabsan idi ti pannakaipatulod iti "$4" idiay $3 gaputa ti puntaan ket di nagkayat iti panangipatulod ti mensahe',
+	'logentry-massmessage-skipnouser' => 'Nalabsan idi ti pannakaipatulod iti "$4" idiay $3 gaputa awan ti pakabilangan ti agar-aramat',
+	'massmessage-cannot-rename' => 'Daytoy ket pakabilangan ti sistema ken saan a mabalin a managanan manen.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Agipatulod pay ti sabali a mensahe]] wenno [[Special:Statistics|kitaen no mano kadagiti mensahe ti naiyur-uray]].',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
@@ -520,10 +560,12 @@ $messages['lb'] = array(
 	'massmessage-just-preview' => 'De Message gëtt just gewisen. Klickt "{{int:massmessage-form-submit}}" fir de Message ze schécken.',
 	'massmessage-empty-subject' => "D'Linn mam Sujet ass eidel.",
 	'massmessage-empty-message' => 'Den Inhalt vum Message ass eidel.',
+	'massmessage-unescaped-langlinks' => 'Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.',
 	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch.',
 	'massmessage-hidden-comment' => "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
 	'massmessage-parse-badurl' => '"$1" ass kee valabele Site',
 	'massmessage-parse-badpage' => '"$1" ass kee valabelen Titel fir eng Säit',
+	'massmessage-global-disallowed' => 'Message kënnen nëmme op lokal Säite geschéckt ginn.',
 	'right-massmessage' => 'E Message u méi Benotzer matenee schécken',
 	'action-massmessage' => 'e Message u verschidde Benotzer gläichzäiteg schécken',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt',
