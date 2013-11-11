@@ -298,6 +298,7 @@ $messages['fi'] = array(
 /** French (français)
  * @author DavidL
  * @author Gomoko
+ * @author Ltrlg
  * @author Rastus Vernon
  * @author Sherbrooke
  */
@@ -310,14 +311,14 @@ $messages['fr'] = array(
 	'massmessage-form-preview' => 'Aperçu',
 	'massmessage-form-submit' => 'Envoyer',
 	'massmessage-fieldset-preview' => 'Aperçu',
-	'massmessage-submitted' => 'Votre message envoyé à {{PLURAL:$1|$1 page|$1 pages}} a été mis en file.',
+	'massmessage-submitted' => 'L’envoi de votre message à {{PLURAL:$1|$1 page|$1 pages}} a été mis en file d’attente.',
 	'massmessage-just-preview' => 'Ceci est simplement un aperçu. Appuyez sur « {{int:massmessage-form-submit}} » pour envoyer le message.',
-	'massmessage-spamlist-doesnotexist' => 'La page de listes de pages spécifiée n’existe pas.',
+	'massmessage-spamlist-doesnotexist' => 'La listes de pages spécifiée n’existe pas.',
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
 	'massmessage-empty-message' => 'Le corps du message est vide.',
-	'massmessage-unescaped-langlinks' => 'Attention : Il y a des liens de langue non échappés dans votre message.',
+	'massmessage-unescaped-langlinks' => 'Attention : il y a des liens de langue non échappés dans votre message.',
 	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires.',
-	'massmessage-queued-count' => "[[Special:MassMessage|Messages de masse]] en file d'attente",
+	'massmessage-queued-count' => '[[Special:MassMessage|Messages de masse]] en file d’attente',
 	'massmessage-hidden-comment' => '<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->',
 	'massmessage-optout-category' => 'Désengagé de la réception de messages',
 	'massmessage-badhtml' => 'Votre message semble contenir {{PLURAL:$2|une balise HTML mal fermée|des balises HTML mal fermées}} :  $1.',
@@ -329,12 +330,51 @@ $messages['fr'] = array(
 	'log-name-massmessage' => 'Journal des messages de masse',
 	'log-description-massmessage' => 'Ces événements tracent les utilisateurs ayant envoyé des messages.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|a envoyé un message}} à $3',
-	'logentry-massmessage-failure' => 'La livraison de « $4 » sur $3 a échoué avec un code d’erreur de <code>$5</code>',
+	'logentry-massmessage-failure' => 'La livraison de « $4 » sur $3 a échoué avec le code d’erreur « <code>$5</code> »',
 	'logentry-massmessage-skipbadns' => 'L’envoi de « $4 » à $3 a été sauté parce que la cible était dans un espace de noms qui ne peut pas recevoir de message',
 	'logentry-massmessage-skipoptout' => 'L’envoi de « $4 » à $3 a été sauté parce que la cible a choisi de ne pas recevoir de messages',
 	'logentry-massmessage-skipnouser' => 'L’envoi de « $4 » à $3 a été sauté parce que le compte utilisateur n’existe pas',
 	'massmessage-cannot-rename' => 'Ceci est un compte système qui ne peut être renommé.',
 	'massmessage-nextsteps' => '[[Special:MassMessage|Envoyer un autre message]] ou [[Special:Statistics|voir combien de messages sont en attente]].',
+);
+
+/** Northern Frisian (Nordfriisk)
+ * @author Murma174
+ */
+$messages['frr'] = array(
+	'massmessage' => 'Schüür en streibriaf',
+	'massmessage-desc' => 'Diarmä kön brükern lacht en bööd tu en list faan brükern schüür',
+	'massmessage-form-spamlist' => 'Sidj mä en sidjenlist för streibriaw',
+	'massmessage-form-subject' => 'Hoodrä (woort uk üs tuupfaadang brükt):',
+	'massmessage-form-message' => 'Tekst faan din bööd:',
+	'massmessage-form-preview' => 'Föörskau',
+	'massmessage-form-submit' => 'Schüür',
+	'massmessage-fieldset-preview' => 'Föörskau',
+	'massmessage-submitted' => 'Din bööd tu {{PLURAL:$1|ian sidj|$1 sidjen}} teewt nü üüb a postluuper.',
+	'massmessage-just-preview' => 'Det as man en föörskau. Trak üüb "{{int:massmessage-form-submit}}", an do woort din bööd wechschüürd.',
+	'massmessage-spamlist-doesnotexist' => 'Detdiar sidj üüb din sidjenlist jaft at ei.',
+	'massmessage-empty-subject' => 'Det hoodrä as leesag.',
+	'massmessage-empty-message' => 'Di tekst faan din bööd as leesag.',
+	'massmessage-unescaped-langlinks' => 'Paase üüb: Uun din bööd san ei tuläät ferwisangen tu ööder spriaken.',
+	'massmessage-form-header' => 'Brük det formulaar diar oner, am en bööd tu en sidjenlist tu schüüren. Arke fial skal ütjfald wees.',
+	'massmessage-queued-count' => '[[Special:MassMessage|mass messages]] teewt üüb a postluuper.',
+	'massmessage-hidden-comment' => '<!-- Bööd as faan di brüker:$1@$2 auer det list $3 ferschüürd wurden-->',
+	'massmessage-optout-category' => 'Det ufleewrin faan bööd as ufsteld wurden',
+	'massmessage-badhtml' => 'Uun din bööd küd {{PLURAL:$2|en eeben HTML-tag|eeben HTML-tags}} wees: $1.',
+	'massmessage-parse-badurl' => '"$1" as nian tuläät wääbsid.',
+	'massmessage-parse-badpage' => '"$1" as nään tuläät sidjennööm.',
+	'massmessage-global-disallowed' => 'Bööd koon bluas to lokaal sidjen ferschüürd wurd.',
+	'right-massmessage' => 'En bööd tu en hiale rä faan brükern schüür',
+	'action-massmessage' => 'en bööd tu en hiale rä faan brükern schüür',
+	'log-name-massmessage' => 'Streibriaf-logbuk',
+	'log-description-massmessage' => 'Detdiar logbuk skraft en protokol auer brükern, diar bööd ferschüür.',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|hää bööd schüürd}} tu $3',
+	'logentry-massmessage-failure' => 'Det ufleewrin faan "$4" tu $3 as skiaf gingen. Di feelercode as <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Det ufleewrin faan "$4" tu $3 as auersprüngen wurden, auer det sidj uun en nöömrüm as, huar nian bööd henschüürd wurd koon.',
+	'logentry-massmessage-skipoptout' => 'Det ufleewrin faan "$4" tu $3 as auersprüngen wurden, auer det sidj nian bööd uunnem wal.',
+	'logentry-massmessage-skipnouser' => 'Det ufleewrin faan "$4" tu $3 as auersprüngen wurden, auer diar ei son brükerkonto as.',
+	'massmessage-cannot-rename' => 'Det as en süsteemkonto an koon ei amnäämd wurd.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Ian bööd muar schüür]] of iarst ans [[Special:Statistics|luke, hü fölen al üüb a postluuper teew]].',
 );
 
 /** Galician (galego)
