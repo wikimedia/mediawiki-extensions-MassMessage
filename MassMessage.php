@@ -18,12 +18,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /*
  * Namespaces to post in
  *
- * Only let the bot post in these namespaces regardless
- * of what the user specificed in the input list. This is checked
+ * Only let the bot post in these namespaces plus
+ * all talk namespaces regardless of what the user
+ * specificed in the input list. This is checked
  * after $wgNamespacesToConvert is applied.
  * Applies to both local and global messages.
  */
-$wgNamespacesToPostIn = array( NS_PROJECT, NS_USER_TALK );
+$wgNamespacesToPostIn = array( NS_PROJECT );
 
 /*
  * Namespaces to convert

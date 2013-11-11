@@ -43,7 +43,7 @@ class MassMessageJob extends Job {
 			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
 		}
 		$title = MassMessage::followRedirect( $title ) ?: $title; // Try to follow redirects
-		if ( !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
+		if ( !$title->isTalkPage() && !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
 			$this->logLocalSkip( 'skipbadns');
 			$title = null;
 		}

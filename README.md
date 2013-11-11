@@ -4,9 +4,9 @@ MassMessage is a [MediaWiki](https://www.mediawiki.org/) extension that lets you
 
 ## Configuration
 
-    $wgNamespacesToPostIn = array( NS_PROJECT, NS_USER_TALK );
+    $wgNamespacesToPostIn = array( NS_PROJECT );
 
-This limits the bot to only posting in the Project: and User talk: namespaces.
+This limits the bot to only posting in talk namespaces and the Project: namespace.
 
     $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
 
