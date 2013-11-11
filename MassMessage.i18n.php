@@ -27,7 +27,7 @@ $messages['en'] = array(
 	'massmessage-empty-subject' => 'The subject line is empty.',
 	'massmessage-empty-message' => 'The message body is empty.',
 	'massmessage-unescaped-langlinks' => 'Warning: There are unescaped language links in your message.',
-	'massmessage-form-header' => 'Use the form below to send messages to a specified list. All fields are required.',
+	'massmessage-form-header' => 'Use the form below to send messages to a specified list. All fields are required ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]).',
 	'massmessage-target' => '[//$1$2?title={{urlencode:$3|WIKI}} $3]',
 	'massmessage-queued-count' => 'Queued [[Special:MassMessage|mass messages]]',
 	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
