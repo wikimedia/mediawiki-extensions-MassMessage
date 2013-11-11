@@ -12,7 +12,7 @@ This limits the bot to only posting in the Project: and User talk: namespaces.
 
 This allows a user to specify a page in the User: namespace, and the bot will automatically convert it to the User talk: namespace.
 
-    $wgMassMessageAccountUsername = 'MessengerBot';
+    $wgMassMessageAccountUsername = 'MediaWiki message delivery';
 
 The account name that the bot will post with. If this is an existing account, the extension will automatically take it over.
 

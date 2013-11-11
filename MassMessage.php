@@ -40,7 +40,7 @@ $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
  * This ensures that local administrators cannot change the bot's username
  * by editing a system message, which would interfere with global messages
  */
-$wgMassMessageAccountUsername = 'MessengerBot';
+$wgMassMessageAccountUsername = 'MediaWiki message delivery';
 
 /**
  * Whether to allow sending messages to another wiki
