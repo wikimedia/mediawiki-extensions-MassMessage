@@ -193,20 +193,26 @@ class MassMessageJob extends Job {
 	function makeAPIRequest( array $params ) {
 		global $wgUser, $wgRequest;
 
+		$oldRequest = $wgRequest;
+		$oldUser = $wgUser;
+
 		$wgRequest = new DerivativeRequest(
 			$wgRequest,
 			$params,
 			true // was posted?
 		);
-		$wgUser = MassMessage::getMessengerUser();
 		// New user objects will use $wgRequest, so we set that
 		// to our DerivativeRequest, so we don't run into any issues
+		$wgUser = MassMessage::getMessengerUser();
 
-		RequestContext::getMain()->setUser( $wgUser );
-		RequestContext::getMain()->setRequest( $wgRequest );
+		$context = RequestContext::getMain();
 		// All further internal API requests will use the main
 		// RequestContext, so setting it here will fix it for
 		// all other internal uses, like how LQT does
+		$oldCUser = $context->getUser();
+		$oldCRequest = $context->getRequest();
+		$context->setUser( $wgUser );
+		$context->setRequest( $wgRequest );
 
 		$api = new ApiMain(
 			$wgRequest,
@@ -218,5 +224,12 @@ class MassMessageJob extends Job {
 		} catch ( UsageException $e ) {
 			$this->logLocalFailure( $e->getCodeString() );
 		}
+
+		// Cleanup all the stuff we polluted
+		$context->setUser( $oldCUser );
+		$context->setRequest( $oldCRequest );
+		$wgUser = $oldUser;
+		$wgRequest = $oldRequest;
+
 	}
 }
