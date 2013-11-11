@@ -26,7 +26,7 @@ class MassMessageHooks {
 	 * @return array
 	 */
 	public static function outputParserFunction( Parser $parser, $page, $site = '' ) {
-		global $wgScript;
+		global $wgScript, $wgAllowGlobalMessaging;
 
 		$parser->addTrackingCategory( 'massmessage-list-category' );
 
@@ -36,9 +36,12 @@ class MassMessageHooks {
 		}
 
 		// Use a message so wikis can customize the output
-		$msg = wfMessage( 'massmessage-target' )
-			->params( $data['site'], $wgScript, $data['title'] )
-			->plain();
+		if ( $wgAllowGlobalMessaging ) {
+			$msg = wfMessage( 'massmessage-target' )
+				->params( $data['site'], $wgScript, $data['title'] )->plain();
+		} else {
+			$msg = wfMessage( 'massmessage-target-local' )->params( $data['title'] )->plain();
+		}
 
 		return array( $msg, 'noparse' => false );
 	}

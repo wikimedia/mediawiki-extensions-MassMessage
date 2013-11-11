@@ -33,6 +33,7 @@
 	"massmessage-no-timestamp": "Warning shown to user when previewing if their message text does not contain a timestamp.",
 	"massmessage-form-header": "Introduction text at the top of the form.",
 	"massmessage-target": "Used to display the {{#target}} parserfunction.\n* $1 is the domain (example: \"en.wikipedia.org\")\n* $2 is <code>$wgScriptPath</code> (example: \"/w/index.php\")\n* $3 the page name (example: \"User talk:Example\")",
+	"massmessage-target-local": "Used to display the {{#target}} parserfunction on sites where global messaging is disabled.\n* $1 is the page title",
 	"massmessage-queued-count": "Text for row on [[Special:Statistics]].",
 	"massmessage-hidden-comment": "A hidden HTML comment that is appended after the message. Parameters:\n* $1 - the username of the user who sent the message\n* $2 - the database name of the wiki from where the message was sent\n* $3 - the URL of the input list that was used to send the message",
 	"massmessage-optout-category": "Name of category which users add pages to that will opt-it out of receiving messages.",
