@@ -327,15 +327,16 @@ class SpecialMassMessage extends SpecialPage {
 			$spamlist->getFullURL( '', false, PROTO_CANONICAL )
 		);
 
-		// Log it.
-		$this->logToWiki( $spamlist, $data['subject'] );
-
 		// Insert it into the job queue.
 		$pages = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
 		if ( !is_array( $pages ) ) {
 			$this->status->fatal( $pages );
 			return $this->status;
 		}
+
+		// Log it.
+		$this->logToWiki( $spamlist, $data['subject'] );
+
 		$params = array( 'data' => $data, 'pages' => $pages );
 		$job = new MassMessageSubmitJob( $spamlist, $params );
 		JobQueueGroup::singleton()->push( $job );
