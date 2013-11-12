@@ -17,9 +17,7 @@ class MassMessageSendLogFormatter extends LogFormatter {
 			return $this->parsedParameters;
 		}
 
-		// This will be localized with Linker::link
-		// @todo Somehow localize for plaintext messages
-		$title = Title::newFromText( 'Special:Permalink/' . $params[3] );
+		$title = SpecialPage::getTitleFor('PermanentLink', $params[3] );
 
 		// Our simple version of LogFormatter::makeLink
 		if ( $this->plaintext ) {
