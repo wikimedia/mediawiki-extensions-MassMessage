@@ -142,6 +142,7 @@ $messages['bg'] = array(
 );
 
 /** Bengali (বাংলা)
+ * @author Aftab1995
  * @author Bellayet
  */
 $messages['bn'] = array(
@@ -153,7 +154,8 @@ $messages['bn'] = array(
 	'massmessage-form-preview' => 'প্রাকদর্শন',
 	'massmessage-form-submit' => 'পাঠাও',
 	'massmessage-fieldset-preview' => 'প্রাকদর্শন',
-	'massmessage-submitted' => 'আপনার বার্তাটি অপেক্ষমান রয়েছে।', # Fuzzy
+	'massmessage-submitted' => '{{PLURAL:$1|$1টি পাতায়}} আপনার পাঠানো বার্তাটি অপেক্ষমান রয়েছে।',
+	'massmessage-just-preview' => 'এটি শুধুমাত্র একটি প্রাকদর্শন। বার্তা পাঠাতে "{{int:massmessage-form-submit}}" চাপুন।',
 	'massmessage-empty-subject' => 'বিষয় লাইনটি খালি।',
 	'massmessage-empty-message' => 'বার্তার মূল অংশ খালি।',
 );
