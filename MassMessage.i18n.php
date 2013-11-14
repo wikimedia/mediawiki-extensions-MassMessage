@@ -173,6 +173,13 @@ $messages['br'] = array(
 	'right-massmessage' => "Kas ur gemennadenn da veur a implijer d'un taol.",
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'massmessage-form-submit' => 'ДӀадахьийта',
+);
+
 /** Czech (česky)
  * @author Mormegil
  */
@@ -434,14 +441,26 @@ $messages['he'] = array(
 	'massmessage-spamlist-doesnotexist' => 'הדף עם רשימת הדפים אינו קיים.',
 	'massmessage-empty-subject' => 'שורת הנושא ריקה.',
 	'massmessage-empty-message' => 'גוף ההודעה ריק.',
+	'massmessage-unescaped-langlinks' => 'אזהרה: יש קישורי שפה לא מחולפים בהודעה שלך.',
 	'massmessage-form-header' => 'נא להשתמש בטופס להלן כדי לשלוח הודעות לרשימה מוגדרת. כל השדות נדרשים.',
 	'massmessage-queued-count' => '[[Special:MassMessage|הודעות המוניות]] בתור',
 	'massmessage-hidden-comment' => '<!-- הודעה שנשלחה על־ידי User:$1@$2 באמצעות הרשימה בדף $3 -->',
+	'massmessage-optout-category' => 'משתמשים שביקשו לא לקבל הודעות המוניות',
+	'massmessage-badhtml' => 'ייתכן שבהודעה שלך יש {{PLURAL:$2|תג HTML לא סגור|תגי HTML לא סגורים}}: $1.',
+	'massmessage-parse-badurl' => '"$1" אינו אתר תקין.',
+	'massmessage-parse-badpage' => '"$1" אינו שם דף תקין.',
+	'massmessage-global-disallowed' => 'אפשר לשלוח הודעות רק לדפים מקומיים.',
 	'right-massmessage' => 'שליחה של הודעות למשתמשים מרובים',
 	'action-massmessage' => 'לשלוח הודעות למשתמשים רבים',
 	'log-name-massmessage' => 'יומן הודעות המוניות',
-	'log-description-massmessage' => 'האירועים האלה עוקבים אחרי שליחת הודעות דרך [[Special:MassMessage]].', # Fuzzy
+	'log-description-massmessage' => 'האירועים האלה עוקבים אחרי שליחת הודעות.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3',
+	'logentry-massmessage-failure' => 'מסירה של "$4" ל{{GRAMMAR:תחילית|$3}} נכשלה עם הודעת השגיאה <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'מסירה של "$4" ל{{GRAMMAR:תחילית|$3}} לא התבצעה כי היעד נמצא במרחב שמות שלא ניתן לשלוח אליוS',
+	'logentry-massmessage-skipoptout' => 'מסירה של "$4" ל{{GRAMMAR:תחילית|$3}} לא התבצעה כי היעד ביקש שלא ימסרו לו הודעות',
+	'logentry-massmessage-skipnouser' => 'מסירה של "$4" ל{{GRAMMAR:תחילית|$3}} לא התבצעה כי חשבון המשתמש אינו קיים',
+	'massmessage-cannot-rename' => 'זה חשבון מערכת ולא ניתן לשנות את שמו.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|שליחת הודעה אחרת]] או [[Special:Statistics|הצגה של מספר ההודעות בתור]].',
 );
 
 /** Iloko (Ilokano)
