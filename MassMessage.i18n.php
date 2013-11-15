@@ -1135,7 +1135,7 @@ $messages['yi'] = array(
  * @author Shizhao
  */
 $messages['zh-hans'] = array(
-	'massmessage' => '发送大量消息',
+	'massmessage' => '群发消息',
 	'massmessage-desc' => '使用户可以轻松将消息发送给列表中的用户',
 	'massmessage-form-spamlist' => '页面包含了留言的页面列表：',
 	'massmessage-form-subject' => '消息主题（还用作编辑摘要）：',
@@ -1148,15 +1148,16 @@ $messages['zh-hans'] = array(
 	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
 	'massmessage-empty-subject' => '主题为空。',
 	'massmessage-empty-message' => '消息正文为空。',
+	'massmessage-unescaped-langlinks' => '警告：在你的消息中有未转义的语言链接。',
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
-	'massmessage-queued-count' => '[[Special:MassMessage|大量消息]]已排队',
+	'massmessage-queued-count' => '[[Special:MassMessage|群发消息]]已排队',
 	'massmessage-parse-badurl' => '"$1"不是一个有效的站点',
 	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题',
 	'massmessage-global-disallowed' => '消息只可以发送至本地页面。',
 	'right-massmessage' => '一次将消息发送到多个用户',
 	'action-massmessage' => '一次将消息发送到多个用户',
 	'log-name-massmessage' => '批量消息日志',
-	'log-description-massmessage' => '这些事件跟踪用户使用[[Special:MassMessage]]发送消息。', # Fuzzy
+	'log-description-massmessage' => '这些事件跟踪用户发送消息。',
 	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到$3',
 	'massmessage-nextsteps' => '[[Special:MassMessage|发送其他信息]]或者[[Special:Statistics|查看多少信息等待排队]]。',
 );
