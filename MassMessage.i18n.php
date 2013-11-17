@@ -309,6 +309,7 @@ $messages['fi'] = array(
  * @author Gomoko
  * @author Ltrlg
  * @author Rastus Vernon
+ * @author Seb35
  * @author Sherbrooke
  */
 $messages['fr'] = array(
@@ -329,7 +330,7 @@ $messages['fr'] = array(
 	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Messages de masse]] en file d’attente',
 	'massmessage-hidden-comment' => '<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->',
-	'massmessage-optout-category' => 'Désengagé de la réception de messages',
+	'massmessage-optout-category' => 'Exempté de réception de messages',
 	'massmessage-badhtml' => 'Votre message semble contenir {{PLURAL:$2|une balise HTML mal fermée|des balises HTML mal fermées}} :  $1.',
 	'massmessage-parse-badurl' => '« $1 » n’est pas un site valide',
 	'massmessage-parse-badpage' => '« $1 » n’est pas un titre de page valide',
