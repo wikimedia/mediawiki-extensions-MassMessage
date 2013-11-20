@@ -128,10 +128,33 @@ See also:
 
 /** Arabic (العربية)
  * @author Claw eg
+ * @author مشعل الحربي
  */
 $messages['ar'] = array(
+	'massmessage' => 'إرسال رسالة جماعية',
+	'massmessage-desc' => 'تسمح للمستخدمين بإرسال رسالة بسهولة إلى قائمة من المستخدمين',
+	'massmessage-form-spamlist' => 'صفحة تحتوي على قائمة صفحات يمكن ترك رسالة عليها:',
+	'massmessage-form-subject' => 'موضوع الرسالة (سيكون ملخص التحرير أيضًا):',
+	'massmessage-form-message' => 'نص الرسالة:',
+	'massmessage-form-preview' => 'معاينة',
+	'massmessage-form-submit' => 'إرسال',
+	'massmessage-fieldset-preview' => 'معاينة',
+	'massmessage-just-preview' => 'هذه مجرد معاينة. اضغط "{{int:massmessage-form-submit}}" لإرسال الرسالة.',
+	'massmessage-empty-subject' => 'حقل الموضوع فارغ.',
+	'massmessage-empty-message' => 'نص الرسالة فارغ.',
 	'massmessage-unescaped-langlinks' => 'تحذير: هناك روابط لغة ملغاة في الرسالة الخاصة بك.',
+	'massmessage-form-header' => 'استخدم النموذج أدناه لإرسال رسائل إلى قائمة معينة. جميع الحقول مطلوبة.',
+	'massmessage-parse-badurl' => '"$1" ليس موقعًا صحيحًا.',
+	'massmessage-parse-badpage' => '"$1" ليس عنوان صفحة صحيح.',
+	'massmessage-global-disallowed' => 'يمكن إرسال الرسائل إلى الصفحات المحلية فقط.',
+	'right-massmessage' => 'إرسال رسالة إلى عدة مستخدمين في وقت واحد',
+	'action-massmessage' => 'إرسال رسالة إلى عدة مستخدمين في وقت واحد',
+	'log-name-massmessage' => 'سجل الرسائل الجماعية',
 	'log-description-massmessage' => 'هذه الأحداث تتعقب المستخدمين الذين يرسلون الرسائل.',
+	'logentry-massmessage-send' => '{{GENDER:$2|أرسل|أرسلت}} $1 رسالة إلى $3',
+	'logentry-massmessage-skipbadns' => 'جرى تخطي توصيل "$4" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه',
+	'logentry-massmessage-skipnouser' => 'جرى تخطي توصيل "$4" إلى $3 لأن حساب المستخدم غير موجود',
+	'massmessage-cannot-rename' => 'هذا حساب نظام ولا يمكن إعادة تسميته.',
 );
 
 /** Bulgarian (български)
@@ -237,6 +260,45 @@ $messages['diq'] = array(
 	'massmessage-fieldset-preview' => 'Verqayt',
 );
 
+/** Greek (Ελληνικά)
+ * @author Geraki
+ */
+$messages['el'] = array(
+	'massmessage' => 'Αποστολή μαζικού μηνύματος',
+	'massmessage-desc' => 'Επιτρέπει στους χρήστες να στείλουν εύκολα ένα μήνυμα σε μια λίστα των χρηστών',
+	'massmessage-form-spamlist' => 'Σελίδα που περιέχει κατάλογο των σελίδων στις οποίες θα αφήσετε ένα μήνυμα:',
+	'massmessage-form-subject' => 'Θέμα του μηνύματος (χρησιμοποιείται επίσης ως σύνοψη της επεξεργασίας):',
+	'massmessage-form-message' => 'Σώμα του μηνύματος:',
+	'massmessage-form-preview' => 'Προεπισκόπηση',
+	'massmessage-form-submit' => 'Αποστολή',
+	'massmessage-fieldset-preview' => 'Προεπισκόπηση',
+	'massmessage-submitted' => 'Η παράδοση του μηνύματός σας σε {{PLURAL:$1|$1  σελίδα|$1 σελίδες}} έχει τοποθετηθεί σε ουρά.',
+	'massmessage-just-preview' => 'Αυτό είναι μόνο μια προεπισκόπηση. Πατήστε το πλήκτρο {{int:massmessage-form-submit}}"  για να στείλετε το μήνυμα.',
+	'massmessage-spamlist-doesnotexist' => 'Η καθορισμένη σελίδα καταλόγου-σελίδων δεν υπάρχει.',
+	'massmessage-empty-subject' => 'Η γραμμή θέματος είναι κενή.',
+	'massmessage-empty-message' => 'Το σώμα του μηνύματος είναι κενό.',
+	'massmessage-unescaped-langlinks' => 'Προειδοποίηση: Υπάρχουν γλωσσικές συνδέσεις χωρίς διαφυγή στο μήνυμά σας.',
+	'massmessage-form-header' => 'Χρησιμοποιήστε την παρακάτω φόρμα για να στείλετε μηνύματα σε μια συγκεκριμένη λίστα. Όλα τα πεδία είναι υποχρεωτικά.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Μαζικά μηνύματα]] στην ουρά',
+	'massmessage-hidden-comment' => '<!-- Το μήνυμα στάλθηκε από τον User:$1@$2 με βάση τη λίστα στην $3 -->',
+	'massmessage-optout-category' => 'Αποεπιλογή παράδοσης μηνυμάτων',
+	'massmessage-badhtml' => 'Το μήνυμα σας μπορεί να έχει {{PLURAL:$2|μια ανοικτή HTML ετικέτα|ανοικτές HTML ετικέτες}}: $1.',
+	'massmessage-parse-badurl' => '"$1" δεν είναι έγκυρη τοποθεσία',
+	'massmessage-parse-badpage' => '"$1" δεν είναι έγκυρος τίτλος σελίδας',
+	'massmessage-global-disallowed' => 'Μηνύματα μπορούν να σταλούν μόνο τοπικές σελίδες.',
+	'right-massmessage' => 'Αποστολή μηνύματος σε πολλούς χρήστες ταυτόχρονα',
+	'action-massmessage' => 'στείλετε ένα μήνυμα σε πολλούς χρήστες ταυτόχρονα',
+	'log-name-massmessage' => 'Καταγραφή μαζικών μηνυμάτων',
+	'log-description-massmessage' => 'Αυτά τα γεγονότα παρακολουθούν τους χρήστες που κάνουν αποστολή μηνυμάτων.',
+	'logentry-massmessage-send' => '{{GENDER:$2|Ο|Η}} $1 έστειλε μήνυμα στην $3',
+	'logentry-massmessage-failure' => 'Παράδοση του "$4" στην $3 απέτυχε με κωδικό σφάλματος <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Παράδοση του "$4" στην $3 παραλείφθηκε επειδή ο στόχος ήταν σε ένα χώρο ονομάτων στον οποίο δεν μπορεί να αναρτηθεί',
+	'logentry-massmessage-skipoptout' => 'Παράδοση του "$4" στην $3 παραλείφθηκε επειδή ο στόχος έχει αποεπιλέξει την παράδοση μηνυμάτων',
+	'logentry-massmessage-skipnouser' => 'Παράδοση του "$4" στη $3 παραλείφθηκε επειδή ο λογαριασμός χρήστη δεν υπάρχει',
+	'massmessage-cannot-rename' => 'Αυτό είναι ένας λογαριασμός του συστήματος και δεν μπορεί να μετονομαστεί.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Στείλετε άλλο μήνυμα]] ή [[Special:Statistics|προβάλετε τον αριθμό των μηνυμάτων που βρίσκονται στην ουρά]].',
+);
+
 /** Esperanto (Esperanto)
  * @author KuboF
  */
@@ -299,9 +361,42 @@ $messages['eu'] = array(
 
 /** Finnish (suomi)
  * @author Nike
+ * @author Pxos
  */
 $messages['fi'] = array(
-	'log-description-massmessage' => 'Nämä tapahtumat seuraavat käyttäjiä, jotka lähettävät viestejä.',
+	'massmessage' => 'Lähetä joukkoviesti',
+	'massmessage-desc' => 'Antaa käyttäjille helpon keinon lähettää viestin käyttäjille, jotka on merkitty luetteloon.',
+	'massmessage-form-spamlist' => 'Sivu, joka sisältää luettelon niistä sivuista, joihin viesti halutaan:',
+	'massmessage-form-subject' => 'Viestin aihe (käytetään samalla muokkauksen yhteenvetona):',
+	'massmessage-form-message' => 'Viestin tekstisisältö:',
+	'massmessage-form-preview' => 'Esikatsele',
+	'massmessage-form-submit' => 'Lähetä viesti',
+	'massmessage-fieldset-preview' => 'Esikatselu',
+	'massmessage-submitted' => 'Joukkoviestisi toimittaminen {{PLURAL:$1|$1 sivulle}} on laitettu jonoon.',
+	'massmessage-just-preview' => 'Tämä on pelkästään viestin esikatselu. Paina "{{int:massmessage-form-submit}}" niin viesti lähtee liikkeelle.',
+	'massmessage-spamlist-doesnotexist' => 'Antamaasi luettelosivua kohdesivuista ei ole olemassa.',
+	'massmessage-empty-subject' => 'Viestin aihetta ei ole annettu.',
+	'massmessage-empty-message' => 'Viestissä ei ole lainkaan tekstiä.',
+	'massmessage-unescaped-langlinks' => 'Varoitus: Viestissäsi on sellaisia kielilinkkejä, jotka eivät kelpaa ja joita ei voi käyttää.',
+	'massmessage-form-header' => 'Käytä alla olevaa lomaketta lähettääksesi viestejä ennalta määriteltyyn luetteloon. Kaikki kentät on täytettävä.',
+	'massmessage-queued-count' => 'Jonossa olevat [[Special:MassMessage|joukkoviestit]]',
+	'massmessage-hidden-comment' => '<!-- Viestin on lähettänyt Käyttäjä:$1@$2 käyttämällä luetteloa, joka on sijainnissa $3 -->',
+	'massmessage-optout-category' => 'Eivät halua joukkoviestejä',
+	'massmessage-badhtml' => 'Viestissäsi saattaa olla {{PLURAL:$2|sulkematon HTML tag|sulkemattomia HTML tagejä}}: $1.',
+	'massmessage-parse-badurl' => '"$1" ei ole kelvollinen sivusto.',
+	'massmessage-parse-badpage' => '"$1" ei ole kelvollinen sivun nimi.',
+	'massmessage-global-disallowed' => 'Viestejä voi lähettää ainoastaan paikallisille sivuille.',
+	'right-massmessage' => 'Lähettää viesti usealle käyttäjälle yhtä aikaa',
+	'action-massmessage' => 'lähettää viestiä usealle käyttäjälle samalla kertaa',
+	'log-name-massmessage' => 'Joukkoviestien loki',
+	'log-description-massmessage' => 'Nämä tapahtumat merkitsevät käyttäjiä, jotka lähettävät viestejä.',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|lähetti viestin}} luetteloon $3',
+	'logentry-massmessage-failure' => 'Viestin "$4" toimittaminen kohteeseen $3 ei onnistunut. Virhekoodi on <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Viestiä "$4" ei toimitettu kohteeseen $3, koska kohde on sellaisessa nimiavaruudessa, johon ei voi lähettää viestejä',
+	'logentry-massmessage-skipoptout' => 'Viestiä "$4" ei toimitettu kohteeseen $3, koska kohde ei halua vastaanottaa viestejä',
+	'logentry-massmessage-skipnouser' => 'Viestiä "$4" ei toimitettu kohteeseen $3, koska käyttäjätunnusta ei ole olemassa',
+	'massmessage-cannot-rename' => 'Tämä on järjestelmän käyttämä tunnus eikä sitä voi nimetä uudelleen.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Lähetä toinen viesti]] tai [[Special:Statistics|katso kuinka moni viesti on jonossa]].',
 );
 
 /** French (français)
@@ -1131,6 +1226,7 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Gakmo
  * @author Liuxinyu970226
  * @author Qiyue2001
  * @author Shizhao
@@ -1138,8 +1234,8 @@ $messages['yi'] = array(
 $messages['zh-hans'] = array(
 	'massmessage' => '群发消息',
 	'massmessage-desc' => '使用户可以轻松将消息发送给列表中的用户',
-	'massmessage-form-spamlist' => '页面包含了留言的页面列表：',
-	'massmessage-form-subject' => '消息主题（还用作编辑摘要）：',
+	'massmessage-form-spamlist' => '包含留言名单的页面：',
+	'massmessage-form-subject' => '消息主题（同时用作编辑摘要）：',
 	'massmessage-form-message' => '消息正文：',
 	'massmessage-form-preview' => '预览',
 	'massmessage-form-submit' => '发送',
@@ -1152,6 +1248,7 @@ $messages['zh-hans'] = array(
 	'massmessage-unescaped-langlinks' => '警告：在你的消息中有未转义的语言链接。',
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
 	'massmessage-queued-count' => '[[Special:MassMessage|群发消息]]已排队',
+	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
 	'massmessage-parse-badurl' => '"$1"不是一个有效的站点',
 	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题',
 	'massmessage-global-disallowed' => '消息只可以发送至本地页面。',
