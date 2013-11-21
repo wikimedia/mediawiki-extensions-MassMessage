@@ -24,6 +24,11 @@ $specialPageAliases['gl'] = array(
 	'MassMessage' => array( 'Mensaxe_en_masa' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'MassMessage' => array( 'MessaggiMassivi' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'MassMessage' => array( '대량메시지' ),

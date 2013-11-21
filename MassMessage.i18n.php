@@ -196,6 +196,15 @@ $messages['br'] = array(
 	'right-massmessage' => "Kas ur gemennadenn da veur a implijer d'un taol.",
 );
 
+/** Catalan (català)
+ * @author Arnaugir
+ */
+$messages['ca'] = array(
+	'massmessage' => "Enviament d'un missatge massiu",
+	'massmessage-form-preview' => 'Previsualitza',
+	'massmessage-just-preview' => 'Això és només una visualització prèvia. Premeu «{{int:massmessage-form-submit}}» per enviar el missatge.',
+);
+
 /** Chechen (нохчийн)
  * @author Умар
  */
@@ -208,6 +217,15 @@ $messages['ce'] = array(
  */
 $messages['cs'] = array(
 	'massmessage-cannot-rename' => 'Toto je systémový účet, který nemůže být přejmenován.',
+);
+
+/** Danish (dansk)
+ * @author Sarrus
+ */
+$messages['da'] = array(
+	'massmessage-form-subject' => 'Beskedens emne (bruges også som redigeringsopsummering):',
+	'right-massmessage' => 'Send en besked til flere brugere på én gang',
+	'action-massmessage' => 'send en besked til flere bruger på én gang',
 );
 
 /** German (Deutsch)
@@ -1249,6 +1267,7 @@ $messages['zh-hans'] = array(
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
 	'massmessage-queued-count' => '[[Special:MassMessage|群发消息]]已排队',
 	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
+	'massmessage-optout-category' => '不接受消息发送',
 	'massmessage-parse-badurl' => '"$1"不是一个有效的站点',
 	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题',
 	'massmessage-global-disallowed' => '消息只可以发送至本地页面。',
