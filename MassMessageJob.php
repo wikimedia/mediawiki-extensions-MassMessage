@@ -42,6 +42,7 @@ class MassMessageJob extends Job {
 		if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
 			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
 		}
+		$title = MassMessage::followRedirect( $title ) ?: $title; // Try to follow redirects
 		if ( !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
 			$this->logLocalSkip( 'skipbadns');
 			$title = null;
