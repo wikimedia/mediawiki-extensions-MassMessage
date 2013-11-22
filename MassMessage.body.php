@@ -42,7 +42,7 @@ class MassMessage {
 		// Function kinda copied from the AbuseFilter
 		$user = User::newFromName( $wgMassMessageAccountUsername );
 		$user->load();
-		if ( $user->getId() && $user->mPassword == '' ) {
+		if ( $user->getId() && $user->mPassword == '' && $user->mNewpassword == '' ) {
 			// We've already stolen the account
 			return $user;
 		}
