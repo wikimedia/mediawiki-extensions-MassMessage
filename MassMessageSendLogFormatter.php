@@ -23,10 +23,17 @@ class MassMessageSendLogFormatter extends LogFormatter {
 		if ( $this->plaintext ) {
 			$this->parsedParameters[2] = '[[' . $title->getPrefixedText() . ']]';
 		} else {
-			$this->parsedParameters[2] = Message::rawParam( Linker::link(
-				$title,
-				htmlspecialchars( $this->entry->getTarget() )
-			) );
+			$target = $this->entry->getTarget();
+			if ( $target->exists() ) {
+				$link = Message::rawParam( Linker::link(
+					$title,
+					htmlspecialchars( $this->entry->getTarget() )
+				) );
+			} else {
+				// If the page has been deleted, just show a redlink (bug 57445)
+				$link = Message::rawParam( Linker::link( $target ) );
+			}
+			$this->parsedParameters[2] = $link;
 		}
 
 		ksort( $this->parsedParameters );
