@@ -71,7 +71,8 @@ Used in {{msg-mw|Massmessage-just-preview}}.
 {{Identical|Preview}}',
 	'massmessage-submitted' => 'Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.
 
-* $1 is the number of deliveries that have been queued.',
+Parameters:
+* $1 - the number of deliveries that have been queued',
 	'massmessage-just-preview' => 'Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.
 
 Refers to {{msg-mw|Massmessage-form-submit}}.',
@@ -123,7 +124,7 @@ See also:
 * $4 - the subject line of the message',
 	'massmessage-cannot-rename' => 'Error message a user sees when they try renaming the bot account.',
 	'massmessage-message-footer' => 'The footer that is by added at the end of very message. It is left blank so individual wikis can customize it.',
-	'massmessage-nextsteps' => 'Message after {{mw-msg|massmessage-submitted}} on the special page once the form has been submitted.',
+	'massmessage-nextsteps' => 'Message after {{msg-mw|Massmessage-submitted}} on the special page once the form has been submitted.',
 );
 
 /** Arabic (العربية)
@@ -220,12 +221,32 @@ $messages['cs'] = array(
 );
 
 /** Danish (dansk)
+ * @author Christian List
  * @author Sarrus
  */
 $messages['da'] = array(
-	'massmessage-form-subject' => 'Beskedens emne (bruges også som redigeringsopsummering):',
+	'massmessage-form-spamlist' => 'Side, der indeholder oversigten over sider, beskeden skal leveres på:',
+	'massmessage-form-subject' => 'Beskedens emne (bruges også som kommentar til redigeringen):',
+	'massmessage-form-message' => 'Beskedens indhold:',
+	'massmessage-form-preview' => 'Forhåndsvisning',
+	'massmessage-form-submit' => 'Send',
+	'massmessage-fieldset-preview' => 'Forhåndsvisning',
+	'massmessage-just-preview' => 'Dette er kun en forhåndsvisning. Klik på "{{int:massmessage-form-submit}}" for at sende beskeden.',
+	'massmessage-spamlist-doesnotexist' => 'Den angivne side med oversigten over beskedmodtagere eksisterer ikke.',
+	'massmessage-empty-subject' => 'Emnelinjen er tom.',
+	'massmessage-empty-message' => 'Beskedfeltet er tomt.',
+	'massmessage-form-header' => 'Brug den nedenstående formular for at sende beskeder til en bestemt liste. Alle felter er påkrævede.',
+	'massmessage-hidden-comment' => '<!-- Besked sendt af Bruger:$1@$2 via listen på $3 -->',
+	'massmessage-parse-badpage' => '"$1" er ikke en gyldig sidetitel.',
+	'massmessage-global-disallowed' => 'Beskeder kan kun sendes til lokale sider.',
 	'right-massmessage' => 'Send en besked til flere brugere på én gang',
-	'action-massmessage' => 'send en besked til flere bruger på én gang',
+	'action-massmessage' => 'send en besked til flere brugere på én gang',
+	'log-name-massmessage' => 'Massebeskedslog',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|sendte en besked}} til $3',
+	'logentry-massmessage-failure' => 'Levering af "$4" til $3 mislykkedes med fejlkoden <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Levering af "$4" til $3 blev sprunget over, fordi målsiden var i et navnerum, der ikke kan leveres beskeder til',
+	'logentry-massmessage-skipnouser' => 'Levering af "$4" til $3 blev sprunget over, fordi brugerkontoen ikke findes',
+	'massmessage-cannot-rename' => 'Dette er en systemkonto og kan ikke omdøbes.',
 );
 
 /** German (Deutsch)
