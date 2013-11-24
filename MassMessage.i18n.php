@@ -158,6 +158,13 @@ $messages['ar'] = array(
 	'massmessage-cannot-rename' => 'هذا حساب نظام ولا يمكن إعادة تسميته.',
 );
 
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
+ * @author Red Winged Duck
+ */
+$messages['be-tarask'] = array(
+	'massmessage' => 'Адправіць масавае паведамленьне',
+);
+
 /** Bulgarian (български)
  * @author DCLXVI
  */
@@ -182,6 +189,12 @@ $messages['bn'] = array(
 	'massmessage-just-preview' => 'এটি শুধুমাত্র একটি প্রাকদর্শন। বার্তা পাঠাতে "{{int:massmessage-form-submit}}" চাপুন।',
 	'massmessage-empty-subject' => 'বিষয় লাইনটি খালি।',
 	'massmessage-empty-message' => 'বার্তার মূল অংশ খালি।',
+	'massmessage-parse-badurl' => '"$1" কোন বৈধ সাইট নয়।',
+	'massmessage-parse-badpage' => '"$1" কোন বৈধ পাতার শিরোনাম নয়।',
+	'massmessage-global-disallowed' => 'বার্তা শুধুমাত্র স্থানীয় পাতাসমূহে পাঠানো যেতে পারে।',
+	'log-name-massmessage' => 'গণ বার্তা লগ',
+	'log-description-massmessage' => 'এই ঘটনাগুলি অনুসরণ ব্যবহারকারীদের বার্তা পাঠানোর।',
+	'logentry-massmessage-send' => '$1 $3-এ {{GENDER:$2|একটি বার্তা পাঠিয়েছেন}}',
 );
 
 /** Breton (brezhoneg)
@@ -211,6 +224,14 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'massmessage-form-submit' => 'ДӀадахьийта',
+);
+
+/** Sorani Kurdish (کوردی)
+ * @author Calak
+ */
+$messages['ckb'] = array(
+	'right-massmessage' => 'ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر',
+	'action-massmessage' => 'ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر',
 );
 
 /** Czech (česky)
@@ -621,7 +642,7 @@ Nasken a maikkan amin dagiti pagikabilan.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Dagiti adu a mensahe]] a naiyur-uray',
 	'massmessage-hidden-comment' => '<!-- Mensahe nga inpatulod babaen ti Agar-aramat:$1@$2 a nagusar ti listaan iti $3 -->',
 	'massmessage-optout-category' => 'Di nagkayat iti panagipatulod ti mensahe',
-	'massmessage-badhtml' => 'Ti mensahem ken ket mabalin nga adda {{PLURAL:$2|maysa a saan a narikepan nga etiketa ti HTML|dagiti saan a narikepan nga etiketa ti HTML}}: $1.',
+	'massmessage-badhtml' => 'Ti mensahem ket mabalin nga adda {{PLURAL:$2|maysa a saan a narikepan nga etiketa ti HTML|dagiti saan a narikepan nga etiketa ti HTML}}: $1.',
 	'massmessage-parse-badurl' => 'Ti "$1" ket saan nga umiso a sitio.',
 	'massmessage-parse-badpage' => 'Ti "$1" ket saan nga umiso a titulo ti panid.',
 	'massmessage-global-disallowed' => 'Dagiti mensahe ket mabalin laeng a maipatulod kadagiti lokal a panid.',
@@ -1239,7 +1260,7 @@ $messages['vi'] = array(
 	'massmessage-form-header' => 'Hãy điền biểu mẫu sau để nhắn tin cho một danh sách được định rõ. Tất cả các trường là bắt buộc.',
 	'massmessage-queued-count' => 'Số [[Special:MassMessage|tin nhắn cho nhiều người]] trong hàng đợi',
 	'massmessage-hidden-comment' => '<!-- Tin nhắn của Thành viên:$1@$2 gửi cho mọi người trong danh sách tại $3 -->',
-	'massmessage-optout-category' => 'Đã chọn không nhận tin nhắn',
+	'massmessage-optout-category' => 'Trang từ chối nhận tin nhắn',
 	'massmessage-badhtml' => 'Tin nhắn của bạn có thể không đóng {{PLURAL:$2|một thẻ HTML|các thẻ HTML}}: $1.',
 	'massmessage-parse-badurl' => '“$1” không phải là trang Web hợp lệ.',
 	'massmessage-parse-badpage' => '“$1” không phải là tên trang hợp lệ.',

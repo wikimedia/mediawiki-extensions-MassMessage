@@ -43,3 +43,8 @@ $specialPageAliases['mk'] = array(
 $specialPageAliases['nl'] = array(
 	'MassMessage' => array( 'BerichtenVerzenden' ),
 );
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'MassMessage' => array( 'Nhắn_tin_cho_nhiều_người', 'Tin_nhắn_cho_nhiều_người', 'Nhắn_tin_hàng_loạt', 'Tin_nhắn_hàng_loạt' ),
+);
