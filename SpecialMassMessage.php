@@ -160,27 +160,6 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
-	 * Log the spamming to Special:Log/massmessage
-	 *
-	 * @param $spamlist Title
-	 * @param $subject string
-	 */
-	protected function logToWiki( Title $spamlist, $subject ) {
-		// $title->getLatestRevID()
-
-		$logEntry = new ManualLogEntry( 'massmessage', 'send' );
-		$logEntry->setPerformer( $this->getUser() );
-		$logEntry->setTarget( $spamlist );
-		$logEntry->setComment( $subject );
-		$logEntry->setParameters( array(
-			'4::revid' => $spamlist->getLatestRevID(),
-		) );
-
-		$logid = $logEntry->insert();
-		$logEntry->publish( $logid );
-	}
-
-	/**
 	 * Callback function
 	 * Does some basic verification of data
 	 * Decides whether to show the preview screen
@@ -191,7 +170,7 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	public function callback( array $data ) {
 
-		$this->verifyData( $data );
+		MassMessage::verifyData( $data, $this->status );
 
 		// Die on errors.
 		if ( !$this->status->isOK() ) {
@@ -200,73 +179,12 @@ class SpecialMassMessage extends SpecialPage {
 			return $this->status;
 		}
 
-		// Add a global footer
-		$footer = $this->msg( 'massmessage-message-footer' )->inContentLanguage()->parse();
-		if ( trim( $footer ) ) {
-			// Only add the footer if it is not just whitespace
-			$data['message'] .= "\n" . $footer;
-		}
-
 		if ( $this->state == 'submit' ) {
-			return $this->submit( $data );
+			$this->count = MassMessage::submit( $this->getContext(), $data );
+			return $this->status;
 		} else { // $this->state can only be 'preview' here
 			return $this->preview( $data );
 		}
-	}
-
-	/**
-	 * Parse and normalize the spamlist
-	 *
-	 * @param $title string
-	 * @return Title|string string will be a error message key
-	 */
-	protected function getSpamlist( $title ) {
-		$spamlist = Title::newFromText( $title );
-		if ( $spamlist === null || !$spamlist->exists() ) {
-			return 'massmessage-spamlist-doesnotexist';
-		} else {
-			// Page exists, follow a redirect if possible
-			$target = MassMessage::followRedirect( $spamlist );
-			if ( $target === null || !$target->exists() ) {
-				return 'massmessage-spamlist-doesnotexist'; // Interwiki redirect or non-existent page.
-			} else {
-				$spamlist = $target;
-			}
-		}
-
-		if ( $spamlist->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
-			return 'massmessage-spamlist-doesnotexist';
-		}
-
-		return $spamlist;
-	}
-
-	/**
-	 * Sanity check the data, throwing any errors if necessary
-	 *
-	 * @param $data Array
-	 * @return Status
-	 */
-	protected function verifyData( array $data ) {
-		// Trim all the things!
-		foreach ( $data as $k => $v ) {
-			$data[$k] = trim( $v );
-		}
-
-		$spamlist = $this->getSpamlist( $data['spamlist'] );
-		if ( !( $spamlist instanceof Title ) ) {
-			$this->status->fatal( $spamlist );
-		}
-
-		if ( $data['subject'] === '' ) {
-			$this->status->fatal( 'massmessage-empty-subject' );
-		}
-
-		if ( $data['message'] === '' ) {
-			$this->status->fatal( 'massmessage-empty-message' );
-		}
-
-		return $this->status;
 	}
 
 	/**
@@ -313,35 +231,5 @@ class SpecialMassMessage extends SpecialPage {
 		}
 
 		return false;
-	}
-
-	/**
-	 * Send out the message
-	 *
-	 * @param $data Array
-	 * @return Status
-	 */
-	protected function submit( array $data ) {
-		$spamlist = $this->getSpamlist( $data['spamlist'] );
-
-		// Prep the HTML comment message
-		$data['comment'] = array(
-			$this->getUser()->getName(),
-			wfWikiID(),
-			$spamlist->getFullURL( array( 'oldid' => $spamlist->getLatestRevID() ), false, PROTO_CANONICAL )
-		);
-
-		// Insert it into the job queue.
-		$pages = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
-
-		// Log it.
-		$this->logToWiki( $spamlist, $data['subject'] );
-
-		$params = array( 'data' => $data, 'pages' => $pages );
-		$job = new MassMessageSubmitJob( $spamlist, $params );
-		JobQueueGroup::singleton()->push( $job );
-		$this->count = count( $pages );
-
-		return $this->status;
 	}
 }

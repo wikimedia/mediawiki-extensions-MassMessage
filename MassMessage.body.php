@@ -222,4 +222,113 @@ class MassMessage {
 		$queued = $active + $pending;
 		return $queued;
 	}
+
+	/**
+	 * Verify and cleanup the main user submitted data
+	 * @param array &$data should have subject, message, and spamlist keys
+	 * @param Status &$status
+	 */
+	public static function verifyData( array &$data, Status &$status ) {
+		// Trim all the things!
+		foreach ( $data as $k => $v ) {
+			$data[$k] = trim( $v );
+		}
+
+		if ( $data['subject'] === '' ) {
+			$status->fatal( 'massmessage-empty-subject' );
+		}
+
+		$spamlist = self::getSpamlist( $data['spamlist'] );
+		if ( $spamlist instanceof Title ) {
+			// Prep the HTML comment message
+			$data['comment'] = array(
+				RequestContext::getMain()->getUser()->getName(),
+				wfWikiID(),
+				$spamlist->getFullURL( array( 'oldid' => $spamlist->getLatestRevID() ), false, PROTO_CANONICAL )
+			);
+		} else {
+			$status->fatal( $spamlist );
+		}
+
+		if ( $data['message'] === '' ) {
+			$status->fatal( 'massmessage-empty-message' );
+		}
+
+		$footer = wfMessage( 'massmessage-message-footer' )->inContentLanguage()->parse();
+		if ( trim( $footer ) ) {
+			// Only add the footer if it is not just whitespace
+			$data['message'] .= "\n" . $footer;
+		}
+	}
+
+	/**
+	 * Parse and normalize the spamlist
+	 *
+	 * @param $title string
+	 * @return Title|string string will be a error message key
+	 */
+	public static function getSpamlist( $title ) {
+		$spamlist = Title::newFromText( $title );
+		if ( $spamlist === null || !$spamlist->exists() ) {
+			return 'massmessage-spamlist-doesnotexist';
+		} else {
+			// Page exists, follow a redirect if possible
+			$target = MassMessage::followRedirect( $spamlist );
+			if ( $target === null || !$target->exists() ) {
+				return 'massmessage-spamlist-doesnotexist'; // Interwiki redirect or non-existent page.
+			} else {
+				$spamlist = $target;
+			}
+		}
+
+		if ( $spamlist->getContentModel() != CONTENT_MODEL_WIKITEXT ) {
+			return 'massmessage-spamlist-doesnotexist';
+		}
+
+		return $spamlist;
+	}
+
+	/**
+	 * Log the spamming to Special:Log/massmessage
+	 *
+	 * @param Title $spamlist
+	 * @param User $user
+	 * @param string $subject
+	 */
+	public static function logToWiki( Title $spamlist, User $user, $subject ) {
+		$logEntry = new ManualLogEntry( 'massmessage', 'send' );
+		$logEntry->setPerformer( $user );
+		$logEntry->setTarget( $spamlist );
+		$logEntry->setComment( $subject );
+		$logEntry->setParameters( array(
+			'4::revid' => $spamlist->getLatestRevID(),
+		) );
+
+		$logid = $logEntry->insert();
+		$logEntry->publish( $logid );
+	}
+
+	/**
+	 * Send out the message!
+	 *
+	 * @param IContextSource $context
+	 * @param array $data
+	 * @return int how many pages were submitted
+	 */
+	public static function submit( IContextSource $context, array $data ) {
+		$spamlist = self::getSpamlist( $data['spamlist'] );
+
+		// Insert it into the job queue.
+		$pages = self::getParserFunctionTargets( $spamlist, $context );
+
+		// Log it.
+		self::logToWiki( $spamlist, $context->getUser(), $data['subject'] );
+
+		$params = array( 'data' => $data, 'pages' => $pages );
+		$job = new MassMessageSubmitJob( $spamlist, $params );
+		JobQueueGroup::singleton()->push( $job );
+
+		return count( $pages );
+	}
+
 }
