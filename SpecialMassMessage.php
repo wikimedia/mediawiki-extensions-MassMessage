@@ -234,6 +234,10 @@ class SpecialMassMessage extends SpecialPage {
 			}
 		}
 
+		if ( $spamlist->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
+			return 'massmessage-spamlist-doesnotexist';
+		}
+
 		return $spamlist;
 	}
 
@@ -329,10 +333,6 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Insert it into the job queue.
 		$pages = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
-		if ( !is_array( $pages ) ) {
-			$this->status->fatal( $pages );
-			return $this->status;
-		}
 
 		// Log it.
 		$this->logToWiki( $spamlist, $data['subject'] );
