@@ -254,7 +254,7 @@ class MassMessage {
 			$status->fatal( 'massmessage-empty-message' );
 		}
 
-		$footer = wfMessage( 'massmessage-message-footer' )->inContentLanguage()->parse();
+		$footer = wfMessage( 'massmessage-message-footer' )->inContentLanguage()->plain();
 		if ( trim( $footer ) ) {
 			// Only add the footer if it is not just whitespace
 			$data['message'] .= "\n" . $footer;
