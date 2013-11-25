@@ -20,7 +20,7 @@
 
 			regex = /<.*?>/g;
 			matches = code.match(regex);
-			if( !matches.length ) {
+			if( !matches ) {
 				$('#mw-massmessage-form-warnings').hide();
 				return;
 			}
