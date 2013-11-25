@@ -324,7 +324,7 @@ class SpecialMassMessage extends SpecialPage {
 		$data['comment'] = array(
 			$this->getUser()->getName(),
 			wfWikiID(),
-			$spamlist->getFullURL( '', false, PROTO_CANONICAL )
+			$spamlist->getFullURL( array( 'oldid' => $spamlist->getLatestRevID() ), false, PROTO_CANONICAL )
 		);
 
 		// Insert it into the job queue.

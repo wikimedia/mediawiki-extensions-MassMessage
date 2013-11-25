@@ -68,7 +68,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	public static function simulateJob( $title ) {
 		$subject = md5( MWCryptRand::generateHex( 15 ) );
 		$params = array( 'subject' => $subject, 'message' => 'This is a message.', );
-		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/wiki/Spamlist' );
+		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5' );
 		$job = new MassMessageJob( $title, $params );
 		$job->run();
 		return $subject;
@@ -200,7 +200,7 @@ class MassMessageTest extends MediaWikiTestCase {
 		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
-		$this->assertEquals( $text, "== ". $subj . " ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/wiki/Spamlist -->" );
+		$this->assertEquals( $text, "== ". $subj . " ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->" );
 
 	}
 
