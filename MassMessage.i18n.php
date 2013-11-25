@@ -978,6 +978,7 @@ $messages['oc'] = array(
 
 /** Polish (polski)
  * @author Chrumps
+ * @author Rzuwig
  * @author WTM
  * @author Woytecr
  */
@@ -985,7 +986,7 @@ $messages['pl'] = array(
 	'massmessage' => 'Wyślij masową wiadomość',
 	'massmessage-desc' => 'Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników',
 	'massmessage-form-spamlist' => 'Strona zawierająca listę stron, na których zostawić wiadomość:',
-	'massmessage-form-subject' => 'Temat wiadomości (Także używany jako podsumowanie edycji):',
+	'massmessage-form-subject' => 'Temat wiadomości (także używany jako podsumowanie edycji):',
 	'massmessage-form-message' => 'Treść wiadomości:',
 	'massmessage-form-preview' => 'Podgląd',
 	'massmessage-form-submit' => 'Wyślij',
@@ -1000,7 +1001,7 @@ $messages['pl'] = array(
 	'right-massmessage' => 'Wyślij wiadomość do wielu użytkowników jednocześnie',
 	'action-massmessage' => 'wyślij wiadomość do wielu użytkowników jednocześnie',
 	'log-name-massmessage' => 'Log masowych wiadomości',
-	'log-description-massmessage' => 'To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości poprzez [[Special:MassMessage]].',
+	'log-description-massmessage' => 'To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości poprzez [[Special:MassMessage]].', # Fuzzy
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3',
 );
 
