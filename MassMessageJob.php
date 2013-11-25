@@ -13,6 +13,10 @@
 class MassMessageJob extends Job {
 	public function __construct( Title $title, array $params, $id = 0 ) {
 		parent::__construct( 'MassMessageJob', $title, $params, $id );
+		// Create a fresh Title object so namespaces are evaluated
+		// in the context of the target site. Bug 57464
+		$this->title = Title::newFromText( $this->title->getPrefixedText() );
+
 	}
 
 	/**
