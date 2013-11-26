@@ -24,6 +24,11 @@ $specialPageAliases['gl'] = array(
 	'MassMessage' => array( 'Mensaxe_en_masa' ),
 );
 
+/** Hebrew (עברית) */
+$specialPageAliases['he'] = array(
+	'MassMessage' => array( 'שליחת_הודעה_המונית', 'שליחת_הודעה_למשתמשים_מרובים' ),
+);
+
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'MassMessage' => array( 'MessaggiMassivi' ),
