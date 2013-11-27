@@ -121,6 +121,7 @@ class MassMessage {
 	 * @return array
 	 */
 	public static function normalizeTargets( array $data ) {
+		global $wgNamespacesToConvert;
 		$targets = array();
 		foreach ( $data as $target ) {
 
@@ -137,6 +138,9 @@ class MassMessage {
 				$title = Title::newFromText( $target['title'] );
 				if ( $title === null ) {
 					continue;
+				}
+				if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
+					$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
 				}
 				$title = self::followRedirect( $title );
 				if ( $title === null ) {
