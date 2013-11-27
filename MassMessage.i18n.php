@@ -876,6 +876,12 @@ $messages['ml'] = array(
 	'log-name-massmessage' => 'കൂട്ടസന്ദേശ രേഖ',
 	'log-description-massmessage' => 'ഇവ സന്ദേശമയയ്ക്കുന്ന ഉപയോക്താക്കളെ രേഖപ്പെടുത്തുന്നു.',
 	'logentry-massmessage-send' => '$1 $3 എന്ന താളിൽ {{GENDER:$2|സന്ദേശമിട്ടു}}',
+	'logentry-massmessage-failure' => '$3 എന്നതിലേക്കുള്ള "$4" എന്നതിന്റെ വിതരണം <code>$5</code> എന്ന പിഴവ് കോഡോടെ പരാജയപ്പെട്ടു',
+	'logentry-massmessage-skipbadns' => '$3 നൽകാൻ കഴിയാത്ത നാമമേഖലയിലായതിനാൽ അവിടെ "$4" ന്റെ വിതരണം ഒഴിവാക്കി',
+	'logentry-massmessage-skipoptout' => 'സന്ദേശങ്ങൾ വേണ്ട എന്ന് ലക്ഷ്യം തിരഞ്ഞെടുത്തിട്ടുള്ളതിനാൽ $3 എന്നതിലേക്കുള്ള "$4" എന്നതിന്റെ വിതരണം ഒഴിവാക്കി',
+	'logentry-massmessage-skipnouser' => 'ഉപയോക്തൃ അംഗത്വം നിലവിലില്ലാത്തതിനാൽ $3 എന്നതിലേക്കുള്ള "$4" എന്നതിന്റെ വിതരണം ഒഴിവാക്കി',
+	'massmessage-cannot-rename' => 'സംവിധാനത്തിന്റെ ഭാഗമായ ഈ അംഗത്വം പുനർനാമകരണം ചെയ്യാനാവില്ല.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|മറ്റൊരു സന്ദേശം അയയ്ക്കുക]] അല്ലെങ്കിൽ [[Special:Statistics|എത്ര സന്ദേശങ്ങൾ പോകാനവശേഷിക്കുന്നുവെന്ന് കാണുക]].',
 );
 
 /** Marathi (मराठी)
