@@ -53,3 +53,8 @@ $specialPageAliases['nl'] = array(
 $specialPageAliases['vi'] = array(
 	'MassMessage' => array( 'Nhắn_tin_cho_nhiều_người', 'Tin_nhắn_cho_nhiều_người', 'Nhắn_tin_hàng_loạt', 'Tin_nhắn_hàng_loạt' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$specialPageAliases['zh-hant'] = array(
+	'MassMessage' => array( '大量資訊' ),
+);

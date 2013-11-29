@@ -419,6 +419,46 @@ $messages['eu'] = array(
 	'massmessage-form-submit' => 'Bidali',
 );
 
+/** Persian (فارسی)
+ * @author Ebraminio
+ * @author Reza1615
+ */
+$messages['fa'] = array(
+	'massmessage' => 'ارسال انبوه پیام',
+	'massmessage-desc' => 'اجازه می‌دهد کاربران به‌سادگی پیامی را فهرست از کاربران بفرستند',
+	'massmessage-form-spamlist' => 'صفحه‌های حاوی فهرستی از صفحه‌ها برای فرستادن پیام:',
+	'massmessage-form-subject' => 'عنوان پیام (همچنین در خلاصهٔ ویرایش استفاده شده‌است):',
+	'massmessage-form-message' => 'بدنهٔ پیام:',
+	'massmessage-form-preview' => 'پیش‌نمایش',
+	'massmessage-form-submit' => 'ارسال',
+	'massmessage-fieldset-preview' => 'پیش‌نمایش',
+	'massmessage-submitted' => 'پیام شما به {{PLURAL:$1|$1 page|$1 صفحه}} در صف قرار گرفت.',
+	'massmessage-just-preview' => 'این فقط یک پیش‌نمایش است. «{{int:massmessage-form-submit}}» را برای ارسال پیام بفشارید.',
+	'massmessage-spamlist-doesnotexist' => 'صفحه-فهرست صفحه مشخص‌شده موجود نیست.',
+	'massmessage-empty-subject' => 'خط موضوع خالی است.',
+	'massmessage-empty-message' => 'بدنهٔ پیام خالی است.',
+	'massmessage-unescaped-langlinks' => 'هشدار: پیوندهای زبان غیررها در پیام شما وجود دارد.',
+	'massmessage-form-header' => 'از فرم زیر برای ارسال پیام به یک فهرست مشخص‌شده استفاده کند. همهٔ قسمت مورد نیاز هستند.',
+	'massmessage-queued-count' => '[[Special:MassMessage|پیام‌های انبوه]] در صف قرار گرفت',
+	'massmessage-hidden-comment' => '<!-- پیام توسط کاربر:$1@$2 با استفاده از فهرست در $3 ارسال شده‌است -->',
+	'massmessage-optout-category' => 'بیرون آمدن از رساندن پیام',
+	'massmessage-badhtml' => 'پیام شما {{PLURAL:$2|یک|چند}} برچسپ بسته‌نشده اچ‌تی‌ام‌ال دارد: $1.',
+	'massmessage-parse-badurl' => '«$1» وب‌گاه معتبری نیست.',
+	'massmessage-parse-badpage' => '«$1» عنوان معتبری برای صفحه نیست.',
+	'massmessage-global-disallowed' => 'پیام‌های فقط می‌تواند به صفحه‌های محلی ارسال شود.',
+	'right-massmessage' => 'ارسال یکجای یک پیام به چندین کاربر',
+	'action-massmessage' => 'ارسال یکجای یک پیام به چندین کاربر',
+	'log-name-massmessage' => 'سیاههٔ ارسال انبوه',
+	'log-description-massmessage' => 'این رویدادها ارسال پیام کاربران را دنبال می‌کند.',
+	'logentry-massmessage-send' => '$1 پیامی به $3 {{GENDER:$2|ارسال کرد}}',
+	'logentry-massmessage-failure' => 'رساندن «$4» به $3 به پیام خطای <code>$5</code> شکست خورد',
+	'logentry-massmessage-skipbadns' => 'رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که در فضای نامی بود نمی‌توانست ارسال شود',
+	'logentry-massmessage-skipoptout' => 'رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که هدف از رسیدن پیام بیرون آمده‌است',
+	'logentry-massmessage-skipnouser' => 'رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که حساب کاربری موجود نیست',
+	'massmessage-cannot-rename' => 'این یک حساب سامانه‌ای است و نمی‌تواند تغییر نام یابد',
+	'massmessage-nextsteps' => '[[Special:MassMessage|ارسال پیام دیگر]] یا [[Special:Statistics|مشاهدهٔ اینکه چند پیام در صف قرار دارند]].',
+);
+
 /** Finnish (suomi)
  * @author Nike
  * @author Pxos
