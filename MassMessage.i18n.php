@@ -1005,14 +1005,25 @@ $messages['nl'] = array(
 	'massmessage-spamlist-doesnotexist' => 'De opgegeven paginalijst bestaat niet.',
 	'massmessage-empty-subject' => 'Er wordt geen onderwerp aangegeven.',
 	'massmessage-empty-message' => 'Het bericht bevat geen tekst.',
+	'massmessage-unescaped-langlinks' => 'Waarschuwing: uw bericht bevat onjuiste taalkoppelingen.',
 	'massmessage-form-header' => 'Gebruiker het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Bulkberichten]] in de wachtrij',
+	'massmessage-hidden-comment' => '<!-- Bericht verzonden door User:$1@$2 via de lijst op de pagina $3 -->',
+	'massmessage-optout-category' => 'Wil geen berichten ontvangen',
+	'massmessage-badhtml' => 'Uw bericht heeft mogelijk {{PLURAL:$2|een ongesloten HTML-tag|ongesloten HTML-tags}}: $1.',
 	'massmessage-parse-badurl' => '"$1" is geen geldige site.',
 	'massmessage-parse-badpage' => '"$1" is geen geldige paginanaam.',
+	'massmessage-global-disallowed' => "Berichten kunnen alleen afgeleverd worden op lokale pagina's.",
 	'right-massmessage' => 'Berichten verzenden aan meerdere ontvangers tegelijk',
 	'action-massmessage' => 'berichten te verzenden aan meerdere ontvangers tegelijk',
 	'log-name-massmessage' => 'Bulkberichtenlogboek',
-	'log-description-massmessage' => 'Deze gebeurtenissen zijn gerelateerd aan verzonden berichten via de functie [[Special:MassMessage|bulkberichten]].',
+	'log-description-massmessage' => 'Deze gebeurtenissen zijn gerelateerd aan verzonden berichten via de functie bulkberichten.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|heeft}} een bericht geplaatst op $3',
+	'logentry-massmessage-failure' => 'Het afleveren van "$4" voor $3 is mislukt met de foutcode <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'Het afleveren van "$4" voor $3 is overgeslagen omdat het doel zich in een naamruimte bevindt waarin geen berichten geplaatst kunnen worden',
+	'logentry-massmessage-skipoptout' => 'Het afleveren van "$4" voor $3 is overgeslagen omdat er op de doelpagina geen berichten geplaatst mogen worden',
+	'logentry-massmessage-skipnouser' => 'Het afleveren van "$4" voor $3 is overgeslagen omdat de gebruiker niet bestaat',
+	'massmessage-cannot-rename' => 'Dit is een systeemgebruiker die niet hernoemd kan worden.',
 	'massmessage-nextsteps' => '[[Special:MassMessage|Nog een bericht verzenden]] of [[Special:Statistics|bekijken hoeveel berichten er in de wachtrij staan]].',
 );
 
@@ -1153,6 +1164,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (русский)
+ * @author NBS
  * @author Okras
  */
 $messages['ru'] = array(
@@ -1181,7 +1193,7 @@ $messages['ru'] = array(
 	'right-massmessage' => 'Отправка сообщения нескольким пользователям одновременно',
 	'action-massmessage' => 'отправку сообщения нескольким пользователям одновременно',
 	'log-name-massmessage' => 'Журнал массовых сообщений',
-	'log-description-massmessage' => 'Эти события отслеживают пользователей, отправляющих сообщения.',
+	'log-description-massmessage' => 'Это журнал, отслеживающий рассылку сообщений пользователям.',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|отправил|отправила}} сообщение на $3',
 	'logentry-massmessage-failure' => 'Доставка «$4» для $3 потерпела неудачу, вернув код ошибки <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Доставка «$4» для $3 была пропущена, поскольку целевая страница находится в пространстве имён, в котором не может быть опубликовано сообщение',
