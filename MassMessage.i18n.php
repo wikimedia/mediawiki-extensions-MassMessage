@@ -1326,7 +1326,7 @@ $messages['uk'] = array(
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
-	'massmessage' => 'Nhắn tin cho nhiều người',
+	'massmessage' => 'Gửi thông báo rộng rãi',
 	'massmessage-desc' => 'Cho phép người dùng nhắn tin dễ dàng cho một danh sách người dùng',
 	'massmessage-form-spamlist' => 'Trang chứa danh sách các trang để nhắn tin:',
 	'massmessage-form-subject' => 'Tiêu đề tin nhắn (cũng tóm lược sửa đổi):',
@@ -1348,9 +1348,9 @@ $messages['vi'] = array(
 	'massmessage-parse-badurl' => '“$1” không phải là trang Web hợp lệ.',
 	'massmessage-parse-badpage' => '“$1” không phải là tên trang hợp lệ.',
 	'massmessage-global-disallowed' => 'Chỉ có thể gửi thông điệp cho những người trong một trang địa phương.',
-	'right-massmessage' => 'Nhắn tin cho nhiều người một lúc',
-	'action-massmessage' => 'nhắn tin cho nhiều người một lúc',
-	'log-name-massmessage' => 'Nhật trình nhắn tin cho nhiều người',
+	'right-massmessage' => 'Gửi thông báo cho nhiều người cùng một lúc',
+	'action-massmessage' => 'gửi thông báo cho nhiều người cùng một lúc',
+	'log-name-massmessage' => 'Nhật trình thông báo rộng rãi',
 	'log-description-massmessage' => 'Nhật trình này có các tin nhắn được gửi cho nhiều người dùng.',
 	'logentry-massmessage-send' => '$1 đã {{GENDER:$2}}nhắn tin cho $3',
 	'logentry-massmessage-failure' => 'Việc gửi “$4” cho $3 bị thất bại với mã lỗi <code>$5</code>',
