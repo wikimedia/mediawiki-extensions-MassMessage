@@ -89,7 +89,7 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 		'ext.MassMessage.autocomplete.js',
 		'ext.MassMessage.badhtml.js',
 	),
-	'messages' => array( 'massmessage-badhtml' ),
+	'messages' => array( 'massmessage-badhtml', 'massmessage-parse-badpage' ),
 	'dependencies' => array(
 		'jquery.byteLimit',
 		'jquery.ui.autocomplete',
