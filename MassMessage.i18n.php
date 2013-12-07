@@ -223,7 +223,13 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'massmessage' => 'Дукха хаамаш кхехьийта',
+	'massmessage-form-spamlist' => 'Хаам бохуьйтуш болу агӀонийн могӀа болу агӀо:',
+	'massmessage-form-subject' => 'Хаамах лаьцна (кхин лелош ю хийцамах лаьцна яздеш):',
+	'massmessage-form-message' => 'Хааман йоза:',
 	'massmessage-form-submit' => 'ДӀадахьийта',
+	'massmessage-fieldset-preview' => 'Хьалха муха ю хьажа',
+	'massmessage-form-header' => 'ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза.',
 );
 
 /** Sorani Kurdish (کوردی)
@@ -234,7 +240,7 @@ $messages['ckb'] = array(
 	'action-massmessage' => 'ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Mormegil
  */
 $messages['cs'] = array(
@@ -946,7 +952,7 @@ $messages['mr'] = array(
 	'right-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
 	'action-massmessage' => 'बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा',
 	'log-name-massmessage' => 'एकगठ्ठा संदेशाच्या नोंदी',
-	'log-description-massmessage' => 'हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.',
+	'log-description-massmessage' => 'हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.', # Fuzzy
 	'logentry-massmessage-send' => '$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}',
 );
 
@@ -977,7 +983,7 @@ $messages['ms'] = array(
 	'right-massmessage' => 'Mengirim pesanan kepada berbilang pengguna sekali gus',
 	'action-massmessage' => 'menghantar pesanan kepada berbilang pengguna sekali gus',
 	'log-name-massmessage' => 'Log pesanan beramai-ramai',
-	'log-description-massmessage' => 'Peristiwa-peristiwa ini menjejak pengguna yang mengirim pesanan melalui [[Special:MassMessage]].',
+	'log-description-massmessage' => 'Peristiwa-peristiwa ini menjejak pengguna yang mengirim pesanan melalui [[Special:MassMessage]].', # Fuzzy
 	'logentry-massmessage-send' => '$1 telah {{GENDER:$2|menghantar}} pesanan kepada $3',
 	'logentry-massmessage-failure' => '"$4" gagal dikirim kepada $3 dengan kod ralat <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Pengiriman "$4" kepada $3 dilangkau kerana sasaran tergolong dalam ruang nama yang tidak boleh dikirimi',
@@ -1154,7 +1160,7 @@ $messages['roa-tara'] = array(
 	'right-massmessage' => "Manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'action-massmessage' => "manne 'nu messàgge a cchiù utinde jndr'à 'na botte",
 	'log-name-massmessage' => 'Archivije de le messàgge de masse',
-	'log-description-massmessage' => "Ste avveneminde traccene l'utinde ca mannane messàgge cu [[Special:MassMessage]].",
+	'log-description-massmessage' => "Ste avveneminde traccene l'utinde ca mannane messàgge cu [[Special:MassMessage]].", # Fuzzy
 	'logentry-massmessage-send' => "$1 {{GENDER:$2|mannate 'nu messàgge}} a $3",
 	'logentry-massmessage-failure' => 'Invìe de "$4" a $3 fallite cu \'nu codece de errore <code>$5</code>',
 	'logentry-massmessage-skipbadns' => '\'A spedizione de "$4" a $3 ha state zumbate purcé \'a destinazione stè jndr\'à \'nu namespace ca non ge pozze mannà',
