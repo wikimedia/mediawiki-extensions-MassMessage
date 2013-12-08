@@ -166,12 +166,7 @@ class MassMessage {
 	 */
 	public static function getParserFunctionTargets( Title $spamlist, $context ) {
 		$page = WikiPage::factory( $spamlist );
-		$content = $page->getContent( Revision::RAW );
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-		} else {
-			return 'massmessage-spamlist-doesnotexist';
-		}
+		$text = $page->getContent( Revision::RAW )->getNativeData();
 
 		// Prep the parser
 		$parserOptions = $page->makeParserOptions( $context );
