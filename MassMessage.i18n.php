@@ -163,6 +163,7 @@ $messages['ar'] = array(
  */
 $messages['be-tarask'] = array(
 	'massmessage' => 'Адправіць масавае паведамленьне',
+	'massmessage-queued-count' => 'Чарга [[Special:MassMessage|масавых паведамленьняў]]',
 );
 
 /** Bulgarian (български)
