@@ -20,6 +20,11 @@ $magicWords['cs'] = array(
 	'target' => array( 0, 'cíl' ),
 );
 
+/** Zazaki (Zazaki) */
+$magicWords['diq'] = array(
+	'target' => array( 0, 'hedef' ),
+);
+
 /** Korean (한국어) */
 $magicWords['ko'] = array(
 	'target' => array( 0, '대상' ),
@@ -33,4 +38,9 @@ $magicWords['mk'] = array(
 /** Malayalam (മലയാളം) */
 $magicWords['ml'] = array(
 	'target' => array( 0, 'ലക്ഷ്യം' ),
+);
+
+/** Norwegian Nynorsk (norsk nynorsk) */
+$magicWords['nn'] = array(
+	'target' => array( 0, 'mål' ),
 );

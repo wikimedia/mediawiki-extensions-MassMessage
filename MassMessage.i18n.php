@@ -1035,6 +1035,23 @@ $messages['nl'] = array(
 	'massmessage-nextsteps' => '[[Special:MassMessage|Nog een bericht verzenden]] of [[Special:Statistics|bekijken hoeveel berichten er in de wachtrij staan]].',
 );
 
+/** Norwegian Nynorsk (norsk nynorsk)
+ * @author Njardarlogar
+ */
+$messages['nn'] = array(
+	'massmessage' => 'Send massemeldingar',
+	'massmessage-form-spamlist' => 'Side som inneheld ei liste over sider som det skal leggjast att ei melding på:',
+	'massmessage-form-subject' => 'Meldingsemne (vert òg brukt som endringssamandrag):',
+	'massmessage-form-message' => 'Meldingstekst:',
+	'massmessage-form-preview' => 'Førehandsvis',
+	'massmessage-form-submit' => 'Send',
+	'massmessage-fieldset-preview' => 'Førehandsvising',
+	'massmessage-empty-subject' => 'Emnelina er tom.',
+	'massmessage-empty-message' => 'Meldingsteksten er tom.',
+	'log-name-massmessage' => 'Logg over massemeldingar',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|sende}} ei melding til $3',
+);
+
 /** Occitan (occitan)
  * @author Cedric31
  */
@@ -1133,6 +1150,14 @@ $messages['pt-br'] = array(
 	'action-massmessage' => 'envie uma mensagem para vários usuários ao mesmo tempo',
 	'log-name-massmessage' => 'Registro de mensagens em massa',
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|envie uma mensagem}} para $3',
+);
+
+/** Romansh (rumantsch)
+ * @author Kazu89
+ */
+$messages['rm'] = array(
+	'massmessage' => 'Trametter in messadi da massa',
+	'log-name-massmessage' => 'Protocol da messadis da massa',
 );
 
 /** tarandíne (tarandíne)
