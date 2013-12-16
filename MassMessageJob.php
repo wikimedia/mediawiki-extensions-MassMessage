@@ -13,10 +13,14 @@
 class MassMessageJob extends Job {
 	public function __construct( Title $title, array $params, $id = 0 ) {
 		parent::__construct( 'MassMessageJob', $title, $params, $id );
+		// More debug logging for bug 57464
+		wfDebugLog( 'MassMessage', "Before re-normalizing, title is \"{$this->title->getPrefixedText()}\", "
+			. "interwiki is \"{$this->title->getInterwiki()}\", ns is \"{$this->title->getNamespace()}\"" );
 		// Create a fresh Title object so namespaces are evaluated
 		// in the context of the target site. Bug 57464
 		$this->title = Title::newFromText( $this->title->getPrefixedText() );
-
+		wfDebugLog( 'MassMessage', "After re-normalizing, title is \"{$this->title->getPrefixedText()}\", "
+			. "interwiki is \"{$this->title->getInterwiki()}\", ns is \"{$this->title->getNamespace()}\"" );
 	}
 
 	/**
