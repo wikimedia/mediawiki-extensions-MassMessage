@@ -14,6 +14,11 @@ $specialPageAliases['en'] = array(
 	'MassMessage' => array( 'MassMessage' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'MassMessage' => array( 'رسائل_كمية' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
@@ -32,6 +37,11 @@ $specialPageAliases['he'] = array(
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'MassMessage' => array( 'MessaggiMassivi' ),
+);
+
+/** Japanese (日本語) */
+$specialPageAliases['ja'] = array(
+	'MassMessage' => array( 'メッセージ一括送信', '一括メッセージ' ),
 );
 
 /** Korean (한국어) */
