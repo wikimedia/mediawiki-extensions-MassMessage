@@ -25,6 +25,9 @@ class MassMessageSubmitJob extends Job {
 
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
+			// Store the title as plain text to avoid namespace/interwiki prefix
+			// collisions, see bug 57464 and 58524
+			$data['title'] = $page['title'];
 			$jobsByTarget[$page['wiki']][] = new MassMessageJob( $title, $data );
 		}
 

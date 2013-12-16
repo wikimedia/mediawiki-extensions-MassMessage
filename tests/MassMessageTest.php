@@ -67,7 +67,7 @@ class MassMessageTest extends MediaWikiTestCase {
 	 */
 	public static function simulateJob( $title ) {
 		$subject = md5( MWCryptRand::generateHex( 15 ) );
-		$params = array( 'subject' => $subject, 'message' => 'This is a message.', );
+		$params = array( 'subject' => $subject, 'message' => 'This is a message.', 'title' => $title->getFullText() );
 		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5' );
 		$job = new MassMessageJob( $title, $params );
 		$job->run();
