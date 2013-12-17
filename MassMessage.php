@@ -73,7 +73,10 @@ $wgAutoloadClasses['MassMessageJob'] = "$dir/MassMessageJob.php";
 $wgAutoloadClasses['MassMessageSubmitJob'] = "$dir/MassMessageSubmitJob.php";
 $wgAutoloadClasses['MassMessageFailureLogFormatter'] = "$dir/MassMessageFailureLogFormatter.php";
 $wgAutoloadClasses['MassMessageSendLogFormatter'] = "$dir/MassMessageSendLogFormatter.php";
+$wgAutoloadClasses['MassMessageSkipLogFormatter'] = "$dir/MassMessageSkipLogFormatter.php";
+
 $wgAPIModules['massmessage'] = 'ApiMassMessage';
+
 $wgJobClasses['MassMessageJob'] = 'MassMessageJob';
 $wgJobClasses['MassMessageSubmitJob'] = 'MassMessageSubmitJob';
 
@@ -112,6 +115,9 @@ $wgLogTypes[] = 'massmessage';
 $wgLogActionsHandlers['massmessage/*'] = 'LogFormatter';
 $wgLogActionsHandlers['massmessage/send'] = 'MassMessageSendLogFormatter';
 $wgLogActionsHandlers['massmessage/failure'] = 'MassMessageFailureLogFormatter';
+$wgLogActionsHandlers['massmessage/skipoptout'] = 'MassMessageSkipLogFormatter';
+$wgLogActionsHandlers['massmessage/skipnouser'] = 'MassMessageSkipLogFormatter';
+$wgLogActionsHandlers['massmessage/skipbadns'] = 'MassMessageSkipLogFormatter';
 
 // User rights
 $wgAvailableRights[] = 'massmessage'; // Local messaging
