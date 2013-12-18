@@ -231,6 +231,7 @@ $messages['ce'] = array(
 	'massmessage-form-preview' => 'Хьалха муха ю хьажа',
 	'massmessage-form-submit' => 'ДӀадахьийта',
 	'massmessage-fieldset-preview' => 'Хьалха муха ю хьажа',
+	'massmessage-just-preview' => 'ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.',
 	'massmessage-form-header' => 'ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза.',
 );
 
