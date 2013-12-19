@@ -1425,37 +1425,45 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Cwek
  * @author Gakmo
  * @author Liuxinyu970226
  * @author Qiyue2001
  * @author Shizhao
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'massmessage' => '群发消息',
-	'massmessage-desc' => '使用户可以轻松将消息发送给列表中的用户',
-	'massmessage-form-spamlist' => '包含留言名单的页面：',
+	'massmessage-desc' => '使用户可以轻松将消息发送给一个列表中的用户',
+	'massmessage-form-spamlist' => '包含有要留言页面名单的页面：',
 	'massmessage-form-subject' => '消息主题（同时用作编辑摘要）：',
 	'massmessage-form-message' => '消息正文：',
 	'massmessage-form-preview' => '预览',
 	'massmessage-form-submit' => '发送',
 	'massmessage-fieldset-preview' => '预览',
-	'massmessage-submitted' => '您要发送到{{PLURAL:$1|该页面|$1个页面}}的消息已开始排队。',
-	'massmessage-just-preview' => '这只是预览。点击“{{int:massmessage-form-submit}}”来发送消息。',
+	'massmessage-submitted' => '您要投递到$1个页面的消息已开始排队。',
+	'massmessage-just-preview' => '这只是预览。点击“{{int:massmessage-form-submit}}”发出此消息。',
 	'massmessage-spamlist-doesnotexist' => '指定的页面列表页面不存在。',
 	'massmessage-empty-subject' => '主题为空。',
 	'massmessage-empty-message' => '消息正文为空。',
 	'massmessage-unescaped-langlinks' => '警告：在你的消息中有未转义的语言链接。',
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的。',
 	'massmessage-queued-count' => '[[Special:MassMessage|群发消息]]已排队',
-	'massmessage-hidden-comment' => '<!-- Message sent by User:$1@$2 using the list at $3 -->',
-	'massmessage-optout-category' => '不接受消息发送',
-	'massmessage-parse-badurl' => '"$1"不是一个有效的站点',
-	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题',
+	'massmessage-hidden-comment' => '<!-- 消息发送者 User:$1@$2，使用的列表为 $3 -->',
+	'massmessage-optout-category' => '不再接受群发投递的消息',
+	'massmessage-badhtml' => '你的消息可能含有未闭合的HTML标签：$1。', # Fuzzy
+	'massmessage-parse-badurl' => '“$1”不是一个有效的站点。',
+	'massmessage-parse-badpage' => '“$1”不是一个有效的页面标题。',
 	'massmessage-global-disallowed' => '消息只可以发送至本地页面。',
-	'right-massmessage' => '一次将消息发送到多个用户',
-	'action-massmessage' => '一次将消息发送到多个用户',
+	'right-massmessage' => '一次将一条消息发送给多个用户',
+	'action-massmessage' => '一次将一条消息发送给多个用户',
 	'log-name-massmessage' => '批量消息日志',
-	'log-description-massmessage' => '这些事件跟踪用户发送消息。',
-	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到$3',
-	'massmessage-nextsteps' => '[[Special:MassMessage|发送其他信息]]或者[[Special:Statistics|查看多少信息等待排队]]。',
+	'log-description-massmessage' => '这些事件跟踪着用户发送的消息。',
+	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到清单$3上的所有目标',
+	'logentry-massmessage-failure' => '投递“$4”到“$3”失败，错误代码<code>$5</code>',
+	'logentry-massmessage-skipbadns' => '投递“$4”到“$3”已跳过，因为目标所在的命名空间无法张贴',
+	'logentry-massmessage-skipoptout' => '投递“$4”到“$3”已跳过，因为目标已选择退出群发消息投递',
+	'logentry-massmessage-skipnouser' => '投递“$4”到“$3”已跳过，因为用户账户不存在',
+	'massmessage-cannot-rename' => '这是一个系统账户，不能被重命名。',
+	'massmessage-nextsteps' => '[[Special:MassMessage|发送下一条信息]]，或者[[Special:Statistics|查看有多少信息正在排队]]。',
 );
