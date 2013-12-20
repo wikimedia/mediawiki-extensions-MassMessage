@@ -748,6 +748,7 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Fryed-peach
  * @author Shirayuki
  */
 $messages['ja'] = array(
@@ -768,6 +769,7 @@ $messages['ja'] = array(
 	'massmessage-form-header' => 'このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です。',
 	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
 	'massmessage-hidden-comment' => '<!-- User:$1@$2 が $3 のリストを使用して送信したメッセージ -->',
+	'massmessage-optout-category' => 'メッセージ配信拒否',
 	'massmessage-badhtml' => 'メッセージ内に、{{PLURAL:$2|閉じられていない HTML タグ}}があります: $1',
 	'massmessage-parse-badurl' => '「$1」は有効なサイトではありません。',
 	'massmessage-parse-badpage' => '「$1」は有効なページ名ではありません。',
@@ -779,6 +781,7 @@ $messages['ja'] = array(
 	'logentry-massmessage-send' => '$1 が $3 に{{GENDER:$2|メッセージを送信しました}}',
 	'logentry-massmessage-failure' => '$3 に「$4」を送信する際にコード <code>$5</code> のエラーが発生しました',
 	'logentry-massmessage-skipbadns' => '宛先の名前空間には投稿できないため、$3 への「$4」の送信がスキップされました',
+	'logentry-massmessage-skipoptout' => '宛先がメッセージ配信を拒否しているため、$3 への「$4」の送信をスキップしました',
 	'logentry-massmessage-skipnouser' => '利用者アカウントが存在しないため、$3 への「$4」の送信がスキップされました',
 	'massmessage-cannot-rename' => 'これはシステム アカウントであるため、名前を変更できません。',
 	'massmessage-nextsteps' => '[[Special:MassMessage|別のメッセージを送信できます]]。[[Special:Statistics|待ち行列内のメッセージ数を閲覧することもできます]]。',
