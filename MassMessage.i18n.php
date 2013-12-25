@@ -233,6 +233,9 @@ $messages['ce'] = array(
 	'massmessage-fieldset-preview' => 'Хьалха муха ю хьажа',
 	'massmessage-just-preview' => 'ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.',
 	'massmessage-form-header' => 'ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза.',
+	'massmessage-queued-count' => 'РогӀехь болу [[Special:MassMessage|дукха хаамаш]]',
+	'log-name-massmessage' => 'Дукха хаамаш кхехьийтаран тептар',
+	'log-description-massmessage' => 'Декъашхочо хаамаш кхехьийтар гойту тептар.',
 );
 
 /** Sorani Kurdish (کوردی)
