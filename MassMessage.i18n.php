@@ -158,6 +158,13 @@ $messages['ar'] = array(
 	'massmessage-cannot-rename' => 'هذا حساب نظام ولا يمكن إعادة تسميته.',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Gitartha.bordoloi
+ */
+$messages['as'] = array(
+	'massmessage' => 'সমূহীয়া বাৰ্তা পঠিয়াওক',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Red Winged Duck
  */
