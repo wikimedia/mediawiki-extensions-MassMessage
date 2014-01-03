@@ -232,6 +232,7 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'massmessage' => 'Дукха хаамаш кхехьийта',
+	'massmessage-desc' => 'Дукху дкъашхошка атта хаамаш бахьийта таро хуьлуьйту',
 	'massmessage-form-spamlist' => 'Хаам бохуьйтуш болу агӀонийн могӀа болу агӀо:',
 	'massmessage-form-subject' => 'Хаамах лаьцна (кхин лелош ю хийцамах лаьцна яздеш):',
 	'massmessage-form-message' => 'Хааман йоза:',
@@ -241,6 +242,7 @@ $messages['ce'] = array(
 	'massmessage-just-preview' => 'ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.',
 	'massmessage-form-header' => 'ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза.',
 	'massmessage-queued-count' => 'РогӀехь болу [[Special:MassMessage|дукха хаамаш]]',
+	'right-massmessage' => 'Цхьана хеннахь массийта декъашхошка хаамаш бахьийтар',
 	'log-name-massmessage' => 'Дукха хаамаш кхехьийтаран тептар',
 	'log-description-massmessage' => 'Декъашхочо хаамаш кхехьийтар гойту тептар.',
 );
@@ -1257,7 +1259,7 @@ $messages['ru'] = array(
 	'massmessage-form-preview' => 'Предпросмотр',
 	'massmessage-form-submit' => 'Отправить',
 	'massmessage-fieldset-preview' => 'Предпросмотр',
-	'massmessage-submitted' => 'Доставка вашего сообщения на {{PLURAL:$1|$1 страницу|$1 страницы|$1 страниц}} была поставлена в очередь.',
+	'massmessage-submitted' => 'Доставка вашего сообщения на {{PLURAL:$1|$1 страницу|$1 страниц|$1 страницы}} была поставлена в очередь.', # Fuzzy
 	'massmessage-just-preview' => 'Это только предварительный просмотр. Нажмите «{{int:massmessage-form-submit}}» для отправки сообщения.',
 	'massmessage-spamlist-doesnotexist' => 'Указанная страница со списком страниц не существует.',
 	'massmessage-empty-subject' => 'Строка с темой не заполнена.',
@@ -1267,7 +1269,7 @@ $messages['ru'] = array(
 	'massmessage-queued-count' => 'Поставленные в очередь [[Special:MassMessage|массовые сообщения]]',
 	'massmessage-hidden-comment' => '<!-- Сообщение отправил Участник:$1@$2, используя список на странице $3 -->',
 	'massmessage-optout-category' => 'Отказано в доставке сообщений',
-	'massmessage-badhtml' => 'Ваше сообщение может содержать {{PLURAL:$2|незакрытый HTML-тег|незакрытые HTML-теги}}: $1.',
+	'massmessage-badhtml' => 'Ваше сообщение может содержать {{PLURAL:$2|1=незакрытый HTML-тег|незакрытые HTML-теги}}: $1.', # Fuzzy
 	'massmessage-parse-badurl' => '«$1» не является корректным адресом сайта',
 	'massmessage-parse-badpage' => '«$1» не является корректным заголовком страницы.',
 	'massmessage-global-disallowed' => 'Сообщения могут быть отправлены только на локальные страницы.',
@@ -1386,7 +1388,7 @@ $messages['uk'] = array(
 	'massmessage-queued-count' => 'У черзі [[Special:MassMessage|масових повідомлень]]',
 	'massmessage-hidden-comment' => '<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->',
 	'massmessage-optout-category' => 'Відмова від доставки повідомлень',
-	'massmessage-badhtml' => 'Ваше повідомлення, можливо, має {{PLURAL:$2|незакритий теґ HTML|незакриті теґи HTML}}:  $1 .',
+	'massmessage-badhtml' => 'Ваше повідомлення, можливо, має {{PLURAL:$2|1=незакритий теґ HTML|незакриті теґи HTML}}:  $1 .',
 	'massmessage-parse-badurl' => '"$1" не є коректним сайтом',
 	'massmessage-parse-badpage' => '"$1" не є коректною назвою сторінки',
 	'massmessage-global-disallowed' => 'Повідомлення можна надіслати лише до місцевих сторінок.',
