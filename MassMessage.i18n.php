@@ -1159,6 +1159,8 @@ $messages['pl'] = array(
 	'log-name-massmessage' => 'Log masowych wiadomości',
 	'log-description-massmessage' => 'To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości poprzez [[Special:MassMessage]].', # Fuzzy
 	'logentry-massmessage-send' => '$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3',
+	'logentry-massmessage-skipbadns' => 'Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ miejsce docelowe znajdowało się w przestrzeni nazw, w której nie mogło być umieszczone',
+	'logentry-massmessage-skipnouser' => 'Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ konto użytkownika nie istnieje',
 );
 
 /** Pashto (پښتو)
@@ -1247,6 +1249,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (русский)
+ * @author Kaganer
  * @author NBS
  * @author Okras
  */
@@ -1259,7 +1262,7 @@ $messages['ru'] = array(
 	'massmessage-form-preview' => 'Предпросмотр',
 	'massmessage-form-submit' => 'Отправить',
 	'massmessage-fieldset-preview' => 'Предпросмотр',
-	'massmessage-submitted' => 'Доставка вашего сообщения на {{PLURAL:$1|$1 страницу|$1 страниц|$1 страницы}} была поставлена в очередь.', # Fuzzy
+	'massmessage-submitted' => 'Доставка вашего сообщения на {{PLURAL:$1|$1 страницу|$1 страниц|$1 страницы}} была поставлена в очередь.',
 	'massmessage-just-preview' => 'Это только предварительный просмотр. Нажмите «{{int:massmessage-form-submit}}» для отправки сообщения.',
 	'massmessage-spamlist-doesnotexist' => 'Указанная страница со списком страниц не существует.',
 	'massmessage-empty-subject' => 'Строка с темой не заполнена.',
@@ -1269,7 +1272,7 @@ $messages['ru'] = array(
 	'massmessage-queued-count' => 'Поставленные в очередь [[Special:MassMessage|массовые сообщения]]',
 	'massmessage-hidden-comment' => '<!-- Сообщение отправил Участник:$1@$2, используя список на странице $3 -->',
 	'massmessage-optout-category' => 'Отказано в доставке сообщений',
-	'massmessage-badhtml' => 'Ваше сообщение может содержать {{PLURAL:$2|1=незакрытый HTML-тег|незакрытые HTML-теги}}: $1.', # Fuzzy
+	'massmessage-badhtml' => 'Ваше сообщение может содержать {{PLURAL:$2|1=незакрытый HTML-тег|незакрытые HTML-теги}}: $1.',
 	'massmessage-parse-badurl' => '«$1» не является корректным адресом сайта',
 	'massmessage-parse-badpage' => '«$1» не является корректным заголовком страницы.',
 	'massmessage-global-disallowed' => 'Сообщения могут быть отправлены только на локальные страницы.',
