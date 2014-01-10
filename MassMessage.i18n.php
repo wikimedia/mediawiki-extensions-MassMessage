@@ -165,6 +165,45 @@ $messages['as'] = array(
 	'massmessage' => 'সমূহীয়া বাৰ্তা পঠিয়াওক',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'massmessage' => 'Unviar un mensaxe en masa',
+	'massmessage-desc' => "Permite que los usuarios unvien fácilmente una mensaxe a una llista d'usuarios",
+	'massmessage-form-spamlist' => 'Páxina que contién la llista de páxines nes que dexar un mensaxe:',
+	'massmessage-form-subject' => "Asuntu del mensaxe (úsase tamién como resume d'edición):",
+	'massmessage-form-message' => 'Cuerpu del mensaxe:',
+	'massmessage-form-preview' => 'Vista previa',
+	'massmessage-form-submit' => 'Unviar',
+	'massmessage-fieldset-preview' => 'Vista previa',
+	'massmessage-submitted' => 'La entrega del so mensaxe a {{PLURAL:$1|una páxina|$1 páxines}} unvióse a la cola.',
+	'massmessage-just-preview' => 'Esto sólo ye una vista previa. Calque "{{int:massmessage-form-submit}}" pa unviar el mensaxe.',
+	'massmessage-spamlist-doesnotexist' => 'La páxina cola llista de páxines especificada nun esiste.',
+	'massmessage-empty-subject' => 'La llinia del asuntu ta balera.',
+	'massmessage-empty-message' => 'El cuerpu del mensaxe ta baleru.',
+	'massmessage-unescaped-langlinks' => 'Avisu: Hai enllaces de llingua ensin escapar nel so mensaxe.',
+	'massmessage-form-header' => "Use'l formulariu de más abaxo pa unviar mensaxes a una llista determinada. Tolos campos son obligatorios.",
+	'massmessage-queued-count' => '[[Special:MassMessage|Mensaxes en masa]] en cola',
+	'massmessage-hidden-comment' => '<!-- Mensaxe unviáu por User:$1@$2 usando la llista de $3 -->',
+	'massmessage-optout-category' => 'Torgar la entrega de mensaxes',
+	'massmessage-badhtml' => 'El so mensaxe pue tener {{PLURAL:$2|una etiqueta HTML|etiquetes HTML}} ensin zarrar: $1.',
+	'massmessage-parse-badurl' => '"$1" nun ye un sitiu válidu.',
+	'massmessage-parse-badpage' => '"$1" nun ye un títulu de páxina válidu.',
+	'massmessage-global-disallowed' => 'Los mensaxes sólo puen unviase a páxines llocales.',
+	'right-massmessage' => 'Unviar un mensaxe a múltiples usuarios a la vez',
+	'action-massmessage' => 'unviar un mensaxe a múltiples usuarios a la vez',
+	'log-name-massmessage' => 'Rexistru de mensaxes en masa',
+	'log-description-massmessage' => "Estos socesos rexistren los usuarios qu'unviaron mensaxes.",
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|unvió un mensaxe}} a $3',
+	'logentry-massmessage-failure' => 'La entrega de "$4" a $3 falló con un códigu d\'error de <code>$5</code>',
+	'logentry-massmessage-skipbadns' => 'La entrega de "$4" a $3 saltóse porque\'l destín taba nun espaciu de nomes nel que nun se pue publicar',
+	'logentry-massmessage-skipoptout' => 'La entrega de "$4" a $3 saltóse porque\'l destinatariu escoyó nun recibir mensaxes',
+	'logentry-massmessage-skipnouser' => 'La entrega de "$4" a $3 saltóse porque la cuenta d\'usuariu nun esiste',
+	'massmessage-cannot-rename' => 'Esta ye una cuenta del sistema y nun se-y pue camudar el nome.',
+	'massmessage-nextsteps' => '[[Special:MassMessage|Unviar otru mensaxe]] o [[Special:Statistics|ver cuántos mensaxes tan na cola]].',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Red Winged Duck
  */
@@ -594,7 +633,7 @@ $messages['frr'] = array(
 	'massmessage-empty-message' => 'Di tekst faan din bööd as leesag.',
 	'massmessage-unescaped-langlinks' => 'Paase üüb: Uun din bööd san ei tuläät ferwisangen tu ööder spriaken.',
 	'massmessage-form-header' => 'Brük det formulaar diar oner, am en bööd tu en sidjenlist tu schüüren. Arke fial skal ütjfald wees.',
-	'massmessage-queued-count' => '[[Special:MassMessage|mass messages]] teewt üüb a postluuper.',
+	'massmessage-queued-count' => '[[Special:MassMessage|Streibriaw]] teew üüb a postluuper.',
 	'massmessage-hidden-comment' => '<!-- Bööd as faan di brüker:$1@$2 auer det list $3 ferschüürd wurden-->',
 	'massmessage-optout-category' => 'Det ufleewrin faan bööd as ufsteld wurden',
 	'massmessage-badhtml' => 'Uun din bööd küd {{PLURAL:$2|en eeben HTML-tag|eeben HTML-tags}} wees: $1.',
