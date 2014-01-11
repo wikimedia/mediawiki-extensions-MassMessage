@@ -450,6 +450,7 @@ $messages['eo'] = array(
 );
 
 /** Spanish (español)
+ * @author Ciencia Al Poder
  * @author Fitoschido
  * @author Ovruni
  */
@@ -474,7 +475,7 @@ $messages['es'] = array(
 	'right-massmessage' => 'Enviar un mensaje a varios usuarios a la vez',
 	'action-massmessage' => 'enviar un mensaje a varios usuarios a la vez',
 	'log-name-massmessage' => 'Registro de mensajes masivos',
-	'logentry-massmessage-send' => '$1 ha enviado un mensaje a $3', # Fuzzy
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|ha enviado}} un mensaje a $3',
 	'logentry-massmessage-failure' => 'Ha fallado la entrega de «$4» a $3 con el código de error <code>$5</code>',
 	'logentry-massmessage-skipbadns' => 'Se omitió la entrega de «$4» a $3 porque el destino se encuentra en un espacio de nombres donde no se puede publicar',
 	'logentry-massmessage-skipoptout' => 'Se omitió la entrega de «$4» a $3 porque el usuario ha elegido no recibir mensajes',
