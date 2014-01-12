@@ -850,6 +850,17 @@ $messages['ja'] = array(
 	'massmessage-nextsteps' => '[[Special:MassMessage|別のメッセージを送信できます]]。[[Special:Statistics|待ち行列内のメッセージ数を閲覧することもできます]]。',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'massmessage' => 'მასობრივი შეტყობინების გაგზავნა',
+	'massmessage-form-spamlist' => 'გვერდი, იმ გვერდების სიით სადაც შეტყობინების დატოვებაა საჭირო:',
+	'massmessage-form-subject' => 'შეტყობინების თემა (გამოიყენება აგრეთვე ცვლილების აღსაწერად):',
+	'massmessage-form-message' => 'შეტყობინების ტექსტი:',
+	'massmessage-empty-message' => 'ტექსტის ველი ცარიელია.',
+);
+
 /** Korean (한국어)
  * @author Hym411
  * @author Kwj2772
