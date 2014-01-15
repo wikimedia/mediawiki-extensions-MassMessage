@@ -342,15 +342,16 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Filzstift
  * @author Metalhead64
  * @author Se4598
  */
 $messages['de'] = array(
 	'massmessage' => 'Massennachricht senden',
 	'massmessage-desc' => 'Ermöglicht Benutzern das einfache Versenden von Nachrichten an eine Benutzerliste',
-	'massmessage-form-spamlist' => 'Seite, die eine Seitenliste zum Hinterlassen einer Nachricht beinhaltet.',
-	'massmessage-form-subject' => 'Betreff der Nachricht. Wird auch als Bearbeitungszusammenfassung verwendet.',
-	'massmessage-form-message' => 'Der Textbereich der Nachricht.',
+	'massmessage-form-spamlist' => 'Seite mit der Seitenliste der Nachrichtenempfänger:',
+	'massmessage-form-subject' => 'Betreff der Nachricht (wird auch für die Bearbeitungszusammenfassung verwendet):',
+	'massmessage-form-message' => 'Nachrichtentext:',
 	'massmessage-form-preview' => 'Vorschau',
 	'massmessage-form-submit' => 'Senden',
 	'massmessage-fieldset-preview' => 'Vorschau',
@@ -482,6 +483,29 @@ $messages['es'] = array(
 	'logentry-massmessage-skipnouser' => 'Se omitió la entrega de «$4» a $3 porque la cuenta de usuario no existe',
 	'massmessage-cannot-rename' => 'Esta es una cuenta del sistema y no se puede renombrar.',
 	'massmessage-nextsteps' => '[[Special:MassMessage|Envía otro mensaje]] o [[Special:Statistics|ve cuántos mensajes hay en espera]].',
+);
+
+/** Estonian (eesti)
+ * @author Pikne
+ */
+$messages['et'] = array(
+	'massmessage' => 'Hulgasõnumi saatmine',
+	'massmessage-desc' => 'Võimaldab lihtsasti saata loetletud kasutajatele sõnumi.',
+	'massmessage-form-spamlist' => 'Lehekülg, kus on loetletud leheküljed, kuhu sõnum jätta:',
+	'massmessage-form-subject' => 'Sõnumi teema (ühtlasi muudatuse resümee):',
+	'massmessage-form-message' => 'Sõnumi kehatekst:',
+	'massmessage-form-preview' => 'Eelvaade',
+	'massmessage-form-submit' => 'Saada',
+	'massmessage-fieldset-preview' => 'Eelvaade',
+	'massmessage-just-preview' => 'See on kõigest eelvaade. Vajuta "{{int:massmessage-form-submit}}", et sõnum saata.',
+	'massmessage-spamlist-doesnotexist' => 'Lehekülgede määratud loendit pole.',
+	'massmessage-empty-subject' => 'Teemarida on tühi.',
+	'massmessage-empty-message' => 'Sõnumi keha on tühi.',
+	'right-massmessage' => 'Saata sõnum mitmele kasutajale korraga',
+	'action-massmessage' => 'saata sõnumit korraga mitmele kasutajale',
+	'log-name-massmessage' => 'Hulgasõnumite logi',
+	'log-description-massmessage' => 'Siin on logisissekanded saadetud sõnumite kohta.',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|saatis sõnumi}} asukohta $3',
 );
 
 /** Basque (euskara)
