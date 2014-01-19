@@ -104,7 +104,7 @@ class MassMessage {
 					$parse = wfParseUrl( $url );
 					$mapping[$parse['host']] = $dbname;
 				}
-				$wgMemc->set( $key, $mapping, 60 * 60 * 24 * 7 );
+				$wgMemc->set( $key, $mapping, 60 * 60 );
 			} else {
 				$mapping = $data;
 			}
