@@ -535,7 +535,7 @@ $messages['et'] = array(
 	'massmessage-empty-subject' => 'Teemarida on tühi.',
 	'massmessage-empty-message' => 'Sõnumi keha on tühi.',
 	'massmessage-unescaped-langlinks' => 'Hoiatus: Sinu muudatus sisaldab katkestamata keelelinke.',
-	'massmessage-form-header' => 'Kasuta järgnevat vormi, et saata sõnum määratud loendisse. Kõik väljad on nõutavad.',
+	'massmessage-form-header' => 'Kasuta järgmist vormi, et saata sõnum määratud loendisse. Kõik väljad on nõutavad.',
 	'massmessage-queued-count' => 'Järjekorras [[Special:MassMessage|hulgasõnumid]]',
 	'massmessage-hidden-comment' => '<!-- Sõnumi saatis Kasutaja:$1@$2 loendisse leheküljel "$3". -->',
 	'massmessage-optout-category' => 'Ei soovi sõnumeid',
@@ -1469,6 +1469,13 @@ $messages['sv'] = array(
  */
 $messages['te'] = array(
 	'massmessage-form-submit' => 'పంపించు',
+);
+
+/** Thai (ไทย)
+ * @author Nullzero
+ */
+$messages['th'] = array(
+	'massmessage-optout-category' => 'หน้าที่ไม่รับข้อความ',
 );
 
 /** Turkish (Türkçe)
