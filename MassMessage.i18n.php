@@ -327,6 +327,7 @@ $messages['ckb'] = array(
 
 /** Czech (čeština)
  * @author Mormegil
+ * @author Utar
  */
 $messages['cs'] = array(
 	'massmessage' => 'Poslat hromadnou zprávu',
@@ -360,7 +361,7 @@ $messages['cs'] = array(
 	'logentry-massmessage-skipbadns' => 'Doručení „$4“ pro $3 bylo přeskočeno, protože cíl je ve jmenném prostoru, do kterého nelze psát',
 	'logentry-massmessage-skipoptout' => 'Doručení „$4“ pro $3 bylo přeskočeno, protože cíl se odhlásil z příjmu zpráv',
 	'logentry-massmessage-skipnouser' => 'Doručení „$4“ pro $3 bylo přeskočeno, protože uživatelský účet neexistuje',
-	'massmessage-cannot-rename' => 'Toto je systémový účet, který nemůže být přejmenován.',
+	'massmessage-cannot-rename' => 'Toto je systémový účet, jenž tak nemůže být přejmenován.',
 	'massmessage-nextsteps' => '[[Special:MassMessage|Poslat další zprávu]] nebo [[Special:Statistics|zobrazit počet zpráv ve frontě]].',
 );
 
