@@ -361,7 +361,7 @@ $messages['cs'] = array(
 	'logentry-massmessage-skipbadns' => 'Doručení „$4“ pro $3 bylo přeskočeno, protože cíl je ve jmenném prostoru, do kterého nelze psát',
 	'logentry-massmessage-skipoptout' => 'Doručení „$4“ pro $3 bylo přeskočeno, protože cíl se odhlásil z příjmu zpráv',
 	'logentry-massmessage-skipnouser' => 'Doručení „$4“ pro $3 bylo přeskočeno, protože uživatelský účet neexistuje',
-	'massmessage-cannot-rename' => 'Toto je systémový účet, jenž tak nemůže být přejmenován.',
+	'massmessage-cannot-rename' => 'Toto je systémový účet, který nemůže být přejmenován.',
 	'massmessage-nextsteps' => '[[Special:MassMessage|Poslat další zprávu]] nebo [[Special:Statistics|zobrazit počet zpráv ve frontě]].',
 );
 
@@ -775,6 +775,7 @@ $messages['gl'] = array(
 	'massmessage-spamlist-doesnotexist' => 'A páxina especificada coa lista de páxinas non existe.',
 	'massmessage-empty-subject' => 'A liña do asunto está baleira.',
 	'massmessage-empty-message' => 'O corpo da mensaxe está baleiro.',
+	'massmessage-unescaped-langlinks' => 'Atención: Hai ligazóns de lingua sen formato na súa mensaxe.',
 	'massmessage-form-header' => 'Utilice o formulario inferior para enviar mensaxes a unha lista especificada. Todos os campos son obrigatorios.',
 	'massmessage-queued-count' => '[[Special:MassMessage|Mensaxes en masa]] na cola de espera',
 	'massmessage-hidden-comment' => '<!-- Mensaxe enviada por User:$1@$2 mediante a lista presente en $3 -->',
@@ -1293,7 +1294,7 @@ $messages['oc'] = array(
  * @author Woytecr
  */
 $messages['pl'] = array(
-	'massmessage' => 'Wyślij masową wiadomość',
+	'massmessage' => 'Wysyłanie masowej wiadomości',
 	'massmessage-desc' => 'Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników',
 	'massmessage-form-spamlist' => 'Strona zawierająca listę stron, na których zostawić wiadomość:',
 	'massmessage-form-subject' => 'Temat wiadomości (także używany jako podsumowanie edycji):',
