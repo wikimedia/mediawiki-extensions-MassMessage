@@ -344,7 +344,7 @@ $messages['cs'] = array(
 	'massmessage-empty-subject' => 'Předmět je prázdný.',
 	'massmessage-empty-message' => 'Tělo zprávy je prázdné.',
 	'massmessage-unescaped-langlinks' => 'Upozornění: Vaše zpráva obsahuje neošetřené jazykové odkazy.',
-	'massmessage-form-header' => 'Pomocí níže uvedeného formuláře můžete rozeslat zprávy podle zadaného seznamu. Všechna pole jsou povinná.',
+	'massmessage-form-header' => 'Pomocí níže uvedeného formuláře můžete rozeslat zprávy podle zadaného seznamu. Všechna pole jsou povinná ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage více informací]).',
 	'massmessage-queued-count' => 'Počet [[Special:MassMessage|hromadných zpráv]] ve frontě',
 	'massmessage-hidden-comment' => '<!-- Zprávu zaslal Uživatel:$1@$2 pomocí seznamu na $3 -->',
 	'massmessage-optout-category' => 'Odhlášení z příjmu zpráv',
@@ -425,7 +425,7 @@ $messages['de'] = array(
 	'massmessage-empty-subject' => 'Die Betreffszeile ist leer.',
 	'massmessage-empty-message' => 'Der Nachrichtenkörper ist leer.',
 	'massmessage-unescaped-langlinks' => 'Warnung: Deine Nachricht enthält ungültige Sprachlinks.',
-	'massmessage-form-header' => 'Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich.',
+	'massmessage-form-header' => 'Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage weitere Informationen]).',
 	'massmessage-queued-count' => '[[Special:MassMessage|Massennachrichten]] in der Warteschlange',
 	'massmessage-hidden-comment' => '<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->',
 	'massmessage-optout-category' => 'Von der Nachrichtenzustellung abgemeldet',
@@ -516,6 +516,7 @@ $messages['eo'] = array(
 
 /** Spanish (español)
  * @author Ciencia Al Poder
+ * @author Csbotero
  * @author Fitoschido
  * @author Ovruni
  */
@@ -532,6 +533,7 @@ $messages['es'] = array(
 	'massmessage-spamlist-doesnotexist' => 'La lista de páginas especificada no existe.',
 	'massmessage-empty-subject' => 'El asunto está vacío.',
 	'massmessage-empty-message' => 'El cuerpo del mensaje está vacío.',
+	'massmessage-form-header' => 'Utilice el siguiente formulario para enviar mensajes a una lista específica. Todos los campos son obligatorios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]).',
 	'massmessage-queued-count' => '[[Special:MassMessage|Mensajes masivos]] en cola',
 	'massmessage-hidden-comment' => '<!-- Mensaje enviado por Usuario:$1@$2 mediante la lista en $3 -->',
 	'massmessage-parse-badurl' => '"$1" no es un sitio válido',
@@ -567,7 +569,7 @@ $messages['et'] = array(
 	'massmessage-empty-subject' => 'Teemarida on tühi.',
 	'massmessage-empty-message' => 'Sõnumi keha on tühi.',
 	'massmessage-unescaped-langlinks' => 'Hoiatus: Sinu muudatus sisaldab katkestamata keelelinke.',
-	'massmessage-form-header' => 'Kasuta järgmist vormi, et saata sõnum määratud loendisse. Kõik väljad on nõutavad.',
+	'massmessage-form-header' => 'Kasuta järgmist vormi, et saata sõnum määratud loendisse. Kõik väljad on nõutavad ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage lisateave]).',
 	'massmessage-queued-count' => 'Järjekorras [[Special:MassMessage|hulgasõnumid]]',
 	'massmessage-hidden-comment' => '<!-- Sõnumi saatis Kasutaja:$1@$2 loendisse leheküljel "$3". -->',
 	'massmessage-optout-category' => 'Ei soovi sõnumeid',
@@ -776,7 +778,7 @@ $messages['gl'] = array(
 	'massmessage-empty-subject' => 'A liña do asunto está baleira.',
 	'massmessage-empty-message' => 'O corpo da mensaxe está baleiro.',
 	'massmessage-unescaped-langlinks' => 'Atención: Hai ligazóns de lingua sen formato na súa mensaxe.',
-	'massmessage-form-header' => 'Utilice o formulario inferior para enviar mensaxes a unha lista especificada. Todos os campos son obrigatorios.',
+	'massmessage-form-header' => 'Utilice o formulario inferior para enviar mensaxes a unha lista especificada. Todos os campos son obrigatorios.', # Fuzzy
 	'massmessage-queued-count' => '[[Special:MassMessage|Mensaxes en masa]] na cola de espera',
 	'massmessage-hidden-comment' => '<!-- Mensaxe enviada por User:$1@$2 mediante a lista presente en $3 -->',
 	'massmessage-optout-category' => 'Excluídos da recepción de mensaxes',
@@ -815,7 +817,7 @@ $messages['he'] = array(
 	'massmessage-empty-subject' => 'שורת הנושא ריקה.',
 	'massmessage-empty-message' => 'גוף ההודעה ריק.',
 	'massmessage-unescaped-langlinks' => 'אזהרה: יש קישורי שפה לא מחולפים בהודעה שלך.',
-	'massmessage-form-header' => 'נא להשתמש בטופס להלן כדי לשלוח הודעות לרשימה מוגדרת. כל השדות נדרשים.',
+	'massmessage-form-header' => 'אפשר להשתמש בטופס להלן כדי לשלוח הודעות לרשימה מוגדרת. כל השדות נדרשים. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage מידע נוסף]).',
 	'massmessage-queued-count' => '[[Special:MassMessage|הודעות המוניות]] בתור',
 	'massmessage-hidden-comment' => '<!-- הודעה שנשלחה על־ידי User:$1@$2 באמצעות הרשימה בדף $3 -->',
 	'massmessage-optout-category' => 'משתמשים שביקשו לא לקבל הודעות המוניות',
@@ -878,6 +880,7 @@ Nasken a maikkan amin dagiti pagikabilan.',
 
 /** Italian (italiano)
  * @author Beta16
+ * @author Rosh
  */
 $messages['it'] = array(
 	'massmessage' => 'Invia messaggi massivamente',
@@ -894,7 +897,7 @@ $messages['it'] = array(
 	'massmessage-empty-subject' => "La riga dell'oggetto è vuota.",
 	'massmessage-empty-message' => 'Il corpo del messaggio è vuoto.',
 	'massmessage-unescaped-langlinks' => 'Attenzione: ci sono collegamenti di lingua senza escape nel tuo messaggio.',
-	'massmessage-form-header' => 'Utilizza il modulo sottostante per inviare messaggi a un elenco specificato. Tutti i campi sono obbligatori.',
+	'massmessage-form-header' => 'Utilizza il modulo sottostante per inviare messaggi a un elenco specificato. Tutti i campi sono obbligatori. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage ulteriori informazioni]).',
 	'massmessage-queued-count' => '[[Special:MassMessage|Messaggi massivi]] accodati',
 	'massmessage-hidden-comment' => "<!-- Messaggio inviato da User:$1@$2 usando l'elenco su $3 -->",
 	'massmessage-optout-category' => 'Esclusione dalla ricezione di messaggi massivi',
@@ -934,7 +937,7 @@ $messages['ja'] = array(
 	'massmessage-empty-subject' => '件名を入力していません。',
 	'massmessage-empty-message' => 'メッセージの本文を入力していません。',
 	'massmessage-unescaped-langlinks' => '警告: メッセージ内にエスケープされていない言語リンクがあります。',
-	'massmessage-form-header' => 'このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です。',
+	'massmessage-form-header' => 'このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 詳細情報])。',
 	'massmessage-queued-count' => '順番待ち中の[[Special:MassMessage|一括送信メッセージ]]',
 	'massmessage-hidden-comment' => '<!-- User:$1@$2 が $3 のリストを使用して送信したメッセージ -->',
 	'massmessage-optout-category' => 'メッセージ配信拒否',
@@ -1022,7 +1025,7 @@ $messages['lb'] = array(
 	'massmessage-empty-subject' => "D'Linn mam Sujet ass eidel.",
 	'massmessage-empty-message' => 'Den Inhalt vum Message ass eidel.',
 	'massmessage-unescaped-langlinks' => 'Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.',
-	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch.',
+	'massmessage-form-header' => 'Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage méi Informatiounen]).',
 	'massmessage-hidden-comment' => "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
 	'massmessage-parse-badurl' => '"$1" ass kee valabele Site',
 	'massmessage-parse-badpage' => '"$1" ass kee valabelen Titel fir eng Säit',
@@ -1053,7 +1056,7 @@ $messages['mk'] = array(
 	'massmessage-empty-subject' => 'Насловот е празен.',
 	'massmessage-empty-message' => 'Порака нема текст.',
 	'massmessage-unescaped-langlinks' => 'Предупредување: Во пораката имате неекранизирани јазични врски.',
-	'massmessage-form-header' => 'Образецов служи за испраќање на пораки на укажан список на примачи. Сите полиња се задолжителни.',
+	'massmessage-form-header' => 'Послужете се со образецот подолу за да испраќате на пораки на укажан список на примачи. Сите полиња се задолжителни ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage повеќе информации]).',
 	'massmessage-queued-count' => '[[Special:MassMessage|Масовни пораки]] во редица',
 	'massmessage-hidden-comment' => '<!-- Пораката ја испрати Корисник:$1@$2 преку списокот на $3 -->',
 	'massmessage-optout-category' => 'Одлучиле да не примаат известувања',
@@ -1307,7 +1310,7 @@ $messages['pl'] = array(
 	'massmessage-spamlist-doesnotexist' => 'Określona strona z listą stron nie istnieje.',
 	'massmessage-empty-subject' => 'Pole tematu jest puste.',
 	'massmessage-empty-message' => 'Treść wiadomości jest pusta.',
-	'massmessage-form-header' => 'Użyj poniższego formularza, aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane.',
+	'massmessage-form-header' => 'Użyj poniższego formularza, aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane.', # Fuzzy
 	'massmessage-queued-count' => 'Zakolejkowane [[Special:MassMessage|masowe wiadomości]]',
 	'massmessage-parse-badpage' => '„$1” nie jest poprawnym tytułem strony',
 	'right-massmessage' => 'Wysyłanie wiadomości do wielu użytkowników jednocześnie',
@@ -1385,7 +1388,7 @@ $messages['roa-tara'] = array(
 	'massmessage-spamlist-doesnotexist' => "'A pàgene de l'elenghe specificate de le pàggene non g'esiste.",
 	'massmessage-empty-subject' => "'A linèe de l'oggette jè vacande.",
 	'massmessage-empty-message' => "'U cuèrpe d'u messàgge jè vacande.",
-	'massmessage-form-header' => "Ause 'u module aqquà sotte pe mannà messàgge a 'n'elenghe specifiche. Tutte le cambe sò richieste.",
+	'massmessage-form-header' => "Ause 'u module aqquà sotte pe mannà messàgge a 'n'elenghe specifiche. Tutte le cambe sò richieste.", # Fuzzy
 	'massmessage-queued-count' => 'Accodate [[Special:MassMessage|messàgge de masse]]',
 	'massmessage-hidden-comment' => "<!-- Messàgge mannate da l'Utende:$1@$2 ausanne l'elenghe a $3 -->",
 	'massmessage-optout-category' => "Scartate da l'invie de le messàgge",
@@ -1424,7 +1427,7 @@ $messages['ru'] = array(
 	'massmessage-empty-subject' => 'Строка с темой не заполнена.',
 	'massmessage-empty-message' => 'Отсутствует текст сообщения.',
 	'massmessage-unescaped-langlinks' => 'Предупреждение: в вашем сообщении есть неэкранированные языковые ссылки.',
-	'massmessage-form-header' => 'Используйте форму ниже для отправки сообщения по указанному списку. Все поля обязательны для заполнения.',
+	'massmessage-form-header' => 'Используйте форму ниже для отправки сообщения по указанному списку. Все поля обязательны для заполнения ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage дополнительная информация]).',
 	'massmessage-queued-count' => 'Поставленные в очередь [[Special:MassMessage|массовые сообщения]]',
 	'massmessage-hidden-comment' => '<!-- Сообщение отправил Участник:$1@$2, используя список на странице $3 -->',
 	'massmessage-optout-category' => 'Отказано в доставке сообщений',
