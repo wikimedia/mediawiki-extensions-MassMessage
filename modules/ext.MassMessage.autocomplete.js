@@ -16,9 +16,6 @@
 				}).done( function (data) {
 						response( data[1] );
 					});
-			},
-			select: function (event, ui ) {
-				$( '#mw-massmessage-form-spamlist' ).val( ui.term );
 			}
 		});
 	} );
