@@ -700,7 +700,7 @@ $messages['fr'] = array(
 	'massmessage-empty-subject' => 'La ligne du sujet est vide.',
 	'massmessage-empty-message' => 'Le corps du message est vide.',
 	'massmessage-unescaped-langlinks' => 'Attention : il y a des liens de langue non échappés dans votre message.',
-	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires.',
+	'massmessage-form-header' => 'Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage plus d’information]).',
 	'massmessage-queued-count' => '[[Special:MassMessage|Messages de masse]] en file d’attente',
 	'massmessage-hidden-comment' => '<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->',
 	'massmessage-optout-category' => 'Exempté de réception de messages',
@@ -972,6 +972,7 @@ $messages['ka'] = array(
 /** Korean (한국어)
  * @author Hym411
  * @author Kwj2772
+ * @author Priviet
  * @author 아라
  */
 $messages['ko'] = array(
@@ -989,7 +990,7 @@ $messages['ko'] = array(
 	'massmessage-empty-subject' => '제목 줄이 비어 있습니다.',
 	'massmessage-empty-message' => '메시지 본문이 비어 있습니다.',
 	'massmessage-unescaped-langlinks' => '경고: 당신의 메시지에 이스케이프되지 않은 언어 링크가 있습니다.',
-	'massmessage-form-header' => '지정된 목록에서 메시지를 보내려면 아래 양식을 사용하세요. 모든 필드는 필수입니다.',
+	'massmessage-form-header' => '지정된 목록에서 메시지를 보내려면 아래 양식을 사용하세요. 모든 필드는 필수입니다([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 자세한 정보]).',
 	'massmessage-queued-count' => '대기 중인 [[Special:MassMessage|대량 메시지]]',
 	'massmessage-hidden-comment' => '<!-- $3의 목록을 사용해 User:$1@$2님이 보낸 메시지 -->',
 	'massmessage-optout-category' => '메시지 전달을 받지 않는 사용자',
@@ -1463,6 +1464,7 @@ $messages['sl'] = array(
 /** Swedish (svenska)
  * @author Bengt B
  * @author Jopparn
+ * @author Lokal Profil
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -1479,7 +1481,7 @@ $messages['sv'] = array(
 	'massmessage-spamlist-doesnotexist' => 'Den angivna sidan, som innehåller listan med sidor, existerar inte.',
 	'massmessage-empty-subject' => 'Ämnesraden är tom.',
 	'massmessage-empty-message' => 'Meddelandets innehåll är tomt.',
-	'massmessage-form-header' => 'Använd formuläret nedan för att skicka meddelanden till en angiven lista. Alla fält är obligatoriska.',
+	'massmessage-form-header' => 'Använd formuläret nedan för att skicka meddelanden till en angiven lista. Alla fält är obligatoriska ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage för mer information]).',
 	'massmessage-queued-count' => 'Köade [[Special:MassMessage|massmeddelanden]]',
 	'massmessage-hidden-comment' => '<!-- Meddelande skickades av User:$1@$2 med hjälp av listan på $3 -->',
 	'massmessage-optout-category' => 'Valt bort meddelandeleverans',
@@ -1553,7 +1555,7 @@ $messages['uk'] = array(
 	'massmessage-empty-subject' => 'Рядок теми порожній.',
 	'massmessage-empty-message' => 'Тіла повідомлення порожнє.',
 	'massmessage-unescaped-langlinks' => 'Увага: наявні неекрановані мовні посилання в повідомленні.',
-	'massmessage-form-header' => "Використовуйте форму нижче, щоб надсилати повідомлення до вказаного списку. Всі поля обов'язкові для заповнення.",
+	'massmessage-form-header' => "Використовуйте форму нижче для надсилання повідомлення за вказаним списком. Всі поля обов'язкові для заповнення ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage додаткова інформація]).",
 	'massmessage-queued-count' => 'У черзі [[Special:MassMessage|масових повідомлень]]',
 	'massmessage-hidden-comment' => '<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->',
 	'massmessage-optout-category' => 'Відмова від доставки повідомлень',
