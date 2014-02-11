@@ -109,7 +109,6 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected function createForm() {
 		$request = $this->getRequest();
-		$context = $this->getContext();
 		$m = array();
 		// Who to send to
 		$m['spamlist'] = array(
