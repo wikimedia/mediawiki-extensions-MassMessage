@@ -313,6 +313,7 @@ $messages['ce'] = array(
 	'massmessage-form-header' => 'ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage кхин тӀе хаам]).',
 	'massmessage-queued-count' => 'РогӀехь болу [[Special:MassMessage|дукха хаамаш]]',
 	'right-massmessage' => 'Цхьана хеннахь массийта декъашхошка хаамаш бахьийтар',
+	'action-massmessage' => 'массийта декъашхошка хаамаш бахьийтар цкъачунна дӀадайина ду',
 	'log-name-massmessage' => 'Дукха хаамаш кхехьийтаран тептар',
 	'log-description-massmessage' => 'Декъашхочо хаамаш кхехьийтар гойту тептар.',
 );
@@ -836,6 +837,25 @@ $messages['he'] = array(
 	'logentry-massmessage-skipnouser' => 'מסירה של "$4" ל{{GRAMMAR:תחילית|$3}} לא התבצעה כי חשבון המשתמש אינו קיים',
 	'massmessage-cannot-rename' => 'זה חשבון מערכת ולא ניתן לשנות את שמו.',
 	'massmessage-nextsteps' => '[[Special:MassMessage|שליחת הודעה אחרת]] או [[Special:Statistics|הצגה של מספר ההודעות בתור]].',
+);
+
+/** Hindi (हिन्दी)
+ * @author Siddhartha Ghai
+ */
+$messages['hi'] = array(
+	'massmessage' => 'सामूहिक सन्देश भेजें',
+	'massmessage-desc' => 'सदस्यों को अनेक सदस्यों की एक सूची को सामूहिक सन्देश भेजने में मदद करता है',
+	'massmessage-form-spamlist' => 'पृष्ठ जिस पर उन पृष्ठों की सूची है जिन पर सन्देश छोड़ना है:',
+	'massmessage-form-subject' => 'सन्देश का विषय (सम्पादन सारांश की तरह भी प्रयुक्त):',
+	'massmessage-form-message' => 'सन्देश:',
+	'massmessage-form-preview' => 'पूर्वावलोकन',
+	'massmessage-form-submit' => 'भेजें',
+	'massmessage-fieldset-preview' => 'पूर्वावलोकन',
+	'massmessage-just-preview' => 'यह केवल एक झलक है। सन्देश भेजने के लिए "{{int:massmessage-form-submit}}" पर क्लिक करें।',
+	'massmessage-spamlist-doesnotexist' => 'निर्दिष्ट पृष्ठ-सूची पृष्ठ मौजूद नहीं है।',
+	'massmessage-empty-subject' => 'विषय खाली है।',
+	'massmessage-empty-message' => 'सन्देश खाली है।',
+	'log-name-massmessage' => 'सामूहिक सन्देश लॉग',
 );
 
 /** Iloko (Ilokano)
