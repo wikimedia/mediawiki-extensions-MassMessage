@@ -19,9 +19,19 @@ $specialPageAliases['ar'] = array(
 	'MassMessage' => array( 'رسائل_كمية' ),
 );
 
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'MassMessage' => array( 'رسايل_كتيره' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
+);
+
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'MassMessage' => array( 'پیام_انبوه' ),
 );
 
 /** Galician (galego) */
