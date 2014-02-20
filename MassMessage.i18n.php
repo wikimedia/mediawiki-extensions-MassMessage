@@ -599,6 +599,7 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Ebraminio
  * @author Reza1615
  */
@@ -617,7 +618,7 @@ $messages['fa'] = array(
 	'massmessage-empty-subject' => 'خط موضوع خالی است.',
 	'massmessage-empty-message' => 'بدنهٔ پیام خالی است.',
 	'massmessage-unescaped-langlinks' => 'هشدار: پیوندهای زبان غیررها در پیام شما وجود دارد.',
-	'massmessage-form-header' => 'از فرم زیر برای ارسال پیام به یک فهرست مشخص‌شده استفاده کند. همهٔ قسمت مورد نیاز هستند.',
+	'massmessage-form-header' => 'از فرم زیر برای ارسال پیام‌ها به یک فهرست مشخص‌شده استفاده کنید. همهٔ زمینه‌ها مورد نیاز ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]) هستند.',
 	'massmessage-queued-count' => '[[Special:MassMessage|پیام‌های انبوه]] در صف قرار گرفت',
 	'massmessage-hidden-comment' => '<!-- پیام توسط کاربر:$1@$2 با استفاده از فهرست در $3 ارسال شده‌است -->',
 	'massmessage-optout-category' => 'بیرون آمدن از رساندن پیام',
@@ -1467,6 +1468,13 @@ $messages['ru'] = array(
 	'logentry-massmessage-skipnouser' => 'Доставка «$4» для $3 была пропущена, поскольку учётная запись пользователя не существует',
 	'massmessage-cannot-rename' => 'Это системная учётная запись, и она не может быть переименована.',
 	'massmessage-nextsteps' => '[[Special:MassMessage|Отправить другое сообщение]] или [[Special:Statistics|посмотреть, сколько сообщений поставлено в очередь]].',
+);
+
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'massmessage-form-header' => 'Uise the form ablow tae send messages til ae speceefied leet. Aw fields ar required ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]).',
 );
 
 /** Slovenian (slovenščina)
