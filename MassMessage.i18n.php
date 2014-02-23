@@ -1203,6 +1203,7 @@ $messages['ms'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Arent
  * @author Hansmuller
  * @author Konovalov
  * @author Siebrand
@@ -1223,7 +1224,7 @@ $messages['nl'] = array(
 	'massmessage-empty-subject' => 'Er wordt geen onderwerp aangegeven.',
 	'massmessage-empty-message' => 'Het bericht bevat geen tekst.',
 	'massmessage-unescaped-langlinks' => 'Waarschuwing: uw bericht bevat onjuiste taalkoppelingen.',
-	'massmessage-form-header' => 'Gebruiker het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage meer informatie]).',
+	'massmessage-form-header' => 'Gebruik het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage meer informatie]).',
 	'massmessage-queued-count' => '[[Special:MassMessage|Bulkberichten]] in de wachtrij',
 	'massmessage-hidden-comment' => '<!-- Bericht verzonden door User:$1@$2 via de lijst op de pagina $3 -->',
 	'massmessage-optout-category' => 'Wil geen berichten ontvangen',
