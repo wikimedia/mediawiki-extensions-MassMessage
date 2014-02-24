@@ -12,7 +12,7 @@
 			.addClass( 'warningbox' );
 		$msg.after( $warnings );
 		$warnings.hide();
-		$msg.delayedBind( 500, 'keyup', function( ) {
+		$msg.on( 'keyup', $.debounce( 500, function( ) {
 			var code, matches, tags, possibles, tag;
 			code = $.trim( $msg.val() );
 			if( code === '' ) {
@@ -65,7 +65,7 @@
 			} else {
 				$warnings.hide();
 			}
-		});
+		} ) );
 	});
 
 }( mediaWiki, jQuery ) );
