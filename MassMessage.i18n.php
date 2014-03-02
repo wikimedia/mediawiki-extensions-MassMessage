@@ -852,10 +852,21 @@ $messages['hi'] = array(
 	'massmessage-form-preview' => 'पूर्वावलोकन',
 	'massmessage-form-submit' => 'भेजें',
 	'massmessage-fieldset-preview' => 'पूर्वावलोकन',
+	'massmessage-submitted' => '{{PLURAL:$1|$1 पृष्ठ|$1 पृष्ठों}} पर भेजने हेतु आपका सन्देश कतार में जोड़ दिया गया है।',
 	'massmessage-just-preview' => 'यह केवल एक झलक है। सन्देश भेजने के लिए "{{int:massmessage-form-submit}}" पर क्लिक करें।',
 	'massmessage-spamlist-doesnotexist' => 'निर्दिष्ट पृष्ठ-सूची पृष्ठ मौजूद नहीं है।',
 	'massmessage-empty-subject' => 'विषय खाली है।',
 	'massmessage-empty-message' => 'सन्देश खाली है।',
+	'massmessage-unescaped-langlinks' => 'चेतावनी: आपके सन्देश में बिना कोलन के अंतरविकि कड़ियाँ हैं।',
+	'massmessage-form-header' => 'एक निर्दिष्ट सूची को सन्देश देने के लिए निम्न फ़ॉर्म का प्रयोग करें। सभी इनपुट आवश्यक हैं ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage अधिक जानकारी])।',
+	'massmessage-queued-count' => '[[Special:MassMessage|सामूहिक सन्देश]] जो कतार में हैं',
+	'massmessage-hidden-comment' => '<!-- $3 पर मौजूद सूची का प्रयोग कर के User:$1@$2 द्वारा भेजा गया सन्देश -->',
+	'massmessage-badhtml' => 'आपके सन्देश में {{PLURAL:$2|एक खुला एच॰टी॰एम॰एल टैग हो सकता है|खुले एच॰टी॰एम॰एल टैग हो सकते हैं}}: $1।',
+	'massmessage-parse-badurl' => '"$1" मान्य साइट नहीं है।',
+	'massmessage-parse-badpage' => '"$1" मान्य पृष्ठ शीर्षक नहीं है।',
+	'massmessage-global-disallowed' => 'सन्देश केवल स्थानीय पृष्ठों को भेजे जा सकते हैं।',
+	'right-massmessage' => 'अनेक सदस्यों को इकट्ठे सन्देश भेजें',
+	'action-massmessage' => 'अनेक सदस्यों को इकट्ठे सन्देश भेजने',
 	'log-name-massmessage' => 'सामूहिक सन्देश लॉग',
 );
 
@@ -1360,6 +1371,13 @@ $messages['ps'] = array(
 	'logentry-massmessage-send' => '$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}',
 );
 
+/** Portuguese (português)
+ * @author Hamilton Abreu
+ */
+$messages['pt'] = array(
+	'massmessage-unescaped-langlinks' => 'Aviso: Há links interlínguas na sua mensagem que não começam com dois pontos.',
+);
+
 /** Brazilian Portuguese (português do Brasil)
  * @author Cainamarques
  * @author Fúlvio
@@ -1695,4 +1713,11 @@ $messages['zh-hans'] = array(
 	'logentry-massmessage-skipnouser' => '投递“$4”到“$3”已跳过，因为用户账户不存在',
 	'massmessage-cannot-rename' => '这是一个系统账户，不能被重命名。',
 	'massmessage-nextsteps' => '[[Special:MassMessage|发送下一条信息]]，或者[[Special:Statistics|查看有多少信息正在排队]]。',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Liuxinyu970226
+ */
+$messages['zh-hant'] = array(
+	'massmessage-unescaped-langlinks' => '警告：您的訊息中有無轉義語言連結。',
 );
