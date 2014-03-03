@@ -868,6 +868,7 @@ $messages['hi'] = array(
 	'right-massmessage' => 'अनेक सदस्यों को इकट्ठे सन्देश भेजें',
 	'action-massmessage' => 'अनेक सदस्यों को इकट्ठे सन्देश भेजने',
 	'log-name-massmessage' => 'सामूहिक सन्देश लॉग',
+	'logentry-massmessage-send' => '$1 ने $3 {{GENDER:$2|को सन्देश भेजा}}',
 );
 
 /** Iloko (Ilokano)
@@ -1381,13 +1382,14 @@ $messages['pt'] = array(
 /** Brazilian Portuguese (português do Brasil)
  * @author Cainamarques
  * @author Fúlvio
+ * @author Helder.wiki
  * @author Luckas
  */
 $messages['pt-br'] = array(
 	'massmessage' => 'Enviar mensagem em massa',
 	'massmessage-desc' => 'Permite que os usuários enviem facilmente uma mensagem para uma lista de usuários',
-	'massmessage-form-spamlist' => 'Página que contêm a lista de páginas para enviar uma mensagem em:',
-	'massmessage-form-subject' => 'Assunto da mensagem (Também usado como sumário de edição):',
+	'massmessage-form-spamlist' => 'Página que contêm uma lista de páginas nas quais deve ser entregue uma mensagem:',
+	'massmessage-form-subject' => 'Assunto da mensagem (também usado como sumário de edição):',
 	'massmessage-form-message' => 'Corpo da mensagem:',
 	'massmessage-form-preview' => 'Visualizar',
 	'massmessage-form-submit' => 'Enviar',
@@ -1397,7 +1399,7 @@ $messages['pt-br'] = array(
 	'massmessage-spamlist-doesnotexist' => 'A lista de páginas especificada não existe.',
 	'massmessage-empty-subject' => 'O espaço do assunto está vazio.',
 	'massmessage-empty-message' => 'O corpo da mensagem está vazio.',
-	'massmessage-form-header' => 'Use o formulário abaixo para enviar mensagens a uma lista específcia. Todos os campos são obrigatórios.',
+	'massmessage-form-header' => 'Use o formulário abaixo para enviar mensagens a uma lista específcia. Todos os campos são obrigatórios.', # Fuzzy
 	'massmessage-hidden-comment' => '<!-- Mensagem enviada pelo usuário:$1@$2 utilizando a lista $3 -->',
 	'right-massmessage' => 'Envie uma mensagem para vários usuários ao mesmo tempo',
 	'action-massmessage' => 'envie uma mensagem para vários usuários ao mesmo tempo',

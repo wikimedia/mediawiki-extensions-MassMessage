@@ -35,6 +35,11 @@ $magicWords['diq'] = array(
 	'target' => array( 0, 'hedef' ),
 );
 
+/** Hindi (हिन्दी) */
+$magicWords['hi'] = array(
+	'target' => array( 0, 'लक्ष्य' ),
+);
+
 /** Korean (한국어) */
 $magicWords['ko'] = array(
 	'target' => array( 0, '대상' ),
