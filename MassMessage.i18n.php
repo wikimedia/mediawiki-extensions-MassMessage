@@ -861,6 +861,7 @@ $messages['hi'] = array(
 	'massmessage-form-header' => 'एक निर्दिष्ट सूची को सन्देश देने के लिए निम्न फ़ॉर्म का प्रयोग करें। सभी इनपुट आवश्यक हैं ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage अधिक जानकारी])।',
 	'massmessage-queued-count' => '[[Special:MassMessage|सामूहिक सन्देश]] जो कतार में हैं',
 	'massmessage-hidden-comment' => '<!-- $3 पर मौजूद सूची का प्रयोग कर के User:$1@$2 द्वारा भेजा गया सन्देश -->',
+	'massmessage-optout-category' => 'सन्देश ना पाना चयनित',
 	'massmessage-badhtml' => 'आपके सन्देश में {{PLURAL:$2|एक खुला एच॰टी॰एम॰एल टैग हो सकता है|खुले एच॰टी॰एम॰एल टैग हो सकते हैं}}: $1।',
 	'massmessage-parse-badurl' => '"$1" मान्य साइट नहीं है।',
 	'massmessage-parse-badpage' => '"$1" मान्य पृष्ठ शीर्षक नहीं है।',
@@ -868,7 +869,14 @@ $messages['hi'] = array(
 	'right-massmessage' => 'अनेक सदस्यों को इकट्ठे सन्देश भेजें',
 	'action-massmessage' => 'अनेक सदस्यों को इकट्ठे सन्देश भेजने',
 	'log-name-massmessage' => 'सामूहिक सन्देश लॉग',
+	'log-description-massmessage' => 'ये घटनाएँ सदस्यों द्वारा सन्देश भेजने की हैं।',
 	'logentry-massmessage-send' => '$1 ने $3 {{GENDER:$2|को सन्देश भेजा}}',
+	'logentry-massmessage-failure' => '"$4" सन्देश $3 पृष्ठ पर छोड़ना विफल रहा। त्रुटि कोड: <code>$5</code>',
+	'logentry-massmessage-skipbadns' => '"$4" पृष्ठ पर $3 सन्देश नहीं भेजा गया क्योंकि लक्ष्य पृष्ठ ऐसे नामस्थान में है जिसमें सन्देश नहीं छोड़े जा सकते।',
+	'logentry-massmessage-skipoptout' => '"$4" सन्देश $3 पृष्ठ पर नहीं भेजा गया क्योंकि लक्ष्य पृष्ठ ने सन्देश ना पाने का चयन किया है।',
+	'logentry-massmessage-skipnouser' => '"$4" सन्देश $3 पृष्ठ पर नहीं भेजा गया क्योंकि सदस्य खाता मौजूद नहीं है।',
+	'massmessage-cannot-rename' => 'यह एक सिस्टम खाता है और इसका नाम नहीं बदला जा सकता है।',
+	'massmessage-nextsteps' => '[[Special:MassMessage|एक और सन्देश भेजें]] या [[Special:Statistics|देखें कितने सन्देश कतार में हैं]]।',
 );
 
 /** Iloko (Ilokano)
@@ -1496,7 +1504,7 @@ $messages['ru'] = array(
  * @author John Reid
  */
 $messages['sco'] = array(
-	'massmessage-form-header' => 'Uise the form ablow tae send messages til ae speceefied leet. Aw fields ar required ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]).',
+	'massmessage-form-header' => 'Uise the form ablo tae send messages til ae speceefied leet. Aw fields ar required ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mair informâtion]).',
 );
 
 /** Slovenian (slovenščina)
