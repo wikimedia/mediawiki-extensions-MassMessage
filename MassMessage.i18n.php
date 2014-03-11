@@ -1382,9 +1382,11 @@ $messages['ps'] = array(
 
 /** Portuguese (português)
  * @author Hamilton Abreu
+ * @author Helder.wiki
  */
 $messages['pt'] = array(
 	'massmessage-unescaped-langlinks' => 'Aviso: Há links interlínguas na sua mensagem que não começam com dois pontos.',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|enviou uma mensagem}} para $3',
 );
 
 /** Brazilian Portuguese (português do Brasil)
@@ -1412,7 +1414,7 @@ $messages['pt-br'] = array(
 	'right-massmessage' => 'Envie uma mensagem para vários usuários ao mesmo tempo',
 	'action-massmessage' => 'envie uma mensagem para vários usuários ao mesmo tempo',
 	'log-name-massmessage' => 'Registro de mensagens em massa',
-	'logentry-massmessage-send' => '$1 {{GENDER:$2|envie uma mensagem}} para $3',
+	'logentry-massmessage-send' => '$1 {{GENDER:$2|enviou uma mensagem}} para $3',
 );
 
 /** Romansh (rumantsch)
