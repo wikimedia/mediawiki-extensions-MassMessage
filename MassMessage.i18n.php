@@ -1509,6 +1509,17 @@ $messages['sco'] = array(
 	'massmessage-form-header' => 'Uise the form ablo tae send messages til ae speceefied leet. Aw fields ar required ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mair informâtion]).',
 );
 
+/** Serbo-Croatian (srpskohrvatski / српскохрватски)
+ * @author Kolega2357
+ */
+$messages['sh'] = array(
+	'massmessage-form-preview' => 'Prikaži',
+	'massmessage-form-submit' => 'Pošalji',
+	'massmessage-fieldset-preview' => 'Prikaži',
+	'log-name-massmessage' => 'Evidencija masovnih poruka',
+	'log-description-massmessage' => 'Ovi događaji prate slanje poruka korisnicima.',
+);
+
 /** Slovenian (slovenščina)
  * @author Eleassar
  */
