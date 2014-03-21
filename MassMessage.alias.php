@@ -29,6 +29,11 @@ $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
 );
 
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'MassMessage' => array( 'HolaMesacan' ),
+);
+
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'MassMessage' => array( 'پیام_انبوه' ),

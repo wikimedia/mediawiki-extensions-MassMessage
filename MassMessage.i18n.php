@@ -1702,6 +1702,7 @@ $messages['yi'] = array(
  * @author Liuxinyu970226
  * @author Qiyue2001
  * @author Shizhao
+ * @author Xiaomingyan
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -1720,7 +1721,7 @@ $messages['zh-hans'] = array(
 	'massmessage-empty-message' => '消息正文为空。',
 	'massmessage-unescaped-langlinks' => '警告：在你的消息中有未转义的语言链接。',
 	'massmessage-form-header' => '使用下面的表单以将消息发送到指定的列表。所有字段都是必需的（[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 更多信息]）。',
-	'massmessage-queued-count' => '[[Special:MassMessage|群发消息]]已排队',
+	'massmessage-queued-count' => '排队的[[Special:MassMessage|群发信息]]',
 	'massmessage-hidden-comment' => '<!-- 消息发送者 User:$1@$2，使用的列表为 $3 -->',
 	'massmessage-optout-category' => '不再接受群发投递的消息',
 	'massmessage-badhtml' => '你的消息可能含有$2个未闭合的HTML标签：$1。',
@@ -1729,9 +1730,9 @@ $messages['zh-hans'] = array(
 	'massmessage-global-disallowed' => '消息只可以发送至本地页面。',
 	'right-massmessage' => '一次将一条消息发送给多个用户',
 	'action-massmessage' => '一次将一条消息发送给多个用户',
-	'log-name-massmessage' => '批量消息日志',
+	'log-name-massmessage' => '群发信息日志',
 	'log-description-massmessage' => '这些事件跟踪着用户发送的消息。',
-	'logentry-massmessage-send' => '$1{{GENDER:$2|发送了一条消息}}到清单$3上的所有目标',
+	'logentry-massmessage-send' => '$1{{GENDER:$2|发送信息}}至$3',
 	'logentry-massmessage-failure' => '投递“$4”到“$3”失败，错误代码<code>$5</code>',
 	'logentry-massmessage-skipbadns' => '投递“$4”到“$3”已跳过，因为目标所在的命名空间无法张贴',
 	'logentry-massmessage-skipoptout' => '投递“$4”到“$3”已跳过，因为目标已选择退出群发消息投递',
