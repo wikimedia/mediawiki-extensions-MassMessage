@@ -115,6 +115,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-spamlist',
 			'name' => 'spamlist',
 			'type' => 'text',
+			'tabindex' => '1',
 			'label-message' => 'massmessage-form-spamlist',
 			'default' => $request->getText( 'spamlist' )
 		);
@@ -123,6 +124,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-subject',
 			'name' => 'subject',
 			'type' => 'text',
+			'tabindex' => '2',
 			'label-message' => 'massmessage-form-subject',
 			'default' => $request->getText( 'subject' ),
 			'maxlength' => 240
@@ -133,6 +135,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-message',
 			'name' => 'message',
 			'type' => 'textarea',
+			'tabindex' => '3',
 			'label-message' => 'massmessage-form-message',
 			'default' => $request->getText( 'message' )
 		);
@@ -144,6 +147,7 @@ class SpecialMassMessage extends SpecialPage {
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',
 				'type' => 'submit',
+				'tabindex' => '4',
 				'default' => $this->msg( 'massmessage-form-submit' )->text()
 			);
 		}
@@ -152,6 +156,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-preview-button',
 			'name' => 'preview-button',
 			'type' => 'submit',
+			'tabindex' => '5',
 			'default' => $this->msg( 'massmessage-form-preview' )->text()
 		);
 
