@@ -86,7 +86,7 @@ $specialPageAliases['vi'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
-	'MassMessage' => array( '批量消息' ),
+	'MassMessage' => array( '群发信息', '批量消息' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
