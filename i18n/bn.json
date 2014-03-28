@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Aftab1995",
+            "Bellayet"
+        ]
+    },
+    "massmessage": "গণ বার্তা পাঠাও",
+    "massmessage-desc": "একটি তালিকার ব্যবহারকারীদের সহজে কোনো বার্তা পাঠানোর সহজ ব্যবস্থা",
+    "massmessage-form-spamlist": "পাতাটিতে একটি পাতার তালিকা রয়েছে যেখানে বার্তা রাখতে হবে।",
+    "massmessage-form-subject": "বার্তার বিষয়। সম্পাদনা সারাংশ হিসেবেও ব্যবহৃত হবে।",
+    "massmessage-form-message": "বার্তার মূল অংশ।",
+    "massmessage-form-preview": "প্রাকদর্শন",
+    "massmessage-form-submit": "পাঠাও",
+    "massmessage-fieldset-preview": "প্রাকদর্শন",
+    "massmessage-submitted": "{{PLURAL:$1|$1টি পাতায়}} আপনার পাঠানো বার্তাটি অপেক্ষমান রয়েছে।",
+    "massmessage-just-preview": "এটি শুধুমাত্র একটি প্রাকদর্শন। বার্তা পাঠাতে \"{{int:massmessage-form-submit}}\" চাপুন।",
+    "massmessage-empty-subject": "বিষয় লাইনটি খালি।",
+    "massmessage-empty-message": "বার্তার মূল অংশ খালি।",
+    "massmessage-parse-badurl": "\"$1\" কোন বৈধ সাইট নয়।",
+    "massmessage-parse-badpage": "\"$1\" কোন বৈধ পাতার শিরোনাম নয়।",
+    "massmessage-global-disallowed": "বার্তা শুধুমাত্র স্থানীয় পাতাসমূহে পাঠানো যেতে পারে।",
+    "log-name-massmessage": "গণ বার্তা লগ",
+    "log-description-massmessage": "এই ঘটনাগুলি অনুসরণ ব্যবহারকারীদের বার্তা পাঠানোর।",
+    "logentry-massmessage-send": "$1 $3-এ {{GENDER:$2|একটি বার্তা পাঠিয়েছেন}}"
+}

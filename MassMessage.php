@@ -58,11 +58,12 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Kunal Mehta',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:MassMessage',
 	'descriptionmsg' => 'massmessage-desc',
-	'version' => '0.0.3',
+	'version' => '0.1.0',
 );
-$dir = dirname( __FILE__ );
+$dir = __DIR__;
 
 $wgSpecialPages['MassMessage'] = 'SpecialMassMessage';
+$wgMessagesDirs['MassMessage'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['MassMessage'] = "$dir/MassMessage.i18n.php";
 $wgExtensionMessagesFiles['MassMessageAlias'] = "$dir/MassMessage.alias.php";
 $wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php";

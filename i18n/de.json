@@ -1,0 +1,42 @@
+{
+    "@metadata": {
+        "authors": [
+            "Filzstift",
+            "Metalhead64",
+            "Se4598"
+        ]
+    },
+    "massmessage": "Massennachricht senden",
+    "massmessage-desc": "Ermöglicht Benutzern das einfache Versenden von Nachrichten an eine Benutzerliste",
+    "massmessage-form-spamlist": "Seite mit der Seitenliste der Nachrichtenempfänger:",
+    "massmessage-form-subject": "Betreff der Nachricht (wird auch für die Bearbeitungszusammenfassung verwendet):",
+    "massmessage-form-message": "Nachrichtentext:",
+    "massmessage-form-preview": "Vorschau",
+    "massmessage-form-submit": "Senden",
+    "massmessage-fieldset-preview": "Vorschau",
+    "massmessage-submitted": "Dein Nachrichtenversand an {{PLURAL:$1|eine Seite|$1 Seiten}} wurde in die Sendewarteschlange eingefügt!",
+    "massmessage-just-preview": "Dies ist nur eine Vorschau. Klicke auf „{{int:massmessage-form-submit}}“, um die Nachricht abzusenden.",
+    "massmessage-spamlist-doesnotexist": "Die angegebene Seitenlistenseite ist nicht vorhanden.",
+    "massmessage-empty-subject": "Die Betreffszeile ist leer.",
+    "massmessage-empty-message": "Der Nachrichtenkörper ist leer.",
+    "massmessage-unescaped-langlinks": "Warnung: Deine Nachricht enthält ungültige Sprachlinks.",
+    "massmessage-form-header": "Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage weitere Informationen]).",
+    "massmessage-queued-count": "[[Special:MassMessage|Massennachrichten]] in der Warteschlange",
+    "massmessage-hidden-comment": "<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->",
+    "massmessage-optout-category": "Von der Nachrichtenzustellung abgemeldet",
+    "massmessage-badhtml": "Deine Nachricht enthält möglicherweise {{PLURAL:$2|ein nicht geschlossenes HTML-Tag|nicht geschlossene HTML-Tags}}: $1.",
+    "massmessage-parse-badurl": "„$1“ ist keine gültige Website",
+    "massmessage-parse-badpage": "„$1“ ist kein gültiger Seitentitel",
+    "massmessage-global-disallowed": "Nachrichten können nur an lokale Seiten versandt werden.",
+    "right-massmessage": "Gleichzeitig Nachrichten an mehrere Benutzer senden",
+    "action-massmessage": "gleichzeitig Nachrichten an mehrere Benutzer zu senden",
+    "log-name-massmessage": "Massennachrichten-Logbuch",
+    "log-description-massmessage": "Dieses Logbuch protokolliert Ereignisse von Benutzern, die Nachrichten versandt haben.",
+    "logentry-massmessage-send": "$1 {{GENDER:$2|sandte eine Nachricht}} an $3",
+    "logentry-massmessage-failure": "Versand von „$4“ nach $3 fehlgeschlagen mit dem Fehlercode <code>$5</code>",
+    "logentry-massmessage-skipbadns": "Der Versand von „$4“ an $3 wurde übersprungen, da sich das Ziel in einem Namensraum befindet, in dem keine Nachrichten gespeichert werden können.",
+    "logentry-massmessage-skipoptout": "Der Versand von „$4“ an $3 wurde übersprungen, da das Ziel vom Nachrichtenversand ausgeschlossen wurde.",
+    "logentry-massmessage-skipnouser": "Der Versand von „$4“ an $3 wurde übersprungen, da das Benutzerkonto nicht vorhanden ist.",
+    "massmessage-cannot-rename": "Dies ist ein Systemkonto und kann nicht umbenannt werden.",
+    "massmessage-nextsteps": "[[Special:MassMessage|Eine weitere Nachricht versenden]] oder [[Special:Statistics|die Anzahl der Nachrichten in der Warteschlange ansehen]]."
+}

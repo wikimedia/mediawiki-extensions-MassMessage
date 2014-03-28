@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "Cedric31"
+        ]
+    },
+    "massmessage": "Mandar un messatge de massa",
+    "massmessage-desc": "Permet als utilizaires de mandar aisadament un messatge a una lista d’utilizaires",
+    "massmessage-form-spamlist": "Pagina que conten la lista de las paginas sus las qualas cal daissar un messatge :",
+    "massmessage-form-subject": "Subjècte del messatge (utilizat tanben dins lo resumit de la modificacion) :",
+    "massmessage-form-message": "Còs del messatge :",
+    "massmessage-form-preview": "Apercebut",
+    "massmessage-form-submit": "Mandar",
+    "massmessage-fieldset-preview": "Apercebut",
+    "massmessage-submitted": "Vòstre mandadís es estat mes dins la fila d'espèra.",
+    "massmessage-just-preview": "Aquò's simplament un apercebut. Quichatz sus « {{int:massmessage-form-submit}} » per mandar lo messatge.",
+    "massmessage-spamlist-doesnotexist": "La pagina de listas de paginas especificada existís pas.",
+    "massmessage-empty-subject": "La linha del subjècte es voida.",
+    "massmessage-empty-message": "Lo còs del messatge es void.",
+    "massmessage-form-header": "Utilizatz lo formulari çaijós per mandar de messatges a una lista indicada. Totes los camps son obligatòris.",
+    "massmessage-queued-count": "[[Special:MassMessage|Messatges de massa]] en fila d'espèra",
+    "massmessage-hidden-comment": "<!-- Message mandat per User:$1@$2 en utilizant la lista a $3 -->",
+    "massmessage-optout-category": "Desengatjat de la recepcion de messatges",
+    "right-massmessage": "Mandar un messatge a mantun utilizaire a l'encòp",
+    "action-massmessage": "mandar un messatge a mantun utilizaire a l'encòp",
+    "log-name-massmessage": "Jornal dels messatges de massa",
+    "log-description-massmessage": "Aqueles eveniments traçan los utilizaires qu'an mandat de messatges.",
+    "logentry-massmessage-send": "$1 {{GENDER:$2|a mandat un messatge}} a $3",
+    "logentry-massmessage-failure": "La liurason de « $4 » sus $3 a fracassat amb un còde d’error de <code>$5</code>",
+    "massmessage-cannot-rename": "Aquò's un compte sistèma que pòt pas èsser renomenat."
+}

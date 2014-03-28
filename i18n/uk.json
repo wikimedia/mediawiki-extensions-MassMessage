@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Andriykopanytsia"
+        ]
+    },
+    "massmessage": "Відправити масове повідомлення",
+    "massmessage-desc": "Дозволяє користувачам легко відправляти повідомлення списку користувачів",
+    "massmessage-form-spamlist": "Сторінки, яка містить список сторінок, щоб залишити повідомлення на:",
+    "massmessage-form-subject": "Тема повідомлення (також використовується в якості резюме редагування):",
+    "massmessage-form-message": "Текст повідомлення:",
+    "massmessage-form-preview": "Попередній перегляд",
+    "massmessage-form-submit": "Надіслати",
+    "massmessage-fieldset-preview": "Попередній перегляд",
+    "massmessage-submitted": "Доставка вашого повідомлення на {{PLURAL:$1|$1 сторінку|$1 сторінки|$1 сторінок}} поставлена в чергу.",
+    "massmessage-just-preview": "Це тільки попередній перегляд. Натисніть \"{{int:massmessage-form-submit}}\", щоб відправити повідомлення.",
+    "massmessage-spamlist-doesnotexist": "Указаної сторінки з переліком сторінок не існує.",
+    "massmessage-empty-subject": "Рядок теми порожній.",
+    "massmessage-empty-message": "Тіла повідомлення порожнє.",
+    "massmessage-unescaped-langlinks": "Увага: наявні неекрановані мовні посилання в повідомленні.",
+    "massmessage-form-header": "Використовуйте форму нижче для надсилання повідомлення за вказаним списком. Всі поля обов'язкові для заповнення ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage додаткова інформація]).",
+    "massmessage-queued-count": "У черзі [[Special:MassMessage|масових повідомлень]]",
+    "massmessage-hidden-comment": "<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->",
+    "massmessage-optout-category": "Відмова від доставки повідомлень",
+    "massmessage-badhtml": "Ваше повідомлення, можливо, має {{PLURAL:$2|1=незакритий теґ HTML|незакриті теґи HTML}}:  $1 .",
+    "massmessage-parse-badurl": "\"$1\" не є коректним сайтом",
+    "massmessage-parse-badpage": "\"$1\" не є коректною назвою сторінки",
+    "massmessage-global-disallowed": "Повідомлення можна надіслати лише до місцевих сторінок.",
+    "right-massmessage": "Надіслати повідомлення кільком користувачам одночасно",
+    "action-massmessage": "надіслати повідомлення кільком користувачам одночасно",
+    "log-name-massmessage": "Журнал масових повідомлень",
+    "log-description-massmessage": "Ці події відстежують надсилання повідомлень користувачами.",
+    "logentry-massmessage-send": "$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3",
+    "logentry-massmessage-failure": "Доставка „$4“ на $3 провалилася з кодом помилки<code>$5</code>",
+    "logentry-massmessage-skipbadns": "Доставка \"$4\" до $3 була пропущена, бо ціль була в просторі імен, які не можуть бути розміщені в",
+    "logentry-massmessage-skipoptout": "Доставка \"$4\" до $3 була пропущена, бо ціль відмовила у доставці повідомлень",
+    "logentry-massmessage-skipnouser": "Доставка „$4“ до  $3  була пропущено, бо обліковий запис користувача відсутній",
+    "massmessage-cannot-rename": "Це - системний обліковий запис і його не можна перейменувати.",
+    "massmessage-nextsteps": "[[Special:MassMessage|Надіслати інше повідомлення]] або [[Special:Statistics|переглянути скільки повідомлень у черзі]]."
+}

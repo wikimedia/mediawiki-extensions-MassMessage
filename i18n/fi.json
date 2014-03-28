@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Nike",
+            "Pxos"
+        ]
+    },
+    "massmessage": "Lähetä joukkoviesti",
+    "massmessage-desc": "Antaa käyttäjille helpon keinon lähettää viestin käyttäjille, jotka on merkitty luetteloon.",
+    "massmessage-form-spamlist": "Sivu, joka sisältää luettelon niistä sivuista, joihin viesti halutaan:",
+    "massmessage-form-subject": "Viestin aihe (käytetään samalla muokkauksen yhteenvetona):",
+    "massmessage-form-message": "Viestin tekstisisältö:",
+    "massmessage-form-preview": "Esikatsele",
+    "massmessage-form-submit": "Lähetä viesti",
+    "massmessage-fieldset-preview": "Esikatselu",
+    "massmessage-submitted": "Joukkoviestisi toimittaminen {{PLURAL:$1|$1 sivulle}} on laitettu jonoon.",
+    "massmessage-just-preview": "Tämä on pelkästään viestin esikatselu. Paina \"{{int:massmessage-form-submit}}\" niin viesti lähtee liikkeelle.",
+    "massmessage-spamlist-doesnotexist": "Antamaasi luettelosivua kohdesivuista ei ole olemassa.",
+    "massmessage-empty-subject": "Viestin aihetta ei ole annettu.",
+    "massmessage-empty-message": "Viestissä ei ole lainkaan tekstiä.",
+    "massmessage-unescaped-langlinks": "Varoitus: Viestissäsi on sellaisia kielilinkkejä, jotka eivät kelpaa ja joita ei voi käyttää.",
+    "massmessage-form-header": "Käytä alla olevaa lomaketta lähettääksesi viestejä ennalta määriteltyyn luetteloon. Kaikki kentät on täytettävä. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage katso lisätietoja englanniksi])",
+    "massmessage-queued-count": "Jonossa olevat [[Special:MassMessage|joukkoviestit]]",
+    "massmessage-hidden-comment": "<!-- Viestin on lähettänyt Käyttäjä:$1@$2 käyttämällä luetteloa, joka on sijainnissa $3 -->",
+    "massmessage-optout-category": "Eivät halua joukkoviestejä",
+    "massmessage-badhtml": "Viestissäsi saattaa olla {{PLURAL:$2|sulkematon HTML tag|sulkemattomia HTML tagejä}}: $1.",
+    "massmessage-parse-badurl": "\"$1\" ei ole kelvollinen sivusto.",
+    "massmessage-parse-badpage": "\"$1\" ei ole kelvollinen sivun nimi.",
+    "massmessage-global-disallowed": "Viestejä voi lähettää ainoastaan paikallisille sivuille.",
+    "right-massmessage": "Lähettää viesti usealle käyttäjälle yhtä aikaa",
+    "action-massmessage": "lähettää viestiä usealle käyttäjälle samalla kertaa",
+    "log-name-massmessage": "Joukkoviestien loki",
+    "log-description-massmessage": "Nämä tapahtumat merkitsevät käyttäjiä, jotka lähettävät viestejä.",
+    "logentry-massmessage-send": "$1 {{GENDER:$2|lähetti viestin}} luetteloon $3",
+    "logentry-massmessage-failure": "Viestin \"$4\" toimittaminen kohteeseen $3 ei onnistunut. Virhekoodi on <code>$5</code>",
+    "logentry-massmessage-skipbadns": "Viestiä \"$4\" ei toimitettu kohteeseen $3, koska kohde on sellaisessa nimiavaruudessa, johon ei voi lähettää viestejä",
+    "logentry-massmessage-skipoptout": "Viestiä \"$4\" ei toimitettu kohteeseen $3, koska kohde ei halua vastaanottaa viestejä",
+    "logentry-massmessage-skipnouser": "Viestiä \"$4\" ei toimitettu kohteeseen $3, koska käyttäjätunnusta ei ole olemassa",
+    "massmessage-cannot-rename": "Tämä on järjestelmän käyttämä tunnus eikä sitä voi nimetä uudelleen.",
+    "massmessage-nextsteps": "[[Special:MassMessage|Lähetä toinen viesti]] tai [[Special:Statistics|katso kuinka moni viesti on jonossa]]."
+}

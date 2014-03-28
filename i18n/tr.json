@@ -1,0 +1,22 @@
+{
+    "@metadata": {
+        "authors": [
+            "Emperyan"
+        ]
+    },
+    "massmessage": "Toplu ileti gönderin",
+    "massmessage-form-subject": "İleti konusu (Değişiklik özeti olarak da kullanılır)",
+    "massmessage-form-message": "İleti metni:",
+    "massmessage-form-preview": "Ön izleme",
+    "massmessage-form-submit": "Gönder",
+    "massmessage-fieldset-preview": "Ön izleme",
+    "massmessage-submitted": "İletiniz sıraya eklendi.",
+    "massmessage-just-preview": "Bu yalnızca bir ön izlemedir. İletiyi göndermek için \"{{int:massmessage-form-submit}}\" düğmesine basınız.",
+    "massmessage-spamlist-doesnotexist": "Belirtilen sayfa-liste sayfası yok.",
+    "massmessage-empty-subject": "Konu satırı boş.",
+    "massmessage-empty-message": "İleti metni boş.",
+    "massmessage-form-header": "Belirtilen listeye ileti göndermek için aşağıdaki formu kullanın. Bütün alanların doldurulması zorunludur.",
+    "right-massmessage": "Aynı anda birden fazla kullanıcıya ileti gönder",
+    "action-massmessage": "aynı anda birden fazla kullanıcıya ileti gönder",
+    "log-name-massmessage": "Toplu ileti günlüğü"
+}

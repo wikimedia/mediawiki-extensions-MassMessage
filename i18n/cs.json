@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Mormegil",
+            "Utar"
+        ]
+    },
+    "massmessage": "Poslat hromadnou zprávu",
+    "massmessage-desc": "Umožňuje uživatelům snadno odesílat zprávy seznamu uživatelů",
+    "massmessage-form-spamlist": "Stránka obsahující seznam stránek, na kterých se má zanechat zpráva:",
+    "massmessage-form-subject": "Předmět zprávy (použit také jako shrnutí editace):",
+    "massmessage-form-message": "Tělo zprávy:",
+    "massmessage-form-preview": "Náhled",
+    "massmessage-form-submit": "Odeslat",
+    "massmessage-fieldset-preview": "Náhled",
+    "massmessage-submitted": "Požadované doručení zprávy na {{PLURAL:$1|$1 stránku|$1 stránky|$1 stránek}} bylo zařazeno do fronty.",
+    "massmessage-just-preview": "Toto je jen náhled. Pro odeslání zprávy klikněte na „{{int:massmessage-form-submit}}“.",
+    "massmessage-spamlist-doesnotexist": "Uvedená stránka se seznamem stránek neexistuje.",
+    "massmessage-empty-subject": "Předmět je prázdný.",
+    "massmessage-empty-message": "Tělo zprávy je prázdné.",
+    "massmessage-unescaped-langlinks": "Upozornění: Vaše zpráva obsahuje neošetřené jazykové odkazy.",
+    "massmessage-form-header": "Pomocí níže uvedeného formuláře můžete rozeslat zprávy podle zadaného seznamu. Všechna pole jsou povinná ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage více informací]).",
+    "massmessage-queued-count": "Počet [[Special:MassMessage|hromadných zpráv]] ve frontě",
+    "massmessage-hidden-comment": "<!-- Zprávu zaslal Uživatel:$1@$2 pomocí seznamu na $3 -->",
+    "massmessage-optout-category": "Odhlášení z příjmu zpráv",
+    "massmessage-badhtml": "Vaše zpráva možná obsahuje {{PLURAL:$2|neuzavřenou HTML značku|neuzavřené HTML značky}}: $1.",
+    "massmessage-parse-badurl": "„$1“ není platný projekt.",
+    "massmessage-parse-badpage": "„$1“ není platný název stránky.",
+    "massmessage-global-disallowed": "Zprávy lze odesílat jen na místní stránky.",
+    "right-massmessage": "Rozesílání zpráv více uživatelům současně",
+    "action-massmessage": "rozesílat zprávu více uživatelům současně",
+    "log-name-massmessage": "Kniha hromadných zpráv",
+    "log-description-massmessage": "Tyto události zaznamenávají uživatele, kteří odesílají zprávy.",
+    "logentry-massmessage-send": "$1 {{GENDER:$2|poslal|poslala}} zprávu pro $3",
+    "logentry-massmessage-failure": "Doručení „$4“ pro $3 selhalo s chybovým kódem <code>$5</code>",
+    "logentry-massmessage-skipbadns": "Doručení „$4“ pro $3 bylo přeskočeno, protože cíl je ve jmenném prostoru, do kterého nelze psát",
+    "logentry-massmessage-skipoptout": "Doručení „$4“ pro $3 bylo přeskočeno, protože cíl se odhlásil z příjmu zpráv",
+    "logentry-massmessage-skipnouser": "Doručení „$4“ pro $3 bylo přeskočeno, protože uživatelský účet neexistuje",
+    "massmessage-cannot-rename": "Toto je systémový účet, který nemůže být přejmenován.",
+    "massmessage-nextsteps": "[[Special:MassMessage|Poslat další zprávu]] nebo [[Special:Statistics|zobrazit počet zpráv ve frontě]]."
+}

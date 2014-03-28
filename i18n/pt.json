@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Hamilton Abreu",
+            "Helder.wiki"
+        ]
+    },
+    "massmessage-unescaped-langlinks": "Aviso: Há links interlínguas na sua mensagem que não começam com dois pontos.",
+    "logentry-massmessage-send": "$1 {{GENDER:$2|enviou uma mensagem}} para $3"
+}
