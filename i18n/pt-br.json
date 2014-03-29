@@ -21,7 +21,7 @@
     "massmessage-empty-subject": "O espaço do assunto está vazio.",
     "massmessage-empty-message": "O corpo da mensagem está vazio.",
     "massmessage-form-header": "Use o formulário abaixo para enviar mensagens a uma lista específcia. Todos os campos são obrigatórios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mais informações])..",
-    "massmessage-hidden-comment": "\u003C!-- Mensagem enviada pelo usuário:$1@$2 utilizando a lista $3 --\u003E",
+    "massmessage-hidden-comment": "<!-- Mensagem enviada pelo usuário:$1@$2 utilizando a lista $3 -->",
     "right-massmessage": "Envie uma mensagem para vários usuários ao mesmo tempo",
     "action-massmessage": "envie uma mensagem para vários usuários ao mesmo tempo",
     "log-name-massmessage": "Registro de mensagens em massa",
