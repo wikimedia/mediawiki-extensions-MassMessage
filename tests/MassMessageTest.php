@@ -201,7 +201,21 @@ class MassMessageTest extends MediaWikiTestCase {
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		$this->assertEquals( $text, "== ". $subj . " ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->" );
+	}
 
+	/**
+	 * @covers MassMessage::getCategoryTargets
+	 */
+	public function testCategorySpamlist() {
+		$page = Title::newFromText( 'Talk:Testing1234' );
+		$wikipage = WikiPage::factory( $page );
+		$wikipage->doEditContent( new WikitextContent( '[[Category:Spamlist1234]]' ), 'edit summary' );
+
+		$cat = Title::newFromText( 'Category:Spamlist1234' );
+		$targets = MassMessage::getCategoryTargets( $cat );
+		$this->assertEquals( count( $targets ), 1 );
+		$values = array_values( $targets );
+		$this->assertEquals( $values[0]['title'], 'Talk:Testing1234' );
 	}
 
 	/**
@@ -218,7 +232,6 @@ class MassMessageTest extends MediaWikiTestCase {
 		//$this->assertTrue( LqtDispatch::isLqtPage( $target ) ); // Check that it worked
 		$subject = self::simulateJob( $target );
 		$this->assertTrue( Title::newFromText( 'Thread:' . $proj . ':LQT test/' . $subject )->exists() );
-
 	}
 
 	/**
