@@ -4,7 +4,8 @@
             "Ciencia Al Poder",
             "Csbotero",
             "Fitoschido",
-            "Ovruni"
+            "Ovruni",
+            "Vivaelcelta"
         ]
     },
     "massmessage": "Enviar mensaje masivo",
@@ -28,6 +29,7 @@
     "right-massmessage": "Enviar un mensaje a varios usuarios a la vez",
     "action-massmessage": "enviar un mensaje a varios usuarios a la vez",
     "log-name-massmessage": "Registro de mensajes masivos",
+    "log-description-massmessage": "Este registro guarda los usuarios que enviaron mensajes.",
     "logentry-massmessage-send": "$1 {{GENDER:$2|ha enviado}} un mensaje a $3",
     "logentry-massmessage-failure": "Ha fallado la entrega de «$4» a $3 con el código de error <code>$5</code>",
     "logentry-massmessage-skipbadns": "Se omitió la entrega de «$4» a $3 porque el destino se encuentra en un espacio de nombres donde no se puede publicar",
