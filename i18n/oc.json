@@ -12,7 +12,7 @@
     "massmessage-form-preview": "Apercebut",
     "massmessage-form-submit": "Mandar",
     "massmessage-fieldset-preview": "Apercebut",
-    "massmessage-submitted": "Vòstre mandadís es estat mes dins la fila d'espèra.",
+    "massmessage-submitted": "Lo mandadís de vòstre messatge a {{PLURAL:$1|$1 pagina|$1 paginas}} es estat mes en fila d’espèra.",
     "massmessage-just-preview": "Aquò's simplament un apercebut. Quichatz sus « {{int:massmessage-form-submit}} » per mandar lo messatge.",
     "massmessage-spamlist-doesnotexist": "La pagina de listas de paginas especificada existís pas.",
     "massmessage-empty-subject": "La linha del subjècte es voida.",
