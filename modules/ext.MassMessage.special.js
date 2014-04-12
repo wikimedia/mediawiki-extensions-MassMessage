@@ -21,8 +21,13 @@
 				'prop': 'info',
 				'indexpageids': true
 			} ).done( function ( data ) {
-					if ( data && data.query && data.query.pageids[0] !== '-1' && // If page exists
-						data.query.pages[data.query.pageids[0]].contentmodel === 'wikitext' ) { // And has the 'wikitext' contentmodel
+					if ( data && data.query &&
+						// If the page exists and has content model "wikitext"
+						( data.query.pageids[0] !== '-1' &&
+							data.query.pages[data.query.pageids[0]].contentmodel === 'wikitext' ) ||
+						// Or if the text refers to a category
+						data.query.pages[data.query.pageids[0]].ns === 14
+						) {
 						// No error message is displayed
 						$spamliststatus
 							.removeClass( 'invalid' )
@@ -35,7 +40,7 @@
 					}
 				} );
 		} else {
-			// If no text is entered, don't display any warning
+			// If no text is entered or if the text refers to a category, don't display any warning
 			$spamliststatus
 				.removeClass( 'invalid' )
 				.text( '' );

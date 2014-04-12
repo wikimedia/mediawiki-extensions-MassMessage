@@ -159,6 +159,27 @@ class MassMessage {
 	}
 
 	/**
+	 * Get an array of targets from a category
+	 * @param  Title $spamlist
+	 * @return array
+	 */
+	public static function getCategoryTargets( Title $spamlist ) {
+		$cat = Category::newFromTitle( $spamlist );
+		$members = $cat->getMembers();
+		$targets = array();
+
+		/** @var Title $member */
+		foreach ( $members as $member ) {
+			$target = array();
+			$target['title'] = $member->getPrefixedText();
+			$target['wiki'] = wfWikiID();
+			$targets[] = $target;
+		}
+
+		return self::normalizeTargets( $targets );
+	}
+
+	/**
 	 * Get an array of targets via the #target parser function
 	 * @param  Title $spamlist
 	 * @param  IContextSource $context
@@ -241,10 +262,19 @@ class MassMessage {
 		$spamlist = self::getSpamlist( $data['spamlist'] );
 		if ( $spamlist instanceof Title ) {
 			// Prep the HTML comment message
+			if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
+				$url = $spamlist->getFullUrl();
+			} else {
+				$url = $spamlist->getFullURL(
+					array( 'oldid' => $spamlist->getLatestRevID() ),
+					false,
+					PROTO_CANONICAL
+				);
+			}
 			$data['comment'] = array(
 				RequestContext::getMain()->getUser()->getName(),
 				wfWikiID(),
-				$spamlist->getFullURL( array( 'oldid' => $spamlist->getLatestRevID() ), false, PROTO_CANONICAL )
+				$url
 			);
 		} else {
 			$status->fatal( $spamlist );
@@ -269,6 +299,12 @@ class MassMessage {
 	 */
 	public static function getSpamlist( $title ) {
 		$spamlist = Title::newFromText( $title );
+
+		// Simply return the title if it is a category
+		if ( $spamlist !== null && $spamlist->inNamespace( NS_CATEGORY ) ) {
+			return $spamlist;
+		}
+
 		if ( $spamlist === null || !$spamlist->exists() ) {
 			return 'massmessage-spamlist-doesnotexist';
 		} else {
@@ -318,12 +354,17 @@ class MassMessage {
 	public static function submit( IContextSource $context, array $data ) {
 		$spamlist = self::getSpamlist( $data['spamlist'] );
 
-		// Insert it into the job queue.
-		$pages = self::getParserFunctionTargets( $spamlist, $context );
+		// Get the array of pages to deliver to.
+		if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
+			$pages = self::getCategoryTargets( $spamlist );
+		} else {
+			$pages = self::getParserFunctionTargets( $spamlist, $context );
+		}
 
 		// Log it.
 		self::logToWiki( $spamlist, $context->getUser(), $data['subject'] );
 
+		// Insert it into the job queue.
 		$params = array( 'data' => $data, 'pages' => $pages );
 		$job = new MassMessageSubmitJob( $spamlist, $params );
 		JobQueueGroup::singleton()->push( $job );
