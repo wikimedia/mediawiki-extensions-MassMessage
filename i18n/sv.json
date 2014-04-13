@@ -9,7 +9,7 @@
     },
     "massmessage": "Skicka massmeddelande",
     "massmessage-desc": "Tillåter användare att enkelt skicka ett meddelande till en lista över användare",
-    "massmessage-form-spamlist": "Sidan innehåller en lista över sidor att lämna ett meddelande på.",
+    "massmessage-form-spamlist": "Sidan eller kategori som innehåller en lista över sidor att lämna ett meddelande på:",
     "massmessage-form-subject": "Ämnet för meddelandet. Används också som redigeringskommentar.",
     "massmessage-form-message": "Meddelandetexten.",
     "massmessage-form-preview": "Förhandsgranska",

@@ -12,7 +12,7 @@
     },
     "massmessage": "发送群发信息",
     "massmessage-desc": "使用户可以轻松将消息发送给一个列表中的用户",
-    "massmessage-form-spamlist": "包含有要留言页面名单的页面：",
+    "massmessage-form-spamlist": "包含有要留言页面列表的页面或分类：",
     "massmessage-form-subject": "消息主题（同时用作编辑摘要）：",
     "massmessage-form-message": "消息正文：",
     "massmessage-form-preview": "预览",
