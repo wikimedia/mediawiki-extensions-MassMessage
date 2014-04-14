@@ -35,6 +35,11 @@ $magicWords['diq'] = array(
 	'target' => array( 0, 'hedef' ),
 );
 
+/** Persian (فارسی) */
+$magicWords['fa'] = array(
+	'target' => array( 0, 'هذف' ),
+);
+
 /** Hindi (हिन्दी) */
 $magicWords['hi'] = array(
 	'target' => array( 0, 'लक्ष्य' ),
