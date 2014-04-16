@@ -1,22 +1,22 @@
 {
-    "@metadata": {
-        "authors": [
-            "Умар"
-        ]
-    },
-    "massmessage": "Дукха хаамаш кхехьийта",
-    "massmessage-desc": "Дукху дкъашхошка атта хаамаш бахьийта таро хуьлуьйту",
-    "massmessage-form-spamlist": "Хаам бохуьйтуш болу агӀонийн могӀа болу агӀо:",
-    "massmessage-form-subject": "Хаамах лаьцна (кхин лелош ю хийцамах лаьцна яздеш):",
-    "massmessage-form-message": "Хааман йоза:",
-    "massmessage-form-preview": "Хьалха муха ю хьажа",
-    "massmessage-form-submit": "ДӀадахьийта",
-    "massmessage-fieldset-preview": "Хьалха муха ю хьажа",
-    "massmessage-just-preview": "ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.",
-    "massmessage-form-header": "ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage кхин тӀе хаам]).",
-    "massmessage-queued-count": "РогӀехь болу [[Special:MassMessage|дукха хаамаш]]",
-    "right-massmessage": "Цхьана хеннахь массийта декъашхошка хаамаш бахьийтар",
-    "action-massmessage": "массийта декъашхошка хаамаш бахьийтар цкъачунна дӀадайина ду",
-    "log-name-massmessage": "Дукха хаамаш кхехьийтаран тептар",
-    "log-description-massmessage": "Декъашхочо хаамаш кхехьийтар гойту тептар."
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"massmessage": "Дукха хаамаш кхехьийта",
+	"massmessage-desc": "Дукху дкъашхошка атта хаамаш бахьийта таро хуьлуьйту",
+	"massmessage-form-spamlist": "Хаам бохуьйтуш болу агӀонийн могӀа болу агӀо:",
+	"massmessage-form-subject": "Хаамах лаьцна (кхин лелош ю хийцамах лаьцна яздеш):",
+	"massmessage-form-message": "Хааман йоза:",
+	"massmessage-form-preview": "Хьалха муха ю хьажа",
+	"massmessage-form-submit": "ДӀадахьийта",
+	"massmessage-fieldset-preview": "Хьалха муха ю хьажа",
+	"massmessage-just-preview": "ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.",
+	"massmessage-form-header": "ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage кхин тӀе хаам]).",
+	"massmessage-queued-count": "РогӀехь болу [[Special:MassMessage|дукха хаамаш]]",
+	"right-massmessage": "Цхьана хеннахь массийта декъашхошка хаамаш бахьийтар",
+	"action-massmessage": "массийта декъашхошка хаамаш бахьийтар цкъачунна дӀадайина ду",
+	"log-name-massmessage": "Дукха хаамаш кхехьийтаран тептар",
+	"log-description-massmessage": "Декъашхочо хаамаш кхехьийтар гойту тептар."
 }

@@ -1,35 +1,35 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps",
-            "Rzuwig",
-            "WTM",
-            "Woytecr"
-        ]
-    },
-    "massmessage": "Wysyłanie masowej wiadomości",
-    "massmessage-desc": "Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników",
-    "massmessage-form-spamlist": "Strona albo kategoria zawierająca listę stron, na których zostawić wiadomość:",
-    "massmessage-form-subject": "Temat wiadomości (także używany jako podsumowanie edycji):",
-    "massmessage-form-message": "Treść wiadomości:",
-    "massmessage-form-preview": "Podgląd",
-    "massmessage-form-submit": "Wyślij",
-    "massmessage-fieldset-preview": "Podgląd",
-    "massmessage-submitted": "Zlecenie dostarczenia twojej wiadomości do {{PLURAL:$1|$1 strony|$1 stron}} zostało umieszczone w kolejce.",
-    "massmessage-just-preview": "To jest tylko podgląd. Naciśnij \"{{int:massmessage-form-submit}}\" aby wysłać wiadomość.",
-    "massmessage-spamlist-doesnotexist": "Określona strona z listą stron nie istnieje.",
-    "massmessage-empty-subject": "Pole tematu jest puste.",
-    "massmessage-empty-message": "Treść wiadomości jest pusta.",
-    "massmessage-form-header": "Użyj poniższego formularza, aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage Więcej informacji]).",
-    "massmessage-queued-count": "Zakolejkowane [[Special:MassMessage|masowe wiadomości]]",
-    "massmessage-parse-badurl": "„$1” nie jest poprawną witryną.",
-    "massmessage-parse-badpage": "„$1” nie jest poprawnym tytułem strony",
-    "right-massmessage": "Wysyłanie wiadomości do wielu użytkowników jednocześnie",
-    "action-massmessage": "wyślij wiadomość do wielu użytkowników jednocześnie",
-    "log-name-massmessage": "Rejestr wiadomości masowych",
-    "log-description-massmessage": "To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości.",
-    "logentry-massmessage-send": "$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3",
-    "logentry-massmessage-skipbadns": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ miejsce docelowe znajdowało się w przestrzeni nazw, w której nie mogło być umieszczone",
-    "logentry-massmessage-skipnouser": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ konto użytkownika nie istnieje",
-    "massmessage-cannot-rename": "To jest konto systemowe i jego nazwa nie może być zmieniona."
+	"@metadata": {
+		"authors": [
+			"Chrumps",
+			"Rzuwig",
+			"WTM",
+			"Woytecr"
+		]
+	},
+	"massmessage": "Wysyłanie masowej wiadomości",
+	"massmessage-desc": "Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników",
+	"massmessage-form-spamlist": "Strona albo kategoria zawierająca listę stron, na których zostawić wiadomość:",
+	"massmessage-form-subject": "Temat wiadomości (także używany jako podsumowanie edycji):",
+	"massmessage-form-message": "Treść wiadomości:",
+	"massmessage-form-preview": "Podgląd",
+	"massmessage-form-submit": "Wyślij",
+	"massmessage-fieldset-preview": "Podgląd",
+	"massmessage-submitted": "Zlecenie dostarczenia twojej wiadomości do {{PLURAL:$1|$1 strony|$1 stron}} zostało umieszczone w kolejce.",
+	"massmessage-just-preview": "To jest tylko podgląd. Naciśnij \"{{int:massmessage-form-submit}}\" aby wysłać wiadomość.",
+	"massmessage-spamlist-doesnotexist": "Określona strona z listą stron nie istnieje.",
+	"massmessage-empty-subject": "Pole tematu jest puste.",
+	"massmessage-empty-message": "Treść wiadomości jest pusta.",
+	"massmessage-form-header": "Użyj poniższego formularza, aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage Więcej informacji]).",
+	"massmessage-queued-count": "Zakolejkowane [[Special:MassMessage|masowe wiadomości]]",
+	"massmessage-parse-badurl": "„$1” nie jest poprawną witryną.",
+	"massmessage-parse-badpage": "„$1” nie jest poprawnym tytułem strony",
+	"right-massmessage": "Wysyłanie wiadomości do wielu użytkowników jednocześnie",
+	"action-massmessage": "wyślij wiadomość do wielu użytkowników jednocześnie",
+	"log-name-massmessage": "Rejestr wiadomości masowych",
+	"log-description-massmessage": "To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości.",
+	"logentry-massmessage-send": "$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3",
+	"logentry-massmessage-skipbadns": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ miejsce docelowe znajdowało się w przestrzeni nazw, w której nie mogło być umieszczone",
+	"logentry-massmessage-skipnouser": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ konto użytkownika nie istnieje",
+	"massmessage-cannot-rename": "To jest konto systemowe i jego nazwa nie może być zmieniona."
 }

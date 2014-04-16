@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Red Winged Duck"
-        ]
-    },
-    "massmessage": "Адправіць масавае паведамленьне",
-    "massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]"
+	"@metadata": {
+		"authors": [
+			"Red Winged Duck"
+		]
+	},
+	"massmessage": "Адправіць масавае паведамленьне",
+	"massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]"
 }

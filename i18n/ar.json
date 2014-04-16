@@ -1,32 +1,32 @@
 {
-    "@metadata": {
-        "authors": [
-            "Claw eg",
-            "مشعل الحربي"
-        ]
-    },
-    "massmessage": "إرسال رسالة جماعية",
-    "massmessage-desc": "تسمح للمستخدمين بإرسال رسالة بسهولة إلى قائمة من المستخدمين",
-    "massmessage-form-spamlist": "صفحة تحتوي على قائمة صفحات يمكن ترك رسالة عليها:",
-    "massmessage-form-subject": "موضوع الرسالة (سيكون ملخص التحرير أيضًا):",
-    "massmessage-form-message": "نص الرسالة:",
-    "massmessage-form-preview": "معاينة",
-    "massmessage-form-submit": "إرسال",
-    "massmessage-fieldset-preview": "معاينة",
-    "massmessage-just-preview": "هذه مجرد معاينة. اضغط \"{{int:massmessage-form-submit}}\" لإرسال الرسالة.",
-    "massmessage-empty-subject": "حقل الموضوع فارغ.",
-    "massmessage-empty-message": "نص الرسالة فارغ.",
-    "massmessage-unescaped-langlinks": "تحذير: هناك روابط لغة ملغاة في الرسالة الخاصة بك.",
-    "massmessage-form-header": "استخدم النموذج أدناه لإرسال رسائل إلى قائمة معينة. جميع الحقول مطلوبة.",
-    "massmessage-parse-badurl": "\"$1\" ليس موقعًا صحيحًا.",
-    "massmessage-parse-badpage": "\"$1\" ليس عنوان صفحة صحيح.",
-    "massmessage-global-disallowed": "يمكن إرسال الرسائل إلى الصفحات المحلية فقط.",
-    "right-massmessage": "إرسال رسالة إلى عدة مستخدمين في وقت واحد",
-    "action-massmessage": "إرسال رسالة إلى عدة مستخدمين في وقت واحد",
-    "log-name-massmessage": "سجل الرسائل الجماعية",
-    "log-description-massmessage": "هذه الأحداث تتعقب المستخدمين الذين يرسلون الرسائل.",
-    "logentry-massmessage-send": "{{GENDER:$2|أرسل|أرسلت}} $1 رسالة إلى $3",
-    "logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
-    "logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
-    "massmessage-cannot-rename": "هذا حساب نظام ولا يمكن إعادة تسميته."
+	"@metadata": {
+		"authors": [
+			"Claw eg",
+			"مشعل الحربي"
+		]
+	},
+	"massmessage": "إرسال رسالة جماعية",
+	"massmessage-desc": "تسمح للمستخدمين بإرسال رسالة بسهولة إلى قائمة من المستخدمين",
+	"massmessage-form-spamlist": "صفحة تحتوي على قائمة صفحات يمكن ترك رسالة عليها:",
+	"massmessage-form-subject": "موضوع الرسالة (سيكون ملخص التحرير أيضًا):",
+	"massmessage-form-message": "نص الرسالة:",
+	"massmessage-form-preview": "معاينة",
+	"massmessage-form-submit": "إرسال",
+	"massmessage-fieldset-preview": "معاينة",
+	"massmessage-just-preview": "هذه مجرد معاينة. اضغط \"{{int:massmessage-form-submit}}\" لإرسال الرسالة.",
+	"massmessage-empty-subject": "حقل الموضوع فارغ.",
+	"massmessage-empty-message": "نص الرسالة فارغ.",
+	"massmessage-unescaped-langlinks": "تحذير: هناك روابط لغة ملغاة في الرسالة الخاصة بك.",
+	"massmessage-form-header": "استخدم النموذج أدناه لإرسال رسائل إلى قائمة معينة. جميع الحقول مطلوبة.",
+	"massmessage-parse-badurl": "\"$1\" ليس موقعًا صحيحًا.",
+	"massmessage-parse-badpage": "\"$1\" ليس عنوان صفحة صحيح.",
+	"massmessage-global-disallowed": "يمكن إرسال الرسائل إلى الصفحات المحلية فقط.",
+	"right-massmessage": "إرسال رسالة إلى عدة مستخدمين في وقت واحد",
+	"action-massmessage": "إرسال رسالة إلى عدة مستخدمين في وقت واحد",
+	"log-name-massmessage": "سجل الرسائل الجماعية",
+	"log-description-massmessage": "هذه الأحداث تتعقب المستخدمين الذين يرسلون الرسائل.",
+	"logentry-massmessage-send": "{{GENDER:$2|أرسل|أرسلت}} $1 رسالة إلى $3",
+	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
+	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
+	"massmessage-cannot-rename": "هذا حساب نظام ولا يمكن إعادة تسميته."
 }

@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ahmed-Najib-Biabani-Ibrahimkhel"
-        ]
-    },
-    "massmessage": "ډله ايز پيغام لېږل",
-    "massmessage-form-message": "د پيغام جوسه",
-    "massmessage-form-preview": "مخليدنه",
-    "massmessage-form-submit": "لېږل",
-    "massmessage-fieldset-preview": "مخليدنه",
-    "massmessage-submitted": "ستاسو پيغام ولېږل شو!",
-    "log-name-massmessage": "ډله ايز پيغام يادښت",
-    "logentry-massmessage-send": "$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}"
+	"@metadata": {
+		"authors": [
+			"Ahmed-Najib-Biabani-Ibrahimkhel"
+		]
+	},
+	"massmessage": "ډله ايز پيغام لېږل",
+	"massmessage-form-message": "د پيغام جوسه",
+	"massmessage-form-preview": "مخليدنه",
+	"massmessage-form-submit": "لېږل",
+	"massmessage-fieldset-preview": "مخليدنه",
+	"massmessage-submitted": "ستاسو پيغام ولېږل شو!",
+	"log-name-massmessage": "ډله ايز پيغام يادښت",
+	"logentry-massmessage-send": "$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}"
 }

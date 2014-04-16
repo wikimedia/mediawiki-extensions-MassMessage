@@ -1,27 +1,27 @@
 {
-    "@metadata": {
-        "authors": [
-            "V.narsikar"
-        ]
-    },
-    "massmessage": "एकगठ्ठा संदेश पाठवा",
-    "massmessage-desc": "सदस्यांच्या यादीत असलेल्या सदस्यांना, सोप्या रितीने संदेश पाठविण्यास वापरकर्त्यास  परवानगी देते.",
-    "massmessage-form-spamlist": "या पानावर संदेश देण्यायोग्य असलेल्या पानांची यादी आहे.",
-    "massmessage-form-subject": "संदेशाचा विषय. याचा वापर संपादन सारांश म्हणुनही होईल.",
-    "massmessage-form-message": "संदेशाचा मायना",
-    "massmessage-form-preview": "झलक",
-    "massmessage-form-submit": "पाठवा",
-    "massmessage-fieldset-preview": "झलक",
-    "massmessage-submitted": "आपल्या संदेशास रांगेत ठेविल्या गेले आहे!",
-    "massmessage-just-preview": "ही फक्त झलक आहे. संदेश पाठविण्यास \"{{int:massmessage-form-submit}}\" हे बटन दाबा.",
-    "massmessage-spamlist-doesnotexist": "उल्लेखित पान-यादी असलेले पान अस्तित्वात नाही.",
-    "massmessage-empty-subject": "विषय रिकामा आहे.",
-    "massmessage-empty-message": "संदेशाचा मायना रिकामा आहे.",
-    "massmessage-form-header": "खालील निवेदन एका उल्लेखित यादीस संदेश पाठविण्यास वापरा.सर्व क्षेत्रे आवश्यक आहेत. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage अधिक माहितीसाठी]).",
-    "massmessage-queued-count": "रांगेतील [[Special:MassMessage|एकगठ्ठा संदेश]]",
-    "right-massmessage": "बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा",
-    "action-massmessage": "बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा",
-    "log-name-massmessage": "एकगठ्ठा संदेशाच्या नोंदी",
-    "log-description-massmessage": "हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.",
-    "logentry-massmessage-send": "$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}"
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"massmessage": "एकगठ्ठा संदेश पाठवा",
+	"massmessage-desc": "सदस्यांच्या यादीत असलेल्या सदस्यांना, सोप्या रितीने संदेश पाठविण्यास वापरकर्त्यास  परवानगी देते.",
+	"massmessage-form-spamlist": "या पानावर संदेश देण्यायोग्य असलेल्या पानांची यादी आहे.",
+	"massmessage-form-subject": "संदेशाचा विषय. याचा वापर संपादन सारांश म्हणुनही होईल.",
+	"massmessage-form-message": "संदेशाचा मायना",
+	"massmessage-form-preview": "झलक",
+	"massmessage-form-submit": "पाठवा",
+	"massmessage-fieldset-preview": "झलक",
+	"massmessage-submitted": "आपल्या संदेशास रांगेत ठेविल्या गेले आहे!",
+	"massmessage-just-preview": "ही फक्त झलक आहे. संदेश पाठविण्यास \"{{int:massmessage-form-submit}}\" हे बटन दाबा.",
+	"massmessage-spamlist-doesnotexist": "उल्लेखित पान-यादी असलेले पान अस्तित्वात नाही.",
+	"massmessage-empty-subject": "विषय रिकामा आहे.",
+	"massmessage-empty-message": "संदेशाचा मायना रिकामा आहे.",
+	"massmessage-form-header": "खालील निवेदन एका उल्लेखित यादीस संदेश पाठविण्यास वापरा.सर्व क्षेत्रे आवश्यक आहेत. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage अधिक माहितीसाठी]).",
+	"massmessage-queued-count": "रांगेतील [[Special:MassMessage|एकगठ्ठा संदेश]]",
+	"right-massmessage": "बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा",
+	"action-massmessage": "बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा",
+	"log-name-massmessage": "एकगठ्ठा संदेशाच्या नोंदी",
+	"log-description-massmessage": "हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.",
+	"logentry-massmessage-send": "$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}"
 }

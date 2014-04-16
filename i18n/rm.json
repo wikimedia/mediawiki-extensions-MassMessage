@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kazu89"
-        ]
-    },
-    "massmessage": "Trametter in messadi da massa",
-    "log-name-massmessage": "Protocol da messadis da massa"
+	"@metadata": {
+		"authors": [
+			"Kazu89"
+		]
+	},
+	"massmessage": "Trametter in messadi da massa",
+	"log-name-massmessage": "Protocol da messadis da massa"
 }

@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Y-M D"
-        ]
-    },
-    "massmessage": "Kas ur gemennadenn a-vras",
-    "massmessage-form-preview": "Rakwelet",
-    "massmessage-form-submit": "Kas",
-    "massmessage-fieldset-preview": "Rakwelet",
-    "massmessage-submitted": "Lakaet eo bet ho kemennadenn er roll gortoz.",
-    "massmessage-just-preview": "N'eo nemet ur rakweladenn. Pouezit war \" {{int:massmessage-form-submit}} \" evit kas ar gemennadenn.",
-    "right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol."
+	"@metadata": {
+		"authors": [
+			"Y-M D"
+		]
+	},
+	"massmessage": "Kas ur gemennadenn a-vras",
+	"massmessage-form-preview": "Rakwelet",
+	"massmessage-form-submit": "Kas",
+	"massmessage-fieldset-preview": "Rakwelet",
+	"massmessage-submitted": "Lakaet eo bet ho kemennadenn er roll gortoz.",
+	"massmessage-just-preview": "N'eo nemet ur rakweladenn. Pouezit war \" {{int:massmessage-form-submit}} \" evit kas ar gemennadenn.",
+	"right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol."
 }

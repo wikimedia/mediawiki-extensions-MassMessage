@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "David1010"
-        ]
-    },
-    "massmessage": "მასობრივი შეტყობინების გაგზავნა",
-    "massmessage-form-spamlist": "გვერდი, იმ გვერდების სიით სადაც შეტყობინების დატოვებაა საჭირო:",
-    "massmessage-form-subject": "შეტყობინების თემა (გამოიყენება აგრეთვე ცვლილების აღსაწერად):",
-    "massmessage-form-message": "შეტყობინების ტექსტი:",
-    "massmessage-empty-message": "ტექსტის ველი ცარიელია."
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"massmessage": "მასობრივი შეტყობინების გაგზავნა",
+	"massmessage-form-spamlist": "გვერდი, იმ გვერდების სიით სადაც შეტყობინების დატოვებაა საჭირო:",
+	"massmessage-form-subject": "შეტყობინების თემა (გამოიყენება აგრეთვე ცვლილების აღსაწერად):",
+	"massmessage-form-message": "შეტყობინების ტექსტი:",
+	"massmessage-empty-message": "ტექსტის ველი ცარიელია."
 }

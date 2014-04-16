@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "DCLXVI"
-        ]
-    },
-    "massmessage-parse-badurl": "„$1“ не е валиден сайт."
+	"@metadata": {
+		"authors": [
+			"DCLXVI"
+		]
+	},
+	"massmessage-parse-badurl": "„$1“ не е валиден сайт."
 }

@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Eleassar"
-        ]
-    },
-    "massmessage-submitted": "Dostava vašega sporočila na {{PLURAL:$1|$1 stran|$1 strani}} je bila vnesena v čakalno vrsto.",
-    "massmessage-parse-badurl": "»$1« ni veljavna stran",
-    "massmessage-parse-badpage": "»$1« ni veljaven naslov strani",
-    "logentry-massmessage-skipbadns": "Dostava »$4« na stran $3 je bila preskočena, ker je bil cilj v imenskem prostoru, v katerem ni mogoče objavljati",
-    "logentry-massmessage-skipoptout": "Dostava »$4« na stran $3 je bila preskočena, ker je cilj zavrnil dostavo sporočil",
-    "logentry-massmessage-skipnouser": "Dostava »$4« na $3 je bila preskočena, ker uporabniški račun ne obstaja"
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"massmessage-submitted": "Dostava vašega sporočila na {{PLURAL:$1|$1 stran|$1 strani}} je bila vnesena v čakalno vrsto.",
+	"massmessage-parse-badurl": "»$1« ni veljavna stran",
+	"massmessage-parse-badpage": "»$1« ni veljaven naslov strani",
+	"logentry-massmessage-skipbadns": "Dostava »$4« na stran $3 je bila preskočena, ker je bil cilj v imenskem prostoru, v katerem ni mogoče objavljati",
+	"logentry-massmessage-skipoptout": "Dostava »$4« na stran $3 je bila preskočena, ker je cilj zavrnil dostavo sporočil",
+	"logentry-massmessage-skipnouser": "Dostava »$4« na $3 je bila preskočena, ker uporabniški račun ne obstaja"
 }

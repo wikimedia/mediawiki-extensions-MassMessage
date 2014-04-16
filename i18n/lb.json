@@ -1,29 +1,29 @@
 {
-    "@metadata": {
-        "authors": [
-            "Robby",
-            "Soued031"
-        ]
-    },
-    "massmessage-desc": "Erlaabt et Benotzer fir einfach Messagen un eng Lëscht vu Benotzer ze schécken",
-    "massmessage-form-spamlist": "Säit oder Kategorie mat der Lëscht vu Säiten op déi e Message geschriwwe gi soll:",
-    "massmessage-form-subject": "Sujet vum Message (Gëtt och fir de Resumé vun der Ännerung benotzt):",
-    "massmessage-form-preview": "Kucken ouni ze späicheren",
-    "massmessage-form-submit": "Schécken",
-    "massmessage-fieldset-preview": "Kucken ouni ze späicheren",
-    "massmessage-just-preview": "De Message gëtt just gewisen. Klickt \"{{int:massmessage-form-submit}}\" fir de Message ze schécken.",
-    "massmessage-empty-subject": "D'Linn mam Sujet ass eidel.",
-    "massmessage-empty-message": "Den Inhalt vum Message ass eidel.",
-    "massmessage-unescaped-langlinks": "Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.",
-    "massmessage-form-header": "Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage méi Informatiounen]).",
-    "massmessage-hidden-comment": "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
-    "massmessage-parse-badurl": "\"$1\" ass kee valabele Site",
-    "massmessage-parse-badpage": "\"$1\" ass kee valabelen Titel fir eng Säit",
-    "massmessage-global-disallowed": "Message kënnen nëmme op lokal Säite geschéckt ginn.",
-    "right-massmessage": "E Message u méi Benotzer matenee schécken",
-    "action-massmessage": "e Message u verschidde Benotzer gläichzäiteg schécken",
-    "logentry-massmessage-send": "$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt",
-    "logentry-massmessage-failure": "D'Schécke vu(n) \"$4\" op $3 huet net funktionéiert: de Feelercode ass <code>$5</code>",
-    "massmessage-cannot-rename": "Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.",
-    "massmessage-nextsteps": "[[Special:MassMessage|Nach e Message schécken]] oder [[Special:Statistics|d'Zuel vu Message weisen déi drop waarde geschéckt ze ginn]]."
+	"@metadata": {
+		"authors": [
+			"Robby",
+			"Soued031"
+		]
+	},
+	"massmessage-desc": "Erlaabt et Benotzer fir einfach Messagen un eng Lëscht vu Benotzer ze schécken",
+	"massmessage-form-spamlist": "Säit oder Kategorie mat der Lëscht vu Säiten op déi e Message geschriwwe gi soll:",
+	"massmessage-form-subject": "Sujet vum Message (Gëtt och fir de Resumé vun der Ännerung benotzt):",
+	"massmessage-form-preview": "Kucken ouni ze späicheren",
+	"massmessage-form-submit": "Schécken",
+	"massmessage-fieldset-preview": "Kucken ouni ze späicheren",
+	"massmessage-just-preview": "De Message gëtt just gewisen. Klickt \"{{int:massmessage-form-submit}}\" fir de Message ze schécken.",
+	"massmessage-empty-subject": "D'Linn mam Sujet ass eidel.",
+	"massmessage-empty-message": "Den Inhalt vum Message ass eidel.",
+	"massmessage-unescaped-langlinks": "Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.",
+	"massmessage-form-header": "Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage méi Informatiounen]).",
+	"massmessage-hidden-comment": "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
+	"massmessage-parse-badurl": "\"$1\" ass kee valabele Site",
+	"massmessage-parse-badpage": "\"$1\" ass kee valabelen Titel fir eng Säit",
+	"massmessage-global-disallowed": "Message kënnen nëmme op lokal Säite geschéckt ginn.",
+	"right-massmessage": "E Message u méi Benotzer matenee schécken",
+	"action-massmessage": "e Message u verschidde Benotzer gläichzäiteg schécken",
+	"logentry-massmessage-send": "$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt",
+	"logentry-massmessage-failure": "D'Schécke vu(n) \"$4\" op $3 huet net funktionéiert: de Feelercode ass <code>$5</code>",
+	"massmessage-cannot-rename": "Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.",
+	"massmessage-nextsteps": "[[Special:MassMessage|Nach e Message schécken]] oder [[Special:Statistics|d'Zuel vu Message weisen déi drop waarde geschéckt ze ginn]]."
 }
