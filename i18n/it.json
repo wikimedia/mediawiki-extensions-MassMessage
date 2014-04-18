@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Rosh"
+			"Rosh",
+			"Ontsed"
 		]
 	},
 	"massmessage": "Invia messaggi massivamente",
 	"massmessage-desc": "Consente agli utenti di inviare facilmente un messaggio a un elenco di utenti",
-	"massmessage-form-spamlist": "Pagina contenente l'elenco delle pagine su cui lasciare un messaggio:",
+	"massmessage-form-spamlist": "Pagina o categoria contenente l'elenco delle pagine su cui lasciare un messaggio:",
 	"massmessage-form-subject": "Oggetto del messaggio (anche usato come l'oggetto della modifica):",
 	"massmessage-form-message": "Corpo del messaggio:",
 	"massmessage-form-preview": "Anteprima",
