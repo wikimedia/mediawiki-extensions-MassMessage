@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gorizon"
+			"Gorizon",
+			"Mirzali"
 		]
 	},
-	"massmessage": "Mass mesac bırş",
+	"massmessage": "Kommesac bırışe",
 	"massmessage-form-preview": "Verqayt",
-	"massmessage-form-submit": "Bırş",
+	"massmessage-form-submit": "Bırışe",
 	"massmessage-fieldset-preview": "Verqayt"
 }
