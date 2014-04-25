@@ -20,6 +20,7 @@
 	"massmessage-empty-subject": "Die Betreffszeile ist leer.",
 	"massmessage-empty-message": "Der Nachrichtenkörper ist leer.",
 	"massmessage-unescaped-langlinks": "Warnung: Deine Nachricht enthält ungültige Sprachlinks.",
+	"massmessage-no-timestamp": "Warnung: Deine Nachricht enthält keinen Zeitstempel oder keine Signatur.",
 	"massmessage-form-header": "Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage weitere Informationen]).",
 	"massmessage-queued-count": "[[Special:MassMessage|Massennachrichten]] in der Warteschlange",
 	"massmessage-hidden-comment": "<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->",
