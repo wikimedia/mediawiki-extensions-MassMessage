@@ -18,6 +18,7 @@
 	"massmessage-empty-subject": "Насловот е празен.",
 	"massmessage-empty-message": "Порака нема текст.",
 	"massmessage-unescaped-langlinks": "Предупредување: Во пораката имате неекранизирани јазични врски.",
+	"massmessage-no-timestamp": "Предупредување: Во пораката немате време со датум или потпис.",
 	"massmessage-form-header": "Послужете се со образецот подолу за да испраќате на пораки на укажан список на примачи. Сите полиња се задолжителни ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage повеќе информации]).",
 	"massmessage-queued-count": "[[Special:MassMessage|Масовни пораки]] во редица",
 	"massmessage-hidden-comment": "<!-- Пораката ја испрати Корисник:$1@$2 преку списокот на $3 -->",

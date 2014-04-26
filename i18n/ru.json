@@ -20,6 +20,7 @@
 	"massmessage-empty-subject": "Строка с темой не заполнена.",
 	"massmessage-empty-message": "Отсутствует текст сообщения.",
 	"massmessage-unescaped-langlinks": "Предупреждение: в вашем сообщении есть неэкранированные языковые ссылки.",
+	"massmessage-no-timestamp": "Предупреждение: Ваше сообщение не содержит дату и время или подпись.",
 	"massmessage-form-header": "Используйте форму ниже для отправки сообщения по указанному списку. Все поля обязательны для заполнения ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage дополнительная информация]).",
 	"massmessage-queued-count": "Поставленные в очередь [[Special:MassMessage|массовые сообщения]]",
 	"massmessage-hidden-comment": "<!-- Сообщение отправил Участник:$1@$2, используя список на странице $3 -->",

@@ -18,6 +18,7 @@
 	"massmessage-empty-subject": "שורת הנושא ריקה.",
 	"massmessage-empty-message": "גוף ההודעה ריק.",
 	"massmessage-unescaped-langlinks": "אזהרה: יש קישורי שפה לא מחולפים בהודעה שלך.",
+	"massmessage-no-timestamp": "אזהרה: ההודעה שלך אינה מכילה חותם זמן או חתימה.",
 	"massmessage-form-header": "אפשר להשתמש בטופס להלן כדי לשלוח הודעות לרשימה מוגדרת. כל השדות נדרשים. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage מידע נוסף]).",
 	"massmessage-queued-count": "[[Special:MassMessage|הודעות המוניות]] בתור",
 	"massmessage-hidden-comment": "<!-- הודעה שנשלחה על־ידי User:$1@$2 באמצעות הרשימה בדף $3 -->",

@@ -15,6 +15,7 @@
 	"massmessage-empty-subject": "D'Linn mam Sujet ass eidel.",
 	"massmessage-empty-message": "Den Inhalt vum Message ass eidel.",
 	"massmessage-unescaped-langlinks": "Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.",
+	"massmessage-no-timestamp": "Warnung: An Ärem Message ass Keen Zäitstempel oder keng Ënnerschrëft.",
 	"massmessage-form-header": "Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage méi Informatiounen]).",
 	"massmessage-hidden-comment": "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
 	"massmessage-parse-badurl": "\"$1\" ass kee valabele Site",
