@@ -13,6 +13,7 @@
 	"massmessage-form-submit": "ДӀадахьийта",
 	"massmessage-fieldset-preview": "Хьалха муха ю хьажа",
 	"massmessage-just-preview": "ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.",
+	"massmessage-no-timestamp": "ДӀахьедар: Хьан хаам чохь терахь а хан а я куьг я дац.",
 	"massmessage-form-header": "ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage кхин тӀе хаам]).",
 	"massmessage-queued-count": "РогӀехь болу [[Special:MassMessage|дукха хаамаш]]",
 	"right-massmessage": "Цхьана хеннахь массийта декъашхошка хаамаш бахьийтар",

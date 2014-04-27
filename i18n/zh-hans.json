@@ -24,6 +24,7 @@
 	"massmessage-empty-subject": "主题为空。",
 	"massmessage-empty-message": "消息正文为空。",
 	"massmessage-unescaped-langlinks": "警告：在你的消息中有未转义的语言链接。",
+	"massmessage-no-timestamp": "警告：您的消息不包含时间戳或签名。",
 	"massmessage-form-header": "使用下面的表单以将消息发送到指定的列表。所有字段都是必需的（[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 更多信息]）。",
 	"massmessage-queued-count": "队列中的[[Special:MassMessage|群发信息]]",
 	"massmessage-hidden-comment": "<!-- 消息发送者 User:$1@$2，使用的列表为 $3 -->",
