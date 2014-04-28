@@ -24,6 +24,7 @@
 	"massmessage-empty-subject": "La ligne du sujet est vide.",
 	"massmessage-empty-message": "Le corps du message est vide.",
 	"massmessage-unescaped-langlinks": "Attention : il y a des liens de langue non échappés dans votre message.",
+	"massmessage-no-timestamp": "Attention : Votre message ne contient pas d’horodatage ou de signature.",
 	"massmessage-form-header": "Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage plus d’information]).",
 	"massmessage-queued-count": "[[Special:MassMessage|Messages de masse]] en file d’attente",
 	"massmessage-hidden-comment": "<!-- Message envoyé par User:$1@$2 en utilisant la liste à $3 -->",
