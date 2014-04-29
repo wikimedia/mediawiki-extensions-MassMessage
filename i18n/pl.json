@@ -4,7 +4,8 @@
 			"Chrumps",
 			"Rzuwig",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Wiochman"
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
@@ -20,6 +21,7 @@
 	"massmessage-spamlist-doesnotexist": "Określona strona z listą stron nie istnieje.",
 	"massmessage-empty-subject": "Pole tematu jest puste.",
 	"massmessage-empty-message": "Treść wiadomości jest pusta.",
+	"massmessage-no-timestamp": "Ostrzeżenie: Twoja wiadomość nie zawiera sygnatury czasowej lub podpisu.",
 	"massmessage-form-header": "Użyj poniższego formularza, aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage Więcej informacji]).",
 	"massmessage-queued-count": "Zakolejkowane [[Special:MassMessage|masowe wiadomości]]",
 	"massmessage-parse-badurl": "„$1” nie jest poprawną witryną.",
