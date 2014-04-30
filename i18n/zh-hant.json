@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Cwlin0416"
 		]
 	},
+	"massmessage-form-preview": "預覽",
+	"massmessage-form-submit": "傳送",
+	"massmessage-fieldset-preview": "預覽",
 	"massmessage-unescaped-langlinks": "警告：您的訊息中有無轉義語言連結。"
 }
