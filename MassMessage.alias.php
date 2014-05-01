@@ -34,6 +34,11 @@ $specialPageAliases['diq'] = array(
 	'MassMessage' => array( 'HolaMesacan' ),
 );
 
+/** Estonian (eesti) */
+$specialPageAliases['et'] = array(
+	'MassMessage' => array( 'Hulgasõnum' ),
+);
+
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'MassMessage' => array( 'پیام_انبوه' ),
