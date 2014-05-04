@@ -228,10 +228,22 @@ class MassMessageJob extends Job {
 			true // enable write?
 		);
 
-		try {
-			$api->execute();
-		} catch ( UsageException $e ) {
-			$this->logLocalFailure( $e->getCodeString() );
+		$attemptCount = 0;
+		while ( true ) {
+			try {
+				$api->execute();
+				break; // Continue after the while block if the API request succeeds
+			} catch ( UsageException $e ) {
+				$attemptCount++;
+				$errorCode = $e->getCodeString();
+				// If the failure is not caused by an edit conflict or if there
+				// have been too many failures, log the error and continue
+				// execution. Otherwise retry the request.
+				if ( $errorCode !== 'editconflict' || $attemptCount >= 5 ) {
+					$this->logLocalFailure( $errorCode );
+					break;
+				}
+			}
 		}
 
 		// Cleanup all the stuff we polluted
