@@ -5,7 +5,8 @@
 			"Csbotero",
 			"Fitoschido",
 			"Ovruni",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Mcervera"
 		]
 	},
 	"massmessage": "Enviar mensaje masivo",
@@ -20,6 +21,7 @@
 	"massmessage-spamlist-doesnotexist": "La lista de páginas especificada no existe.",
 	"massmessage-empty-subject": "El asunto está vacío.",
 	"massmessage-empty-message": "El cuerpo del mensaje está vacío.",
+	"massmessage-no-timestamp": "ADVERTENCIA: Tu mensaje no incluye un timestamp o firma.",
 	"massmessage-form-header": "Utilice el siguiente formulario para enviar mensajes a una lista específica. Todos los campos son obligatorios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]).",
 	"massmessage-queued-count": "[[Special:MassMessage|Mensajes masivos]] en cola",
 	"massmessage-hidden-comment": "<!-- Mensaje enviado por Usuario:$1@$2 mediante la lista en $3 -->",
