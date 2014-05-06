@@ -35,7 +35,7 @@
 	"log-name-massmessage": "Messaggi massivi",
 	"log-description-massmessage": "Questi eventi registrano l'invio di messaggi ad utenti.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|ha inviato un messaggio}} a $3",
-	"logentry-massmessage-failure": "Consegna di \"$4\" a $3 non riuscita con codice di errore<code>$5</code>",
+	"logentry-massmessage-failure": "Consegna di \"$4\" a $3 non riuscita con codice di errore <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Consegna di \"$4\" a $3 omessa poiché la destinazione si trova in un namespace su cui non può essere pubblicato",
 	"logentry-massmessage-skipoptout": "Consegna di \"$4\" a $3 omessa poiché la destinazione è esclusa dalla ricezione di messaggi massivi",
 	"logentry-massmessage-skipnouser": "Consegna di \"$4\" a $3 omessa poiché l'utenza non esiste",
