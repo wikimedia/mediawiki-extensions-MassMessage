@@ -2,9 +2,40 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
-			"Helder.wiki"
+			"Helder.wiki",
+			"Vitorvicentevalente"
 		]
 	},
-	"massmessage-unescaped-langlinks": "Aviso: Há links interlínguas na sua mensagem que não começam com dois pontos.",
-	"logentry-massmessage-send": "$1 {{GENDER:$2|enviou uma mensagem}} para $3"
+	"massmessage": "Enviar mensagem em massa",
+	"massmessage-desc": "Permite aos utilizadores enviarem facilmente uma mensagem para uma lista de utilizadores",
+	"massmessage-form-spamlist": "Página ou categoria que contém a lista de páginas como destino da mensagem:",
+	"massmessage-form-subject": "Assunto da mensagem (também usado como sumário de edição):",
+	"massmessage-form-message": "Corpo da mensagem:",
+	"massmessage-form-preview": "Antevisão",
+	"massmessage-form-submit": "Enviar",
+	"massmessage-fieldset-preview": "Antevisão",
+	"massmessage-submitted": "O seu pedido de entrega da mensagem em {{PLURAL:$1|$1 página|$1 páginas}} foi colocado em lista de espera.",
+	"massmessage-just-preview": "Isto é apenas uma antevisão. Clique em \"{{int:massmessage-form-submit}}\" para enviar a mensagem.",
+	"massmessage-spamlist-doesnotexist": "A página de lista especificada não existe.",
+	"massmessage-empty-subject": "O campo de assunto está vazio.",
+	"massmessage-empty-message": "O corpo da mensagem está vazio.",
+	"massmessage-unescaped-langlinks": "Aviso: Há ligações interlínguas na sua mensagem que não começam com dois pontos.",
+	"massmessage-no-timestamp": "Aviso: A sua mensagem não possui data/hora nem assinatura.",
+	"massmessage-form-header": "Use o formulário abaixo para mandar mensagens a uma lista especificada de páginas. Todos os campos são obrigatórios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mais informações]).",
+	"massmessage-queued-count": "[[Special:MassMessage|Mensagens em massa]] em fila de espera",
+	"massmessage-hidden-comment": "<!-- Mensagem enviada por User:$1@$2 utilizado a lista em $3 -->",
+	"massmessage-badhtml": "A sua mensagem pode conter {{PLURAL:$2|uma marcação HTML|várias marcações HTML}} por fechar: $1.",
+	"massmessage-parse-badurl": "\"$1\" não é um sítio válido.",
+	"massmessage-parse-badpage": "\"$1\" não é um título de página válido.",
+	"massmessage-global-disallowed": "As mensagens só podem ser enviadas para páginas locais.",
+	"right-massmessage": "Enviar uma mensagem para vários utilizadores ao mesmo tempo",
+	"action-massmessage": "enviar uma mensagem para vários utilizadores ao mesmo tempo",
+	"log-name-massmessage": "Registo de mensagens em massa",
+	"log-description-massmessage": "Estes eventos rastreiam utilizadores que estão a enviar mensagens.",
+	"logentry-massmessage-send": "$1 {{GENDER:$2|enviou uma mensagem}} para $3",
+	"logentry-massmessage-failure": "A entrega de \"$4\" em $3 falhou com o seguinte código de erro: <code>$5</code>",
+	"logentry-massmessage-skipbadns": "A entrega de \"$4\" em $3 foi ignorada porque o destinatário trata-se de um domínio em que não é permitida a recepção de mensagens.",
+	"logentry-massmessage-skipnouser": "A entrega de \"$4\" em $3 foi ignorada porque a conta de utilizador não existe.",
+	"massmessage-cannot-rename": "Esta é uma conta de sistema e não pode ser renomeada.",
+	"massmessage-nextsteps": "[[Special:MassMessage|Enviar outra mensagem]] ou [[Special:Statistics|ver quantas mensagens estão em fila de espera]]."
 }
