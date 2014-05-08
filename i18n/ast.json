@@ -6,7 +6,7 @@
 	},
 	"massmessage": "Unviar un mensaxe en masa",
 	"massmessage-desc": "Permite que los usuarios unvien fácilmente una mensaxe a una llista d'usuarios",
-	"massmessage-form-spamlist": "Páxina que contién la llista de páxines nes que dexar un mensaxe:",
+	"massmessage-form-spamlist": "Páxina o categoría que contién la llista de páxines nes que dexar un mensaxe:",
 	"massmessage-form-subject": "Asuntu del mensaxe (úsase tamién como resume d'edición):",
 	"massmessage-form-message": "Cuerpu del mensaxe:",
 	"massmessage-form-preview": "Vista previa",
