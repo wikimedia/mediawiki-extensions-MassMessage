@@ -88,6 +88,7 @@ $wgHooks['APIQuerySiteInfoStatisticsInfo'][] = 'MassMessageHooks::onAPIQuerySite
 $wgHooks['RenameUserPreRename'][] = 'MassMessageHooks::onRenameUserPreRename';
 $wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
+$wgHooks['UserGetRights'][] = 'MassMessageHooks::onUserGetRights';
 $wgHooks['BeforeEchoEventInsert'][] = 'MassMessageHooks::onBeforeEchoEventInsert';
 
 $wgResourceModules['ext.MassMessage.special.js'] = array(

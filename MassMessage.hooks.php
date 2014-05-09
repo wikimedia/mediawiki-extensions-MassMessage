@@ -155,6 +155,20 @@ class MassMessageHooks {
 	}
 
 	/**
+	 * Makes the messenger sender exempt from IP blocks no matter what
+	 * @see bug 58237
+	 * @param User $user
+	 * @param array $rights
+	 * @return bool
+	 */
+	public static function onUserGetRights( User $user, array &$rights ) {
+		if ( $user->getId() === MassMessage::getMessengerUser()->getId() ) {
+			$rights[] = 'ipblock-exempt';
+		}
+		return true;
+	}
+
+	/**
 	 * Echo!
 	 *
 	 * @param $event EchoEvent
