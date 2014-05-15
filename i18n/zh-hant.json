@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Cwlin0416"
+			"Cwlin0416",
+			"Justincheng12345"
 		]
 	},
+	"massmessage-desc": "讓使用者輕鬆地發送訊息給列表中的使用者",
 	"massmessage-form-preview": "預覽",
 	"massmessage-form-submit": "傳送",
 	"massmessage-fieldset-preview": "預覽",
-	"massmessage-unescaped-langlinks": "警告：您的訊息中有無轉義語言連結。"
+	"massmessage-unescaped-langlinks": "警告：您的訊息中有無轉義語言連結。",
+	"right-massmessage": "同時向多名使用者發送訊息",
+	"action-massmessage": "同時向多名使用者發送訊息"
 }
