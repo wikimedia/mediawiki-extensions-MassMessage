@@ -192,6 +192,69 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
+	 * Returns an array containing possibly unclosed HTML tags in $message
+	 * TODO: Use an HTML parser instead of regular expressions
+	 *
+	 * @param $message string
+	 * @return array
+	 */
+	protected function getUnclosedTags( $message ) {
+		$startTags = array();
+		$endTags = array();
+
+		// For start tags, ignore ones that contain '/' (assume those are self-closing).
+		preg_match_all( '|\<([\w]+)[^/]*?>|', $message, $startTags );
+		preg_match_all( '|\</([\w]+)|', $message, $endTags );
+
+		// Keep just the element names from the matched patterns.
+		$startTags = $startTags[1];
+		$endTags = $endTags[1];
+
+		// Stop and return an empty array if there are no HTML tags.
+		if ( empty( $startTags ) && empty( $endTags ) ) {
+			return array();
+		}
+
+		// Construct a set containing elements that do not need an end tag.
+		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
+		$voidElements = array();
+		$voidElementNames = array( 'area', 'base', 'br', 'col', 'command', 'embed','hr', 'img',
+			'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr' );
+		foreach ( $voidElementNames as $name ) {
+			$voidElements[$name] = 1;
+		}
+
+		// Count start / end tags for each element, ignoring start tags of void elements.
+		$tags = array();
+		foreach ( $startTags as $tag ) {
+			if ( !isset( $voidElements[$tag] ) ) {
+				if ( !isset( $tags[$tag] ) ) {
+					$tags[$tag] = 1;
+				} else {
+					$tags[$tag]++;
+				}
+			}
+		}
+		foreach ( $endTags as $tag ) {
+			if ( !isset( $tags[$tag] ) ) {
+				$tags[$tag] = -1;
+			} else {
+				$tags[$tag]--;
+			}
+		}
+
+		$results = array();
+		foreach ( $tags as $element => $num ) {
+			if ( $num > 0 ) {
+				$results[] = '<' . $element . '>';
+			} else if ( $num < 0 ) {
+				$results[] = '</' . $element . '>';
+			}
+		}
+		return $results;
+	}
+
+	/**
 	 * A preview/confirmation screen
 	 *
 	 * @param $data Array
@@ -232,6 +295,18 @@ class SpecialMassMessage extends SpecialPage {
 		// Check if we have unescaped langlinks (Bug 54846)
 		if ( $parserOutput->getLanguageLinks() ) {
 			$this->status->fatal( 'massmessage-unescaped-langlinks' );
+		}
+
+		// Check for unclosed HTML tags (Bug 54909)
+		$unclosedTags = $this->getUnclosedTags( $message );
+		if ( !empty( $unclosedTags ) ) {
+			$this->status->fatal(
+				$this->msg( 'massmessage-badhtml' )
+					->params(
+						htmlspecialchars( $this->getLanguage()->commaList( $unclosedTags ) )
+					)
+					->numParams( count( $unclosedTags ) )
+			);
 		}
 
 		// Check for no timestamp (Bug 54848)
