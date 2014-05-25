@@ -74,6 +74,11 @@ $specialPageAliases['mk'] = array(
 	'MassMessage' => array( 'МасовнаПорака' ),
 );
 
+/** Malayalam (മലയാളം) */
+$specialPageAliases['ml'] = array(
+	'MassMessage' => array( 'കൂട്ടസന്ദേശങ്ങൾ' ),
+);
+
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'MassMessage' => array( 'BerichtenVerzenden' ),
