@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Some core functions needed by the ex.
+ * Some core functions needed by the extension.
  *
  * @file
  * @author Kunal Mehta
