@@ -54,6 +54,11 @@ $specialPageAliases['he'] = array(
 	'MassMessage' => array( 'שליחת_הודעה_המונית', 'שליחת_הודעה_למשתמשים_מרובים' ),
 );
 
+/** Upper Sorbian (hornjoserbsce) */
+$specialPageAliases['hsb'] = array(
+	'MassMessage' => array( 'Masowe_powěsće' ),
+);
+
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'MassMessage' => array( 'MessaggiMassivi' ),

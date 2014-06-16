@@ -6,12 +6,13 @@
 			"Fitoschido",
 			"Ovruni",
 			"Vivaelcelta",
-			"Mcervera"
+			"Mcervera",
+			"Macofe"
 		]
 	},
 	"massmessage": "Enviar mensaje masivo",
 	"massmessage-desc": "Permite al usuario enviar un mensaje a una lista de usuarios fácilmente",
-	"massmessage-form-spamlist": "Página que contiene la lista de páginas donde dejar un mensaje:",
+	"massmessage-form-spamlist": "Página o categoría que contiene la lista de páginas donde dejar un mensaje:",
 	"massmessage-form-subject": "Asunto del mensaje (usado también como resumen de edición):",
 	"massmessage-form-message": "Cuerpo del mensaje:",
 	"massmessage-form-preview": "Previsualizar",
