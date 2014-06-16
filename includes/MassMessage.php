@@ -372,7 +372,7 @@ class MassMessage {
 		return count( $pages );
 	}
 
-	/*
+	/**
 	 * Gets a regular expression that will match this wiki's
 	 * timestamps as given by ~~~~.
 	 *
