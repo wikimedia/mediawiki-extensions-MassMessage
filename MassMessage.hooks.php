@@ -156,7 +156,6 @@ class MassMessageHooks {
 
 	/**
 	 * Echo!
-	 *
 	 * @param $event EchoEvent
 	 * @return bool
 	 */
@@ -170,4 +169,21 @@ class MassMessageHooks {
 		return true;
 	}
 
+	/**
+	 * Override the Edit tab for delivery lists
+	 * @param SkinTemplate $sktemplate
+	 * @param array $links
+	 * @return bool
+	 */
+	public static function onSkinTemplateNavigation( &$sktemplate, &$links ) {
+		$title = $sktemplate->getTitle();
+		if ( $title->hasContentModel( 'MassMessageListContent' )
+			&& array_key_exists( 'edit', $links['views'] )
+		) {
+			$links['views']['edit']['href'] = SpecialPage::getTitleFor(
+				'EditMassMessageList', $title
+			)->getFullUrl();
+		}
+		return true;
+	}
 }

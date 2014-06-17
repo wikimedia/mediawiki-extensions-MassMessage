@@ -55,33 +55,44 @@ $wgAllowGlobalMessaging = true;
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'MassMessage',
-	'author' => 'Kunal Mehta',
+	'author' => array( 'Kunal Mehta', 'wctaiwan' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:MassMessage',
 	'descriptionmsg' => 'massmessage-desc',
-	'version' => '0.1.0',
+	'version' => '0.2.0',
 );
 $dir = __DIR__;
 
-$wgSpecialPages['MassMessage'] = 'SpecialMassMessage';
-$wgMessagesDirs['MassMessage'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['MassMessage'] = "$dir/MassMessage.i18n.php";
+// Messages
+$wgMessagesDirs['MassMessage'] = "$dir/i18n";
 $wgExtensionMessagesFiles['MassMessageAlias'] = "$dir/MassMessage.alias.php";
 $wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php";
+
+// Classes
 $wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
 $wgAutoloadClasses['ApiMassMessage'] = "$dir/includes/ApiMassMessage.php";
 $wgAutoloadClasses['MassMessage'] = "$dir/includes/MassMessage.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/includes/SpecialMassMessage.php";
+$wgAutoloadClasses['SpecialCreateMassMessageList'] = "$dir/includes/SpecialCreateMassMessageList.php";
+$wgAutoloadClasses['SpecialEditMassMessageList'] = "$dir/includes/SpecialEditMassMessageList.php";
 $wgAutoloadClasses['MassMessageJob'] = "$dir/includes/job/MassMessageJob.php";
 $wgAutoloadClasses['MassMessageSubmitJob'] = "$dir/includes/job/MassMessageSubmitJob.php";
 $wgAutoloadClasses['MassMessageFailureLogFormatter'] = "$dir/includes/logging/MassMessageFailureLogFormatter.php";
 $wgAutoloadClasses['MassMessageSendLogFormatter'] = "$dir/includes/logging/MassMessageSendLogFormatter.php";
 $wgAutoloadClasses['MassMessageSkipLogFormatter'] = "$dir/includes/logging/MassMessageSkipLogFormatter.php";
+$wgAutoloadClasses['MassMessageListContent'] = "$dir/includes/content/MassMessageListContent.php";
+$wgAutoloadClasses['MassMessageListContentHandler'] = "$dir/includes/content/MassMessageListContentHandler.php";
 
+// ContentHandler
+$wgContentHandlers['MassMessageListContent'] = 'MassMessageListContentHandler';
+
+// API modules
 $wgAPIModules['massmessage'] = 'ApiMassMessage';
 
+// Job classes
 $wgJobClasses['MassMessageJob'] = 'MassMessageJob';
 $wgJobClasses['MassMessageSubmitJob'] = 'MassMessageSubmitJob';
 
+// Hooks
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
 $wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';
 $wgHooks['APIQuerySiteInfoStatisticsInfo'][] = 'MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo';
@@ -89,7 +100,14 @@ $wgHooks['RenameUserPreRename'][] = 'MassMessageHooks::onRenameUserPreRename';
 $wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
 $wgHooks['BeforeEchoEventInsert'][] = 'MassMessageHooks::onBeforeEchoEventInsert';
+$wgHooks['SkinTemplateNavigation'][] = 'MassMessageHooks::onSkinTemplateNavigation';
 
+// Special pages
+$wgSpecialPages['MassMessage'] = 'SpecialMassMessage';
+$wgSpecialPages['CreateMassMessageList'] = 'SpecialCreateMassMessageList';
+$wgSpecialPages['EditMassMessageList'] = 'SpecialEditMassMessageList';
+
+// ResourceLoader
 $wgResourceModules['ext.MassMessage.special.js'] = array(
 	'scripts' => array(
 		'ext.MassMessage.special.js',
@@ -106,13 +124,13 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
-
 $wgResourceModules['ext.MassMessage.special'] = array(
 	'styles' => 'ext.MassMessage.special.css',
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 
+// Logging
 $wgLogTypes[] = 'massmessage';
 $wgLogActionsHandlers['massmessage/*'] = 'LogFormatter';
 $wgLogActionsHandlers['massmessage/send'] = 'MassMessageSendLogFormatter';
