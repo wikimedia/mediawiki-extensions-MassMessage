@@ -46,7 +46,6 @@
 	"massmessage-content-pages": "Pages in this list",
 	"massmessage-content-pagesonsite": "Pages on $1:",
 	"massmessage-content-localpages": "Pages on this wiki:",
-	"massmessage-content-invalid": "This page does not contain a valid mass message delivery list.",
 	"massmessage-content-empty": "There are no pages in this list.",
 	"createmassmessagelist-legend": "Create mass message delivery list",
 	"massmessage-create-title": "Title:",

@@ -110,11 +110,16 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		if ( !$jsonText ) {
 			return Status::newFatal( 'massmessage-edit-tojsonerror' );
 		}
-		$content = new MassMessageListContent( $jsonText );
+		try {
+			$content = ContentHandler::makeContent( $jsonText, $this->title,
+				'MassMessageListContent' );
+		} catch ( MWContentSerializationException $e ) {
+			return Status::newFatal( 'massmessage-edit-tojsonerror' );
+		}
 
 		$result = WikiPage::factory( $this->title )->doEditContent(
 			$content,
-			$this->msg( 'massmessage-edit-editsummary' )->escaped()
+			$this->msg( 'massmessage-edit-editsummary' )->plain()
 		);
 		if ( $result->isOK() ) {
 			$this->getOutput()->redirect( $this->title->getFullUrl() );
@@ -168,6 +173,12 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				continue; // Silently skip invalid titles.
 			}
 			$titleText = $title->getPrefixedText(); // Use the canonical form.
+
+			if ( $site ) {
+				if ( MassMessage::getDBName( $site ) === null ) {
+					continue; // Silently skip entries with an invalid site.
+				}
+			}
 
 			if ( $site ) {
 				$targets[] = array( 'title' => $titleText, 'site' => $site );

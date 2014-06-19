@@ -47,7 +47,6 @@
 	"massmessage-content-pages": "Section title for the list of pages when viewing a a delivery list",
 	"massmessage-content-pagesonsite": "Subheading for the list of pages on a particular wiki\n* $1 is the domain of the wiki",
 	"massmessage-content-localpages": "Subheading for the list of pages on the local wiki",
-	"massmessage-content-invalid": "Error message shown when viewing a delivery list if the list content is invalid",
 	"massmessage-content-empty": "Message shown when viewing a delivery list if it is empty",
 	"createmassmessagelist-legend": "Form legend for [[Special:CreateMassMessageList]]",
 	"massmessage-create-title": "Label for an inputbox on [[Special:CreateMassMessageList]]",

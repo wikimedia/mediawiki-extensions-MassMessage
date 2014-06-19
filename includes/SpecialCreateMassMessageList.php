@@ -64,11 +64,15 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		if ( !$jsonText ) {
 			return Status::newFatal( 'massmessage-create-tojsonerror' );
 		}
-		$content = new MassMessageListContent( $jsonText );
+		try {
+			$content = ContentHandler::makeContent( $jsonText, $title, 'MassMessageListContent' );
+		} catch ( MWContentSerializationException $e ) {
+			return Status::newFatal( 'massmessage-create-tojsonerror' );
+		}
 
 		$result = WikiPage::factory( $title )->doEditContent(
 			$content,
-			$this->msg( 'massmessage-create-editsummary' )->escaped()
+			$this->msg( 'massmessage-create-editsummary' )->plain()
 		);
 		if ( $result->isOK() ) {
 			$this->getOutput()->redirect( $title->getFullUrl() );

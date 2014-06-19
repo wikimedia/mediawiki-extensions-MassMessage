@@ -33,13 +33,18 @@ class MassMessageListContent extends TextContent {
 	 *
 	 * @return bool Whether the contents are valid
 	 */
-	public function validate() {
+	public function isValid() {
 		$this->decode();
 		if ( !is_string( $this->description ) || !is_array( $this->targets ) ) {
 			return false;
 		}
 		foreach ( $this->targets as $target ) {
-			if ( !is_array( $target ) || !array_key_exists( 'title', $target ) ) {
+			if ( !is_array( $target )
+				|| !array_key_exists( 'title', $target )
+				|| Title::newFromText( $target['title'] ) === null
+				|| array_key_exists( 'site', $target )
+				&& MassMessage::getDBName( $target['site'] ) === null
+			) {
 				return false;
 			}
 		}
@@ -89,14 +94,7 @@ class MassMessageListContent extends TextContent {
 	protected function fillParserOutput( Title $title, $revId, ParserOptions $options,
 		$generateHtml, ParserOutput &$output
 	) {
-		global $wgParser;
-
-		if ( !$this->validate() ) {
-			$output->setText(
-				'<p class="error">' . wfMessage( 'massmessage-content-invalid' )->parse() . '</p>'
-			);
-			return;
-		}
+		global $wgParser, $wgScript;
 
 		// Parse the description text.
 		$output = $wgParser->parse( $this->getDescription(), $title, $options, true, true, $revId );
@@ -106,10 +104,10 @@ class MassMessageListContent extends TextContent {
 		foreach ( $targets as $target ) {
 			if ( !array_key_exists( 'site', $target ) ) {
 				$output->addLink( Title::newFromText( $target['title'] ) );
+			} else {
+				$output->addExternalLink( '//' . $target['site'] . $wgScript . '?title='
+					. Title::newFromText( $target['title'] )->getPrefixedURL() );
 			}
-
-			// TODO: Add links for external targets.
-
 		}
 
 		// Add the list content to the output, if needed.
@@ -126,6 +124,8 @@ class MassMessageListContent extends TextContent {
 	 * @return string
 	 */
 	protected function getTargetsHtml() {
+		global $wgScript;
+
 		$html = '<h2>' . wfMessage( 'massmessage-content-pages' )->parse() . "</h2>\n";
 
 		$sites = $this->getTargetsBySite();
@@ -157,7 +157,11 @@ class MassMessageListContent extends TextContent {
 				if ( $site === 'local' ) {
 					$html .= '<li>' . Linker::link( Title::newFromText( $target ) ) . "</li>\n";
 				} else {
-					$html .= '<li>' . $target . "</li>\n";
+					$title = Title::newFromText( $target );
+					$url = "//$site$wgScript?title=" . $title->getPrefixedURL();
+					$html .= '<li>'
+						. Linker::makeExternalLink( $url, $title->getPrefixedText() )
+						. "</li>\n";
 				}
 			}
 			$html .= "</ul>\n";

@@ -16,7 +16,11 @@ class MassMessageListContentHandler extends TextContentHandler {
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
-		return new MassMessageListContent( $text );
+		$content = new MassMessageListContent( $text );
+		if ( !$content->isValid() ) {
+			throw new MWContentSerializationException( 'The delivery list is invalid.' );
+		}
+		return $content;
 	}
 
 	/**

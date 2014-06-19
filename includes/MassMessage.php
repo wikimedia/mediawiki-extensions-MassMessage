@@ -180,6 +180,21 @@ class MassMessage {
 	}
 
 	/**
+	 * Get an array of targets from a page with the MassMessageListContent model
+	 * @param Title $spamlist
+	 * @return array
+	 */
+	public static function getMassMessageListContentTargets ( Title $spamlist ) {
+		$targets = Revision::newFromTitle( $spamlist )->getContent()->getTargets();
+		foreach ( $targets as $index => &$target ) {
+			if ( !array_key_exists( 'site', $target ) ) {
+				$target['wiki'] = wfWikiID();
+			}
+		}
+		return self::normalizeTargets( $targets );
+	}
+
+	/**
 	 * Get an array of targets via the #target parser function
 	 * @param  Title $spamlist
 	 * @param  IContextSource $context
@@ -317,7 +332,10 @@ class MassMessage {
 			}
 		}
 
-		if ( $spamlist->getContentModel() != CONTENT_MODEL_WIKITEXT ) {
+		$contentModel = $spamlist->getContentModel();
+		if ( $contentModel !== 'MassMessageListContent'
+			&& $contentModel !== CONTENT_MODEL_WIKITEXT
+		) {
 			return 'massmessage-spamlist-doesnotexist';
 		}
 
@@ -357,6 +375,8 @@ class MassMessage {
 		// Get the array of pages to deliver to.
 		if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
 			$pages = self::getCategoryTargets( $spamlist );
+		} elseif ( $spamlist->hasContentModel( 'MassMessageListContent' ) ) {
+			$pages = self::getMassMessageListContentTargets( $spamlist );
 		} else {
 			$pages = self::getParserFunctionTargets( $spamlist, $context );
 		}
