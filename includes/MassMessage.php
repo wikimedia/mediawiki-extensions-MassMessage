@@ -116,31 +116,22 @@ class MassMessage {
 	}
 
 	/**
-	 * Perform various normalization functions on the target data
+	 * Normalize target array by following redirects and removing duplicates
 	 * @param  array $data
 	 * @return array
 	 */
 	public static function normalizeTargets( array $data ) {
 		global $wgNamespacesToConvert;
-		$targets = array();
-		foreach ( $data as $target ) {
 
-			if ( !isset( $target['wiki'] ) ) {
-				$wiki = self::getDBName( $target['site'] );
-				if ( $wiki == null ) {
-					// Not set in $wgConf
-					continue;
-				}
-				$target['wiki'] = $wiki;
-			}
-
-			if ( $target['wiki'] == wfWikiID() ) {
+		foreach ( $data as &$target ) {
+			if ( $target['wiki'] === wfWikiID() ) {
 				$title = Title::newFromText( $target['title'] );
 				if ( $title === null ) {
 					continue;
 				}
 				if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
-					$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
+					$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()],
+						$title->getText() );
 				}
 				$title = self::followRedirect( $title );
 				if ( $title === null ) {
@@ -148,14 +139,10 @@ class MassMessage {
 				}
 				$target['title'] = $title->getPrefixedText();
 			}
-
-			// Use an assoc array to clear dupes
-			$targets[$target['title'] . '<' . $target['wiki']] = $target;
-			// Use a funky delimiter so people can't mess with it by using
-			// "creative" page names
 		}
 
-		return $targets;
+		// Return $data with duplicates removed
+		return array_unique( $data, SORT_REGULAR );
 	}
 
 	/**
@@ -185,9 +172,13 @@ class MassMessage {
 	 * @return array
 	 */
 	public static function getMassMessageListContentTargets ( Title $spamlist ) {
+		global $wgServer;
+
 		$targets = Revision::newFromTitle( $spamlist )->getContent()->getTargets();
-		foreach ( $targets as $index => &$target ) {
-			if ( !array_key_exists( 'site', $target ) ) {
+		foreach ( $targets as &$target ) {
+			if ( array_key_exists( 'site', $target ) ) {
+				$target['wiki'] = MassMessage::getDBName( $target['site'] );
+			} else {
 				$target['wiki'] = wfWikiID();
 			}
 		}
@@ -291,7 +282,7 @@ class MassMessage {
 				wfWikiID(),
 				$url
 			);
-		} else {
+		} else { // $spamlist contains a message key for an error message
 			$status->fatal( $spamlist );
 		}
 
@@ -326,17 +317,20 @@ class MassMessage {
 			// Page exists, follow a redirect if possible
 			$target = MassMessage::followRedirect( $spamlist );
 			if ( $target === null || !$target->exists() ) {
-				return 'massmessage-spamlist-doesnotexist'; // Interwiki redirect or non-existent page.
+				return 'massmessage-spamlist-invalid'; // Interwiki redirect or non-existent page.
 			} else {
 				$spamlist = $target;
 			}
 		}
 
 		$contentModel = $spamlist->getContentModel();
+
 		if ( $contentModel !== 'MassMessageListContent'
 			&& $contentModel !== CONTENT_MODEL_WIKITEXT
+			|| $contentModel === 'MassMessageListContent'
+			&& !Revision::newFromTitle( $spamlist )->getContent()->isValid()
 		) {
-			return 'massmessage-spamlist-doesnotexist';
+			return 'massmessage-spamlist-invalid';
 		}
 
 		return $spamlist;
@@ -364,6 +358,7 @@ class MassMessage {
 
 	/**
 	 * Send out the message!
+	 * Note that this function does not perform validation on $data
 	 *
 	 * @param IContextSource $context
 	 * @param array $data

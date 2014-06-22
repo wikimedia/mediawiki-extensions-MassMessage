@@ -18,7 +18,7 @@ class MassMessageListContentHandler extends TextContentHandler {
 		$this->checkFormat( $format );
 		$content = new MassMessageListContent( $text );
 		if ( !$content->isValid() ) {
-			throw new MWContentSerializationException( 'The delivery list is invalid.' );
+			throw new MWContentSerializationException( 'The delivery list content is invalid.' );
 		}
 		return $content;
 	}

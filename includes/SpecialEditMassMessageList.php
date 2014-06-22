@@ -188,7 +188,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		}
 
 		// Remove duplicates and sort.
-		$targets = array_map( 'unserialize', array_unique( array_map( 'serialize', $targets ) ) );
+		$targets = array_unique( $targets, SORT_REGULAR );
 		usort( $targets, 'self::compareTargets' );
 
 		return FormatJson::encode( array( 'description' => $description, 'targets' => $targets ) );

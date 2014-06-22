@@ -18,37 +18,35 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /*
  * Namespaces to post in
  *
- * Only let the bot post in these namespaces plus
- * all talk namespaces regardless of what the user
- * specificed in the input list. This is checked
- * after $wgNamespacesToConvert is applied.
- * Applies to both local and global messages.
+ * Only let the bot post in these namespaces plus all talk namespaces regardless
+ * of what the user specificed in the input list. This is checked after $wgNamespacesToConvert
+ * is applied. Applies to both local and global messages.
  */
 $wgNamespacesToPostIn = array( NS_PROJECT );
 
 /*
  * Namespaces to convert
  *
- * If you want users to be able to provide a link to a User: page,
- * but have the bot post on their User talk: page you can define that here.
- * Applies to both local and global messages.
+ * If you want users to be able to provide a link to a User: page, but have the bot
+ * post on their User talk: page you can define that here. Applies to both local
+ * and global messages.
  */
 $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
 
 /*
  * Username of the messenger bot
  *
- * This ensures that local administrators cannot change the bot's username
- * by editing a system message, which would interfere with global messages
+ * This ensures that local administrators cannot change the bot's username by editing
+ * a system message, which would interfere with global messages.
  */
 $wgMassMessageAccountUsername = 'MediaWiki message delivery';
 
 /**
  * Whether to allow sending messages to another wiki
  *
- * This can be enabled on a "central" wiki to make it
- * easier to keep track of where messages are being sent
- * from.
+ * This can be enabled on a "central" wiki to make it easier to keep track of where
+ * messages are being sent from. Changing this from true to false will render existing
+ * delivery lists containing external targets invalid.
  */
 $wgAllowGlobalMessaging = true;
 

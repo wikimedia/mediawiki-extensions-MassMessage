@@ -34,7 +34,9 @@ class MassMessageListContent extends TextContent {
 	 * @return bool Whether the contents are valid
 	 */
 	public function isValid() {
-		$this->decode();
+		global $wgAllowGlobalMessaging;
+
+		$this->decode(); // Populate $this->description and $this->targets.
 		if ( !is_string( $this->description ) || !is_array( $this->targets ) ) {
 			return false;
 		}
@@ -42,10 +44,14 @@ class MassMessageListContent extends TextContent {
 			if ( !is_array( $target )
 				|| !array_key_exists( 'title', $target )
 				|| Title::newFromText( $target['title'] ) === null
-				|| array_key_exists( 'site', $target )
-				&& MassMessage::getDBName( $target['site'] ) === null
 			) {
 				return false;
+			}
+			if ( array_key_exists( 'site', $target ) ) {
+				$wiki = MassMessage::getDBName( $target['site'] );
+				if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki !== wfWikiId() ) {
+					return false;
+				}
 			}
 		}
 		return true;
