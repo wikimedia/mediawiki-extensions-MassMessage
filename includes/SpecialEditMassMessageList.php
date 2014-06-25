@@ -118,21 +118,27 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return Status::newFatal( 'massmessage-edit-tojsonerror' );
 		}
 
+		$request = new DerivativeRequest(
+			$this->getRequest(),
+			array(
+				'action' => 'edit',
+				'title' => $this->title->getFullText(),
+				'contentmodel' => 'MassMessageListContent',
+				'text' => $jsonText,
+				'summary' => $this->msg( 'massmessage-edit-editsummary' )->plain(),
+				'token' => $this->getUser()->getEditToken(),
+			),
+			true // Treat data as POSTed
+		);
+
 		try {
-			$content = ContentHandler::makeContent( $jsonText, $this->title,
-				'MassMessageListContent' );
-		} catch ( MWContentSerializationException $e ) {
-			return Status::newFatal( 'massmessage-edit-tojsonerror' );
+			$api = new ApiMain( $request, true );
+			$api->execute();
+		} catch ( UsageException $e ) {
+			return Status::newFatal( $this->msg( 'massmessage-edit-apierror', $e->getCodeString ) );
 		}
 
-		$result = WikiPage::factory( $this->title )->doEditContent(
-			$content,
-			$this->msg( 'massmessage-edit-editsummary' )->plain()
-		);
-		if ( $result->isOK() ) {
-			$this->getOutput()->redirect( $this->title->getFullUrl() );
-		}
-		return $result;
+		$this->getOutput()->redirect( $this->title->getFullUrl() );
 	}
 
 	public function onSuccess() {

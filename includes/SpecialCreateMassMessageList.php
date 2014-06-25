@@ -57,27 +57,35 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			$targets = array();
 		}
 
-
 		$jsonText = FormatJson::encode(
 			array( 'description' => $data['description'], 'targets' => $targets )
 		);
 		if ( !$jsonText ) {
 			return Status::newFatal( 'massmessage-create-tojsonerror' );
 		}
+
+		$request = new DerivativeRequest(
+			$this->getRequest(),
+			array(
+				'action' => 'edit',
+				'title' => $title->getFullText(),
+				'contentmodel' => 'MassMessageListContent',
+				'text' => $jsonText,
+				'summary' => $this->msg( 'massmessage-create-editsummary' )->plain(),
+				'token' => $this->getUser()->getEditToken(),
+			),
+			true // Treat data as POSTed
+		);
+
 		try {
-			$content = ContentHandler::makeContent( $jsonText, $title, 'MassMessageListContent' );
-		} catch ( MWContentSerializationException $e ) {
-			return Status::newFatal( 'massmessage-create-tojsonerror' );
+			$api = new ApiMain( $request, true );
+			$api->execute();
+		} catch ( UsageException $e ) {
+			return Status::newFatal( $this->msg( 'massmessage-create-apierror',
+				$e->getCodeString ) );
 		}
 
-		$result = WikiPage::factory( $title )->doEditContent(
-			$content,
-			$this->msg( 'massmessage-create-editsummary' )->plain()
-		);
-		if ( $result->isOK() ) {
-			$this->getOutput()->redirect( $title->getFullUrl() );
-		}
-		return $result;
+		$this->getOutput()->redirect( $title->getFullUrl() );
 	}
 
 	public function onSuccess() {

@@ -60,6 +60,7 @@
 	"massmessage-create-exists": "A page already exists at the specified title.",
 	"massmessage-create-nopermission": "You do not have permission to create a list at this title.",
 	"massmessage-create-tojsonerror": "The list could not be encoded for storage.",
+	"massmessage-create-apierror": "Creating the list through the API failed with errror code $1.",
 	"editmassmessagelist-legend": "Edit mass message delivery list",
 	"massmessage-edit-title": "Title:",
 	"massmessage-edit-description": "Description:",
@@ -69,5 +70,6 @@
 	"massmessage-edit-invalidtitle": "There is no valid mass message delivery list at the title.",
 	"massmessage-edit-invalidtargets": "One of more of the entries in the list are invalid.",
 	"massmessage-edit-nopermission": "You do not have permission to edit the list.",
-	"massmessage-edit-tojsonerror": "The list could not be encoded for storage."
+	"massmessage-edit-tojsonerror": "The list could not be encoded for storage.",
+	"massmessage-edit-apierror": "Saving changes through the API failed with errror code $1."
 }
