@@ -68,6 +68,7 @@
 	"massmessage-edit-header": "Instructions for [[Special:EditMassMessageList]]",
 	"massmessage-edit-editsummary": "Edit summary for editing a delivery list",
 	"massmessage-edit-invalidtitle": "Error message shown on [[Special:EditMassMessageList]] when the title is invalid",
+	"massmessage-edit-invalidtargets": "Error message shown on [[Special:EditMassMessageList]] when one ore more targets are invalid",
 	"massmessage-edit-nopermission": "Error message shown on [[Special:EditMassMessageList]] when the user cannot edit the list",
 	"massmessage-edit-tojsonerror": "Error message shown on [[Special:EditMassMessageList]] when the input could not be successfully encoded"
 }

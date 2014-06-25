@@ -106,10 +106,18 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return Status::newFatal( 'massmessage-edit-invalidtitle' );
 		}
 
-		$jsonText = self::convertToJson( $data['description'], $data['content'] );
-		if ( !$jsonText ) {
+		$targets = self::parseInput( $data['content'] );
+		if ( $targets === null ) {
+			return Status::newFatal( 'massmessage-edit-invalidtargets' );
+		}
+
+		$jsonText = FormatJson::encode(
+			array( 'description' => $data['description'], 'targets' => $targets )
+		);
+		if ( $jsonText === null ) {
 			return Status::newFatal( 'massmessage-edit-tojsonerror' );
 		}
+
 		try {
 			$content = ContentHandler::makeContent( $jsonText, $this->title,
 				'MassMessageListContent' );
@@ -149,13 +157,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * Parse user input and convert it to JSON format.
-	 * @param string $description
-	 * @param string $targetsText
-	 * @return string
+	 * Parse user input into targets array. Returns null if input contains invalid data.
+	 * @param string $input
+	 * @return array|null
 	 */
-	protected static function convertToJson( $description, $targetsText ) {
-		$lines = array_filter( explode( "\n", $targetsText ), 'trim' ); // Array of non-empty lines
+	protected static function parseInput( $input ) {
+		global $wgAllowGlobalMessaging;
+
+		$lines = array_filter( explode( "\n", $input ), 'trim' ); // Array of non-empty lines
 
 		$targets = array();
 		foreach ( $lines as $line ) {
@@ -170,13 +179,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 			$title = Title::newFromText( $titleText );
 			if ( !$title ) {
-				continue; // Silently skip invalid titles.
+				return null;
 			}
 			$titleText = $title->getPrefixedText(); // Use the canonical form.
 
 			if ( $site ) {
-				if ( MassMessage::getDBName( $site ) === null ) {
-					continue; // Silently skip entries with an invalid site.
+				$wiki = MassMessage::getDBName( $site );
+				if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki != wfWikiID() ) {
+					return null;
 				}
 			}
 
@@ -190,12 +200,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		// Remove duplicates and sort.
 		$targets = array_unique( $targets, SORT_REGULAR );
 		usort( $targets, 'self::compareTargets' );
-
-		return FormatJson::encode( array( 'description' => $description, 'targets' => $targets ) );
+		return $targets;
 	}
 
 	/**
-	 * Helper function for convertToJson; compare two targets for ordering.
+	 * Helper function for parseInput; compare two targets for ordering.
 	 * @param array $a
 	 * @paran array $b
 	 * @return int
