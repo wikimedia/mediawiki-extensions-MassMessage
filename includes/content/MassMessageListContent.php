@@ -132,13 +132,15 @@ class MassMessageListContent extends TextContent {
 	protected function getTargetsHtml() {
 		global $wgScript;
 
-		$html = '<h2>' . wfMessage( 'massmessage-content-pages' )->parse() . "</h2>\n";
+		$html = Html::rawElement( 'h2', array(),
+			wfMessage( 'massmessage-content-pages' )->parse() );
 
 		$sites = $this->getTargetsBySite();
 
 		// If the list is empty
 		if ( count( $sites ) === 0 ) {
-			$html .= '<p>' . wfMessage( 'massmessage-content-empty' )->parse() . "</p>\n";
+			$html .= Html::rawElement( 'p', array(),
+				wfMessage( 'massmessage-content-empty' )->parse() );
 			return $html;
 		}
 
@@ -149,28 +151,27 @@ class MassMessageListContent extends TextContent {
 		foreach ( $sites as $site => $targets ) {
 			if ( $printSites ) {
 				if ( $site === 'local' ) {
-					$html .= '<p>' . wfMessage( 'massmessage-content-localpages' )->parse()
-						. "</p>\n";
+					$html .= Html::rawElement( 'p', array(),
+						wfMessage( 'massmessage-content-localpages' )->parse() );
 				} else {
-					$html .= '<p>'
-						. wfMessage( 'massmessage-content-pagesonsite', $site )->parse()
-						. "</p>\n";
+					$html .= Html::rawElement( 'p', array(),
+						wfMessage( 'massmessage-content-pagesonsite', $site )->parse() );
 				}
 			}
 
-			$html .= "<ul>\n";
+			$html .= Html::openElement( 'ul' );
 			foreach ( $targets as $target ) {
 				if ( $site === 'local' ) {
-					$html .= '<li>' . Linker::link( Title::newFromText( $target ) ) . "</li>\n";
+					$html .= Html::rawElement( 'li', array(),
+						Linker::link( Title::newFromText( $target ) ) );
 				} else {
 					$title = Title::newFromText( $target );
 					$url = "//$site$wgScript?title=" . $title->getPrefixedURL();
-					$html .= '<li>'
-						. Linker::makeExternalLink( $url, $title->getPrefixedText() )
-						. "</li>\n";
+					$html .= Html::rawElement( 'li', array(),
+						Linker::makeExternalLink( $url, $title->getPrefixedText() ) );
 				}
 			}
-			$html .= "</ul>\n";
+			$html .= Html::closeElement( 'ul' );
 		}
 
 		return $html;
