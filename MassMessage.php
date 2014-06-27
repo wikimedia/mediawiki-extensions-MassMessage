@@ -127,6 +127,13 @@ $wgResourceModules['ext.MassMessage.special'] = array(
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
+$wgResourceModules['ext.MassMessage.create'] = array(
+	'scripts' => array(
+		'ext.MassMessage.create.js',
+	),
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
+);
 
 // Logging
 $wgLogTypes[] = 'massmessage';

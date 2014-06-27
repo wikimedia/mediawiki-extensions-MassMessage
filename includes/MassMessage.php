@@ -146,24 +146,45 @@ class MassMessage {
 	}
 
 	/**
+	 * Get an array of targets given a title.
+	 * @param Title $spamlist
+	 * @param IContextSource $context
+	 * @return array|null
+	 */
+	 public static function getTargets( Title $spamlist, $context ) {
+		if ( !$spamlist->exists() && !$spamlist->inNamespace( NS_CATEGORY ) ) {
+			return null;
+		}
+
+		if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
+			return self::getCategoryTargets( $spamlist );
+		} elseif ( $spamlist->hasContentModel( 'MassMessageListContent' ) ) {
+			return self::getMassMessageListContentTargets( $spamlist );
+		} elseif ( $spamlist->hasContentModel( CONTENT_MODEL_WIKITEXT ) ) {
+			return self::getParserFunctionTargets( $spamlist, $context );
+		} else {
+			return null;
+		}
+	 }
+
+	/**
 	 * Get an array of targets from a category
 	 * @param  Title $spamlist
 	 * @return array
 	 */
 	public static function getCategoryTargets( Title $spamlist ) {
-		$cat = Category::newFromTitle( $spamlist );
-		$members = $cat->getMembers();
+		$members = Category::newFromTitle( $spamlist )->getMembers();
 		$targets = array();
 
 		/** @var Title $member */
 		foreach ( $members as $member ) {
-			$target = array();
-			$target['title'] = $member->getPrefixedText();
-			$target['wiki'] = wfWikiID();
-			$targets[] = $target;
+			$targets[] = array(
+				'title' => $member->getPrefixedText(),
+				'wiki' => wfWikiID(),
+			);
 		}
 
-		return self::normalizeTargets( $targets );
+		return $targets;
 	}
 
 	/**
@@ -182,7 +203,7 @@ class MassMessage {
 				$target['wiki'] = wfWikiID();
 			}
 		}
-		return self::normalizeTargets( $targets );
+		return $targets;
 	}
 
 	/**
@@ -206,7 +227,7 @@ class MassMessage {
 		$data = unserialize( $output->getProperty( 'massmessage-targets' ) );
 
 		if ( $data ) {
-			return self::normalizeTargets( $data );
+			return $data;
 		} else {
 			return array(); // No parser functions on page
 		}
@@ -368,13 +389,7 @@ class MassMessage {
 		$spamlist = self::getSpamlist( $data['spamlist'] );
 
 		// Get the array of pages to deliver to.
-		if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
-			$pages = self::getCategoryTargets( $spamlist );
-		} elseif ( $spamlist->hasContentModel( 'MassMessageListContent' ) ) {
-			$pages = self::getMassMessageListContentTargets( $spamlist );
-		} else {
-			$pages = self::getParserFunctionTargets( $spamlist, $context );
-		}
+		$pages = self::normalizeTargets( self::getTargets( $spamlist, $context ) );
 
 		// Log it.
 		self::logToWiki( $spamlist, $context->getUser(), $data['subject'] );

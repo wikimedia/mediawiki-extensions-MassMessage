@@ -109,7 +109,10 @@ class MassMessageTest extends MediaWikiTestCase {
 	public function testGetParserFunctionTargets( $text, $check ) {
 		$title = Title::newFromText( 'Input list ');
 		self::updatePage( $title, $text );
-		$data = MassMessage::getParserFunctionTargets( $title, RequestContext::getMain() );
+		$data = MassMessage::normalizeTargets(
+			MassMessage::getParserFunctionTargets( $title, RequestContext::getMain() )
+		);
+
 		if ( empty( $check ) ) {
 			// Check that the spamlist is empty
 			$this->assertTrue( empty( $data ) );

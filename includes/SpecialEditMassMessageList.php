@@ -135,7 +135,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$api = new ApiMain( $request, true );
 			$api->execute();
 		} catch ( UsageException $e ) {
-			return Status::newFatal( $this->msg( 'massmessage-edit-apierror', $e->getCodeString ) );
+			return Status::newFatal( $this->msg( 'massmessage-edit-apierror',
+				$e->getCodeString() ) );
 		}
 
 		$this->getOutput()->redirect( $this->title->getFullUrl() );

@@ -7,6 +7,15 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	}
 
 	/**
+	 * Add ResourceLoader module and call parent implementation.
+	 * @param string $par
+	 */
+	public function execute( $par ) {
+		$this->getOutput()->addModules( 'ext.MassMessage.create' );
+		parent::execute( $par );
+	}
+
+	/**
 	 * @return array
 	 */
 	protected function getFormFields() {
@@ -28,7 +37,6 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			),
 			'source' => array(
 				'type' => 'text',
-				'disabled' => true,
 				'label-message' => 'massmessage-create-source',
 			),
 		);
@@ -48,11 +56,16 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			return Status::newFatal( 'massmessage-create-nopermission' );
 		}
 
-		if ( $data['content'] === 'import' ) {
+		if ( $data['content'] === 'import' ) { // Importing from an existing list
+			$source = Title::newFromText( $data['source'] );
+			if ( !$source ) {
+				return Status::newFatal( 'massmessage-create-invalidsource' );
+			}
 
-			// TODO: Implement importing from existing lists
-			$targets = array();
-
+			$targets = $this->getTargets( $source );
+			if ( $targets === null ) {
+				return Status::newFatal( 'massmessage-create-invalidsource' );
+			}
 		} else {
 			$targets = array();
 		}
@@ -82,7 +95,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			$api->execute();
 		} catch ( UsageException $e ) {
 			return Status::newFatal( $this->msg( 'massmessage-create-apierror',
-				$e->getCodeString ) );
+				$e->getCodeString() ) );
 		}
 
 		$this->getOutput()->redirect( $title->getFullUrl() );
@@ -107,5 +120,27 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			$options[$this->msg( $msgKey )->escaped()] = $option;
 		}
 		return $options;
+	}
+
+	/**
+	 * Get targets from an existing delivery list or category.
+	 * @param Title $source
+	 * @return array|null
+	 */
+	protected function getTargets( Title $source ) {
+		$pages = MassMessage::getTargets( $source, $this->getContext() );
+		if ( $pages === null ) {
+			return null;
+		}
+
+		$targets = array();
+		foreach ( $pages as $page ) {
+			$target = array( 'title' => $page['title'] );
+			if ( $page['wiki'] !== wfWikiID() ) {
+				$target['site'] = $page['site'];
+			}
+			$targets[] = $target;
+		}
+		return $targets;
 	}
 }
