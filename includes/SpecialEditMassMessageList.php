@@ -152,10 +152,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @return string
 	 */
 	protected static function parseTargets( $targets ) {
+		global $wgServerName;
+
 		$lines = array();
 		foreach ( $targets as $target ) {
 			if ( array_key_exists( 'site', $target ) ) {
 				$lines[] = $target['title'] . '@' . $target['site'];
+			} elseif ( strpos( $target['title'], '@' ) !== false ) {
+				$lines[] = $target['title'] . '@' . $wgServerName; // List site where ambiguous.
 			} else {
 				$lines[] = $target['title'];
 			}
@@ -169,7 +173,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @return array|null
 	 */
 	protected static function parseInput( $input ) {
-		global $wgAllowGlobalMessaging;
+		global $wgServerName, $wgAllowGlobalMessaging;
 
 		$lines = array_filter( explode( "\n", $input ), 'trim' ); // Array of non-empty lines
 
@@ -179,6 +183,9 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			if ( $delimiterPos !== false ) {
 				$titleText = substr( $line, 0, $delimiterPos );
 				$site = strtolower( substr( $line, $delimiterPos+1 ) );
+				if ( $site === $wgServerName ) {
+					$site = null; // Don't store site for local pages.
+				}
 			} else {
 				$titleText = $line;
 				$site = null;
