@@ -47,9 +47,9 @@ class SpecialMassMessage extends SpecialPage {
 		$this->status = new Status();
 
 		// Figure out what state we're in.
-		if ( $request->getText( 'submit-button' ) == $this->msg( 'massmessage-form-submit' )->text() ) {
+		if ( $request->getVal( 'submit-button' ) !== null ) {
 			$this->state = 'submit';
-		} elseif ( $request->getText( 'preview-button' ) == $this->msg( 'massmessage-form-preview' )->text() ) {
+		} elseif ( $request->getVal( 'preview-button' ) !== null ) {
 			$this->state = 'preview';
 		} else {
 			$this->state = 'form';
@@ -58,7 +58,7 @@ class SpecialMassMessage extends SpecialPage {
 		$form = new HtmlForm( $this->createForm(), $context );
 		$form->setId( 'mw-massmessage-form' );
 		$form->setDisplayFormat( 'div' );
-		if ( $this->state == 'form' ) {
+		if ( $this->state === 'form' ) {
 			$form->addPreText( $this->msg( 'massmessage-form-header' )->parse() );
 		}
 		$form->setWrapperLegendMsg( 'massmessage' );
@@ -69,13 +69,13 @@ class SpecialMassMessage extends SpecialPage {
 		$form->prepareForm();
 		$result = $form->tryAuthorizedSubmit();
 		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
-			if ( $this->state == 'submit' ) { // If it's preview, everything is shown already.
+			if ( $this->state === 'submit' ) { // If it's preview, everything is shown already.
 				$msg = $this->msg( 'massmessage-submitted' )->params( $this->count )->plain();
 				$output->addWikiText( $msg );
 				$output->addWikiMsg( 'massmessage-nextsteps' );
 			}
 		} else {
-			if ( $this->state == 'preview' ) {
+			if ( $this->state === 'preview' ) {
 				$result = $this->status;
 			}
 			$form->displayForm( $result );
@@ -140,7 +140,7 @@ class SpecialMassMessage extends SpecialPage {
 			'default' => $request->getText( 'message' )
 		);
 
-		if ( $this->state == 'preview' ) {
+		if ( $this->state === 'preview' ) {
 			// Adds it right before the 'Send' button
 			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse' );
 			$m['submit-button'] = array(
@@ -183,7 +183,7 @@ class SpecialMassMessage extends SpecialPage {
 			return $this->status;
 		}
 
-		if ( $this->state == 'submit' ) {
+		if ( $this->state === 'submit' ) {
 			$this->count = MassMessage::submit( $this->getContext(), $data );
 			return $this->status;
 		} else { // $this->state can only be 'preview' here
