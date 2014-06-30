@@ -261,31 +261,25 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	protected function preview( array $data ) {
-		// $spamlist = $this->getSpamlist( $data['spamlist'] );
-		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
-		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
-		$firstTarget = Title::newFromText( 'Project:Example' );
-		$wikipage = WikiPage::factory( $firstTarget );
+		// Use a mock target as the context for rendering the preview
+		$mockTarget = Title::newFromText( 'Project:Example' );
+		$wikipage = WikiPage::factory( $mockTarget );
 
 		// Hacked up from EditPage.php
-		// Is this really the best way to do this???
-
-		$subject = $data['subject'];
-		$message = $data['message'];
 
 		// Convert into a content object
-		$content = ContentHandler::makeContent( $message, $firstTarget );
+		$content = ContentHandler::makeContent( $data['message'], $mockTarget );
 		// Parser stuff. Taken from EditPage::getPreviewText()
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setEditSection( false );
 		$parserOptions->setIsPreview( true );
 		$parserOptions->setIsSectionPreview( false );
-		$content = $content->addSectionHeader( $subject );
+		$content = $content->addSectionHeader( $data['subject'] );
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
 
-		$content = $content->preSaveTransform( $firstTarget, MassMessage::getMessengerUser(), $parserOptions );
-		$parserOutput = $content->getParserOutput( $firstTarget, null, $parserOptions );
+		$content = $content->preSaveTransform( $mockTarget, MassMessage::getMessengerUser(), $parserOptions );
+		$parserOutput = $content->getParserOutput( $mockTarget, null, $parserOptions );
 		$previewHTML = $parserOutput->getText();
 		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
 		$fieldsetMessage = $this->msg( 'massmessage-fieldset-preview' )->text();
@@ -298,13 +292,11 @@ class SpecialMassMessage extends SpecialPage {
 		}
 
 		// Check for unclosed HTML tags (Bug 54909)
-		$unclosedTags = $this->getUnclosedTags( $message );
+		$unclosedTags = $this->getUnclosedTags( $data['message'] );
 		if ( !empty( $unclosedTags ) ) {
 			$this->status->fatal(
 				$this->msg( 'massmessage-badhtml' )
-					->params(
-						htmlspecialchars( $this->getLanguage()->commaList( $unclosedTags ) )
-					)
+					->params( htmlspecialchars( $this->getLanguage()->commaList( $unclosedTags ) ) )
 					->numParams( count( $unclosedTags ) )
 			);
 		}

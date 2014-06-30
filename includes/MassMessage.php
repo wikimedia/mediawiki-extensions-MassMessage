@@ -150,7 +150,7 @@ class MassMessage {
 	}
 
 	/**
-	 * Normalize target array by following redirects and removing duplicates
+	 * Get array of normalized targets with duplicates removed
 	 * @param  array $data
 	 * @return array
 	 */
@@ -180,7 +180,13 @@ class MassMessage {
 	}
 
 	/**
-	 * Get an array of targets given a title.
+	 * Get an array of targets given a title; returns null if invalid.
+	 *
+	 * Each target is an associative array with the following keys:
+	 * title: The title of the target
+	 * wiki: The ID of the wiki (wfWikiID() for the local wiki)
+	 * site: The hostname and port (if exists) of the wiki
+	 *
 	 * @param Title $spamlist
 	 * @param IContextSource $context
 	 * @return array|null
@@ -440,7 +446,7 @@ class MassMessage {
 		return count( $pages );
 	}
 
-	/*
+	/**
 	 * Gets a regular expression that will match this wiki's
 	 * timestamps as given by ~~~~.
 	 *
