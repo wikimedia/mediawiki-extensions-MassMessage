@@ -138,6 +138,7 @@ class MassMessageTest extends MediaWikiTestCase {
 		return array(
 			array( 'http://en.wikipedia.org', 'en.wikipedia.org' ),
 			array( 'https://en.wikipedia.org/wiki/Blah', 'en.wikipedia.org' ),
+			array( 'http://en.wikipedia.org:80/wiki/Blah', 'en.wikipedia.org:80' ),
 			array( '//test.wikidata.org/wiki/User talk:Example', 'test.wikidata.org' ),
 		);
 	}

@@ -69,17 +69,22 @@ class MassMessage {
 
 	/**
 	 * Returns the basic hostname and port using wfParseUrl
-	 * @param  string $url URL to parse
+	 * @param string $url
 	 * @return string
 	 */
 	public static function getBaseUrl( $url ) {
-		$parse = wfParseUrl( $url );
-		$site = $parse['host'];
-		if ( isset( $parse['port'] ) ) {
-			$site .= ':' . $parse['port'];
+		static $mapping = array();
+
+		if ( isset( $mapping[$url] ) ) {
+			return $mapping[$url];
 		}
 
-		return $site;
+		$parse = wfParseUrl( $url );
+		$mapping[$url] = $parse['host'];
+		if ( isset( $parse['port'] ) ) {
+			$mapping[$url] .= ':' . $parse['port'];
+		}
+		return $mapping[$url];
 	}
 
 	/**
@@ -101,8 +106,8 @@ class MassMessage {
 				$mapping = array();
 				foreach ( $dbs as $dbname ) {
 					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
-					$parse = wfParseUrl( $url );
-					$mapping[$parse['host']] = $dbname;
+					$site = self::getBaseUrl( $url );
+					$mapping[$site] = $dbname;
 				}
 				$wgMemc->set( $key, $mapping, 60 * 60 * 24 * 7 );
 			} else {
@@ -113,6 +118,35 @@ class MassMessage {
 			return $mapping[$host];
 		}
 		return null; // Couldn't find anything
+	}
+
+	/**
+	 * Verify that parser function data is valid and return processed data as an array
+	 * @param string $page
+	 * @param string $site
+	 * @return array
+	 */
+	public static function processPFData( $page, $site ) {
+		global $wgCanonicalServer, $wgAllowGlobalMessaging;
+
+		if ( Title::newFromText( $page ) === null ) {
+			return self::parserError( 'massmessage-parse-badpage', $page );
+		}
+
+		$data = array( 'title' => $page, 'site' => trim( $site ) );
+		if ( $data['site'] === '' ) {
+			$data['site'] = self::getBaseUrl( $wgCanonicalServer );
+			$data['wiki'] = wfWikiID();
+		} else {
+			$data['wiki'] = self::getDBName( $data['site'] );
+			if ( $data['wiki'] === null ) {
+				return self::parserError( 'massmessage-parse-badurl', $site );
+			}
+			if ( !$wgAllowGlobalMessaging && $data['wiki'] !== wfWikiID() ) {
+				return self::parserError( 'massmessage-global-disallowed' );
+			}
+		}
+		return $data;
 	}
 
 	/**
@@ -173,6 +207,8 @@ class MassMessage {
 	 * @return array
 	 */
 	public static function getCategoryTargets( Title $spamlist ) {
+		global $wgCanonicalServer;
+
 		$members = Category::newFromTitle( $spamlist )->getMembers();
 		$targets = array();
 
@@ -181,6 +217,7 @@ class MassMessage {
 			$targets[] = array(
 				'title' => $member->getPrefixedText(),
 				'wiki' => wfWikiID(),
+				'site' => self::getBaseUrl( $wgCanonicalServer ),
 			);
 		}
 
@@ -193,14 +230,15 @@ class MassMessage {
 	 * @return array
 	 */
 	public static function getMassMessageListContentTargets ( Title $spamlist ) {
-		global $wgServer;
+		global $wgCanonicalServer;
 
 		$targets = Revision::newFromTitle( $spamlist )->getContent()->getTargets();
 		foreach ( $targets as &$target ) {
 			if ( array_key_exists( 'site', $target ) ) {
-				$target['wiki'] = MassMessage::getDBName( $target['site'] );
+				$target['wiki'] = self::getDBName( $target['site'] );
 			} else {
 				$target['wiki'] = wfWikiID();
+				$target['site'] = self::getBaseUrl( $wgCanonicalServer );
 			}
 		}
 		return $targets;
@@ -336,7 +374,7 @@ class MassMessage {
 			return 'massmessage-spamlist-doesnotexist';
 		} else {
 			// Page exists, follow a redirect if possible
-			$target = MassMessage::followRedirect( $spamlist );
+			$target = self::followRedirect( $spamlist );
 			if ( $target === null || !$target->exists() ) {
 				return 'massmessage-spamlist-invalid'; // Interwiki redirect or non-existent page.
 			} else {

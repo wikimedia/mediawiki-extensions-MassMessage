@@ -17,40 +17,6 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Verifies the user submitted data to check it's valid
-	 * @param string $page
-	 * @param string $site
-	 * @return array
-	 */
-	public static function verifyPFData( $page, $site ) {
-		global $wgServer, $wgAllowGlobalMessaging;
-		$data = array( 'site' => $site, 'title' => $page );
-		if ( trim( $site ) === '' ) {
-			$site = MassMessage::getBaseUrl( $wgServer );
-			$data['site'] = $site;
-			$data['wiki'] = wfWikiID();
-		} elseif ( filter_var( 'http://' . $site, FILTER_VALIDATE_URL ) === false ) {
-			// Try and see if the site provided is not valid
-			// We can just prefix http:// in front since it needs some kind of protocol
-			return MassMessage::parserError( 'massmessage-parse-badurl', $site );
-		}
-		if ( is_null( Title::newFromText( $page ) ) ) {
-			// Check if the page provided is not valid
-			return MassMessage::parserError( 'massmessage-parse-badpage', $page );
-		}
-		if ( !isset( $data['wiki'] ) ) {
-			$data['wiki'] = MassMessage::getDBName( $data['site'] );
-			if ( $data['wiki'] === null ) {
-				return MassMessage::parserError( 'massmessage-parse-badurl', $site );
-			}
-		}
-		if ( !$wgAllowGlobalMessaging && $data['wiki'] != wfWikiID() ) {
-			return MassMessage::parserError( 'massmessage-global-disallowed' );
-		}
-		return $data;
-	}
-
-	/**
 	 * Main parser function for {{#target:User talk:Example|en.wikipedia.org}}
 	 * Prepares the human facing output
 	 * Hostname is optional for local delivery
@@ -62,16 +28,15 @@ class MassMessageHooks {
 	public static function outputParserFunction( Parser $parser, $page, $site = '' ) {
 		global $wgScript;
 
-		$data = self::verifyPFData( $page, $site );
+		$data = MassMessage::processPFData( $page, $site );
 		if ( isset( $data['error'] ) ) {
 			return $data;
 		}
 
-		$site = $data['site'];
-		$page = $data['title'];
-
 		// Use a message so wikis can customize the output
-		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();
+		$msg = wfMessage( 'massmessage-target' )
+			->params( $data['site'], $wgScript, $data['title'] )
+			->plain();
 
 		return array( $msg, 'noparse' => false );
 	}
@@ -84,7 +49,7 @@ class MassMessageHooks {
 	 * @return string
 	 */
 	public static function storeDataParserFunction( Parser $parser, $page, $site = '' ) {
-		$data = self::verifyPFData( $page, $site );
+		$data = MassMessage::processPFData( $page, $site );
 		if ( isset( $data['error'] ) ) {
 			return ''; // Output doesn't matter
 		}
