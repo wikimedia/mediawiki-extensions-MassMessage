@@ -69,6 +69,7 @@ $wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php
 $wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
 $wgAutoloadClasses['ApiMassMessage'] = "$dir/includes/ApiMassMessage.php";
 $wgAutoloadClasses['MassMessage'] = "$dir/includes/MassMessage.php";
+$wgAutoloadClasses['MassMessageTargets'] = "$dir/includes/MassMessageTargets.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/includes/SpecialMassMessage.php";
 $wgAutoloadClasses['SpecialCreateMassMessageList'] = "$dir/includes/SpecialCreateMassMessageList.php";
 $wgAutoloadClasses['SpecialEditMassMessageList'] = "$dir/includes/SpecialEditMassMessageList.php";
@@ -79,6 +80,7 @@ $wgAutoloadClasses['MassMessageSendLogFormatter'] = "$dir/includes/logging/MassM
 $wgAutoloadClasses['MassMessageSkipLogFormatter'] = "$dir/includes/logging/MassMessageSkipLogFormatter.php";
 $wgAutoloadClasses['MassMessageListContent'] = "$dir/includes/content/MassMessageListContent.php";
 $wgAutoloadClasses['MassMessageListContentHandler'] = "$dir/includes/content/MassMessageListContentHandler.php";
+$wgAutoloadClasses['MassMessageTestCase'] = "$dir/tests/MassMessageTestCase.php";
 
 // ContentHandler
 $wgContentHandlers['MassMessageListContent'] = 'MassMessageListContentHandler';

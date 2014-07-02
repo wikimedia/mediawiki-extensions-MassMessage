@@ -6,42 +6,7 @@
  * @group Database
  */
 
-class MassMessageTest extends MediaWikiTestCase {
-	protected function setUp() {
-		// $wgConf ewwwww
-		global $wgConf, $wgLocalDatabases, $wgLqtPages, $wgContLang;
-		$wgConf = new SiteConfiguration;
-		$wgConf->wikis = array( 'enwiki', 'dewiki', 'frwiki', 'wiki' );
-		$wgConf->suffixes = array( 'wiki' );
-		$wgConf->settings = array(
-			'wgServer' => array(
-				'enwiki' => '//en.wikipedia.org',
-				'dewiki' => '//de.wikipedia.org',
-				'frwiki' => '//fr.wikipedia.org',
-			),
-		);
-		$wgLocalDatabases =& $wgConf->getLocalDatabases();
-		$proj = $wgContLang->getFormattedNsText( NS_PROJECT );
-		$wgLqtPages[] = $proj . ':LQT test';
-		// Create a redirect
-		$r = Title::newFromText( 'User talk:Redirect target' );
-		self::updatePage( $r, 'blank' );
-		$r2 = Title::newFromText( 'User talk:Is a redirect' );
-		self::updatePage( $r2, '#REDIRECT [[User talk:Redirect target]]' );
-		parent::setUp();
-	}
-
-	/**
-	 * Updates $title with the provided $text
-	 * @param Title title
-	 * @param string $text
-	 */
-	public static function updatePage( $title, $text ) {
-		$user = new User();
-		$page = WikiPage::factory( $title );
-		$content = ContentHandler::makeContent( $text, $page->getTitle() );
-		$page->doEditContent( $content, "summary", 0, false, $user );
-	}
+class MassMessageTest extends MassMessageTestCase {
 
 	public static function provideGetDBName() {
 		return array(
@@ -50,6 +15,7 @@ class MassMessageTest extends MediaWikiTestCase {
 			array( 'de.wikipedia.org', 'dewiki' ),
 		);
 	}
+
 	/**
 	 * @covers MassMessage::getDBName
 	 * @dataProvider provideGetDBName
@@ -72,62 +38,6 @@ class MassMessageTest extends MediaWikiTestCase {
 		$job = new MassMessageJob( $title, $params );
 		$job->run();
 		return $subject;
-	}
-
-	/**
-	 * First value is the page text to create
-	 * Second is the values we should check in the first array
-	 * @return array
-	 */
-	public static function provideGetParserFunctionTargets() {
-		global $wgContLang;
-		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
-
-		return array(
-			// project page, no site provided
-			array( '{{#target:Project:Example}}', array( 'title' => $proj . ':Example' ), ),
-			// user talk page, no site provided
-			array( '{{#target:User talk:Example}}', array('title' => 'User talk:Example' ), ),
-			// local redirect being followed
-			array( '{{#target:User talk:Is a redirect}}', array('title' => 'User talk:Redirect target' ) ),
-			// invalid titles
-			array( '{{#target:User:<><}}', array(), ),
-			array( '{{#target:Project:!!!<><><><>', array(), ),
-			// project page and site
-			array( '{{#target:Project:Testing|en.wikipedia.org}}', array( 'title' => 'Project:Testing', 'site' => 'en.wikipedia.org', 'wiki' => 'enwiki' ), ),
-			// user page and site
-			array( '{{#target:User talk:Test|fr.wikipedia.org}}', array( 'title' => 'User talk:Test', 'site' => 'fr.wikipedia.org', 'wiki' => 'frwiki' ), ),
-		);
-	}
-
-	/**
-	 * @covers MassMessage::getParserFunctionTargets
-	 * @dataProvider provideGetParserFunctionTargets
-	 * @param  string $text  Text of the page to create
-	 * @param  array $check Stuff to check against
-	 */
-	public function testGetParserFunctionTargets( $text, $check ) {
-		$title = Title::newFromText( 'Input list ');
-		self::updatePage( $title, $text );
-		$data = MassMessage::normalizeTargets(
-			MassMessage::getParserFunctionTargets( $title, RequestContext::getMain() )
-		);
-
-		if ( empty( $check ) ) {
-			// Check that the spamlist is empty
-			$this->assertTrue( empty( $data ) );
-		} else {
-			$data = array_values( $data );
-			$data = $data[0]; // We're just testing the first value
-			foreach ( $check as $key => $value ) {
-				$this->assertEquals( $data[$key], $value );
-			}
-			if ( !isset( $check['wiki'] ) ) {
-				$this->assertEquals( $data['wiki'], wfWikiID() );
-				// Using wfWikiId() within @dataProviders returns a different result
-				// than when we use wfWikiId() within a test
-			}
-		}
 	}
 
 	/**
@@ -205,21 +115,6 @@ class MassMessageTest extends MediaWikiTestCase {
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		$this->assertEquals( $text, "== ". $subj . " ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->" );
-	}
-
-	/**
-	 * @covers MassMessage::getCategoryTargets
-	 */
-	public function testCategorySpamlist() {
-		$page = Title::newFromText( 'Talk:Testing1234' );
-		$wikipage = WikiPage::factory( $page );
-		$wikipage->doEditContent( new WikitextContent( '[[Category:Spamlist1234]]' ), 'edit summary' );
-
-		$cat = Title::newFromText( 'Category:Spamlist1234' );
-		$targets = MassMessage::getCategoryTargets( $cat );
-		$this->assertEquals( count( $targets ), 1 );
-		$values = array_values( $targets );
-		$this->assertEquals( $values[0]['title'], 'Talk:Testing1234' );
 	}
 
 	/**
