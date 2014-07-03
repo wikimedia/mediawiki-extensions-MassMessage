@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Andriykopanytsia",
-			"Ahonc"
+			"Ahonc",
+			"Ата"
 		]
 	},
 	"massmessage": "Масове надсилання повідомлень",
 	"massmessage-desc": "Дозволяє користувачам легко відправляти повідомлення списку користувачів",
-	"massmessage-form-spamlist": "Сторінки, яка містить список сторінок, щоб залишити повідомлення на:",
+	"massmessage-form-spamlist": "Сторінка чи категорія, яка містить список сторінок, де треба залишити повідомлення:",
 	"massmessage-form-subject": "Тема повідомлення (також використовується в якості резюме редагування):",
 	"massmessage-form-message": "Текст повідомлення:",
 	"massmessage-form-preview": "Попередній перегляд",
@@ -19,6 +20,7 @@
 	"massmessage-empty-subject": "Рядок теми порожній.",
 	"massmessage-empty-message": "Тіла повідомлення порожнє.",
 	"massmessage-unescaped-langlinks": "Увага: наявні неекрановані мовні посилання в повідомленні.",
+	"massmessage-no-timestamp": "Попередження: Ваше повідомлення не містить мітку часу або підпису.",
 	"massmessage-form-header": "Використовуйте форму нижче для надсилання повідомлення за вказаним списком. Всі поля обов'язкові для заповнення ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage додаткова інформація]).",
 	"massmessage-queued-count": "У черзі [[Special:MassMessage|масових повідомлень]]",
 	"massmessage-hidden-comment": "<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->",
