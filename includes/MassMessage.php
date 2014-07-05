@@ -322,7 +322,11 @@ class MassMessage {
 		self::logToWiki( $spamlist, $user, $data['subject'] );
 
 		// Insert it into the job queue.
-		$params = array( 'data' => $data, 'pages' => $pages );
+		$params = array(
+			'data' => $data,
+			'pages' => $pages,
+			'class' => 'MassMessageJob',
+		);
 		$job = new MassMessageSubmitJob( $spamlist, $params );
 		JobQueueGroup::singleton()->push( $job );
 

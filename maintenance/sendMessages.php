@@ -1,0 +1,75 @@
+<?php
+
+$IP = getenv( 'MW_INSTALL_PATH' );
+if ( $IP === false ) {
+	$IP = __DIR__ . '/../../..';
+}
+require_once( "$IP/maintenance/Maintenance.php" );
+
+/**
+ * Script to send MassMessages server-side
+ *
+ * Excepts a page list formatted as a .tsv file, with "PageName\tWikiId" on each line
+ * Subject line and message body are also stored as files
+ */
+class SendMassMessages extends Maintenance {
+	public function __construct() {
+		parent::__construct();
+		$this->addOption( 'pagelist', 'Name of file with a list of pages to send to in it', true, true );
+		$this->addOption( 'subject', 'Name of file with the subject in it', true, true );
+		$this->addOption( 'message', 'Name of file with the message body in it', true, true );
+	}
+
+	public function execute() {
+		$info = array();
+		foreach ( array( 'pagelist', 'subject', 'message') as $arg ) {
+			$option = $this->getOption( $arg );
+			if ( !is_file( $this->getOption( $arg ) ) ) {
+				$this->error( "Error: required argument $arg was passed an invalid filename.", 1 );
+			}
+
+			if ( $arg !== 'pagelist' ) {
+				$contents = file_get_contents( $option );
+				if ( $contents !== false ) {
+					$info[$arg] = $contents;
+				} else {
+					$this->error( "Error: Unable to read $option.", 1 );
+				}
+			}
+		}
+
+		$list = $this->getOption( 'pagelist' );
+		$file = fopen( $list, 'r' );
+		if ( $file === false ) {
+			$this->error( "Error: could not open pagelist file: \"$list\".", 1 );
+		}
+
+		$pages = array();
+		$this->output( "Reading from \"$list\".");
+
+		while( $line = trim( fgets( $file ) ) ) {
+			$exp = explode( '\t', $line );
+			$pages[] = array(
+				'title' => $exp[0],
+				'wiki' => $exp[1],
+			);
+		}
+
+		fclose( $file );
+
+		// Submit the jobs
+		$params = array(
+			'data' => $info,
+			'pages' => $pages,
+			'class' => 'MassMessageServerSideJob',
+		);
+
+		$submitJob = new MassMessageSubmitJob(
+			Title::newFromText( 'SendMassMessages' ),
+			$params
+		);
+		$submitJob->run(); // Just insert the individual jobs into the queue now.
+		$count = count( $pages );
+		$this->output( "Queued $count jobs. Done!" );
+	}
+}

@@ -56,10 +56,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers MassMessageJob::isOptedOut
 	 */
 	public function testOptOut() {
+		$fakejob = new MassMessageJob( Title::newMainPage(), array() );
 		$target = Title::newFromText( 'Project:Opt out test page' );
 		self::updatePage( $target, '[[Category:Opted-out of message delivery]]');
-		$this->assertTrue( MassMessageJob::isOptedOut( $target ) );
-		$this->assertFalse( MassMessageJob::isOptedOut( Title::newFromText( 'Project:Some random page' ) ) );
+		$this->assertTrue( $fakejob->isOptedOut( $target ) );
+		$this->assertFalse( $fakejob->isOptedOut( Title::newFromText( 'Project:Some random page' ) ) );
 		$this->simulateJob( $target ); // Try posting a message to this page
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text ); // Nothing should be updated

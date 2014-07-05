@@ -74,6 +74,7 @@ $wgAutoloadClasses['SpecialMassMessage'] = __DIR__ . '/includes/SpecialMassMessa
 $wgAutoloadClasses['SpecialCreateMassMessageList'] = __DIR__ . '/includes/SpecialCreateMassMessageList.php';
 $wgAutoloadClasses['SpecialEditMassMessageList'] = __DIR__ . '/includes/SpecialEditMassMessageList.php';
 $wgAutoloadClasses['MassMessageJob'] = __DIR__ . '/includes/job/MassMessageJob.php';
+$wgAutoloadClasses['MassMessageServerSideJob'] = __DIR__ . '/includes/job/MassMessageServerSideJob.php';
 $wgAutoloadClasses['MassMessageSubmitJob'] = __DIR__ . '/includes/job/MassMessageSubmitJob.php';
 $wgAutoloadClasses['MassMessageFailureLogFormatter'] = __DIR__ . '/includes/logging/MassMessageFailureLogFormatter.php';
 $wgAutoloadClasses['MassMessageSendLogFormatter'] = __DIR__ . '/includes/logging/MassMessageSendLogFormatter.php';
@@ -95,6 +96,7 @@ $wgAPIListModules['mmsites'] = 'ApiQueryMMSites';
 // Job classes
 $wgJobClasses['MassMessageJob'] = 'MassMessageJob';
 $wgJobClasses['MassMessageSubmitJob'] = 'MassMessageSubmitJob';
+$wgJobClasses['MassMessageServerSideJob'] = 'MassMessageServerSideJob';
 
 // Hooks
 $wgExtensionFunctions[] = 'MassMessageHooks::onExtensionFunctions';

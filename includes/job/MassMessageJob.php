@@ -46,7 +46,7 @@ class MassMessageJob extends Job {
 	 * @param $title Title
 	 * @return bool
 	 */
-	public static function isOptedOut( Title $title) {
+	public function isOptedOut( Title $title) {
 		$wikipage = WikiPage::factory( $title );
 		$categories = $wikipage->getCategories();
 		$category = Title::makeTitle( NS_CATEGORY, wfMessage( 'massmessage-optout-category')->inContentLanguage()->text() );
@@ -134,7 +134,7 @@ class MassMessageJob extends Job {
 
 		$this->title = $title;
 
-		if ( self::isOptedOut( $this->title ) ) {
+		if ( $this->isOptedOut( $this->title ) ) {
 			$this->logLocalSkip( 'skipoptout' );
 			return true; // Oh well.
 		}

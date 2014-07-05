@@ -10,6 +10,10 @@
  */
 class MassMessageSubmitJob extends Job {
 	public function __construct( Title $title, array $params, $id = 0 ) {
+		// Back-compat
+		if ( !isset( $params['class'] ) ) {
+			$params['class'] = 'MassMessageJob';
+		}
 		parent::__construct( 'MassMessageSubmitJob', $title, $params, $id );
 	}
 
@@ -34,6 +38,7 @@ class MassMessageSubmitJob extends Job {
 	public function getJobs() {
 		$data = $this->params['data'];
 		$pages = $this->params['pages'];
+		$class = $this->params['class'];
 		$jobsByTarget = array();
 
 		foreach ( $pages as $page ) {
@@ -41,7 +46,7 @@ class MassMessageSubmitJob extends Job {
 			// Store the title as plain text to avoid namespace/interwiki prefix
 			// collisions, see bug 57464 and 58524
 			$data['title'] = $page['title'];
-			$jobsByTarget[$page['wiki']][] = new MassMessageJob( $title, $data );
+			$jobsByTarget[$page['wiki']][] = new $class( $title, $data );
 		}
 
 		return $jobsByTarget;
