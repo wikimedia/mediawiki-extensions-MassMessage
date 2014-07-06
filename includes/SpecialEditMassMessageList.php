@@ -180,27 +180,25 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 		$targets = array();
 		foreach ( $lines as $line ) {
-			$delimiterPos = strrpos( $line, '@' );
-			if ( $delimiterPos !== false ) {
-				$titleText = substr( $line, 0, $delimiterPos );
-				$site = strtolower( substr( $line, $delimiterPos+1 ) );
-				if ( $site === MassMessage::getBaseUrl( $wgCanonicalServer ) ) {
-					$site = null; // Don't store site for local pages.
-				}
-			} else {
-				$titleText = $line;
-				$site = null;
-			}
+			$data = MassMessageTargets::extractFromTarget( $line );
 
-			$title = Title::newFromText( $titleText );
+			$title = Title::newFromText( $data['title'] );
 			if ( !$title ) {
 				return null;
 			}
 			$titleText = $title->getPrefixedText(); // Use the canonical form.
 
+			if ( $data['site'] === ''
+				|| $data['site'] === MassMessage::getBaseUrl( $wgCanonicalServer )
+			) {
+				$site = null;
+			} else {
+				$site = $data['site'];
+			}
+
 			if ( $site ) {
 				$wiki = MassMessage::getDBName( $site );
-				if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki != wfWikiID() ) {
+				if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki !== wfWikiID() ) {
 					return null;
 				}
 			}
@@ -214,27 +212,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 		// Remove duplicates and sort.
 		$targets = array_unique( $targets, SORT_REGULAR );
-		usort( $targets, 'self::compareTargets' );
+		usort( $targets, 'MassMessageTargets::compareStoredTargets' );
 		return $targets;
-	}
-
-	/**
-	 * Helper function for parseInput; compare two targets for ordering.
-	 * @param array $a
-	 * @paran array $b
-	 * @return int
-	 */
-	protected static function compareTargets( $a, $b ) {
-		if ( !array_key_exists( 'site', $a ) && array_key_exists( 'site', $b ) ) {
-			return -1;
-		} else if ( array_key_exists( 'site', $a ) && !array_key_exists( 'site', $b ) ) {
-			return 1;
-		} else if ( array_key_exists( 'site', $a ) && array_key_exists( 'site', $b )
-			&& $a['site'] !== $b['site']
-		) {
-			return strcmp( $a['site'], $b['site'] );
-		} else {
-			return strcmp( $a['title'], $b['title'] );
-		}
 	}
 }

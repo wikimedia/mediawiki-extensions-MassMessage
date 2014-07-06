@@ -132,4 +132,43 @@ class MassMessageTargets {
 			return array(); // No parser functions on page
 		}
 	}
+
+	/**
+	 * Helper function to compare two targets in a MassMessageListContent delivery
+	 * list for ordering in usort()
+	 * @param array $a
+	 * @paran array $b
+	 * @return int
+	 */
+	public static function compareStoredTargets( $a, $b ) {
+		if ( !array_key_exists( 'site', $a ) && array_key_exists( 'site', $b ) ) {
+			return -1;
+		} else if ( array_key_exists( 'site', $a ) && !array_key_exists( 'site', $b ) ) {
+			return 1;
+		} else if ( array_key_exists( 'site', $a ) && array_key_exists( 'site', $b )
+			&& $a['site'] !== $b['site']
+		) {
+			return strcmp( $a['site'], $b['site'] );
+		} else {
+			return strcmp( $a['title'], $b['title'] );
+		}
+	}
+
+	/**
+	 * Helper function for extracting title and site strings from 'title@site'
+	 * @param string $target
+	 * @return array
+	 */
+	public static function extractFromTarget( $target ) {
+		$target = trim( $target );
+		$delimiterPos = strrpos( $target, '@' );
+		if ( $delimiterPos !== false && $delimiterPos < strlen( $target ) ) {
+			$title = substr( $target, 0, $delimiterPos );
+			$site = strtolower( substr( $target, $delimiterPos+1 ) );
+		} else {
+			$title = $target;
+			$site = '';
+		}
+		return array( 'title' => $title, 'site' => $site );
+	}
 }
