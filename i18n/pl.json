@@ -28,7 +28,7 @@
 	"massmessage-parse-badpage": "„$1” nie jest poprawnym tytułem strony",
 	"right-massmessage": "Wysyłanie wiadomości do wielu użytkowników jednocześnie",
 	"action-massmessage": "wyślij wiadomość do wielu użytkowników jednocześnie",
-	"log-name-massmessage": "Rejestr wiadomości masowych",
+	"log-name-massmessage": "Masowe wiadomości",
 	"log-description-massmessage": "To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3",
 	"logentry-massmessage-skipbadns": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ miejsce docelowe znajdowało się w przestrzeni nazw, w której nie mogło być umieszczone",
