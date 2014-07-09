@@ -49,6 +49,8 @@
 	"massmessage-content-pagesonsite": "Subheading for the list of pages on a particular wiki\n* $1 is the domain of the wiki",
 	"massmessage-content-localpages": "Subheading for the list of pages on the local wiki",
 	"massmessage-content-empty": "Message shown when viewing a delivery list if it is empty",
+	"massmessage-content-tojsonerror": "Error message shown when the input could not be successfully encoded as a delivery list",
+	"massmessage-content-apierror": "Error message shown when a request to the edit API to update a delivery list failed",
 	"createmassmessagelist-legend": "Form legend for [[Special:CreateMassMessageList]]",
 	"massmessage-create-title": "Label for an inputbox on [[Special:CreateMassMessageList]]",
 	"massmessage-create-description": "Label for a textarea on [[Special:CreateMassMessageList]]",
@@ -60,9 +62,7 @@
 	"massmessage-create-invalidtitle": "Error message shown on [[Special:CreateMassMessageList]] when the title is inavlid",
 	"massmessage-create-exists": "Error message shown on [[Special:CreateMassMessageList]] when a page with the title already exists",
 	"massmessage-create-nopermission": "Error message shown on [[Special:CreateMassMessageList]] when the user cannot create a page with the title",
-	"massmessage-create-tojsonerror": "Error message shown on [[Special:CreateMassMessageList]] when the input could not be successfully encoded",
 	"massmessage-create-invalidsource": "Error message shown on [[Special:CreateMassMessageList]] when the source from which to import targets is invalid",
-	"massmessage-create-apierror": "Error message shown on [[Special:CreateMassMessageList]] when the API request to create the page failed",
 	"editmassmessagelist-legend": "Form legend for [[Special:EditMassMessageList]]",
 	"massmessage-edit-title": "Label for an inputbox on [[Special:EditMassMessageList]]",
 	"massmessage-edit-description": "Label for a textarea on [[Special:EditMassMessageList]]",
@@ -71,7 +71,5 @@
 	"massmessage-edit-editsummary": "Edit summary for editing a delivery list",
 	"massmessage-edit-invalidtitle": "Error message shown on [[Special:EditMassMessageList]] when the title is invalid",
 	"massmessage-edit-invalidtargets": "Error message shown on [[Special:EditMassMessageList]] when one ore more targets are invalid",
-	"massmessage-edit-nopermission": "Error message shown on [[Special:EditMassMessageList]] when the user cannot edit the list",
-	"massmessage-edit-tojsonerror": "Error message shown on [[Special:EditMassMessageList]] when the input could not be successfully encoded",
-	"massmessage-edit-apierror": "Error message shown on [[Special:EditMassMessageList]] when the API request to create the page failed"
+	"massmessage-edit-nopermission": "Error message shown on [[Special:EditMassMessageList]] when the user cannot edit the list"
 }

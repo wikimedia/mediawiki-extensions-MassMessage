@@ -9,7 +9,7 @@
  */
 class ApiMassMessage extends ApiBase {
 	public function execute() {
-		if ( !$this->getUser()->isAllowed( 'massmessage') ) {
+		if ( !$this->getUser()->isAllowed( 'massmessage' ) ) {
 			$this->dieUsageMsg( 'permissiondenied' );
 		}
 
@@ -63,7 +63,7 @@ class ApiMassMessage extends ApiBase {
 
 	public function getPossibleErrors() {
 		return array(
-			array( 'permissiondenied'),
+			array( 'permissiondenied' ),
 			array( 'massmessage-spamlist-doesnotexist' )
 		);
 	}

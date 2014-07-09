@@ -70,34 +70,17 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			$targets = array();
 		}
 
-		$jsonText = FormatJson::encode(
-			array( 'description' => $data['description'], 'targets' => $targets )
-		);
-		if ( !$jsonText ) {
-			return Status::newFatal( 'massmessage-create-tojsonerror' );
-		}
-
-		$request = new DerivativeRequest(
-			$this->getRequest(),
-			array(
-				'action' => 'edit',
-				'title' => $title->getFullText(),
-				'contentmodel' => 'MassMessageListContent',
-				'text' => $jsonText,
-				'summary' => $this->msg( 'massmessage-create-editsummary' )->plain(),
-				'token' => $this->getUser()->getEditToken(),
-			),
-			true // Treat data as POSTed
+		$result = MassMessageListContentHandler::edit(
+			$title,
+			$data['description'],
+			$targets,
+			'massmessage-create-editsummary',
+			$this->getContext()
 		);
 
-		try {
-			$api = new ApiMain( $request, true );
-			$api->execute();
-		} catch ( UsageException $e ) {
-			return Status::newFatal( $this->msg( 'massmessage-create-apierror',
-				$e->getCodeString() ) );
+		if ( !$result->isGood() ) {
+			return $result;
 		}
-
 		$this->getOutput()->redirect( $title->getFullUrl() );
 	}
 
@@ -123,7 +106,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * Get targets from an existing delivery list or category.
+	 * Get targets from an existing delivery list or category; returns null on failure.
 	 * @param Title $source
 	 * @return array|null
 	 */
@@ -141,6 +124,6 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			}
 			$targets[] = $target;
 		}
-		return $targets;
+		return MassMessageListContentHandler::normalizeTargetArray( $targets );
 	}
 }

@@ -111,34 +111,17 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return Status::newFatal( 'massmessage-edit-invalidtargets' );
 		}
 
-		$jsonText = FormatJson::encode(
-			array( 'description' => $data['description'], 'targets' => $targets )
-		);
-		if ( $jsonText === null ) {
-			return Status::newFatal( 'massmessage-edit-tojsonerror' );
-		}
-
-		$request = new DerivativeRequest(
-			$this->getRequest(),
-			array(
-				'action' => 'edit',
-				'title' => $this->title->getFullText(),
-				'contentmodel' => 'MassMessageListContent',
-				'text' => $jsonText,
-				'summary' => $this->msg( 'massmessage-edit-editsummary' )->plain(),
-				'token' => $this->getUser()->getEditToken(),
-			),
-			true // Treat data as POSTed
+		$result = MassMessageListContentHandler::edit(
+			$this->title,
+			$data['description'],
+			$targets,
+			'massmessage-edit-editsummary',
+			$this->getContext()
 		);
 
-		try {
-			$api = new ApiMain( $request, true );
-			$api->execute();
-		} catch ( UsageException $e ) {
-			return Status::newFatal( $this->msg( 'massmessage-edit-apierror',
-				$e->getCodeString() ) );
+		if ( !$result->isGood() ) {
+			return $result;
 		}
-
 		$this->getOutput()->redirect( $this->title->getFullUrl() );
 	}
 
@@ -174,45 +157,16 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @return array|null
 	 */
 	protected static function parseInput( $input ) {
-		global $wgCanonicalServer, $wgAllowGlobalMessaging;
-
 		$lines = array_filter( explode( "\n", $input ), 'trim' ); // Array of non-empty lines
 
 		$targets = array();
 		foreach ( $lines as $line ) {
-			$data = MassMessageTargets::extractFromTarget( $line );
-
-			$title = Title::newFromText( $data['title'] );
-			if ( !$title ) {
-				return null;
+			$target = MassMessageListContentHandler::extractTarget( $line );
+			if ( $target === null ) {
+				return null; // Invalid target
 			}
-			$titleText = $title->getPrefixedText(); // Use the canonical form.
-
-			if ( $data['site'] === ''
-				|| $data['site'] === MassMessage::getBaseUrl( $wgCanonicalServer )
-			) {
-				$site = null;
-			} else {
-				$site = $data['site'];
-			}
-
-			if ( $site ) {
-				$wiki = MassMessage::getDBName( $site );
-				if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki !== wfWikiID() ) {
-					return null;
-				}
-			}
-
-			if ( $site ) {
-				$targets[] = array( 'title' => $titleText, 'site' => $site );
-			} else {
-				$targets[] = array( 'title' => $titleText );
-			}
+			$targets[] = $target;
 		}
-
-		// Remove duplicates and sort.
-		$targets = array_unique( $targets, SORT_REGULAR );
-		usort( $targets, 'MassMessageTargets::compareStoredTargets' );
-		return $targets;
+		return MassMessageListContentHandler::normalizeTargetArray( $targets );
 	}
 }
