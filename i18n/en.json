@@ -57,7 +57,7 @@
 	"massmessage-create-new": "Create a new delivery list",
 	"massmessage-create-import": "Import pages from an existing list or category",
 	"massmessage-create-source": "Source:",
-	"massmessage-create-editsummary": "Creating mass message delivery list",
+	"massmessage-create-editsummary": "Create mass message delivery list",
 	"massmessage-create-invalidtitle": "The specified title is invalid.",
 	"massmessage-create-exists": "A page already exists at the specified title.",
 	"massmessage-create-nopermission": "You do not have permission to create a list at this title.",
@@ -67,8 +67,9 @@
 	"massmessage-edit-description": "Description:",
 	"massmessage-edit-content": "Content:",
 	"massmessage-edit-header": "List one title per line, and use title@domain (e.g. User talk:Example@en.wikipedia.org) to specify a page on a different wiki, if cross-wiki delivery is enabled.",
-	"massmessage-edit-editsummary": "Updating mass message delivery list",
+	"massmessage-edit-editsummary": "Update mass message delivery list",
 	"massmessage-edit-invalidtitle": "There is no valid mass message delivery list at the title.",
 	"massmessage-edit-invalidtargets": "One of more of the entries in the list are invalid.",
-	"massmessage-edit-nopermission": "You do not have permission to edit the list."
+	"massmessage-edit-nopermission": "You do not have permission to edit the list.",
+	"massmessage-api-editsummary": "Update mass message delivery list"
 }

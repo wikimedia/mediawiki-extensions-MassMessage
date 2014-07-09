@@ -68,6 +68,7 @@ $wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php
 // Classes
 $wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
 $wgAutoloadClasses['ApiMassMessage'] = "$dir/includes/ApiMassMessage.php";
+$wgAutoloadClasses['ApiEditMassMessageList'] = "$dir/includes/ApiEditMassMessageList.php";
 $wgAutoloadClasses['MassMessage'] = "$dir/includes/MassMessage.php";
 $wgAutoloadClasses['MassMessageTargets'] = "$dir/includes/MassMessageTargets.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/includes/SpecialMassMessage.php";
@@ -87,6 +88,7 @@ $wgContentHandlers['MassMessageListContent'] = 'MassMessageListContentHandler';
 
 // API modules
 $wgAPIModules['massmessage'] = 'ApiMassMessage';
+$wgAPIModules['editmassmessagelist'] = 'ApiEditMassMessageList';
 
 // Job classes
 $wgJobClasses['MassMessageJob'] = 'MassMessageJob';
