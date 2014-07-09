@@ -57,7 +57,7 @@ class ApiEditMassMessageList extends ApiBase {
 			$description,
 			$newTargets,
 			'massmessage-api-editsummary',
-			$this->getContext()
+			$this // APIs implement IContextSource
 		);
 		if ( !$result->isGood() ) {
 			$this->dieStatus( $result );
