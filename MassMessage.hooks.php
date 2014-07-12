@@ -136,8 +136,8 @@ class MassMessageHooks {
 
 	/**
 	 * Override the Edit tab for delivery lists
-	 * @param SkinTemplate $sktemplate
-	 * @param array $links
+	 * @param SkinTemplate &$sktemplate
+	 * @param array &$links
 	 * @return bool
 	 */
 	public static function onSkinTemplateNavigation( &$sktemplate, &$links ) {
@@ -148,6 +148,27 @@ class MassMessageHooks {
 			$links['views']['edit']['href'] = SpecialPage::getTitleFor(
 				'EditMassMessageList', $title
 			)->getFullUrl();
+		}
+		return true;
+	}
+
+	/**
+	 * Add scripts and styles
+	 * @param OutputPage &$out
+	 * @param Skin &$skin
+	 * @return bool
+	 */
+	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
+		$title = $out->getTitle();
+		if ( $title->exists() && $title->hasContentModel( 'MassMessageListContent' ) ) {
+			$out->addModuleStyles( 'ext.MassMessage.content.nojs' );
+			if ( $out->getRevisionId() === $title->getLatestRevId()
+				&& $title->quickUserCan( 'edit', $out->getUser() )
+			) {
+				$out->addModules( 'ext.MassMessage.content' );
+			} else {
+				$out->addModules( 'ext.MassMessage.content.noedit' );
+			}
 		}
 		return true;
 	}

@@ -1,5 +1,6 @@
 ( function ( mw, $ ) {
 	$( function () {
+		'use strict';
 
 		// Set the correct field state on load.
 		if ( $( '#mw-input-wpcontent-import' ).is( ':checked' ) ) {
@@ -17,4 +18,4 @@
 		} );
 
 	} );
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

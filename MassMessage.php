@@ -103,6 +103,7 @@ $wgHooks['UserGetReservedNames'][] = 'MassMessageHooks::onUserGetReservedNames';
 $wgHooks['UnitTestsList'][] = 'MassMessageHooks::onUnitTestsList';
 $wgHooks['BeforeEchoEventInsert'][] = 'MassMessageHooks::onBeforeEchoEventInsert';
 $wgHooks['SkinTemplateNavigation'][] = 'MassMessageHooks::onSkinTemplateNavigation';
+$wgHooks['BeforePageDisplay'][] = 'MassMessageHooks::onBeforePageDisplay';
 
 // Special pages
 $wgSpecialPages['MassMessage'] = 'SpecialMassMessage';
@@ -116,7 +117,10 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 		'ext.MassMessage.autocomplete.js',
 		'ext.MassMessage.badhtml.js',
 	),
-	'messages' => array( 'massmessage-badhtml', 'massmessage-parse-badpage' ),
+	'messages' => array(
+		'massmessage-badhtml',
+		'massmessage-parse-badpage'
+	),
 	'dependencies' => array(
 		'jquery.byteLimit',
 		'jquery.ui.autocomplete',
@@ -131,10 +135,31 @@ $wgResourceModules['ext.MassMessage.special'] = array(
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
-$wgResourceModules['ext.MassMessage.create'] = array(
-	'scripts' => array(
-		'ext.MassMessage.create.js',
+$wgResourceModules['ext.MassMessage.content'] = array(
+	'styles' => 'ext.MassMessage.content.css',
+	'scripts' => 'ext.MassMessage.content.js',
+	'messages' => array(
+		'massmessage-content-removeerror',
 	),
+	'dependencies' => array(
+		'mediawiki.api',
+		'mediawiki.jqueryMsg',
+	),
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
+);
+$wgResourceModules['ext.MassMessage.content.nojs'] = array(
+	'styles' => 'ext.MassMessage.content.nojs.css',
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
+);
+$wgResourceModules['ext.MassMessage.content.noedit'] = array(
+	'styles' => 'ext.MassMessage.content.noedit.css',
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
+);
+$wgResourceModules['ext.MassMessage.create'] = array(
+	'scripts' => 'ext.MassMessage.create.js',
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );

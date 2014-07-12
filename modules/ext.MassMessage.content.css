@@ -1,0 +1,9 @@
+.mw-massmessage-targetlink {
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+}
+
+.mw-massmessage-removelink {
+	margin-left: 20px;
+}

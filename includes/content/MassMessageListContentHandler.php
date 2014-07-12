@@ -46,7 +46,7 @@ class MassMessageListContentHandler extends TextContentHandler {
 			array( 'description' => $description, 'targets' => $targets )
 		);
 		if ( $jsonText === null ) {
-			return Status::newFatal( 'massmessage-content-tojsonerror' );
+			return Status::newFatal( 'massmessage-ch-tojsonerror' );
 		}
 
 		$request = new DerivativeRequest(
@@ -66,7 +66,7 @@ class MassMessageListContentHandler extends TextContentHandler {
 			$api = new ApiMain( $request, true );
 			$api->execute();
 		} catch ( UsageException $e ) {
-			return Status::newFatal( $context->msg( 'massmessage-content-apierror',
+			return Status::newFatal( $context->msg( 'massmessage-ch-apierror',
 				$e->getCodeString() ) );
 		}
 		return Status::newGood();

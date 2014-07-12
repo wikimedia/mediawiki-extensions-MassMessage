@@ -161,15 +161,34 @@ class MassMessageListContent extends TextContent {
 
 			$html .= Html::openElement( 'ul' );
 			foreach ( $targets as $target ) {
+				$title = Title::newFromText( $target );
+
+				// Generate the HTML for the link to the target.
 				if ( $site === 'local' ) {
-					$html .= Html::rawElement( 'li', array(),
-						Linker::link( Title::newFromText( $target ) ) );
+					$targetLink = Linker::link( $title );
 				} else {
-					$title = Title::newFromText( $target );
-					$url = "//$site$wgScript?title=" . $title->getPrefixedURL();
-					$html .= Html::rawElement( 'li', array(),
-						Linker::makeExternalLink( $url, $title->getPrefixedText() ) );
+					$targetLink = Linker::makeExternalLink(
+						"//$site$wgScript?title=" . $title->getPrefixedURL(),
+						$title->getPrefixedText()
+					);
 				}
+
+				// Generate the HTML for the remove link.
+				$removeLink = Html::rawElement( 'a',
+					array(
+						'data-title' => $title->getPrefixedText(),
+						'data-site' => $site,
+						'href' => '#',
+					),
+					wfMessage( 'massmessage-content-remove' )->parse()
+				);
+
+				$html .= Html::openElement( 'li' );
+				$html .= Html::rawElement( 'span', array( 'class' => 'mw-massmessage-targetlink' ),
+					$targetLink );
+				$html .= Html::rawElement( 'span', array( 'class' => 'mw-massmessage-removelink' ),
+					'(' . $removeLink . ')' );
+				$html .= Html::closeElement( 'li' );
 			}
 			$html .= Html::closeElement( 'ul' );
 		}
