@@ -7,3 +7,19 @@
 .mw-massmessage-removelink {
 	margin-left: 20px;
 }
+
+#mw-massmessage-addpages label {
+	margin-right: 2px;
+}
+
+#mw-massmessage-addform input {
+	margin-right: 10px;
+}
+
+#mw-massmessage-addform .error {
+	font-size: 100%;
+}
+
+#mw-massmessage-addedlist {
+	display: none;
+}

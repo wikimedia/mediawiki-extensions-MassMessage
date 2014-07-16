@@ -137,24 +137,34 @@ $wgResourceModules['ext.MassMessage.special'] = array(
 );
 $wgResourceModules['ext.MassMessage.content'] = array(
 	'styles' => 'ext.MassMessage.content.css',
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
+);
+$wgResourceModules['ext.MassMessage.content.js'] = array(
 	'scripts' => 'ext.MassMessage.content.js',
 	'messages' => array(
+		'massmessage-content-remove',
+		'massmessage-content-addeditem',
 		'massmessage-content-removeerror',
+		'massmessage-content-alreadyinlist',
+		'massmessage-content-invalidadd',
+		'massmessage-content-adderror',
 	),
 	'dependencies' => array(
 		'mediawiki.api',
+		'mediawiki.util',
 		'mediawiki.jqueryMsg',
 	),
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
-$wgResourceModules['ext.MassMessage.content.nojs'] = array(
-	'styles' => 'ext.MassMessage.content.nojs.css',
+$wgResourceModules['ext.MassMessage.content.noedit'] = array(
+	'styles' => 'ext.MassMessage.content.noedit.css',
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
-$wgResourceModules['ext.MassMessage.content.noedit'] = array(
-	'styles' => 'ext.MassMessage.content.noedit.css',
+$wgResourceModules['ext.MassMessage.content.nojs'] = array(
+	'styles' => 'ext.MassMessage.content.nojs.css',
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );

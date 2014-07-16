@@ -165,9 +165,10 @@ class MassMessageHooks {
 			if ( $out->getRevisionId() === $title->getLatestRevId()
 				&& $title->quickUserCan( 'edit', $out->getUser() )
 			) {
-				$out->addModules( 'ext.MassMessage.content' );
+				$out->addModuleStyles( 'ext.MassMessage.content' );
+				$out->addModules( 'ext.MassMessage.content.js' );
 			} else {
-				$out->addModules( 'ext.MassMessage.content.noedit' );
+				$out->addModuleStyles( 'ext.MassMessage.content.noedit' );
 			}
 		}
 		return true;

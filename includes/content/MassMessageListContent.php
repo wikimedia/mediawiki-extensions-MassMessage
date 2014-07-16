@@ -105,6 +105,13 @@ class MassMessageListContent extends TextContent {
 		// Parse the description text.
 		$output = $wgParser->parse( $this->getDescription(), $title, $options, true, true, $revId );
 
+		// Generate output HTML, if needed.
+		if ( $generateHtml ) {
+			$output->setText( $output->getText() . $this->getTargetsHtml() . self::getAddForm() );
+		} else {
+			$output->setText( '' );
+		}
+
 		// Update the links table.
 		$targets = $this->getTargets();
 		foreach ( $targets as $target ) {
@@ -114,13 +121,6 @@ class MassMessageListContent extends TextContent {
 				$output->addExternalLink( '//' . $target['site'] . $wgScript . '?title='
 					. Title::newFromText( $target['title'] )->getPrefixedURL() );
 			}
-		}
-
-		// Add the list content to the output, if needed.
-		if ( $generateHtml ) {
-			$output->setText( $output->getText() . $this->getTargetsHtml() );
-		} else {
-			$output->setText( '' );
 		}
 	}
 
@@ -132,15 +132,14 @@ class MassMessageListContent extends TextContent {
 	protected function getTargetsHtml() {
 		global $wgScript;
 
-		$html = Html::rawElement( 'h2', array(),
-			wfMessage( 'massmessage-content-pages' )->parse() );
+		$html = Html::element( 'h2', array(), wfMessage( 'massmessage-content-pages' )->text() );
 
 		$sites = $this->getTargetsBySite();
 
 		// If the list is empty
 		if ( count( $sites ) === 0 ) {
-			$html .= Html::rawElement( 'p', array(),
-				wfMessage( 'massmessage-content-empty' )->parse() );
+			$html .= Html::element( 'p', array(),
+				wfMessage( 'massmessage-content-empty' )->text() );
 			return $html;
 		}
 
@@ -151,11 +150,11 @@ class MassMessageListContent extends TextContent {
 		foreach ( $sites as $site => $targets ) {
 			if ( $printSites ) {
 				if ( $site === 'local' ) {
-					$html .= Html::rawElement( 'p', array(),
-						wfMessage( 'massmessage-content-localpages' )->parse() );
+					$html .= Html::element( 'p', array(),
+						wfMessage( 'massmessage-content-localpages' )->text() );
 				} else {
-					$html .= Html::rawElement( 'p', array(),
-						wfMessage( 'massmessage-content-pagesonsite', $site )->parse() );
+					$html .= Html::element( 'p', array(),
+						wfMessage( 'massmessage-content-pagesonsite', $site )->text() );
 				}
 			}
 
@@ -174,13 +173,13 @@ class MassMessageListContent extends TextContent {
 				}
 
 				// Generate the HTML for the remove link.
-				$removeLink = Html::rawElement( 'a',
+				$removeLink = Html::element( 'a',
 					array(
 						'data-title' => $title->getPrefixedText(),
 						'data-site' => $site,
 						'href' => '#',
 					),
-					wfMessage( 'massmessage-content-remove' )->parse()
+					wfMessage( 'massmessage-content-remove' )->text()
 				);
 
 				$html .= Html::openElement( 'li' );
@@ -213,4 +212,44 @@ class MassMessageListContent extends TextContent {
 		}
 		return $results;
 	}
+
+	/**
+	 * Helper function for fillParserOutput; return HTML for page-adding form and
+	 * (initially empty and hidden) list of added pages.
+	 * @return string
+	 */
+	 protected static function getAddForm() {
+		global $wgAllowGlobalMessaging;
+
+		$html = Html::openElement( 'div', array( 'id' => 'mw-massmessage-addpages' ) );
+		$html .= Html::element( 'h2', array(),
+			wfMessage( 'massmessage-content-addheading' )->text() );
+
+		// Form
+		$html .= Html::openElement( 'form', array( 'id' => 'mw-massmessage-addform' ) );
+		$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addtitle' ),
+			wfMessage( 'massmessage-content-addtitle' )->text() );
+		$html .= Html::input( 'title', '', 'text', array( 'id' => 'mw-massmessage-addtitle' ) );
+		if ( $wgAllowGlobalMessaging ) {
+			$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addsite' ),
+				wfMessage( 'massmessage-content-addsite' )->text() );
+			$html .= Html::input( 'site', '', 'text', array(
+				'id' => 'mw-massmessage-addsite',
+				'placeholder' => wfMessage( 'massmessage-content-thiswiki' )->text()
+			) );
+		}
+		$html .= Html::input( 'submit', wfMessage( 'massmessage-content-addsubmit' )->escaped(),
+			'submit', array( 'id' => 'mw-massmessage-addsubmit' ) );
+		$html .= Html::closeElement( 'form' );
+
+		// List of added pages
+		$html .= Html::openElement( 'div', array( 'id' => 'mw-massmessage-addedlist' ) );
+		$html .= Html::element( 'p', array(),
+			wfMessage( 'massmessage-content-addedlistheading' )->text() );
+		$html .= Html::element( 'ul', array(), '' );
+		$html .= Html::closeElement( 'div' );
+
+		$html .= Html::closeElement( 'div' );
+		return $html;
+	 }
 }
