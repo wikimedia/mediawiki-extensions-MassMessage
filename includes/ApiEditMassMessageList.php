@@ -22,31 +22,38 @@ class ApiEditMassMessageList extends ApiBase {
 		$newTargets = $targets; // Create a copy.
 
 		if ( isset( $data['add'] ) ) {
+			$invalidAdd = array();
+
 			foreach ( $data['add'] as $page ) {
 				$target = MassMessageListContentHandler::extractTarget( $page );
 				if ( $target === null ) {
-					$this->dieUsage( 'One of the pages to be added is invalid', 'invalidadd' );
+					$invalidAdd[] = $page;
+				} else {
+					$newTargets[] = $target;
 				}
-				$newTargets[] = $target;
 			}
+
 			// Remove duplicates
 			$newTargets = MassMessageListContentHandler::normalizeTargetArray( $newTargets );
+			$invalidAdd = array_unique( $invalidAdd );
 		}
 
 		if ( isset( $data['remove'] ) ) {
 			$toRemove = array();
+			$invalidRemove = array();
+
 			foreach ( $data['remove'] as $page ) {
 				$target = MassMessageListContentHandler::extractTarget( $page );
 				if ( $target === null || !in_array( $target, $newTargets ) ) {
-					$this->dieUsage(
-						'One of the pages to be removed is invalid or not in the spamlist',
-						'invalidremove'
-					);
+					$invalidRemove[] = $page;
+				} else {
+					$toRemove[] = $target;
 				}
-				$toRemove[] = $target;
 			}
+
 			// In case there are duplicates within the provided list
 			$toRemove = MassMessageListContentHandler::normalizeTargetArray( $toRemove );
+			$invalidRemove = array_unique( $invalidRemove );
 
 			$newTargets = array_values( array_udiff( $newTargets, $toRemove,
 				'MassMessageListContentHandler::compareTargets' ) );
@@ -63,16 +70,34 @@ class ApiEditMassMessageList extends ApiBase {
 			$this->dieStatus( $result );
 		}
 
+		$result = $this->getResult();
 		$resultArray = array( 'result' => 'Success' );
+
 		if ( isset( $data['add'] ) ) {
-			$resultArray['added'] = count( array_udiff( $newTargets, $targets,
+			$resultArray['added'] = array_values( array_udiff( $newTargets, $targets,
 				'MassMessageListContentHandler::compareTargets' ) );
+			$result->setIndexedTagName( $resultArray['added'], 'page' );
+
+			if ( !empty( $invalidAdd ) ) {
+				$resultArray['result'] = 'Done';
+				$resultArray['invalidadd'] = $invalidAdd;
+				$result->setIndexedTagName( $resultArray['invalidadd'], 'item' );
+			}
 		}
+
 		if ( isset( $data['remove'] ) ) {
-			$resultArray['removed'] = count( array_udiff( $targets, $newTargets,
+			$resultArray['removed'] = array_values( array_udiff( $targets, $newTargets,
 				'MassMessageListContentHandler::compareTargets' ) );
+			$result->setIndexedTagName( $resultArray['removed'], 'page' );
+
+			if ( !empty( $invalidRemove ) ) {
+				$resultArray['result'] = 'Done';
+				$resultArray['invalidremove'] = $invalidRemove;
+				$result->setIndexedTagName( $resultArray['invalidremove'], 'item' );
+			}
 		}
-		$this->getResult()->addValue(
+
+		$result->addValue(
 			null,
 			$this->getModuleName(),
 			$resultArray
@@ -115,28 +140,8 @@ class ApiEditMassMessageList extends ApiBase {
 			parent::getPossibleErrors(),
 			array(
 				array( 'invalidspamlist' ),
-				array( 'invalidadd' ),
-				array( 'invalidremove' ),
-				array( 'massmessage-content-tojsonerror' ),
-				array( 'massmessage-content-apierror' ),
-			)
-		);
-	}
-
-	public function getResultProperties() {
-		return array(
-			'' => array(
-				'result' => array(
-					ApiBase::PROP_TYPE => 'string'
-				),
-				'added' => array(
-					ApiBase::PROP_TYPE => 'integer',
-					ApiBase::PROP_NULLABLE => true
-				),
-				'removed' => array(
-					ApiBase::PROP_TYPE => 'integer',
-					ApiBase::PROP_NULLABLE => true
-				),
+				array( 'massmessage-ch-tojsonerror' ),
+				array( 'massmessage-ch-apierror' ),
 			)
 		);
 	}

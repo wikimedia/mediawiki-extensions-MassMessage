@@ -75,16 +75,17 @@
 				$link.attr( 'data-title' ),
 				$link.attr( 'data-site' ) === 'local' ? '' : $link.attr( 'data-site' )
 			);
+
 			( new mw.Api() ).postWithToken( 'edit', {
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
 				remove: param
 			} )
 			.done( function () {
+				// Treat as success if the page being removed could not be found.
 				$link.closest( 'li' ).fadeOut();
 			} )
 			.fail( function ( errorCode ) {
-				// TODO: Use something other than alert()?
 				alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );
 			} );
 		} );
@@ -104,7 +105,7 @@
 
 		// Handle add pages form.
 		$( '#mw-massmessage-addform' ).submit( function( e ) {
-			var title, site, param;
+			var title, site, apiResult;
 
 			e.preventDefault();
 
@@ -117,29 +118,32 @@
 			// Clear previous error messages.
 			$( '#mw-massmessage-addform .error' ).remove();
 
-			param = getApiParam( title, site );
 			( new mw.Api() ).postWithToken( 'edit', {
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
-				add: param
+				add: getApiParam( title, site )
 			} )
 			.done( function ( data ) {
-				if ( data.editmassmessagelist.added === 0 ) {
-					// None added, i.e. it's already in the list
-					showAddError( 'massmessage-content-alreadyinlist' );
-				} else {
-					appendAdded( title, site );
-					// Clear the input fields
-					$( '#mw-massmessage-addtitle' ).val( '' );
-					$( '#mw-massmessage-addsite' ).val( '' );
+				apiResult = data.editmassmessagelist;
+
+				if ( apiResult.result === 'Success' ) {
+					if ( apiResult.added.length > 0 ) {
+						appendAdded(
+							apiResult.added[0].title,
+							( 'site' in apiResult.added[0] ) ? apiResult.added[0].site : ''
+						);
+						// Clear the input fields
+						$( '#mw-massmessage-addtitle' ).val( '' );
+						$( '#mw-massmessage-addsite' ).val( '' );
+					} else { // None added, i.e. it's already in the list
+						showAddError( 'massmessage-content-alreadyinlist' );
+					}
+				} else { // The input was invalid.
+					showAddError( 'massmessage-content-invalidadd' );
 				}
 			} )
 			.fail( function ( errorCode ) {
-				if ( errorCode === 'invalidadd' ) {
-					showAddError( 'massmessage-content-invalidadd' );
-				} else {
-					showAddError( 'massmessage-content-adderror', errorCode );
-				}
+				showAddError( 'massmessage-content-adderror', errorCode );
 			} );
 		} );
 	} );
