@@ -47,6 +47,22 @@
 			);
 		};
 
+		// Return a target page in title or title@site (if site is not empty) form.
+		var getApiParam = function ( title, site ) {
+			var server, param;
+			if ( site === '' ) {
+				if ( title.indexOf( '@' ) >= 0 ) { // Handle titles containing '@'
+					server = mw.config.get( 'wgServer' );
+					param = title + '@' + server.substr( server.indexOf( '//' ) + 2 );
+				} else {
+					param = title;
+				}
+			} else {
+				param = title + '@' + site;
+			}
+			return param;
+		};
+
 		// Handle remove links next to targets.
 		$( '#mw-content-text' ).on( 'click', '.mw-massmessage-removelink a', function ( e ) {
 			var param, $link = $( this );
@@ -55,12 +71,10 @@
 
 			// TODO: Use jquery.confirmable once it's available.
 
-			if ( $link.attr( 'data-site' ) === 'local' ) {
-				param = $link.attr( 'data-title' );
-			} else {
-				param = $link.attr( 'data-title' ) + '@' + $link.attr( 'data-site' );
-			}
-
+			param = getApiParam(
+				$link.attr( 'data-title' ),
+				$link.attr( 'data-site' ) === 'local' ? '' : $link.attr( 'data-site' )
+			);
 			( new mw.Api() ).postWithToken( 'edit', {
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
@@ -103,12 +117,7 @@
 			// Clear previous error messages.
 			$( '#mw-massmessage-addform .error' ).remove();
 
-			if ( site === '' ) {
-				param = title;
-			} else {
-				param = title + '@' + site;
-			}
-
+			param = getApiParam( title, site );
 			( new mw.Api() ).postWithToken( 'edit', {
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
@@ -122,7 +131,7 @@
 					appendAdded( title, site );
 					// Clear the input fields
 					$( '#mw-massmessage-addtitle' ).val( '' );
-					$( '#mw-massmessage-addtitle' ).val( '' );
+					$( '#mw-massmessage-addsite' ).val( '' );
 				}
 			} )
 			.fail( function ( errorCode ) {
