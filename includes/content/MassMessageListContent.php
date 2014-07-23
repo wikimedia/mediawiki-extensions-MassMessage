@@ -143,6 +143,15 @@ class MassMessageListContent extends TextContent {
 			return $html;
 		}
 
+		// Use LinkBatch to cache existence for all local targets for later use by Linker.
+		if ( array_key_exists( 'local', $sites ) ) {
+			$lb = new LinkBatch;
+			foreach ( $sites['local'] as $target ) {
+				$lb->addObj( Title::newFromText( $target ) );
+			}
+			$lb->execute();
+		}
+
 		// Determine whether there are targets on external wikis.
 		$printSites = ( count( $sites ) === 1 && array_key_exists( 'local', $sites ) ) ?
 			false : true;
@@ -219,7 +228,7 @@ class MassMessageListContent extends TextContent {
 	 * @return string
 	 */
 	 protected static function getAddForm() {
-		global $wgAllowGlobalMessaging;
+		global $wgAllowGlobalMessaging, $wgCanonicalServer;
 
 		$html = Html::openElement( 'div', array( 'id' => 'mw-massmessage-addpages' ) );
 		$html .= Html::element( 'h2', array(),
@@ -235,7 +244,7 @@ class MassMessageListContent extends TextContent {
 				wfMessage( 'massmessage-content-addsite' )->text() );
 			$html .= Html::input( 'site', '', 'text', array(
 				'id' => 'mw-massmessage-addsite',
-				'placeholder' => wfMessage( 'massmessage-content-thiswiki' )->text()
+				'placeholder' => MassMessage::getBaseUrl( $wgCanonicalServer )
 			) );
 		}
 		$html .= Html::input( 'submit', wfMessage( 'massmessage-content-addsubmit' )->escaped(),

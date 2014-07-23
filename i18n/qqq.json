@@ -54,7 +54,6 @@
 	"massmessage-content-addheading": "Heading for the form for adding pages when viewing delivery lists",
 	"massmessage-content-addtitle": "Label for the title field in the form for adding pages",
 	"massmessage-content-addsite": "Label for the site field in the form for adding pages",
-	"massmessage-content-thiswiki": "Placeholder text for the site field (site defaults to the local wiki if left blank)",
 	"massmessage-content-addsubmit": "Label for the button to add the entered page",
 	"massmessage-content-addedlistheading": "Subheading for the list of pages just added",
 	"massmessage-content-addeditem": "A target on another wiki in the list of pages just added\n* $1 is a link to the target\n* 2 is the domain of the wiki",

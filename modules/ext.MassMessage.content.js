@@ -6,8 +6,8 @@
 		var listShown = false;
 
 		// Append an added page to the displayed list.
-		var appendAdded = function ( title, site ) {
-			var targetLink, removeLink;
+		var appendAdded = function ( title, site, missing ) {
+			var targetAttribs, targetLink, removeLink;
 
 			if ( !listShown ) {
 				$( '#mw-massmessage-addedlist' ).show();
@@ -15,19 +15,24 @@
 			}
 
 			if ( site === '' ) {
-				targetLink = mw.html.element( 'a', {
+				targetAttribs = {
 					href: mw.util.getUrl( title ),
 					title: title
-				}, title );
+				};
+				if ( missing ) {
+					targetAttribs['class'] = 'new';
+				}
+				targetLink = mw.html.element( 'a', targetAttribs, title );
 			} else {
+				targetAttribs = {
+					href: '//' + site + mw.config.get( 'wgScript' ) + '?title=' +
+						encodeURIComponent( title ),
+					'class': 'external'
+				};
 				// Use a message so we have something like "<title> on <site>".
 				targetLink = mw.message(
 					'massmessage-content-addeditem',
-					mw.html.element( 'a', {
-						href: '//' + site + mw.config.get( 'wgScript' ) + '?title=' +
-							encodeURIComponent( title ),
-						'class': 'external'
-					}, title ),
+					mw.html.element( 'a', targetAttribs, title ),
 					site
 				).text();
 			}
@@ -105,7 +110,7 @@
 
 		// Handle add pages form.
 		$( '#mw-massmessage-addform' ).submit( function( e ) {
-			var title, site, apiResult;
+			var title, site, apiResult, addedPage;
 
 			e.preventDefault();
 
@@ -128,9 +133,11 @@
 
 				if ( apiResult.result === 'Success' ) {
 					if ( apiResult.added.length > 0 ) {
+						addedPage = apiResult.added[0];
 						appendAdded(
-							apiResult.added[0].title,
-							( 'site' in apiResult.added[0] ) ? apiResult.added[0].site : ''
+							addedPage.title,
+							( 'site' in addedPage ) ? addedPage.site : '',
+							( 'missing' in addedPage ) ? true : false
 						);
 						// Clear the input fields
 						$( '#mw-massmessage-addtitle' ).val( '' );

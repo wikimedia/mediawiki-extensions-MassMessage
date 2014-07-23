@@ -76,6 +76,25 @@ class ApiEditMassMessageList extends ApiBase {
 		if ( isset( $data['add'] ) ) {
 			$resultArray['added'] = array_values( array_udiff( $newTargets, $targets,
 				'MassMessageListContentHandler::compareTargets' ) );
+
+			// Use a LinkBatch to look up and cache existence for all local targets
+			$lb = new LinkBatch;
+			foreach ( $resultArray['added'] as $target ) {
+				if ( !isset( $target['site'] ) ) {
+					$lb->addObj( Title::newFromText( $target['title'] ) );
+				}
+			}
+			$lb->execute();
+
+			// Add an empty "missing" attribute to new local targets that do not exist
+			foreach ( $resultArray['added'] as &$target ) {
+				if ( !isset( $target['site'] )
+					&& !Title::newFromText( $target['title'] )->exists()
+				) {
+					$target['missing'] = '';
+				}
+			}
+
 			$result->setIndexedTagName( $resultArray['added'], 'page' );
 
 			if ( !empty( $invalidAdd ) ) {
