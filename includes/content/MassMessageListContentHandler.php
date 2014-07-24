@@ -105,9 +105,8 @@ class MassMessageListContentHandler extends TextContentHandler {
 
 	/**
 	 * Helper function to extract and validate title and site (if specified) from a target string
-	 * Returns null if the target string doesn't specify a valid target
 	 * @param string $target
-	 * @return array|null
+	 * @return array Contains an 'errors' key for an array of errors if the string is invalid
 	 */
 	public static function extractTarget( $target ) {
 		global $wgCanonicalServer, $wgAllowGlobalMessaging;
@@ -122,27 +121,28 @@ class MassMessageListContentHandler extends TextContentHandler {
 			$site = null;
 		}
 
+		$result = array();
+
 		$title = Title::newFromText( $titleText );
 		if ( !$title ) {
-			return null; // Invalid title
+			$result['errors'] = array( 'invalidtitle' );
+		} else {
+			$result['title'] = $title->getPrefixedText(); // Use the canonical form.
 		}
-		$titleText = $title->getPrefixedText(); // Use the canonical form.
 
-		if ( $site ) {
-			if ( $site === MassMessage::getBaseUrl( $wgCanonicalServer ) ) {
-				$site = null; // Do not return site for the local wiki.
-			} else {
-				$wiki = MassMessage::getDBName( $site );
-				if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki !== wfWikiID() ) {
-					return null; // Invalid site
+		if ( $site !== null && $site !== MassMessage::getBaseUrl( $wgCanonicalServer ) ) {
+			$wiki = MassMessage::getDBName( $site );
+			if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki !== wfWikiID() ) {
+				if ( array_key_exists( 'errors', $result ) ) {
+					$result['errors'][] = 'invalidsite';
+				} else {
+					$result['errors'] = array( 'invalidsite' );
 				}
+			} else {
+				$result['site'] = $site;
 			}
 		}
 
-		if ( $site ) {
-			return array( 'title' => $titleText, 'site' => $site );
-		} else {
-			return array( 'title' => $titleText );
-		}
+		return $result;
 	}
 }

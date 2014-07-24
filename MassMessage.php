@@ -147,7 +147,9 @@ $wgResourceModules['ext.MassMessage.content.js'] = array(
 		'massmessage-content-addeditem',
 		'massmessage-content-removeerror',
 		'massmessage-content-alreadyinlist',
-		'massmessage-content-invalidadd',
+		'massmessage-content-invalidtitlesite',
+		'massmessage-content-invalidtitle',
+		'massmessage-content-invalidsite',
 		'massmessage-content-adderror',
 	),
 	'dependencies' => array(

@@ -110,7 +110,7 @@
 
 		// Handle add pages form.
 		$( '#mw-massmessage-addform' ).submit( function( e ) {
-			var title, site, apiResult, addedPage;
+			var title, site, apiResult, page;
 
 			e.preventDefault();
 
@@ -133,11 +133,11 @@
 
 				if ( apiResult.result === 'Success' ) {
 					if ( apiResult.added.length > 0 ) {
-						addedPage = apiResult.added[0];
+						page = apiResult.added[0];
 						appendAdded(
-							addedPage.title,
-							( 'site' in addedPage ) ? addedPage.site : '',
-							( 'missing' in addedPage ) ? true : false
+							page.title,
+							( 'site' in page ) ? page.site : '',
+							( 'missing' in page ) ? true : false
 						);
 						// Clear the input fields
 						$( '#mw-massmessage-addtitle' ).val( '' );
@@ -146,7 +146,14 @@
 						showAddError( 'massmessage-content-alreadyinlist' );
 					}
 				} else { // The input was invalid.
-					showAddError( 'massmessage-content-invalidadd' );
+					page = apiResult.invalidadd[0];
+					if ( 'invalidtitle' in page && 'invalidsite' in page ) {
+						showAddError( 'massmessage-content-invalidtitlesite' );
+					} else if ( 'invalidtitle' in page ) {
+						showAddError( 'massmessage-content-invalidtitle' );
+					} else {
+						showAddError( 'massmessage-content-invalidsite' );
+					}
 				}
 			} )
 			.fail( function ( errorCode ) {

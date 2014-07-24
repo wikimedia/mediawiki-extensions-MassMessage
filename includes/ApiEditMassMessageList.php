@@ -26,8 +26,12 @@ class ApiEditMassMessageList extends ApiBase {
 
 			foreach ( $data['add'] as $page ) {
 				$target = MassMessageListContentHandler::extractTarget( $page );
-				if ( $target === null ) {
-					$invalidAdd[] = $page;
+				if ( isset( $target['errors'] ) ) {
+					$item = array( '*' => $page );
+					foreach( $target['errors'] as $error ) {
+						$item[$error] = '';
+					}
+					$invalidAdd[] = $item;
 				} else {
 					$newTargets[] = $target;
 				}
@@ -44,7 +48,7 @@ class ApiEditMassMessageList extends ApiBase {
 
 			foreach ( $data['remove'] as $page ) {
 				$target = MassMessageListContentHandler::extractTarget( $page );
-				if ( $target === null || !in_array( $target, $newTargets ) ) {
+				if ( isset( $target['errors'] ) || !in_array( $target, $newTargets ) ) {
 					$invalidRemove[] = $page;
 				} else {
 					$toRemove[] = $target;

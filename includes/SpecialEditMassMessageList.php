@@ -162,7 +162,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		$targets = array();
 		foreach ( $lines as $line ) {
 			$target = MassMessageListContentHandler::extractTarget( $line );
-			if ( $target === null ) {
+			if ( array_key_exists( 'errors', $target ) ) {
 				return null; // Invalid target
 			}
 			$targets[] = $target;
