@@ -7,7 +7,7 @@
 
 		// Append an added page to the displayed list.
 		var appendAdded = function ( title, site, missing ) {
-			var targetAttribs, targetLink, removeLink;
+			var targetAttribs, targetLink, removeLink, $list = $( '#mw-massmessage-addedlist ul' );
 
 			if ( !listShown ) {
 				$( '#mw-massmessage-addedlist' ).show();
@@ -43,7 +43,12 @@
 				href: '#'
 			}, mw.message( 'massmessage-content-remove' ).text() );
 
-			$( '#mw-massmessage-addedlist ul' ).append(
+			// If the list was empty, remove the message saying so.
+			if ( $list.children( ':visible' ).length === 0 ) {
+				$list.prev( '.mw-massmessage-emptylist' ).remove();
+			}
+
+			$list.append(
 				$( '<li></li>' ).append(
 					$( '<span></span>' ).addClass( 'mw-massmessage-targetlink' ).html( targetLink ),
 					$( '<span></span>' ).addClass( 'mw-massmessage-removelink' )
@@ -87,8 +92,18 @@
 				remove: param
 			} )
 			.done( function () {
-				// Treat as success if the page being removed could not be found.
-				$link.closest( 'li' ).fadeOut();
+				$link.closest( 'li' ).fadeOut( 400, function () { // 400 is the default duration.
+					var $list = $link.closest( 'ul' );
+
+					// Replace empty lists with a message indicating the list is empty.
+					if ( $list.children( ':visible' ).length === 0 ) {
+						$list.before(
+							$( '<p></p>' ).addClass( 'mw-massmessage-emptylist' ).html(
+								mw.message( 'massmessage-content-emptylist' ).escaped()
+							)
+						);
+					}
+				} );
 			} )
 			.fail( function ( errorCode ) {
 				alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );

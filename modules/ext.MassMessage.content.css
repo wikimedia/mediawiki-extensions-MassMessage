@@ -8,6 +8,10 @@
 	margin-left: 20px;
 }
 
+.mw-massmessage-emptylist {
+	font-style: italic;
+}
+
 #mw-massmessage-addpages label {
 	margin-right: 2px;
 }

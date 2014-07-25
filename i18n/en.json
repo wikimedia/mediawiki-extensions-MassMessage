@@ -50,6 +50,7 @@
 	"massmessage-content-remove": "remove",
 	"massmessage-content-removeerror": "Removing the page failed with error code $1.",
 	"massmessage-content-empty": "There are no pages in this list.",
+	"massmessage-content-emptylist": "(none)",
 	"massmessage-content-addheading": "Add pages",
 	"massmessage-content-addtitle": "Title:",
 	"massmessage-content-addsite": "Site:",

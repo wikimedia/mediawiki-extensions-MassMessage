@@ -144,6 +144,7 @@ $wgResourceModules['ext.MassMessage.content.js'] = array(
 	'scripts' => 'ext.MassMessage.content.js',
 	'messages' => array(
 		'massmessage-content-remove',
+		'massmessage-content-emptylist',
 		'massmessage-content-addeditem',
 		'massmessage-content-removeerror',
 		'massmessage-content-alreadyinlist',
