@@ -145,9 +145,34 @@ class MassMessageHooks {
 		if ( $title->hasContentModel( 'MassMessageListContent' )
 			&& array_key_exists( 'edit', $links['views'] )
 		) {
+			// Get the revision being viewed, if applicable
+			$request = $sktemplate->getRequest();
+			$direction = $request->getVal( 'direction' );
+			$diff = $request->getVal( 'diff' );
+			$oldid = $request->getInt( 'oldid' );
+			if ( $direction === 'next' && $oldid > 0 ) {
+				$next = $title->getNextRevisionId( $oldid );
+				$revId = ( $next ) ? $next : $oldid;
+			} elseif ( $direction === 'prev' && $oldid > 0 ) {
+				$prev = $title->getPreviousRevisionId( $oldid );
+				$revId = ( $prev ) ? $prev : $oldid;
+			} elseif ( $diff !== null ) {
+				if ( ctype_digit( $diff ) ) {
+					$revId = (int)$diff;
+				} elseif ( $diff === 'next' && $oldid > 0 ) {
+					$next = $title->getNextRevisionId( $oldid );
+					$revId = ( $next ) ? $next : $revId;
+				} else { // diff is 'prev' or gibberish
+					$revId = $oldid;
+				}
+			} else {
+				$revId = $oldid;
+			}
+
+			$query = ( $revId > 0 ) ? 'oldid=' . $revId : '';
 			$links['views']['edit']['href'] = SpecialPage::getTitleFor(
 				'EditMassMessageList', $title
-			)->getFullUrl();
+			)->getFullUrl( $query );
 		}
 		return true;
 	}

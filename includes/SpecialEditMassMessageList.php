@@ -8,7 +8,13 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	protected $title;
 
 	/**
-	 * The message key for the error encountered while parsing the title, if any.
+	 * The revision to edit
+	 * @var Revision|null
+	 */
+	protected $rev;
+
+	/**
+	 * The message key for the error encountered while parsing the title, if any
 	 * @var string|null
 	 */
 	protected $errorMsgKey;
@@ -35,6 +41,22 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				$this->errorMsgKey = 'massmessage-edit-nopermission';
 			} else {
 				$this->title = $title;
+
+				$revId = $this->getRequest()->getInt( 'oldid' );
+				if ( $revId > 0 ) {
+					$rev = Revision::newFromId( $revId );
+					if ( $rev
+						&& $rev->getTitle()->equals( $title )
+						&& $rev->getContentModel() === 'MassMessageListContent'
+						&& $rev->userCan( Revision::DELETED_TEXT, $this->getUser() )
+					) {
+						$this->rev = $rev;
+					} else { // Use the latest revision for the title if $rev is invalid.
+						$this->rev = Revision::newFromTitle( $title );
+					}
+				} else {
+					$this->rev = Revision::newFromTitle( $title );
+				}
 			}
 		}
 	}
@@ -49,7 +71,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return array();
 		}
 
-		$content = Revision::newFromTitle( $this->title )->getContent();
+		$content = $this->rev->getContent( Revision::FOR_THIS_USER, $this->getUser() );
 		$description = $content->getDescription();
 		$targets = $content->getTargets();
 
@@ -90,11 +112,21 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 */
 	protected function preText() {
 		if ( $this->title ) {
-			$msgKey = 'massmessage-edit-header';
+			$html = Html::rawElement( 'p', array(),
+				$this->msg( 'massmessage-edit-header' )->parse() );
+			if ( $this->rev->isDeleted( Revision::DELETED_TEXT ) ) {
+				$html .= Html::openElement( 'div', array( 'class' => 'mw-warning plainlinks' ) );
+				$html .= Html::rawElement( 'p', array(),
+					$this->msg( 'rev-deleted-text-view' )->parse() );
+				$html .= Html::closeElement( 'div' );
+			}
+			if ( $this->rev->getId() !== $this->title->getLatestRevID() ) {
+				$html .= Html::rawElement( 'p', array(), $this->msg( 'editingold' )->parse() );
+			}
 		} else {
-			$msgKey = $this->errorMsgKey;
+			$html = Html::rawElement( 'p', array(), $this->msg( $this->errorMsgKey )->parse() );
 		}
-		return '<p>' . $this->msg( $msgKey )->parse() . '</p>';
+		return $html;
 	}
 
 	/**
