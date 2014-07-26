@@ -58,6 +58,22 @@ class MassMessageListContent extends TextContent {
 	}
 
 	/**
+	 * Returns a list content object with pre-save transformations applied.
+	 * The implementation normalizes the JSON data.
+	 *
+	 * @param Title $title
+	 * @param User $user
+	 * @param ParserOptions $popts
+	 *
+	 * @return MassMessageListContent
+	 */
+	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
+		$text = $this->getNativeData();
+		$pst = FormatJson::encode( FormatJson::decode( $text ) );
+		return ( $text === $pst ) ? $this : new static( $pst );
+	}
+
+	/**
 	 * @return string|null
 	 */
 	public function getDescription() {
