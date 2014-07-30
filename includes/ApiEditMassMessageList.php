@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * API module to edit a MassMessage delivery list
+ *
+ * @ingroup API
+ */
 class ApiEditMassMessageList extends ApiBase {
 
 	public function execute() {

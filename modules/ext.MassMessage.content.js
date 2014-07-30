@@ -123,6 +123,12 @@
 			);
 		};
 
+		// Autocomplete for page titles
+		mw.massmessage.enableTitleComplete( $( '#mw-massmessage-addtitle' ) );
+
+		//Autocomplete for sites
+		mw.massmessage.enableSiteComplete( $( '#mw-massmessage-addsite' ) );
+
 		// Handle add pages form.
 		$( '#mw-massmessage-addform' ).submit( function( e ) {
 			var title, site, apiResult, page;

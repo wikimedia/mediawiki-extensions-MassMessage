@@ -69,6 +69,7 @@ $wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php
 $wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
 $wgAutoloadClasses['ApiMassMessage'] = "$dir/includes/ApiMassMessage.php";
 $wgAutoloadClasses['ApiEditMassMessageList'] = "$dir/includes/ApiEditMassMessageList.php";
+$wgAutoloadClasses['ApiQueryMMSites'] = "$dir/includes/ApiQueryMMSites.php";
 $wgAutoloadClasses['MassMessage'] = "$dir/includes/MassMessage.php";
 $wgAutoloadClasses['MassMessageTargets'] = "$dir/includes/MassMessageTargets.php";
 $wgAutoloadClasses['SpecialMassMessage'] = "$dir/includes/SpecialMassMessage.php";
@@ -89,6 +90,7 @@ $wgContentHandlers['MassMessageListContent'] = 'MassMessageListContentHandler';
 // API modules
 $wgAPIModules['massmessage'] = 'ApiMassMessage';
 $wgAPIModules['editmassmessagelist'] = 'ApiEditMassMessageList';
+$wgAPIListModules['mmsites'] = 'ApiQueryMMSites';
 
 // Job classes
 $wgJobClasses['MassMessageJob'] = 'MassMessageJob';
@@ -111,10 +113,15 @@ $wgSpecialPages['CreateMassMessageList'] = 'SpecialCreateMassMessageList';
 $wgSpecialPages['EditMassMessageList'] = 'SpecialEditMassMessageList';
 
 // ResourceLoader
+$wgResourceModules['ext.MassMessage.autocomplete'] = array(
+	'scripts' => 'ext.MassMessage.autocomplete.js',
+	'dependencies' => 'jquery.ui.autocomplete',
+	'localBasePath' => $dir . '/modules',
+	'remoteExtPath' => 'MassMessage/modules',
+);
 $wgResourceModules['ext.MassMessage.special.js'] = array(
 	'scripts' => array(
 		'ext.MassMessage.special.js',
-		'ext.MassMessage.autocomplete.js',
 		'ext.MassMessage.badhtml.js',
 	),
 	'messages' => array(
@@ -122,8 +129,8 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 		'massmessage-parse-badpage'
 	),
 	'dependencies' => array(
+		'ext.MassMessage.autocomplete',
 		'jquery.byteLimit',
-		'jquery.ui.autocomplete',
 		'jquery.throttle-debounce',
 		'mediawiki.jqueryMsg',
 	),
@@ -154,6 +161,7 @@ $wgResourceModules['ext.MassMessage.content.js'] = array(
 		'massmessage-content-adderror',
 	),
 	'dependencies' => array(
+		'ext.MassMessage.autocomplete',
 		'mediawiki.api',
 		'mediawiki.util',
 		'mediawiki.jqueryMsg',
@@ -173,6 +181,7 @@ $wgResourceModules['ext.MassMessage.content.nojs'] = array(
 );
 $wgResourceModules['ext.MassMessage.create'] = array(
 	'scripts' => 'ext.MassMessage.create.js',
+	'dependencies' => 'ext.MassMessage.autocomplete',
 	'localBasePath' => $dir . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );

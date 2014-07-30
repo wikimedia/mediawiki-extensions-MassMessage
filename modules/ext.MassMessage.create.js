@@ -17,5 +17,6 @@
 			$( '#mw-input-wpsource' ).prop( 'disabled', false );
 		} );
 
+		mw.massmessage.enableTitleComplete( $( '#mw-input-wpsource' ) );
 	} );
 }( mediaWiki, jQuery ) );

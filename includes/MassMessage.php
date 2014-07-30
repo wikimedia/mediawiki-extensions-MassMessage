@@ -88,13 +88,12 @@ class MassMessage {
 	}
 
 	/**
-	 * Get database name from URL hostname
-	 * Requires $wgConf to be set up properly
-	 * Tries to read from cache if possible
-	 * @param  string $host
-	 * @return string
-	 */
-	public static function getDBName( $host ) {
+	* Get a mapping from site domains to database names
+	* Requires $wgConf to be set up properly
+	* Tries to read from cache if possible
+	* @return array
+	*/
+	public static function getDatabases() {
 		global $wgConf, $wgMemc;
 		static $mapping = null;
 		if ( $mapping === null ) {
@@ -114,6 +113,16 @@ class MassMessage {
 				$mapping = $data;
 			}
 		}
+		return $mapping;
+	}
+
+	/**
+	 * Get database name from URL hostname
+	 * @param  string $host
+	 * @return string
+	 */
+	public static function getDBName( $host ) {
+		$mapping = self::getDatabases();
 		if ( isset( $mapping[$host] ) ) {
 			return $mapping[$host];
 		}
