@@ -63,14 +63,14 @@ class ApiEditMassMessageList extends ApiBase {
 				'MassMessageListContentHandler::compareTargets' ) );
 		}
 
-		$result = MassMessageListContentHandler::edit(
+		$editResult = MassMessageListContentHandler::edit(
 			$spamlist,
 			$description,
 			$newTargets,
 			'massmessage-api-editsummary',
 			$this // APIs implement IContextSource
 		);
-		if ( !$result->isGood() ) {
+		if ( !$editResult->isGood() ) {
 			$this->dieStatus( $result );
 		}
 
