@@ -63,6 +63,8 @@
 	"massmessage-content-invalidtitle": "Error message shown next to the form for adding pages when the title is invalid",
 	"massmessage-content-invalidsite": "Error message shown next to the form for adding pages when the site is invalid",
 	"massmessage-content-adderror": "Error message shown next to the form for adding pages when the API request failed\n* $1 is the error code",
+	"massmessage-diff-descheader": "Header for the diff of the description between two revisions",
+	"massmessage-diff-targetsheader": "Header for the diff of the target pages between two revisions",
 	"massmessage-ch-tojsonerror": "Error message shown when the input could not be successfully encoded as a delivery list",
 	"massmessage-ch-apierror": "Error message shown when a request to the edit API to update a delivery list failed",
 	"createmassmessagelist-legend": "Form legend for [[Special:CreateMassMessageList]]",

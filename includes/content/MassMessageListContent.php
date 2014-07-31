@@ -90,6 +90,32 @@ class MassMessageListContent extends TextContent {
 	}
 
 	/**
+	 * Return targets as an array of title or title@site strings.
+	 * @return array|null
+	 */
+	public function getTargetStrings() {
+		global $wgCanonicalServer;
+
+		$targets = $this->getTargets();
+		if ( $targets === null ) {
+			return null;
+		}
+
+		$targetStrings = array();
+		foreach ( $targets as $target ) {
+			if ( array_key_exists( 'site', $target ) ) {
+				$targetStrings[] = $target['title'] . '@' . $target['site'];
+			} elseif ( strpos( $target['title'], '@' ) !== false ) {
+				// List the site if it'd otherwise be ambiguous
+				$targetStrings[] = $target['title'] . '@' . MassMessage::getBaseUrl( $wgCanonicalServer );
+			} else {
+				$targetStrings[] = $target['title'];
+			}
+		}
+		return $targetStrings;
+	}
+
+	/**
 	 * Decode the JSON contents and populate $description and $targets.
 	 */
 	protected function decode() {

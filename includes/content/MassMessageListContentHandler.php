@@ -31,6 +31,13 @@ class MassMessageListContentHandler extends TextContentHandler {
 	}
 
 	/**
+	 * @return string
+	 */
+	protected function getDiffEngineClass() {
+		return 'MassMessageListDiffEngine';
+	}
+
+	/**
 	 * Edit a delivery list via the edit API
 	 * @param Title $title
 	 * @param string $description

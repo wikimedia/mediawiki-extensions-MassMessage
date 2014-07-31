@@ -73,7 +73,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 		$content = $this->rev->getContent( Revision::FOR_THIS_USER, $this->getUser() );
 		$description = $content->getDescription();
-		$targets = $content->getTargets();
+		$targets = $content->getTargetStrings();
 
 		return array(
 			'title' => array(
@@ -90,7 +90,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			),
 			'content' => array(
 				'type' => 'textarea',
-				'default' => ( $targets !== null ) ? self::parseTargets( $targets ) : '',
+				'default' => ( $targets !== null ) ? implode( "\n", $targets ) : '',
 				'label-message' => 'massmessage-edit-content',
 			),
 		);
@@ -159,28 +159,6 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 	public function onSuccess() {
 		// No-op: We have already redirected.
-	}
-
-	/**
-	 * Parse array of targets for editing.
-	 * @var array $targets
-	 * @return string
-	 */
-	protected static function parseTargets( $targets ) {
-		global $wgCanonicalServer;
-
-		$lines = array();
-		foreach ( $targets as $target ) {
-			if ( array_key_exists( 'site', $target ) ) {
-				$lines[] = $target['title'] . '@' . $target['site'];
-			} elseif ( strpos( $target['title'], '@' ) !== false ) {
-				// List the site if it'd otherwise be ambiguous
-				$lines[] = $target['title'] . '@' . MassMessage::getBaseUrl( $wgCanonicalServer );
-			} else {
-				$lines[] = $target['title'];
-			}
-		}
-		return implode( "\n", $lines );
 	}
 
 	/**

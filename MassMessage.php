@@ -82,6 +82,7 @@ $wgAutoloadClasses['MassMessageSendLogFormatter'] = "$dir/includes/logging/MassM
 $wgAutoloadClasses['MassMessageSkipLogFormatter'] = "$dir/includes/logging/MassMessageSkipLogFormatter.php";
 $wgAutoloadClasses['MassMessageListContent'] = "$dir/includes/content/MassMessageListContent.php";
 $wgAutoloadClasses['MassMessageListContentHandler'] = "$dir/includes/content/MassMessageListContentHandler.php";
+$wgAutoloadClasses['MassMessageListDiffEngine'] = "$dir/includes/content/MassMessageListDiffEngine.php";
 $wgAutoloadClasses['MassMessageTestCase'] = "$dir/tests/MassMessageTestCase.php";
 
 // ContentHandler
