@@ -30,12 +30,9 @@ class MassMessageListContent extends TextContent {
 
 	/**
 	 * Decode and validate the contents.
-	 *
 	 * @return bool Whether the contents are valid
 	 */
 	public function isValid() {
-		global $wgAllowGlobalMessaging;
-
 		$this->decode(); // Populate $this->description and $this->targets.
 		if ( !is_string( $this->description ) || !is_array( $this->targets ) ) {
 			return false;
@@ -47,24 +44,36 @@ class MassMessageListContent extends TextContent {
 			) {
 				return false;
 			}
-			if ( array_key_exists( 'site', $target ) ) {
-				$wiki = MassMessage::getDBName( $target['site'] );
-				if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki !== wfWikiId() ) {
-					return false;
-				}
-			}
 		}
 		return true;
 	}
 
 	/**
+	 * Whether the content object contains invalid targets
+	 * @return bool
+	 */
+	public function hasInvalidTargets() {
+		global $wgAllowGlobalMessaging;
+
+		$targets = $this->getTargets();
+		foreach ( $targets as $target ) {
+			if ( array_key_exists( 'site', $target ) ) {
+				if ( !$wgAllowGlobalMessaging
+					|| MassMessage::getDBName( $target['site'] ) === null
+				) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
 	 * Returns a list content object with pre-save transformations applied.
 	 * The implementation normalizes the JSON data.
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @param ParserOptions $popts
-	 *
 	 * @return MassMessageListContent
 	 */
 	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
@@ -90,17 +99,33 @@ class MassMessageListContent extends TextContent {
 	}
 
 	/**
+	 * Return only the targets that would be valid for delivery.
+	 * @return array
+	 */
+	public function getValidTargets() {
+		global $wgAllowGlobalMessaging;
+
+		$targets = $this->getTargets();
+		$validTargets = array();
+		foreach ( $targets as $target ) {
+			if ( !array_key_exists( 'site', $target )
+				|| $wgAllowGlobalMessaging
+				&& MassMessage::getDBName( $target['site'] ) !== null
+			) {
+				$validTargets[] = $target;
+			}
+		}
+		return $validTargets;
+	}
+
+	/**
 	 * Return targets as an array of title or title@site strings.
-	 * @return array|null
+	 * @return array
 	 */
 	public function getTargetStrings() {
 		global $wgCanonicalServer;
 
 		$targets = $this->getTargets();
-		if ( $targets === null ) {
-			return null;
-		}
-
 		$targetStrings = array();
 		foreach ( $targets as $target ) {
 			if ( array_key_exists( 'site', $target ) ) {
@@ -149,7 +174,14 @@ class MassMessageListContent extends TextContent {
 
 		// Generate output HTML, if needed.
 		if ( $generateHtml ) {
-			$output->setText( $output->getText() . $this->getTargetsHtml() . self::getAddForm() );
+			if ( $this->hasInvalidTargets() ) {
+				$warning = Html::element( 'p', array( 'class' => 'error' ),
+					wfMessage( 'massmessage-content-invalidtargets' )->text() );
+			} else {
+				$warning = '';
+			}
+			$output->setText( $warning . $output->getText() . $this->getTargetsHtml()
+				. self::getAddForm() );
 		} else {
 			$output->setText( '' );
 		}
@@ -281,7 +313,7 @@ class MassMessageListContent extends TextContent {
 		$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addtitle' ),
 			wfMessage( 'massmessage-content-addtitle' )->text() );
 		$html .= Html::input( 'title', '', 'text', array( 'id' => 'mw-massmessage-addtitle' ) );
-		if ( $wgAllowGlobalMessaging ) {
+		if ( $wgAllowGlobalMessaging && count( MassMessage::getDatabases() ) > 1 ) {
 			$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addsite' ),
 				wfMessage( 'massmessage-content-addsite' )->text() );
 			$html .= Html::input( 'site', '', 'text', array(

@@ -45,8 +45,7 @@ $wgMassMessageAccountUsername = 'MediaWiki message delivery';
  * Whether to allow sending messages to another wiki
  *
  * This can be enabled on a "central" wiki to make it easier to keep track of where
- * messages are being sent from. Changing this from true to false will render existing
- * delivery lists containing external targets invalid.
+ * messages are being sent from.
  */
 $wgAllowGlobalMessaging = true;
 

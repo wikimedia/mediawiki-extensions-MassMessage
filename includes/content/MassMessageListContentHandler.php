@@ -138,8 +138,7 @@ class MassMessageListContentHandler extends TextContentHandler {
 		}
 
 		if ( $site !== null && $site !== MassMessage::getBaseUrl( $wgCanonicalServer ) ) {
-			$wiki = MassMessage::getDBName( $site );
-			if ( $wiki === null || !$wgAllowGlobalMessaging && $wiki !== wfWikiID() ) {
+			if ( !$wgAllowGlobalMessaging || MassMessage::getDBName( $site ) === null ) {
 				if ( array_key_exists( 'errors', $result ) ) {
 					$result['errors'][] = 'invalidsite';
 				} else {

@@ -94,13 +94,13 @@ class MassMessageTargets {
 	public static function getMassMessageListContentTargets ( Title $spamlist ) {
 		global $wgCanonicalServer;
 
-		$targets = Revision::newFromTitle( $spamlist )->getContent()->getTargets();
+		$targets = Revision::newFromTitle( $spamlist )->getContent()->getValidTargets();
 		foreach ( $targets as &$target ) {
 			if ( array_key_exists( 'site', $target ) ) {
 				$target['wiki'] = MassMessage::getDBName( $target['site'] );
 			} else {
-				$target['wiki'] = wfWikiID();
 				$target['site'] = MassMessage::getBaseUrl( $wgCanonicalServer );
+				$target['wiki'] = wfWikiId();
 			}
 		}
 		return $targets;
