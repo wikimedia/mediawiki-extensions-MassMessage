@@ -83,10 +83,16 @@
 	"massmessage-edit-title": "Title:",
 	"massmessage-edit-description": "Description:",
 	"massmessage-edit-content": "Content:",
+	"massmessage-edit-summary": "Edit summary:",
 	"massmessage-edit-header": "List one title per line, and use title@domain (e.g. User talk:Example@en.wikipedia.org) to specify a page on a different wiki, if cross-wiki delivery is enabled.",
-	"massmessage-edit-editsummary": "Update mass message delivery list",
 	"massmessage-edit-invalidtitle": "There is no valid mass message delivery list at the title.",
 	"massmessage-edit-invalidtargets": "The following pages are invalid:\n$1",
 	"massmessage-edit-nopermission": "You do not have permission to edit the list.",
-	"massmessage-api-editsummary": "Update mass message delivery list"
+	"massmessage-summary-addremove": "Added $1 {{PLURAL:$1|page|pages}} and removed $2 {{PLURAL:$2|page|pages}}",
+	"massmessage-summary-add": "Added [[$1]]",
+	"massmessage-summary-addonsite": "Added $1 on $2",
+	"massmessage-summary-addmulti": "Added $1 {{PLURAL:$1|pages}}",
+	"massmessage-summary-remove": "Removed [[$1]]",
+	"massmessage-summary-removeonsite": "Removed $1 on $2",
+	"massmessage-summary-removemulti": "Removed $1 {{PLURAL:$1|pages}}"
 }

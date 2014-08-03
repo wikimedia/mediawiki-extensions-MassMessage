@@ -26,6 +26,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	/**
 	 * @param string $par
 	 */
+	public function execute( $par ) {
+		$this->getOutput()->addModules( 'ext.MassMessage.edit' );
+		parent::execute( $par );
+	}
+
+	/**
+	 * @param string $par
+	 */
 	protected function setParameter( $par ) {
 		if ( $par === null || $par === '' ) {
 			$this->errorMsgKey = 'massmessage-edit-invalidtitle';
@@ -93,6 +101,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				'default' => ( $targets !== null ) ? implode( "\n", $targets ) : '',
 				'label-message' => 'massmessage-edit-content',
 			),
+			'summary' => array(
+				'type' => 'text',
+				'maxlength' => 255,
+				'label-message' => 'massmessage-edit-summary',
+			),
 		);
 	}
 
@@ -150,7 +163,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$this->title,
 			$data['description'],
 			$parseResult->value,
-			'massmessage-edit-editsummary',
+			$data['summary'],
 			$this->getContext()
 		);
 

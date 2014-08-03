@@ -63,7 +63,7 @@ class MassMessageListContentHandler extends TextContentHandler {
 				'title' => $title->getFullText(),
 				'contentmodel' => 'MassMessageListContent',
 				'text' => $jsonText,
-				'summary' => $context->msg( $summary )->inContentLanguage()->plain(),
+				'summary' => $summary,
 				'token' => $context->getUser()->getEditToken(),
 			),
 			true // Treat data as POSTed
