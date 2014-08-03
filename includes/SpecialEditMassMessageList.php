@@ -138,21 +138,24 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return Status::newFatal( 'massmessage-edit-invalidtitle' );
 		}
 
-		$targets = self::parseInput( $data['content'] );
-		if ( $targets === null ) {
-			return Status::newFatal( 'massmessage-edit-invalidtargets' );
+		$parseResult = self::parseInput( $data['content'] );
+		if ( !$parseResult->isGood() ) {
+			// wikitext list of invalid target strings
+			$invalidList = '* ' . implode( "\n* ", $parseResult->value );
+			return Status::newFatal( $this->msg( 'massmessage-edit-invalidtargets',
+				$invalidList ) );
 		}
 
-		$result = MassMessageListContentHandler::edit(
+		$editResult = MassMessageListContentHandler::edit(
 			$this->title,
 			$data['description'],
-			$targets,
+			$parseResult->value,
 			'massmessage-edit-editsummary',
 			$this->getContext()
 		);
 
-		if ( !$result->isGood() ) {
-			return $result;
+		if ( !$editResult->isGood() ) {
+			return $editResult;
 		}
 		$this->getOutput()->redirect( $this->title->getFullUrl() );
 	}
@@ -162,21 +165,31 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * Parse user input into targets array. Returns null if input contains invalid data.
+	 * Parse user input into an array of targets and return it as the value of a Status object.
+	 * If input contains invalid data, the value is the array of invalid target strings.
 	 * @param string $input
-	 * @return array|null
+	 * @return Status
 	 */
 	protected static function parseInput( $input ) {
 		$lines = array_filter( explode( "\n", $input ), 'trim' ); // Array of non-empty lines
 
 		$targets = array();
+		$invalidTargets = array();
 		foreach ( $lines as $line ) {
 			$target = MassMessageListContentHandler::extractTarget( $line );
 			if ( array_key_exists( 'errors', $target ) ) {
-				return null; // Invalid target
+				$invalidTargets[] = $line;
 			}
 			$targets[] = $target;
 		}
-		return MassMessageListContentHandler::normalizeTargetArray( $targets );
+
+		$result = new Status;
+		if ( empty( $invalidTargets ) ) {
+			$result->setResult( true,
+				MassMessageListContentHandler::normalizeTargetArray( $targets ) );
+		}else {
+			$result->setResult( false, $invalidTargets );
+		}
+		return $result;
 	}
 }

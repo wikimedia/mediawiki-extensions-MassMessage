@@ -86,7 +86,7 @@
 	"massmessage-edit-header": "List one title per line, and use title@domain (e.g. User talk:Example@en.wikipedia.org) to specify a page on a different wiki, if cross-wiki delivery is enabled.",
 	"massmessage-edit-editsummary": "Update mass message delivery list",
 	"massmessage-edit-invalidtitle": "There is no valid mass message delivery list at the title.",
-	"massmessage-edit-invalidtargets": "One of more of the entries in the list are invalid.",
+	"massmessage-edit-invalidtargets": "The following pages are invalid:\n$1",
 	"massmessage-edit-nopermission": "You do not have permission to edit the list.",
 	"massmessage-api-editsummary": "Update mass message delivery list"
 }
