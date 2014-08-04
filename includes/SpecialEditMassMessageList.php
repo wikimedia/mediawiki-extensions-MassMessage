@@ -153,10 +153,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 		$parseResult = self::parseInput( $data['content'] );
 		if ( !$parseResult->isGood() ) {
-			// wikitext list of invalid target strings
-			$invalidList = '* ' . implode( "\n* ", $parseResult->value );
+			// Wikitext list of escaped invalid target strings
+			$invalidList = '* ' . implode( "\n* ", array_map( 'wfEscapeWikiText',
+				$parseResult->value ) );
 			return Status::newFatal( $this->msg( 'massmessage-edit-invalidtargets',
-				$invalidList ) );
+				count( $parseResult->value ), $invalidList ) );
 		}
 
 		$editResult = MassMessageListContentHandler::edit(
