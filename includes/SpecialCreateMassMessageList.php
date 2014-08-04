@@ -74,7 +74,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			$title,
 			$data['description'],
 			$targets,
-			'massmessage-create-editsummary',
+			$this->msg( 'massmessage-create-editsummary' )->inContentLanguage()->plain(),
 			$this->getContext()
 		);
 
