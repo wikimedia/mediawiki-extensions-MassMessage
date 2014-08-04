@@ -131,7 +131,7 @@ class MassMessageListContentHandler extends TextContentHandler {
 		$result = array();
 
 		$title = Title::newFromText( $titleText );
-		if ( !$title ) {
+		if ( !$title || $title->isSpecialPage() || $title->isExternal() ) {
 			$result['errors'] = array( 'invalidtitle' );
 		} else {
 			$result['title'] = $title->getPrefixedText(); // Use the canonical form.
