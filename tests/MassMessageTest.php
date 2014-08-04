@@ -78,14 +78,11 @@ class MassMessageTest extends MassMessageTestCase {
 	 * @param $name
 	 */
 	public function testGetMessengerUser( $name ) {
-		global $wgMassMessageAccountUsername;
-		$wgMassMessageAccountUsername = $name;
+		$this->setMwGlobals( 'wgMassMessageAccountUsername', $name );
 		$user = MassMessage::getMessengerUser();
 		$this->assertEquals( $user->getName(), $name );
 		$this->assertTrue( in_array( 'bot' , $user->getGroups() ) );
-		// FIXME: temporarily disabled to not block ongoing
-		// development, see bug 68843
-		//$this->assertEquals( $user->mPassword, '' );
+		$this->assertInstanceOf( 'InvalidPassword', $user->getPassword() );
 	}
 
 	/**
