@@ -70,6 +70,30 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	}
 
 	/**
+	 * Override the parent implementation to modify the page title and add a backlink.
+	 */
+	public function setHeaders() {
+		parent::setHeaders();
+		if ( $this->title ) {
+			$out = $this->getOutput();
+
+			// Page title
+			$out->setPageTitle(
+				$this->msg( 'massmessage-edit-pagetitle', $this->title->getPrefixedText() )
+			);
+
+			// Backlink
+			$revId = $this->rev->getId();
+			$query = ( $revId !== $this->title->getLatestRevId() ) ?
+				array( 'oldid' => $revId ) : array();
+			// Modified from OutputPage::addBacklinkSubtitle()
+			$out->addSubtitle( $this->msg( 'backlinksubtitle' )->rawParams(
+				Linker::link( $this->title, null, array(), $query )
+			) );
+		}
+	}
+
+	/**
 	 * @return array
 	 */
 	protected function getFormFields() {
@@ -84,12 +108,6 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		$targets = $content->getTargetStrings();
 
 		return array(
-			'title' => array(
-				'type' => 'text',
-				'disabled' => true,
-				'default' => $this->title->getPrefixedText(),
-				'label-message' => 'massmessage-edit-title',
-			),
 			'description' => array(
 				'type' => 'textarea',
 				'rows' => 5,
@@ -104,6 +122,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			'summary' => array(
 				'type' => 'text',
 				'maxlength' => 255,
+				'size' => 60,
 				'label-message' => 'massmessage-edit-summary',
 			),
 		);
@@ -121,25 +140,50 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	}
 
 	/**
+	 * Return instructions for the form and / or warnings.
 	 * @return string
 	 */
 	protected function preText() {
+		global $wgAllowGlobalMessaging;
+
 		if ( $this->title ) {
-			$html = Html::rawElement( 'p', array(),
-				$this->msg( 'massmessage-edit-header' )->parse() );
+			// Instructions
+			if ( $wgAllowGlobalMessaging && count( MassMessage::getDatabases() ) > 1 ) {
+				$headerKey = 'massmessage-edit-headermulti';
+			} else {
+				$headerKey = 'massmessage-edit-header';
+			}
+			$html = Html::rawElement( 'p', array(), $this->msg( $headerKey )->parse() );
+
+			// Deleted revision warning
 			if ( $this->rev->isDeleted( Revision::DELETED_TEXT ) ) {
 				$html .= Html::openElement( 'div', array( 'class' => 'mw-warning plainlinks' ) );
 				$html .= Html::rawElement( 'p', array(),
 					$this->msg( 'rev-deleted-text-view' )->parse() );
 				$html .= Html::closeElement( 'div' );
 			}
+
+			// Old revision warning
 			if ( $this->rev->getId() !== $this->title->getLatestRevID() ) {
 				$html .= Html::rawElement( 'p', array(), $this->msg( 'editingold' )->parse() );
 			}
 		} else {
+			// Error determined in setParameter()
 			$html = Html::rawElement( 'p', array(), $this->msg( $this->errorMsgKey )->parse() );
 		}
 		return $html;
+	}
+
+	/**
+	 * Return a copyright warning to be displayed below the form.
+	 * @return string
+	 */
+	protected function postText() {
+		if ( $this->title ) {
+			return EditPage::getCopyrightWarning( $this->title, 'parse' );
+		} else {
+			return '';
+		}
 	}
 
 	/**
