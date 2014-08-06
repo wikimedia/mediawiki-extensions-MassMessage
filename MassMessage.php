@@ -204,3 +204,6 @@ $wgLogActionsHandlers['massmessage/skipbadns'] = 'MassMessageSkipLogFormatter';
 // User rights
 $wgAvailableRights[] = 'massmessage'; // Local messaging
 $wgGroupPermissions['sysop']['massmessage'] = true;
+
+// Tracking category for spamlists
+$wgTrackingCategories[] = 'massmessage-list-category';

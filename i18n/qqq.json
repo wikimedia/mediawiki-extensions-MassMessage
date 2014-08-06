@@ -97,5 +97,7 @@
 	"massmessage-summary-addmulti": "Edit summary for adding multiple target pages\n* $1 is the number of pages added",
 	"massmessage-summary-remove": "Edit summary for removing a target page\n* $1 is the title of the page",
 	"massmessage-summary-removeonsite": "Edit summary for removing a target page on another wiki\n* $1 is the title of the page\n* $2 is the domain of the wiki",
-	"massmessage-summary-removemulti": "Edit summary for removing multiple target pages\n* $1 is the number of pages removed"
+	"massmessage-summary-removemulti": "Edit summary for removing multiple target pages\n* $1 is the number of pages removed",
+	"massmessage-list-category": "Name for the tracking category containing all MassMessage delivery lists",
+	"massmessage-list-category-desc": "Description for the tracking category containing delivery lists"
 }

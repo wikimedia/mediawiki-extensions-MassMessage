@@ -96,5 +96,7 @@
 	"massmessage-summary-addmulti": "Added $1 {{PLURAL:$1|pages}}",
 	"massmessage-summary-remove": "Removed [[:$1]]",
 	"massmessage-summary-removeonsite": "Removed $1 on $2",
-	"massmessage-summary-removemulti": "Removed $1 {{PLURAL:$1|pages}}"
+	"massmessage-summary-removemulti": "Removed $1 {{PLURAL:$1|pages}}",
+	"massmessage-list-category": "MassMessage delivery lists",
+	"massmessage-list-category-desc": "The page is a delivery list for [[Special:MassMessage]]."
 }

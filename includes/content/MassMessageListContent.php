@@ -171,6 +171,7 @@ class MassMessageListContent extends TextContent {
 
 		// Parse the description text.
 		$output = $wgParser->parse( $this->getDescription(), $title, $options, true, true, $revId );
+		$wgParser->addTrackingCategory( 'massmessage-list-category' );
 
 		// Generate output HTML, if needed.
 		if ( $generateHtml ) {
@@ -180,8 +181,8 @@ class MassMessageListContent extends TextContent {
 			} else {
 				$warning = '';
 			}
-			$output->setText( $warning . $output->getText() . $this->getTargetsHtml()
-				. self::getAddForm() );
+			$output->setText( $warning . $output->getText() . self::getAddForm()
+				. $this->getTargetsHtml() );
 		} else {
 			$output->setText( '' );
 		}
