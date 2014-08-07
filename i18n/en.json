@@ -98,5 +98,5 @@
 	"massmessage-summary-removeonsite": "Removed $1 on $2",
 	"massmessage-summary-removemulti": "Removed $1 {{PLURAL:$1|pages}}",
 	"massmessage-list-category": "MassMessage delivery lists",
-	"massmessage-list-category-desc": "The page is a delivery list for [[Special:MassMessage]]."
+	"massmessage-list-category-desc": "The page is a delivery list for the [[Special:MassMessage|MassMessage]] extension."
 }
