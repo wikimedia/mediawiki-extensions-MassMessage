@@ -55,6 +55,9 @@
 						.html( '(' + removeLink + ')' )
 				).hide().fadeIn()
 			);
+
+			// Register the remove link handler again so it works on the new item.
+			$list.find( '.mw-massmessage-removelink a' ).confirmable( confirmableParams );
 		};
 
 		// Return a target page in title or title@site (if site is not empty) form.
@@ -74,12 +77,10 @@
 		};
 
 		// Handle remove links next to targets.
-		$( '#mw-content-text' ).on( 'click', '.mw-massmessage-removelink a', function ( e ) {
+		var removeHandler = function ( e ) {
 			var param, $link = $( this );
 
 			e.preventDefault();
-
-			// TODO: Use jquery.confirmable once it's available.
 
 			param = getApiParam(
 				$link.attr( 'data-title' ),
@@ -108,7 +109,17 @@
 			.fail( function ( errorCode ) {
 				alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );
 			} );
-		} );
+		};
+
+		// Parameters for jquery.confirmable (remove links)
+		var confirmableParams = {
+			handler: removeHandler,
+			i18n: {
+				confirm: mw.message( 'massmessage-content-removeconf' ).escaped(),
+				yes: mw.message( 'massmessage-content-removeyes' ).escaped(),
+				no: mw.message( 'massmessage-content-removeno' ).escaped()
+			}
+		};
 
 		// Show an error next to the add pages form.
 		var showAddError = function ( msgKey, errorCode ) {
@@ -126,8 +137,11 @@
 		// Autocomplete for page titles
 		mw.massmessage.enableTitleComplete( $( '#mw-massmessage-addtitle' ) );
 
-		//Autocomplete for sites
+		// Autocomplete for sites
 		mw.massmessage.enableSiteComplete( $( '#mw-massmessage-addsite' ) );
+
+		// Register handler for remove links.
+		$( '.mw-massmessage-removelink a' ).confirmable( confirmableParams );
 
 		// Handle add pages form.
 		$( '#mw-massmessage-addform' ).submit( function( e ) {

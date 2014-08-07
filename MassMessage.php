@@ -154,6 +154,9 @@ $wgResourceModules['ext.MassMessage.content.js'] = array(
 		'massmessage-content-emptylist',
 		'massmessage-content-addeditem',
 		'massmessage-content-removeerror',
+		'massmessage-content-removeconf',
+		'massmessage-content-removeyes',
+		'massmessage-content-removeno',
 		'massmessage-content-alreadyinlist',
 		'massmessage-content-invalidtitlesite',
 		'massmessage-content-invalidtitle',
@@ -162,6 +165,7 @@ $wgResourceModules['ext.MassMessage.content.js'] = array(
 	),
 	'dependencies' => array(
 		'ext.MassMessage.autocomplete',
+		'jquery.confirmable',
 		'mediawiki.api',
 		'mediawiki.util',
 		'mediawiki.jqueryMsg',
