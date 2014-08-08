@@ -92,6 +92,7 @@
 	"massmessage-edit-headermulti": "Use the form below to modify the list description or edit the list of target pages. For target pages, list one title per line and use title@domain (e.g. User_talk:Example@en.wikipedia.org) to specify a page on a different wiki.",
 	"massmessage-edit-invalidtitle": "There is no valid mass message delivery list at the title.",
 	"massmessage-edit-invalidtargets": "The following {{PLURAL:$1|page is|pages are}} invalid:\n$2",
+	"massmessage-edit-missingsummary": "You have not provided an edit summary. If you click \"{{int:htmlform-submit}}\" again, your edit will be saved without one.",
 	"massmessage-edit-nopermission": "You do not have permission to edit the list.",
 	"massmessage-summary-addremove": "Added $1 {{PLURAL:$1|page|pages}} and removed $2 {{PLURAL:$2|page|pages}}",
 	"massmessage-summary-add": "Added [[:$1]]",

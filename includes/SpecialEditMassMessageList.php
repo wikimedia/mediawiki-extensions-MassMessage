@@ -216,9 +216,10 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**
 	 * @param array $data
+	 * @param HTMLForm $form
 	 * @return Status
 	 */
-	public function onSubmit( array $data ) {
+	public function onSubmit( array $data, HTMLForm $form = null ) {
 		if ( !$this->title ) {
 			return Status::newFatal( 'massmessage-edit-invalidtitle' );
 		}
@@ -230,6 +231,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				$parseResult->value ) );
 			return Status::newFatal( $this->msg( 'massmessage-edit-invalidtargets',
 				count( $parseResult->value ), $invalidList ) );
+		}
+
+		if ( $data['summary'] === ''
+			&& $this->getUser()->getOption( 'forceeditsummary' )
+			&& $this->getRequest()->getVal( 'summarywarned' ) === null
+		) {
+			$form->addHiddenField( 'summarywarned', 'true' );
+			return Status::newFatal( $this->msg( 'massmessage-edit-missingsummary' ) );
 		}
 
 		$editResult = MassMessageListContentHandler::edit(
