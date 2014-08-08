@@ -3,12 +3,15 @@
 class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**
+	 * The title of the list to edit
+	 * If not null, the title refers to a delivery list.
 	 * @var Title|null
 	 */
 	protected $title;
 
 	/**
 	 * The revision to edit
+	 * If not null, the user can edit the delivery list.
 	 * @var Revision|null
 	 */
 	protected $rev;
@@ -45,25 +48,27 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				|| !$title->hasContentModel( 'MassMessageListContent' )
 			) {
 				$this->errorMsgKey = 'massmessage-edit-invalidtitle';
-			} else if ( !$title->userCan( 'edit' ) ) {
-				$this->errorMsgKey = 'massmessage-edit-nopermission';
 			} else {
 				$this->title = $title;
 
-				$revId = $this->getRequest()->getInt( 'oldid' );
-				if ( $revId > 0 ) {
-					$rev = Revision::newFromId( $revId );
-					if ( $rev
-						&& $rev->getTitle()->equals( $title )
-						&& $rev->getContentModel() === 'MassMessageListContent'
-						&& $rev->userCan( Revision::DELETED_TEXT, $this->getUser() )
-					) {
-						$this->rev = $rev;
-					} else { // Use the latest revision for the title if $rev is invalid.
+				if ( !$title->userCan( 'edit' ) ) {
+					$this->errorMsgKey = 'massmessage-edit-nopermission';
+				} else {
+					$revId = $this->getRequest()->getInt( 'oldid' );
+					if ( $revId > 0 ) {
+						$rev = Revision::newFromId( $revId );
+						if ( $rev
+							&& $rev->getTitle()->equals( $title )
+							&& $rev->getContentModel() === 'MassMessageListContent'
+							&& $rev->userCan( Revision::DELETED_TEXT, $this->getUser() )
+						) {
+							$this->rev = $rev;
+						} else { // Use the latest revision for the title if $rev is invalid.
+							$this->rev = Revision::newFromTitle( $title );
+						}
+					} else {
 						$this->rev = Revision::newFromTitle( $title );
 					}
-				} else {
-					$this->rev = Revision::newFromTitle( $title );
 				}
 			}
 		}
@@ -83,13 +88,37 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			);
 
 			// Backlink
-			$revId = $this->rev->getId();
-			$query = ( $revId !== $this->title->getLatestRevId() ) ?
-				array( 'oldid' => $revId ) : array();
+			if ( $this->rev ) {
+				$revId = $this->rev->getId();
+				$query = ( $revId !== $this->title->getLatestRevId() ) ?
+					array( 'oldid' => $revId ) : array();
+			} else {
+				$query = array();
+			}
 			// Modified from OutputPage::addBacklinkSubtitle()
 			$out->addSubtitle( $this->msg( 'backlinksubtitle' )->rawParams(
 				Linker::link( $this->title, null, array(), $query )
 			) );
+
+			// Edit notices; modified from EditPage::showHeader()
+			if ( $this->rev ) {
+				$out->addHTML(
+					implode( "\n", $this->title->getEditNotices( $this->rev->getId() ) )
+				);
+			}
+
+			// Protection warnings; modified from EditPage::showHeader()
+			if ( $this->title->isProtected( 'edit' )
+				&& MWNamespace::getRestrictionLevels( $this->title->getNamespace() ) !== array( '' )
+			) {
+				if ( $this->title->isSemiProtected() ) {
+					$noticeMsg = 'semiprotectedpagewarning';
+				} else { // Full protection
+					$noticeMsg = 'protectedpagewarning';
+				}
+				LogEventsList::showLogExtract( $out, 'protect', $this->title, '',
+					array( 'lim' => 1, 'msgKey' => array( $noticeMsg ) ) );
+			}
 		}
 	}
 
@@ -97,9 +126,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
-
-		// Show a hidden empty form if the title is invalid.
-		if ( !$this->title ) {
+		// Return an empty form if the title is invalid or if the user can't edit the list.
+		if ( !$this->rev ) {
 			return array();
 		}
 
@@ -129,11 +157,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * Hide the form if the title is invalid.
+	 * Hide the form if the title is invalid or if the user can't edit the list.
 	 * @param HTMLForm $form
 	 */
 	protected function alterForm( HTMLForm $form ) {
-		if ( !$this->title ) {
+		if ( !$this->rev ) {
 			$form->setWrapperLegend( false );
 			$form->suppressDefaultSubmit( true );
 		}
@@ -146,7 +174,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	protected function preText() {
 		global $wgAllowGlobalMessaging;
 
-		if ( $this->title ) {
+		if ( $this->rev ) {
 			// Instructions
 			if ( $wgAllowGlobalMessaging && count( MassMessage::getDatabases() ) > 1 ) {
 				$headerKey = 'massmessage-edit-headermulti';
@@ -179,7 +207,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @return string
 	 */
 	protected function postText() {
-		if ( $this->title ) {
+		if ( $this->rev ) {
 			return EditPage::getCopyrightWarning( $this->title, 'parse' );
 		} else {
 			return '';
