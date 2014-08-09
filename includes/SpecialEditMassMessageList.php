@@ -95,10 +95,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			} else {
 				$query = array();
 			}
-			// Modified from OutputPage::addBacklinkSubtitle()
-			$out->addSubtitle( $this->msg( 'backlinksubtitle' )->rawParams(
-				Linker::link( $this->title, null, array(), $query )
-			) );
+			$out->addBacklinkSubtitle( $this->title, $query );
 
 			// Edit notices; modified from EditPage::showHeader()
 			if ( $this->rev ) {
@@ -224,6 +221,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return Status::newFatal( 'massmessage-edit-invalidtitle' );
 		}
 
+		// Parse input into target array.
 		$parseResult = self::parseInput( $data['content'] );
 		if ( !$parseResult->isGood() ) {
 			// Wikitext list of escaped invalid target strings
@@ -233,6 +231,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				count( $parseResult->value ), $invalidList ) );
 		}
 
+		// Blank edit summary warning
 		if ( $data['summary'] === ''
 			&& $this->getUser()->getOption( 'forceeditsummary' )
 			&& $this->getRequest()->getVal( 'summarywarned' ) === null
