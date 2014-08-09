@@ -83,7 +83,7 @@ class ApiMassMessage extends ApiBase {
 
 
 	public function needsToken() {
-		return true;
+		return 'csrf';
 	}
 
 	public function getTokenSalt() {
