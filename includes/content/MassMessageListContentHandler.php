@@ -61,6 +61,8 @@ class MassMessageListContentHandler extends JSONContentHandler {
 			return Status::newFatal( 'massmessage-ch-tojsonerror' );
 		}
 
+		// Ensure that a valid context is provided to the API in unit tests
+		$der = new DerivativeContext( $context );
 		$request = new DerivativeRequest(
 			$context->getRequest(),
 			array(
@@ -73,9 +75,10 @@ class MassMessageListContentHandler extends JSONContentHandler {
 			),
 			true // Treat data as POSTed
 		);
+		$der->setRequest( $request );
 
 		try {
-			$api = new ApiMain( $request, true );
+			$api = new ApiMain( $der, true );
 			$api->execute();
 		} catch ( UsageException $e ) {
 			return Status::newFatal( $context->msg( 'massmessage-ch-apierror',

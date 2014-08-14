@@ -6,9 +6,10 @@
 
 abstract class MassMessageTestCase extends MediaWikiTestCase {
 
-	protected function setUp() {
+	public static function setUpBeforeClass() {
 		// $wgConf ewwwww
-		global $wgConf, $wgLocalDatabases, $wgLqtPages, $wgContLang;
+		global $wgConf, $wgLocalDatabases;
+		parent::setUpBeforeClass();
 		$wgConf = new SiteConfiguration;
 		$wgConf->wikis = array( 'enwiki', 'dewiki', 'frwiki', 'wiki' );
 		$wgConf->suffixes = array( 'wiki' );
@@ -20,6 +21,11 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 			),
 		);
 		$wgLocalDatabases =& $wgConf->getLocalDatabases();
+	}
+
+	protected function setUp() {
+		global $wgLqtPages, $wgContLang;
+		parent::setUp();
 		$proj = $wgContLang->getFormattedNsText( NS_PROJECT );
 		$wgLqtPages[] = $proj . ':LQT test';
 		// Create a redirect
@@ -27,7 +33,6 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 		self::updatePage( $r, 'blank' );
 		$r2 = Title::newFromText( 'User talk:Is a redirect' );
 		self::updatePage( $r2, '#REDIRECT [[User talk:Redirect target]]' );
-		parent::setUp();
 	}
 
 	/**

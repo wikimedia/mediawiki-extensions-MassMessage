@@ -35,16 +35,18 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 	}
 
 	/**
+	 * @covers MassMessageTargets::getTargets
+	 * @covers MassMessageTargets::normalizeTargets
 	 * @covers MassMessageTargets::getParserFunctionTargets
 	 * @dataProvider provideGetParserFunctionTargets
-	 * @param  string $text  Text of the page to create
-	 * @param  array $check Stuff to check against
+	 * @param string $text Text of the page to create
+	 * @param array $check Stuff to check against
 	 */
 	public function testGetParserFunctionTargets( $text, $check ) {
-		$title = Title::newFromText( 'Input list ');
+		$title = Title::newFromText( 'Input list' );
 		MassMessageTest::updatePage( $title, $text );
 		$data = MassMessageTargets::normalizeTargets(
-			MassMessageTargets::getParserFunctionTargets( $title, RequestContext::getMain() )
+			MassMessageTargets::getTargets( $title, RequestContext::getMain() )
 		);
 
 		if ( empty( $check ) ) {
@@ -54,10 +56,10 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 			$data = array_values( $data );
 			$data = $data[0]; // We're just testing the first value
 			foreach ( $check as $key => $value ) {
-				$this->assertEquals( $data[$key], $value );
+				$this->assertEquals( $value, $data[$key] );
 			}
 			if ( !isset( $check['wiki'] ) ) {
-				$this->assertEquals( $data['wiki'], wfWikiID() );
+				$this->assertEquals( wfWikiID(), $data['wiki'] );
 				// Using wfWikiId() within @dataProviders returns a different result
 				// than when we use wfWikiId() within a test
 			}
@@ -65,17 +67,42 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 	}
 
 	/**
+	 * @covers MassMessageTargets::getTargets
 	 * @covers MassMessageTargets::getCategoryTargets
 	 */
-	public function testCategorySpamlist() {
+	public function testGetCategoryTargets() {
 		$page = Title::newFromText( 'Talk:Testing1234' );
 		$wikipage = WikiPage::factory( $page );
 		$wikipage->doEditContent( new WikitextContent( '[[Category:Spamlist1234]]' ), 'edit summary' );
 
 		$cat = Title::newFromText( 'Category:Spamlist1234' );
-		$targets = MassMessageTargets::getCategoryTargets( $cat );
-		$this->assertEquals( count( $targets ), 1 );
+		$targets = MassMessageTargets::getTargets( $cat, RequestContext::getMain() );
+		$this->assertEquals( 1, count( $targets ) );
 		$values = array_values( $targets );
-		$this->assertEquals( $values[0]['title'], 'Talk:Testing1234' );
+		$this->assertEquals( 'Talk:Testing1234', $values[0]['title'] );
+	}
+
+	/**
+	 * @covers MassMessageTargets::getTargets
+	 * @covers MassMessageTargets::getMassMessageListContentTargets
+	 */
+	public function testGetMassMessageListContentTargets() {
+		$text = '{"description":"","targets":['
+			. '{"title":"A"},'
+			. '{"title":"B","site":"en.wikipedia.org"},'
+			. '{"title":"C","site":"invalid.org"}'
+			. ']}';
+		$content = ContentHandler::makeContent( $text, null, 'MassMessageListContent' );
+		$title = Title::newFromText( 'MassMessageListContent_spamlist' );
+		$page = WikiPage::factory( $title );
+		$page->doEditContent( $content, 'summary' );
+		$title->mContentModel = false; // Force the updated model to be read from LinkCache
+		$targets = MassMessageTargets::getTargets( $title, RequestContext::getMain() );
+		$this->assertEquals( 2, count( $targets ) );
+		$this->assertEquals( 'A', $targets[0]['title'] );
+		$this->assertEquals( wfWikiId(), $targets[0]['wiki'] );
+		$this->assertEquals( 'B', $targets[1]['title'] );
+		$this->assertEquals( 'enwiki', $targets[1]['wiki'] );
+		$this->assertEquals( 'en.wikipedia.org', $targets[1]['site'] );
 	}
 }

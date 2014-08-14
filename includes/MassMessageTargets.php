@@ -69,7 +69,7 @@ class MassMessageTargets {
 	 * @param  Title $spamlist
 	 * @return array
 	 */
-	public static function getCategoryTargets( Title $spamlist ) {
+	protected static function getCategoryTargets( Title $spamlist ) {
 		global $wgCanonicalServer;
 
 		$members = Category::newFromTitle( $spamlist )->getMembers();
@@ -91,7 +91,7 @@ class MassMessageTargets {
 	 * @param Title $spamlist
 	 * @return array
 	 */
-	public static function getMassMessageListContentTargets ( Title $spamlist ) {
+	protected static function getMassMessageListContentTargets ( Title $spamlist ) {
 		global $wgCanonicalServer;
 
 		$targets = Revision::newFromTitle( $spamlist )->getContent()->getValidTargets();
@@ -112,7 +112,7 @@ class MassMessageTargets {
 	 * @param  IContextSource $context
 	 * @return array
 	 */
-	public static function getParserFunctionTargets( Title $spamlist, $context ) {
+	protected static function getParserFunctionTargets( Title $spamlist, $context ) {
 		$page = WikiPage::factory( $spamlist );
 		$text = $page->getContent( Revision::RAW )->getNativeData();
 

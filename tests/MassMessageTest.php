@@ -24,7 +24,7 @@ class MassMessageTest extends MassMessageTestCase {
 	 */
 	public function testGetDBName( $url, $expected ) {
 		$dbname = MassMessage::getDBName( $url );
-		$this->assertEquals( $dbname, $expected );
+		$this->assertEquals( $expected, $dbname );
 	}
 
 	/**
@@ -61,7 +61,7 @@ class MassMessageTest extends MassMessageTestCase {
 	 */
 	public function testGetBaseUrl( $url, $expected ) {
 		$output = MassMessage::getBaseUrl( $url );
-		$this->assertEquals( $output, $expected );
+		$this->assertEquals( $expected, $output );
 	}
 
 	public static function provideGetMessengerUser() {
@@ -80,7 +80,7 @@ class MassMessageTest extends MassMessageTestCase {
 	public function testGetMessengerUser( $name ) {
 		$this->setMwGlobals( 'wgMassMessageAccountUsername', $name );
 		$user = MassMessage::getMessengerUser();
-		$this->assertEquals( $user->getName(), $name );
+		$this->assertEquals( $name, $user->getName() );
 		$this->assertTrue( in_array( 'bot' , $user->getGroups() ) );
 		$this->assertInstanceOf( 'InvalidPassword', $user->getPassword() );
 	}
@@ -113,7 +113,10 @@ class MassMessageTest extends MassMessageTestCase {
 		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
-		$this->assertEquals( $text, "== ". $subj . " ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->" );
+		$this->assertEquals(
+			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
+			$text
+		);
 	}
 
 	/**
@@ -142,6 +145,6 @@ class MassMessageTest extends MassMessageTestCase {
 		$this->assertFalse( MassMessageJob::isOptedOut( Title::newFromText( 'Project:Some random page' ) ) );
 		self::simulateJob( $target ); // Try posting a message to this page
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
-		$this->assertEquals( $text, '[[Category:Opted-out of message delivery]]' ); // Nothing should be updated
+		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text ); // Nothing should be updated
 	}
 }

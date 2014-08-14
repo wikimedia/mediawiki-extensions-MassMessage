@@ -1,26 +1,21 @@
 <?php
 
 /**
- * Tests for API module
+ * Tests for the API module to send messages
  * @group API
  * @group medium
  */
-class ApiMassMessageTest extends ApiTestCase {
+class ApiMassMessageTest extends MassMessageApiTestCase {
 
-	/**
-	 * @var Title
-	 */
-	static $spamlist = 'Help:ApiMassMessageTest_spamlist';
-	static $emptyspamlist = 'Help:ApiMassMessageTest_spamlist2';
+	protected static $spamlist = 'Help:ApiMassMessageTest_spamlist';
+	protected static $emptyspamlist = 'Help:ApiMassMessageTest_spamlist2';
 
-	function setUp() {
-		global $wgTitle;
+	protected function setUp() {
 		parent::setUp();
 		$spamlist = Title::newFromText( self::$spamlist );
 		self::updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );
 		$emptyspamlist = Title::newFromText( self::$emptyspamlist );
 		self::updatePage( $emptyspamlist, 'rawr' );
-		$wgTitle = Title::newMainPage(); // So HTMLForm doesn't throw a shit
 		$this->doLogin();
 	}
 
@@ -40,7 +35,7 @@ class ApiMassMessageTest extends ApiTestCase {
 	 * Tests sending a dummy message
 	 * Checks to make sure that the output looks good too
 	 */
-	function testSending() {
+	public function testSending() {
 		$apiResult = $this->doApiRequestWithToken( array(
 			'action' => 'massmessage',
 			'spamlist' => self::$spamlist,
@@ -59,7 +54,7 @@ class ApiMassMessageTest extends ApiTestCase {
 	/**
 	 * Tests that an error is thrown properly for invalid spamlists
 	 */
-	function testInvalidSpamlist() {
+	public function testInvalidSpamlist() {
 		$this->setExpectedException( 'UsageException',
 			'The specified delivery list page or category does not exist.' );
 		$this->doApiRequestWithToken( array(
@@ -83,7 +78,7 @@ class ApiMassMessageTest extends ApiTestCase {
 	 * @param $page string of page title
 	 * @param $count integer value of what count should be
 	 */
-	function testCount( $page, $count ) {
+	public function testCount( $page, $count ) {
 		$apiResult = $this->doApiRequestWithToken( array(
 			'action' => 'massmessage',
 			'spamlist' => $page,

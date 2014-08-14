@@ -83,6 +83,7 @@ $wgAutoloadClasses['MassMessageListContent'] = "$dir/includes/content/MassMessag
 $wgAutoloadClasses['MassMessageListContentHandler'] = "$dir/includes/content/MassMessageListContentHandler.php";
 $wgAutoloadClasses['MassMessageListDiffEngine'] = "$dir/includes/content/MassMessageListDiffEngine.php";
 $wgAutoloadClasses['MassMessageTestCase'] = "$dir/tests/MassMessageTestCase.php";
+$wgAutoloadClasses['MassMessageApiTestCase'] = "$dir/tests/MassMessageApiTestCase.php";
 
 // ContentHandler
 $wgContentHandlers['MassMessageListContent'] = 'MassMessageListContentHandler';

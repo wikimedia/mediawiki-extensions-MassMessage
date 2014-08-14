@@ -20,6 +20,7 @@ class ApiEditMassMessageList extends ApiBase {
 			$this->dieUsage( 'The specified spamlist is invalid', 'invalidspamlist' );
 		}
 
+		/** @var MassMessageListContent $content */
 		$content = Revision::newFromTitle( $spamlist )->getContent();
 		$description = $content->getDescription();
 		$targets = $content->getTargets();
@@ -43,7 +44,7 @@ class ApiEditMassMessageList extends ApiBase {
 
 			// Remove duplicates
 			$newTargets = MassMessageListContentHandler::normalizeTargetArray( $newTargets );
-			$invalidAdd = array_unique( $invalidAdd );
+			$invalidAdd = array_unique( $invalidAdd, SORT_REGULAR );
 		}
 
 		if ( isset( $data['remove'] ) ) {
@@ -70,11 +71,15 @@ class ApiEditMassMessageList extends ApiBase {
 		if ( isset( $data['add'] ) ) {
 			$added = array_values( array_udiff( $newTargets, $targets,
 				'MassMessageListContentHandler::compareTargets' ) );
+		} else {
+			$added = array();
 		}
 
 		if ( isset( $data['remove'] ) ) {
 			$removed = array_values( array_udiff( $targets, $newTargets,
 				'MassMessageListContentHandler::compareTargets' ) );
+		} else {
+			$removed = array();
 		}
 
 		// Make an edit only if there are added or removed pages
@@ -88,7 +93,7 @@ class ApiEditMassMessageList extends ApiBase {
 				$this // APIs implement IContextSource
 			);
 			if ( !$editResult->isGood() ) {
-				$this->dieStatus( $result );
+				$this->dieStatus( $editResult );
 			}
 		}
 
