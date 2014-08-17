@@ -1,12 +1,17 @@
 <?php
 
-class MassMessageListContentHandler extends TextContentHandler {
+class MassMessageListContentHandler extends JSONContentHandler {
+
+	/**
+	 * @var string
+	 */
+	protected $contentClass = 'MassMessageListContent';
 
 	/**
 	 * @param string $modelId
 	 */
 	public function __construct( $modelId = 'MassMessageListContent' ) {
-		parent::__construct( $modelId, array( CONTENT_FORMAT_JSON ) );
+		parent::__construct( $modelId );
 	}
 
 	/**

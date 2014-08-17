@@ -1,6 +1,6 @@
 <?php
 
-class MassMessageListContent extends TextContent {
+class MassMessageListContent extends JSONContent {
 
 	/**
 	 * Description wikitext
@@ -69,20 +69,6 @@ class MassMessageListContent extends TextContent {
 	}
 
 	/**
-	 * Returns a list content object with pre-save transformations applied.
-	 * The implementation normalizes the JSON data.
-	 * @param Title $title
-	 * @param User $user
-	 * @param ParserOptions $popts
-	 * @return MassMessageListContent
-	 */
-	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
-		$text = $this->getNativeData();
-		$pst = FormatJson::encode( FormatJson::decode( $text ) );
-		return ( $text === $pst ) ? $this : new static( $pst );
-	}
-
-	/**
 	 * @return string|null
 	 */
 	public function getDescription() {
@@ -147,7 +133,7 @@ class MassMessageListContent extends TextContent {
 		if ( $this->decoded ) {
 			return;
 		}
-		$data = FormatJson::decode( $this->getNativeData(), true );
+		$data = $this->getJsonData();
 		if ( is_array( $data ) ) {
 			$this->description = array_key_exists( 'description', $data ) ?
 				$data['description'] : null;
