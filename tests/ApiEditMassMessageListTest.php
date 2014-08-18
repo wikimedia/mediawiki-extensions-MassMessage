@@ -41,7 +41,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 				array( '*' => '_@invalid.org', 'invalidtitle' => '', 'invalidsite' => '' )
 			)
 		) );
-		$this->assertEquals( $expected,	$result[0] );
+		$this->assertEquals( $expected, $result[0] );
 	}
 
 	public function testRemove() {
