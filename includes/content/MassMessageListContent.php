@@ -118,7 +118,8 @@ class MassMessageListContent extends JSONContent {
 				$targetStrings[] = $target['title'] . '@' . $target['site'];
 			} elseif ( strpos( $target['title'], '@' ) !== false ) {
 				// List the site if it'd otherwise be ambiguous
-				$targetStrings[] = $target['title'] . '@' . MassMessage::getBaseUrl( $wgCanonicalServer );
+				$targetStrings[] = $target['title'] . '@'
+					. MassMessage::getBaseUrl( $wgCanonicalServer );
 			} else {
 				$targetStrings[] = $target['title'];
 			}
@@ -158,17 +159,19 @@ class MassMessageListContent extends JSONContent {
 		// Parse the description text.
 		$output = $wgParser->parse( $this->getDescription(), $title, $options, true, true, $revId );
 		$wgParser->addTrackingCategory( 'massmessage-list-category' );
+		$lang = $options->getUserLangObj();
 
 		// Generate output HTML, if needed.
 		if ( $generateHtml ) {
 			if ( $this->hasInvalidTargets() ) {
 				$warning = Html::element( 'p', array( 'class' => 'error' ),
-					wfMessage( 'massmessage-content-invalidtargets' )->text() );
+					wfMessage( 'massmessage-content-invalidtargets' )->inLanguage( $lang )->text()
+				);
 			} else {
 				$warning = '';
 			}
-			$output->setText( $warning . $output->getText() . self::getAddForm()
-				. $this->getTargetsHtml() );
+			$output->setText( $warning . $output->getText() . self::getAddForm( $lang )
+				. $this->getTargetsHtml( $lang ) );
 		} else {
 			$output->setText( '' );
 		}
@@ -188,19 +191,21 @@ class MassMessageListContent extends JSONContent {
 	/**
 	 * Helper function for fillParserOutput; return HTML for displaying the list of pages.
 	 * Note that the function assumes that the contents are valid.
+	 * @param Language $lang
 	 * @return string
 	 */
-	protected function getTargetsHtml() {
+	protected function getTargetsHtml( Language $lang ) {
 		global $wgScript;
 
-		$html = Html::element( 'h2', array(), wfMessage( 'massmessage-content-pages' )->text() );
+		$html = Html::element( 'h2', array(),
+			wfMessage( 'massmessage-content-pages' )->inLanguage( $lang )->text() );
 
 		$sites = $this->getTargetsBySite();
 
 		// If the list is empty
 		if ( count( $sites ) === 0 ) {
 			$html .= Html::element( 'p', array(),
-				wfMessage( 'massmessage-content-empty' )->text() );
+				wfMessage( 'massmessage-content-empty' )->inLanguage( $lang )->text() );
 			return $html;
 		}
 
@@ -221,10 +226,13 @@ class MassMessageListContent extends JSONContent {
 			if ( $printSites ) {
 				if ( $site === 'local' ) {
 					$html .= Html::element( 'p', array(),
-						wfMessage( 'massmessage-content-localpages' )->text() );
+						wfMessage( 'massmessage-content-localpages' )->inLanguage( $lang )->text()
+					);
 				} else {
 					$html .= Html::element( 'p', array(),
-						wfMessage( 'massmessage-content-pagesonsite', $site )->text() );
+						wfMessage( 'massmessage-content-pagesonsite', $site )->inLanguage( $lang )
+						->text()
+					);
 				}
 			}
 
@@ -249,7 +257,7 @@ class MassMessageListContent extends JSONContent {
 						'data-site' => $site,
 						'href' => '#',
 					),
-					wfMessage( 'massmessage-content-remove' )->text()
+					wfMessage( 'massmessage-content-remove' )->inLanguage( $lang )->text()
 				);
 
 				$html .= Html::openElement( 'li' );
@@ -286,36 +294,38 @@ class MassMessageListContent extends JSONContent {
 	/**
 	 * Helper function for fillParserOutput; return HTML for page-adding form and
 	 * (initially empty and hidden) list of added pages.
+	 * @param Language $lang
 	 * @return string
 	 */
-	 protected static function getAddForm() {
+	 protected static function getAddForm( Language $lang ) {
 		global $wgAllowGlobalMessaging, $wgCanonicalServer;
 
 		$html = Html::openElement( 'div', array( 'id' => 'mw-massmessage-addpages' ) );
 		$html .= Html::element( 'h2', array(),
-			wfMessage( 'massmessage-content-addheading' )->text() );
+			wfMessage( 'massmessage-content-addheading' )->inLanguage( $lang )->text() );
 
 		// Form
 		$html .= Html::openElement( 'form', array( 'id' => 'mw-massmessage-addform' ) );
 		$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addtitle' ),
-			wfMessage( 'massmessage-content-addtitle' )->text() );
+			wfMessage( 'massmessage-content-addtitle' )->inLanguage( $lang )->text() );
 		$html .= Html::input( 'title', '', 'text', array( 'id' => 'mw-massmessage-addtitle' ) );
 		if ( $wgAllowGlobalMessaging && count( MassMessage::getDatabases() ) > 1 ) {
 			$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addsite' ),
-				wfMessage( 'massmessage-content-addsite' )->text() );
+				wfMessage( 'massmessage-content-addsite' )->inLanguage( $lang )->text() );
 			$html .= Html::input( 'site', '', 'text', array(
 				'id' => 'mw-massmessage-addsite',
 				'placeholder' => MassMessage::getBaseUrl( $wgCanonicalServer )
 			) );
 		}
-		$html .= Html::input( 'submit', wfMessage( 'massmessage-content-addsubmit' )->escaped(),
+		$html .= Html::input( 'submit',
+			wfMessage( 'massmessage-content-addsubmit' )->inLanguage( $lang )->escaped(),
 			'submit', array( 'id' => 'mw-massmessage-addsubmit' ) );
 		$html .= Html::closeElement( 'form' );
 
 		// List of added pages
 		$html .= Html::openElement( 'div', array( 'id' => 'mw-massmessage-addedlist' ) );
 		$html .= Html::element( 'p', array(),
-			wfMessage( 'massmessage-content-addedlistheading' )->text() );
+			wfMessage( 'massmessage-content-addedlistheading' )->inLanguage( $lang )->text() );
 		$html .= Html::element( 'ul', array(), '' );
 		$html .= Html::closeElement( 'div' );
 
