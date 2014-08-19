@@ -126,8 +126,12 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	public static function provideExtractTarget() {
 		return array(
 			array( 'A', array( 'title' => 'A' ) ),
+			array( 'A@test.wikipedia.org', array( 'title' => 'A' ) ),
+			array( 'A@domain.org@test.wikipedia.org', array( 'title' => 'A@domain.org' ) ),
 			array( 'A@en.wikipedia.org', array( 'title' => 'A', 'site' => 'en.wikipedia.org' ) ),
 			array( 'a@EN.WIKIPEDIA.ORG', array( 'title' => 'A', 'site' => 'en.wikipedia.org' ) ),
+			array( 'A@domain.org@en.wikipedia.org',
+				array( 'title' => 'A@domain.org', 'site' => 'en.wikipedia.org' ) ),
 			array( '_', array( 'errors' => array('invalidtitle' ) ) ),
 			array( 'A@invalid.org', array( 'title' => 'A', 'errors' => array( 'invalidsite' ) ) ),
 			array( '_@invalid.org', array( 'errors' => array( 'invalidtitle', 'invalidsite' ) ) )
@@ -141,6 +145,8 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 * @param array $expected Parsed target
 	 */
 	public function testExtractTarget( $targetString, $expected ) {
+		// Temporarily set $wgCanonicalServer for this test so its value is predictable.
+		$this->setMwGlobals( 'wgCanonicalServer', 'http://test.wikipedia.org' );
 		$this->assertEquals(
 			$expected,
 			MassMessageListContentHandler::extractTarget( $targetString )
