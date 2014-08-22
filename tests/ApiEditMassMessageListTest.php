@@ -15,11 +15,6 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::getForModelID( 'MassMessageListContent' )->makeEmptyContent();
 		$page->doEditContent( $content, 'summary' );
-
-		// The title object may be cached; force a LinkCache lookup for the updated
-		// content model the next time it is checked.
-		$title->mContentModel = false;
-
 		$this->doLogin();
 	}
 

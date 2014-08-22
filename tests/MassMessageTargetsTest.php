@@ -96,7 +96,6 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 		$title = Title::newFromText( 'MassMessageListContent_spamlist' );
 		$page = WikiPage::factory( $title );
 		$page->doEditContent( $content, 'summary' );
-		$title->mContentModel = false; // Force the updated model to be read from LinkCache
 		$targets = MassMessageTargets::getTargets( $title, RequestContext::getMain() );
 		$this->assertEquals( 2, count( $targets ) );
 		$this->assertEquals( 'A', $targets[0]['title'] );
