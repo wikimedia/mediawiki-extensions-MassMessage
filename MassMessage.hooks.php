@@ -6,6 +6,19 @@
 
 class MassMessageHooks {
 
+	public static function onExtensionFunctions() {
+		global $wgContentHandlerUseDB, $wgSpecialPages, $wgAPIModules;
+
+		if ( !$wgContentHandlerUseDB ) {
+			// Disable things :(
+			wfDebugLog( 'MassMessage',
+				'Disabling contenthandler features because $wgContentHandlerUseDB = false' );
+			unset( $wgSpecialPages['CreateMassMessageList'] );
+			unset( $wgSpecialPages['EditMassMessageList'] );
+			$wgAPIModules['editmassmessagelist'] = 'ApiDisabled';
+		}
+	}
+
 	/**
 	 * Hook to load our parser function
 	 * @param  Parser $parser

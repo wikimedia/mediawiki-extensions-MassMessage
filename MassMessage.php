@@ -98,6 +98,7 @@ $wgJobClasses['MassMessageJob'] = 'MassMessageJob';
 $wgJobClasses['MassMessageSubmitJob'] = 'MassMessageSubmitJob';
 
 // Hooks
+$wgExtensionFunctions[] = 'MassMessageHooks::onExtensionFunctions';
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
 $wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';
 $wgHooks['APIQuerySiteInfoStatisticsInfo'][] = 'MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo';
