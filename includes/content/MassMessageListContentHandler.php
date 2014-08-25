@@ -43,6 +43,13 @@ class MassMessageListContentHandler extends JSONContentHandler {
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function isParserCacheSupported() {
+		return true;
+	}
+
+	/**
 	 * Edit a delivery list via the edit API
 	 * @param Title $title
 	 * @param string $description
