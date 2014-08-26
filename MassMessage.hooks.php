@@ -156,6 +156,7 @@ class MassMessageHooks {
 
 	/**
 	 * Makes the messenger sender exempt from IP blocks no matter what
+	 * Called only if the context is a MassMessage job (bug 69381)
 	 * @see bug 58237
 	 * @param User $user
 	 * @param array $rights

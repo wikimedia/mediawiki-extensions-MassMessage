@@ -200,7 +200,11 @@ class MassMessageJob extends Job {
 	}
 
 	function makeAPIRequest( array $params ) {
-		global $wgUser, $wgRequest;
+		global $wgHooks, $wgUser, $wgRequest;
+
+		// Add our hook function to make the MassMessage user IP block-exempt
+		// Done here so that it's not unnecessarily called on every page load
+		$wgHooks['UserGetRights'][] = 'MassMessageHooks::onUserGetRights';
 
 		$oldRequest = $wgRequest;
 		$oldUser = $wgUser;
@@ -213,6 +217,7 @@ class MassMessageJob extends Job {
 		// New user objects will use $wgRequest, so we set that
 		// to our DerivativeRequest, so we don't run into any issues
 		$wgUser = MassMessage::getMessengerUser();
+		$wgUser->clearInstanceCache(); // Force rights reload (for IP block exemption)
 
 		$context = RequestContext::getMain();
 		// All further internal API requests will use the main
