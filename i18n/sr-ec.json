@@ -4,5 +4,9 @@
 			"Milicevic01"
 		]
 	},
-	"log-name-massmessage": "Дневник масовних порука"
+	"massmessage-form-message": "Текст поруке.",
+	"massmessage-form-preview": "Претпреглед",
+	"massmessage-form-submit": "Пошаљи",
+	"log-name-massmessage": "Дневник масовних порука",
+	"logentry-massmessage-send": "$1 је {{GENDER:$2|послао|послала}} поруку $3"
 }
