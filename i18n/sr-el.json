@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"logentry-massmessage-send": "$1 je {{GENDER:$2|poslao|poslala}} poruku u $3"
+}
