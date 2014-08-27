@@ -3,6 +3,8 @@
 /**
  * This inherits ApiTestCase because MassMessageListContentHandler::edit goes through
  * the Edit API.
+ * @group API
+ * @group Database
  * @group medium
  */
 class MassMessageListContentHandlerTest extends MassMessageApiTestCase {

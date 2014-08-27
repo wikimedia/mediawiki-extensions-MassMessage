@@ -3,6 +3,7 @@
 /**
  * Tests for the API module to edit a MassMessage delivery list
  * @group API
+ * @group Database
  * @group medium
  */
 class ApiEditMassMessageListTest extends MassMessageApiTestCase {

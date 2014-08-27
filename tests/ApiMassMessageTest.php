@@ -3,6 +3,7 @@
 /**
  * Tests for the API module to send messages
  * @group API
+ * @group Database
  * @group medium
  */
 class ApiMassMessageTest extends MassMessageApiTestCase {
