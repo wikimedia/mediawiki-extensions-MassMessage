@@ -68,15 +68,6 @@ class ApiMassMessage extends ApiBase {
 		);
 	}
 
-	public function getResultProperties() {
-		return array(
-			'' => array(
-				'result' => 'string',
-				'count' => 'integer'
-			)
-		);
-	}
-
 	public function mustBePosted() {
 		return true;
 	}
