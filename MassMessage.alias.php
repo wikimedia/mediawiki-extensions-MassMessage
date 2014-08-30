@@ -111,5 +111,5 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'MassMessage' => array( '大量資訊' ),
+	'MassMessage' => array( '大量訊息' ),
 );
