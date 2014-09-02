@@ -12,5 +12,6 @@
 	"massmessage-submitted": "Lakaet eo bet ho kemennadenn er roll gortoz.",
 	"massmessage-just-preview": "N'eo nemet ur rakweladenn. Pouezit war \" {{int:massmessage-form-submit}} \" evit kas ar gemennadenn.",
 	"massmessage-parse-badurl": "\"$1\" n'eo ket ul lec'hienn reizh.",
-	"right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol."
+	"right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol.",
+	"massmessage-cannot-rename": "Homañ zo ur gont reizhiad ha ne c'hall ket bezañ adanvet."
 }
