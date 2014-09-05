@@ -6,11 +6,13 @@
 		]
 	},
 	"massmessage": "Kas ur gemennadenn a-vras",
+	"massmessage-form-message": "Korf ar gemennadenn :",
 	"massmessage-form-preview": "Rakwelet",
 	"massmessage-form-submit": "Kas",
 	"massmessage-fieldset-preview": "Rakwelet",
 	"massmessage-submitted": "Lakaet eo bet ho kemennadenn er roll gortoz.",
 	"massmessage-just-preview": "N'eo nemet ur rakweladenn. Pouezit war \" {{int:massmessage-form-submit}} \" evit kas ar gemennadenn.",
+	"massmessage-empty-message": "Goullo eo korf ar gemennadenn.",
 	"massmessage-parse-badurl": "\"$1\" n'eo ket ul lec'hienn reizh.",
 	"massmessage-parse-badpage": "N'eo ket \"$1\" un titl reizh evit ar bajenn.",
 	"right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol.",
