@@ -247,7 +247,7 @@ class SpecialMassMessage extends SpecialPage {
 		foreach ( $tags as $element => $num ) {
 			if ( $num > 0 ) {
 				$results[] = '<' . $element . '>';
-			} else if ( $num < 0 ) {
+			} elseif ( $num < 0 ) {
 				$results[] = '</' . $element . '>';
 			}
 		}

@@ -50,9 +50,9 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		$title = Title::newFromText( $data['title'] );
 		if ( !$title ) {
 			return Status::newFatal( 'massmessage-create-invalidtitle' );
-		} else if ( $title->exists() ) {
+		} elseif ( $title->exists() ) {
 			return Status::newFatal( 'massmessage-create-exists' );
-		} else if ( !$title->userCan( 'edit' ) || !$title->userCan( 'create' ) ) {
+		} elseif ( !$title->userCan( 'edit' ) || !$title->userCan( 'create' ) ) {
 			return Status::newFatal( 'massmessage-create-nopermission' );
 		}
 

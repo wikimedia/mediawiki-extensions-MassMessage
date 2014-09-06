@@ -114,9 +114,9 @@ class MassMessageListContentHandler extends JSONContentHandler {
 	public static function compareTargets( $a, $b ) {
 		if ( !array_key_exists( 'site', $a ) && array_key_exists( 'site', $b ) ) {
 			return -1;
-		} else if ( array_key_exists( 'site', $a ) && !array_key_exists( 'site', $b ) ) {
+		} elseif ( array_key_exists( 'site', $a ) && !array_key_exists( 'site', $b ) ) {
 			return 1;
-		} else if ( array_key_exists( 'site', $a ) && array_key_exists( 'site', $b )
+		} elseif ( array_key_exists( 'site', $a ) && array_key_exists( 'site', $b )
 			&& $a['site'] !== $b['site']
 		) {
 			return strcmp( $a['site'], $b['site'] );
