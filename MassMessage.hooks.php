@@ -162,7 +162,7 @@ class MassMessageHooks {
 			$request = $sktemplate->getRequest();
 			$direction = $request->getVal( 'direction' );
 			$diff = $request->getVal( 'diff' );
-			$oldid = $request->getInt( 'oldid' );
+			$oldid = $request->getInt( 'oldid' ); // Guaranteed to be an integer, 0 if invalid
 			if ( $direction === 'next' && $oldid > 0 ) {
 				$next = $title->getNextRevisionId( $oldid );
 				$revId = ( $next ) ? $next : $oldid;
@@ -174,7 +174,7 @@ class MassMessageHooks {
 					$revId = (int)$diff;
 				} elseif ( $diff === 'next' && $oldid > 0 ) {
 					$next = $title->getNextRevisionId( $oldid );
-					$revId = ( $next ) ? $next : $revId;
+					$revId = ( $next ) ? $next : $oldid;
 				} else { // diff is 'prev' or gibberish
 					$revId = $oldid;
 				}
