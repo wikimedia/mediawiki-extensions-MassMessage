@@ -156,49 +156,47 @@ class ApiEditMassMessageList extends ApiBase {
 	 */
 	protected function getEditSummary( $added, $removed ) {
 		if ( !empty( $added ) && !empty( $removed ) ) {
-			return $this->msg( 'massmessage-summary-addremove' )
+			$summaryMsg = $this->msg( 'massmessage-summary-addremove' )
 				->numParams( count( $added ) )
-				->numParams( count( $removed ) )
-				->inContentLanguage()->text();
-		}
-
-		if ( !empty( $added ) ) { // Only added
+				->numParams( count( $removed ) );
+		} elseif ( !empty( $added ) ) { // Only added
 			if ( count( $added ) === 1 ) {
 				if ( isset( $added[0]['site'] ) ) {
-					$key = 'massmessage-summary-addonsite';
-					$title = $added[0]['title'];
-					$site = $added[0]['site'];
+					$summaryMsg = $this->msg(
+						'massmessage-summary-addonsite',
+						$added[0]['title'],
+						$added[0]['site']
+					);
 				} else {
-					$key = 'massmessage-summary-add';
-					$title = $added[0]['title'];
+					$summaryMsg = $this->msg(
+						'massmessage-summary-add',
+						$added[0]['title']
+					);
 				}
 			} else {
-				$key = 'massmessage-summary-addmulti';
-				$count = count( $added );
+				$summaryMsg = $this->msg( 'massmessage-summary-addmulti' )
+					->numParams( count( $added ) );
 			}
 		} else { // Only removed
 			if ( count( $removed ) === 1 ) {
 				if ( isset( $removed[0]['site'] ) ) {
-					$key = 'massmessage-summary-removeonsite';
-					$title = $removed[0]['title'];
-					$site = $removed[0]['site'];
+					$summaryMsg = $this->msg(
+						'massmessage-summary-removeonsite',
+						$removed[0]['title'],
+						$removed[0]['site']
+					);
 				} else {
-					$key = 'massmessage-summary-remove';
-					$title = $removed[0]['title'];
+					$summaryMsg = $this->msg(
+						'massmessage-summary-remove',
+						$removed[0]['title']
+					);
 				}
 			} else {
-				$key = 'massmessage-summary-removemulti';
-				$count = count( $removed );
+				$summaryMsg = $this->msg( 'massmessage-summary-removemulti' )
+					->numParams( count( $removed ) );
 			}
 		}
-
-		if ( isset( $site ) ) { // Added or removed page on another wiki
-			return $this->msg( $key, $title, $site )->inContentLanguage()->plain();
-		} elseif ( isset( $title ) ) { // Added or removed a page on the local wiki
-			return $this->msg( $key, $title )->inContentLanguage()->plain();
-		} else { // Added or removed multiple pages
-			return $this->msg( $key )->numParams( $count )->inContentLanguage()->text();
-		}
+		return $summaryMsg->inContentLanguage()->text();
 	}
 
 	public function getDescription() {
