@@ -18,6 +18,7 @@ class MassMessageListContentHandler extends JSONContentHandler {
 	 * @param string $text
 	 * @param string $format
 	 * @return MassMessageListContent
+	 * @throws MWContentSerializationException
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
