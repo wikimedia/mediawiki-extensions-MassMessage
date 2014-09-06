@@ -81,7 +81,9 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		if ( !$result->isGood() ) {
 			return $result;
 		}
+
 		$this->getOutput()->redirect( $title->getFullUrl() );
+		return Status::newGood();
 	}
 
 	public function onSuccess() {

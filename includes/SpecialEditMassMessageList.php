@@ -251,7 +251,9 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		if ( !$editResult->isGood() ) {
 			return $editResult;
 		}
+
 		$this->getOutput()->redirect( $this->title->getFullUrl() );
+		return Status::newGood();
 	}
 
 	public function onSuccess() {
