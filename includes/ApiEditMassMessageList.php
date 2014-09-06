@@ -232,17 +232,6 @@ class ApiEditMassMessageList extends ApiBase {
 		);
 	}
 
-	public function getPossibleErrors() {
-		return array_merge(
-			parent::getPossibleErrors(),
-			array(
-				array( 'invalidspamlist' ),
-				array( 'massmessage-ch-tojsonerror' ),
-				array( 'massmessage-ch-apierror' ),
-			)
-		);
-	}
-
 	public function mustBePosted() {
 		return true;
 	}
