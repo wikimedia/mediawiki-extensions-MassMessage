@@ -63,7 +63,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			}
 
 			$targets = $this->getTargets( $source );
-			if ( $targets === null ) {
+			if ( $targets === null || count( $targets ) === 0 ) {
 				return Status::newFatal( 'massmessage-create-invalidsource' );
 			}
 		} else {
