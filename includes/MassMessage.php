@@ -71,27 +71,31 @@ class MassMessage {
 
 	/**
 	 * Returns the basic hostname and port using wfParseUrl
-	 * @param  string $url URL to parse
+	 * @param string $url
 	 * @return string
 	 */
 	public static function getBaseUrl( $url ) {
-		$parse = wfParseUrl( $url );
-		$site = $parse['host'];
-		if ( isset( $parse['port'] ) ) {
-			$site .= ':' . $parse['port'];
+		static $mapping = array();
+
+		if ( isset( $mapping[$url] ) ) {
+			return $mapping[$url];
 		}
 
-		return $site;
+		$parse = wfParseUrl( $url );
+		$mapping[$url] = $parse['host'];
+		if ( isset( $parse['port'] ) ) {
+			$mapping[$url] .= ':' . $parse['port'];
+		}
+		return $mapping[$url];
 	}
 
 	/**
-	 * Get database name from URL hostname
-	 * Requires $wgConf to be set up properly
-	 * Tries to read from cache if possible
-	 * @param  string $host
-	 * @return string
-	 */
-	public static function getDBName( $host ) {
+	* Get a mapping from site domains to database names
+	* Requires $wgConf to be set up properly
+	* Tries to read from cache if possible
+	* @return array
+	*/
+	public static function getDatabases() {
 		global $wgConf, $wgMemc;
 		static $mapping = null;
 		if ( $mapping === null ) {
@@ -103,14 +107,24 @@ class MassMessage {
 				$mapping = array();
 				foreach ( $dbs as $dbname ) {
 					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
-					$parse = wfParseUrl( $url );
-					$mapping[$parse['host']] = $dbname;
+					$site = self::getBaseUrl( $url );
+					$mapping[$site] = $dbname;
 				}
 				$wgMemc->set( $key, $mapping, 60 * 60 );
 			} else {
 				$mapping = $data;
 			}
 		}
+		return $mapping;
+	}
+
+	/**
+	 * Get database name from URL hostname
+	 * @param  string $host
+	 * @return string
+	 */
+	public static function getDBName( $host ) {
+		$mapping = self::getDatabases();
 		if ( isset( $mapping[$host] ) ) {
 			return $mapping[$host];
 		}
@@ -118,98 +132,36 @@ class MassMessage {
 	}
 
 	/**
-	 * Perform various normalization functions on the target data
-	 * @param  array $data
+	 * Verify that parser function data is valid and return processed data as an array
+	 * @param string $page
+	 * @param string $site
 	 * @return array
 	 */
-	public static function normalizeTargets( array $data ) {
-		global $wgNamespacesToConvert;
-		$targets = array();
-		foreach ( $data as $target ) {
+	public static function processPFData( $page, $site ) {
+		global $wgCanonicalServer, $wgAllowGlobalMessaging;
 
-			if ( !isset( $target['wiki'] ) ) {
-				$wiki = self::getDBName( $target['site'] );
-				if ( $wiki == null ) {
-					// Not set in $wgConf
-					continue;
-				}
-				$target['wiki'] = $wiki;
-			}
-
-			if ( $target['wiki'] == wfWikiID() ) {
-				$title = Title::newFromText( $target['title'] );
-				if ( $title === null ) {
-					continue;
-				}
-				if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
-					$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
-				}
-				$title = self::followRedirect( $title );
-				if ( $title === null ) {
-					continue; // Interwiki redirect
-				}
-				$target['title'] = $title->getPrefixedText();
-			}
-
-			// Use an assoc array to clear dupes
-			$targets[$target['title'] . '<' . $target['wiki']] = $target;
-			// Use a funky delimiter so people can't mess with it by using
-			// "creative" page names
+		if ( Title::newFromText( $page ) === null ) {
+			return self::parserError( 'massmessage-parse-badpage', $page );
 		}
 
-		return $targets;
-	}
-
-	/**
-	 * Get an array of targets from a category
-	 * @param  Title $spamlist
-	 * @return array
-	 */
-	public static function getCategoryTargets( Title $spamlist ) {
-		$cat = Category::newFromTitle( $spamlist );
-		$members = $cat->getMembers();
-		$targets = array();
-
-		/** @var Title $member */
-		foreach ( $members as $member ) {
-			$target = array();
-			$target['title'] = $member->getPrefixedText();
-			$target['wiki'] = wfWikiID();
-			$targets[] = $target;
-		}
-
-		return self::normalizeTargets( $targets );
-	}
-
-	/**
-	 * Get an array of targets via the #target parser function
-	 * @param  Title $spamlist
-	 * @param  IContextSource $context
-	 * @return array
-	 */
-	public static function getParserFunctionTargets( Title $spamlist, $context ) {
-		$page = WikiPage::factory( $spamlist );
-		$text = $page->getContent( Revision::RAW )->getNativeData();
-
-		// Prep the parser
-		$parserOptions = $page->makeParserOptions( $context );
-		$parser = new Parser();
-		$parser->firstCallInit(); // So our initial parser function is added
-		$parser->setFunctionHook( 'target', 'MassMessageHooks::storeDataParserFunction' ); // Now overwrite it
-
-		// Parse
-		$output = $parser->parse( $text, $spamlist, $parserOptions );
-		$data = unserialize( $output->getProperty( 'massmessage-targets' ) );
-
-		if ( $data ) {
-			return self::normalizeTargets( $data );
+		$data = array( 'title' => $page, 'site' => trim( $site ) );
+		if ( $data['site'] === '' ) {
+			$data['site'] = self::getBaseUrl( $wgCanonicalServer );
+			$data['wiki'] = wfWikiID();
 		} else {
-			return array(); // No parser functions on page
+			$data['wiki'] = self::getDBName( $data['site'] );
+			if ( $data['wiki'] === null ) {
+				return self::parserError( 'massmessage-parse-badurl', $site );
+			}
+			if ( !$wgAllowGlobalMessaging && $data['wiki'] !== wfWikiID() ) {
+				return self::parserError( 'massmessage-global-disallowed' );
+			}
 		}
+		return $data;
 	}
 
 	/**
-	 * Helper function for MassMessageHooks::ParserFunction
+	 * Helper function for processPFData
 	 * Inspired from the Cite extension
 	 * @param $key string message key
 	 * @param $param string parameter for the message
@@ -278,7 +230,7 @@ class MassMessage {
 				wfWikiID(),
 				$url
 			);
-		} else {
+		} else { // $spamlist contains a message key for an error message
 			$status->fatal( $spamlist );
 		}
 
@@ -311,16 +263,22 @@ class MassMessage {
 			return 'massmessage-spamlist-doesnotexist';
 		} else {
 			// Page exists, follow a redirect if possible
-			$target = MassMessage::followRedirect( $spamlist );
+			$target = self::followRedirect( $spamlist );
 			if ( $target === null || !$target->exists() ) {
-				return 'massmessage-spamlist-doesnotexist'; // Interwiki redirect or non-existent page.
+				return 'massmessage-spamlist-invalid'; // Interwiki redirect or non-existent page.
 			} else {
 				$spamlist = $target;
 			}
 		}
 
-		if ( $spamlist->getContentModel() != CONTENT_MODEL_WIKITEXT ) {
-			return 'massmessage-spamlist-doesnotexist';
+		$contentModel = $spamlist->getContentModel();
+
+		if ( $contentModel !== 'MassMessageListContent'
+			&& $contentModel !== CONTENT_MODEL_WIKITEXT
+			|| $contentModel === 'MassMessageListContent'
+			&& !Revision::newFromTitle( $spamlist )->getContent()->isValid()
+		) {
+			return 'massmessage-spamlist-invalid';
 		}
 
 		return $spamlist;
@@ -348,6 +306,7 @@ class MassMessage {
 
 	/**
 	 * Send out the message!
+	 * Note that this function does not perform validation on $data
 	 *
 	 * @param IContextSource $context
 	 * @param array $data
@@ -357,11 +316,9 @@ class MassMessage {
 		$spamlist = self::getSpamlist( $data['spamlist'] );
 
 		// Get the array of pages to deliver to.
-		if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
-			$pages = self::getCategoryTargets( $spamlist );
-		} else {
-			$pages = self::getParserFunctionTargets( $spamlist, $context );
-		}
+		$pages = MassMessageTargets::normalizeTargets(
+			MassMessageTargets::getTargets( $spamlist, $context )
+		);
 
 		// Log it.
 		self::logToWiki( $spamlist, $context->getUser(), $data['subject'] );

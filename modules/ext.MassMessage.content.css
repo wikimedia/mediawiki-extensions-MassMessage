@@ -1,0 +1,29 @@
+.mw-massmessage-targetlink {
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+}
+
+.mw-massmessage-removelink {
+	margin-left: 20px;
+}
+
+.mw-massmessage-emptylist {
+	font-style: italic;
+}
+
+#mw-massmessage-addform label {
+	margin-right: 2px;
+}
+
+#mw-massmessage-addform input {
+	margin-right: 10px;
+}
+
+#mw-massmessage-addform .error {
+	font-size: 100%;
+}
+
+#mw-massmessage-addedlist {
+	display: none;
+}

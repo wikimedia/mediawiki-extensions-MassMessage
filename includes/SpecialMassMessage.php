@@ -47,9 +47,9 @@ class SpecialMassMessage extends SpecialPage {
 		$this->status = new Status();
 
 		// Figure out what state we're in.
-		if ( $request->getText( 'submit-button' ) == $this->msg( 'massmessage-form-submit' )->text() ) {
+		if ( $request->getVal( 'submit-button' ) !== null ) {
 			$this->state = 'submit';
-		} elseif ( $request->getText( 'preview-button' ) == $this->msg( 'massmessage-form-preview' )->text() ) {
+		} elseif ( $request->getVal( 'preview-button' ) !== null ) {
 			$this->state = 'preview';
 		} else {
 			$this->state = 'form';
@@ -58,7 +58,7 @@ class SpecialMassMessage extends SpecialPage {
 		$form = new HtmlForm( $this->createForm(), $context );
 		$form->setId( 'mw-massmessage-form' );
 		$form->setDisplayFormat( 'div' );
-		if ( $this->state == 'form' ) {
+		if ( $this->state === 'form' ) {
 			$form->addPreText( $this->msg( 'massmessage-form-header' )->parse() );
 		}
 		$form->setWrapperLegendMsg( 'massmessage' );
@@ -69,13 +69,13 @@ class SpecialMassMessage extends SpecialPage {
 		$form->prepareForm();
 		$result = $form->tryAuthorizedSubmit();
 		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
-			if ( $this->state == 'submit' ) { // If it's preview, everything is shown already.
+			if ( $this->state === 'submit' ) { // If it's preview, everything is shown already.
 				$msg = $this->msg( 'massmessage-submitted' )->params( $this->count )->plain();
 				$output->addWikiText( $msg );
 				$output->addWikiMsg( 'massmessage-nextsteps' );
 			}
 		} else {
-			if ( $this->state == 'preview' ) {
+			if ( $this->state === 'preview' ) {
 				$result = $this->status;
 			}
 			$form->displayForm( $result );
@@ -140,7 +140,7 @@ class SpecialMassMessage extends SpecialPage {
 			'default' => $request->getText( 'message' )
 		);
 
-		if ( $this->state == 'preview' ) {
+		if ( $this->state === 'preview' ) {
 			// Adds it right before the 'Send' button
 			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse' );
 			$m['submit-button'] = array(
@@ -183,7 +183,7 @@ class SpecialMassMessage extends SpecialPage {
 			return $this->status;
 		}
 
-		if ( $this->state == 'submit' ) {
+		if ( $this->state === 'submit' ) {
 			$this->count = MassMessage::submit( $this->getContext(), $data );
 			return $this->status;
 		} else { // $this->state can only be 'preview' here
@@ -247,7 +247,7 @@ class SpecialMassMessage extends SpecialPage {
 		foreach ( $tags as $element => $num ) {
 			if ( $num > 0 ) {
 				$results[] = '<' . $element . '>';
-			} else if ( $num < 0 ) {
+			} elseif ( $num < 0 ) {
 				$results[] = '</' . $element . '>';
 			}
 		}
@@ -261,31 +261,25 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	protected function preview( array $data ) {
-		// $spamlist = $this->getSpamlist( $data['spamlist'] );
-		// $targets = MassMessage::getParserFunctionTargets( $spamlist, $this->getContext() );
-		// $firstTarget = array_values( $targets )[0]; // Why doesn't this work??
-		$firstTarget = Title::newFromText( 'Project:Example' );
-		$wikipage = WikiPage::factory( $firstTarget );
+		// Use a mock target as the context for rendering the preview
+		$mockTarget = Title::newFromText( 'Project:Example' );
+		$wikipage = WikiPage::factory( $mockTarget );
 
 		// Hacked up from EditPage.php
-		// Is this really the best way to do this???
-
-		$subject = $data['subject'];
-		$message = $data['message'];
 
 		// Convert into a content object
-		$content = ContentHandler::makeContent( $message, $firstTarget );
+		$content = ContentHandler::makeContent( $data['message'], $mockTarget );
 		// Parser stuff. Taken from EditPage::getPreviewText()
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setEditSection( false );
 		$parserOptions->setIsPreview( true );
 		$parserOptions->setIsSectionPreview( false );
-		$content = $content->addSectionHeader( $subject );
+		$content = $content->addSectionHeader( $data['subject'] );
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
 
-		$content = $content->preSaveTransform( $firstTarget, MassMessage::getMessengerUser(), $parserOptions );
-		$parserOutput = $content->getParserOutput( $firstTarget, null, $parserOptions );
+		$content = $content->preSaveTransform( $mockTarget, MassMessage::getMessengerUser(), $parserOptions );
+		$parserOutput = $content->getParserOutput( $mockTarget, null, $parserOptions );
 		$previewHTML = $parserOutput->getText();
 		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
 		$fieldsetMessage = $this->msg( 'massmessage-fieldset-preview' )->text();
@@ -298,13 +292,11 @@ class SpecialMassMessage extends SpecialPage {
 		}
 
 		// Check for unclosed HTML tags (Bug 54909)
-		$unclosedTags = $this->getUnclosedTags( $message );
+		$unclosedTags = $this->getUnclosedTags( $data['message'] );
 		if ( !empty( $unclosedTags ) ) {
 			$this->status->fatal(
 				$this->msg( 'massmessage-badhtml' )
-					->params(
-						htmlspecialchars( $this->getLanguage()->commaList( $unclosedTags ) )
-					)
+					->params( htmlspecialchars( $this->getLanguage()->commaList( $unclosedTags ) ) )
 					->numParams( count( $unclosedTags ) )
 			);
 		}

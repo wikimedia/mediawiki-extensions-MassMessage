@@ -6,6 +6,19 @@
 
 class MassMessageHooks {
 
+	public static function onExtensionFunctions() {
+		global $wgContentHandlerUseDB, $wgSpecialPages, $wgAPIModules;
+
+		if ( !$wgContentHandlerUseDB ) {
+			// Disable things :(
+			wfDebugLog( 'MassMessage',
+				'Disabling contenthandler features because $wgContentHandlerUseDB = false' );
+			unset( $wgSpecialPages['CreateMassMessageList'] );
+			unset( $wgSpecialPages['EditMassMessageList'] );
+			$wgAPIModules['editmassmessagelist'] = 'ApiDisabled';
+		}
+	}
+
 	/**
 	 * Hook to load our parser function
 	 * @param  Parser $parser
@@ -14,40 +27,6 @@ class MassMessageHooks {
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setFunctionHook( 'target', 'MassMessageHooks::outputParserFunction' );
 		return true;
-	}
-
-	/**
-	 * Verifies the user submitted data to check it's valid
-	 * @param string $page
-	 * @param string $site
-	 * @return array
-	 */
-	public static function verifyPFData( $page, $site ) {
-		global $wgServer, $wgAllowGlobalMessaging;
-		$data = array( 'site' => $site, 'title' => $page );
-		if ( trim( $site ) === '' ) {
-			$site = MassMessage::getBaseUrl( $wgServer );
-			$data['site'] = $site;
-			$data['wiki'] = wfWikiID();
-		} elseif ( filter_var( 'http://' . $site, FILTER_VALIDATE_URL ) === false ) {
-			// Try and see if the site provided is not valid
-			// We can just prefix http:// in front since it needs some kind of protocol
-			return MassMessage::parserError( 'massmessage-parse-badurl', $site );
-		}
-		if ( is_null( Title::newFromText( $page ) ) ) {
-			// Check if the page provided is not valid
-			return MassMessage::parserError( 'massmessage-parse-badpage', $page );
-		}
-		if ( !isset( $data['wiki'] ) ) {
-			$data['wiki'] = MassMessage::getDBName( $data['site'] );
-			if ( $data['wiki'] === null ) {
-				return MassMessage::parserError( 'massmessage-parse-badurl', $site );
-			}
-		}
-		if ( !$wgAllowGlobalMessaging && $data['wiki'] != wfWikiID() ) {
-			return MassMessage::parserError( 'massmessage-global-disallowed' );
-		}
-		return $data;
 	}
 
 	/**
@@ -62,16 +41,15 @@ class MassMessageHooks {
 	public static function outputParserFunction( Parser $parser, $page, $site = '' ) {
 		global $wgScript;
 
-		$data = self::verifyPFData( $page, $site );
+		$data = MassMessage::processPFData( $page, $site );
 		if ( isset( $data['error'] ) ) {
 			return $data;
 		}
 
-		$site = $data['site'];
-		$page = $data['title'];
-
 		// Use a message so wikis can customize the output
-		$msg = wfMessage( 'massmessage-target' )->params( $site, $wgScript, $page )->plain();
+		$msg = wfMessage( 'massmessage-target' )
+			->params( $data['site'], $wgScript, $data['title'] )
+			->plain();
 
 		return array( $msg, 'noparse' => false );
 	}
@@ -84,7 +62,7 @@ class MassMessageHooks {
 	 * @return string
 	 */
 	public static function storeDataParserFunction( Parser $parser, $page, $site = '' ) {
-		$data = self::verifyPFData( $page, $site );
+		$data = MassMessage::processPFData( $page, $site );
 		if ( isset( $data['error'] ) ) {
 			return ''; // Output doesn't matter
 		}
@@ -171,7 +149,6 @@ class MassMessageHooks {
 
 	/**
 	 * Echo!
-	 *
 	 * @param $event EchoEvent
 	 * @return bool
 	 */
@@ -185,4 +162,68 @@ class MassMessageHooks {
 		return true;
 	}
 
+	/**
+	 * Override the Edit tab for delivery lists
+	 * @param SkinTemplate &$sktemplate
+	 * @param array &$links
+	 * @return bool
+	 */
+	public static function onSkinTemplateNavigation( &$sktemplate, &$links ) {
+		$title = $sktemplate->getTitle();
+		if ( $title->hasContentModel( 'MassMessageListContent' )
+			&& array_key_exists( 'edit', $links['views'] )
+		) {
+			// Get the revision being viewed, if applicable
+			$request = $sktemplate->getRequest();
+			$direction = $request->getVal( 'direction' );
+			$diff = $request->getVal( 'diff' );
+			$oldid = $request->getInt( 'oldid' ); // Guaranteed to be an integer, 0 if invalid
+			if ( $direction === 'next' && $oldid > 0 ) {
+				$next = $title->getNextRevisionId( $oldid );
+				$revId = ( $next ) ? $next : $oldid;
+			} elseif ( $direction === 'prev' && $oldid > 0 ) {
+				$prev = $title->getPreviousRevisionId( $oldid );
+				$revId = ( $prev ) ? $prev : $oldid;
+			} elseif ( $diff !== null ) {
+				if ( ctype_digit( $diff ) ) {
+					$revId = (int)$diff;
+				} elseif ( $diff === 'next' && $oldid > 0 ) {
+					$next = $title->getNextRevisionId( $oldid );
+					$revId = ( $next ) ? $next : $oldid;
+				} else { // diff is 'prev' or gibberish
+					$revId = $oldid;
+				}
+			} else {
+				$revId = $oldid;
+			}
+
+			$query = ( $revId > 0 ) ? 'oldid=' . $revId : '';
+			$links['views']['edit']['href'] = SpecialPage::getTitleFor(
+				'EditMassMessageList', $title
+			)->getFullUrl( $query );
+		}
+		return true;
+	}
+
+	/**
+	 * Add scripts and styles
+	 * @param OutputPage &$out
+	 * @param Skin &$skin
+	 * @return bool
+	 */
+	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
+		$title = $out->getTitle();
+		if ( $title->exists() && $title->hasContentModel( 'MassMessageListContent' ) ) {
+			$out->addModuleStyles( 'ext.MassMessage.content.nojs' );
+			if ( $out->getRevisionId() === $title->getLatestRevId()
+				&& $title->quickUserCan( 'edit', $out->getUser() )
+			) {
+				$out->addModuleStyles( 'ext.MassMessage.content' );
+				$out->addModules( 'ext.MassMessage.content.js' );
+			} else {
+				$out->addModuleStyles( 'ext.MassMessage.content.noedit' );
+			}
+		}
+		return true;
+	}
 }

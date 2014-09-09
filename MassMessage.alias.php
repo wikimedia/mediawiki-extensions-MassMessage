@@ -12,6 +12,8 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'MassMessage' => array( 'MassMessage' ),
+	'CreateMassMessageList' => array( 'CreateMassMessageList' ),
+	'EditMassMessageList' => array( 'EditMassMessageList' ),
 );
 
 /** Arabic (العربية) */
