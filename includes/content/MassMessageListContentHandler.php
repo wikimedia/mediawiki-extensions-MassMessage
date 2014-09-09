@@ -147,7 +147,11 @@ class MassMessageListContentHandler extends JSONContentHandler {
 		$result = array();
 
 		$title = Title::newFromText( $titleText );
-		if ( !$title || $title->isSpecialPage() || $title->isExternal() ) {
+		if ( !$title
+			|| $title->getText() === ''
+			|| !$title->canExist()
+			|| $title->isExternal()
+		) {
 			$result['errors'] = array( 'invalidtitle' );
 		} else {
 			$result['title'] = $title->getPrefixedText(); // Use the canonical form.
