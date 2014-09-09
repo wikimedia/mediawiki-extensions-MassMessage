@@ -81,7 +81,7 @@
 	"massmessage-create-invalidtitle": "The specified title is invalid.",
 	"massmessage-create-exists": "A page already exists at the specified title.",
 	"massmessage-create-nopermission": "You do not have permission to create a list at this title.",
-	"massmessage-create-invalidsource": "The specified source is not a valid delivery list or category.",
+	"massmessage-create-invalidsource": "The specified source is not a valid delivery list or category with at least one page.",
 	"editmassmessagelist-legend": "Edit mass message delivery list",
 	"massmessage-edit-pagetitle": "Editing $1",
 	"massmessage-edit-title": "Title:",
