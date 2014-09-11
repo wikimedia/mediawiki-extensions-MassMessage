@@ -5,7 +5,8 @@
 			"Hansmuller",
 			"Konovalov",
 			"Siebrand",
-			"Southparkfan"
+			"Southparkfan",
+			"Sjoerddebruin"
 		]
 	},
 	"massmessage": "Bulkberichten verzenden",
@@ -41,5 +42,31 @@
 	"logentry-massmessage-skipoptout": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat er op de doelpagina geen berichten geplaatst mogen worden",
 	"logentry-massmessage-skipnouser": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat de gebruiker niet bestaat",
 	"massmessage-cannot-rename": "Dit is een systeemgebruiker die niet hernoemd kan worden.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Nog een bericht verzenden]] of [[Special:Statistics|bekijken hoeveel berichten er in de wachtrij staan]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Nog een bericht verzenden]] of [[Special:Statistics|bekijken hoeveel berichten er in de wachtrij staan]].",
+	"massmessage-content-pages": "Pagina's in deze lijst",
+	"massmessage-content-pagesonsite": "Pagina's op $1:",
+	"massmessage-content-localpages": "Pagina's op deze wiki:",
+	"massmessage-content-remove": "verwijderen",
+	"massmessage-content-removeyes": "Verwijderen",
+	"massmessage-content-removeno": "Annuleren",
+	"massmessage-content-emptylist": "(geen)",
+	"massmessage-content-addheading": "Pagina's toevoegen",
+	"massmessage-content-addtitle": "Titel:",
+	"massmessage-content-addsite": "Site:",
+	"massmessage-content-addsubmit": "Pagina toevoegen",
+	"massmessage-content-addedlistheading": "Pagina's toegevoegd:",
+	"massmessage-content-addeditem": "$1 op $2",
+	"massmessage-content-invalidtitle": "Deze titel is ongeldig.",
+	"massmessage-content-invalidsite": "Deze site is ongeldig.",
+	"massmessage-content-adderror": "API-fout: $1",
+	"massmessage-create-title": "Titel:",
+	"massmessage-create-description": "Beschrijving:",
+	"massmessage-create-content": "Inhoud:",
+	"massmessage-create-source": "Bron:",
+	"massmessage-edit-title": "Titel:",
+	"massmessage-edit-description": "Beschrijving:",
+	"massmessage-edit-summary": "Bewerkingssamenvatting:",
+	"massmessage-summary-add": "[[:$1]] toegevoegd",
+	"massmessage-summary-addmulti": "Heeft $1{{PLURAL:$1|pagina's}} toegevoegd",
+	"massmessage-summary-remove": "[[:$1]] verwijderd"
 }

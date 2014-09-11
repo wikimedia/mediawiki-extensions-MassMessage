@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"ElangoRamanujam"
+		]
+	},
+	"massmessage-content-remove": "நீக்குக",
+	"massmessage-content-addtitle": "தலைப்பு:",
+	"massmessage-content-addedlistheading": "பக்கங்கள் சேர்க்கப்பட்டது:",
+	"massmessage-summary-remove": "நீக்கப்பட்டது [[:$1]]",
+	"massmessage-summary-removeonsite": "$2 ல் $1 நீக்கப்பட்டது"
+}

@@ -78,7 +78,9 @@ $specialPageAliases['ko'] = array(
 
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
-	'MassMessage' => array( 'МасовнаПорака' ),
+	'MassMessage' => array( 'МасовниПораки' ),
+	'CreateMassMessageList' => array( 'СоздајСписокЗаМасовниПораки' ),
+	'EditMassMessageList' => array( 'УредиСписокЗаМасовниПораки' ),
 );
 
 /** Malayalam (മലയാളം) */
