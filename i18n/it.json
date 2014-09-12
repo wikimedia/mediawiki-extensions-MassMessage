@@ -64,5 +64,14 @@
 	"massmessage-create-description": "Descrizione:",
 	"massmessage-create-invalidtitle": "Il titolo specificato non è valido.",
 	"massmessage-edit-title": "Titolo:",
-	"massmessage-edit-description": "Descrizione:"
+	"massmessage-edit-description": "Descrizione:",
+	"massmessage-edit-invalidtargets": "{{PLURAL:$1|La seguente pagina non è valida|Le seguenti pagine non sono valide}}: $2",
+	"massmessage-edit-nopermission": "Non si dispone dei permessi necessari per modificare questo elenco.",
+	"massmessage-summary-addremove": "{{PLURAL:$1|Aggiunta $1 pagina|Aggiunte $1 pagine}} e {{PLURAL:$2|rimossa $2 pagina|rimosse $2 pagine}}",
+	"massmessage-summary-add": "Aggiunta [[:$1]]",
+	"massmessage-summary-addonsite": "Aggiunta $1 su $2",
+	"massmessage-summary-addmulti": "Aggiunte $1 {{PLURAL:$1|pagine}}",
+	"massmessage-summary-remove": "Rimossa [[:$1]]",
+	"massmessage-summary-removeonsite": "Rimossa $1 su $2",
+	"massmessage-summary-removemulti": "Rimosse $1 {{PLURAL:$1|pagine}}"
 }

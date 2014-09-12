@@ -39,5 +39,18 @@
 	"logentry-massmessage-skipoptout": "Доставка «$4» для $3 была пропущена, поскольку целевой страницей отказано в доставке сообщения",
 	"logentry-massmessage-skipnouser": "Доставка «$4» для $3 была пропущена, поскольку учётная запись пользователя не существует",
 	"massmessage-cannot-rename": "Это системная учётная запись, и она не может быть переименована.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Отправить другое сообщение]] или [[Special:Statistics|посмотреть, сколько сообщений поставлено в очередь]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Отправить другое сообщение]] или [[Special:Statistics|посмотреть, сколько сообщений поставлено в очередь]].",
+	"massmessage-content-removeno": "Отмена",
+	"massmessage-content-addtitle": "Заголовок:",
+	"massmessage-content-addsite": "Сайт:",
+	"massmessage-content-addsubmit": "Добавить страницу",
+	"massmessage-content-addedlistheading": "Добавлены страницы:",
+	"massmessage-content-adderror": "Ошибка API: $1",
+	"massmessage-create-title": "Заголовок:",
+	"massmessage-create-description": "Описание:",
+	"massmessage-create-source": "Источник:",
+	"massmessage-edit-title": "Заголовок:",
+	"massmessage-edit-description": "Описание:",
+	"massmessage-edit-content": "Целевые страницы:",
+	"massmessage-edit-summary": "Описание изменений:"
 }

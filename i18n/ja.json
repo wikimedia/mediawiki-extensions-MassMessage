@@ -15,7 +15,7 @@
 	"massmessage-fieldset-preview": "プレビュー",
 	"massmessage-submitted": "{{PLURAL:$1|$1 件のページ}}へのメッセージ送信を待ち行列に登録しました。",
 	"massmessage-just-preview": "これはプレビューしているだけに過ぎません。メッセージを送信するには「{{int:massmessage-form-submit}}」をクリックしてください。",
-	"massmessage-spamlist-doesnotexist": "ページ一覧として指定したページは存在しません。",
+	"massmessage-spamlist-doesnotexist": "配信先一覧として指定したページまたはカテゴリが存在しません。",
 	"massmessage-empty-subject": "件名を入力していません。",
 	"massmessage-empty-message": "メッセージの本文を入力していません。",
 	"massmessage-unescaped-langlinks": "警告: メッセージ内にエスケープされていない言語リンクがあります。",
