@@ -34,7 +34,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::isHasInvalidTargets
+	 * @covers MassMessageListContent::hasInvalidTargets
 	 * @dataProvider provideHasInvalidTargets
 	 * @param string $text
 	 * @param bool $expected
@@ -45,7 +45,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::testGetDescription
+	 * @covers MassMessageListContent::getDescription
 	 */
 	public function testGetDescription() {
 		$content = new MassMessageListContent( '{"description":"foo","targets":[]}' );
@@ -53,7 +53,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::testGetTargets
+	 * @covers MassMessageListContent::getTargets
 	 */
 	public function testGetTargets() {
 		$text = '{"description":"","targets":['
@@ -69,7 +69,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::testGetValidTargets
+	 * @covers MassMessageListContent::getValidTargets
 	 */
 	public function testGetValidTargets() {
 		$text = '{"description":"","targets":['
@@ -86,7 +86,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::testGetTargetStrings
+	 * @covers MassMessageListContent::getTargetStrings
 	 */
 	public function testGetTargetStrings() {
 		// Temporarily set $wgCanonicalServer for this test so its value is predictable.
