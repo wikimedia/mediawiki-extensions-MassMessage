@@ -3,11 +3,6 @@
 class MassMessageListContentHandler extends JSONContentHandler {
 
 	/**
-	 * @var string
-	 */
-	protected $contentClass = 'MassMessageListContent';
-
-	/**
 	 * @param string $modelId
 	 */
 	public function __construct( $modelId = 'MassMessageListContent' ) {
@@ -34,6 +29,13 @@ class MassMessageListContentHandler extends JSONContentHandler {
 	 */
 	public function makeEmptyContent() {
 		return new MassMessageListContent( '{"description":"","targets":[]}' );
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getContentClass() {
+		return 'MassMessageListContent';
 	}
 
 	/**
