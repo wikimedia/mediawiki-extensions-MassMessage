@@ -39,5 +39,13 @@
 	"logentry-massmessage-skipoptout": "發送訊息 \"$4\" 至 $3 已被略過，因目標為排除的訊息發送對象。",
 	"logentry-massmessage-skipnouser": "發送訊息 \"$4\" 至 $3 已被略過，因該使用者帳號不存在。",
 	"massmessage-cannot-rename": "這是系統帳號，無法重新命名。",
-	"massmessage-nextsteps": "[[Special:MassMessage|發送另一則訊息]] 或 [[Special:Statistics|檢視已列入排程的訊息數量]]。"
+	"massmessage-nextsteps": "[[Special:MassMessage|發送另一則訊息]] 或 [[Special:Statistics|檢視已列入排程的訊息數量]]。",
+	"massmessage-content-remove": "移除",
+	"massmessage-content-removeyes": "移除",
+	"massmessage-content-removeno": "取消",
+	"massmessage-content-emptylist": "（無）",
+	"massmessage-content-addtitle": "標題：",
+	"massmessage-content-addsite": "網站：",
+	"massmessage-content-addeditem": "$1 於 $2",
+	"massmessage-create-content": "內容："
 }

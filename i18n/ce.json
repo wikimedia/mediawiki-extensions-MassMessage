@@ -20,5 +20,17 @@
 	"action-massmessage": "массийта декъашхошка хаамаш бахьийтар цкъачунна дӀадайина ду",
 	"log-name-massmessage": "Дукха хаамаш кхехьийтаран тептар",
 	"log-description-massmessage": "Декъашхочо хаамаш кхехьийтар гойту тептар.",
-	"massmessage-content-remove": "дӀаяккха"
+	"massmessage-content-remove": "дӀаяккха",
+	"massmessage-content-removeyes": "ДӀаяккха",
+	"massmessage-content-removeno": "Цаоьшу",
+	"massmessage-content-emptylist": "(яц)",
+	"massmessage-content-addsite": "Сайт:",
+	"massmessage-content-addedlistheading": "ТӀетоьхна агӀонаш:",
+	"massmessage-content-addeditem": "$1 $2 тӀе",
+	"massmessage-create-source": "Хьост:",
+	"massmessage-edit-pagetitle": "Тадар $1",
+	"massmessage-edit-description": "Цуьнах лаьцна:",
+	"massmessage-edit-content": "Ӏалашонан агӀонаш:",
+	"massmessage-summary-add": "ТӀетоьхна [[:$1]]",
+	"massmessage-summary-remove": "ДӀаяьхна [[:$1]]"
 }

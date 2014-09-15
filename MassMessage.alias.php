@@ -111,6 +111,8 @@ $specialPageAliases['vi'] = array(
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'MassMessage' => array( '群发信息', '批量消息' ),
+	'CreateMassMessageList' => array( '创建群发消息递送列表' ),
+	'EditMassMessageList' => array( '编辑群发消息递送列表' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
