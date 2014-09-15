@@ -41,6 +41,8 @@ class MassMessageHooks {
 	public static function outputParserFunction( Parser $parser, $page, $site = '' ) {
 		global $wgScript;
 
+		$parser->addTrackingCategory( 'massmessage-list-category' );
+
 		$data = MassMessage::processPFData( $page, $site );
 		if ( isset( $data['error'] ) ) {
 			return $data;
