@@ -1,6 +1,6 @@
 <?php
 
-class MassMessageListContent extends JSONContent {
+class MassMessageListContent extends JsonContent {
 
 	/**
 	 * Description wikitext

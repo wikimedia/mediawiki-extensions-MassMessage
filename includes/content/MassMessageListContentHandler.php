@@ -1,6 +1,6 @@
 <?php
 
-class MassMessageListContentHandler extends JSONContentHandler {
+class MassMessageListContentHandler extends JsonContentHandler {
 
 	/**
 	 * @param string $modelId
