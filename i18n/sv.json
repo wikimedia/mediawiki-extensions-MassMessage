@@ -17,7 +17,7 @@
 	"massmessage-fieldset-preview": "Förhandsgranska",
 	"massmessage-submitted": "Ditt meddelandeleverans till {{PLURAL:$1|$1 sida|$1 sidor}} har placerats i kö.",
 	"massmessage-just-preview": "Detta är bara en förhandsgranskning. Tryck på \"{{int:massmessage-form-skicka}}\" för att skicka meddelandet.",
-	"massmessage-spamlist-doesnotexist": "Den angivna sidan, som innehåller listan med sidor, existerar inte.",
+	"massmessage-spamlist-doesnotexist": "Den angivna leveranslistsidan eller kategorin, existerar inte.",
 	"massmessage-empty-subject": "Ämnesraden är tom.",
 	"massmessage-empty-message": "Meddelandets innehåll är tomt.",
 	"massmessage-unescaped-langlinks": "Varning: Det finns \"unescaped\" språklänkar i ditt meddelande.",
@@ -40,5 +40,13 @@
 	"logentry-massmessage-skipoptout": "Leverans av \"$4\" till $3 hoppades över eftersom målet har valt att inte ta emot meddelanden",
 	"logentry-massmessage-skipnouser": "Leverans av \"$4\" till $3 hoppades över eftersom användarkontot inte existerar",
 	"massmessage-cannot-rename": "Detta är ett systemkonto och kan inte byta namn.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Skicka ett annat meddelande]] eller [[Special:Statistics|se hur många meddelanden som är köade]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Skicka ett annat meddelande]] eller [[Special:Statistics|se hur många meddelanden som är köade]].",
+	"massmessage-content-pages": "Sidor i denna lista",
+	"massmessage-content-pagesonsite": "Sidor på $1:",
+	"massmessage-content-localpages": "Sidor på denna wiki:",
+	"massmessage-content-remove": "ta bort",
+	"massmessage-content-removeerror": "Borttagning av sidan misslyckades med felkod: $1",
+	"massmessage-content-removeconf": "Ta bort denna sida från listan?",
+	"massmessage-content-removeyes": "Ta bort",
+	"massmessage-content-removeno": "Avbryt"
 }

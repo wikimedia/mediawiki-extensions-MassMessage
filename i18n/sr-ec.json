@@ -14,6 +14,7 @@
 	"logentry-massmessage-failure": "Порука „$4“ није послата у $3; дошло је до грешке <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Порука „$4“ није послата у $3; одредиште је у неодговарајућем именском простору",
 	"logentry-massmessage-skipnouser": "Порука „$4“ није послата у $3; кориснички налог не постоји",
+	"massmessage-content-emptylist": "(ништа)",
 	"massmessage-content-addsite": "Сајт:",
 	"massmessage-create-source": "Извор:",
 	"massmessage-edit-title": "Наслов:",

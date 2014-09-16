@@ -91,6 +91,8 @@
 	"massmessage-edit-description": "说明：",
 	"massmessage-edit-content": "目标页面：",
 	"massmessage-edit-summary": "编辑摘要：",
+	"massmessage-edit-header": "使用以下表单更改列表描述或编辑目标页面列表。对于目标页面，每行输入一个标题。",
+	"massmessage-edit-headermulti": "使用以下表单更改列表描述或编辑目标页面列表。对于目标页面，每行输入一个标题并使用title@domain格式（User_talk:Example@zh.wikipedia.org）以区别不同wiki的每一个页面。",
 	"massmessage-edit-invalidtitle": "没有使用此标题的有效群发消息递送列表。",
 	"massmessage-edit-invalidtargets": "以下$1个页面无效：$2",
 	"massmessage-edit-missingsummary": "您没有提供编辑摘要。如果您再次点击“{{int:htmlform-submit}}”，您的编辑将在没有它的情况下保存。",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aftab1995",
-			"Bellayet"
+			"Bellayet",
+			"Tauhid16"
 		]
 	},
 	"massmessage": "গণ বার্তা পাঠাও",
@@ -25,6 +26,7 @@
 	"log-description-massmessage": "এই ঘটনাগুলি অনুসরণ ব্যবহারকারীদের বার্তা পাঠানোর।",
 	"logentry-massmessage-send": "$1 $3-এ {{GENDER:$2|একটি বার্তা পাঠিয়েছেন}}",
 	"massmessage-content-remove": "সরান",
+	"massmessage-content-removeconf": "এই পাতাটি তালিকা থেকে সরিয়ে ফেলবেন?",
 	"massmessage-content-removeyes": "সরান",
 	"massmessage-content-removeno": "বাতিল",
 	"massmessage-content-empty": "তালিকায় কোন পাতা নেই।",
@@ -33,8 +35,10 @@
 	"massmessage-content-addtitle": "শিরোনাম:",
 	"massmessage-content-addsite": "সাইট:",
 	"massmessage-content-addsubmit": "পাতা যোগ",
+	"massmessage-content-addedlistheading": "পাতাসমূহ যোগ করা হয়েছে:",
 	"massmessage-content-addeditem": "$2-এ $1",
 	"massmessage-content-alreadyinlist": "তালিকায় পাতাটি ইতিমধ্যেই রয়েছে।",
+	"massmessage-content-invalidsite": "সাইটটি অবৈধ।",
 	"massmessage-content-adderror": "API ত্রুটি: $1",
 	"createmassmessagelist-legend": "গণ বার্তা বিতরণ তালিকা তৈরি করুন",
 	"massmessage-create-title": "শিরোনাম:",
@@ -51,8 +55,11 @@
 	"massmessage-edit-summary": "সম্পাদনা সারাংশ:",
 	"massmessage-edit-nopermission": "আপনার এই তালিকাটি সম্পাদনা করার অনুমতি নেই।",
 	"massmessage-summary-addremove": "$1টি {{PLURAL:$1|পাতা}} যোগ করা হয়েছে এবং $2টি {{PLURAL:$1|পাতা}} সরানো হয়েছে",
+	"massmessage-summary-add": "[[:$1]] যোগ করা হয়েছে",
 	"massmessage-summary-addonsite": "$2-এ $1 যোগ করা হয়েছে",
 	"massmessage-summary-addmulti": "$1টি {{PLURAL:$1|পাতা}} যোগ করা হয়েছে",
+	"massmessage-summary-remove": "[[:$1]]  সরানো হয়েছে",
+	"massmessage-summary-removeonsite": "$2-তে $1 প্রতিস্থাপিত করা হয়েছে",
 	"massmessage-summary-removemulti": "$1টি {{PLURAL:$1|পাতা}} সরানো হয়েছে",
 	"massmessage-list-category": "গণবার্তা বিতরণ তালিকা",
 	"massmessage-list-category-desc": "এই পাতাটি [[Special:MassMessage|গণবার্তা]] এক্সটেনশনের বিতরণ তালিকা।"
