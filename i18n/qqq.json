@@ -17,6 +17,8 @@
 	"massmessage-form-preview": "Label for the preview button on [[Special:MassMessage]].\n{{Identical|Preview}}",
 	"massmessage-form-submit": "Label for the submit button on [[Special:MassMessage]].\n\nUsed in {{msg-mw|Massmessage-just-preview}}.\n{{Identical|Send}}",
 	"massmessage-fieldset-preview": "Label for the fieldset box around the page preview.\n{{Identical|Preview}}",
+	"massmessage-fieldset-info": "Label for the fieldset box around the delivery information",
+	"massmessage-preview-count": "Text indicating how many pages the message will be sent to\n* $1 is the number of pages.",
 	"massmessage-submitted": "Confirmation message the user sees after the form is submitted successfully and the request is queued in the job queue.\n\nParameters:\n* $1 - the number of deliveries that have been queued",
 	"massmessage-just-preview": "Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.\n\nRefers to {{msg-mw|Massmessage-form-submit}}.",
 	"massmessage-spamlist-doesnotexist": "Error message the user sees if the delivery list page or category they entered does not exist.",
