@@ -166,11 +166,10 @@ class SpecialMassMessage extends SpecialPage {
 	/**
 	 * Callback function
 	 * Does some basic verification of data
-	 * Decides whether to show the preview screen
-	 * or the submitted message
+	 * Decides whether to show the preview screen or the submitted message
 	 *
 	 * @param $data Array
-	 * @return Status
+	 * @return Status|bool
 	 */
 	public function callback( array $data ) {
 
@@ -179,7 +178,6 @@ class SpecialMassMessage extends SpecialPage {
 		// Die on errors.
 		if ( !$this->status->isOK() ) {
 			$this->state = 'form';
-
 			return $this->status;
 		}
 
@@ -187,7 +185,8 @@ class SpecialMassMessage extends SpecialPage {
 			$this->count = MassMessage::submit( $this->getContext(), $data );
 			return $this->status;
 		} else { // $this->state can only be 'preview' here
-			return $this->preview( $data );
+			$this->preview( $data );
+			return false; // No submission attempted
 		}
 	}
 
@@ -256,9 +255,9 @@ class SpecialMassMessage extends SpecialPage {
 
 	/**
 	 * A preview/confirmation screen
+	 * The preview generation code was hacked up from EditPage.php
 	 *
 	 * @param $data Array
-	 * @return Status
 	 */
 	protected function preview( array $data ) {
 		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
@@ -278,8 +277,6 @@ class SpecialMassMessage extends SpecialPage {
 		$mockTarget = Title::newFromText( 'Project:Example' );
 		$wikipage = WikiPage::factory( $mockTarget );
 
-		// Hacked up from EditPage.php
-
 		// Convert into a content object
 		$content = ContentHandler::makeContent( $data['message'], $mockTarget );
 		// Parser stuff. Taken from EditPage::getPreviewText()
@@ -291,12 +288,14 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
 
-		$content = $content->preSaveTransform( $mockTarget, MassMessage::getMessengerUser(), $parserOptions );
+		$content = $content->preSaveTransform( $mockTarget, MassMessage::getMessengerUser(),
+			$parserOptions );
 		$parserOutput = $content->getParserOutput( $mockTarget, null, $parserOptions );
-		$previewHTML = $parserOutput->getText();
-		$fieldsetMessage = $this->msg( 'massmessage-fieldset-preview' )->text();
-		$wrapFieldset = Xml::fieldset( $fieldsetMessage, $previewHTML );
-		$this->getOutput()->addHTML( $wrapFieldset );
+		$previewFieldset = Xml::fieldset(
+			$this->msg( 'massmessage-fieldset-preview' )->text(),
+			$parserOutput->getText()
+		);
+		$this->getOutput()->addHTML( $previewFieldset );
 
 		// Check if we have unescaped langlinks (Bug 54846)
 		if ( $parserOutput->getLanguageLinks() ) {
@@ -317,7 +316,5 @@ class SpecialMassMessage extends SpecialPage {
 		if ( !preg_match( MassMessage::getTimestampRegex(), $content->getNativeData() ) ) {
 			$this->status->fatal( 'massmessage-no-timestamp' );
 		}
-
-		return false;
 	}
 }
