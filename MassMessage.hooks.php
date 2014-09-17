@@ -11,8 +11,6 @@ class MassMessageHooks {
 
 		if ( !$wgContentHandlerUseDB ) {
 			// Disable things :(
-			wfDebugLog( 'MassMessage',
-				'Disabling contenthandler features because $wgContentHandlerUseDB = false' );
 			unset( $wgSpecialPages['CreateMassMessageList'] );
 			unset( $wgSpecialPages['EditMassMessageList'] );
 			$wgAPIModules['editmassmessagelist'] = 'ApiDisabled';
