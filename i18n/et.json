@@ -14,7 +14,7 @@
 	"massmessage-fieldset-preview": "Eelvaade",
 	"massmessage-submitted": "Sinu sõnumi saatmine {{PLURAL:$1|ühele|$1}} leheküljele on tööjärjes ootel.",
 	"massmessage-just-preview": "See on kõigest eelvaade. Vajuta \"{{int:massmessage-form-submit}}\", et sõnum saata.",
-	"massmessage-spamlist-doesnotexist": "Lehekülgede määratud loendit pole.",
+	"massmessage-spamlist-doesnotexist": "Määratud saatmisloendiga lehekülge või kategooriat pole.",
 	"massmessage-empty-subject": "Teemarida on tühi.",
 	"massmessage-empty-message": "Sõnumi keha on tühi.",
 	"massmessage-unescaped-langlinks": "Hoiatus: Sinu muudatus sisaldab katkestamata keelelinke.",

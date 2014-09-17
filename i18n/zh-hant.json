@@ -47,5 +47,6 @@
 	"massmessage-content-addtitle": "標題：",
 	"massmessage-content-addsite": "網站：",
 	"massmessage-content-addeditem": "$1 於 $2",
-	"massmessage-create-content": "內容："
+	"massmessage-create-content": "內容：",
+	"massmessage-summary-add": "加入 [[:$1]]"
 }
