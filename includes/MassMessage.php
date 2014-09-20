@@ -308,11 +308,11 @@ class MassMessage {
 	 * Send out the message!
 	 * Note that this function does not perform validation on $data
 	 *
-	 * @param IContextSource $context
+	 * @param User $user who the message was from (for logging)
 	 * @param array $data
-	 * @return int how many pages were submitted
+	 * @return int number of pages delivered to
 	 */
-	public static function submit( IContextSource $context, array $data ) {
+	public static function submit( User $user, array $data ) {
 		$spamlist = self::getSpamlist( $data['spamlist'] );
 
 		// Get the array of pages to deliver to.
@@ -321,7 +321,7 @@ class MassMessage {
 		);
 
 		// Log it.
-		self::logToWiki( $spamlist, $context->getUser(), $data['subject'] );
+		self::logToWiki( $spamlist, $user, $data['subject'] );
 
 		// Insert it into the job queue.
 		$params = array( 'data' => $data, 'pages' => $pages );

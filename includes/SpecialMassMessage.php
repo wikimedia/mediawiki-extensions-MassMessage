@@ -182,7 +182,7 @@ class SpecialMassMessage extends SpecialPage {
 		}
 
 		if ( $this->state === 'submit' ) {
-			$this->count = MassMessage::submit( $this->getContext(), $data );
+			$this->count = MassMessage::submit( $this->getUser(), $data );
 			return $this->status;
 		} else { // $this->state can only be 'preview' here
 			$this->preview( $data );

@@ -21,7 +21,7 @@ class ApiMassMessage extends ApiBase {
 			$this->dieStatus( $status );
 		}
 
-		$count = MassMessage::submit( $this->getContext(), $data );
+		$count = MassMessage::submit( $this->getUser(), $data );
 
 		$this->getResult()->addValue(
 			null,
