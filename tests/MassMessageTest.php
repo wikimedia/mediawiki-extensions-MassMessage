@@ -13,6 +13,7 @@ class MassMessageTest extends MassMessageTestCase {
 			array( 'en.wikipedia.org', 'enwiki' ),
 			array( 'fr.wikipedia.org', 'frwiki' ),
 			array( 'de.wikipedia.org', 'dewiki' ),
+			array( 'not.a.wiki.known.to.us', null ),
 		);
 	}
 
