@@ -15,10 +15,9 @@ class MassMessageTargets {
 	 * site: The hostname and port (if exists) of the wiki
 	 *
 	 * @param Title $spamlist
-	 * @param IContextSource $context
 	 * @return array|null
 	 */
-	 public static function getTargets( Title $spamlist, $context ) {
+	 public static function getTargets( Title $spamlist ) {
 		if ( !$spamlist->exists() && !$spamlist->inNamespace( NS_CATEGORY ) ) {
 			return null;
 		}
@@ -28,7 +27,7 @@ class MassMessageTargets {
 		} elseif ( $spamlist->hasContentModel( 'MassMessageListContent' ) ) {
 			return self::getMassMessageListContentTargets( $spamlist );
 		} elseif ( $spamlist->hasContentModel( CONTENT_MODEL_WIKITEXT ) ) {
-			return self::getParserFunctionTargets( $spamlist, $context );
+			return self::getParserFunctionTargets( $spamlist );
 		} else {
 			return null;
 		}
@@ -112,12 +111,12 @@ class MassMessageTargets {
 	 * @param  IContextSource $context
 	 * @return array
 	 */
-	protected static function getParserFunctionTargets( Title $spamlist, $context ) {
+	protected static function getParserFunctionTargets( Title $spamlist ) {
 		$page = WikiPage::factory( $spamlist );
 		$text = $page->getContent( Revision::RAW )->getNativeData();
 
 		// Prep the parser
-		$parserOptions = $page->makeParserOptions( $context );
+		$parserOptions = $page->makeParserOptions( 'canonical' );
 		$parser = new Parser();
 		$parser->firstCallInit(); // So our initial parser function is added
 		$parser->setFunctionHook( 'target', 'MassMessageHooks::storeDataParserFunction' ); // Now overwrite it

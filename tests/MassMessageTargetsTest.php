@@ -46,7 +46,7 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 		$title = Title::newFromText( 'Input list' );
 		MassMessageTest::updatePage( $title, $text );
 		$data = MassMessageTargets::normalizeTargets(
-			MassMessageTargets::getTargets( $title, RequestContext::getMain() )
+			MassMessageTargets::getTargets( $title )
 		);
 
 		if ( empty( $check ) ) {
@@ -76,7 +76,7 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 		$wikipage->doEditContent( new WikitextContent( '[[Category:Spamlist1234]]' ), 'edit summary' );
 
 		$cat = Title::newFromText( 'Category:Spamlist1234' );
-		$targets = MassMessageTargets::getTargets( $cat, RequestContext::getMain() );
+		$targets = MassMessageTargets::getTargets( $cat );
 		$this->assertEquals( 1, count( $targets ) );
 		$values = array_values( $targets );
 		$this->assertEquals( 'Talk:Testing1234', $values[0]['title'] );
@@ -96,7 +96,7 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 		$title = Title::newFromText( 'MassMessageListContent_spamlist' );
 		$page = WikiPage::factory( $title );
 		$page->doEditContent( $content, 'summary' );
-		$targets = MassMessageTargets::getTargets( $title, RequestContext::getMain() );
+		$targets = MassMessageTargets::getTargets( $title );
 		$this->assertEquals( 2, count( $targets ) );
 		$this->assertEquals( 'A', $targets[0]['title'] );
 		$this->assertEquals( wfWikiId(), $targets[0]['wiki'] );

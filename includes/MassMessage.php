@@ -317,7 +317,7 @@ class MassMessage {
 
 		// Get the array of pages to deliver to.
 		$pages = MassMessageTargets::normalizeTargets(
-			MassMessageTargets::getTargets( $spamlist, $context )
+			MassMessageTargets::getTargets( $spamlist )
 		);
 
 		// Log it.

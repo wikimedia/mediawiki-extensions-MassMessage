@@ -265,7 +265,7 @@ class SpecialMassMessage extends SpecialPage {
 		// Output the number of recipients
 		$spamlist = MassMessage::getSpamlist( $data['spamlist'] );
 		$targets = MassMessageTargets::normalizeTargets(
-			MassMessageTargets::getTargets( $spamlist, $this->getContext() )
+			MassMessageTargets::getTargets( $spamlist )
 		);
 		$infoFieldset = Xml::fieldset(
 			$this->msg( 'massmessage-fieldset-info' )->text(),

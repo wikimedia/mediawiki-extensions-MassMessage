@@ -113,7 +113,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	 * @return array|null
 	 */
 	protected function getTargets( Title $source ) {
-		$pages = MassMessageTargets::getTargets( $source, $this->getContext() );
+		$pages = MassMessageTargets::getTargets( $source );
 		if ( $pages === null ) {
 			return null;
 		}
