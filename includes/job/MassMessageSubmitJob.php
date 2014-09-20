@@ -19,6 +19,19 @@ class MassMessageSubmitJob extends Job {
 	 * @return bool
 	 */
 	public function run() {
+		$jobsByTarget = $this->getJobs();
+
+		foreach ( $jobsByTarget as $wiki => $jobs ) {
+			JobQueueGroup::singleton( $wiki )->push( $jobs );
+		}
+
+		return true;
+	}
+
+	/**
+	 * @return Job[][]
+	 */
+	public function getJobs() {
 		$data = $this->params['data'];
 		$pages = $this->params['pages'];
 		$jobsByTarget = array();
@@ -31,11 +44,6 @@ class MassMessageSubmitJob extends Job {
 			$jobsByTarget[$page['wiki']][] = new MassMessageJob( $title, $data );
 		}
 
-		foreach ( $jobsByTarget as $wiki => $jobs ) {
-			JobQueueGroup::singleton( $wiki )->push( $jobs );
-		}
-
-		return true;
+		return $jobsByTarget;
 	}
-
 }
