@@ -45,9 +45,7 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 	public function testGetParserFunctionTargets( $text, $check ) {
 		$title = Title::newFromText( 'Input list' );
 		MassMessageTest::updatePage( $title, $text );
-		$data = MassMessageTargets::normalizeTargets(
-			MassMessageTargets::getTargets( $title )
-		);
+		$data = MassMessageTargets::getTargets( $title );
 
 		if ( empty( $check ) ) {
 			// Check that the spamlist is empty
