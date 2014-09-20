@@ -261,6 +261,19 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status
 	 */
 	protected function preview( array $data ) {
+		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
+
+		// Output the number of recipients
+		$spamlist = MassMessage::getSpamlist( $data['spamlist'] );
+		$targets = MassMessageTargets::normalizeTargets(
+			MassMessageTargets::getTargets( $spamlist, $this->getContext() )
+		);
+		$infoFieldset = Xml::fieldset(
+			$this->msg( 'massmessage-fieldset-info' )->text(),
+			$this->msg( 'massmessage-preview-count' )->numParams( count( $targets ) )->parse()
+		);
+		$this->getOutput()->addHTML( $infoFieldset );
+
 		// Use a mock target as the context for rendering the preview
 		$mockTarget = Title::newFromText( 'Project:Example' );
 		$wikipage = WikiPage::factory( $mockTarget );
@@ -281,7 +294,6 @@ class SpecialMassMessage extends SpecialPage {
 		$content = $content->preSaveTransform( $mockTarget, MassMessage::getMessengerUser(), $parserOptions );
 		$parserOutput = $content->getParserOutput( $mockTarget, null, $parserOptions );
 		$previewHTML = $parserOutput->getText();
-		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
 		$fieldsetMessage = $this->msg( 'massmessage-fieldset-preview' )->text();
 		$wrapFieldset = Xml::fieldset( $fieldsetMessage, $previewHTML );
 		$this->getOutput()->addHTML( $wrapFieldset );
