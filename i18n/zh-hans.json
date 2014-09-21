@@ -20,6 +20,8 @@
 	"massmessage-form-preview": "预览",
 	"massmessage-form-submit": "发送",
 	"massmessage-fieldset-preview": "预览",
+	"massmessage-fieldset-info": "信息",
+	"massmessage-preview-count": "您的消息将发送至{{PLURAL:$1|$1个页面}}。",
 	"massmessage-submitted": "你要递送至{{PLURAL:$1|$1个页面}}的信息已经加入队列。",
 	"massmessage-just-preview": "这只是预览。点击“{{int:massmessage-form-submit}}”发出此消息。",
 	"massmessage-spamlist-doesnotexist": "指定的递送列表页面或分类不存在。",

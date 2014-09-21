@@ -16,6 +16,8 @@
 	"massmessage-form-preview": "Vorschau",
 	"massmessage-form-submit": "Senden",
 	"massmessage-fieldset-preview": "Vorschau",
+	"massmessage-fieldset-info": "Informationen",
+	"massmessage-preview-count": "Deine Nachricht wird an {{PLURAL:$1|eine Seite|$1 Seiten}} versandt.",
 	"massmessage-submitted": "Dein Nachrichtenversand an {{PLURAL:$1|eine Seite|$1 Seiten}} wurde in die Sendewarteschlange eingefügt!",
 	"massmessage-just-preview": "Dies ist nur eine Vorschau. Klicke auf „{{int:massmessage-form-submit}}“, um die Nachricht abzusenden.",
 	"massmessage-spamlist-doesnotexist": "Die angegebene Versandlistenseite oder Kategorie ist nicht vorhanden.",

@@ -14,6 +14,8 @@
 	"massmessage-form-preview": "Преглед",
 	"massmessage-form-submit": "Испрати",
 	"massmessage-fieldset-preview": "Преглед",
+	"massmessage-fieldset-info": "Информации",
+	"massmessage-preview-count": "Вашата порака ќе биде испратена на {{PLURAL:$1|една страница|$1 страници}}.",
 	"massmessage-submitted": "Испраќањето на пораката на {{PLURAL:$1|$1 страница|$1 страници}} е ставено во редица.",
 	"massmessage-just-preview": "Ова е само преглед. Стиснете на „{{int:massmessage-form-submit}}“ за да ја испратите пораката.",
 	"massmessage-spamlist-doesnotexist": "Укажаната страница со список за достава не постои.",

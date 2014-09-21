@@ -16,6 +16,8 @@
 	"massmessage-form-preview": "Antevisão",
 	"massmessage-form-submit": "Enviar",
 	"massmessage-fieldset-preview": "Antevisão",
+	"massmessage-fieldset-info": "Informação",
+	"massmessage-preview-count": "A sua mensagem vai ser enviada para {{PLURAL:$1|$1 página|$1 páginas}}.",
 	"massmessage-submitted": "O seu pedido de entrega da mensagem em {{PLURAL:$1|$1 página|$1 páginas}} foi colocado em lista de espera.",
 	"massmessage-just-preview": "Isto é apenas uma antevisão. Clique em \"{{int:massmessage-form-submit}}\" para enviar a mensagem.",
 	"massmessage-spamlist-doesnotexist": "A página de lista de entrega especificada ou categoria não existe.",

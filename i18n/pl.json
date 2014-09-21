@@ -16,6 +16,7 @@
 	"massmessage-form-preview": "Podgląd",
 	"massmessage-form-submit": "Wyślij",
 	"massmessage-fieldset-preview": "Podgląd",
+	"massmessage-fieldset-info": "Informacja",
 	"massmessage-submitted": "Zlecenie dostarczenia twojej wiadomości do {{PLURAL:$1|$1 strony|$1 stron}} zostało umieszczone w kolejce.",
 	"massmessage-just-preview": "To jest tylko podgląd. Naciśnij \"{{int:massmessage-form-submit}}\" aby wysłać wiadomość.",
 	"massmessage-spamlist-doesnotexist": "Określona strona z listą stron nie istnieje.",
