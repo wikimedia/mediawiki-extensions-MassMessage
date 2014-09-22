@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Arnaugir",
-			"Vriullop"
+			"Vriullop",
+			"Fitoschido"
 		]
 	},
 	"massmessage": "Enviament d'un missatge massiu",
@@ -13,6 +14,7 @@
 	"massmessage-form-preview": "Previsualitza",
 	"massmessage-form-submit": "Envia",
 	"massmessage-fieldset-preview": "Previsualització",
+	"massmessage-fieldset-info": "Informació",
 	"massmessage-submitted": "L'enviament del missatge a {{PLURAL:$1|$1 pàgina|$1  pàgines}} ha estat posat en la cua de treballs.",
 	"massmessage-just-preview": "Això és només una visualització prèvia. Premeu «{{int:massmessage-form-submit}}» per enviar el missatge.",
 	"massmessage-spamlist-doesnotexist": "La pàgina especificada amb la llista de pàgines no existeix.",

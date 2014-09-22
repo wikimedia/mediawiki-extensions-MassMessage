@@ -17,6 +17,8 @@
 	"massmessage-form-preview": "Anteprima",
 	"massmessage-form-submit": "Invia",
 	"massmessage-fieldset-preview": "Anteprima",
+	"massmessage-fieldset-info": "Informazioni",
+	"massmessage-preview-count": "Il tuo messaggio verrà inviato a {{PLURAL:$1|$1 pagina|$1 pagine}}.",
 	"massmessage-submitted": "L'invio del tuo messaggio su {{PLURAL:$1|$1 pagina|$1 pagine}} è stato accodato.",
 	"massmessage-just-preview": "Questa è solo un anteprima. Premi \"{{int:massmessage-form-submit}}\" per inviare il messaggio.",
 	"massmessage-spamlist-doesnotexist": "L'elenco di consegna o la categoria indicati non esistono.",

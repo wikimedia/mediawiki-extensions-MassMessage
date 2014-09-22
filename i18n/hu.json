@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Samat"
+			"Samat",
+			"Csega"
 		]
 	},
+	"massmessage-fieldset-info": "Információ",
 	"right-massmessage": "üzenet küldése egyszerre több felhasználónak"
 }

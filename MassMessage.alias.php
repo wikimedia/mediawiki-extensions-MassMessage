@@ -106,6 +106,8 @@ $specialPageAliases['pt'] = array(
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'MassMessage' => array( 'Nhắn_tin_cho_nhiều_người', 'Tin_nhắn_cho_nhiều_người', 'Nhắn_tin_hàng_loạt', 'Tin_nhắn_hàng_loạt' ),
+	'CreateMassMessageList' => array( 'Tạo_danh_sách_nhắn_tin_cho_nhiều_người' ),
+	'EditMassMessageList' => array( 'Sửa_danh_sách_nhắn_tin_cho_nhiều_người' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */

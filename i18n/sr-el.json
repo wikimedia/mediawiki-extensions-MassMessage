@@ -4,5 +4,19 @@
 			"Milicevic01"
 		]
 	},
-	"logentry-massmessage-send": "$1 je {{GENDER:$2|poslao|poslala}} poruku u $3"
+	"massmessage-form-message": "Tekst poruke:",
+	"massmessage-form-preview": "Pretpregled",
+	"massmessage-form-submit": "Pošalji",
+	"right-massmessage": "masovno slanje poruka",
+	"action-massmessage": "masovno slanje poruka",
+	"logentry-massmessage-send": "$1 je {{GENDER:$2|poslao|poslala}} poruku u $3",
+	"logentry-massmessage-failure": "Poruka „$4“ nije poslata u $3; došlo je do greške <code>$5</code>",
+	"logentry-massmessage-skipbadns": "Poruka „$4“ nije poslata u $3; odredište je u neodgovarajućem imenskom prostoru",
+	"logentry-massmessage-skipnouser": "Poruka „$4“ nije poslata u $3; korisnički nalog ne postoji",
+	"massmessage-content-emptylist": "(ništa)",
+	"massmessage-content-addsite": "Sajt:",
+	"massmessage-create-source": "Izvor:",
+	"massmessage-edit-title": "Naslov:",
+	"massmessage-edit-description": "Opis:",
+	"massmessage-edit-summary": "Opis izmene:"
 }

@@ -70,6 +70,11 @@ $magicWords['nn'] = array(
 	'target' => array( 0, 'mål' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$magicWords['vi'] = array(
+	'target' => array( 0, 'đích' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
 	'target' => array( 0, '目标' ),

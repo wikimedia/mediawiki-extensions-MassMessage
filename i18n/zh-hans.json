@@ -7,7 +7,8 @@
 			"Qiyue2001",
 			"Shizhao",
 			"Xiaomingyan",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Duolaimi"
 		]
 	},
 	"massmessage": "发送群发信息",
@@ -62,14 +63,14 @@
 	"massmessage-content-emptylist": "（无）",
 	"massmessage-content-addheading": "添加页面",
 	"massmessage-content-addtitle": "标题：",
-	"massmessage-content-addsite": "站点：",
+	"massmessage-content-addsite": "网站：",
 	"massmessage-content-addsubmit": "添加页面",
 	"massmessage-content-addedlistheading": "添加的页面：",
 	"massmessage-content-addeditem": "$2上的$1",
 	"massmessage-content-alreadyinlist": "此页面已存在于列表中。",
-	"massmessage-content-invalidtitlesite": "标题和站点无效。",
+	"massmessage-content-invalidtitlesite": "标题和网站无效。",
 	"massmessage-content-invalidtitle": "标题无效。",
-	"massmessage-content-invalidsite": "站点无效。",
+	"massmessage-content-invalidsite": "该站点无效。",
 	"massmessage-content-adderror": "API错误：$1",
 	"massmessage-diff-descheader": "描述中的更改：",
 	"massmessage-diff-targetsheader": "页面中的更改：",

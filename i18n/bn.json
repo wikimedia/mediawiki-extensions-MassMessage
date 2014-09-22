@@ -59,7 +59,7 @@
 	"massmessage-summary-addonsite": "$2-এ $1 যোগ করা হয়েছে",
 	"massmessage-summary-addmulti": "$1টি {{PLURAL:$1|পাতা}} যোগ করা হয়েছে",
 	"massmessage-summary-remove": "[[:$1]]  সরানো হয়েছে",
-	"massmessage-summary-removeonsite": "$2-তে $1 প্রতিস্থাপিত করা হয়েছে",
+	"massmessage-summary-removeonsite": "$2 থেকে $1 সরানো হয়েছে",
 	"massmessage-summary-removemulti": "$1টি {{PLURAL:$1|পাতা}} সরানো হয়েছে",
 	"massmessage-list-category": "গণবার্তা বিতরণ তালিকা",
 	"massmessage-list-category-desc": "এই পাতাটি [[Special:MassMessage|গণবার্তা]] এক্সটেনশনের বিতরণ তালিকা।"
