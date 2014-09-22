@@ -57,33 +57,32 @@ $wgExtensionCredits['specialpage'][] = array(
 	'descriptionmsg' => 'massmessage-desc',
 	'version' => '0.2.0',
 );
-$dir = __DIR__;
 
 // Messages
-$wgMessagesDirs['MassMessage'] = "$dir/i18n";
-$wgExtensionMessagesFiles['MassMessageAlias'] = "$dir/MassMessage.alias.php";
-$wgExtensionMessagesFiles['MassMessageMagic'] = "$dir/MassMessage.i18n.magic.php";
+$wgMessagesDirs['MassMessage'] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['MassMessageAlias'] = __DIR__ . '/MassMessage.alias.php';
+$wgExtensionMessagesFiles['MassMessageMagic'] = __DIR__ . '/MassMessage.i18n.magic.php';
 
 // Classes
-$wgAutoloadClasses['MassMessageHooks'] = "$dir/MassMessage.hooks.php";
-$wgAutoloadClasses['ApiMassMessage'] = "$dir/includes/ApiMassMessage.php";
-$wgAutoloadClasses['ApiEditMassMessageList'] = "$dir/includes/ApiEditMassMessageList.php";
-$wgAutoloadClasses['ApiQueryMMSites'] = "$dir/includes/ApiQueryMMSites.php";
-$wgAutoloadClasses['MassMessage'] = "$dir/includes/MassMessage.php";
-$wgAutoloadClasses['MassMessageTargets'] = "$dir/includes/MassMessageTargets.php";
-$wgAutoloadClasses['SpecialMassMessage'] = "$dir/includes/SpecialMassMessage.php";
-$wgAutoloadClasses['SpecialCreateMassMessageList'] = "$dir/includes/SpecialCreateMassMessageList.php";
-$wgAutoloadClasses['SpecialEditMassMessageList'] = "$dir/includes/SpecialEditMassMessageList.php";
-$wgAutoloadClasses['MassMessageJob'] = "$dir/includes/job/MassMessageJob.php";
-$wgAutoloadClasses['MassMessageSubmitJob'] = "$dir/includes/job/MassMessageSubmitJob.php";
-$wgAutoloadClasses['MassMessageFailureLogFormatter'] = "$dir/includes/logging/MassMessageFailureLogFormatter.php";
-$wgAutoloadClasses['MassMessageSendLogFormatter'] = "$dir/includes/logging/MassMessageSendLogFormatter.php";
-$wgAutoloadClasses['MassMessageSkipLogFormatter'] = "$dir/includes/logging/MassMessageSkipLogFormatter.php";
-$wgAutoloadClasses['MassMessageListContent'] = "$dir/includes/content/MassMessageListContent.php";
-$wgAutoloadClasses['MassMessageListContentHandler'] = "$dir/includes/content/MassMessageListContentHandler.php";
-$wgAutoloadClasses['MassMessageListDiffEngine'] = "$dir/includes/content/MassMessageListDiffEngine.php";
-$wgAutoloadClasses['MassMessageTestCase'] = "$dir/tests/MassMessageTestCase.php";
-$wgAutoloadClasses['MassMessageApiTestCase'] = "$dir/tests/MassMessageApiTestCase.php";
+$wgAutoloadClasses['MassMessageHooks'] = __DIR__ . '/MassMessage.hooks.php';
+$wgAutoloadClasses['ApiMassMessage'] = __DIR__ . '/includes/ApiMassMessage.php';
+$wgAutoloadClasses['ApiEditMassMessageList'] = __DIR__ . '/includes/ApiEditMassMessageList.php';
+$wgAutoloadClasses['ApiQueryMMSites'] = __DIR__ . '/includes/ApiQueryMMSites.php';
+$wgAutoloadClasses['MassMessage'] = __DIR__ . '/includes/MassMessage.php';
+$wgAutoloadClasses['MassMessageTargets'] = __DIR__ . '/includes/MassMessageTargets.php';
+$wgAutoloadClasses['SpecialMassMessage'] = __DIR__ . '/includes/SpecialMassMessage.php';
+$wgAutoloadClasses['SpecialCreateMassMessageList'] = __DIR__ . '/includes/SpecialCreateMassMessageList.php';
+$wgAutoloadClasses['SpecialEditMassMessageList'] = __DIR__ . '/includes/SpecialEditMassMessageList.php';
+$wgAutoloadClasses['MassMessageJob'] = __DIR__ . '/includes/job/MassMessageJob.php';
+$wgAutoloadClasses['MassMessageSubmitJob'] = __DIR__ . '/includes/job/MassMessageSubmitJob.php';
+$wgAutoloadClasses['MassMessageFailureLogFormatter'] = __DIR__ . '/includes/logging/MassMessageFailureLogFormatter.php';
+$wgAutoloadClasses['MassMessageSendLogFormatter'] = __DIR__ . '/includes/logging/MassMessageSendLogFormatter.php';
+$wgAutoloadClasses['MassMessageSkipLogFormatter'] = __DIR__ . '/includes/logging/MassMessageSkipLogFormatter.php';
+$wgAutoloadClasses['MassMessageListContent'] = __DIR__ . '/includes/content/MassMessageListContent.php';
+$wgAutoloadClasses['MassMessageListContentHandler'] = __DIR__ . '/includes/content/MassMessageListContentHandler.php';
+$wgAutoloadClasses['MassMessageListDiffEngine'] = __DIR__ . '/includes/content/MassMessageListDiffEngine.php';
+$wgAutoloadClasses['MassMessageTestCase'] = __DIR__ . '/tests/MassMessageTestCase.php';
+$wgAutoloadClasses['MassMessageApiTestCase'] = __DIR__ . '/tests/MassMessageApiTestCase.php';
 
 // ContentHandler
 $wgContentHandlers['MassMessageListContent'] = 'MassMessageListContentHandler';
@@ -118,7 +117,7 @@ $wgSpecialPages['EditMassMessageList'] = 'SpecialEditMassMessageList';
 $wgResourceModules['ext.MassMessage.autocomplete'] = array(
 	'scripts' => 'ext.MassMessage.autocomplete.js',
 	'dependencies' => 'jquery.ui.autocomplete',
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.special.js'] = array(
@@ -136,17 +135,17 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 		'jquery.throttle-debounce',
 		'mediawiki.jqueryMsg',
 	),
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.special'] = array(
 	'styles' => 'ext.MassMessage.special.css',
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.content'] = array(
 	'styles' => 'ext.MassMessage.content.css',
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.content.js'] = array(
@@ -172,29 +171,29 @@ $wgResourceModules['ext.MassMessage.content.js'] = array(
 		'mediawiki.util',
 		'mediawiki.jqueryMsg',
 	),
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.content.noedit'] = array(
 	'styles' => 'ext.MassMessage.content.noedit.css',
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.content.nojs'] = array(
 	'styles' => 'ext.MassMessage.content.nojs.css',
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.create'] = array(
 	'scripts' => 'ext.MassMessage.create.js',
 	'dependencies' => 'ext.MassMessage.autocomplete',
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.edit'] = array(
 	'scripts' => 'ext.MassMessage.edit.js',
 	'dependencies' => 'jquery.byteLimit',
-	'localBasePath' => $dir . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 
