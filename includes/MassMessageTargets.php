@@ -14,13 +14,29 @@ class MassMessageTargets {
 	 * wiki: The ID of the wiki (wfWikiID() for the local wiki)
 	 * site: The hostname and port (if exists) of the wiki
 	 *
+	 * Normalized targets are briefly cached because it can be expensive to parse PF targets on both
+	 * preview and save in SpecialMassMessage.
+	 *
 	 * @param Title $spamlist
 	 * @param $normalize Whether to normalize and deduplicate the targets
 	 * @return array|null
 	 */
 	 public static function getTargets( Title $spamlist, $normalize = true ) {
+		global $wgMemc;
+
 		if ( !$spamlist->exists() && !$spamlist->inNamespace( NS_CATEGORY ) ) {
 			return null;
+		}
+
+		// Try to lookup cached targets
+		$cacheKey = null;
+		if ( !$spamlist->inNamespace( NS_CATEGORY ) ) {
+			$cacheKey = wfMemcKey( 'massmessage', 'targets', $spamlist->getLatestRevId(),
+				$spamlist->getTouched() );
+			$cacheTargets = $wgMemc->get( $cacheKey );
+			if ( $cacheTargets !== false ) {
+				return $cacheTargets;
+			}
 		}
 
 		if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
@@ -38,7 +54,11 @@ class MassMessageTargets {
 		}
 
 		if ( $normalize ) {
-			return self::normalizeTargets( $targets );
+			$normalized = self::normalizeTargets( $targets );
+			if ( $cacheKey ) { // $spamlist is not a category
+				$wgMemc->set( $cacheKey, $normalized, 60 * 20 );
+			}
+			return $normalized;
 		} else {
 			return $targets;
 		}
