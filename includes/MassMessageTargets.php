@@ -15,30 +15,41 @@ class MassMessageTargets {
 	 * site: The hostname and port (if exists) of the wiki
 	 *
 	 * @param Title $spamlist
+	 * @param $normalize Whether to normalize and deduplicate the targets
 	 * @return array|null
 	 */
-	 public static function getTargets( Title $spamlist ) {
+	 public static function getTargets( Title $spamlist, $normalize = true ) {
 		if ( !$spamlist->exists() && !$spamlist->inNamespace( NS_CATEGORY ) ) {
 			return null;
 		}
 
 		if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
-			return self::getCategoryTargets( $spamlist );
+			$targets = self::getCategoryTargets( $spamlist );
 		} elseif ( $spamlist->hasContentModel( 'MassMessageListContent' ) ) {
-			return self::getMassMessageListContentTargets( $spamlist );
+			$targets = self::getMassMessageListContentTargets( $spamlist );
 		} elseif ( $spamlist->hasContentModel( CONTENT_MODEL_WIKITEXT ) ) {
-			return self::getParserFunctionTargets( $spamlist );
+			$targets = self::getParserFunctionTargets( $spamlist );
 		} else {
-			return null;
+			$targets = null;
+		}
+
+		if ( !$targets ) {
+			return $targets; // null or empty array
+		}
+
+		if ( $normalize ) {
+			return self::normalizeTargets( $targets );
+		} else {
+			return $targets;
 		}
 	}
 
 	/**
 	 * Get array of normalized targets with duplicates removed
-	 * @param  array $data
+	 * @param array $data
 	 * @return array
 	 */
-	public static function normalizeTargets( array $data ) {
+	protected static function normalizeTargets( array $data ) {
 		global $wgNamespacesToConvert;
 
 		foreach ( $data as &$target ) {
