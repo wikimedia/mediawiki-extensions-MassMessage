@@ -70,7 +70,7 @@
 	"massmessage-content-alreadyinlist": "此页面已存在于列表中。",
 	"massmessage-content-invalidtitlesite": "标题和网站无效。",
 	"massmessage-content-invalidtitle": "标题无效。",
-	"massmessage-content-invalidsite": "该站点无效。",
+	"massmessage-content-invalidsite": "该网站无效。",
 	"massmessage-content-adderror": "API错误：$1",
 	"massmessage-diff-descheader": "描述中的更改：",
 	"massmessage-diff-targetsheader": "页面中的更改：",
@@ -108,5 +108,5 @@
 	"massmessage-summary-removeonsite": "已于$2移除$1",
 	"massmessage-summary-removemulti": "已移除$1个页面",
 	"massmessage-list-category": "群发消息递送列表",
-	"massmessage-list-category-desc": "此页面是[[Special:MassMessage|群发消息]]扩展的递送列表。"
+	"massmessage-list-category-desc": "此页面是用于[[Special:MassMessage|群发消息]]扩展程序的递送列表。"
 }

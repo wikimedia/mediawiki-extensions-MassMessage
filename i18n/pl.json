@@ -36,6 +36,7 @@
 	"logentry-massmessage-skipnouser": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ konto użytkownika nie istnieje",
 	"massmessage-cannot-rename": "To jest konto systemowe i jego nazwa nie może być zmieniona.",
 	"massmessage-content-pages": "Strony na tej liście",
+	"massmessage-content-pagesonsite": "Strony w $1:",
 	"massmessage-content-localpages": "Strony w tej wiki:",
 	"massmessage-content-remove": "usuń",
 	"massmessage-content-removeerror": "Usuwanie strony zakończyło się niepowodzeniem z kodem błędu $1.",
