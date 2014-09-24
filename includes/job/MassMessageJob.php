@@ -30,33 +30,11 @@ class MassMessageJob extends Job {
 	 */
 	public function run() {
 		$status = $this->sendMessage();
-
 		if ( $status !== true ) {
 			$this->setLastError( $status );
-
 			return false;
 		}
-
 		return true;
-	}
-
-	/**
-	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn
-	 * @param  Title $title
-	 * @return Title|null null if we shouldn't post on that title
-	 */
-	function normalizeTitle( Title $title ) {
-		global $wgNamespacesToPostIn, $wgNamespacesToConvert;
-		if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
-			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
-		}
-		$title = MassMessage::followRedirect( $title ) ?: $title; // Try to follow redirects
-		if ( !$title->isTalkPage() && !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
-			$this->logLocalSkip( 'skipbadns');
-			$title = null;
-		}
-
-		return $title;
 	}
 
 	/**
@@ -78,11 +56,30 @@ class MassMessageJob extends Job {
 	}
 
 	/**
+	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn
+	 * @param  Title $title
+	 * @return Title|null null if we shouldn't post on that title
+	 */
+	protected function normalizeTitle( Title $title ) {
+		global $wgNamespacesToPostIn, $wgNamespacesToConvert;
+		if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
+			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
+		}
+		$title = MassMessage::followRedirect( $title ) ?: $title; // Try to follow redirects
+		if ( !$title->isTalkPage() && !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
+			$this->logLocalSkip( 'skipbadns');
+			$title = null;
+		}
+
+		return $title;
+	}
+
+	/**
 	 * Log any skips on the target site
 	 *
 	 * @param $reason string log subtype
 	 */
-	function logLocalSkip( $reason ) {
+	protected function logLocalSkip( $reason ) {
 		$logEntry = new ManualLogEntry( 'massmessage', $reason );
 		$logEntry->setPerformer( MassMessage::getMessengerUser() );
 		$logEntry->setTarget( $this->title );
@@ -100,7 +97,7 @@ class MassMessageJob extends Job {
 	 *
 	 * @param $reason string
 	 */
-	function logLocalFailure( $reason ) {
+	protected function logLocalFailure( $reason ) {
 
 		$logEntry = new ManualLogEntry( 'massmessage', 'failure' );
 		$logEntry->setPerformer( MassMessage::getMessengerUser() );
@@ -126,7 +123,7 @@ class MassMessageJob extends Job {
 	 *
 	 * @return bool
 	 */
-	function sendMessage() {
+	protected function sendMessage() {
 		$title = $this->normalizeTitle( $this->title );
 		if ( $title === null ) {
 			return true; // Skip it
@@ -163,7 +160,7 @@ class MassMessageJob extends Job {
 		return true;
 	}
 
-	function editPage() {
+	protected function editPage() {
 		$user = MassMessage::getMessengerUser();
 		$params = array(
 			'action' => 'edit',
@@ -179,7 +176,7 @@ class MassMessageJob extends Job {
 		$this->makeAPIRequest( $params );
 	}
 
-	function addLQTThread() {
+	protected function addLQTThread() {
 		$user = MassMessage::getMessengerUser();
 		$params = array(
 			'action' => 'threadaction',
@@ -193,7 +190,7 @@ class MassMessageJob extends Job {
 		$this->makeAPIRequest( $params );
 	}
 
-	function addFlowTopic() {
+	protected function addFlowTopic() {
 		$user = MassMessage::getMessengerUser();
 		$params = array(
 			'action' => 'flow',
@@ -211,13 +208,13 @@ class MassMessageJob extends Job {
 	 * Add some stuff to the end of the message
 	 * @return string
 	 */
-	function makeText() {
+	protected function makeText() {
 		$text = $this->params['message'];
 		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )->params( $this->params['comment'] )->text();
 		return $text;
 	}
 
-	function makeAPIRequest( array $params ) {
+	protected function makeAPIRequest( array $params ) {
 		global $wgHooks, $wgUser, $wgRequest;
 
 		// Add our hook function to make the MassMessage user IP block-exempt
@@ -274,6 +271,5 @@ class MassMessageJob extends Job {
 		$context->setRequest( $oldCRequest );
 		$wgUser = $oldUser;
 		$wgRequest = $oldRequest;
-
 	}
 }
