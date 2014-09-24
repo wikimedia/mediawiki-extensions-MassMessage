@@ -29,6 +29,8 @@ $specialPageAliases['arz'] = array(
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
+	'CreateMassMessageList' => array( 'Massennachrichtenliste_erstellen' ),
+	'EditMassMessageList' => array( 'Massennachrichtenliste_bearbeiten' ),
 );
 
 /** Zazaki (Zazaki) */
