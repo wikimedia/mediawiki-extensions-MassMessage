@@ -149,9 +149,13 @@ class MassMessageJob extends Job {
 			}
 		}
 
-		// See if we should use LiquidThreads
+		// If the page is using a different discussion system, handle it specially
 		if ( class_exists( 'LqtDispatch' ) && LqtDispatch::isLqtPage( $title ) ) { // This is the same check that LQT uses internally
 			$this->addLQTThread();
+		} elseif ( $title->hasContentModel( 'flow-board' )
+			// But it can't be a Topic: page, see bug 71196
+			&& defined( 'NS_TOPIC' ) && !$title->inNamespace( NS_TOPIC ) ) {
+			$this->addFlowTopic();
 		} else {
 			$this->editPage();
 		}
@@ -185,6 +189,20 @@ class MassMessageJob extends Job {
 			'text' => $this->makeText(),
 			'token' => $user->getEditToken()
 		); // LQT will automatically mark the edit as bot if we're a bot
+
+		$this->makeAPIRequest( $params );
+	}
+
+	function addFlowTopic() {
+		$user = MassMessage::getMessengerUser();
+		$params = array(
+			'action' => 'flow',
+			'page' => $this->title->getPrefixedText(),
+			'submodule' => 'new-topic',
+			'nttopic' => $this->params['subject'],
+			'ntcontent' => $this->makeText(),
+			'token' => $user->getEditToken(),
+		);
 
 		$this->makeAPIRequest( $params );
 	}
