@@ -14,6 +14,7 @@
 	"massmessage-form-preview": "Предпросмотр",
 	"massmessage-form-submit": "Отправить",
 	"massmessage-fieldset-preview": "Предпросмотр",
+	"massmessage-fieldset-info": "Информация",
 	"massmessage-submitted": "Доставка вашего сообщения на {{PLURAL:$1|$1 страницу|$1 страниц|$1 страницы}} была поставлена в очередь.",
 	"massmessage-just-preview": "Это только предварительный просмотр. Нажмите «{{int:massmessage-form-submit}}» для отправки сообщения.",
 	"massmessage-spamlist-doesnotexist": "Указанная страница со списком страниц не существует.",
@@ -51,8 +52,10 @@
 	"massmessage-create-title": "Заголовок:",
 	"massmessage-create-description": "Описание:",
 	"massmessage-create-source": "Источник:",
+	"massmessage-edit-pagetitle": "Редактирование $1",
 	"massmessage-edit-title": "Заголовок:",
 	"massmessage-edit-description": "Описание:",
 	"massmessage-edit-content": "Целевые страницы:",
-	"massmessage-edit-summary": "Описание изменений:"
+	"massmessage-edit-summary": "Описание изменений:",
+	"massmessage-summary-addremove": "Добавлен{{PLURAL:$1|а|о|ы}} $1 страниц{{PLURAL:$1|а||ы}} и удален{{PLURAL:$2|а|о|ы}} $2 страниц{{PLURAL:$2|а||ы}}"
 }
