@@ -12,6 +12,8 @@
 	"massmessage-form-preview": "Pralihat",
 	"massmessage-form-submit": "Hantar",
 	"massmessage-fieldset-preview": "Pralihat",
+	"massmessage-fieldset-info": "Maklumat",
+	"massmessage-preview-count": "Pesanan anda akan dihantar kepada $1 laman.",
 	"massmessage-submitted": "Pengiriman pesanan anda kepada $1 halaman telah dibaris-gilirkan.",
 	"massmessage-just-preview": "Ini sekadar pratayangan. Tekan \"{{int:massmessage-form-submit}}\" untuk menghantar pesanan.",
 	"massmessage-spamlist-doesnotexist": "Halaman senarai halaman yang dinyatakan tidak wujud.",

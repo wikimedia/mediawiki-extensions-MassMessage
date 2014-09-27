@@ -108,5 +108,5 @@
 	"massmessage-summary-removeonsite": "已于$2移除$1",
 	"massmessage-summary-removemulti": "已移除$1个页面",
 	"massmessage-list-category": "群发消息递送列表",
-	"massmessage-list-category-desc": "页面为[[Special:MassMessage|群发消息]]扩展程序的递送列表。"
+	"massmessage-list-category-desc": "此页面是用于[[Special:MassMessage|群发消息]]扩展程序的递送列表。"
 }
