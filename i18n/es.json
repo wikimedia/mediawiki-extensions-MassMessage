@@ -62,6 +62,8 @@
 	"massmessage-content-invalidtitle": "El título no es válido.",
 	"massmessage-content-invalidsite": "El sitio no es válido.",
 	"massmessage-content-adderror": "Error de la API: $1",
+	"massmessage-diff-descheader": "Cambios en la descripción:",
+	"massmessage-diff-targetsheader": "Cambios en las páginas:",
 	"massmessage-ch-tojsonerror": "No se pudo codificar la lista para su almacenamiento.",
 	"massmessage-create-title": "Título:",
 	"massmessage-create-description": "Descripción:",
