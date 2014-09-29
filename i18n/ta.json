@@ -4,9 +4,18 @@
 			"ElangoRamanujam"
 		]
 	},
+	"massmessage-content-pages": "இப்பட்டியலில் உள்ள பக்கங்கள்",
+	"massmessage-content-pagesonsite": "$1ல் பக்கங்கள்:",
 	"massmessage-content-remove": "நீக்குக",
+	"massmessage-content-emptylist": "(ஏதுமில்லை)",
 	"massmessage-content-addtitle": "தலைப்பு:",
+	"massmessage-content-addsubmit": "பக்கத்தைச் சேர்க்கவும்",
 	"massmessage-content-addedlistheading": "பக்கங்கள் சேர்க்கப்பட்டது:",
+	"massmessage-content-addeditem": "$2ல் $1",
+	"massmessage-create-title": "தலைப்பு:",
+	"massmessage-create-description": "விளக்கம்:",
+	"massmessage-create-invalidtitle": "குறிப்பிட்ட பக்கம் செல்லத்தக்கதல்ல.",
+	"massmessage-summary-addmulti": "$1 சேர்க்கப்பட்டது {{PLURAL:$1|பக்கங்கள்}}",
 	"massmessage-summary-remove": "நீக்கப்பட்டது [[:$1]]",
 	"massmessage-summary-removeonsite": "$2 ல் $1 நீக்கப்பட்டது"
 }

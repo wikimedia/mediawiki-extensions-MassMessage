@@ -18,6 +18,7 @@
 	"massmessage-form-submit": "Verzenden",
 	"massmessage-fieldset-preview": "Voorvertoning",
 	"massmessage-fieldset-info": "Informatie",
+	"massmessage-preview-count": "Uw bericht zal naar {{PLURAL:$1|$1 pagina|$1 pagina's}} worden verzonden.",
 	"massmessage-submitted": "Uw bericht voor {{PLURAL:$1|één pagina|$1 pagina's}} is in de wachtrij geplaatst.",
 	"massmessage-just-preview": "Dit is enkel een voorvertoning. Klik op \"{{int:massmessage-form-submit}}\" om het bericht te verzenden.",
 	"massmessage-spamlist-doesnotexist": "De opgegeven paginalijst bestaat niet.",
