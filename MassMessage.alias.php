@@ -46,6 +46,8 @@ $specialPageAliases['et'] = array(
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'MassMessage' => array( 'پیام_انبوه' ),
+	'CreateMassMessageList' => array( 'ایجاد_فهرست_پیام_انبوه' ),
+	'EditMassMessageList' => array( 'ویرایش_فهرست_پیام_انبوه' ),
 );
 
 /** Galician (galego) */
