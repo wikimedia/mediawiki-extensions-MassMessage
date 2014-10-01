@@ -9,9 +9,9 @@
 	"massmessage-form-spamlist": "Хаам бохуьйтуш болу агӀонийн могӀа болу агӀо:",
 	"massmessage-form-subject": "Хаамах лаьцна (кхин лелош ю хийцамах лаьцна яздеш):",
 	"massmessage-form-message": "Хааман йоза:",
-	"massmessage-form-preview": "Хьалха муха ю хьажа",
+	"massmessage-form-preview": "Хьалха хьажар",
 	"massmessage-form-submit": "ДӀадахьийта",
-	"massmessage-fieldset-preview": "Хьалха муха ю хьажа",
+	"massmessage-fieldset-preview": "Хьалха хьажар",
 	"massmessage-fieldset-info": "Хаам",
 	"massmessage-just-preview": "ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.",
 	"massmessage-no-timestamp": "ДӀахьедар: Хьан хаам чохь терахь а хан а я куьг я дац.",
@@ -39,6 +39,7 @@
 	"massmessage-edit-title": "Корта:",
 	"massmessage-edit-description": "Цуьнах лаьцна:",
 	"massmessage-edit-content": "Ӏалашонан агӀонаш:",
+	"massmessage-summary-addremove": "{{PLURAL:$1|ТӀетоьхна}} $1 {{PLURAL:$1|агӀо|агӀонаш}} кхин {{PLURAL:$2|дӀаяьккхина|дӀаяьхна}} $2 {{PLURAL:$2|агӀо|агӀонаш}}",
 	"massmessage-summary-add": "ТӀетоьхна [[:$1]]",
 	"massmessage-summary-remove": "ДӀаяьхна [[:$1]]"
 }
