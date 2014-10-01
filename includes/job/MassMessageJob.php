@@ -11,6 +11,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class MassMessageJob extends Job {
+
+	const STRIP_TILDES = true;
+
 	public function __construct( Title $title, array $params, $id = 0 ) {
 		// Create a fresh Title object so namespaces are evaluated
 		// in the context of the target site. See bug 57464.
@@ -183,7 +186,7 @@ class MassMessageJob extends Job {
 			'threadaction' => 'newthread',
 			'talkpage' => $this->title,
 			'subject' => $this->params['subject'],
-			'text' => $this->makeText(),
+			'text' => $this->makeText( self::STRIP_TILDES ),
 			'token' => $user->getEditToken()
 		); // LQT will automatically mark the edit as bot if we're a bot
 
@@ -197,7 +200,7 @@ class MassMessageJob extends Job {
 			'page' => $this->title->getPrefixedText(),
 			'submodule' => 'new-topic',
 			'nttopic' => $this->params['subject'],
-			'ntcontent' => $this->makeText(),
+			'ntcontent' => $this->makeText( self::STRIP_TILDES ),
 			'token' => $user->getEditToken(),
 		);
 
@@ -206,10 +209,17 @@ class MassMessageJob extends Job {
 
 	/**
 	 * Add some stuff to the end of the message
+	 * @param bool $stripTildes Whether to strip trailing '~~~~'
 	 * @return string
 	 */
-	protected function makeText() {
-		$text = $this->params['message'];
+	protected function makeText( $stripTildes = false ) {
+		$text = rtrim( $this->params['message'] );
+		if ( $stripTildes === self::STRIP_TILDES
+			&& substr( $text, -4 ) === '~~~~'
+			&& substr( $text, -5 ) !== '~~~~~'
+		) {
+			$text = substr( $text, 0, -4 );
+		}
 		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )->params( $this->params['comment'] )->text();
 		return $text;
 	}
