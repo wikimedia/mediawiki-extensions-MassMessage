@@ -39,5 +39,6 @@
 	"logentry-massmessage-skipoptout": "L'enviament de « $4 » a $3 ha estat omès perquè el destinatari ha escollit no rebre missatges massius",
 	"logentry-massmessage-skipnouser": "L'enviament de « $4 » a $3 ha estat omès perquè el compte d'usuari no existeix",
 	"massmessage-cannot-rename": "Aquest és un compte del sistema i no es pot reanomenar.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Envia un altre missatge]] o [[Special:Statistics|mostra quants missatges hi ha en la cua]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Envia un altre missatge]] o [[Special:Statistics|mostra quants missatges hi ha en la cua]].",
+	"massmessage-list-category": "Llistes de lliurament de MassMessage"
 }

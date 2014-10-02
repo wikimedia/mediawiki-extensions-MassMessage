@@ -35,5 +35,8 @@
 	"logentry-massmessage-skipbadns": "Pengiriman \"$4\" kepada $3 dilangkau kerana sasaran tergolong dalam ruang nama yang tidak boleh dikirimi",
 	"logentry-massmessage-skipoptout": "Pengiriman \"$4\" kepada $3 dilangkau kerana sasaran mengecualikan diri daripada pengiriman pesanan.",
 	"logentry-massmessage-skipnouser": "Pengiriman \"$4\" kepada $3 dilangkau kerana akaun pengguna tidak wujud",
-	"massmessage-cannot-rename": "Ini ialah akaun sistem yang tidak boleh ditukar namanya."
+	"massmessage-cannot-rename": "Ini ialah akaun sistem yang tidak boleh ditukar namanya.",
+	"massmessage-content-localpages": "Laman-laman di wiki ini:",
+	"massmessage-content-removeno": "Batalkan",
+	"massmessage-summary-addmulti": "$1 laman ditambah"
 }
