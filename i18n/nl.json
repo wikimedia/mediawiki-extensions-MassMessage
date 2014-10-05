@@ -6,7 +6,8 @@
 			"Konovalov",
 			"Siebrand",
 			"Southparkfan",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"SPQRobin"
 		]
 	},
 	"massmessage": "Bulkberichten verzenden",
@@ -61,6 +62,8 @@
 	"massmessage-content-invalidtitle": "Deze titel is ongeldig.",
 	"massmessage-content-invalidsite": "Deze site is ongeldig.",
 	"massmessage-content-adderror": "API-fout: $1",
+	"massmessage-diff-descheader": "Wijzigingen in de beschrijving:",
+	"massmessage-diff-targetsheader": "Wijzigingen in de pagina's:",
 	"massmessage-create-title": "Titel:",
 	"massmessage-create-description": "Beschrijving:",
 	"massmessage-create-content": "Inhoud:",

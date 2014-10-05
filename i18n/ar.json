@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Claw eg",
-			"مشعل الحربي"
+			"مشعل الحربي",
+			"زكريا"
 		]
 	},
 	"massmessage": "إرسال رسالة جماعية",
@@ -28,5 +29,6 @@
 	"logentry-massmessage-send": "{{GENDER:$2|أرسل|أرسلت}} $1 رسالة إلى $3",
 	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
 	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
-	"massmessage-cannot-rename": "هذا حساب نظام ولا يمكن إعادة تسميته."
+	"massmessage-cannot-rename": "هذا حساب نظام ولا يمكن إعادة تسميته.",
+	"massmessage-list-category": "قوائم بعث الرسائل الكمية"
 }
