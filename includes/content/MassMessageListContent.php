@@ -158,7 +158,7 @@ class MassMessageListContent extends JsonContent {
 
 		// Parse the description text.
 		$output = $wgParser->parse( $this->getDescription(), $title, $options, true, true, $revId );
-		$wgParser->addTrackingCategory( 'massmessage-list-category' );
+		$output->addTrackingCategory( 'massmessage-list-category', $title );
 		$lang = $options->getUserLangObj();
 
 		// Generate output HTML, if needed.

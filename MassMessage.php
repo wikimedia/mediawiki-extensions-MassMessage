@@ -55,7 +55,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => array( 'Kunal Mehta', 'wctaiwan' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:MassMessage',
 	'descriptionmsg' => 'massmessage-desc',
-	'version' => '0.2.0',
+	'version' => '0.3.0',
 );
 
 // Messages
