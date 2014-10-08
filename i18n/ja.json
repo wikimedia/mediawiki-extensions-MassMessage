@@ -13,6 +13,8 @@
 	"massmessage-form-preview": "プレビュー",
 	"massmessage-form-submit": "送信",
 	"massmessage-fieldset-preview": "プレビュー",
+	"massmessage-fieldset-info": "情報",
+	"massmessage-preview-count": "メッセージは {{PLURAL:$1|$1 件のページ}}に送信されます。",
 	"massmessage-submitted": "{{PLURAL:$1|$1 件のページ}}へのメッセージ送信を待ち行列に登録しました。",
 	"massmessage-just-preview": "これはプレビューしているだけに過ぎません。メッセージを送信するには「{{int:massmessage-form-submit}}」をクリックしてください。",
 	"massmessage-spamlist-doesnotexist": "配信先一覧として指定したページまたはカテゴリが存在しません。",
