@@ -78,6 +78,8 @@ $specialPageAliases['ja'] = array(
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'MassMessage' => array( '대량메시지' ),
+	'CreateMassMessageList' => array( '대량메시지목록만들기' ),
+	'EditMassMessageList' => array( '대량메시지목록편집' ),
 );
 
 /** Macedonian (македонски) */
