@@ -48,5 +48,13 @@
 	"massmessage-content-removeerror": "Borttagning av sidan misslyckades med felkod: $1",
 	"massmessage-content-removeconf": "Ta bort denna sida från listan?",
 	"massmessage-content-removeyes": "Ta bort",
-	"massmessage-content-removeno": "Avbryt"
+	"massmessage-content-removeno": "Avbryt",
+	"massmessage-edit-summary": "Redigeringssammanfattning:",
+	"massmessage-summary-addremove": "La till $1 {{PLURAL:$1|sida|sidor}} och tog bort $2 {{PLURAL:$2|sida|sidor}}",
+	"massmessage-summary-add": "La till [[:$1]]",
+	"massmessage-summary-addonsite": "La till $1 på $2",
+	"massmessage-summary-addmulti": "La till $1 {{PLURAL:$1|sida|sidor}}",
+	"massmessage-summary-remove": "Tog bort [[:$1]]",
+	"massmessage-summary-removeonsite": "Tog bort $1 på $2",
+	"massmessage-summary-removemulti": "Tog bort $1 {{PLURAL:$1|sida|sidor}}"
 }

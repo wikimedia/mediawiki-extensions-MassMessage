@@ -66,5 +66,7 @@
 	"massmessage-edit-description": "描述：",
 	"massmessage-edit-content": "目標頁面：",
 	"massmessage-edit-summary": "編輯摘要：",
-	"massmessage-summary-add": "加入 [[:$1]]"
+	"massmessage-summary-add": "加入 [[:$1]]",
+	"massmessage-summary-addmulti": "添加 $1 個{{PLURAL:$1|頁面}}",
+	"massmessage-summary-removemulti": "移除 $1 個{{PLURAL:$1|頁面}}"
 }
