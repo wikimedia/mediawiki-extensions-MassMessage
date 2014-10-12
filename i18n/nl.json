@@ -8,7 +8,8 @@
 			"Southparkfan",
 			"Sjoerddebruin",
 			"SPQRobin",
-			"Multichill"
+			"Multichill",
+			"Romaine"
 		]
 	},
 	"massmessage": "Bulkberichten verzenden",
@@ -75,5 +76,6 @@
 	"massmessage-summary-add": "[[:$1]] toegevoegd",
 	"massmessage-summary-addmulti": "Heeft $1{{PLURAL:$1|pagina's}} toegevoegd",
 	"massmessage-summary-remove": "[[:$1]] verwijderd",
+	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|pagina's}} verwijderd",
 	"massmessage-list-category": "MassMessage bezorglijsten"
 }
