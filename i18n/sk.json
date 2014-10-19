@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Teslaton"
+		]
+	},
+	"log-name-massmessage": "Záznam hromadných správ",
+	"log-description-massmessage": "Toto je záznam používateľov, odosielajúcich hromadné správy."
+}

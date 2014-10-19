@@ -31,7 +31,7 @@
 	"massmessage-badhtml": "Пораката може да има {{PLURAL:$2|незатворена ознака за HTML tag|незатворени ознаки за HTML}}: $1.",
 	"massmessage-parse-badurl": "„$1“ не претставува важечко мрежно место",
 	"massmessage-parse-badpage": "„$1“ не претставува важечки наслов на страница",
-	"massmessage-global-disallowed": "Пораките можат да се испраќаат само на локални страници.",
+	"massmessage-global-disallowed": "Пораките можат да се испраќаат само на месни страници.",
 	"right-massmessage": "Испраќање на порака на повеќе корисници наеднаш.",
 	"action-massmessage": "испраќање порака на повеќе корисници наеднаш",
 	"log-name-massmessage": "Дневник на масовни пораки",
