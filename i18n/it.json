@@ -99,10 +99,10 @@
 	"massmessage-summary-addremove": "{{PLURAL:$1|Aggiunta $1 pagina|Aggiunte $1 pagine}} e {{PLURAL:$2|rimossa $2 pagina|rimosse $2 pagine}}",
 	"massmessage-summary-add": "Aggiunta [[:$1]]",
 	"massmessage-summary-addonsite": "Aggiunta $1 su $2",
-	"massmessage-summary-addmulti": "Aggiunte $1 {{PLURAL:$1|pagine}}",
+	"massmessage-summary-addmulti": "{{PLURAL:$1|Aggiunta $1 pagina|Aggiunte $1 pagine}}",
 	"massmessage-summary-remove": "Rimossa [[:$1]]",
 	"massmessage-summary-removeonsite": "Rimossa $1 su $2",
-	"massmessage-summary-removemulti": "Rimosse $1 {{PLURAL:$1|pagine}}",
+	"massmessage-summary-removemulti": "{{PLURAL:$1|Rimossa $1 pagina|Rimosse $1 pagine}}",
 	"massmessage-list-category": "Elenchi di consegna MassMessage",
 	"massmessage-list-category-desc": "Questa pagina è un'elenco di consegna per l'estensione [[Special:MassMessage|MassMessage]]."
 }

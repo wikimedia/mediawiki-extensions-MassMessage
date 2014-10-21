@@ -79,5 +79,7 @@
 	"massmessage-edit-summary": "Resumen de edición:",
 	"massmessage-edit-missingsummary": "No has proporcionado un resumen de edición. Si pulsas en «{{int:htmlform-submit}}» de nuevo, la edición se guardará sin uno.",
 	"massmessage-edit-nopermission": "No tienes permiso para editar la lista.",
-	"massmessage-summary-add": "Se añadió [[:$1]]"
+	"massmessage-summary-add": "Se añadió [[:$1]]",
+	"massmessage-summary-addmulti": "Se {{PLURAL:$1|agrega $1 página|agregan $1 páginas}}",
+	"massmessage-summary-removemulti": "Se {{PLURAL:$1|borra $1 página|borran $1 páginas}}"
 }
