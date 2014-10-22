@@ -99,10 +99,10 @@
 	"massmessage-summary-addremove": "Добавлен{{PLURAL:$1|а|о|ы}} $1 страниц{{PLURAL:$1|а||ы}} и удален{{PLURAL:$2|а|о|ы}} $2 страниц{{PLURAL:$2|а||ы}}",
 	"massmessage-summary-add": "Добавлено [[:$1]]",
 	"massmessage-summary-addonsite": "Добавлено $1 на $2",
-	"massmessage-summary-addmulti": "Добавлено $1 {{PLURAL:$1|страниц}}",
+	"massmessage-summary-addmulti": "Добавлен{{PLURAL:$1|а|о}} $1 страниц{{PLURAL:$1|а||ы}}",
 	"massmessage-summary-remove": "Удалено [[:$1]]",
 	"massmessage-summary-removeonsite": "$1 заменено на $2",
-	"massmessage-summary-removemulti": "Удалено $1 {{PLURAL:$1|страниц}}",
+	"massmessage-summary-removemulti": "Удален{{PLURAL:$1|а|о}} $1 страниц{{PLURAL:$1|а||ы}}",
 	"massmessage-list-category": "Списки массовой доставки",
 	"massmessage-list-category-desc": "Эта страница является списком доставки для расширения [[Special:MassMessage|MassMessage]]."
 }

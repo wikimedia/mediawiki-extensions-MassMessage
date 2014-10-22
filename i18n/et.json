@@ -36,5 +36,7 @@
 	"logentry-massmessage-skipoptout": "Sõnumi \"$4\" saatmine leheküljele $3 jäi vahele, sest saaja ei soovi sõnumeid.",
 	"logentry-massmessage-skipnouser": "Sõnumi \"$4\" saatmine leheküljele $3 jäi vahele, sest kasutajakontot pole olemas.",
 	"massmessage-cannot-rename": "See on süsteemikonto, mille nime ei saa muuta.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Saada teine sõnum]] või [[Special:Statistics|vaata mitu sõnumit on tööjärjes ootel]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Saada teine sõnum]] või [[Special:Statistics|vaata mitu sõnumit on tööjärjes ootel]].",
+	"massmessage-list-category": "Hulgasõnumi saatmisloendid",
+	"massmessage-list-category-desc": "See lehekülg on [[Special:MassMessage|hulgasõnumi]] tarkvaralisa saatmisloend."
 }
