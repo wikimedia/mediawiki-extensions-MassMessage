@@ -126,4 +126,6 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'MassMessage' => array( '大量訊息' ),
+	'CreateMassMessageList' => array( '創建群發​​消息遞送列表' ),
+	'EditMassMessageList' => array( '編輯群發​​消息遞送列表' ),
 );

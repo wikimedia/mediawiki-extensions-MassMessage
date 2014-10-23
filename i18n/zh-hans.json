@@ -103,7 +103,7 @@
 	"massmessage-summary-addremove": "加入$1个页面并移除$2个页面",
 	"massmessage-summary-add": "已加入[[:$1]]",
 	"massmessage-summary-addonsite": "已于$2加入$1",
-	"massmessage-summary-addmulti": "已加入$1个页面",
+	"massmessage-summary-addmulti": "已加入$1个{{PLURAL:$1|页面}}",
 	"massmessage-summary-remove": "已移除[[:$1]]",
 	"massmessage-summary-removeonsite": "已于$2移除$1",
 	"massmessage-summary-removemulti": "已移除$1个{{PLURAL:$1|页面}}",
