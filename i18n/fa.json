@@ -38,5 +38,6 @@
 	"logentry-massmessage-skipoptout": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که هدف از رسیدن پیام بیرون آمده‌است",
 	"logentry-massmessage-skipnouser": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که حساب کاربری موجود نیست",
 	"massmessage-cannot-rename": "این یک حساب سامانه‌ای است و نمی‌تواند تغییر نام یابد",
-	"massmessage-nextsteps": "[[Special:MassMessage|ارسال پیام دیگر]] یا [[Special:Statistics|مشاهدهٔ اینکه چند پیام در صف قرار دارند]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|ارسال پیام دیگر]] یا [[Special:Statistics|مشاهدهٔ اینکه چند پیام در صف قرار دارند]].",
+	"massmessage-list-category": "فهرست‌های تحویل پیام انبوه"
 }
