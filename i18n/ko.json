@@ -4,10 +4,13 @@
 			"Hym411",
 			"Kwj2772",
 			"Priviet",
-			"아라"
+			"아라",
+			"Revi"
 		]
 	},
 	"massmessage": "메시지 대량 보내기",
+	"createmassmessagelist": "대량 메시지 수신자 목록 만들기",
+	"editmassmessagelist": "대량 메시지 수신자 목록 편집하기",
 	"massmessage-desc": "목록에 있는 사용자에게 쉽게 메시지를 보낼 수 있습니다",
 	"massmessage-form-spamlist": "메시지를 남길 문서 또는 분류의 목록이 있는 문서:",
 	"massmessage-form-subject": "메시지의 제목 (편집 요약에도 쓰임):",
@@ -40,5 +43,7 @@
 	"logentry-massmessage-skipoptout": "\"$4\"의 $3으로의 배달이 목표가 메시지 배달을 받지 않도록 설정했기 때문에 넘어갔습니다.",
 	"logentry-massmessage-skipnouser": "\"$4\"의 \"$3\"으로의 배달이 사용자 계정이 존재하지 않기 때문에 넘어갔습니다.",
 	"massmessage-cannot-rename": "이 계정은 시스템 계정이고 이름을 바꿀 수 없습니다.",
-	"massmessage-nextsteps": "[[Special:MassMessage|다른 메시지 보내기]] 혹은 [[Special:Statistics|얼마나 많은 메시지들이 대기 중인지 보기]]"
+	"massmessage-nextsteps": "[[Special:MassMessage|다른 메시지 보내기]] 혹은 [[Special:Statistics|얼마나 많은 메시지들이 대기 중인지 보기]]",
+	"massmessage-list-category": "대량 메시지 수신자 목록",
+	"massmessage-list-category-desc": "[[Special:MassMessage|대량 메시지]] 확장 기능을 위한 수신자 목록입니다."
 }
