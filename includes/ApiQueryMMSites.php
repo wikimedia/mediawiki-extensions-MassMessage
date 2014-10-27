@@ -46,9 +46,12 @@ class ApiQueryMMSites extends ApiQueryBase {
 		);
 	}
 
+	public function isInternal() {
+		return true;
+	}
+
 	public function getDescription() {
-		return 'Serve autocomplete requests for the site field in MassMessage; '
-			. 'not intended for use elsewhere.';
+		return 'Serve autocomplete requests for the site field in MassMessage';
 	}
 
 	public function getExamples() {
