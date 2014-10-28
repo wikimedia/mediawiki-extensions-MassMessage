@@ -288,4 +288,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		}
 		return $result;
 	}
+
+	/**
+	 * @return bool
+	 */
+	public function isListed() {
+		return false;
+	}
 }
