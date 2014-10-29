@@ -104,5 +104,18 @@
 	"massmessage-summary-removeonsite": "Removed $1 on $2",
 	"massmessage-summary-removemulti": "Removed $1 {{PLURAL:$1|page|pages}}",
 	"massmessage-list-category": "MassMessage delivery lists",
-	"massmessage-list-category-desc": "The page is a delivery list for the [[Special:MassMessage|MassMessage]] extension."
+	"massmessage-list-category-desc": "The page is a delivery list for the [[Special:MassMessage|MassMessage]] extension.",
+	"apihelp-editmassmessagelist-description": "Edit a mass message delivery list.",
+	"apihelp-editmassmessagelist-param-spamlist": "Title of the delivery list to update.",
+	"apihelp-editmassmessagelist-param-add": "Titles to add to the list.",
+	"apihelp-editmassmessagelist-param-remove": "Titles to remove from the list.",
+	"apihelp-editmassmessagelist-example-1": "Add [[User talk:Foo]] and [[Talk:Bar]] to the delivery list [[Example]] and remove [[Talk:Baz]] from it",
+	"apihelp-massmessage-description": "Send a message to a list of pages.",
+	"apihelp-massmessage-param-spamlist": "Page containing list of pages to leave a message on.",
+	"apihelp-massmessage-param-subject": "Subject line of the message.",
+	"apihelp-massmessage-param-message": "Message body text.",
+	"apihelp-massmessage-example-1": "Send a message to the list at [[Signpost Spamlist]] with the subject \"New Signpost\", and message body of \"Please read it\"",
+	"apihelp-query+mmsites-description": "Serve autocomplete requests for the site field in MassMessage.",
+	"apihelp-query+mmsites-param-term": "The prefix to search for.",
+	"apihelp-query+mmsites-example-1": "Autocomplete \"en\""
 }

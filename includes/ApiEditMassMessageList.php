@@ -199,6 +199,9 @@ class ApiEditMassMessageList extends ApiBase {
 		return $summaryMsg->inContentLanguage()->text();
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Edit a mass message delivery list';
 	}
@@ -221,6 +224,9 @@ class ApiEditMassMessageList extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'spamlist' => 'Title of the delivery list to update',
@@ -247,10 +253,23 @@ class ApiEditMassMessageList extends ApiBase {
 		return true;
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar&remove=Talk%3ABaz&token=TOKEN'
 			=> 'Add [[User talk:Foo]] and [[Talk:Bar]] to the delivery list [[Example]] and remove [[Talk:Baz]] from it'
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar&remove=Talk%3ABaz&token=TOKEN'
+				=> 'apihelp-editmassmessagelist-example-1',
 		);
 	}
 
