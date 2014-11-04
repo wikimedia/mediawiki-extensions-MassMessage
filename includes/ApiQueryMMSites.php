@@ -40,6 +40,9 @@ class ApiQueryMMSites extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'term' => 'The prefix to search for'
@@ -50,13 +53,29 @@ class ApiQueryMMSites extends ApiQueryBase {
 		return true;
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Serve autocomplete requests for the site field in MassMessage';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=mmsites&term=en'
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=mmsites&term=en'
+				=> 'apihelp-query+mmsites-example-1',
 		);
 	}
 }
