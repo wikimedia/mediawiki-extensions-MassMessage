@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Max20091"
 		]
 	},
 	"massmessage": "Gửi thông báo rộng rãi",
@@ -43,10 +44,10 @@
 	"massmessage-content-pages": "Các trang trong danh sách này",
 	"massmessage-content-pagesonsite": "Các trang trên $1:",
 	"massmessage-content-localpages": "Các trang trên wiki này:",
-	"massmessage-content-remove": "loại bỏ",
+	"massmessage-content-remove": "xoá",
 	"massmessage-content-removeerror": "Thất bại khi loại bỏ trang; mã lỗi là $1.",
 	"massmessage-content-removeconf": "Dời trang này khỏi danh sách?",
-	"massmessage-content-removeyes": "Dời",
+	"massmessage-content-removeyes": "Xoá",
 	"massmessage-content-removeno": "Hủy bỏ",
 	"massmessage-content-emptylist": "(không có)",
 	"massmessage-content-addheading": "Thêm trang",
@@ -68,5 +69,9 @@
 	"massmessage-edit-title": "Tên trang:",
 	"massmessage-edit-description": "Miêu tả:",
 	"massmessage-edit-content": "Các trang đích:",
-	"massmessage-edit-summary": "Tóm lược sửa đổi"
+	"massmessage-edit-summary": "Tóm lược sửa đổi",
+	"apihelp-editmassmessagelist-param-add": "Tiêu đề để thêm vào danh sách.",
+	"apihelp-editmassmessagelist-param-remove": "Tiêu đề để loại bỏ khỏi danh sách.",
+	"apihelp-query+mmsites-param-term": "Tiền tố để tìm kiếm.",
+	"apihelp-query+mmsites-example-1": "Autocomplete \"en\""
 }
