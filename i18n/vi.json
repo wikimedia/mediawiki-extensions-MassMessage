@@ -44,10 +44,10 @@
 	"massmessage-content-pages": "Các trang trong danh sách này",
 	"massmessage-content-pagesonsite": "Các trang trên $1:",
 	"massmessage-content-localpages": "Các trang trên wiki này:",
-	"massmessage-content-remove": "xoá",
+	"massmessage-content-remove": "xóa",
 	"massmessage-content-removeerror": "Thất bại khi loại bỏ trang; mã lỗi là $1.",
 	"massmessage-content-removeconf": "Dời trang này khỏi danh sách?",
-	"massmessage-content-removeyes": "Xoá",
+	"massmessage-content-removeyes": "Xóa",
 	"massmessage-content-removeno": "Hủy bỏ",
 	"massmessage-content-emptylist": "(không có)",
 	"massmessage-content-addheading": "Thêm trang",
@@ -73,5 +73,5 @@
 	"apihelp-editmassmessagelist-param-add": "Tiêu đề để thêm vào danh sách.",
 	"apihelp-editmassmessagelist-param-remove": "Tiêu đề để loại bỏ khỏi danh sách.",
 	"apihelp-query+mmsites-param-term": "Tiền tố để tìm kiếm.",
-	"apihelp-query+mmsites-example-1": "Autocomplete \"en\""
+	"apihelp-query+mmsites-example-1": "Tự động điền “vi”"
 }
