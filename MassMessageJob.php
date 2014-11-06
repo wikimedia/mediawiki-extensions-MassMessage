@@ -200,7 +200,11 @@ class MassMessageJob extends Job {
 	}
 
 	function makeAPIRequest( array $params ) {
-		global $wgUser, $wgRequest;
+		global $wgHooks, $wgUser, $wgRequest;
+
+		// Add our hook function to make the MassMessage user email confirmed
+		// Done here so that it's not unnecessarily called on every page load
+		$wgHooks['EmailConfirmed'][] = 'MassMessageHooks::onEmailConfirmed';
 
 		$oldRequest = $wgRequest;
 		$oldUser = $wgUser;
