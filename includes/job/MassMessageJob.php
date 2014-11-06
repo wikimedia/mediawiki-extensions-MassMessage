@@ -202,9 +202,10 @@ class MassMessageJob extends Job {
 	function makeAPIRequest( array $params ) {
 		global $wgHooks, $wgUser, $wgRequest;
 
-		// Add our hook function to make the MassMessage user IP block-exempt
+		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed
 		// Done here so that it's not unnecessarily called on every page load
 		$wgHooks['UserGetRights'][] = 'MassMessageHooks::onUserGetRights';
+		$wgHooks['EmailConfirmed'][] = 'MassMessageHooks::onEmailConfirmed';
 
 		$oldRequest = $wgRequest;
 		$oldUser = $wgUser;
