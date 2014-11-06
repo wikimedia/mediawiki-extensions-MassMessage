@@ -239,4 +239,18 @@ class MassMessageHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * Mark the messenger account's email as confirmed in job runs (bug 73061)
+	 * @param User $user
+	 * @param bool &$confirmed
+	 * @return bool
+	 */
+	public static function onEmailConfirmed( User $user, &$confirmed ) {
+		if ( $user->getId() === MassMessage::getMessengerUser()->getId() ) {
+			$confirmed = true;
+			return false; // Skip further checks
+		}
+		return true;
+	}
 }
