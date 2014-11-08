@@ -58,6 +58,8 @@ $specialPageAliases['gl'] = array(
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = array(
 	'MassMessage' => array( 'שליחת_הודעה_המונית', 'שליחת_הודעה_למשתמשים_מרובים' ),
+	'CreateMassMessageList' => array( 'יצירת_רשימת_הודעות_המוניות' ),
+	'EditMassMessageList' => array( 'עריכת_רשימת_הודעות_המוניות' ),
 );
 
 /** Upper Sorbian (hornjoserbsce) */
