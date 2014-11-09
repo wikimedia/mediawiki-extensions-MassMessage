@@ -61,7 +61,7 @@
 	"massmessage-edit-nopermission": "Dir hutt net d'Recht fir d'Lëscht z'änneren.",
 	"massmessage-summary-addremove": "huet {{PLURAL:$1|Säit|Säiten}} dobäigesat {{PLURAL:$2|an eng Säit|a(n) $2 Säiten}} ewechgeholl",
 	"massmessage-summary-add": "[[:$1]] derbäigesat",
-	"massmessage-summary-addmulti": "{{PLURAL:$1|Eng Säit|$1 Säiten}} derbäigesat",
+	"massmessage-summary-addmulti": "{{PLURAL:$1|Eng Säit|$1 Säiten}} dobäigesat",
 	"massmessage-summary-remove": "[[:$1]] ewechgeholl",
 	"massmessage-summary-removeonsite": "$1 op $2 ewechgeholl"
 }
