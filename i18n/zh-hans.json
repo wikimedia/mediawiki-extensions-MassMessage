@@ -109,5 +109,6 @@
 	"massmessage-summary-removemulti": "已移除$1个{{PLURAL:$1|页面}}",
 	"massmessage-list-category": "群发消息递送列表",
 	"massmessage-list-category-desc": "页面被用于[[Special:MassMessage|群发消息]]扩展程序的递送列表。",
+	"apihelp-query+mmsites-param-term": "要搜索的前缀。",
 	"apihelp-query+mmsites-example-1": "自动完成“en”"
 }
