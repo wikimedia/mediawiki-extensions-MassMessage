@@ -22,7 +22,7 @@
 	"massmessage-fieldset-info": "Información",
 	"massmessage-preview-count": "Se enviará tu mensaje a {{PLURAL:$1|$1 página|$1 páginas}}.",
 	"massmessage-just-preview": "Esto solo es una previsualización. Pulsa en «{{int:massmessage-form-submit}}» para enviar el mensaje.",
-	"massmessage-spamlist-doesnotexist": "La lista de páginas especificada no existe.",
+	"massmessage-spamlist-doesnotexist": "La página o categoría de la lista de entrega especificada no existe.",
 	"massmessage-empty-subject": "El asunto está vacío.",
 	"massmessage-empty-message": "El cuerpo del mensaje está vacío.",
 	"massmessage-no-timestamp": "Aviso: tu mensaje no incluye la fecha y la hora ni la firma.",
