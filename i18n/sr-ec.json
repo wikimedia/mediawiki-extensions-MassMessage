@@ -19,5 +19,7 @@
 	"massmessage-create-source": "Извор:",
 	"massmessage-edit-title": "Наслов:",
 	"massmessage-edit-description": "Опис:",
-	"massmessage-edit-summary": "Опис измене:"
+	"massmessage-edit-summary": "Опис измене:",
+	"massmessage-summary-addmulti": "Додато страница: {{PLURAL:$1|$1}}",
+	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}"
 }
