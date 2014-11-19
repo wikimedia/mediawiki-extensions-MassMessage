@@ -109,6 +109,7 @@
 	"massmessage-summary-removemulti": "已移除$1个{{PLURAL:$1|页面}}",
 	"massmessage-list-category": "群发消息递送列表",
 	"massmessage-list-category-desc": "页面被用于[[Special:MassMessage|群发消息]]扩展程序的递送列表。",
+	"apihelp-editmassmessagelist-example-1": "将[[User talk:Foo]]和[[Talk:Bar]]加入订阅列表[[Example]]中，并将[[Talk:Baz]]从列表中移除",
 	"apihelp-massmessage-param-message": "消息正文。",
 	"apihelp-query+mmsites-param-term": "要搜索的前缀。",
 	"apihelp-query+mmsites-example-1": "自动完成“en”"
