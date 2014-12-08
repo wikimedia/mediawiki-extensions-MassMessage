@@ -188,7 +188,14 @@ $wgResourceModules['ext.MassMessage.content.nojs'] = array(
 );
 $wgResourceModules['ext.MassMessage.create'] = array(
 	'scripts' => 'ext.MassMessage.create.js',
-	'dependencies' => 'ext.MassMessage.autocomplete',
+	'messages' => array(
+		'massmessage-create-exists',
+		'massmessage-create-invalidsource',
+	),
+	'dependencies' => array(
+		'mediawiki.jqueryMsg',
+		'ext.MassMessage.autocomplete',
+	),
 	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
