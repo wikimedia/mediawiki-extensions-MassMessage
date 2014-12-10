@@ -11,6 +11,11 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'MassMessageListCHTest_spamlist';
 
+	public function setUp() {
+		parent::setUp();
+		$this->mergeMwGlobalArrayValue( 'wgGroupPermissions', array( '*' => array( 'editcontentmodel' => true ) ) );
+	}
+
 	/**
 	 * Return the sign of $par.
 	 * @param int $par
