@@ -118,6 +118,11 @@ $specialPageAliases['vi'] = array(
 	'EditMassMessageList' => array( 'Sửa_danh_sách_nhắn_tin_cho_nhiều_người' ),
 );
 
+/** Chinese (中文) */
+$specialPageAliases['zh'] = array(
+	'MassMessage' => array( '群发消息', '批量消息', '群發訊息' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'MassMessage' => array( '群发信息', '批量消息' ),
@@ -128,6 +133,6 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'MassMessage' => array( '大量訊息' ),
-	'CreateMassMessageList' => array( '創建群發​​消息遞送列表' ),
-	'EditMassMessageList' => array( '編輯群發​​消息遞送列表' ),
+	'CreateMassMessageList' => array( '建立群發訊息遞送清單' ),
+	'EditMassMessageList' => array( '編輯群發訊息遞送清單' ),
 );
