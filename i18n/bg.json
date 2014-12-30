@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"DCLXVI"
+			"DCLXVI",
+			"Borislav"
 		]
 	},
-	"massmessage-parse-badurl": "„$1“ не е валиден сайт."
+	"massmessage-parse-badurl": "„$1“ не е валиден сайт.",
+	"log-name-massmessage": "Дневник на масовите съобщения"
 }
