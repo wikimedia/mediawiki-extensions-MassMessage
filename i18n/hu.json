@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Samat",
-			"Csega"
+			"Csega",
+			"Tgr"
 		]
 	},
 	"massmessage-fieldset-info": "Információ",
+	"massmessage-optout-category": "Tömeges üzenetküldésből kijelentkezettek",
 	"right-massmessage": "üzenet küldése egyszerre több felhasználónak"
 }
