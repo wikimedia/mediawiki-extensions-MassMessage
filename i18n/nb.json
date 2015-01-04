@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Danmichaelo"
+		]
+	},
+	"massmessage": "Masseutsendelse",
+	"massmessage-desc": "Lar brukere enkelt sende en melding til en liste med brukere",
+	"massmessage-form-spamlist": "Side eller kategori som lister opp brukere meldingen skal sendes til:",
+	"massmessage-form-subject": "Meldingsemne (brukes også som redigeringsforklaring):",
+	"massmessage-form-message": "Meldingsinnhold:",
+	"massmessage-form-preview": "Forhåndsvis",
+	"massmessage-form-submit": "Send",
+	"massmessage-fieldset-preview": "Forhåndsvis",
+	"massmessage-fieldset-info": "Informasjon",
+	"massmessage-preview-count": "Meldingen din vil bli sendt til {{PLURAL:$1|$1 side|$1 sider}}.",
+	"massmessage-submitted": "Meldingsutsendelse til {{PLURAL:$1|$1 side|$1 sider}} har blitt lagt til i utsendingskøen.",
+	"massmessage-just-preview": "Dette er bare en forhåndsvisning. Trykk «{{int:massmessage-form-submit}}» for å sende meldingen.",
+	"massmessage-spamlist-doesnotexist": "Listen eller kategorien over mottakere eksisterer ikke.",
+	"massmessage-spamlist-invalid": "Den oppgitte siden inneholder ikke en gyldig mottakerliste.",
+	"massmessage-empty-subject": "Intet emne ble oppgitt.",
+	"massmessage-empty-message": "Ingen melding ble oppgitt.",
+	"massmessage-no-timestamp": "Advarsel: Meldingen din mangler tidsstempel eller signatur.",
+	"massmessage-form-header": "Bruk skjemaet under for å sende meldinger til en bestemt liste. Alle felt må fylles ut ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mer informasjon]).",
+	"massmessage-queued-count": "[[Special:MassMessage|Masseutsendelser]] i kø",
+	"massmessage-hidden-comment": "<!-- Melding sendt av User:$1@$2 via listen $3 -->",
+	"right-massmessage": "Send en melding til flere brukere på en gang",
+	"action-massmessage": "send en melding til flere brukere på en gang",
+	"log-name-massmessage": "Masseutsendelseslogg",
+	"logentry-massmessage-send": "$1 {{GENDER:$2|sendte en melding}} til $3",
+	"logentry-massmessage-failure": "Levering av «$4» til $3 mislyktes med feilkoden <code>$5</code>",
+	"massmessage-content-pagesonsite": "Sider på $1:"
+}

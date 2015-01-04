@@ -19,6 +19,8 @@ $specialPageAliases['en'] = array(
 /** Arabic (العربية) */
 $specialPageAliases['ar'] = array(
 	'MassMessage' => array( 'رسائل_كمية' ),
+	'CreateMassMessageList' => array( 'إنشاء_قائمة_الرسائل_الكمية' ),
+	'EditMassMessageList' => array( 'تعديل_قائمة_الرسائل_الكمية' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
