@@ -7,7 +7,8 @@
 			"Rastus Vernon",
 			"Seb35",
 			"Sherbrooke",
-			"Maxim21"
+			"Maxim21",
+			"0x010C"
 		]
 	},
 	"massmessage": "Envoyer un message de masse",
@@ -107,5 +108,9 @@
 	"massmessage-summary-removeonsite": "Retrait de $1 sur $2",
 	"massmessage-summary-removemulti": "Retrait de $1 {{PLURAL:$1|page|pages}}",
 	"massmessage-list-category": "Listes de diffusion de MassMessage",
-	"massmessage-list-category-desc": "Cette page est une liste de diffusion pour l’extension [[Special:MassMessage|MassMessage]]."
+	"massmessage-list-category-desc": "Cette page est une liste de diffusion pour l’extension [[Special:MassMessage|MassMessage]].",
+	"apihelp-editmassmessagelist-param-add": "Titres à ajouter à la liste.",
+	"apihelp-editmassmessagelist-param-remove": "Titres à supprimer de la liste.",
+	"apihelp-massmessage-description": "Envoyer un message à une liste de pages.",
+	"apihelp-massmessage-param-spamlist": "Page contenant une liste de pages sur lesquelles laisser un message."
 }
