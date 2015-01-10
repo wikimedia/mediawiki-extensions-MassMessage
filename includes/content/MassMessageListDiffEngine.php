@@ -10,14 +10,14 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 	 * @param Content $old Old content
 	 * @param Content $new New content
 	 *
-	 * @throws MWException If old or new content is not an instance of MassMessageListContent
+	 * @throws Exception If old or new content is not an instance of MassMessageListContent
 	 * @return bool|string
 	 */
 	public function generateContentDiffBody( Content $old, Content $new ) {
 		if ( !( $old instanceOf MassMessageListContent )
 			|| !( $new instanceOf MassMessageListContent )
 		) {
-			throw new MWException( 'Cannot diff content types other than MassMessageListContent' );
+			throw new Exception( 'Cannot diff content types other than MassMessageListContent' );
 		}
 
 		$output = '';

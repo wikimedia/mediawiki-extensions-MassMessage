@@ -339,7 +339,7 @@ class MassMessage {
 	 *
 	 * Modified from the Echo extension
 	 *
-	 * @throws MWException
+	 * @throws Exception
 	 * @return String regular expression fragment.
 	 */
 	public static function getTimestampRegex() {
@@ -373,7 +373,7 @@ class MassMessage {
 		$output .= preg_quote( $tzMatches[0] );
 
 		if ( !preg_match( "/$output/u", $exemplarTimestamp ) ) {
-			throw new MWException( "Timestamp regex does not match exemplar" );
+			throw new Exception( "Timestamp regex does not match exemplar" );
 		}
 
 		$output = "/$output/";
