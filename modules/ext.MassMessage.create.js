@@ -3,52 +3,10 @@
 		/*global setTimeout, clearTimeout*/
 		'use strict';
 
-		var $formImport = $( '#mw-input-wpcontent-import'),
-			$formSource = $( '#mw-input-wpsource'),
+		var $formSource = $( '#mw-input-wpsource' ),
 			$formSourceTr = $formSource.parent().parent(),
 			checkSourceTimeout = -1,
 			checkSource, pageIsValidSource, showCreateError, removeCreateError;
-
-		// Set the correct field state on load.
-		if ( !$formImport.is( ':checked' ) ) {
-			$formSourceTr.hide(); // Progressive disclosure
-		}
-
-		$( '#mw-input-wpcontent-new' ).click( function () {
-			$formSourceTr.hide();
-			removeCreateError( 'massmessage-create-invalidsource' );
-		} );
-
-		$formImport.click( function () {
-			$formSourceTr.show();
-		} );
-
-		// Warn if page title is already in use
-		$( '#mw-input-wptitle' ).blur( function () {
-			( new mw.Api() ).get( {
-				action: 'query',
-				prop: 'info',
-				titles: $( this ).val()
-			} ).done( function ( data ) {
-				if ( data && data.query ) {
-					if ( !data.query.pages['-1'] ) {
-						// Page with title already exists
-						showCreateError( 'massmessage-create-exists' );
-					} else {
-						removeCreateError( 'massmessage-create-exists' );
-					}
-				}
-			} );
-		} );
-
-		// Warn if delivery list source is invalid
-		$formSource.on( 'input autocompleteselect', function () {
-			// debouncing - don't want to make an API call per request, nor give an error
-			// when the user starts typing
-			removeCreateError( 'massmessage-create-invalidsource' );
-			clearTimeout(checkSourceTimeout);
-			checkSourceTimeout = setTimeout(checkSource, 300);
-		} );
 
 		checkSource = function () {
 			( new mw.Api() ).get( {
@@ -97,6 +55,47 @@
 		removeCreateError = function ( msgKey ) {
 			$( 'div.error[data-key=\'' + msgKey + '\']' ).remove();
 		};
+
+		// Set the correct field state on load.
+		if ( !$( '#mw-input-wpcontent-import' ).is( ':checked' ) ) {
+			$formSourceTr.hide(); // Progressive disclosure
+		}
+
+		$( '#mw-input-wpcontent-new' ).click( function () {
+			$formSourceTr.hide();
+			removeCreateError( 'massmessage-create-invalidsource' );
+		} );
+
+		$( '#mw-input-wpcontent-import' ).click( function () {
+			$formSourceTr.show();
+		} );
+
+		// Warn if page title is already in use
+		$( '#mw-input-wptitle' ).blur( function () {
+			( new mw.Api() ).get( {
+				action: 'query',
+				prop: 'info',
+				titles: $( this ).val()
+			} ).done( function ( data ) {
+				if ( data && data.query ) {
+					if ( !data.query.pages['-1'] ) {
+						// Page with title already exists
+						showCreateError( 'massmessage-create-exists' );
+					} else {
+						removeCreateError( 'massmessage-create-exists' );
+					}
+				}
+			} );
+		} );
+
+		// Warn if delivery list source is invalid
+		$formSource.on( 'input autocompleteselect', function () {
+			// debouncing - don't want to make an API call per request, nor give an error
+			// when the user starts typing
+			removeCreateError( 'massmessage-create-invalidsource' );
+			clearTimeout( checkSourceTimeout );
+			checkSourceTimeout = setTimeout( checkSource, 300 );
+		} );
 
 		mw.massmessage.enableTitleComplete( $formSource );
 	} );
