@@ -1,21 +1,8 @@
 /*
 Formats the Save/Preview buttons to show up on the same line
-@author wctaiwan
 */
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField,
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField .mw-label,
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField .mw-input {
     display: inline;
-}
-
-/*
-Styles the invalid page warning
- */
-#mw-massmessage-form-spamlist-status.invalid {
-	border: 1px solid #FF8080;
-	border-bottom-right-radius: 0.8em;
-	border-top-right-radius: 0.8em;
-	background-color: #FFC0C0;
-	color: black;
-	padding: 2px 1em;
 }
