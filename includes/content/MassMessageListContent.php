@@ -134,11 +134,22 @@ class MassMessageListContent extends JsonContent {
 		if ( $this->decoded ) {
 			return;
 		}
-		$data = $this->getJsonData();
-		if ( is_array( $data ) ) {
-			$this->description = array_key_exists( 'description', $data ) ?
-				$data['description'] : null;
-			$this->targets = array_key_exists( 'targets', $data ) ? $data['targets'] : null;
+		$jsonParse = $this->getData();
+		$data = $jsonParse->isGood() ? $jsonParse->getValue() : null;
+		if ( $data ) {
+			$this->description = isset( $data->description ) ? $data->description : null;
+			if ( isset( $data->targets ) && is_array( $data->targets ) ) {
+				$this->targets = array();
+				foreach ( $data->targets as $target ) {
+					if ( !is_object( $target ) ) { // There is a malformed target.
+						$this->targets = null;
+						break;
+					}
+					$this->targets[] = wfObjectToArray( $target ); // Convert to associative array.
+				}
+			} else {
+				$this->targets = null;
+			}
 		}
 		$this->decoded = true;
 	}
