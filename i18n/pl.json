@@ -6,7 +6,8 @@
 			"WTM",
 			"Woytecr",
 			"Wiochman",
-			"Darellur"
+			"Darellur",
+			"Openbk"
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
@@ -70,5 +71,6 @@
 	"massmessage-edit-nopermission": "Nie masz uprawnień do edytowania tej listy.",
 	"massmessage-summary-addremove": "Dodano $1 {{PLURAL:$1|stronę|strony|stron}} i usunięto $2 {{PLURAL:$2|stronę|strony|stron}}",
 	"massmessage-summary-add": "Dodano [[:$1]]",
-	"massmessage-summary-remove": "Usunięto [[:$1]]"
+	"massmessage-summary-remove": "Usunięto [[:$1]]",
+	"massmessage-list-category": "Listy odbiorców masowych wiadomości"
 }
