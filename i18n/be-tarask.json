@@ -5,5 +5,6 @@
 		]
 	},
 	"massmessage": "Адправіць масавае паведамленьне",
+	"createmassmessagelist": "Стварэньне сьпісу масавай дастаўкі паведамленьняў",
 	"massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]"
 }
