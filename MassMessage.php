@@ -56,6 +56,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'url' => 'https://www.mediawiki.org/wiki/Extension:MassMessage',
 	'descriptionmsg' => 'massmessage-desc',
 	'version' => '0.3.0',
+	'license-name' => 'GPL-2.0+',
 );
 
 // Messages
