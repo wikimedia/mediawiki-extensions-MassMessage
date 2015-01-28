@@ -5,5 +5,9 @@
 		]
 	},
 	"massmessage": "n Massabericht sturen",
-	"massmessage-fieldset-info": "Informasie"
+	"createmassmessagelist": "Aofleverlieste anmaken",
+	"editmassmessagelist": "Aofleverlieste bewarken",
+	"massmessage-fieldset-info": "Informasie",
+	"createmassmessagelist-legend": "Aofleverlieste anmaken",
+	"editmassmessagelist-legend": "Aofleverlieste bewarken"
 }
