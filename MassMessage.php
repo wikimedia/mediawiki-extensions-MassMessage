@@ -55,7 +55,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => array( 'Kunal Mehta', 'wctaiwan' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:MassMessage',
 	'descriptionmsg' => 'massmessage-desc',
-	'version' => '0.3.0',
+	'version' => '0.4.0',
 	'license-name' => 'GPL-2.0+',
 );
 
@@ -100,7 +100,6 @@ $wgJobClasses['MassMessageSubmitJob'] = 'MassMessageSubmitJob';
 $wgJobClasses['MassMessageServerSideJob'] = 'MassMessageServerSideJob';
 
 // Hooks
-$wgExtensionFunctions[] = 'MassMessageHooks::onExtensionFunctions';
 $wgHooks['ParserFirstCallInit'][] = 'MassMessageHooks::onParserFirstCallInit';
 $wgHooks['SpecialStatsAddExtra'][] = 'MassMessageHooks::onSpecialStatsAddExtra';
 $wgHooks['APIQuerySiteInfoStatisticsInfo'][] = 'MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo';
