@@ -128,6 +128,7 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 		'ext.MassMessage.special.js',
 		'ext.MassMessage.badhtml.js',
 	),
+	'styles' => 'ext.MassMessage.validation.css',
 	'messages' => array(
 		'massmessage-badhtml',
 		'massmessage-parse-badpage'
@@ -189,9 +190,10 @@ $wgResourceModules['ext.MassMessage.content.nojs'] = array(
 );
 $wgResourceModules['ext.MassMessage.create'] = array(
 	'scripts' => 'ext.MassMessage.create.js',
+	'styles' => 'ext.MassMessage.validation.css',
 	'messages' => array(
-		'massmessage-create-exists',
-		'massmessage-create-invalidsource',
+		'massmessage-create-exists-short',
+		'massmessage-create-invalidsource-short',
 	),
 	'dependencies' => array(
 		'mediawiki.jqueryMsg',

@@ -56,6 +56,6 @@
 		} );
 
 		// Autocomplete for spamlist titles
-		mw.massmessage.enableTitleComplete( $( '#mw-massmessage-form-spamlist' ) );
+		mw.massmessage.enableTitleComplete( $spamlist );
 	} );
 }( mediaWiki, jQuery ) );

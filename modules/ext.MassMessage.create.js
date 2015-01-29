@@ -3,23 +3,60 @@
 		/*global setTimeout, clearTimeout*/
 		'use strict';
 
-		var $formSource = $( '#mw-input-wpsource' ),
-			$formSourceTr = $formSource.parent().parent(),
+		var checkTitle, checkSource, pageIsValidSource,
 			checkSourceTimeout = -1,
-			checkSource, pageIsValidSource, showCreateError, removeCreateError;
+			$formTitle = $( '#mw-input-wptitle' ),
+			$formSource = $( '#mw-input-wpsource' ),
+			$formSourceTr = $formSource.parent().parent(),
+			$titleStatus = $( '<span>' )
+				.attr( 'id', 'mw-input-wptitle-status' )
+				.insertAfter( $formTitle ),
+			$sourceStatus = $( '<span>' )
+				.attr( 'id', 'mw-input-wptitle-status' )
+				.insertAfter( $formSource );
+
+		checkTitle = function () {
+			var title = $formTitle.val();
+			if ( title ) {
+				( new mw.Api() ).get( {
+					action: 'query',
+					prop: 'info',
+					titles: title
+				} ).done( function ( data ) {
+					if ( data && data.query && !data.query.pages['-1'] ) {
+						// Page with title already exists
+						$titleStatus.addClass( 'invalid' )
+							.text( mw.message( 'massmessage-create-exists-short' ).text() );
+					} else {
+						// Clear validation error
+						$titleStatus.removeClass( 'invalid' ).text( '' );
+					}
+				} );
+			} else {
+				// Don't display an error if there is no input
+				$titleStatus.removeClass( 'invalid' ).text( '' );
+			}
+		};
 
 		checkSource = function () {
-			( new mw.Api() ).get( {
-				action: 'query',
-				prop: 'info',
-				titles: $formSource.val()
-			} ).done( function ( data ) {
-				if ( pageIsValidSource( data ) ) {
-					removeCreateError( 'massmessage-create-invalidsource' );
-				} else {
-					showCreateError( 'massmessage-create-invalidsource' );
-				}
-			} );
+			var source = $formSource.val();
+			if ( source ) {
+				( new mw.Api() ).get( {
+					action: 'query',
+					prop: 'info',
+					titles: source
+				} ).done( function ( data ) {
+					if ( pageIsValidSource( data ) ) {
+						// Clear validation error
+						$sourceStatus.removeClass( 'invalid' ).text( '' );
+					} else {
+						$sourceStatus.addClass( 'invalid' )
+							.text( mw.message( 'massmessage-create-invalidsource-short' ).text() );
+					}
+				} );
+			} else {
+				$sourceStatus.removeClass( 'invalid' ).text( '' );
+			}
 		};
 
 		pageIsValidSource = function ( response ) {
@@ -40,22 +77,6 @@
 			return false;
 		};
 
-		// Show an error next to the create form
-		showCreateError = function ( msgKey ) {
-			var message = mw.message( msgKey ).escaped();
-			if ( !$( 'div.error[data-key=\'' + msgKey + '\']' ).length ) {
-				$( '.mw-htmlform-submit-buttons' ).prepend(
-					$( '<div></div>' ).addClass( 'error' ).attr( 'data-key', msgKey )
-						.html( '<p>' + message + '</p>' ).hide().fadeIn()
-				);
-			}
-		};
-
-		// Remove an error next to the create form
-		removeCreateError = function ( msgKey ) {
-			$( 'div.error[data-key=\'' + msgKey + '\']' ).remove();
-		};
-
 		// Set the correct field state on load.
 		if ( !$( '#mw-input-wpcontent-import' ).is( ':checked' ) ) {
 			$formSourceTr.hide(); // Progressive disclosure
@@ -63,7 +84,6 @@
 
 		$( '#mw-input-wpcontent-new' ).click( function () {
 			$formSourceTr.hide();
-			removeCreateError( 'massmessage-create-invalidsource' );
 		} );
 
 		$( '#mw-input-wpcontent-import' ).click( function () {
@@ -71,28 +91,16 @@
 		} );
 
 		// Warn if page title is already in use
-		$( '#mw-input-wptitle' ).blur( function () {
-			( new mw.Api() ).get( {
-				action: 'query',
-				prop: 'info',
-				titles: $( this ).val()
-			} ).done( function ( data ) {
-				if ( data && data.query ) {
-					if ( !data.query.pages['-1'] ) {
-						// Page with title already exists
-						showCreateError( 'massmessage-create-exists' );
-					} else {
-						removeCreateError( 'massmessage-create-exists' );
-					}
-				}
-			} );
+		$formTitle.one( 'blur', function () {
+			checkTitle();
+			$formTitle.on( 'input autocompletechange', checkTitle );
 		} );
 
 		// Warn if delivery list source is invalid
 		$formSource.on( 'input autocompleteselect', function () {
-			// debouncing - don't want to make an API call per request, nor give an error
+			// Debouncing - don't want to make an API call per request, nor give an error
 			// when the user starts typing
-			removeCreateError( 'massmessage-create-invalidsource' );
+			$sourceStatus.removeClass( 'invalid' ).text( '' );
 			clearTimeout( checkSourceTimeout );
 			checkSourceTimeout = setTimeout( checkSource, 300 );
 		} );
