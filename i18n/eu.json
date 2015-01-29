@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"An13sa"
+			"An13sa",
+			"Subi"
 		]
 	},
-	"massmessage-form-submit": "Bidali"
+	"massmessage-form-submit": "Bidali",
+	"massmessage-fieldset-info": "Informazioa",
+	"massmessage-create-title": "Izenburua:",
+	"massmessage-create-description": "Deskribapena:",
+	"massmessage-create-content": "Edukia:",
+	"massmessage-edit-title": "Izenburua:",
+	"massmessage-edit-description": "Deskribapena:"
 }

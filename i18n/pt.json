@@ -82,6 +82,8 @@
 	"massmessage-create-exists": "Já existe uma página com o título especificado.",
 	"massmessage-create-nopermission": "Não possui permissão para criar a lista com este título.",
 	"massmessage-create-invalidsource": "A fonte especificada não é uma lista de entrega válida ou categoria que contenha pelo menos uma página.",
+	"massmessage-create-exists-short": "Já em uso",
+	"massmessage-create-invalidsource-short": "Lista inválida",
 	"editmassmessagelist-legend": "Editar lista de entrega de mensagem em massa",
 	"massmessage-edit-pagetitle": "A editar $1",
 	"massmessage-edit-title": "Título:",
