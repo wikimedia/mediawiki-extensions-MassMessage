@@ -81,6 +81,8 @@
 	"massmessage-create-exists": "Веќе постои страница со укажаниот наслов.",
 	"massmessage-create-nopermission": "Немате дозвола да создадете список со овој наслов.",
 	"massmessage-create-invalidsource": "Укажаниот извод не претставува важечки список за достава или категорија со барем една страница.",
+	"massmessage-create-exists-short": "Насловот е зафатен",
+	"massmessage-create-invalidsource-short": "Ова не претставува важечки список",
 	"editmassmessagelist-legend": "Уредување на список за масовна достава на пораки",
 	"massmessage-edit-pagetitle": "Уредување на $1",
 	"massmessage-edit-title": "Наслов:",

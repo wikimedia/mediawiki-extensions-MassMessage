@@ -83,6 +83,8 @@
 	"massmessage-create-exists": "Eine Seite mit dem angegebenen Titel ist bereits vorhanden.",
 	"massmessage-create-nopermission": "Du hast keine Berechtigung, eine Liste unter diesem Titel zu erstellen.",
 	"massmessage-create-invalidsource": "Die angegebene Quelle ist keine gültige Versandliste oder Kategorie mit mindestens einer Seite.",
+	"massmessage-create-exists-short": "Bereits in Verwendung",
+	"massmessage-create-invalidsource-short": "Keine gültige Liste",
 	"editmassmessagelist-legend": "Massennachrichten-Versandliste bearbeiten",
 	"massmessage-edit-pagetitle": "Bearbeiten von $1",
 	"massmessage-edit-title": "Titel:",

@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Jim-by"
 		]
 	},
 	"massmessage": "Адправіць масавае паведамленьне",
 	"createmassmessagelist": "Стварэньне сьпісу масавай дастаўкі паведамленьняў",
-	"massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]"
+	"massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]",
+	"massmessage-create-exists-short": "Ужо выкарыстоўваецца",
+	"massmessage-create-invalidsource-short": "Няслушны сьпіс"
 }
