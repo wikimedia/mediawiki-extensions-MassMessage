@@ -63,6 +63,7 @@
 	"massmessage-create-import": "Import stron z istniejącej listy lub kategorii",
 	"massmessage-create-source": "Źródło:",
 	"massmessage-create-invalidtitle": "Wybrany tytuł jest nieprawidłowy.",
+	"massmessage-create-exists-short": "Już w użyciu",
 	"massmessage-edit-pagetitle": "Edycja $1",
 	"massmessage-edit-title": "Tytuł:",
 	"massmessage-edit-description": "Opis:",

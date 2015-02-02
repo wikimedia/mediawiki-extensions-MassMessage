@@ -88,6 +88,8 @@
 	"massmessage-create-exists": "指定标题的页面已存在。",
 	"massmessage-create-nopermission": "您没有权限在此标题创建列表。",
 	"massmessage-create-invalidsource": "指定的来源不是有效的递送列表或至少包含一个页面的分类。",
+	"massmessage-create-exists-short": "已在使用",
+	"massmessage-create-invalidsource-short": "不是有效的列表",
 	"editmassmessagelist-legend": "编辑群发消息递送列表",
 	"massmessage-edit-pagetitle": "$1编辑中",
 	"massmessage-edit-title": "标题：",

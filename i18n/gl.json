@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Breogan2008",
+			"Elisardojm"
 		]
 	},
 	"massmessage": "Enviar unha mensaxe en masa",
 	"massmessage-desc": "Permite aos usuarios enviar facilmente unha mensaxe a unha lista de usuarios",
-	"massmessage-form-spamlist": "Páxina que conteña a lista de páxinas nas que deixar a mensaxe:",
+	"massmessage-form-spamlist": "Páxina ou categoría que contén a lista de páxinas nas que deixar a mensaxe:",
 	"massmessage-form-subject": "Asunto da mensaxe (tamén se usa de resumo de edición):",
 	"massmessage-form-message": "Corpo da mensaxe:",
 	"massmessage-form-preview": "Vista previa",
@@ -14,7 +16,7 @@
 	"massmessage-fieldset-preview": "Vista previa",
 	"massmessage-submitted": "A entrega da súa mensaxe a {{PLURAL:$1|unha páxina|$1 páxinas}} púxose á cola.",
 	"massmessage-just-preview": "Isto só é unha vista previa. Prema en \"{{int:massmessage-form-submit}}\" para enviar a mensaxe.",
-	"massmessage-spamlist-doesnotexist": "A páxina especificada coa lista de páxinas non existe.",
+	"massmessage-spamlist-doesnotexist": "A lista de difusión ou a categoría non existe.",
 	"massmessage-empty-subject": "A liña do asunto está baleira.",
 	"massmessage-empty-message": "O corpo da mensaxe está baleiro.",
 	"massmessage-unescaped-langlinks": "Atención: Hai ligazóns de lingua sen formato na súa mensaxe.",
@@ -36,5 +38,7 @@
 	"logentry-massmessage-skipoptout": "A entrega de \"$4\" a $3 saltouse porque o destino retirouse da entrega de mensaxes",
 	"logentry-massmessage-skipnouser": "A entrega de \"$4\" a $3 saltouse porque a conta de usuario non existe",
 	"massmessage-cannot-rename": "Esta é unha conta do sistema e non se lle pode mudar o nome.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Envíe outra mensaxe]] ou [[Special:Statistics|consulte a cantidade de mensaxes que están á cola]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Envíe outra mensaxe]] ou [[Special:Statistics|consulte a cantidade de mensaxes que están á cola]].",
+	"massmessage-create-exists-short": "Xa en uso",
+	"massmessage-create-invalidsource-short": "Lista inválida"
 }

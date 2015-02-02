@@ -52,6 +52,8 @@
 	"massmessage-create-content": "Inhalt:",
 	"massmessage-create-source": "Quell:",
 	"massmessage-create-exists": "Eng Säit mat deem spezifizéierten Titel gëtt et schonn.",
+	"massmessage-create-exists-short": "Gëtt scho benotzt",
+	"massmessage-create-invalidsource-short": "Keng valabel Lëscht",
 	"massmessage-edit-pagetitle": "Ännere vu(n) $1",
 	"massmessage-edit-title": "Titel:",
 	"massmessage-edit-description": "Beschreiwung:",

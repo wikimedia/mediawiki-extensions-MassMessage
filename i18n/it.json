@@ -4,7 +4,8 @@
 			"Beta16",
 			"Rosh",
 			"Ontsed",
-			"Nemo bis"
+			"Nemo bis",
+			"Nivit"
 		]
 	},
 	"massmessage": "Invia messaggi massivamente",
@@ -84,6 +85,8 @@
 	"massmessage-create-exists": "Esiste già una pagina con il titolo indicato.",
 	"massmessage-create-nopermission": "Non hai il permesso di creare un elenco con questo titolo.",
 	"massmessage-create-invalidsource": "La fonte indicata non è un elenco di consegna o categoria validi con almeno una pagina.",
+	"massmessage-create-exists-short": "Già in uso",
+	"massmessage-create-invalidsource-short": "Non è un elenco valido",
 	"editmassmessagelist-legend": "Modifica elenco di consegna per messaggi massivi",
 	"massmessage-edit-pagetitle": "Modifica di $1",
 	"massmessage-edit-title": "Titolo:",

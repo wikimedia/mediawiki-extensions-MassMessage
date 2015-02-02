@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Veeven"
+			"Veeven",
+			"M phani"
 		]
 	},
-	"massmessage-form-submit": "పంపించు"
+	"massmessage-form-submit": "పంపించు",
+	"massmessage-create-exists-short": "ఇప్పటికే వాడుకలో ఉంది",
+	"massmessage-create-invalidsource-short": "సరి అయిన చిట్టా కాదు"
 }
