@@ -5,6 +5,7 @@
 		]
 	},
 	"massmessage": "Hulgasõnumi saatmine",
+	"createmassmessagelist": "Hulgasõnumi saatmisloendi koostamine",
 	"massmessage-desc": "Võimaldab lihtsasti saata loetletud kasutajatele sõnumi.",
 	"massmessage-form-spamlist": "Lehekülg või kategooria, kus on loetletud leheküljed, kuhu sõnum jätta:",
 	"massmessage-form-subject": "Sõnumi teema (ühtlasi muudatuse resümee):",
@@ -37,6 +38,13 @@
 	"logentry-massmessage-skipnouser": "Sõnumi \"$4\" saatmine leheküljele $3 jäi vahele, sest kasutajakontot pole olemas.",
 	"massmessage-cannot-rename": "See on süsteemikonto, mille nime ei saa muuta.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Saada teine sõnum]] või [[Special:Statistics|vaata mitu sõnumit on tööjärjes ootel]].",
+	"createmassmessagelist-legend": "Hulgasõnumi saatmisloendi koostamine",
+	"massmessage-create-title": "Pealkiri:",
+	"massmessage-create-description": "Kirjeldus:",
+	"massmessage-create-content": "Sisu:",
+	"massmessage-create-new": "Koosta uus saatmisloend",
+	"massmessage-create-import": "Impordi leheküljed olemasolevast loendist või kategooriast",
+	"massmessage-create-source": "Allikas:",
 	"massmessage-list-category": "Hulgasõnumi saatmisloendid",
 	"massmessage-list-category-desc": "See lehekülg on [[Special:MassMessage|hulgasõnumi]] tarkvaralisa saatmisloend."
 }
