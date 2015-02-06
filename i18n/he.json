@@ -82,6 +82,8 @@
 	"massmessage-create-exists": "דף כבר קיים בכותרת שצוינה.",
 	"massmessage-create-nopermission": "אין לך הרשאה ליצור רשימה בכותרת זו.",
 	"massmessage-create-invalidsource": "המקור שצוין אינו רשימת משלוח חוקית או קטגוריה עם דף אחד לפחות.",
+	"massmessage-create-exists-short": "כבר בשימוש",
+	"massmessage-create-invalidsource-short": "לא רשימה תקינה",
 	"editmassmessagelist-legend": "עריכת רשימת המשלוח של ההודעה ההמונית",
 	"massmessage-edit-pagetitle": "עריכת $1",
 	"massmessage-edit-title": "כותרת:",
