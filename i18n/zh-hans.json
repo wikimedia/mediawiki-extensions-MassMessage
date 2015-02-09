@@ -120,6 +120,8 @@
 	"apihelp-massmessage-param-spamlist": "页面包含着要留下消息的页面名单。",
 	"apihelp-massmessage-param-subject": "消息的主题行。",
 	"apihelp-massmessage-param-message": "消息正文。",
+	"apihelp-massmessage-example-1": "发送消息至位于[[Signpost Spamlist]]的列表，主题为“New Signpost”，消息正文“Please read it”",
+	"apihelp-query+mmsites-description": "为自动完成大量消息中网站字段的请求而提供服务。",
 	"apihelp-query+mmsites-param-term": "要搜索的前缀。",
 	"apihelp-query+mmsites-example-1": "自动完成“en”"
 }
