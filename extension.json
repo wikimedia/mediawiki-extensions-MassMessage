@@ -1,0 +1,217 @@
+{
+	"name": "MassMessage",
+	"version": "0.4.0",
+	"author": [
+		"Kunal Mehta",
+		"wctaiwan"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:MassMessage",
+	"descriptionmsg": "massmessage-desc",
+	"license-name": "GPL-2.0+",
+	"type": "specialpage",
+	"config": {
+		"NamespacesToPostIn": [
+			4
+		],
+		"NamespacesToConvert": {
+			"2": 3
+		},
+		"MassMessageAccountUsername": "MediaWiki message delivery",
+		"AllowGlobalMessaging": true,
+		"TrackingCategories": [
+			"massmessage-list-category"
+		]
+	},
+	"MessagesDirs": {
+		"MassMessage": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"MassMessageAlias": "MassMessage.alias.php",
+		"MassMessageMagic": "MassMessage.i18n.magic.php"
+	},
+	"APIModules": {
+		"massmessage": "ApiMassMessage",
+		"editmassmessagelist": "ApiEditMassMessageList"
+	},
+	"APIListModules": {
+		"mmsites": "ApiQueryMMSites"
+	},
+	"ContentHandlers": {
+		"MassMessageListContent": "MassMessageListContentHandler"
+	},
+	"JobClasses": {
+		"MassMessageJob": "MassMessageJob",
+		"MassMessageSubmitJob": "MassMessageSubmitJob",
+		"MassMessageServerSideJob": "MassMessageServerSideJob"
+	},
+	"GroupPermissions": {
+		"sysop": {
+			"massmessage": true
+		}
+	},
+	"AvailableRights": [
+		"massmessage"
+	],
+	"SpecialPages": {
+		"MassMessage": "SpecialMassMessage",
+		"CreateMassMessageList": "SpecialCreateMassMessageList",
+		"EditMassMessageList": "SpecialEditMassMessageList"
+	},
+	"LogTypes": [
+		"massmessage"
+	],
+	"LogActionsHandlers": {
+		"massmessage/*": "LogFormatter",
+		"massmessage/send": "MassMessageSendLogFormatter",
+		"massmessage/failure": "MassMessageFailureLogFormatter",
+		"massmessage/skipoptout": "MassMessageSkipLogFormatter",
+		"massmessage/skipnouser": "MassMessageSkipLogFormatter",
+		"massmessage/skipbadns": "MassMessageSkipLogFormatter"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"MassMessageHooks::onParserFirstCallInit"
+		],
+		"SpecialStatsAddExtra": [
+			"MassMessageHooks::onSpecialStatsAddExtra"
+		],
+		"APIQuerySiteInfoStatisticsInfo": [
+			"MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo"
+		],
+		"RenameUserPreRename": [
+			"MassMessageHooks::onRenameUserPreRename"
+		],
+		"UserGetReservedNames": [
+			"MassMessageHooks::onUserGetReservedNames"
+		],
+		"UnitTestsList": [
+			"MassMessageHooks::onUnitTestsList"
+		],
+		"BeforeEchoEventInsert": [
+			"MassMessageHooks::onBeforeEchoEventInsert"
+		],
+		"SkinTemplateNavigation": [
+			"MassMessageHooks::onSkinTemplateNavigation"
+		],
+		"BeforePageDisplay": [
+			"MassMessageHooks::onBeforePageDisplay"
+		]
+	},
+	"ResourceModules": {
+		"ext.MassMessage.autocomplete": {
+			"scripts": "ext.MassMessage.autocomplete.js",
+			"dependencies": "jquery.ui.autocomplete",
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.special.js": {
+			"scripts": [
+				"ext.MassMessage.special.js",
+				"ext.MassMessage.badhtml.js"
+			],
+			"styles": "ext.MassMessage.validation.css",
+			"messages": [
+				"massmessage-badhtml",
+				"massmessage-parse-badpage"
+			],
+			"dependencies": [
+				"ext.MassMessage.autocomplete",
+				"jquery.byteLimit",
+				"jquery.throttle-debounce",
+				"mediawiki.jqueryMsg"
+			],
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.special": {
+			"styles": "ext.MassMessage.special.css",
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.content": {
+			"styles": "ext.MassMessage.content.css",
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.content.js": {
+			"scripts": "ext.MassMessage.content.js",
+			"messages": [
+				"massmessage-content-remove",
+				"massmessage-content-emptylist",
+				"massmessage-content-addeditem",
+				"massmessage-content-removeerror",
+				"massmessage-content-removeconf",
+				"massmessage-content-removeyes",
+				"massmessage-content-removeno",
+				"massmessage-content-alreadyinlist",
+				"massmessage-content-invalidtitlesite",
+				"massmessage-content-invalidtitle",
+				"massmessage-content-invalidsite",
+				"massmessage-content-adderror"
+			],
+			"dependencies": [
+				"ext.MassMessage.autocomplete",
+				"jquery.confirmable",
+				"mediawiki.api",
+				"mediawiki.util",
+				"mediawiki.jqueryMsg"
+			],
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.content.noedit": {
+			"styles": "ext.MassMessage.content.noedit.css",
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.content.nojs": {
+			"styles": "ext.MassMessage.content.nojs.css",
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.create": {
+			"scripts": "ext.MassMessage.create.js",
+			"styles": "ext.MassMessage.validation.css",
+			"messages": [
+				"massmessage-create-exists-short",
+				"massmessage-create-invalidsource-short"
+			],
+			"dependencies": [
+				"mediawiki.jqueryMsg",
+				"ext.MassMessage.autocomplete"
+			],
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		},
+		"ext.MassMessage.edit": {
+			"scripts": "ext.MassMessage.edit.js",
+			"dependencies": "jquery.byteLimit",
+			"localBasePath": "modules",
+			"remoteExtPath": "MassMessage/modules"
+		}
+	},
+	"AutoloadClasses": {
+		"MassMessageHooks": "MassMessage.hooks.php",
+		"ApiMassMessage": "includes/ApiMassMessage.php",
+		"ApiEditMassMessageList": "includes/ApiEditMassMessageList.php",
+		"ApiQueryMMSites": "includes/ApiQueryMMSites.php",
+		"MassMessage": "includes/MassMessage.php",
+		"MassMessageTargets": "includes/MassMessageTargets.php",
+		"SpecialMassMessage": "includes/SpecialMassMessage.php",
+		"SpecialCreateMassMessageList": "includes/SpecialCreateMassMessageList.php",
+		"SpecialEditMassMessageList": "includes/SpecialEditMassMessageList.php",
+		"MassMessageJob": "includes/job/MassMessageJob.php",
+		"MassMessageServerSideJob": "includes/job/MassMessageServerSideJob.php",
+		"MassMessageSubmitJob": "includes/job/MassMessageSubmitJob.php",
+		"MassMessageFailureLogFormatter": "includes/logging/MassMessageFailureLogFormatter.php",
+		"MassMessageSendLogFormatter": "includes/logging/MassMessageSendLogFormatter.php",
+		"MassMessageSkipLogFormatter": "includes/logging/MassMessageSkipLogFormatter.php",
+		"MassMessageListContent": "includes/content/MassMessageListContent.php",
+		"MassMessageListContentHandler": "includes/content/MassMessageListContentHandler.php",
+		"MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php",
+		"MassMessageTestCase": "tests/MassMessageTestCase.php",
+		"MassMessageApiTestCase": "tests/MassMessageApiTestCase.php"
+	}
+}
