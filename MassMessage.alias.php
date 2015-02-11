@@ -43,6 +43,8 @@ $specialPageAliases['diq'] = array(
 /** Estonian (eesti) */
 $specialPageAliases['et'] = array(
 	'MassMessage' => array( 'Hulgasõnum' ),
+	'CreateMassMessageList' => array( 'Hulgasõnumi_loendi_koostamine' ),
+	'EditMassMessageList' => array( 'Hulgasõnumi_loendi_muutmine' ),
 );
 
 /** Persian (فارسی) */

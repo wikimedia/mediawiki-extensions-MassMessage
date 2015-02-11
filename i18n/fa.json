@@ -3,10 +3,12 @@
 		"authors": [
 			"Armin1392",
 			"Ebraminio",
-			"Reza1615"
+			"Reza1615",
+			"Mjbmr"
 		]
 	},
 	"massmessage": "ارسال انبوه پیام",
+	"createmassmessagelist": "ایجاد فهرست رساندن پیام انبوه",
 	"massmessage-desc": "اجازه می‌دهد کاربران به‌سادگی پیامی را فهرست از کاربران بفرستند",
 	"massmessage-form-spamlist": "صفحه‌های حاوی فهرستی از صفحه‌ها برای فرستادن پیام:",
 	"massmessage-form-subject": "عنوان پیام (همچنین در خلاصهٔ ویرایش استفاده شده‌است):",
@@ -39,5 +41,14 @@
 	"logentry-massmessage-skipnouser": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که حساب کاربری موجود نیست",
 	"massmessage-cannot-rename": "این یک حساب سامانه‌ای است و نمی‌تواند تغییر نام یابد",
 	"massmessage-nextsteps": "[[Special:MassMessage|ارسال پیام دیگر]] یا [[Special:Statistics|مشاهدهٔ اینکه چند پیام در صف قرار دارند]].",
+	"createmassmessagelist-legend": "ایجاد فهرست رساندن پیام انبوه",
+	"massmessage-create-description": "توضیحات:",
+	"massmessage-create-content": "محتوا:",
+	"massmessage-create-new": "ایجاد فهرستی تازه برای رساندن پیام",
+	"massmessage-create-import": "وارد کردن صفحه‌ها از فهرست موجود یا رده",
+	"massmessage-create-source": "مبدأ:",
+	"massmessage-create-editsummary": "ایجاد فهرست رساندن پیام انبوه",
+	"massmessage-edit-description": "توضیحات:",
+	"massmessage-edit-content": "صفحه‌های هدف:",
 	"massmessage-list-category": "فهرست‌های تحویل پیام انبوه"
 }

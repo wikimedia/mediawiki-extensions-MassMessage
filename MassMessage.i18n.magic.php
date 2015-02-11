@@ -42,7 +42,7 @@ $magicWords['es'] = array(
 
 /** Persian (فارسی) */
 $magicWords['fa'] = array(
-	'target' => array( 0, 'هذف' ),
+	'target' => array( 0, 'هدف' ),
 );
 
 /** Hindi (हिन्दी) */
