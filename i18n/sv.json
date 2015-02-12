@@ -5,7 +5,8 @@
 			"Jopparn",
 			"Lokal Profil",
 			"WikiPhoenix",
-			"Ainali"
+			"Ainali",
+			"Jenniesarina"
 		]
 	},
 	"massmessage": "Skicka massmeddelande",
@@ -76,6 +77,8 @@
 	"massmessage-create-import": "Importera sidor från en befintlig lista eller kategori",
 	"massmessage-create-source": "Källa:",
 	"massmessage-create-invalidtitle": "Den angivna titeln är inte giltig.",
+	"massmessage-create-exists-short": "Används redan",
+	"massmessage-create-invalidsource-short": "Ogiltig lista",
 	"massmessage-edit-pagetitle": "Redigerar $1",
 	"massmessage-edit-title": "Titel:",
 	"massmessage-edit-description": "Beskrivning:",
