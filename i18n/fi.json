@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Nike",
-			"Pxos"
+			"Pxos",
+			"Stryn"
 		]
 	},
 	"massmessage": "Lähetä joukkoviesti",
+	"createmassmessagelist": "Luo joukkoviestin lähetysluettelo",
+	"editmassmessagelist": "Muokkaa joukkoviestin lähetysluetteloa",
 	"massmessage-desc": "Antaa käyttäjille helpon keinon lähettää viestin käyttäjille, jotka on merkitty luetteloon.",
 	"massmessage-form-spamlist": "Sivu, joka sisältää luettelon niistä sivuista, joihin viesti halutaan:",
 	"massmessage-form-subject": "Viestin aihe (käytetään samalla muokkauksen yhteenvetona):",

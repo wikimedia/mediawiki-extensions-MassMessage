@@ -7,7 +7,8 @@
 			"Woytecr",
 			"Wiochman",
 			"Darellur",
-			"Openbk"
+			"Openbk",
+			"Peter Bowman"
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
@@ -38,6 +39,7 @@
 	"logentry-massmessage-skipbadns": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ miejsce docelowe znajdowało się w przestrzeni nazw, w której nie mogło być umieszczone",
 	"logentry-massmessage-skipnouser": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ konto użytkownika nie istnieje",
 	"massmessage-cannot-rename": "To jest konto systemowe i jego nazwa nie może być zmieniona.",
+	"massmessage-nextsteps": "[[Special:MassMessage|Wyślij kolejną wiadomość]] lub [[Special:Statistics|sprawdź, ile wiadomości jest zakolejkowanych]].",
 	"massmessage-content-pages": "Strony na tej liście",
 	"massmessage-content-pagesonsite": "Strony w $1:",
 	"massmessage-content-localpages": "Strony w tej wiki:",
@@ -52,6 +54,7 @@
 	"massmessage-content-addtitle": "Tytuł:",
 	"massmessage-content-addsubmit": "Dodaj stronę",
 	"massmessage-content-addedlistheading": "Dodane strony:",
+	"massmessage-content-addeditem": "$1 na $2",
 	"massmessage-content-alreadyinlist": "Strona jest już na liście.",
 	"massmessage-content-invalidtitle": "Tytuł jest nieprawidłowy.",
 	"massmessage-content-adderror": "Błąd API: $1",
@@ -63,15 +66,22 @@
 	"massmessage-create-import": "Import stron z istniejącej listy lub kategorii",
 	"massmessage-create-source": "Źródło:",
 	"massmessage-create-invalidtitle": "Wybrany tytuł jest nieprawidłowy.",
+	"massmessage-create-exists": "Strona o podanym tytule już istnieje.",
+	"massmessage-create-nopermission": "Nie masz uprawnień do tworzenia listy pod tym tytułem.",
 	"massmessage-create-exists-short": "Już w użyciu",
 	"massmessage-edit-pagetitle": "Edycja $1",
 	"massmessage-edit-title": "Tytuł:",
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-content": "Strony docelowe:",
+	"massmessage-edit-summary": "Opis zmian:",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|Następująca strona jest nieprawidłowa|Następujące strony są nieprawidłowe}}:\n$2",
 	"massmessage-edit-nopermission": "Nie masz uprawnień do edytowania tej listy.",
 	"massmessage-summary-addremove": "Dodano $1 {{PLURAL:$1|stronę|strony|stron}} i usunięto $2 {{PLURAL:$2|stronę|strony|stron}}",
 	"massmessage-summary-add": "Dodano [[:$1]]",
+	"massmessage-summary-addonsite": "Dodano $1 na $2",
+	"massmessage-summary-addmulti": "Dodano $1 {{PLURAL:$1|stronę|strony|stron}}",
 	"massmessage-summary-remove": "Usunięto [[:$1]]",
+	"massmessage-summary-removeonsite": "Usunięto $1 na $2",
+	"massmessage-summary-removemulti": "Usunięto $1 {{PLURAL:$1|stronę|strony|stron}}",
 	"massmessage-list-category": "Listy odbiorców masowych wiadomości"
 }
