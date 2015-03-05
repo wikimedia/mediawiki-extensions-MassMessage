@@ -41,5 +41,8 @@
 	"logentry-massmessage-skipnouser": "Viestiä \"$4\" ei toimitettu kohteeseen $3, koska käyttäjätunnusta ei ole olemassa",
 	"massmessage-cannot-rename": "Tämä on järjestelmän käyttämä tunnus eikä sitä voi nimetä uudelleen.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Lähetä toinen viesti]] tai [[Special:Statistics|katso kuinka moni viesti on jonossa]].",
+	"createmassmessagelist-legend": "Luo joukkoviestin lähetysluettelo",
+	"massmessage-create-new": "Luo uusi vastaanottajien luettelo",
+	"massmessage-create-import": "Tuo sivut olemassa olevasta luettelosta tai luokasta",
 	"massmessage-list-category": "Joukkoviestien lähetysluettelot"
 }
