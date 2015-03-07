@@ -28,9 +28,23 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 			array( '{{#target:User:<><}}', array(), ),
 			array( '{{#target:Project:!!!<><><><>', array(), ),
 			// project page and site
-			array( '{{#target:Project:Testing|en.wikipedia.org}}', array( 'title' => 'Project:Testing', 'site' => 'en.wikipedia.org', 'wiki' => 'enwiki' ), ),
+			array(
+				'{{#target:Project:Testing|en.wikipedia.org}}',
+				array(
+					'title' => 'Project:Testing',
+					'site' => 'en.wikipedia.org',
+					'wiki' => 'enwiki'
+				),
+			),
 			// user page and site
-			array( '{{#target:User talk:Test|fr.wikipedia.org}}', array( 'title' => 'User talk:Test', 'site' => 'fr.wikipedia.org', 'wiki' => 'frwiki' ), ),
+			array(
+				'{{#target:User talk:Test|fr.wikipedia.org}}',
+				array(
+					'title' => 'User talk:Test',
+					'site' => 'fr.wikipedia.org',
+					'wiki' => 'frwiki'
+				),
+			),
 		);
 	}
 

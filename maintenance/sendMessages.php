@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Script to send MassMessages server-side
@@ -47,7 +47,7 @@ class SendMassMessages extends Maintenance {
 		$pages = array();
 		$this->output( "Reading from \"$list\".");
 
-		while( $line = trim( fgets( $file ) ) ) {
+		while ( $line = trim( fgets( $file ) ) ) {
 			$exp = explode( '\t', $line );
 			$pages[] = array(
 				'title' => $exp[0],

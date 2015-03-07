@@ -55,7 +55,10 @@ class MassMessageSubmitJobTest extends MediaWikiTestCase {
 		return array(
 			array( $data, $pages ),
 			array( $data, $pages + array( array( 'wiki' => 'dewiki', 'title' => 'Baz foo' ) ) ),
-			array( $data + array( 'message' => 'rar' ), $pages + array( array( 'wiki' => 'zzwiki', 'title' => 'Title!' ) ) ),
+			array(
+				$data + array( 'message' => 'rar' ),
+				$pages + array( array( 'wiki' => 'zzwiki', 'title' => 'Title!' ) )
+			),
 		);
 	}
 }

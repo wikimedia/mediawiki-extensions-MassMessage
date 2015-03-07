@@ -7,8 +7,16 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 */
 	private function simulateJob( $title ) {
 		$subject = md5( MWCryptRand::generateHex( 15 ) );
-		$params = array( 'subject' => $subject, 'message' => 'This is a message.', 'title' => $title->getFullText() );
-		$params['comment'] = array( User::newFromName('Admin'), 'metawiki', 'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5' );
+		$params = array(
+			'subject' => $subject,
+			'message' => 'This is a message.',
+			'title' => $title->getFullText()
+		);
+		$params['comment'] = array(
+			User::newFromName('Admin'),
+			'metawiki',
+			'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5'
+		);
 		$job = new MassMessageJob( $title, $params );
 		$job->run();
 		return $subject;
@@ -30,7 +38,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 		//$this->assertTrue( $target->exists() ); // Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		$this->assertEquals(
-			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
+			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
+			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
 			$text
 		);
 	}
@@ -60,10 +69,13 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$target = Title::newFromText( 'Project:Opt out test page' );
 		self::updatePage( $target, '[[Category:Opted-out of message delivery]]');
 		$this->assertTrue( $fakejob->isOptedOut( $target ) );
-		$this->assertFalse( $fakejob->isOptedOut( Title::newFromText( 'Project:Some random page' ) ) );
+		$this->assertFalse( $fakejob->isOptedOut(
+			Title::newFromText( 'Project:Some random page' )
+		) );
 		$this->simulateJob( $target ); // Try posting a message to this page
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
-		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text ); // Nothing should be updated
+		// Nothing should be updated.
+		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text );
 	}
 
 }

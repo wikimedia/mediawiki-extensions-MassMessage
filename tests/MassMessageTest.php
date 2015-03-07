@@ -69,7 +69,7 @@ class MassMessageTest extends MassMessageTestCase {
 		$this->setMwGlobals( 'wgMassMessageAccountUsername', $name );
 		$user = MassMessage::getMessengerUser();
 		$this->assertEquals( $name, $user->getName() );
-		$this->assertTrue( in_array( 'bot' , $user->getGroups() ) );
+		$this->assertTrue( in_array( 'bot', $user->getGroups() ) );
 		$this->assertInstanceOf( 'InvalidPassword', $user->getPassword() );
 	}
 
@@ -82,7 +82,13 @@ class MassMessageTest extends MassMessageTestCase {
 		$title2 = Title::newfromtext( 'R2' );
 		self::updatePage( $title2, 'foo' );
 
-		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title )->getFullText() );
-		$this->assertEquals( $title2->getFullText(), MassMessage::followRedirect( $title2 )->getFullText() );
+		$this->assertEquals(
+			$title2->getFullText(),
+			MassMessage::followRedirect( $title )->getFullText()
+		);
+		$this->assertEquals(
+			$title2->getFullText(),
+			MassMessage::followRedirect( $title2 )->getFullText()
+		);
 	}
 }

@@ -13,7 +13,9 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->mergeMwGlobalArrayValue( 'wgGroupPermissions', array( '*' => array( 'editcontentmodel' => true ) ) );
+		$this->mergeMwGlobalArrayValue(
+			'wgGroupPermissions', array( '*' => array( 'editcontentmodel' => true ) )
+		);
 	}
 
 	/**

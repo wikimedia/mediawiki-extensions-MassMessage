@@ -33,7 +33,7 @@ class ApiEditMassMessageList extends ApiBase {
 				$target = MassMessageListContentHandler::extractTarget( $page );
 				if ( isset( $target['errors'] ) ) {
 					$item = array( '*' => $page );
-					foreach( $target['errors'] as $error ) {
+					foreach ( $target['errors'] as $error ) {
 						$item[$error] = '';
 					}
 					$invalidAdd[] = $item;
@@ -254,21 +254,12 @@ class ApiEditMassMessageList extends ApiBase {
 	}
 
 	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar&remove=Talk%3ABaz&token=TOKEN'
-			=> 'Add [[User talk:Foo]] and [[Talk:Bar]] to the delivery list [[Example]] and remove [[Talk:Baz]] from it'
-		);
-	}
-
-	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
 		return array(
-			'action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar&remove=Talk%3ABaz&token=TOKEN'
+			'action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar' .
+			'&remove=Talk%3ABaz&token=TOKEN'
 				=> 'apihelp-editmassmessagelist-example-1',
 		);
 	}

@@ -30,13 +30,6 @@ class ApiMassMessage extends ApiBase {
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Send a message to a list of pages';
-	}
-
 	public function getAllowedParams() {
 		return array(
 			'spamlist' => array(
@@ -52,18 +45,6 @@ class ApiMassMessage extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true
 			),
 			'token' => null,
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'spamlist' => 'Page containing list of pages to leave a message on',
-			'subject' => 'Subject line of the message',
-			'message' => 'Message body text',
-			'token' => 'An edit token from action=tokens'
 		);
 	}
 
@@ -92,21 +73,12 @@ class ApiMassMessage extends ApiBase {
 	}
 
 	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost&message=Please%20read%20it&token=TOKEN'
-			=> 'Send a message to the list at [[Signpost Spamlist]] with the subject "New Signpost", and message body of "Please read it"'
-		);
-	}
-
-	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
 		return array(
-			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost&message=Please%20read%20it&token=TOKEN'
+			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .
+			'&message=Please%20read%20it&token=TOKEN'
 				=> 'apihelp-massmessage-example-1',
 		);
 	}

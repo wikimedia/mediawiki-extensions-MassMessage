@@ -18,10 +18,10 @@ class MassMessageTargets {
 	 * preview and save in SpecialMassMessage.
 	 *
 	 * @param Title $spamlist
-	 * @param $normalize Whether to normalize and deduplicate the targets
+	 * @param bool $normalize Whether to normalize and deduplicate the targets
 	 * @return array|null
 	 */
-	 public static function getTargets( Title $spamlist, $normalize = true ) {
+	public static function getTargets( Title $spamlist, $normalize = true ) {
 		global $wgMemc;
 
 		if ( !$spamlist->exists() && !$spamlist->inNamespace( NS_CATEGORY ) ) {
@@ -150,7 +150,11 @@ class MassMessageTargets {
 		$parserOptions = $page->makeParserOptions( 'canonical' );
 		$parser = new Parser();
 		$parser->firstCallInit(); // So our initial parser function is added
-		$parser->setFunctionHook( 'target', 'MassMessageHooks::storeDataParserFunction' ); // Now overwrite it
+		// Now overwrite it
+		$parser->setFunctionHook(
+			'target',
+			'MassMessageHooks::storeDataParserFunction'
+		);
 
 		// Parse
 		$output = $parser->parse( $text, $spamlist, $parserOptions );

@@ -60,7 +60,7 @@ class MassMessageHooks {
 		if ( !$current ) {
 			$output->setProperty( 'massmessage-targets', serialize( array( $data ) ) );
 		} else {
-			$output->setProperty( 'massmessage-targets' , serialize(
+			$output->setProperty( 'massmessage-targets', serialize(
 				array_merge( unserialize( $current ),  array( $data ) ) ) );
 		}
 		return '';
@@ -87,7 +87,7 @@ class MassMessageHooks {
 	public static function onRenameUserPreRename( $uid, $oldName, $newName ) {
 		global $wgMassMessageAccountUsername;
 		if ( $oldName == $wgMassMessageAccountUsername ) {
-			return wfMessage( 'massmessage-cannot-rename' )->text() ;
+			return wfMessage( 'massmessage-cannot-rename' )->text();
 		}
 		return true;
 	}

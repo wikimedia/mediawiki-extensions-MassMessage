@@ -49,7 +49,10 @@ class MassMessageJob extends Job {
 	public function isOptedOut( Title $title) {
 		$wikipage = WikiPage::factory( $title );
 		$categories = $wikipage->getCategories();
-		$category = Title::makeTitle( NS_CATEGORY, wfMessage( 'massmessage-optout-category')->inContentLanguage()->text() );
+		$category = Title::makeTitle(
+			NS_CATEGORY,
+			wfMessage( 'massmessage-optout-category')->inContentLanguage()->text()
+		);
 		foreach ( $categories as $cat ) {
 			if ( $category->equals( $cat ) ) {
 				return true;
@@ -150,7 +153,8 @@ class MassMessageJob extends Job {
 		}
 
 		// If the page is using a different discussion system, handle it specially
-		if ( class_exists( 'LqtDispatch' ) && LqtDispatch::isLqtPage( $title ) ) { // This is the same check that LQT uses internally
+		if ( class_exists( 'LqtDispatch' ) && LqtDispatch::isLqtPage( $title ) ) {
+			// This is the same check that LQT uses internally
 			$this->addLQTThread();
 		} elseif ( $title->hasContentModel( 'flow-board' )
 			// But it can't be a Topic: page, see bug 71196
@@ -223,7 +227,8 @@ class MassMessageJob extends Job {
 		) {
 			$text = substr( $text, 0, -4 );
 		}
-		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )->params( $this->params['comment'] )->text();
+		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )
+				->params( $this->params['comment'] )->text();
 		return $text;
 	}
 

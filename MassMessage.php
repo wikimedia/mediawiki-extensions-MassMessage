@@ -72,17 +72,26 @@ $wgAutoloadClasses['ApiQueryMMSites'] = __DIR__ . '/includes/ApiQueryMMSites.php
 $wgAutoloadClasses['MassMessage'] = __DIR__ . '/includes/MassMessage.php';
 $wgAutoloadClasses['MassMessageTargets'] = __DIR__ . '/includes/MassMessageTargets.php';
 $wgAutoloadClasses['SpecialMassMessage'] = __DIR__ . '/includes/SpecialMassMessage.php';
-$wgAutoloadClasses['SpecialCreateMassMessageList'] = __DIR__ . '/includes/SpecialCreateMassMessageList.php';
-$wgAutoloadClasses['SpecialEditMassMessageList'] = __DIR__ . '/includes/SpecialEditMassMessageList.php';
+$wgAutoloadClasses['SpecialCreateMassMessageList']
+	= __DIR__ . '/includes/SpecialCreateMassMessageList.php';
+$wgAutoloadClasses['SpecialEditMassMessageList']
+	= __DIR__ . '/includes/SpecialEditMassMessageList.php';
 $wgAutoloadClasses['MassMessageJob'] = __DIR__ . '/includes/job/MassMessageJob.php';
-$wgAutoloadClasses['MassMessageServerSideJob'] = __DIR__ . '/includes/job/MassMessageServerSideJob.php';
+$wgAutoloadClasses['MassMessageServerSideJob']
+	= __DIR__ . '/includes/job/MassMessageServerSideJob.php';
 $wgAutoloadClasses['MassMessageSubmitJob'] = __DIR__ . '/includes/job/MassMessageSubmitJob.php';
-$wgAutoloadClasses['MassMessageFailureLogFormatter'] = __DIR__ . '/includes/logging/MassMessageFailureLogFormatter.php';
-$wgAutoloadClasses['MassMessageSendLogFormatter'] = __DIR__ . '/includes/logging/MassMessageSendLogFormatter.php';
-$wgAutoloadClasses['MassMessageSkipLogFormatter'] = __DIR__ . '/includes/logging/MassMessageSkipLogFormatter.php';
-$wgAutoloadClasses['MassMessageListContent'] = __DIR__ . '/includes/content/MassMessageListContent.php';
-$wgAutoloadClasses['MassMessageListContentHandler'] = __DIR__ . '/includes/content/MassMessageListContentHandler.php';
-$wgAutoloadClasses['MassMessageListDiffEngine'] = __DIR__ . '/includes/content/MassMessageListDiffEngine.php';
+$wgAutoloadClasses['MassMessageFailureLogFormatter']
+	= __DIR__ . '/includes/logging/MassMessageFailureLogFormatter.php';
+$wgAutoloadClasses['MassMessageSendLogFormatter']
+	= __DIR__ . '/includes/logging/MassMessageSendLogFormatter.php';
+$wgAutoloadClasses['MassMessageSkipLogFormatter']
+	= __DIR__ . '/includes/logging/MassMessageSkipLogFormatter.php';
+$wgAutoloadClasses['MassMessageListContent']
+	= __DIR__ . '/includes/content/MassMessageListContent.php';
+$wgAutoloadClasses['MassMessageListContentHandler']
+	= __DIR__ . '/includes/content/MassMessageListContentHandler.php';
+$wgAutoloadClasses['MassMessageListDiffEngine']
+	= __DIR__ . '/includes/content/MassMessageListDiffEngine.php';
 $wgAutoloadClasses['MassMessageTestCase'] = __DIR__ . '/tests/MassMessageTestCase.php';
 $wgAutoloadClasses['MassMessageApiTestCase'] = __DIR__ . '/tests/MassMessageApiTestCase.php';
 
