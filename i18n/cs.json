@@ -40,5 +40,6 @@
 	"logentry-massmessage-skipnouser": "Doručení „$4“ pro $3 bylo přeskočeno, protože uživatelský účet neexistuje",
 	"massmessage-cannot-rename": "Toto je systémový účet, který nemůže být přejmenován.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Poslat další zprávu]] nebo [[Special:Statistics|zobrazit počet zpráv ve frontě]].",
-	"massmessage-create-exists-short": "Již se používá"
+	"massmessage-create-exists-short": "Již se používá",
+	"massmessage-list-category-desc": "Stránka je seznamem příjemců pro rozšíření [[Special:MassMessage|MassMessage]]."
 }
