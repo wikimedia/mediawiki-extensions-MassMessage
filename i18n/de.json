@@ -105,5 +105,7 @@
 	"massmessage-summary-removeonsite": "$1 auf $2 entfernt",
 	"massmessage-summary-removemulti": "{{PLURAL:$1|Eine Seite|$1 Seiten}} entfernt",
 	"massmessage-list-category": "Massennachrichten-Versandlisten",
-	"massmessage-list-category-desc": "Die Seite ist eine Versandliste für die [[Special:MassMessage|Massennachrichten]]-Erweiterung."
+	"massmessage-list-category-desc": "Die Seite ist eine Versandliste für die [[Special:MassMessage|Massennachrichten]]-Erweiterung.",
+	"apihelp-editmassmessagelist-param-add": "Titel, die zur Liste hinzugefügt werden sollen.",
+	"apihelp-massmessage-param-message": "Text des Nachrichtenkörpers."
 }
