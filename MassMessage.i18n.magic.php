@@ -2,6 +2,7 @@
 /**
  * Internationalization file.
  */
+// @codingStandardsIgnoreFile
 
 $magicWords = array();
 
