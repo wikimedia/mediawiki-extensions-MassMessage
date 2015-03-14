@@ -107,5 +107,6 @@
 	"massmessage-list-category": "Massennachrichten-Versandlisten",
 	"massmessage-list-category-desc": "Die Seite ist eine Versandliste für die [[Special:MassMessage|Massennachrichten]]-Erweiterung.",
 	"apihelp-editmassmessagelist-param-add": "Titel, die zur Liste hinzugefügt werden sollen.",
+	"apihelp-massmessage-param-subject": "Betreffzeile der Nachricht.",
 	"apihelp-massmessage-param-message": "Text des Nachrichtenkörpers."
 }
