@@ -103,5 +103,6 @@
 	"massmessage-summary-removeonsite": "於 $2 已移除 $1",
 	"massmessage-summary-removemulti": "已移除 $1 個{{PLURAL:$1|頁面}}",
 	"massmessage-list-category": "大量訊息發送清單",
-	"massmessage-list-category-desc": "該頁面為 [[Special:MassMessage|MassMessage]] 擴充套件的發送清單。"
+	"massmessage-list-category-desc": "該頁面為 [[Special:MassMessage|MassMessage]] 擴充套件的發送清單。",
+	"apihelp-query+mmsites-param-term": "要搜尋的字首。"
 }
