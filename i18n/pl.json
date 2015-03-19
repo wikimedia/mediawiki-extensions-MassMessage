@@ -12,6 +12,7 @@
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
+	"createmassmessagelist": "Utwórz listę masowych wiadomości",
 	"massmessage-desc": "Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników",
 	"massmessage-form-spamlist": "Strona albo kategoria zawierająca listę stron, na których zostawić wiadomość:",
 	"massmessage-form-subject": "Temat wiadomości (także używany jako podsumowanie edycji):",
