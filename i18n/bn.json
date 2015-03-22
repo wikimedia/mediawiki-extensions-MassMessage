@@ -3,10 +3,12 @@
 		"authors": [
 			"Aftab1995",
 			"Bellayet",
-			"Tauhid16"
+			"Tauhid16",
+			"Aftabuzzaman"
 		]
 	},
 	"massmessage": "গণ বার্তা পাঠাও",
+	"createmassmessagelist": "গণ বার্তা প্রেরণ তালিকা তৈরি করুন",
 	"massmessage-desc": "একটি তালিকার ব্যবহারকারীদের সহজে কোনো বার্তা পাঠানোর সহজ ব্যবস্থা",
 	"massmessage-form-spamlist": "পাতাটিতে একটি পাতা বা বিষয়শ্রেণীর তালিকা রয়েছে যেখানে বার্তা রাখতে হবে:",
 	"massmessage-form-subject": "বার্তার বিষয়। সম্পাদনা সারাংশ হিসেবেও ব্যবহৃত হবে।",
@@ -14,6 +16,8 @@
 	"massmessage-form-preview": "প্রাকদর্শন",
 	"massmessage-form-submit": "পাঠাও",
 	"massmessage-fieldset-preview": "প্রাকদর্শন",
+	"massmessage-fieldset-info": "তথ্য",
+	"massmessage-preview-count": "আপনার বার্তাটি {{PLURAL:$1|$1টি পাতায়}} পাঠানো হবে।",
 	"massmessage-submitted": "{{PLURAL:$1|$1টি পাতায়}} আপনার পাঠানো বার্তাটি অপেক্ষমান রয়েছে।",
 	"massmessage-just-preview": "এটি শুধুমাত্র একটি প্রাকদর্শন। বার্তা পাঠাতে \"{{int:massmessage-form-submit}}\" চাপুন।",
 	"massmessage-empty-subject": "বিষয় লাইনটি খালি।",
@@ -62,5 +66,6 @@
 	"massmessage-summary-removeonsite": "$2 থেকে $1 সরানো হয়েছে",
 	"massmessage-summary-removemulti": "$1টি {{PLURAL:$1|পাতা}} সরানো হয়েছে",
 	"massmessage-list-category": "গণবার্তা বিতরণ তালিকা",
-	"massmessage-list-category-desc": "এই পাতাটি [[Special:MassMessage|গণবার্তা]] এক্সটেনশনের বিতরণ তালিকা।"
+	"massmessage-list-category-desc": "এই পাতাটি [[Special:MassMessage|গণবার্তা]] এক্সটেনশনের বিতরণ তালিকা।",
+	"apihelp-query+mmsites-example-1": "স্বয়ংপূরণ \"bn\""
 }

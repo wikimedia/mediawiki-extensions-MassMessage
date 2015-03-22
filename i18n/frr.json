@@ -5,6 +5,7 @@
 		]
 	},
 	"massmessage": "Schüür en streibriaf",
+	"createmassmessagelist": "Streibriaf-adreslist maage",
 	"massmessage-desc": "Diarmä kön brükern lacht en bööd tu en list faan brükern schüür",
 	"massmessage-form-spamlist": "Sidj of kategorii mä en sidjenlist för streibriaw:",
 	"massmessage-form-subject": "Hoodrä (woort uk üs tuupfaadang brükt):",
@@ -37,5 +38,7 @@
 	"logentry-massmessage-skipoptout": "Det ufleewrin faan \"$4\" tu $3 as auersprüngen wurden, auer det sidj nian bööd uunnem wal.",
 	"logentry-massmessage-skipnouser": "Det ufleewrin faan \"$4\" tu $3 as auersprüngen wurden, auer diar ei son brükerkonto as.",
 	"massmessage-cannot-rename": "Det as en süsteemkonto an koon ei amnäämd wurd.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Ian bööd muar schüür]] of iarst ans [[Special:Statistics|luke, hü fölen al üüb a postluuper teew]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Ian bööd muar schüür]] of iarst ans [[Special:Statistics|luke, hü fölen al üüb a postluuper teew]].",
+	"createmassmessagelist-legend": "Streibriaf-adreslist maage",
+	"massmessage-create-editsummary": "Streibriaf-adreslist maage"
 }
