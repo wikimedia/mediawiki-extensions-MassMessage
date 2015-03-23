@@ -6,13 +6,14 @@
 			"Shirayuki",
 			"Liuxinyu970226",
 			"Robby",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Umherirrender"
 		]
 	},
 	"massmessage": "{{doc-special|MassMessage}}",
 	"createmassmessagelist": "{{doc-special|CreateMassMessageList}}",
 	"editmassmessagelist": "{{doc-special|EditMassMessageList}}",
-	"massmessage-desc": "{{desc|name=Mass Message|url=http://www.mediawiki.org/wiki/Extension:MassMessage}}",
+	"massmessage-desc": "{{desc|name=Mass Message|url=https://www.mediawiki.org/wiki/Extension:MassMessage}}",
 	"massmessage-form-spamlist": "Label for an inputbox on [[Special:MassMessage]].",
 	"massmessage-form-subject": "Label for an inputbox on [[Special:MassMessage]].",
 	"massmessage-form-message": "Used as label for a textarea on [[Special:MassMessage]].",

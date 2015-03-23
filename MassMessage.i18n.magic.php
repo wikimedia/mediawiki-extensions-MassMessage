@@ -79,3 +79,8 @@ $magicWords['vi'] = array(
 $magicWords['zh-hans'] = array(
 	'target' => array( 0, '目标' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$magicWords['zh-hant'] = array(
+	'target' => array( 0, '目標' ),
+);
