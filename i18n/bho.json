@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nepaboy"
+		]
+	},
+	"massmessage-create-exists": "निर्दिष्ट नाम से एगो पन्ना पहिले से हीं उपलब्ध बा।",
+	"massmessage-create-nopermission": "आपके इ नाम से एगो सूची बनावे के अनुमति नईखे।"
+}
