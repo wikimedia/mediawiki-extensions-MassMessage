@@ -49,6 +49,7 @@
 	"massmessage-create-new": "Koosta uus saatmisloend",
 	"massmessage-create-import": "Impordi leheküljed olemasolevast loendist või kategooriast",
 	"massmessage-create-source": "Allikas:",
+	"massmessage-create-invalidtitle": "Määratud pealkiri on vigane.",
 	"massmessage-edit-invalidtitle": "Selle pealkirja all pole sobivat hulgasõnumi saatmisloendit.",
 	"massmessage-list-category": "Hulgasõnumi saatmisloendid",
 	"massmessage-list-category-desc": "See lehekülg on [[Special:MassMessage|hulgasõnumi]] tarkvaralisa saatmisloend."
