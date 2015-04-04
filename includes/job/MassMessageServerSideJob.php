@@ -33,31 +33,47 @@ class MassMessageServerSideJob extends MassMessageJob {
 	}
 
 	protected function editPage() {
+		$tries = 1;
+		$titleText = $this->title->getPrefixedText();
 		$user = MassMessage::getMessengerUser();
-		$page = WikiPage::factory( $this->title );
 		$subject = $this->params['subject'];
 		$text = "== $subject ==\n\n{$this->makeText()}";
-		$flags = 0;
-		if ( $page->exists() ) {
-			$oldContent = $page->getContent( Revision::RAW );
-			$text = $oldContent->getNativeData() . "\n\n" . $text;
-			$flags = $flags | EDIT_UPDATE;
-		} else {
-			$flags = $flags | EDIT_NEW;
-		}
-		if ( $this->title->inNamespace( NS_USER_TALK ) ) {
-			$flags = $flags | EDIT_FORCE_BOT;
-		}
-		$status = $page->doEditContent(
-			new WikitextContent( $text ),
-			$subject,
-			$flags,
-			false,
-			$user
-		);
-		if ( !$status->isOK() ) {
-			$errors = $status->getErrorsArray();
-			$this->logLocalFailure( $errors[0] );
+		while ( true ) {
+			$page = WikiPage::factory( $this->title );
+			$flags = 0;
+			if ( $page->exists() ) {
+				$oldContent = $page->getContent( Revision::RAW );
+				$text = $oldContent->getNativeData() . "\n\n" . $text;
+				$flags = $flags | EDIT_UPDATE;
+			} else {
+				$flags = $flags | EDIT_NEW;
+			}
+			if ( $this->title->inNamespace( NS_USER_TALK ) ) {
+				$flags = $flags | EDIT_FORCE_BOT;
+			}
+			$status = $page->doEditContent(
+				new WikitextContent( $text ),
+				$subject,
+				$flags,
+				false,
+				$user
+			);
+			if ( $status->isOK() ) {
+				break;
+			} else {
+				if ( $status->hasMessage( 'edit-conflict' ) ) {
+					if ( $tries > 5 ) {
+						throw new Exception(
+							"Got 5 edit conflicts when trying to edit $titleText"
+						);
+					} else {
+						$tries++;
+						continue;
+					}
+				} else {
+					throw new Exception( "Error editing $titleText: {$status->getWikiText()}" );
+				}
+			}
 		}
 	}
 }
