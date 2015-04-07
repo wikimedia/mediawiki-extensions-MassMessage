@@ -28,6 +28,13 @@ $specialPageAliases['arz'] = array(
 	'MassMessage' => array( 'رسايل_كتيره' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'MassMessage' => array( 'بَزین_پیام' ),
+	'CreateMassMessageList' => array( 'بَزین_پیامی_لیست_ئی_جۆڑ_کورتین' ),
+	'EditMassMessageList' => array( 'بَزین_پیامی_لیست_ئی_دستکاری_کورتین' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
