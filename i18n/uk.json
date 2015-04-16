@@ -4,7 +4,8 @@
 			"Andriykopanytsia",
 			"Ahonc",
 			"Ата",
-			"Olion"
+			"Olion",
+			"Piramidion"
 		]
 	},
 	"massmessage": "Масове надсилання повідомлень",
@@ -35,8 +36,8 @@
 	"massmessage-parse-badurl": "\"$1\" не є коректним сайтом",
 	"massmessage-parse-badpage": "\"$1\" не є коректною назвою сторінки",
 	"massmessage-global-disallowed": "Повідомлення можна надіслати лише до місцевих сторінок.",
-	"right-massmessage": "Надіслати повідомлення кільком користувачам одночасно",
-	"action-massmessage": "надіслати повідомлення кільком користувачам одночасно",
+	"right-massmessage": "надсилання повідомлення кільком користувачам одночасно",
+	"action-massmessage": "надсилання повідомлення кільком користувачам одночасно",
 	"log-name-massmessage": "Журнал масових повідомлень",
 	"log-description-massmessage": "Ці події відстежують надсилання повідомлень користувачами.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3",
