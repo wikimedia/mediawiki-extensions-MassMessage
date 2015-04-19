@@ -32,6 +32,7 @@
 	"massmessage-badhtml": "ייתכן שבהודעה שלך יש {{PLURAL:$2|תג HTML לא סגור|תגי HTML לא סגורים}}: $1.",
 	"massmessage-parse-badurl": "\"$1\" אינו אתר תקין.",
 	"massmessage-parse-badpage": "\"$1\" אינו שם דף תקין.",
+	"massmessage-parse-badexternal": "\"$1\" הוא לא כותרת דף תקינה. יעדים בין־לשוניים צריכים להיות מוזנים באמצעות הפרמטר site‏ (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "אפשר לשלוח הודעות רק לדפים מקומיים.",
 	"right-massmessage": "שליחה של הודעות למשתמשים מרובים",
 	"action-massmessage": "לשלוח הודעות למשתמשים רבים",

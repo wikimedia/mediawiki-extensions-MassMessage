@@ -21,6 +21,7 @@
 	"massmessage-hidden-comment": "<!-- Message gouf vum User:$1@$2 geschéckt, deen d'Lëscht op $3 benotzt huet-->",
 	"massmessage-parse-badurl": "\"$1\" ass kee valabele Site",
 	"massmessage-parse-badpage": "\"$1\" ass kee valabelen Titel fir eng Säit",
+	"massmessage-parse-badexternal": "\"$1\" ass keen valabele Säitentitel. Interwiki-Ziler sollten mat de Paramete vum Site spezifizéiert ginn(<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Message kënnen nëmme op lokal Säite geschéckt ginn.",
 	"right-massmessage": "E Message u méi Benotzer matenee schécken",
 	"action-massmessage": "e Message u verschidde Benotzer gläichzäiteg schécken",
