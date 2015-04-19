@@ -139,9 +139,18 @@ class MassMessage {
 	 */
 	public static function processPFData( $page, $site ) {
 		global $wgCanonicalServer, $wgAllowGlobalMessaging;
-
-		if ( Title::newFromText( $page ) === null ) {
+		$titleObj = Title::newFromText( $page );
+		if ( $titleObj === null ) {
 			return self::parserError( 'massmessage-parse-badpage', $page );
+		} elseif ( $titleObj->isExternal() ) {
+			// interwiki links don't work
+			if ( $wgAllowGlobalMessaging ) {
+				// tell them they need to use the |site= parameter
+				return self::parserError( 'massmessage-parse-badexternal', $page );
+			} else {
+				// just tell them global messaging is disabled
+				return self::parserError( 'massmessage-global-disallowed' );
+			}
 		}
 
 		$data = array( 'title' => $page, 'site' => trim( $site ) );
