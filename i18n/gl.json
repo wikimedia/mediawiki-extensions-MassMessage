@@ -98,6 +98,7 @@
 	"massmessage-summary-removemulti": "{{PLURAL:$1|Eliminada|Eliminadas}} $1 {{PLURAL:$1|páxina|páxinas}}",
 	"massmessage-list-category": "Listas de entrega de mensaxes en masa",
 	"massmessage-list-category-desc": "A páxina é unha lista de entrega para a extensión [[Special:MassMessage|MassMessage]]",
+	"apihelp-editmassmessagelist-description": "Editar unha lista de entrega de mensaxes en masa.",
 	"apihelp-editmassmessagelist-param-add": "Títulos a engadir á lista.",
 	"apihelp-editmassmessagelist-param-remove": "Titulos a eliminar da lista."
 }

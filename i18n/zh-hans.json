@@ -38,6 +38,7 @@
 	"massmessage-badhtml": "你的消息可能含有$2个未闭合的HTML标签：$1。",
 	"massmessage-parse-badurl": "“$1”不是一个有效的网站。",
 	"massmessage-parse-badpage": "“$1”不是一个有效的页面标题。",
+	"massmessage-parse-badexternal": "“$1”不是一个有效的页面标题。跨wiki目标应该制定使用网站参数（<kbd>|site=www.example.org</kbd>）。",
 	"massmessage-global-disallowed": "消息只可以发送至本地页面。",
 	"right-massmessage": "一次将一条消息发送给多个用户",
 	"action-massmessage": "一次将一条消息发送给多个用户",

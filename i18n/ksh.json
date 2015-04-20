@@ -29,6 +29,7 @@
 	"massmessage-badhtml": "Opjepaß: En Dinge Nohreesch {{PLURAL:$2|künnt ene|künnte $1|sulltt keine}} <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"HyperText Markup Language\">HTML</i>-{{PLURAL:$2|Befähl|Befähle|Befähl}} dren sin, {{PLURAL:$2|dä|di|dä}} nit zoh {{PLURAL:$2|jeiht|jonn|jeiht}}.",
 	"massmessage-parse-badurl": "„$1“ es kein jölteje ẞait",
 	"massmessage-parse-badpage": "„$1“ es kein jölteje Överschrevv för en Sigg",
+	"massmessage-parse-badexternal": "„$1“ es kein jölteje Övverschreff för en Sigg. Zihle en anndere Wikkis sulle övver dä Parramehter „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">site</code>“ aanjejovve wähde, allsu esu: „<kbd lang=\"en\" xml:lang=\"en\" dir=\"ltr\">|site=www.example.org</kbd>“",
 	"massmessage-global-disallowed": "Nohreeschte künne blohß op Sigge heh em Wikki jedonn wähde",
 	"right-massmessage": "Schrihv en Nohreesch en einem rötsch aan Metmaacher angmass",
 	"action-massmessage": "schrihv en Nohreesch en einem rötsch aan Metmaacher angmass",
