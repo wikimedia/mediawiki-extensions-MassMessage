@@ -15,7 +15,7 @@
 	"massmessage-form-submit": "Жіберу",
 	"massmessage-fieldset-preview": "Қарап шығу",
 	"massmessage-fieldset-info": "Мәлімет",
-	"massmessage-preview-count": "Сіздің хабарламаңыз {{PLURAL:$1|$1 бетке|$1 бетке}} жіберілді.",
+	"massmessage-preview-count": "Сіздің хабарламаңыз {{PLURAL:$1|$1 бетке|$1 бетке}} жіберіледі.",
 	"massmessage-submitted": "Сіздің хабарламаңыз {{PLURAL:$1|$1 бетке|$1 бетке}} жеткізіп беру үшін кезекке қойылды.",
 	"massmessage-just-preview": "Бұл жай қарап шығу. «{{int:massmessage-form-submit}}» дегенді басып хабарламаны жіберіңіз.",
 	"massmessage-spamlist-doesnotexist": "Көрсетілген жеткізіп беру тізім беті немесе санат жоқ.",
@@ -73,6 +73,8 @@
 	"massmessage-create-invalidtitle": "Көрсетілген атау жарамсыз.",
 	"massmessage-create-exists": "Көрсетілген атауда бет әлдеқашан бар.",
 	"massmessage-create-nopermission": "Бұл атаумен тізім құруға рұқсатыңыз жоқ.",
+	"massmessage-create-exists-short": "Әлдеқашан қолданылады",
+	"massmessage-create-invalidsource-short": "Жарамды тізім емес",
 	"editmassmessagelist-legend": "Жаппай хабарлама жеткізіп беру тізімін өңдеу",
 	"massmessage-edit-pagetitle": "Өңделуде $1",
 	"massmessage-edit-title": "Атауы:",
@@ -91,6 +93,8 @@
 	"massmessage-summary-remove": "[[:$1]] беті аласталды",
 	"massmessage-summary-removeonsite": "$2 дегеннен $1 беті аласталды",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|бет}} аласталды",
-	"massmessage-list-category": "Жаппай хабарлама жеткізіп беру тізімі",
-	"massmessage-list-category-desc": "[[Special:MassMessage|Жаппай хабарлама жіберу]] кеңейтілімі үшін жеткізіп беру тізімі беті"
+	"massmessage-list-category": "Жаппай хабарлама жеткізіп беру тізімдері",
+	"massmessage-list-category-desc": "[[Special:MassMessage|Жаппай хабарлама жіберу]] кеңейтілімі үшін жеткізіп беру тізімі беті",
+	"apihelp-editmassmessagelist-description": "Жаппай хабарлама жеткізіп беру тізімін өңдеу.",
+	"apihelp-editmassmessagelist-param-spamlist": "Жеткізіп беру тізімі атауын жаңарту"
 }
