@@ -50,6 +50,11 @@ $magicWords['hi'] = array(
 	'target' => array( 0, 'लक्ष्य' ),
 );
 
+/** Georgian (ქართული) */
+$magicWords['ka'] = array(
+	'target' => array( 0, 'მიზანი', 'სამიზნე' ),
+);
+
 /** Korean (한국어) */
 $magicWords['ko'] = array(
 	'target' => array( 0, '대상' ),
