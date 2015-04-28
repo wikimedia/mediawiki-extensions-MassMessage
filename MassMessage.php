@@ -151,11 +151,13 @@ $wgResourceModules['ext.MassMessage.special.js'] = array(
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.special'] = array(
+	'position' => 'top',
 	'styles' => 'ext.MassMessage.special.css',
 	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.content'] = array(
+	'position' => 'top',
 	'styles' => 'ext.MassMessage.content.css',
 	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
@@ -187,11 +189,13 @@ $wgResourceModules['ext.MassMessage.content.js'] = array(
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.content.noedit'] = array(
+	'position' => 'top',
 	'styles' => 'ext.MassMessage.content.noedit.css',
 	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
 );
 $wgResourceModules['ext.MassMessage.content.nojs'] = array(
+	'position' => 'top',
 	'styles' => 'ext.MassMessage.content.nojs.css',
 	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'MassMessage/modules',
