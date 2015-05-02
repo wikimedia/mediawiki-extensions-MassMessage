@@ -25,6 +25,11 @@ $magicWords['cs'] = array(
 	'target' => array( 0, 'cíl' ),
 );
 
+/** Chuvash (Чӑвашла) */
+$magicWords['cv'] = array(
+	'target' => array( 0, 'target' ),
+);
+
 /** German (Deutsch) */
 $magicWords['de'] = array(
 	'target' => array( 0, 'ziel' ),
