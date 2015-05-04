@@ -4,11 +4,11 @@
 			"Умар"
 		]
 	},
-	"massmessage": "Дукха хаамаш кхехьийта",
+	"massmessage": "Дукха хаамаш кхехьийтар",
 	"createmassmessagelist": "Дукху дӀакхачоран могӀам кхоллар",
 	"editmassmessagelist": "Дукху дӀакхачоран могӀам хийцар",
 	"massmessage-desc": "Дукху дкъашхошка атта хаамаш бахьийта таро хуьлуьйту",
-	"massmessage-form-spamlist": "Хаам бохуьйтуш болу агӀонийн могӀа болу агӀо:",
+	"massmessage-form-spamlist": "Хаам бохуьйтуш болу агӀонийн могӀа болу категори я агӀонийн могӀам:",
 	"massmessage-form-subject": "Хаамах лаьцна (кхин лелош ю хийцамах лаьцна яздеш):",
 	"massmessage-form-message": "Хааман йоза:",
 	"massmessage-form-preview": "Хьалха хьажар",
