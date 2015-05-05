@@ -13,18 +13,13 @@
 		"NamespacesToPostIn": [
 			4
 		],
+		"AllowGlobalMessaging": true,
 		"NamespacesToConvert": {
 			"2": 3
 		},
 		"MassMessageAccountUsername": "MediaWiki message delivery",
-		"AllowGlobalMessaging": true,
 		"TrackingCategories": [
 			"massmessage-list-category"
-		]
-	},
-	"MessagesDirs": {
-		"MassMessage": [
-			"i18n"
 		]
 	},
 	"ExtensionMessagesFiles": {
@@ -35,40 +30,16 @@
 		"massmessage": "ApiMassMessage",
 		"editmassmessagelist": "ApiEditMassMessageList"
 	},
-	"APIListModules": {
-		"mmsites": "ApiQueryMMSites"
-	},
-	"ContentHandlers": {
-		"MassMessageListContent": "MassMessageListContentHandler"
-	},
-	"JobClasses": {
-		"MassMessageJob": "MassMessageJob",
-		"MassMessageSubmitJob": "MassMessageSubmitJob",
-		"MassMessageServerSideJob": "MassMessageServerSideJob"
-	},
-	"GroupPermissions": {
-		"sysop": {
-			"massmessage": true
-		}
-	},
-	"AvailableRights": [
-		"massmessage"
-	],
-	"SpecialPages": {
-		"MassMessage": "SpecialMassMessage",
-		"CreateMassMessageList": "SpecialCreateMassMessageList",
-		"EditMassMessageList": "SpecialEditMassMessageList"
-	},
 	"LogTypes": [
 		"massmessage"
 	],
-	"LogActionsHandlers": {
-		"massmessage/*": "LogFormatter",
-		"massmessage/send": "MassMessageSendLogFormatter",
-		"massmessage/failure": "MassMessageFailureLogFormatter",
-		"massmessage/skipoptout": "MassMessageSkipLogFormatter",
-		"massmessage/skipnouser": "MassMessageSkipLogFormatter",
-		"massmessage/skipbadns": "MassMessageSkipLogFormatter"
+	"APIListModules": {
+		"mmsites": "ApiQueryMMSites"
+	},
+	"MessagesDirs": {
+		"MassMessage": [
+			"i18n"
+		]
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
@@ -99,12 +70,13 @@
 			"MassMessageHooks::onBeforePageDisplay"
 		]
 	},
+	"ContentHandlers": {
+		"MassMessageListContent": "MassMessageListContentHandler"
+	},
 	"ResourceModules": {
 		"ext.MassMessage.autocomplete": {
 			"scripts": "ext.MassMessage.autocomplete.js",
-			"dependencies": "jquery.ui.autocomplete",
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			"dependencies": "jquery.ui.autocomplete"
 		},
 		"ext.MassMessage.special.js": {
 			"scripts": [
@@ -121,19 +93,15 @@
 				"jquery.byteLimit",
 				"jquery.throttle-debounce",
 				"mediawiki.jqueryMsg"
-			],
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			]
 		},
 		"ext.MassMessage.special": {
-			"styles": "ext.MassMessage.special.css",
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			"position": "top",
+			"styles": "ext.MassMessage.special.css"
 		},
 		"ext.MassMessage.content": {
-			"styles": "ext.MassMessage.content.css",
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			"position": "top",
+			"styles": "ext.MassMessage.content.css"
 		},
 		"ext.MassMessage.content.js": {
 			"scripts": "ext.MassMessage.content.js",
@@ -157,19 +125,15 @@
 				"mediawiki.api",
 				"mediawiki.util",
 				"mediawiki.jqueryMsg"
-			],
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			]
 		},
 		"ext.MassMessage.content.noedit": {
-			"styles": "ext.MassMessage.content.noedit.css",
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			"position": "top",
+			"styles": "ext.MassMessage.content.noedit.css"
 		},
 		"ext.MassMessage.content.nojs": {
-			"styles": "ext.MassMessage.content.nojs.css",
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			"position": "top",
+			"styles": "ext.MassMessage.content.nojs.css"
 		},
 		"ext.MassMessage.create": {
 			"scripts": "ext.MassMessage.create.js",
@@ -181,16 +145,42 @@
 			"dependencies": [
 				"mediawiki.jqueryMsg",
 				"ext.MassMessage.autocomplete"
-			],
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			]
 		},
 		"ext.MassMessage.edit": {
 			"scripts": "ext.MassMessage.edit.js",
-			"dependencies": "jquery.byteLimit",
-			"localBasePath": "modules",
-			"remoteExtPath": "MassMessage/modules"
+			"dependencies": "jquery.byteLimit"
 		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "MassMessage/modules"
+	},
+	"JobClasses": {
+		"MassMessageJob": "MassMessageJob",
+		"MassMessageSubmitJob": "MassMessageSubmitJob",
+		"MassMessageServerSideJob": "MassMessageServerSideJob"
+	},
+	"GroupPermissions": {
+		"sysop": {
+			"massmessage": true
+		}
+	},
+	"LogActionsHandlers": {
+		"massmessage/*": "LogFormatter",
+		"massmessage/send": "MassMessageSendLogFormatter",
+		"massmessage/failure": "MassMessageFailureLogFormatter",
+		"massmessage/skipoptout": "MassMessageSkipLogFormatter",
+		"massmessage/skipnouser": "MassMessageSkipLogFormatter",
+		"massmessage/skipbadns": "MassMessageSkipLogFormatter"
+	},
+	"AvailableRights": [
+		"massmessage"
+	],
+	"SpecialPages": {
+		"MassMessage": "SpecialMassMessage",
+		"CreateMassMessageList": "SpecialCreateMassMessageList",
+		"EditMassMessageList": "SpecialEditMassMessageList"
 	},
 	"AutoloadClasses": {
 		"MassMessageHooks": "MassMessage.hooks.php",
