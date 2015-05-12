@@ -15,7 +15,7 @@ $magicWords['ar'] = array(
 	'target' => array( 0, 'هدف' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $magicWords['arz'] = array(
 	'target' => array( 0, 'هدف' ),
 );

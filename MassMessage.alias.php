@@ -23,7 +23,7 @@ $specialPageAliases['ar'] = array(
 	'EditMassMessageList' => array( 'تعديل_قائمة_الرسائل_الكمية' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'MassMessage' => array( 'رسايل_كتيره' ),
 );
