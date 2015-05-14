@@ -125,6 +125,6 @@
 	"apihelp-massmessage-param-message": "{{doc-apihelp-param|massmessage|message}}",
 	"apihelp-massmessage-example-1": "{{doc-apihelp-example|massmessage}}",
 	"apihelp-query+mmsites-description": "{{doc-apihelp-description|query+mmsites}}",
-	"apihelp-query+mmsites-param-term": "{{doc-apihelp-param|query+mmsites|term}}",
+	"apihelp-query+mmsites-param-term": "Label of an input area. Connected site names will be returned if they match the provided prefix (e.g. entering \"meta\" may return \"metawiki\").\n----\n{{doc-apihelp-param|query+mmsites|term}}",
 	"apihelp-query+mmsites-example-1": "{{doc-apihelp-example|query+mmsites}}"
 }
