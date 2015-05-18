@@ -3,7 +3,8 @@
 		"authors": [
 			"Mormegil",
 			"Utar",
-			"Aktron"
+			"Aktron",
+			"Vks"
 		]
 	},
 	"massmessage": "Poslat hromadnou zprávu",
@@ -40,6 +41,24 @@
 	"logentry-massmessage-skipnouser": "Doručení „$4“ pro $3 bylo přeskočeno, protože uživatelský účet neexistuje",
 	"massmessage-cannot-rename": "Toto je systémový účet, který nemůže být přejmenován.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Poslat další zprávu]] nebo [[Special:Statistics|zobrazit počet zpráv ve frontě]].",
+	"massmessage-content-removeyes": "Odstranit",
+	"massmessage-content-removeno": "Zrušit",
+	"massmessage-content-empty": "V tomto seznamu nejsou žádné stránky.",
+	"massmessage-content-invalidtargets": "Tento seznam obsahuje neplatné cíle.",
+	"massmessage-content-emptylist": "(nic)",
+	"massmessage-content-addheading": "Přidat stránky",
+	"massmessage-content-addtitle": "Název:",
+	"massmessage-content-addeditem": "$1 na $2",
+	"massmessage-content-alreadyinlist": "Stránka je již v seznamu.",
+	"massmessage-create-title": "Název:",
+	"massmessage-create-description": "Popis:",
+	"massmessage-create-content": "Obsah:",
+	"massmessage-create-new": "Vytvořit nový dodací list",
 	"massmessage-create-exists-short": "Již se používá",
+	"massmessage-create-invalidsource-short": "Neplatný seznam",
+	"massmessage-edit-title": "Název:",
+	"massmessage-edit-description": "Popis:",
+	"massmessage-edit-content": "Cílové stránky:",
+	"massmessage-edit-summary": "Shrnutí editace:",
 	"massmessage-list-category-desc": "Stránka je seznamem příjemců pro rozšíření [[Special:MassMessage|MassMessage]]."
 }

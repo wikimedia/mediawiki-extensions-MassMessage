@@ -35,6 +35,7 @@
 	"right-massmessage": "Бір уақытта бірнеше қатысушыға хабарлама жіберу",
 	"action-massmessage": "бір уақытта бірнеше қатысушыға хабарлама жіберу",
 	"log-name-massmessage": "Жаппай хабарлама жіберу журналы",
+	"log-description-massmessage": "Бұл оқиғалар қатысушыларға хабарламаларды жіберу жолшығы.",
 	"logentry-massmessage-send": "$1 $3 дегенге {{GENDER:$2|хабарлама жіберді}}",
 	"logentry-massmessage-failure": "<code>$5</code> қате коды болғандықтан $3 дегенге «$4» жеткізіп беруі орындалмады",
 	"massmessage-nextsteps": "[[Special:MassMessage|Басқа хабарлама жіберу]] немесе [[Special:Statistics|қанша хабарламалар кезекке қойылғанын көру]].",
@@ -96,5 +97,11 @@
 	"massmessage-list-category": "Жаппай хабарлама жеткізіп беру тізімдері",
 	"massmessage-list-category-desc": "[[Special:MassMessage|Жаппай хабарлама жіберу]] кеңейтілімі үшін жеткізіп беру тізімі беті",
 	"apihelp-editmassmessagelist-description": "Жаппай хабарлама жеткізіп беру тізімін өңдеу.",
-	"apihelp-editmassmessagelist-param-spamlist": "Жеткізіп беру тізімі атауын жаңарту"
+	"apihelp-editmassmessagelist-param-spamlist": "Жеткізіп беру тізімі атауын жаңарту",
+	"apihelp-editmassmessagelist-param-add": "тізімге атауларын қосу",
+	"apihelp-editmassmessagelist-param-remove": "Тізімнен атауларды аластау",
+	"apihelp-massmessage-description": "Беттер тізіміне хабарламаларды жіберу.",
+	"apihelp-massmessage-param-spamlist": "Беттер тізімінен тұратын бетке хабарлама қалдыру.",
+	"apihelp-massmessage-param-subject": "Хабарламаның тақырып жолағы.",
+	"apihelp-massmessage-param-message": "Хабарлама мәтіні."
 }
