@@ -84,6 +84,7 @@
 	"massmessage-create-exists": "Страница с указанным заголовком уже существует.",
 	"massmessage-create-nopermission": "У вас нет прав на создание списка под этим заголовком.",
 	"massmessage-create-invalidsource": "Указанный источник не является допустимым списком доставки или категорией хотя бы с одной страницей.",
+	"massmessage-create-exists-short": "Уже используется",
 	"editmassmessagelist-legend": "Изменить список массовой доставки",
 	"massmessage-edit-pagetitle": "Редактирование $1",
 	"massmessage-edit-title": "Заголовок:",
@@ -107,5 +108,6 @@
 	"massmessage-list-category-desc": "Эта страница является списком доставки для расширения [[Special:MassMessage|MassMessage]].",
 	"apihelp-editmassmessagelist-param-add": "Заголовки для добавление в список.",
 	"apihelp-editmassmessagelist-param-remove": "Заголовки для удаления из списка.",
-	"apihelp-editmassmessagelist-example-1": "Добавить [[User talk:Foo]] и [[Talk:Bar]] в список доставки [[Example]], а также удалить [[Talk:Baz]] из него"
+	"apihelp-editmassmessagelist-example-1": "Добавить [[User talk:Foo]] и [[Talk:Bar]] в список доставки [[Example]], а также удалить [[Talk:Baz]] из него",
+	"apihelp-massmessage-param-message": "Текст сообщения."
 }

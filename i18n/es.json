@@ -100,7 +100,7 @@
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|La siguiente página no es válida|Las siguientes páginas no son válidas}}:\n$2",
 	"massmessage-edit-missingsummary": "No has proporcionado un resumen de edición. Si pulsas en «{{int:htmlform-submit}}» de nuevo, la edición se guardará sin uno.",
 	"massmessage-edit-nopermission": "No tienes permiso para editar la lista.",
-	"massmessage-summary-addremove": "Se ha(n) añadido $1 {{PLURAL:$1|página|páginas}} y eliminado $2 {{PLURAL:$2|página|páginas}}",
+	"massmessage-summary-addremove": "Se {{PLURAL:$1|ha añadido $1 página|han añadido $1 páginas}} y eliminado $2 {{PLURAL:$2|página|páginas}}",
 	"massmessage-summary-add": "Se añadió [[:$1]]",
 	"massmessage-summary-addonsite": "Se ha añadido $1 en $2",
 	"massmessage-summary-addmulti": "Se {{PLURAL:$1|agrega $1 página|agregan $1 páginas}}",
