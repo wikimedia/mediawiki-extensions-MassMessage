@@ -109,5 +109,7 @@
 	"apihelp-editmassmessagelist-param-add": "Заголовки для добавление в список.",
 	"apihelp-editmassmessagelist-param-remove": "Заголовки для удаления из списка.",
 	"apihelp-editmassmessagelist-example-1": "Добавить [[User talk:Foo]] и [[Talk:Bar]] в список доставки [[Example]], а также удалить [[Talk:Baz]] из него",
-	"apihelp-massmessage-param-message": "Текст сообщения."
+	"apihelp-massmessage-param-subject": "Тема сообщения.",
+	"apihelp-massmessage-param-message": "Текст сообщения.",
+	"apihelp-query+mmsites-param-term": "Префикс для поиска."
 }

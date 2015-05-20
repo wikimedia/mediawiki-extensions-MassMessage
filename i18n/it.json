@@ -5,7 +5,8 @@
 			"Rosh",
 			"Ontsed",
 			"Nemo bis",
-			"Nivit"
+			"Nivit",
+			"Gianfranco"
 		]
 	},
 	"massmessage": "Invia messaggi massivamente",
@@ -107,5 +108,16 @@
 	"massmessage-summary-removeonsite": "Rimossa $1 su $2",
 	"massmessage-summary-removemulti": "{{PLURAL:$1|Rimossa $1 pagina|Rimosse $1 pagine}}",
 	"massmessage-list-category": "Elenchi di consegna MassMessage",
-	"massmessage-list-category-desc": "Questa pagina è un'elenco di consegna per l'estensione [[Special:MassMessage|MassMessage]]."
+	"massmessage-list-category-desc": "Questa pagina è un'elenco di consegna per l'estensione [[Special:MassMessage|MassMessage]].",
+	"apihelp-editmassmessagelist-description": "Crea elenco di consegna per messaggi massivi.",
+	"apihelp-editmassmessagelist-param-spamlist": "Titolo della lista di consegna da aggiornare.",
+	"apihelp-editmassmessagelist-param-add": "Titoli da aggiungere alla lista.",
+	"apihelp-editmassmessagelist-param-remove": "Titoli da rimuovere dall'elenco.",
+	"apihelp-massmessage-description": "Invia un messaggio a una lista di pagine.",
+	"apihelp-massmessage-param-spamlist": "Pagina contenente l'elenco delle pagine su cui lasciare un messaggio.",
+	"apihelp-massmessage-param-subject": "Oggetto del messaggio.",
+	"apihelp-massmessage-param-message": "Testo del corpo del messaggio.",
+	"apihelp-query+mmsites-description": "Rendi disponibile completamento automatico delle richieste per il campo sito in MassMessage.",
+	"apihelp-query+mmsites-param-term": "Il prefisso da ricercare.",
+	"apihelp-query+mmsites-example-1": "Completamento automatico \"it\""
 }
