@@ -85,6 +85,7 @@
 	"massmessage-create-nopermission": "У вас нет прав на создание списка под этим заголовком.",
 	"massmessage-create-invalidsource": "Указанный источник не является допустимым списком доставки или категорией хотя бы с одной страницей.",
 	"massmessage-create-exists-short": "Уже используется",
+	"massmessage-create-invalidsource-short": "Недопустимый список",
 	"editmassmessagelist-legend": "Изменить список массовой доставки",
 	"massmessage-edit-pagetitle": "Редактирование $1",
 	"massmessage-edit-title": "Заголовок:",

@@ -117,5 +117,6 @@
 	"apihelp-massmessage-param-subject": "Liña de asunto da mensaxe.",
 	"apihelp-massmessage-param-message": "Texto da mensaxe.",
 	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"Signpost Novo\", e corpo da mensaxe \"Por favor léao\"",
-	"apihelp-query+mmsites-param-term": "Prefixo polo cal buscar."
+	"apihelp-query+mmsites-param-term": "Prefixo polo cal buscar.",
+	"apihelp-query+mmsites-example-1": "Autocompletar \"en\""
 }

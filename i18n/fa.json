@@ -16,6 +16,7 @@
 	"massmessage-form-preview": "پیش‌نمایش",
 	"massmessage-form-submit": "ارسال",
 	"massmessage-fieldset-preview": "پیش‌نمایش",
+	"massmessage-fieldset-info": "اطلاعات",
 	"massmessage-submitted": "رساندن پیامتان به {{PLURAL:$1|$1 page|$1 صفحه}} در صف قرار گرفت.",
 	"massmessage-just-preview": "این فقط یک پیش‌نمایش است. «{{int:massmessage-form-submit}}» را برای ارسال پیام بفشارید.",
 	"massmessage-spamlist-doesnotexist": "صفحه-فهرست صفحه مشخص‌شده موجود نیست.",

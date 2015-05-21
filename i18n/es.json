@@ -115,5 +115,6 @@
 	"apihelp-massmessage-param-spamlist": "Página que contiene una lista de páginas en que se dejará un mensaje.",
 	"apihelp-massmessage-param-subject": "Línea de asunto del mensaje.",
 	"apihelp-massmessage-param-message": "Texto del cuerpo del mensaje.",
-	"apihelp-query+mmsites-param-term": "El prefijo a buscar."
+	"apihelp-query+mmsites-param-term": "El prefijo a buscar.",
+	"apihelp-query+mmsites-example-1": "Autocompletar \"es\""
 }

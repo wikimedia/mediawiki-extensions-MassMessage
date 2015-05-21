@@ -93,5 +93,5 @@
 	"massmessage-summary-removemulti": "Tog bort $1 {{PLURAL:$1|sida|sidor}}",
 	"apihelp-massmessage-param-subject": "Meddelandets ämnesrad.",
 	"apihelp-massmessage-param-message": "Meddelandets innehållstext.",
-	"apihelp-query+mmsites-param-term": "Prefixet att sök efter."
+	"apihelp-query+mmsites-param-term": "Prefixet att söka efter."
 }

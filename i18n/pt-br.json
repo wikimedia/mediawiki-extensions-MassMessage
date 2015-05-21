@@ -11,8 +11,9 @@
 		]
 	},
 	"massmessage": "Enviar mensagem em massa",
+	"editmassmessagelist": "Editar lista de entrega de mensagem em massa",
 	"massmessage-desc": "Permite que os usuários enviem facilmente uma mensagem para uma lista de usuários",
-	"massmessage-form-spamlist": "Página que contêm uma lista de páginas nas quais deve ser entregue uma mensagem:",
+	"massmessage-form-spamlist": "Página ou categoria contém uma lista de páginas nas quais deve ser entregue uma mensagem:",
 	"massmessage-form-subject": "Assunto da mensagem (também usado como sumário de edição):",
 	"massmessage-form-message": "Corpo da mensagem:",
 	"massmessage-form-preview": "Visualizar",
@@ -23,6 +24,7 @@
 	"massmessage-submitted": "A entrega de sua mensagem a {{PLURAL:$1|$1 página|$1 páginas}} foi adicionada à lista de ações a serem executadas.",
 	"massmessage-just-preview": "Esta é apenas uma visualização. Pressione \"{{int:massmessage-form-submit}}\" para enviar a mensagem.",
 	"massmessage-spamlist-doesnotexist": "A lista de páginas especificada não existe.",
+	"massmessage-spamlist-invalid": "A página especificada não contém uma lista de entrega válida.",
 	"massmessage-empty-subject": "O espaço do assunto está vazio.",
 	"massmessage-empty-message": "O corpo da mensagem está vazio.",
 	"massmessage-form-header": "Use o formulário abaixo para enviar mensagens a uma lista específcia. Todos os campos são obrigatórios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mais informações])..",
@@ -35,6 +37,7 @@
 	"log-name-massmessage": "Registro de mensagens em massa",
 	"log-description-massmessage": "Estes eventos rastreiam usuários que enviam mensagens.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|enviou uma mensagem}} para $3",
+	"massmessage-cannot-rename": "Esta é uma conta do sistema e não pode ser renomeada.",
 	"massmessage-content-pages": "Páginas nesta lista",
 	"massmessage-content-pagesonsite": "Páginas em $1:",
 	"massmessage-content-localpages": "Páginas nesta wiki:",
@@ -98,5 +101,6 @@
 	"apihelp-massmessage-description": "Enviar uma mensagem para uma lista de páginas.",
 	"apihelp-massmessage-param-spamlist": "Página que contém uma lista de páginas para deixar uma mensagem.",
 	"apihelp-massmessage-param-subject": "Linha do assunto da mensagem.",
-	"apihelp-massmessage-param-message": "Texto do corpo da mensagem."
+	"apihelp-massmessage-param-message": "Texto do corpo da mensagem.",
+	"apihelp-query+mmsites-param-term": "O prefixo para buscar."
 }
