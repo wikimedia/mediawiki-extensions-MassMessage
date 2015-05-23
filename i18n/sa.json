@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"NehalDaveND"
+		]
+	},
+	"massmessage-form-preview": "प्राग्दृश्यम्",
+	"massmessage-form-submit": "प्रेषयतु",
+	"massmessage-fieldset-preview": "प्राग्दृश्यम्",
+	"massmessage-fieldset-info": "सूचना",
+	"massmessage-content-remove": "निष्कास्यताम्",
+	"massmessage-content-removeyes": "निष्कास्यताम्",
+	"massmessage-content-removeno": "निरस्यताम्",
+	"massmessage-content-emptylist": "(नैकम्)",
+	"massmessage-content-addtitle": "शीर्षकम् :",
+	"massmessage-content-adderror": "API दोषः : $1",
+	"massmessage-create-title": "शीर्षकम् :",
+	"massmessage-create-description": "वर्णनम् :",
+	"massmessage-create-source": "स्रोतः :",
+	"massmessage-edit-pagetitle": "$1 सम्पादयति",
+	"massmessage-edit-title": "शीर्षकम् :",
+	"massmessage-edit-description": "वर्णनम् :"
+}
