@@ -87,6 +87,8 @@
 	"massmessage-create-exists": "Сторінка з такою назвою вже існує.",
 	"massmessage-create-nopermission": "У вас немає дозволу на створення списку з такою назвою.",
 	"massmessage-create-invalidsource": "У вказаному джерелі немає допустимого списку доставки чи категорії, що містить хоча б одну сторінку.",
+	"massmessage-create-exists-short": "Уже використовується",
+	"massmessage-create-invalidsource-short": "Недопустимий список",
 	"editmassmessagelist-legend": "Редагувати список масової доставки повідомлення",
 	"massmessage-edit-pagetitle": "Редагування $1",
 	"massmessage-edit-title": "Назва:",
@@ -107,5 +109,18 @@
 	"massmessage-summary-removeonsite": "Видалено $1 на $2",
 	"massmessage-summary-removemulti": "Вилучено $1 {{PLURAL:$1|сторінку|сторінки|сторінок}}",
 	"massmessage-list-category": "Списки масової доставки повідомлень",
-	"massmessage-list-category-desc": "Ця сторінка є списком доставки для розширення [[Special:MassMessage|MassMessage]]."
+	"massmessage-list-category-desc": "Ця сторінка є списком доставки для розширення [[Special:MassMessage|MassMessage]].",
+	"apihelp-editmassmessagelist-description": "Редагувати список масової доставки повідомлень",
+	"apihelp-editmassmessagelist-param-spamlist": "Заголовок оновлюваного списку доставки.",
+	"apihelp-editmassmessagelist-param-add": "Рядки для додавання в список.",
+	"apihelp-editmassmessagelist-param-remove": "Рядки для вилучення зі списку.",
+	"apihelp-editmassmessagelist-example-1": "Додати [[User talk:Foo]] та [[Talk:Bar]] до списку розсилки [[Example]] і вилучити з нього [[Talk:Baz]]",
+	"apihelp-massmessage-description": "Надіслати повідомлення списку сторінок.",
+	"apihelp-massmessage-param-spamlist": "Сторінка, яка містить список сторінок, де треба залишити повідомлення.",
+	"apihelp-massmessage-param-subject": "Рядок теми повідомлення.",
+	"apihelp-massmessage-param-message": "Текст повідомлення.",
+	"apihelp-massmessage-example-1": "Надіслати повідомлення списку у [[Signpost Spamlist]] з темою «New Signpost» і текстом повідомлення «Please read it»",
+	"apihelp-query+mmsites-description": "Подавати запити автозаповнення поля сайту у pristine.",
+	"apihelp-query+mmsites-param-term": "Префікс для пошуку.",
+	"apihelp-query+mmsites-example-1": "Автозаповнення «en»"
 }

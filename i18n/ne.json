@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"NehalDaveND"
+		]
+	},
+	"massmessage-form-preview": "पूर्वावलोकन",
+	"massmessage-form-submit": "पठाउनुहोस्",
+	"massmessage-fieldset-preview": "पूर्वावलोकन",
+	"massmessage-fieldset-info": "जानकारी",
+	"massmessage-content-remove": "हटाउने",
+	"massmessage-content-removeyes": "हटाउने",
+	"massmessage-content-removeno": "रद्द गर्ने",
+	"massmessage-content-emptylist": "(कुनै पनि होइन)",
+	"massmessage-content-addheading": "सबै पृष्ठहरू",
+	"massmessage-content-addtitle": "शीर्षक:",
+	"massmessage-create-title": "शीर्षक:",
+	"massmessage-create-source": "स्रोत:",
+	"massmessage-edit-title": "शीर्षक:",
+	"massmessage-edit-description": "विवरण:"
+}
