@@ -34,6 +34,7 @@
 	"massmessage-badhtml": "A súa mensaxe pode ter {{PLURAL:$2|unha etiqueta HTML|varias etiquetas HTML}} sen pechar: $1.",
 	"massmessage-parse-badurl": "\"$1\" non é un sitio válido",
 	"massmessage-parse-badpage": "\"$1\" non é un título de páxina válido",
+	"massmessage-parse-badexternal": "\"$1\" non é un título de páxina válido. Os obxectivos interwiki deben especificarse usando o parámetro do sitio (<kbd>|site=www.exemplo.gal</kbd>).",
 	"massmessage-global-disallowed": "As mensaxe só se poden enviar a páxinas locais.",
 	"right-massmessage": "Enviar unha mensaxe a varios usuarios á vez",
 	"action-massmessage": "enviar unha mensaxe a varios usuarios á vez",
@@ -117,6 +118,7 @@
 	"apihelp-massmessage-param-subject": "Liña de asunto da mensaxe.",
 	"apihelp-massmessage-param-message": "Texto da mensaxe.",
 	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"Signpost Novo\", e corpo da mensaxe \"Por favor léao\"",
+	"apihelp-query+mmsites-description": "Serve peticións autocompletas para o campo de sitio en MensaxesMasivas.",
 	"apihelp-query+mmsites-param-term": "Prefixo polo cal buscar.",
 	"apihelp-query+mmsites-example-1": "Autocompletar \"en\""
 }
