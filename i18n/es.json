@@ -100,7 +100,7 @@
 	"massmessage-edit-content": "Páginas de destino:",
 	"massmessage-edit-summary": "Resumen de edición:",
 	"massmessage-edit-header": "Usa el siguiente formulario para modificar la descripción  de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea.",
-	"massmessage-edit-headermulti": "Usa el siguiente formulario para modificar la descripción  de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea y usa título@dominio (p.ej. Usuario_discusión:Ejemplo@es.wikipedia.org) para especificar una página en un wiki distinto.",
+	"massmessage-edit-headermulti": "Usa el siguiente formulario para modificar la descripción de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea y usa título@dominio (p. ej. Usuario_discusión:Ejemplo@es.wikipedia.org) para especificar una página en un wiki distinto.",
 	"massmessage-edit-invalidtitle": "No existe una lista de entrega en masa válida con este título.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|La siguiente página no es válida|Las siguientes páginas no son válidas}}:\n$2",
 	"massmessage-edit-missingsummary": "No has proporcionado un resumen de edición. Si pulsas en «{{int:htmlform-submit}}» de nuevo, la edición se guardará sin uno.",
