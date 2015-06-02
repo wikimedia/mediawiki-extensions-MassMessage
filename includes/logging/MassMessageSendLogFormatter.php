@@ -17,7 +17,7 @@ class MassMessageSendLogFormatter extends LogFormatter {
 			return $this->parsedParameters;
 		}
 
-		$title = SpecialPage::getTitleFor('PermanentLink', $params[3] );
+		$title = SpecialPage::getTitleFor( 'PermanentLink', $params[3] );
 
 		// Our simple version of LogFormatter::makeLink
 		if ( $this->plaintext ) {

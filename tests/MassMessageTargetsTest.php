@@ -21,9 +21,9 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 			// project page, no site provided
 			array( '{{#target:Project:Example}}', array( 'title' => $proj . ':Example' ), ),
 			// user talk page, no site provided
-			array( '{{#target:User talk:Example}}', array('title' => 'User talk:Example' ), ),
+			array( '{{#target:User talk:Example}}', array( 'title' => 'User talk:Example' ), ),
 			// local redirect being followed
-			array( '{{#target:User talk:Is a redirect}}', array('title' => 'User talk:Redirect target' ) ),
+			array( '{{#target:User talk:Is a redirect}}', array( 'title' => 'User talk:Redirect target' ) ),
 			// invalid titles
 			array( '{{#target:User:<><}}', array(), ),
 			array( '{{#target:Project:!!!<><><><>', array(), ),

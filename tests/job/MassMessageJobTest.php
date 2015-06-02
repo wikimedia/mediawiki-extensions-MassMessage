@@ -13,7 +13,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'title' => $title->getFullText()
 		);
 		$params['comment'] = array(
-			User::newFromName('Admin'),
+			User::newFromName( 'Admin' ),
 			'metawiki',
 			'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5'
 		);
@@ -52,7 +52,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		global $wgContLang;
 		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
-		if ( !class_exists( 'LqtDispatch') ) {
+		if ( !class_exists( 'LqtDispatch' ) ) {
 			$this->markTestSkipped( "This test requires the LiquidThreads extension" );
 		}
 		$target = Title::newFromText( 'Project:LQT test' );
@@ -67,7 +67,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	public function testOptOut() {
 		$fakejob = new MassMessageJob( Title::newMainPage(), array() );
 		$target = Title::newFromText( 'Project:Opt out test page' );
-		self::updatePage( $target, '[[Category:Opted-out of message delivery]]');
+		self::updatePage( $target, '[[Category:Opted-out of message delivery]]' );
 		$this->assertTrue( $fakejob->isOptedOut( $target ) );
 		$this->assertFalse( $fakejob->isOptedOut(
 			Title::newFromText( 'Project:Some random page' )

@@ -46,12 +46,12 @@ class MassMessageJob extends Job {
 	 * @param $title Title
 	 * @return bool
 	 */
-	public function isOptedOut( Title $title) {
+	public function isOptedOut( Title $title ) {
 		$wikipage = WikiPage::factory( $title );
 		$categories = $wikipage->getCategories();
 		$category = Title::makeTitle(
 			NS_CATEGORY,
-			wfMessage( 'massmessage-optout-category')->inContentLanguage()->text()
+			wfMessage( 'massmessage-optout-category' )->inContentLanguage()->text()
 		);
 		foreach ( $categories as $cat ) {
 			if ( $category->equals( $cat ) ) {
@@ -73,7 +73,7 @@ class MassMessageJob extends Job {
 		}
 		$title = MassMessage::followRedirect( $title ) ?: $title; // Try to follow redirects
 		if ( !$title->isTalkPage() && !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
-			$this->logLocalSkip( 'skipbadns');
+			$this->logLocalSkip( 'skipbadns' );
 			$title = null;
 		}
 

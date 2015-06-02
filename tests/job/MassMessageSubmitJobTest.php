@@ -38,7 +38,7 @@ class MassMessageSubmitJobTest extends MediaWikiTestCase {
 			}
 		}
 
-		$this->assertEquals( count( $pages), $count );
+		$this->assertEquals( count( $pages ), $count );
 	}
 
 	public static function provideGetJobs() {

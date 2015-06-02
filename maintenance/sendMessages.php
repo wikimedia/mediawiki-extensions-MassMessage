@@ -22,7 +22,7 @@ class SendMassMessages extends Maintenance {
 
 	public function execute() {
 		$info = array();
-		foreach ( array( 'pagelist', 'subject', 'message') as $arg ) {
+		foreach ( array( 'pagelist', 'subject', 'message' ) as $arg ) {
 			$option = $this->getOption( $arg );
 			if ( !is_file( $this->getOption( $arg ) ) ) {
 				$this->error( "Error: required argument $arg was passed an invalid filename.", 1 );
@@ -45,7 +45,7 @@ class SendMassMessages extends Maintenance {
 		}
 
 		$pages = array();
-		$this->output( "Reading from \"$list\".");
+		$this->output( "Reading from \"$list\"." );
 
 		while ( $line = trim( fgets( $file ) ) ) {
 			$exp = explode( '\t', $line );

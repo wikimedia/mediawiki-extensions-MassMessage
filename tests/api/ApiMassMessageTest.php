@@ -42,7 +42,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 			'spamlist' => self::$spamlist,
 			'message' => 'message',
 			'subject' => 'subjectline'
-		));
+		) );
 
 		$apiResult = $apiResult[0];
 		$this->assertArrayHasKey( 'massmessage', $apiResult );
@@ -63,13 +63,13 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 			'spamlist' => '<InvalidPageTitle>',
 			'subject' => 'subject',
 			'message' => 'msg'
-		));
+		) );
 	}
 
 	public static function provideCount() {
 		return array(
 			array( self::$spamlist, 1 ),
-			array( self::$emptyspamlist, 0)
+			array( self::$emptyspamlist, 0 )
 		);
 	}
 
@@ -85,7 +85,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 			'spamlist' => $page,
 			'message' => 'message',
 			'subject' => 'subjectline'
-		));
+		) );
 		$this->assertEquals( $count, $apiResult[0]['massmessage']['count'] );
 	}
 

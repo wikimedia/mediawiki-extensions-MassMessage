@@ -141,7 +141,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			array( 'a@EN.WIKIPEDIA.ORG', array( 'title' => 'A', 'site' => 'en.wikipedia.org' ) ),
 			array( 'A@domain.org@en.wikipedia.org',
 				array( 'title' => 'A@domain.org', 'site' => 'en.wikipedia.org' ) ),
-			array( '_', array( 'errors' => array('invalidtitle' ) ) ),
+			array( '_', array( 'errors' => array( 'invalidtitle' ) ) ),
 			array( 'A@invalid.org', array( 'title' => 'A', 'errors' => array( 'invalidsite' ) ) ),
 			array( '_@invalid.org', array( 'errors' => array( 'invalidtitle', 'invalidsite' ) ) )
 		);
