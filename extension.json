@@ -203,5 +203,6 @@
 		"MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php",
 		"MassMessageTestCase": "tests/MassMessageTestCase.php",
 		"MassMessageApiTestCase": "tests/MassMessageApiTestCase.php"
-	}
+	},
+	"manifest_version": 1
 }
