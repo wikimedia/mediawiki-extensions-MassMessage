@@ -105,5 +105,12 @@
 	"massmessage-summary-removeonsite": "הוסר $1 מ־$2",
 	"massmessage-summary-removemulti": "{{PLURAL:$1|הוסר דף אחד|הוסרו $1 דפים}}",
 	"massmessage-list-category": "רשימות משלוח של הודעות המוניות",
-	"massmessage-list-category-desc": "הדף הוא רשימה של משלוח עבור ההרחבה [[Special:MassMessage|הודעה המונית]]."
+	"massmessage-list-category-desc": "הדף הוא רשימה של משלוח עבור ההרחבה [[Special:MassMessage|הודעה המונית]].",
+	"apihelp-editmassmessagelist-description": "עריכה רשימת מסירה המונית.",
+	"apihelp-editmassmessagelist-param-spamlist": "כותרת רשימת המסירה שצריך לעדכן.",
+	"apihelp-editmassmessagelist-param-add": "כותרת שיתווספו לרשימה.",
+	"apihelp-editmassmessagelist-param-remove": "כותרות שיוסרו מהרשימה.",
+	"apihelp-editmassmessagelist-example-1": "הוספת [[User talk:Foo]] ו־[[Talk:Bar]] לרשימת המסירה [[Example]] והסרת [[Talk:Baz]] ממנה",
+	"apihelp-massmessage-description": "שליחת הודעה לרשימת דפים.",
+	"apihelp-massmessage-param-spamlist": "דף שמכיל רשימה של דפים שתושאר בהם הודעה."
 }

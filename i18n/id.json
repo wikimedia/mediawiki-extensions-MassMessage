@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Ahdan",
-			"Iwan Novirion"
+			"Iwan Novirion",
+			"Bennylin"
 		]
 	},
-	"massmessage": "Kirim pesan masal",
-	"createmassmessagelist": "Buat daftar penerima pesan masal",
-	"editmassmessagelist": "Sunting daftar penerima pesan masal",
+	"massmessage": "Kirim pesan massal",
+	"createmassmessagelist": "Buat daftar penerima pesan massal",
+	"editmassmessagelist": "Sunting daftar penerima pesan massal",
 	"massmessage-fieldset-info": "Informasi",
 	"massmessage-preview-count": "Pesan anda akan dikirim ke  {{PLURAL:$1|   $1  page| $1  halaman}}.",
-	"massmessage-list-category": "Daftar penerima Pesan Masal"
+	"massmessage-list-category": "Daftar penerima pesan massal"
 }
