@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Cwlin0416",
-			"Justincheng12345"
+			"Justincheng12345",
+			"LNDDYL"
 		]
 	},
 	"massmessage": "傳送大量訊息",
@@ -19,7 +20,7 @@
 	"massmessage-fieldset-info": "資訊",
 	"massmessage-preview-count": "您的訊息將會被傳送至 {{PLURAL:$1|$1 個頁面|$1 個頁面}}。",
 	"massmessage-submitted": "您要發送至 {{PLURAL:$1|$1 個頁面|$1 個頁面}}的訊息已列入排程。",
-	"massmessage-just-preview": "此為預覽畫面。 請點選 \"{{int:massmessage-form-submit}}\" 發送訊息。",
+	"massmessage-just-preview": "此為預覽畫面。 請點選 \"{{int:massmessage-form-submit}}\" 傳送訊息。",
 	"massmessage-spamlist-doesnotexist": "指定的發送清單頁面或分類不存在。",
 	"massmessage-spamlist-invalid": "指定的頁面未含有效的發送清單。",
 	"massmessage-empty-subject": "主旨為空的。",
