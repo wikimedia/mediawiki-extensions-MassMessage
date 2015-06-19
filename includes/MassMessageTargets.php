@@ -121,7 +121,7 @@ class MassMessageTargets {
 	 * @param Title $spamlist
 	 * @return array
 	 */
-	protected static function getMassMessageListContentTargets ( Title $spamlist ) {
+	protected static function getMassMessageListContentTargets( Title $spamlist ) {
 		global $wgCanonicalServer;
 
 		$targets = Revision::newFromTitle( $spamlist )->getContent()->getValidTargets();

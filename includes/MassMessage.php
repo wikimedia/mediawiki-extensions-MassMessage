@@ -182,7 +182,7 @@ class MassMessage {
 		if ( $param ) {
 			$msg->params( $param );
 		}
-		return array (
+		return array(
 			'<strong class="error">' .
 			$msg->inContentLanguage()->plain() .
 			'</strong>',
