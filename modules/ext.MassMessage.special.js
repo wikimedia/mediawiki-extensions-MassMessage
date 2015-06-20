@@ -12,15 +12,15 @@
 				.attr( 'id', 'mw-massmessage-form-spamlist-status' )
 				.insertAfter( $spamlist );
 
-		function checkPageTitle () {
+		function checkPageTitle() {
 			var api = new mw.Api(),
 				pagetitle = $spamlist.val();
 			if ( pagetitle ) {
 				api.get( {
-					'action': 'query',
-					'titles': pagetitle,
-					'prop': 'info',
-					'indexpageids': true
+					action: 'query',
+					titles: pagetitle,
+					prop: 'info',
+					indexpageids: true
 				} ).done( function ( data ) {
 					if ( data && data.query &&
 						// If the page exists and has a supported content model

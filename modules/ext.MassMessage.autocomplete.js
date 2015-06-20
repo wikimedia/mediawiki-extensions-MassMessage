@@ -9,7 +9,7 @@
 
 	mw.massmessage.enableTitleComplete = function ( $selector ) {
 		$selector.autocomplete( {
-			source: function( request, response ) {
+			source: function ( request, response ) {
 				var api = new mw.Api();
 				api.get( {
 					action: 'opensearch',

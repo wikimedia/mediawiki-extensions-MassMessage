@@ -3,10 +3,11 @@
 		/*global alert*/
 		'use strict';
 
-		var listShown = false;
+		var listShown = false,
+			appendAdded, getApiParam, removeHandler, confirmableParams, showAddError;
 
 		// Append an added page to the displayed list.
-		var appendAdded = function ( title, site, missing ) {
+		appendAdded = function ( title, site, missing ) {
 			var targetAttribs, targetLink, removeLink, $list = $( '#mw-massmessage-addedlist ul' );
 
 			if ( !listShown ) {
@@ -61,7 +62,7 @@
 		};
 
 		// Return a target page in title or title@site (if site is not empty) form.
-		var getApiParam = function ( title, site ) {
+		getApiParam = function ( title, site ) {
 			var server, param;
 			if ( site === '' ) {
 				if ( title.indexOf( '@' ) >= 0 ) { // Handle titles containing '@'
@@ -77,7 +78,7 @@
 		};
 
 		// Handle remove links next to targets.
-		var removeHandler = function ( e ) {
+		removeHandler = function ( e ) {
 			var param, $link = $( this );
 
 			e.preventDefault();
@@ -112,7 +113,7 @@
 		};
 
 		// Parameters for jquery.confirmable (remove links)
-		var confirmableParams = {
+		confirmableParams = {
 			handler: removeHandler,
 			i18n: {
 				confirm: mw.message( 'massmessage-content-removeconf' ).escaped(),
@@ -122,7 +123,7 @@
 		};
 
 		// Show an error next to the add pages form.
-		var showAddError = function ( msgKey, errorCode ) {
+		showAddError = function ( msgKey, errorCode ) {
 			var message;
 			if ( errorCode === undefined ) {
 				message = mw.message( msgKey ).escaped();
@@ -144,7 +145,7 @@
 		$( '.mw-massmessage-removelink a' ).confirmable( confirmableParams );
 
 		// Handle add pages form.
-		$( '#mw-massmessage-addform' ).submit( function( e ) {
+		$( '#mw-massmessage-addform' ).submit( function ( e ) {
 			var title, site, apiResult, page;
 
 			e.preventDefault();
