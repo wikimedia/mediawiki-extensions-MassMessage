@@ -9,7 +9,8 @@
 			"Sherbrooke",
 			"Maxim21",
 			"0x010C",
-			"Element303"
+			"Element303",
+			"Wladek92"
 		]
 	},
 	"massmessage": "Envoyer un message de masse",
@@ -115,5 +116,7 @@
 	"apihelp-editmassmessagelist-param-add": "Titres à ajouter à la liste.",
 	"apihelp-editmassmessagelist-param-remove": "Titres à supprimer de la liste.",
 	"apihelp-massmessage-description": "Envoyer un message à une liste de pages.",
-	"apihelp-massmessage-param-spamlist": "Page contenant une liste de pages sur lesquelles laisser un message."
+	"apihelp-massmessage-param-spamlist": "Page contenant une liste de pages sur lesquelles laisser un message.",
+	"apihelp-massmessage-param-message": "Texte du corps du message.",
+	"apihelp-query+mmsites-param-term": "Le préfixe à rechercher."
 }

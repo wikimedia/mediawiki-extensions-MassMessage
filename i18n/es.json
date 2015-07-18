@@ -11,7 +11,8 @@
 			"Eurodyne",
 			"JasterTDC",
 			"MarcoAurelio",
-			"Ryo567"
+			"Ryo567",
+			"Matiia"
 		]
 	},
 	"massmessage": "Enviar mensaje masivo",
@@ -112,7 +113,7 @@
 	"massmessage-summary-remove": "Se ha eliminado [[:$1]]",
 	"massmessage-summary-removeonsite": "Se ha eliminado $1 en $2",
 	"massmessage-summary-removemulti": "Se {{PLURAL:$1|borra $1 página|borran $1 páginas}}",
-	"massmessage-list-category": "Listas de entreda de MassMessage",
+	"massmessage-list-category": "Listas de entrega de MassMessage",
 	"massmessage-list-category-desc": "La página es una lista de entrega de la extensión [[Special:MassMessage|MassMessage]].",
 	"apihelp-editmassmessagelist-description": "Editar una lista de entrega de mensajes en masa.",
 	"apihelp-editmassmessagelist-param-spamlist": "Título de la lista de entrega que se actualizará.",

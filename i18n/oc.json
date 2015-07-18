@@ -5,6 +5,7 @@
 		]
 	},
 	"massmessage": "Mandar un messatge de massa",
+	"createmassmessagelist": "Crear una lista de difusion de messatges de massa",
 	"massmessage-desc": "Permet als utilizaires de mandar aisadament un messatge a una lista d’utilizaires",
 	"massmessage-form-spamlist": "Pagina o categoria que conten la lista de las paginas sus las qualas cal daissar un messatge :",
 	"massmessage-form-subject": "Subjècte del messatge (utilizat tanben dins lo resumit de la modificacion) :",
@@ -27,5 +28,7 @@
 	"log-description-massmessage": "Aqueles eveniments traçan los utilizaires qu'an mandat de messatges.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|a mandat un messatge}} a $3",
 	"logentry-massmessage-failure": "La liurason de « $4 » sus $3 a fracassat amb un còde d’error de <code>$5</code>",
-	"massmessage-cannot-rename": "Aquò's un compte sistèma que pòt pas èsser renomenat."
+	"massmessage-cannot-rename": "Aquò's un compte sistèma que pòt pas èsser renomenat.",
+	"createmassmessagelist-legend": "Crear una lista de difusion de messatges de massa",
+	"massmessage-create-editsummary": "Crear una lista de difusion de messatges de massa"
 }
