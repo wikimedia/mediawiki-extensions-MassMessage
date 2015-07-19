@@ -20,7 +20,7 @@
 	"massmessage-form-submit": "보내기",
 	"massmessage-fieldset-preview": "미리 보기",
 	"massmessage-fieldset-info": "정보",
-	"massmessage-preview-count": "당신의 메시지는 {{PLURAL:$1|$1 개의 문서}}에 배달될 것입니다.",
+	"massmessage-preview-count": "당신의 메시지는 {{PLURAL:$1|문서 $1개}}에 보내집니다.",
 	"massmessage-submitted": "{{PLURAL:$1|문서 $1개}}로 발송할 메시지가 대기열에 추가되었습니다.",
 	"massmessage-just-preview": "이것은 미리보기일 뿐입니다. 메시지를 보내려면 \"{{int:massmessage-form-submit}}\"를 누르세요.",
 	"massmessage-spamlist-doesnotexist": "지정한 문서 목록의 문서나 분류가 존재하지 않습니다.",
