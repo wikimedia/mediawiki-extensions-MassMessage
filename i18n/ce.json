@@ -18,7 +18,7 @@
 	"massmessage-preview-count": "Хьан хаам дӀабохьутар бу {{PLURAL:$1|$1 агӀо}}",
 	"massmessage-submitted": "Хьан хаам дӀакхачор {{PLURAL:$1|$1 }} рогӀехь хӀоттина.",
 	"massmessage-just-preview": "ХӀара хьалха хьажар ду. ТӀетаӀае «{{int:massmessage-form-submit}}» хаам дӀабахьийта.",
-	"massmessage-no-timestamp": "ДӀахьедар: Хьан хаам чохь терахь а хан а я куьг я дац.",
+	"massmessage-no-timestamp": "ДӀахьедар: Хьан хаам чохь терахь а, хан а я куьг я дац.",
 	"massmessage-form-header": "ХӀокху агӀонехь йиш ю билгалабина декъашхошка хаамаш бахьийта. Массанхьа яздан деза ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage кхин тӀе хаам]).",
 	"massmessage-queued-count": "РогӀехь болу [[Special:MassMessage|дукха хаамаш]]",
 	"massmessage-optout-category": "Кехаташ дӀадахьийта реза ца хилар",
