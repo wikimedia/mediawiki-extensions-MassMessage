@@ -41,7 +41,7 @@
 	"massmessage-optout-category": "Exclusión de entrega de mensajes",
 	"massmessage-badhtml": "Tu mensaje puede tener {{PLURAL:$2|una etiqueta HTML|varias etiquetas HTML}} sin cerrar: $1.",
 	"massmessage-parse-badurl": "«$1» no es un sitio válido.",
-	"massmessage-parse-badpage": "\"$1\" no es un título de página valido",
+	"massmessage-parse-badpage": "\"$1\" no es un título de página válido.",
 	"massmessage-global-disallowed": "Solo se puede enviar mensajes a páginas locales.",
 	"right-massmessage": "Enviar un mensaje a varios usuarios a la vez",
 	"action-massmessage": "enviar un mensaje a varios usuarios a la vez",
