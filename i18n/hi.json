@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siddhartha Ghai"
+			"Siddhartha Ghai",
+			"Phoenix303"
 		]
 	},
 	"massmessage": "सामूहिक सन्देश भेजें",
@@ -12,6 +13,7 @@
 	"massmessage-form-preview": "पूर्वावलोकन",
 	"massmessage-form-submit": "भेजें",
 	"massmessage-fieldset-preview": "पूर्वावलोकन",
+	"massmessage-fieldset-info": "जानकारी",
 	"massmessage-submitted": "{{PLURAL:$1|$1 पृष्ठ|$1 पृष्ठों}} पर भेजने हेतु आपका सन्देश कतार में जोड़ दिया गया है।",
 	"massmessage-just-preview": "यह केवल एक झलक है। सन्देश भेजने के लिए \"{{int:massmessage-form-submit}}\" पर क्लिक करें।",
 	"massmessage-spamlist-doesnotexist": "निर्दिष्ट पृष्ठ-सूची पृष्ठ मौजूद नहीं है।",
