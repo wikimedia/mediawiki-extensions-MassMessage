@@ -8,6 +8,7 @@
 	"massmessage": "Адправіць масавае паведамленьне",
 	"createmassmessagelist": "Стварэньне сьпісу масавай дастаўкі паведамленьняў",
 	"massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]",
+	"right-massmessage": "адпраўка паведамленьня некалькім удзельнікам адначасова",
 	"massmessage-create-exists-short": "Ужо выкарыстоўваецца",
 	"massmessage-create-invalidsource-short": "Няслушны сьпіс"
 }
