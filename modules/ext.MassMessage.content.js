@@ -21,7 +21,7 @@
 					title: title
 				};
 				if ( missing ) {
-					targetAttribs['class'] = 'new';
+					targetAttribs[ 'class' ] = 'new';
 				}
 				targetLink = mw.html.element( 'a', targetAttribs, title );
 			} else {
@@ -169,7 +169,7 @@
 
 				if ( apiResult.result === 'Success' ) {
 					if ( apiResult.added.length > 0 ) {
-						page = apiResult.added[0];
+						page = apiResult.added[ 0 ];
 						appendAdded(
 							page.title,
 							( 'site' in page ) ? page.site : '',
@@ -182,7 +182,7 @@
 						showAddError( 'massmessage-content-alreadyinlist' );
 					}
 				} else { // The input was invalid.
-					page = apiResult.invalidadd[0];
+					page = apiResult.invalidadd[ 0 ];
 					if ( 'invalidtitle' in page && 'invalidsite' in page ) {
 						showAddError( 'massmessage-content-invalidtitlesite' );
 					} else if ( 'invalidtitle' in page ) {

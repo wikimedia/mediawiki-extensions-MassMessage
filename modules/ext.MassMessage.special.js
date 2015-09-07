@@ -2,15 +2,14 @@
 	$( function () {
 		'use strict';
 
-		// Limit edit summaries to 240 bytes
-		// Modified from mediawiki-core/resources/mediawiki.special/mediawiki.special.movePage.js
-		$( '#mw-massmessage-form-subject' ).byteLimit();
-
 		// Dynamic page title validation
 		var $spamlist = $( '#mw-massmessage-form-spamlist' ),
 			$spamliststatus = $( '<span>' )
 				.attr( 'id', 'mw-massmessage-form-spamlist-status' )
 				.insertAfter( $spamlist );
+
+		// Limit edit summaries to 240 bytes
+		$( '#mw-massmessage-form-subject' ).byteLimit();
 
 		function checkPageTitle() {
 			var api = new mw.Api(),
@@ -24,11 +23,11 @@
 				} ).done( function ( data ) {
 					if ( data && data.query &&
 						// If the page exists and has a supported content model
-						( data.query.pageids[0] !== '-1' &&
-							data.query.pages[data.query.pageids[0]].contentmodel === 'wikitext' ||
-							data.query.pages[data.query.pageids[0]].contentmodel === 'MassMessageListContent' ) ||
+						( data.query.pageids[ 0 ] !== '-1' &&
+							data.query.pages[ data.query.pageids[ 0 ] ].contentmodel === 'wikitext' ||
+							data.query.pages[ data.query.pageids[ 0 ] ].contentmodel === 'MassMessageListContent' ) ||
 						// Or if the text refers to a category
-						data.query.pages[data.query.pageids[0]].ns === 14
+						data.query.pages[ data.query.pageids[ 0 ] ].ns === 14
 					) {
 						// No error message is displayed
 						$spamliststatus
