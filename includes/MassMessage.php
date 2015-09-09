@@ -99,8 +99,7 @@ class MassMessage {
 		global $wgConf, $wgMemc;
 		static $mapping = null;
 		if ( $mapping === null ) {
-			// Don't use wfMemcKey since it splits cache per wiki
-			$key = 'massmessage:urltodb';
+			$key = wfGlobalCacheKey( 'massmessage:urltodb' );
 			$data = $wgMemc->get( $key );
 			if ( $data === false ) {
 				$dbs = $wgConf->getLocalDatabases();
