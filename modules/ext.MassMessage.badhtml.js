@@ -43,30 +43,30 @@
 				var realTag, tag;
 
 				// Keep just the element names and the starting '/', if exists.
-				tag = itm.replace( /[<>]/g, '' ).split( ' ' )[0];
+				tag = itm.replace( /[<>]/g, '' ).split( ' ' )[ 0 ];
 				if ( tag.charAt( 0 ) !== '/' ) { // Start tag
 					if ( !voidElements.hasOwnProperty( tag ) ) { // Ignore void elements
 						if ( tags.hasOwnProperty( tag ) ) {
-							tags[tag]++;
+							tags[ tag ]++;
 						} else {
-							tags[tag] = 1;
+							tags[ tag ] = 1;
 						}
 					}
 				} else { // End tag
 					realTag = tag.substr( 1, tag.length );
 					if ( tags.hasOwnProperty( realTag ) ) {
-						tags[realTag]--;
+						tags[ realTag ]--;
 					} else {
-						tags[realTag] = -1;
+						tags[ realTag ] = -1;
 					}
 				}
 			} );
 
 			results = [];
 			for ( tag in tags ) {
-				if ( tags[tag] > 0 ) {
+				if ( tags[ tag ] > 0 ) {
 					results.push( '<' + tag + '>' );
-				} else if ( tags[tag] < 0 ) {
+				} else if ( tags[ tag ] < 0 ) {
 					results.push( '</' + tag + '>' );
 				}
 			}

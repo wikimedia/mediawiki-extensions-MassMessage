@@ -16,7 +16,7 @@
 					search: request.term,
 					suggest: ''
 				} ).done( function ( data ) {
-					response( data[1] );
+					response( data[ 1 ] );
 				} );
 			}
 		} );

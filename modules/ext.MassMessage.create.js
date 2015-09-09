@@ -23,7 +23,7 @@
 					prop: 'info',
 					titles: title
 				} ).done( function ( data ) {
-					if ( data && data.query && !data.query.pages['-1'] ) {
+					if ( data && data.query && !data.query.pages[ '-1' ] ) {
 						// Page with title already exists
 						$titleStatus.addClass( 'invalid' )
 							.text( mw.message( 'massmessage-create-exists-short' ).text() );
@@ -64,13 +64,13 @@
 			if ( !response || !response.query ) {
 				return true; // ignore if the API acts up
 			}
-			if ( response.query.pages['-1'] ) {
+			if ( response.query.pages[ '-1' ] ) {
 				return false;
 			}
 			for ( i in response.query.pages ) {
-				if ( response.query.pages[i].contentmodel === 'wikitext' ||
-					response.query.pages[i].contentmodel === 'MassMessageListContent' ||
-					response.query.pages[i].ns === 14 ) {
+				if ( response.query.pages[ i ].contentmodel === 'wikitext' ||
+					response.query.pages[ i ].contentmodel === 'MassMessageListContent' ||
+					response.query.pages[ i ].ns === 14 ) {
 					return true;
 				}
 			}
