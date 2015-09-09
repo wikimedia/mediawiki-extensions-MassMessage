@@ -17,7 +17,8 @@
 		"NamespacesToConvert": {
 			"2": 3
 		},
-		"MassMessageAccountUsername": "MediaWiki message delivery"
+		"MassMessageAccountUsername": "MediaWiki message delivery",
+		"MassMessageWikiAliases": {}
 	},
 	"TrackingCategories": [
 		"massmessage-list-category"
