@@ -4,6 +4,9 @@
 			"Milicevic01"
 		]
 	},
+	"massmessage": "Масовно слање поруке",
+	"massmessage-form-spamlist": "Страница или категорија са списком страница где послати поруку:",
+	"massmessage-form-subject": "Наслов поруке (користи се и као опис измене):",
 	"massmessage-form-message": "Текст поруке:",
 	"massmessage-form-preview": "Претпреглед",
 	"massmessage-form-submit": "Пошаљи",
