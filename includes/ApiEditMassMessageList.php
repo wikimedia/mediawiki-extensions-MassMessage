@@ -199,13 +199,6 @@ class ApiEditMassMessageList extends ApiBase {
 		return $summaryMsg->inContentLanguage()->text();
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Edit a mass message delivery list';
-	}
-
 	public function getAllowedParams() {
 		return array(
 			'spamlist' => array(
@@ -221,18 +214,6 @@ class ApiEditMassMessageList extends ApiBase {
 				ApiBase::PARAM_ISMULTI => true
 			),
 			'token' => null,
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'spamlist' => 'Title of the delivery list to update',
-			'add' => 'Titles to add to the list',
-			'remove' => 'Titles to remove from the list',
-			'token' => 'An edit token from action=tokens'
 		);
 	}
 
