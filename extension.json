@@ -17,11 +17,11 @@
 		"NamespacesToConvert": {
 			"2": 3
 		},
-		"MassMessageAccountUsername": "MediaWiki message delivery",
-		"TrackingCategories": [
-			"massmessage-list-category"
-		]
+		"MassMessageAccountUsername": "MediaWiki message delivery"
 	},
+	"TrackingCategories": [
+		"massmessage-list-category"
+	],
 	"ExtensionMessagesFiles": {
 		"MassMessageAlias": "MassMessage.alias.php",
 		"MassMessageMagic": "MassMessage.i18n.magic.php"
