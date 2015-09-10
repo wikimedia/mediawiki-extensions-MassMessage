@@ -19,15 +19,15 @@
 					action: 'query',
 					titles: pagetitle,
 					prop: 'info',
-					indexpageids: true
+					formatversion: 2
 				} ).done( function ( data ) {
 					if ( data && data.query &&
 						// If the page exists and has a supported content model
-						( data.query.pageids[ 0 ] !== '-1' &&
-							data.query.pages[ data.query.pageids[ 0 ] ].contentmodel === 'wikitext' ||
-							data.query.pages[ data.query.pageids[ 0 ] ].contentmodel === 'MassMessageListContent' ) ||
+						( !data.query.pages[ 0 ].missing &&
+							data.query.pages[ 0 ].contentmodel === 'wikitext' ||
+							data.query.pages[ 0 ].contentmodel === 'MassMessageListContent' ) ||
 						// Or if the text refers to a category
-						data.query.pages[ data.query.pageids[ 0 ] ].ns === 14
+						data.query.pages[ 0 ].ns === 14
 					) {
 						// No error message is displayed
 						$spamliststatus
