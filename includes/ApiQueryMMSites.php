@@ -40,33 +40,8 @@ class ApiQueryMMSites extends ApiQueryBase {
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'term' => 'The prefix to search for'
-		);
-	}
-
 	public function isInternal() {
 		return true;
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Serve autocomplete requests for the site field in MassMessage';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=query&list=mmsites&term=en'
-		);
 	}
 
 	/**
