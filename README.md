@@ -20,6 +20,10 @@ The account name that the bot will post with. If this is an existing account, th
 
 Whether to enable sending messages from one wiki to another. Can be disabled on all wikis except one "central wiki" which will keep the log entries in one location.
 
+    $wgMassMessageWikiAliases = array( 'foo-old.example.org' => 'foowiki' );
+
+An mapping of domain names to their database name. Useful if you have moved or renamed a wiki and need previous input lists to continue working.
+
 Messages are delivered using the [job queue](https://www.mediawiki.org/wiki/Manual:Job_queue). It is recommended that you set up a cron job to empty the queue rather than relying on web requests. You can view how many MassMessage jobs are still queued by visiting `Special:Version` on your wiki.
 
 
