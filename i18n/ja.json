@@ -3,7 +3,8 @@
 		"authors": [
 			"Fryed-peach",
 			"Shirayuki",
-			"Los688"
+			"Los688",
+			"Sujiniku"
 		]
 	},
 	"massmessage": "メッセージの一斉送信",
@@ -25,6 +26,7 @@
 	"massmessage-empty-subject": "件名を入力していません。",
 	"massmessage-empty-message": "メッセージの本文を入力していません。",
 	"massmessage-unescaped-langlinks": "警告: メッセージ内にエスケープされていない言語リンクがあります。",
+	"massmessage-no-timestamp": "警告:あなたのメッセージはタイムスタンプまたは署名を含んでいません。",
 	"massmessage-form-header": "このフォームでは、指定した一覧のページにメッセージを送信できます。すべて必須項目です ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 詳細情報])。",
 	"massmessage-queued-count": "順番待ち中の[[Special:MassMessage|一括送信メッセージ]]",
 	"massmessage-hidden-comment": "<!-- User:$1@$2 が $3 のリストを使用して送信したメッセージ -->",
