@@ -44,7 +44,7 @@
 	"action-massmessage": "berichten te verzenden aan meerdere ontvangers tegelijk",
 	"log-name-massmessage": "Bulkberichtenlogboek",
 	"log-description-massmessage": "Deze gebeurtenissen zijn gerelateerd aan verzonden berichten via de functie bulkberichten.",
-	"logentry-massmessage-send": "$1 {{GENDER:$2|heeft}} een bericht geplaatst op $3",
+	"logentry-massmessage-send": "$1 {{GENDER:$2|heeft}} een bericht gezonden aan $3",
 	"logentry-massmessage-failure": "Het afleveren van \"$4\" voor $3 is mislukt met de foutcode <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat het doel zich in een naamruimte bevindt waarin geen berichten geplaatst kunnen worden",
 	"logentry-massmessage-skipoptout": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat er op de doelpagina geen berichten geplaatst mogen worden",
