@@ -22,6 +22,7 @@
 	"massmessage-empty-message": "نص الرسالة فارغ.",
 	"massmessage-unescaped-langlinks": "تحذير: هناك روابط لغة ملغاة في الرسالة الخاصة بك.",
 	"massmessage-form-header": "استخدم النموذج أدناه لإرسال رسائل إلى قائمة معينة. جميع الحقول مطلوبة.",
+	"massmessage-queued-count": "[[Special:MassMessage|الرسائل الكمية]] في الطابور",
 	"massmessage-parse-badurl": "\"$1\" ليس موقعًا صحيحًا.",
 	"massmessage-parse-badpage": "\"$1\" ليس عنوان صفحة صحيح.",
 	"massmessage-global-disallowed": "يمكن إرسال الرسائل إلى الصفحات المحلية فقط.",
