@@ -20,6 +20,9 @@
 		"MassMessageAccountUsername": "MediaWiki message delivery",
 		"MassMessageWikiAliases": {}
 	},
+	"requires": {
+		"MediaWiki": ">= 1.26.0"
+	},
 	"TrackingCategories": [
 		"massmessage-list-category"
 	],
