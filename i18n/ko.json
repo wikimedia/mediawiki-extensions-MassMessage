@@ -84,7 +84,7 @@
 	"massmessage-create-invalidtitle": "지정된 제목이 올바르지 않습니다.",
 	"massmessage-create-exists": "이미 지정한 문서가 존재합니다.",
 	"massmessage-create-nopermission": "이 제목으로 목록을 생성할 권한이 없습니다.",
-	"massmessage-edit-invalidtitle": "이 제목에는 유용한 대량 메세지 전달 목록이 없습니다.",
+	"massmessage-edit-invalidtitle": "이 제목에는 유용한 대량 메시지 전달 목록이 없습니다.",
 	"massmessage-list-category": "대량 메시지 수신자 목록",
 	"massmessage-list-category-desc": "[[Special:MassMessage|대량 메시지]] 확장 기능을 위한 수신자 목록입니다."
 }
