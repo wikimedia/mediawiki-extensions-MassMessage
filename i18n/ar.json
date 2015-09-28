@@ -34,6 +34,11 @@
 	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
 	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
 	"massmessage-cannot-rename": "هذا حساب نظام ولا يمكن إعادة تسميته.",
+	"massmessage-content-addtitle": "العنوان:",
+	"createmassmessagelist-legend": "أنشيء قائمة توصيل رسائل كمية",
+	"massmessage-create-new": "أنشيء قائمة توصيل جديدة",
+	"massmessage-create-import": "استورد الصفحات من قائمة أو تصنيف موجود",
+	"massmessage-create-editsummary": "إنشاء قائمة توصيل رسائل كمية",
 	"massmessage-create-exists-short": "لقد تم استخدام العنوان من قبل",
 	"massmessage-create-invalidsource-short": "قائمة غير صالحة",
 	"massmessage-list-category": "قوائم بعث الرسائل الكمية"
