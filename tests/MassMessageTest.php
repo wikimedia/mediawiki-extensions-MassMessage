@@ -70,7 +70,6 @@ class MassMessageTest extends MassMessageTestCase {
 		$user = MassMessage::getMessengerUser();
 		$this->assertEquals( $name, $user->getName() );
 		$this->assertTrue( in_array( 'bot', $user->getGroups() ) );
-		$this->assertInstanceOf( 'InvalidPassword', $user->getPassword() );
 	}
 
 	/**
