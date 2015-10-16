@@ -10,5 +10,6 @@
 	"massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]",
 	"right-massmessage": "адпраўка паведамленьня некалькім удзельнікам адначасова",
 	"massmessage-create-exists-short": "Ужо выкарыстоўваецца",
-	"massmessage-create-invalidsource-short": "Няслушны сьпіс"
+	"massmessage-create-invalidsource-short": "Няслушны сьпіс",
+	"massmessage-list-category-desc": "Гэтая старонка зьяўляецца сьпісам дастаўкі для пашырэньня [[Special:MassMessage|MassMessage]]."
 }
