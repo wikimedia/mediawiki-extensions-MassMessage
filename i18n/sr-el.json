@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Srdjan m"
 		]
 	},
+	"createmassmessagelist": "Napravi spisak isporuke masovnih poruka",
 	"massmessage-form-message": "Tekst poruke:",
 	"massmessage-form-preview": "Pretpregled",
 	"massmessage-form-submit": "Pošalji",

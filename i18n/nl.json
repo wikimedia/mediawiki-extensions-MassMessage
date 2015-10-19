@@ -36,7 +36,7 @@
 	"massmessage-queued-count": "[[Special:MassMessage|Bulkberichten]] in de wachtrij",
 	"massmessage-hidden-comment": "<!-- Bericht verzonden door User:$1@$2 via de lijst op de pagina $3 -->",
 	"massmessage-optout-category": "Wil geen berichten ontvangen",
-	"massmessage-badhtml": "Uw bericht heeft mogelijk {{PLURAL:$2|een ongesloten HTML-tag|ongesloten HTML-tags}}: $1.",
+	"massmessage-badhtml": "Uw bericht heeft mogelijk {{PLURAL:$2|een ongesloten HTML-label|ongesloten HTML-label}}: $1.",
 	"massmessage-parse-badurl": "\"$1\" is geen geldige site.",
 	"massmessage-parse-badpage": "\"$1\" is geen geldige paginanaam.",
 	"massmessage-global-disallowed": "Berichten kunnen alleen afgeleverd worden op lokale pagina's.",
