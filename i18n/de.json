@@ -110,6 +110,7 @@
 	"massmessage-list-category": "Massennachrichten-Versandlisten",
 	"massmessage-list-category-desc": "Die Seite ist eine Versandliste für die [[Special:MassMessage|Massennachrichten]]-Erweiterung.",
 	"apihelp-editmassmessagelist-description": "Massennachrichten-Versandliste bearbeiten",
+	"apihelp-editmassmessagelist-param-spamlist": "Titel der zu aktualisierenden Versandliste.",
 	"apihelp-editmassmessagelist-param-add": "Seitentitel, die zur Liste hinzugefügt werden sollen.",
 	"apihelp-editmassmessagelist-param-remove": "Titel, die von der Liste entfernt werden sollen.",
 	"apihelp-massmessage-description": "Sendet eine Nachricht an eine Liste mit Seiten.",
