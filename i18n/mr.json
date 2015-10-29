@@ -6,6 +6,7 @@
 		]
 	},
 	"massmessage": "एकगठ्ठा संदेश पाठवा",
+	"createmassmessagelist": "एकगठ्ठा संदेश वितरण यादी तयार करा",
 	"massmessage-desc": "सदस्यांच्या यादीत असलेल्या सदस्यांना, सोप्या रितीने संदेश पाठविण्यास वापरकर्त्यास  परवानगी देते.",
 	"massmessage-form-spamlist": "या पानावर संदेश देण्यायोग्य असलेल्या पानांची यादी आहे.",
 	"massmessage-form-subject": "संदेशाचा विषय. याचा वापर संपादन सारांश म्हणुनही होईल.",
@@ -24,5 +25,7 @@
 	"action-massmessage": "बहुविध सदस्यांना एकत्रितरित्या संदेश पाठवा",
 	"log-name-massmessage": "एकगठ्ठा संदेशाच्या नोंदी",
 	"log-description-massmessage": "हे प्रसंग,[[Special:MassMessage]] मार्फत संदेश पाठविणाऱ्या सदस्यांचा थांग (ट्रॅक) लावतात.",
-	"logentry-massmessage-send": "$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}"
+	"logentry-massmessage-send": "$1 ने $3 ला{{GENDER:$2|संदेश पाठविला}}",
+	"createmassmessagelist-legend": "एकगठ्ठा संदेश वितरण यादी तयार करा",
+	"massmessage-create-editsummary": "एकगठ्ठा संदेश वितरण यादी तयार करा"
 }
