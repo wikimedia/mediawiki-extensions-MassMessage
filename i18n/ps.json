@@ -13,5 +13,6 @@
 	"massmessage-submitted": "ستاسو پيغام ولېږل شو!",
 	"log-name-massmessage": "ډله ايز پيغام يادښت",
 	"log-description-massmessage": "دا پېښې د کارنانو لېږل شوي پيغامونه څاري.",
-	"logentry-massmessage-send": "$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}"
+	"logentry-massmessage-send": "$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}",
+	"apihelp-massmessage-param-message": "د پيغام متن."
 }
