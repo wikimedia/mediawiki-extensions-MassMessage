@@ -178,7 +178,7 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	public function callback( array $data ) {
 
-		MassMessage::verifyData( $data, $this->status );
+		MassMessage::verifyData( $data, $this->status, $this->getContext() );
 
 		// Die on errors.
 		if ( !$this->status->isOK() ) {

@@ -16,7 +16,7 @@ class ApiMassMessage extends ApiBase {
 		$data = $this->extractRequestParams();
 
 		$status = new Status();
-		MassMessage::verifyData( $data, $status );
+		MassMessage::verifyData( $data, $status, $this );
 		if ( !$status->isOK() ) {
 			$this->dieStatus( $status );
 		}
