@@ -47,7 +47,9 @@ class SendMassMessages extends Maintenance {
 		$pages = array();
 		$this->output( "Reading from \"$list\"." );
 
+		// @codingStandardsIgnoreStart
 		while ( $line = trim( fgets( $file ) ) ) {
+		// @codingStandardsIgnoreEnd
 			$exp = explode( '\t', $line );
 			$pages[] = array(
 				'title' => $exp[0],

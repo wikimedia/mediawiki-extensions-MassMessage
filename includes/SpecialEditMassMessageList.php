@@ -287,7 +287,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		if ( empty( $invalidTargets ) ) {
 			$result->setResult( true,
 				MassMessageListContentHandler::normalizeTargetArray( $targets ) );
-		}else {
+		} else {
 			$result->setResult( false, $invalidTargets );
 		}
 		return $result;

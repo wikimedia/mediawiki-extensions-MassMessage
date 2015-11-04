@@ -35,7 +35,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 		}
 		$subj = $this->simulateJob( $target );
 		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
-		// $this->assertTrue( $target->exists() ); // Message was created
+		// $this->assertTrue( $target->exists() );
+		// Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		$this->assertEquals(
 			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
@@ -56,7 +57,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 			$this->markTestSkipped( "This test requires the LiquidThreads extension" );
 		}
 		$target = Title::newFromText( 'Project:LQT test' );
-		// $this->assertTrue( LqtDispatch::isLqtPage( $target ) ); // Check that it worked
+		// $this->assertTrue( LqtDispatch::isLqtPage( $target ) );
+		// Check that it worked
 		$subject = $this->simulateJob( $target );
 		$this->assertTrue( Title::newFromText( 'Thread:' . $proj . ':LQT test/' . $subject )->exists() );
 	}
