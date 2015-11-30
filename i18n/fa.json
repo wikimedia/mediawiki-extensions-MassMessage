@@ -4,7 +4,8 @@
 			"Armin1392",
 			"Ebraminio",
 			"Reza1615",
-			"Mjbmr"
+			"Mjbmr",
+			"Americophile"
 		]
 	},
 	"massmessage": "ارسال انبوه پیام",
@@ -26,7 +27,7 @@
 	"massmessage-form-header": "از فرم زیر برای ارسال پیام‌ها به یک فهرست مشخص‌شده استفاده کنید. همهٔ زمینه‌ها مورد نیاز ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]) هستند.",
 	"massmessage-queued-count": "[[Special:MassMessage|پیام‌های انبوه]] در صف",
 	"massmessage-hidden-comment": "<!-- پیام توسط کاربر:$1@$2 با استفاده از فهرست در $3 ارسال شده‌است -->",
-	"massmessage-optout-category": "بیرون آمدن از رساندن پیام",
+	"massmessage-optout-category": "بیرون‌آمدگان از پیام‌رسان",
 	"massmessage-badhtml": "پیام شما {{PLURAL:$2|یک|چند}} برچسپ بسته‌نشده اچ‌تی‌ام‌ال دارد: $1.",
 	"massmessage-parse-badurl": "«$1» وب‌گاه معتبری نیست.",
 	"massmessage-parse-badpage": "«$1» عنوان معتبری برای صفحه نیست.",
