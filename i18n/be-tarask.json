@@ -7,6 +7,7 @@
 	},
 	"massmessage": "Адправіць масавае паведамленьне",
 	"createmassmessagelist": "Стварэньне сьпісу масавай дастаўкі паведамленьняў",
+	"massmessage-form-subject": "Тэма паведамленьня (выкарыстоўваецца таксама як кароткае апісаньне зьменаў):",
 	"massmessage-form-message": "Тэкст паведамленьня:",
 	"massmessage-queued-count": "Чарга [[Special:MassMessage|масавых паведамленьняў]]",
 	"right-massmessage": "адпраўка паведамленьня некалькім удзельнікам адначасова",
