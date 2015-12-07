@@ -5,6 +5,7 @@
 		]
 	},
 	"massmessage": "ډله ايز پيغام لېږل",
+	"createmassmessagelist": "د ډله ايزې پيغام رسونې لړليک جوړول",
 	"massmessage-form-message": "د پيغام جوسه",
 	"massmessage-form-preview": "مخليدنه",
 	"massmessage-form-submit": "لېږل",
@@ -14,5 +15,7 @@
 	"log-name-massmessage": "ډله ايز پيغام يادښت",
 	"log-description-massmessage": "دا پېښې د کارنانو لېږل شوي پيغامونه څاري.",
 	"logentry-massmessage-send": "$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}",
+	"createmassmessagelist-legend": "د ډله ايزې پيغام رسونې لړليک جوړول",
+	"massmessage-create-editsummary": "د ډله ايزې پيغام رسونې لړليک جوړول",
 	"apihelp-massmessage-param-message": "د پيغام متن."
 }
