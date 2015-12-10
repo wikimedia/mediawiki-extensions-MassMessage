@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lakzon"
+		]
+	},
+	"massmessage-form-message": ":بدنهٔ پیام",
+	"massmessage-empty-subject": "خط موضوع خالی است.",
+	"massmessage-empty-message": "بدنهٔ پیام خالی است.",
+	"massmessage-diff-descheader": "تغییرات در توضیح:",
+	"massmessage-create-description": "توصیف:",
+	"massmessage-edit-description": "توصیف:"
+}
