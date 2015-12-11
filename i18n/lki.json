@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lakzon"
+			"Lakzon",
+			"Hosseinblue"
 		]
 	},
 	"massmessage-form-message": ":بدنهٔ پیام",
@@ -9,5 +10,6 @@
 	"massmessage-empty-message": "بدنهٔ پیام خالی است.",
 	"massmessage-diff-descheader": "تغییرات در توضیح:",
 	"massmessage-create-description": "توصیف:",
+	"massmessage-create-source": ":بِنچۀک/مۀنبۀع",
 	"massmessage-edit-description": "توصیف:"
 }
