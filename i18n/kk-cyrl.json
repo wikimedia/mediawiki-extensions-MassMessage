@@ -77,7 +77,7 @@
 	"massmessage-create-exists-short": "Әлдеқашан қолданылады",
 	"massmessage-create-invalidsource-short": "Жарамды тізім емес",
 	"editmassmessagelist-legend": "Жаппай хабарлама жеткізіп беру тізімін өңдеу",
-	"massmessage-edit-pagetitle": "Өңделуде $1",
+	"massmessage-edit-pagetitle": "$1 тізімін өңдеп жатырсыз",
 	"massmessage-edit-title": "Атауы:",
 	"massmessage-edit-description": "Сипаттамасы:",
 	"massmessage-edit-content": "Нысана беттер:",
