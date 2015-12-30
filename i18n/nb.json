@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Danmichaelo"
+			"Danmichaelo",
+			"Jeblad"
 		]
 	},
 	"massmessage": "Masseutsendelse",
@@ -29,5 +30,16 @@
 	"log-name-massmessage": "Masseutsendelseslogg",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|sendte en melding}} til $3",
 	"logentry-massmessage-failure": "Levering av «$4» til $3 mislyktes med feilkoden <code>$5</code>",
-	"massmessage-content-pagesonsite": "Sider på $1:"
+	"massmessage-content-pagesonsite": "Sider på $1:",
+	"massmessage-create-title": "Tittel:",
+	"massmessage-create-description": "Beskrivelse:",
+	"massmessage-create-content": "Innhold:",
+	"massmessage-create-source": "Kilde:",
+	"massmessage-create-invalidsource-short": "Ikke en gyldig liste",
+	"massmessage-edit-pagetitle": "Redigerer $1",
+	"massmessage-edit-title": "Tittel:",
+	"massmessage-edit-description": "Beskrivelse:",
+	"massmessage-edit-content": "Målsider:",
+	"massmessage-edit-summary": "Redigeringssammendrag:",
+	"massmessage-list-category": "MassMessage leveringsliste"
 }
