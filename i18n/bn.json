@@ -26,6 +26,7 @@
 	"massmessage-empty-message": "বার্তার মূল অংশ খালি।",
 	"massmessage-queued-count": "সারিবদ্ধ [[Special:MassMessage|গণ বার্তা]]",
 	"massmessage-hidden-comment": "<!-- $3-এর তালিকা ব্যবহার করে বার্তাটি ব্যবহারকারী:$1@$2 পাঠিয়েছেন -->",
+	"massmessage-optout-category": "গণবার্তা বিতরণ প্রাপ্তি থেকে অব্যাহতি",
 	"massmessage-parse-badurl": "\"$1\" কোন বৈধ সাইট নয়।",
 	"massmessage-parse-badpage": "\"$1\" কোন বৈধ পাতার শিরোনাম নয়।",
 	"massmessage-global-disallowed": "বার্তা শুধুমাত্র স্থানীয় পাতাসমূহে পাঠানো যেতে পারে।",
