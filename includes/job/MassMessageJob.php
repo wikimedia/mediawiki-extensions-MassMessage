@@ -145,7 +145,7 @@ class MassMessageJob extends Job {
 		// If we're sending to a User:/User talk: page, make sure the user exists.
 		// Redirects are automatically followed in getLocalTargets
 		if ( $title->getNamespace() === NS_USER || $title->getNamespace() === NS_USER_TALK ) {
-			$user = User::newFromName( $title->getBaseText() );
+			$user = User::newFromName( $title->getRootText() );
 			if ( !$user || !$user->getId() ) { // Does not exist
 				$this->logLocalSkip( 'skipnouser' );
 				return true;
