@@ -41,7 +41,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			'description',
 			$targets,
 			'summary',
-			new RequestContext
+			RequestContext::getMain()
 		);
 		$this->assertTrue( $result->isGood() );
 		$rev = Revision::newFromTitle( $title );
