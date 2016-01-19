@@ -32,6 +32,10 @@ class SpecialMassMessage extends SpecialPage {
 		parent::__construct( 'MassMessage', 'massmessage' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	public function execute( $par ) {
 		$request = $this->getRequest();
 		$context = $this->getContext();
