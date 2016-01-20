@@ -26,6 +26,10 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		parent::__construct( 'EditMassMessageList' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * @param string $par
 	 */
