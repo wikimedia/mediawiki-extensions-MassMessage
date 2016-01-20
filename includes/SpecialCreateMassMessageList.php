@@ -6,6 +6,10 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		parent::__construct( 'CreateMassMessageList' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * Add ResourceLoader module and call parent implementation.
 	 * @param string $par
