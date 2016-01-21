@@ -40,34 +40,9 @@ class MassMessage {
 	public static function getMessengerUser() {
 		global $wgMassMessageAccountUsername;
 
-		if ( method_exists( 'User', 'newSystemUser' ) ) {
-			$user = User::newSystemUser( $wgMassMessageAccountUsername, array( 'steal' => true ) );
-		} else {
-			// Function kinda copied from the AbuseFilter
-			$user = User::newFromName( $wgMassMessageAccountUsername );
-
-			if ( $user->getId() && $user->getPassword() instanceof InvalidPassword
-				&& $user->getTemporaryPassword() instanceof InvalidPassword
-			) {
-				// We've already stolen the account
-				return $user;
-			}
-
-			if ( !$user->getId() ) {
-				$user->addToDatabase();
-				$user->saveSettings();
-
-				// Increment site_stats.ss_users
-				$ssu = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
-				$ssu->doUpdate();
-			} else {
-				// Someone already created the account, lets take it over.
-				$user->setPassword( null );
-				$user->setEmail( null );
-				$user->saveSettings();
-			}
-		}
-
+		$user = User::newSystemUser(
+			$wgMassMessageAccountUsername, array( 'steal' => true )
+		);
 		// Make the user a bot so it doesn't look weird
 		$user->addGroup( 'bot' );
 
