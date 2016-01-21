@@ -314,6 +314,12 @@ class MassMessage {
 		// Log it.
 		self::logToWiki( $spamlist, $user, $data['subject'] );
 
+		$data += array(
+			'userId' => CentralIdLookup::factory()
+				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
+			'originWiki' => wfWikiID(),
+		);
+
 		// Insert it into the job queue.
 		$params = array(
 			'data' => $data,

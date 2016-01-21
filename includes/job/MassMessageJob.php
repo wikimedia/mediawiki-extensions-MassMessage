@@ -14,6 +14,12 @@ class MassMessageJob extends Job {
 
 	const STRIP_TILDES = true;
 
+	/**
+	 * @var bool Whether to use sender account (if possible)
+	 * TODO: Expose this as a configurable option (T71954)
+	 */
+	private $useSenderUser = false;
+
 	public function __construct( Title $title, array $params, $id = 0 ) {
 		// Create a fresh Title object so namespaces are evaluated
 		// in the context of the target site. See bug 57464.
@@ -38,6 +44,24 @@ class MassMessageJob extends Job {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * @return User
+	 */
+	protected function getUser() {
+		if ( $this->useSenderUser && isset( $this->params['userId'] ) ) {
+			$centralIdLookup = CentralIdLookup::factory();
+			$user = $centralIdLookup->localUserFromCentralId(
+				$this->params['userId'],
+				CentralIdLookup::AUDIENCE_RAW
+			);
+			if ( $user ) {
+				return $user;
+			}
+		}
+
+		return MassMessage::getMessengerUser();
 	}
 
 	/**
@@ -87,7 +111,7 @@ class MassMessageJob extends Job {
 	 */
 	protected function logLocalSkip( $reason ) {
 		$logEntry = new ManualLogEntry( 'massmessage', $reason );
-		$logEntry->setPerformer( MassMessage::getMessengerUser() );
+		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $this->title );
 		$logEntry->setParameters( array(
 			'4::subject' => $this->params['subject']
@@ -97,7 +121,6 @@ class MassMessageJob extends Job {
 		$logEntry->publish( $logid );
 	}
 
-
 	/**
 	 * Log any message failures on the target site.
 	 *
@@ -106,7 +129,7 @@ class MassMessageJob extends Job {
 	protected function logLocalFailure( $reason ) {
 
 		$logEntry = new ManualLogEntry( 'massmessage', 'failure' );
-		$logEntry->setPerformer( MassMessage::getMessengerUser() );
+		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $this->title );
 		$logEntry->setParameters( array(
 			'4::subject' => $this->params['subject'],
@@ -168,7 +191,7 @@ class MassMessageJob extends Job {
 	}
 
 	protected function editPage() {
-		$user = MassMessage::getMessengerUser();
+		$user = $this->getUser();
 		$params = array(
 			'action' => 'edit',
 			'title' => $this->title->getPrefixedText(),
@@ -187,7 +210,7 @@ class MassMessageJob extends Job {
 	}
 
 	protected function addLQTThread() {
-		$user = MassMessage::getMessengerUser();
+		$user = $this->getUser();
 		$params = array(
 			'action' => 'threadaction',
 			'threadaction' => 'newthread',
@@ -201,7 +224,7 @@ class MassMessageJob extends Job {
 	}
 
 	protected function addFlowTopic() {
-		$user = MassMessage::getMessengerUser();
+		$user = $this->getUser();
 		$params = array(
 			'action' => 'flow',
 			'page' => $this->title->getPrefixedText(),
@@ -250,7 +273,7 @@ class MassMessageJob extends Job {
 		);
 		// New user objects will use $wgRequest, so we set that
 		// to our DerivativeRequest, so we don't run into any issues
-		$wgUser = MassMessage::getMessengerUser();
+		$wgUser = $this->getUser();
 		$wgUser->clearInstanceCache(); // Force rights reload (for IP block exemption)
 
 		$context = RequestContext::getMain();
