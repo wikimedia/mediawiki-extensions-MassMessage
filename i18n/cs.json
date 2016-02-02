@@ -17,7 +17,8 @@
 	"massmessage-fieldset-preview": "Náhled",
 	"massmessage-submitted": "Požadované doručení zprávy na {{PLURAL:$1|$1 stránku|$1 stránky|$1 stránek}} bylo zařazeno do fronty.",
 	"massmessage-just-preview": "Toto je jen náhled. Pro odeslání zprávy klikněte na „{{int:massmessage-form-submit}}“.",
-	"massmessage-spamlist-doesnotexist": "Uvedená stránka se seznamem stránek neexistuje.",
+	"massmessage-spamlist-doesnotexist": "Uvedená stránka či kategorie s distribučním seznamem neexistuje.",
+	"massmessage-spamlist-invalid": "Uvedená stránka neobsahuje platný distribuční seznam.",
 	"massmessage-empty-subject": "Předmět je prázdný.",
 	"massmessage-empty-message": "Tělo zprávy je prázdné.",
 	"massmessage-unescaped-langlinks": "Upozornění: Vaše zpráva obsahuje neošetřené jazykové odkazy.",
@@ -60,5 +61,6 @@
 	"massmessage-edit-description": "Popis:",
 	"massmessage-edit-content": "Cílové stránky:",
 	"massmessage-edit-summary": "Shrnutí editace:",
+	"massmessage-list-category": "Distribuční seznamy MassMessage",
 	"massmessage-list-category-desc": "Stránka je seznamem příjemců pro rozšíření [[Special:MassMessage|MassMessage]]."
 }
