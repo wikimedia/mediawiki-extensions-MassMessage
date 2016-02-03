@@ -5,7 +5,10 @@
 			"Srdjan m"
 		]
 	},
+	"massmessage": "Masovno slanje poruke",
 	"createmassmessagelist": "Napravi spisak isporuke masovnih poruka",
+	"massmessage-form-spamlist": "Stranica ili kategorija sa spiskom stranica gde poslati poruku:",
+	"massmessage-form-subject": "Naslov poruke (koristi se i kao opis izmene):",
 	"massmessage-form-message": "Tekst poruke:",
 	"massmessage-form-preview": "Pretpregled",
 	"massmessage-form-submit": "Pošalji",
@@ -15,6 +18,7 @@
 	"logentry-massmessage-send": "$1 je {{GENDER:$2|poslao|poslala}} poruku u $3",
 	"logentry-massmessage-failure": "Poruka „$4“ nije poslata u $3; došlo je do greške <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Poruka „$4“ nije poslata u $3; odredište je u neodgovarajućem imenskom prostoru",
+	"logentry-massmessage-skipoptout": "Poruka „$4“ nije poslata u $3; korisnik je onemogućio primanje poruka",
 	"logentry-massmessage-skipnouser": "Poruka „$4“ nije poslata u $3; korisnički nalog ne postoji",
 	"massmessage-content-removeno": "Otkaži",
 	"massmessage-content-emptylist": "(ništa)",
