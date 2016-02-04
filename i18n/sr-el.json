@@ -15,6 +15,7 @@
 	"right-massmessage": "masovno slanje poruka",
 	"action-massmessage": "masovno slanje poruka",
 	"log-name-massmessage": "Dnevnik masovnih poruka",
+	"log-description-massmessage": "Ovaj dnevnik prati slanje prouka preko ekstenzije MassMessage.",
 	"logentry-massmessage-send": "$1 je {{GENDER:$2|poslao|poslala}} poruku u $3",
 	"logentry-massmessage-failure": "Poruka „$4“ nije poslata u $3; došlo je do greške <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Poruka „$4“ nije poslata u $3; odredište je u neodgovarajućem imenskom prostoru",
