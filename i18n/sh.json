@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kolega2357"
+			"Kolega2357",
+			"Conquistador"
 		]
 	},
-	"massmessage-form-preview": "Prikaži",
+	"massmessage-form-preview": "Pregled",
 	"massmessage-form-submit": "Pošalji",
-	"massmessage-fieldset-preview": "Prikaži",
+	"massmessage-fieldset-preview": "Pregled",
 	"log-name-massmessage": "Evidencija masovnih poruka",
-	"log-description-massmessage": "Ovi događaji prate slanje poruka korisnicima."
+	"log-description-massmessage": "Ovi događaji prate slanje poruka korisnicima.",
+	"massmessage-content-removeno": "Otkaži"
 }
