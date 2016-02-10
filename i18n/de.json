@@ -114,6 +114,7 @@
 	"apihelp-editmassmessagelist-param-add": "Seitentitel, die zur Liste hinzugefügt werden sollen.",
 	"apihelp-editmassmessagelist-param-remove": "Titel, die von der Liste entfernt werden sollen.",
 	"apihelp-massmessage-description": "Sendet eine Nachricht an eine Liste mit Seiten.",
+	"apihelp-massmessage-param-spamlist": "Seite, die eine Liste mit Seiten enthält, auf denen Nachrichten hinterlassen werden sollen.",
 	"apihelp-massmessage-param-subject": "Betreffzeile der Nachricht.",
 	"apihelp-massmessage-param-message": "Text des Nachrichtenkörpers.",
 	"apihelp-query+mmsites-param-term": "Das Präfix, nach das gesucht werden soll.",
