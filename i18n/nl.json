@@ -88,7 +88,7 @@
 	"massmessage-create-invalidtitle": "De opgegeven paginanaam is ongeldig.",
 	"massmessage-create-exists": "Er bestaat al een pagina met de opgegeven naam.",
 	"massmessage-create-nopermission": "U hebt geen rechten om een lijst met deze naam aan te maken.",
-	"massmessage-create-invalidsource": "De opgegeven bron is geen geldige afleverlijst of categorie met tenminste één pagina.",
+	"massmessage-create-invalidsource": "De opgegeven bron is geen geldige afleverlijst of categorie met ten minste één pagina.",
 	"massmessage-create-exists-short": "Al in gebruik",
 	"massmessage-create-invalidsource-short": "Geen geldige lijst",
 	"editmassmessagelist-legend": "Afleverlijst bewerken",
