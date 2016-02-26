@@ -25,15 +25,15 @@ class SendMassMessages extends Maintenance {
 		foreach ( array( 'pagelist', 'subject', 'message' ) as $arg ) {
 			$option = $this->getOption( $arg );
 			if ( !is_file( $this->getOption( $arg ) ) ) {
-				$this->error( "Error: required argument $arg was passed an invalid filename.", 1 );
+				$this->error( "Error: required argument $arg was passed an invalid filename.\n", 1 );
 			}
 
 			if ( $arg !== 'pagelist' ) {
 				$contents = file_get_contents( $option );
 				if ( $contents !== false ) {
-					$info[$arg] = $contents;
+					$info[$arg] = trim( $contents );
 				} else {
-					$this->error( "Error: Unable to read $option.", 1 );
+					$this->error( "Error: Unable to read $option.\n", 1 );
 				}
 			}
 		}
@@ -41,16 +41,16 @@ class SendMassMessages extends Maintenance {
 		$list = $this->getOption( 'pagelist' );
 		$file = fopen( $list, 'r' );
 		if ( $file === false ) {
-			$this->error( "Error: could not open pagelist file: \"$list\".", 1 );
+			$this->error( "Error: could not open pagelist file: \"$list\".\n", 1 );
 		}
 
 		$pages = array();
-		$this->output( "Reading from \"$list\"." );
+		$this->output( "Reading from \"$list\".\n" );
 
 		// @codingStandardsIgnoreStart
 		while ( $line = trim( fgets( $file ) ) ) {
 		// @codingStandardsIgnoreEnd
-			$exp = explode( '\t', $line );
+			$exp = explode( "\t", $line );
 			$pages[] = array(
 				'title' => $exp[0],
 				'wiki' => $exp[1],
@@ -72,6 +72,10 @@ class SendMassMessages extends Maintenance {
 		);
 		$submitJob->run(); // Just insert the individual jobs into the queue now.
 		$count = count( $pages );
-		$this->output( "Queued $count jobs. Done!" );
+		$this->output( "Queued $count jobs. Done!\n" );
 	}
 }
+
+$maintClass = 'SendMassMessages';
+require_once RUN_MAINTENANCE_IF_MAIN;
+
