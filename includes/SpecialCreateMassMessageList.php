@@ -3,7 +3,7 @@
 class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	public function __construct() {
-		parent::__construct( 'CreateMassMessageList' );
+		parent::__construct( 'CreateMassMessageList', 'editcontentmodel' );
 	}
 
 	public function doesWrites() {
