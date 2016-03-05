@@ -152,23 +152,22 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		if ( !$title
 			|| $title->getText() === ''
 			|| !$title->canExist()
-			|| $title->isExternal()
 		) {
-			$result['errors'] = array( 'invalidtitle' );
+			$result['errors'][] = 'invalidtitle';
 		} else {
 			$result['title'] = $title->getPrefixedText(); // Use the canonical form.
 		}
 
 		if ( $site !== null && $site !== MassMessage::getBaseUrl( $wgCanonicalServer ) ) {
 			if ( !$wgAllowGlobalMessaging || MassMessage::getDBName( $site ) === null ) {
-				if ( array_key_exists( 'errors', $result ) ) {
-					$result['errors'][] = 'invalidsite';
-				} else {
-					$result['errors'] = array( 'invalidsite' );
-				}
+				$result['errors'][] = 'invalidsite';
 			} else {
 				$result['site'] = $site;
 			}
+		} elseif ( $title && $title->isExternal() ) {
+			// Target has site set to current wiki, but external title
+			// TODO: Provide better error message?
+			$result['errors'][] = 'invalidtitle';
 		}
 
 		return $result;
