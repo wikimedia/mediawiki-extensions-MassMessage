@@ -48,13 +48,6 @@ class ApiMassMessage extends ApiBase {
 		);
 	}
 
-	public function getPossibleErrors() {
-		return array(
-			array( 'permissiondenied' ),
-			array( 'massmessage-spamlist-doesnotexist' )
-		);
-	}
-
 	public function mustBePosted() {
 		return true;
 	}
