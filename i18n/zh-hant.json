@@ -110,7 +110,9 @@
 	"massmessage-list-category": "大量訊息傳遞清單",
 	"massmessage-list-category-desc": "此頁面為 [[Special:MassMessage|MassMessage]] 擴充套件的傳遞清單。",
 	"apihelp-editmassmessagelist-description": "編輯大量訊息傳遞清單。",
+	"apihelp-massmessage-description": "發送訊息至列出的這些頁面。",
 	"apihelp-massmessage-param-subject": "訊息主旨。",
 	"apihelp-massmessage-param-message": "訊息內容。",
-	"apihelp-query+mmsites-param-term": "要搜尋的字首。"
+	"apihelp-query+mmsites-param-term": "要搜尋的字首。",
+	"apihelp-query+mmsites-example-1": "自動完成「en」"
 }
