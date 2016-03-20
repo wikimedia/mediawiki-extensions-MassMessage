@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"KuboF"
+			"KuboF",
+			"Robin van der Vliet"
 		]
 	},
 	"massmessage": "Sendi amasmesaĝon",
@@ -16,5 +17,6 @@
 	"massmessage-form-header": "Uzu la suban formularon por sendi mesaĝon al specifita listo. Ĉiuj kampoj estas postulataj.",
 	"right-massmessage": "Sendi mesaĝon al multaj uzantoj samtempe",
 	"action-massmessage": "sendi mesaĝon al multaj uzantoj samtempe",
-	"log-name-massmessage": "Protokolo de amasmesaĝoj"
+	"log-name-massmessage": "Protokolo de amasmesaĝoj",
+	"massmessage-content-removeno": "Nuligi"
 }
