@@ -35,7 +35,7 @@
 	"massmessage-badhtml": "您的訊息可能包含{{PLURAL:$2|未結束的 HTML 標籤|未結束的 HTML 標籤}}：$1。",
 	"massmessage-parse-badurl": "\"$1\" 不是有效的網站。",
 	"massmessage-parse-badpage": "\"$1\" 不是有效的頁面標題。",
-	"massmessage-parse-badexternal": "\"$1\"為一無效頁面標題。跨維基目標應使用指定的網站參數（<kbd>|site=www.example.org</kbd>）。",
+	"massmessage-parse-badexternal": "\"$1\"為一無效頁面標題。跨維基目標應使用指定的 site 參數（<kbd>|site=www.example.org</kbd>）。",
 	"massmessage-global-disallowed": "訊息僅能傳送至本機頁面。",
 	"right-massmessage": "同時向多位使用者傳送訊息",
 	"action-massmessage": "同時向多位使用者傳送訊息",

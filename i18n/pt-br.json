@@ -7,7 +7,8 @@
 			"Luckas",
 			"Jefersonmoraes",
 			"He7d3r",
-			"Araceletorres"
+			"Araceletorres",
+			"Luan"
 		]
 	},
 	"massmessage": "Enviar mensagem em massa",
@@ -109,7 +110,7 @@
 	"massmessage-summary-remove": "Removida [[:$1]]",
 	"massmessage-summary-removeonsite": "Removida $1 em $2",
 	"massmessage-summary-removemulti": "{{PLURAL:$1|Removida $1 página|Removidas $1 páginas}}",
-	"massmessage-list-category": "Listas de entrega MassMessage",
+	"massmessage-list-category": "Listas de entrega de mensagens em massa",
 	"massmessage-list-category-desc": "A página é uma lista de entrega para a extensão [[Special:MassMessage|MassMessage]].",
 	"apihelp-editmassmessagelist-description": "Editar lista de entrega de mensagem em massa.",
 	"apihelp-editmassmessagelist-param-spamlist": "Título da lista de entrega para atualizar.",

@@ -4,7 +4,8 @@
 			"Aftab1995",
 			"Bellayet",
 			"Tauhid16",
-			"Aftabuzzaman"
+			"Aftabuzzaman",
+			"Bodhisattwa"
 		]
 	},
 	"massmessage": "গণ বার্তা পাঠাও",
@@ -55,6 +56,8 @@
 	"massmessage-content-invalidtitle": "শিরোনামটি অকেজো।",
 	"massmessage-content-invalidsite": "সাইটটি অবৈধ।",
 	"massmessage-content-adderror": "API ত্রুটি: $1",
+	"massmessage-diff-descheader": "বর্ণনায় পরিবর্তনসমূহ:",
+	"massmessage-diff-targetsheader": "পাতাগুলিতে পরিবর্তনসমূহ:",
 	"createmassmessagelist-legend": "গণ বার্তা বিতরণ তালিকা তৈরি করুন",
 	"massmessage-create-title": "শিরোনাম:",
 	"massmessage-create-description": "বিবরণ:",
@@ -63,6 +66,7 @@
 	"massmessage-create-import": "একটি বিদ্যমান তালিকা বা বিষয়শ্রেণী থেকে পাতা আমদানি করুন",
 	"massmessage-create-source": "উৎস:",
 	"massmessage-create-editsummary": "গণ বার্তা বিতরণ তালিকা তৈরি করুন",
+	"massmessage-create-nopermission": "আপনার এই শিরোনাম যুক্ত একটি তালিকা তৈরি করার অনুমতি নেই।",
 	"massmessage-create-exists-short": "ইতিমধ্যে ব্যবহৃত",
 	"massmessage-create-invalidsource-short": "কোন বৈধ তালিকা নয়",
 	"editmassmessagelist-legend": "গণ বার্তা প্রেরণ তালিকা সম্পাদনা করুন",
