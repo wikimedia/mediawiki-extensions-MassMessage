@@ -181,7 +181,7 @@ class MassMessageListContent extends JsonContent {
 			} else {
 				$warning = '';
 			}
-			$output->setText( $warning . $output->getText() . self::getAddForm( $lang )
+			$output->setText( $warning . $output->getRawText() . self::getAddForm( $lang )
 				. $this->getTargetsHtml( $lang ) );
 		} else {
 			$output->setText( '' );
