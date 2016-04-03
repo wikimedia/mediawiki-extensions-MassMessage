@@ -8,7 +8,8 @@
 			"Shizhao",
 			"Xiaomingyan",
 			"Yfdyh000",
-			"Duolaimi"
+			"Duolaimi",
+			"Liangent"
 		]
 	},
 	"massmessage": "发送群发信息",
@@ -92,7 +93,7 @@
 	"massmessage-create-exists-short": "已在使用",
 	"massmessage-create-invalidsource-short": "不是有效的列表",
 	"editmassmessagelist-legend": "编辑群发消息递送列表",
-	"massmessage-edit-pagetitle": "$1编辑中",
+	"massmessage-edit-pagetitle": "正在编辑$1",
 	"massmessage-edit-title": "标题：",
 	"massmessage-edit-description": "说明：",
 	"massmessage-edit-content": "目标页面：",
