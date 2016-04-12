@@ -187,6 +187,15 @@
 		"massmessage/skipnouser": "MassMessageSkipLogFormatter",
 		"massmessage/skipbadns": "MassMessageSkipLogFormatter"
 	},
+	"ActionFilteredLogs": {
+		"massmessage": {
+			"send": [ "send" ],
+			"failure": [ "failure" ],
+			"skipoptout": [ "skipoptout" ],
+			"skipnouser": [ "skipnouser" ],
+			"skipbadns": [ "skipbadns" ]
+		}
+	},
 	"AvailableRights": [
 		"massmessage"
 	],

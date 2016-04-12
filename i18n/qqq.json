@@ -132,5 +132,11 @@
 	"apihelp-query+mmsites-example-1": "{{doc-apihelp-example|query+mmsites}}",
 	"apierror-massmessage-invalidspamlist": "{{doc-apierror}}",
 	"tag-massmessage-delivery": "Change tag for MassMessage delivery edits",
-	"tag-massmessage-delivery-description": "Description for MassMessage delivery change tag"
+	"tag-massmessage-delivery-description": "Description for MassMessage delivery change tag",
+	"log-action-filter-massmessage": "{{doc-log-action-filter-type|massmessage}}",
+	"log-action-filter-massmassage-send": "{{doc-log-action-filter-type|massmessage|send}}",
+	"log-action-filter-massmassage-failure": "{{doc-log-action-filter-type|massmessage|failure}}",
+	"log-action-filter-massmassage-skipoptout": "{{doc-log-action-filter-type|massmessage|skipoptout}}",
+	"log-action-filter-massmassage-skipnouser": "{{doc-log-action-filter-type|massmessage|skipnouser}}",
+	"log-action-filter-massmassage-skipbadns": "{{doc-log-action-filter-type|massmessage|skipbadns}}"
 }
