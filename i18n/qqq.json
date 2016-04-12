@@ -88,6 +88,8 @@
 	"massmessage-create-import": "Label for an option on [[Special:CreateMassMessageList]]",
 	"massmessage-create-source": "Label for an inputbox on [[Special:CreateMassMessageList]]\n{{Identical|Source}}",
 	"massmessage-create-editsummary": "Edit summary for creating a delivery list",
+	"massmessage-create-editsummary-import": "Edit summary for creating a delivery list with imported targets\n* $1 - title of source page containing targets\n* $2 - revision ID of source page",
+	"massmessage-create-editsummary-catimport": "Edit summary for creating a delivery list with targets imported from a category\n* $1 - name of source category",
 	"massmessage-create-invalidtitle": "Error message shown on [[Special:CreateMassMessageList]] when the title is inavlid",
 	"massmessage-create-exists": "Error message shown on [[Special:CreateMassMessageList]] when a page with the title already exists",
 	"massmessage-create-nopermission": "Error message shown on [[Special:CreateMassMessageList]] when the user cannot create a page with the title",
