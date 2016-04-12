@@ -82,6 +82,8 @@
 	"massmessage-create-import": "Import pages from an existing list or category",
 	"massmessage-create-source": "Source:",
 	"massmessage-create-editsummary": "Create mass message delivery list",
+	"massmessage-create-editsummary-import": "Create mass message delivery list with targets from [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Create mass message delivery list with targets from [[$1]]",
 	"massmessage-create-invalidtitle": "The specified title is invalid.",
 	"massmessage-create-exists": "A page already exists with the specified title.",
 	"massmessage-create-nopermission": "You do not have permission to create a list with this title.",

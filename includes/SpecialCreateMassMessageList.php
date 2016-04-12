@@ -72,15 +72,28 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			if ( $targets === null || count( $targets ) === 0 ) {
 				return Status::newFatal( 'massmessage-create-invalidsource' );
 			}
+			if ( $source->inNamespace( NS_CATEGORY ) ) {
+				$editSummaryMsg = $this->msg(
+					'massmessage-create-editsummary-catimport',
+					$source->getPrefixedText()
+				);
+			} else {
+				$editSummaryMsg = $this->msg(
+					'massmessage-create-editsummary-import',
+					$source->getPrefixedText(),
+					$source->getLatestRevID()
+				);
+			}
 		} else {
 			$targets = array();
+			$editSummaryMsg = $this->msg( 'massmessage-create-editsummary' );
 		}
 
 		$result = MassMessageListContentHandler::edit(
 			$title,
 			$data['description'],
 			$targets,
-			$this->msg( 'massmessage-create-editsummary' )->inContentLanguage()->plain(),
+			$editSummaryMsg->inContentLanguage()->plain(),
 			$this->getContext()
 		);
 
