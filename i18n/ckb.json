@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Calak"
+			"Calak",
+			"Sarchia"
 		]
 	},
+	"massmessage-fieldset-info": "زانیاری",
 	"right-massmessage": "ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر",
-	"action-massmessage": "ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر"
+	"action-massmessage": "ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر",
+	"massmessage-content-emptylist": "(ھیچ)"
 }

@@ -49,7 +49,7 @@
 	"massmessage-nextsteps": "[[Special:MassMessage|Envíe outra mensaxe]] ou [[Special:Statistics|consulte a cantidade de mensaxes que están á cola]].",
 	"massmessage-content-pages": "Páxinas nesta lista",
 	"massmessage-content-pagesonsite": "Páxinas en $1:",
-	"massmessage-content-localpages": "Páxinas nesta wiki:",
+	"massmessage-content-localpages": "Páxinas neste wiki:",
 	"massmessage-content-remove": "eliminar",
 	"massmessage-content-removeerror": "A eliminación da páxina fallou co código de erro $1.",
 	"massmessage-content-removeconf": "Quere eliminar esta páxina da lista?",
