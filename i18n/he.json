@@ -79,6 +79,8 @@
 	"massmessage-create-import": "ייבוא דפים מתוך רשימה או קטגוריה קיימת",
 	"massmessage-create-source": "מקור:",
 	"massmessage-create-editsummary": "יצירת רשימה למשלוח הודעה המונית",
+	"massmessage-create-editsummary-import": "יצירת רשימת תפוצה המונית עם יעדים מתוך [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "יצירת רשימת תפוצה המונית עם יעדים מתוך [[$1]]",
 	"massmessage-create-invalidtitle": "הכותרת שצוינה אינה חוקית.",
 	"massmessage-create-exists": "דף כבר קיים בכותרת שצוינה.",
 	"massmessage-create-nopermission": "אין לך הרשאה ליצור רשימה בכותרת זו.",

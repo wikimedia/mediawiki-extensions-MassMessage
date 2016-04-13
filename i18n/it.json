@@ -82,6 +82,8 @@
 	"massmessage-create-import": "Importa pagine da un elenco esistente o da una categoria",
 	"massmessage-create-source": "Fonte:",
 	"massmessage-create-editsummary": "Crea elenco di consegna per messaggi massivi",
+	"massmessage-create-editsummary-import": "Creo un elenco di consegna di messaggi massivi con destinazioni da [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Creo un elenco di consegna di messaggi massivi con destinazioni da [[$1]]",
 	"massmessage-create-invalidtitle": "Il titolo specificato non è valido.",
 	"massmessage-create-exists": "Esiste già una pagina con il titolo indicato.",
 	"massmessage-create-nopermission": "Non hai il permesso di creare un elenco con questo titolo.",

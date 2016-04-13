@@ -81,6 +81,8 @@
 	"massmessage-create-import": "Importar páxinas dende unha lista ou categoría existente",
 	"massmessage-create-source": "Fonte:",
 	"massmessage-create-editsummary": "Crear lista de entrega de mensaxes en masa",
+	"massmessage-create-editsummary-import": "Crear unha lista de difusión de mensaxes en masa cos obxectivos de [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Crear unha lista de difusión de mensaxes en masa cos obxectivos de [[$1]]",
 	"massmessage-create-invalidtitle": "O título especificado non é valido.",
 	"massmessage-create-exists": "Xa existe unha páxina có título especificado.",
 	"massmessage-create-nopermission": "Non ten os permisos para crear unha lista con este título.",

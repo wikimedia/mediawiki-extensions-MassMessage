@@ -82,6 +82,8 @@
 	"massmessage-create-import": "Seiten von einer vorhandenen Liste oder Kategorie importieren",
 	"massmessage-create-source": "Quelle:",
 	"massmessage-create-editsummary": "Massennachrichten-Versandliste erstellen",
+	"massmessage-create-editsummary-import": "Versandliste für Massennachrichten erstellen mit Zielen von [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Versandliste für Massennachrichten erstellen mit Zielen der Kategorie [[$1]]",
 	"massmessage-create-invalidtitle": "Der angegebene Titel ist ungültig.",
 	"massmessage-create-exists": "Eine Seite mit dem angegebenen Titel ist bereits vorhanden.",
 	"massmessage-create-nopermission": "Du hast keine Berechtigung, eine Liste unter diesem Titel zu erstellen.",

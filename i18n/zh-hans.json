@@ -86,6 +86,8 @@
 	"massmessage-create-import": "从现有列表或分类导入页面",
 	"massmessage-create-source": "来源：",
 	"massmessage-create-editsummary": "创建群发消息递送列表",
+	"massmessage-create-editsummary-import": "通过来自[[Special:Permalink/$2|$1]]的目标，创建群发消息递送列表",
+	"massmessage-create-editsummary-catimport": "通过来自[[$1]]的目标，创建群发消息递送列表",
 	"massmessage-create-invalidtitle": "指定的标题无效。",
 	"massmessage-create-exists": "指定标题的页面已存在。",
 	"massmessage-create-nopermission": "您没有权限在此标题创建列表。",

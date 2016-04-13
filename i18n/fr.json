@@ -87,6 +87,8 @@
 	"massmessage-create-import": "Importer des pages à partir d’une liste existante ou d’une catégorie",
 	"massmessage-create-source": "Source :",
 	"massmessage-create-editsummary": "Créer une liste de diffusion de messages de masse",
+	"massmessage-create-editsummary-import": "Créer une liste de diffusion de message en masse avec les cibles de [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Créer une liste de diffusion de messages en masse depuis [[$1]]",
 	"massmessage-create-invalidtitle": "Le titre indiqué n’est pas valide.",
 	"massmessage-create-exists": "Une page existe déjà avec le titre indiqué.",
 	"massmessage-create-nopermission": "Vous n’êtes pas autorisé à créer une liste avec ce titre.",
