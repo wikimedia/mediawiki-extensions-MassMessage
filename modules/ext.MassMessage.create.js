@@ -43,7 +43,7 @@
 			if ( source ) {
 				( new mw.Api() ).get( {
 					action: 'query',
-					prop: 'info',
+					prop: 'info|categoryinfo',
 					titles: source
 				} ).done( function ( data ) {
 					if ( pageIsValidSource( data ) ) {
@@ -60,21 +60,22 @@
 		};
 
 		pageIsValidSource = function ( response ) {
-			var i;
-			if ( !response || !response.query ) {
+			var pages, page;
+			if ( !response || !response.query || !response.query.pages ) {
 				return true; // ignore if the API acts up
 			}
-			if ( response.query.pages[ '-1' ] ) {
-				return false;
+			pages = response.query.pages;
+			if ( Object.keys( pages ).length !== 1 ) {
+				return false; // there should be exactly one page
 			}
-			for ( i in response.query.pages ) {
-				if ( response.query.pages[ i ].contentmodel === 'wikitext' ||
-					response.query.pages[ i ].contentmodel === 'MassMessageListContent' ||
-					response.query.pages[ i ].ns === 14 ) {
-					return true;
-				}
+			page = pages[ Object.keys( pages )[ 0 ] ];
+			if ( page.ns === 14 ) {
+				return page.hasOwnProperty( 'categoryinfo' ); // non-empty category
+			} else {
+				return !page.hasOwnProperty( 'missing' ) &&
+					( page.contentmodel === 'wikitext' ||
+					page.contentmodel === 'MassMessageListContent' );
 			}
-			return false;
 		};
 
 		// Set the correct field state on load.
