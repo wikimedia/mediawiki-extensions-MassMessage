@@ -21,9 +21,14 @@
 				( new mw.Api() ).get( {
 					action: 'query',
 					prop: 'info',
-					titles: title
+					titles: title,
+					formatversion: 2
 				} ).done( function ( data ) {
-					if ( data && data.query && !data.query.pages[ '-1' ] ) {
+					if ( data &&
+						data.query &&
+						data.query.pages &&
+						!data.query.pages[ 0 ].missing
+					) {
 						// Page with title already exists
 						$titleStatus.addClass( 'invalid' )
 							.text( mw.message( 'massmessage-create-exists-short' ).text() );
@@ -44,7 +49,8 @@
 				( new mw.Api() ).get( {
 					action: 'query',
 					prop: 'info|categoryinfo',
-					titles: source
+					titles: source,
+					formatversion: 2
 				} ).done( function ( data ) {
 					if ( pageIsValidSource( data ) ) {
 						// Clear validation error
@@ -60,19 +66,18 @@
 		};
 
 		pageIsValidSource = function ( response ) {
-			var pages, page;
+			var page;
 			if ( !response || !response.query || !response.query.pages ) {
 				return true; // ignore if the API acts up
 			}
-			pages = response.query.pages;
-			if ( Object.keys( pages ).length !== 1 ) {
+			if ( response.query.pages.length !== 1 ) {
 				return false; // there should be exactly one page
 			}
-			page = pages[ Object.keys( pages )[ 0 ] ];
+			page = response.query.pages[ 0 ];
 			if ( page.ns === 14 ) {
 				return page.hasOwnProperty( 'categoryinfo' ); // non-empty category
 			} else {
-				return !page.hasOwnProperty( 'missing' ) &&
+				return !page.missing &&
 					( page.contentmodel === 'wikitext' ||
 					page.contentmodel === 'MassMessageListContent' );
 			}
