@@ -78,6 +78,8 @@
 	"massmessage-create-import": "Увоз на страници од постоечки список или категорија",
 	"massmessage-create-source": "Извор:",
 	"massmessage-create-editsummary": "Создавање на списокот за достава на масовна порака",
+	"massmessage-create-editsummary-import": "Создајте список на примачи на масовни пораки со цели од [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Создајте список на примачи на масовни пораки со цели од [[$1]]",
 	"massmessage-create-invalidtitle": "Укажаниот наслов е неважечки.",
 	"massmessage-create-exists": "Веќе постои страница со укажаниот наслов.",
 	"massmessage-create-nopermission": "Немате дозвола да создадете список со овој наслов.",
