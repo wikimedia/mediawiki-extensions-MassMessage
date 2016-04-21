@@ -123,5 +123,7 @@
 	"apihelp-massmessage-example-1": "Send a message to the list at [[Signpost Spamlist]] with the subject \"New Signpost\", and message body of \"Please read it\"",
 	"apihelp-query+mmsites-description": "Serve autocomplete requests for the site field in MassMessage.",
 	"apihelp-query+mmsites-param-term": "The prefix to search for.",
-	"apihelp-query+mmsites-example-1": "Autocomplete \"en\""
+	"apihelp-query+mmsites-example-1": "Autocomplete \"en\"",
+	"tag-massmessage-delivery": "MassMessage delivery",
+	"tag-massmessage-delivery-description": "Message delivery using [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }

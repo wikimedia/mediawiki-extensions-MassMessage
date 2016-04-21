@@ -245,4 +245,14 @@ class MassMessageHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * Register the change tag for MassMessage delivery
+	 * @param array &$tags
+	 * @return bool
+	 */
+	public static function onRegisterTags( &$tags ) {
+		$tags[] = 'massmessage-delivery';
+		return true;
+	}
 }

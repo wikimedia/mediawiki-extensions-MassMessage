@@ -72,6 +72,12 @@
 		],
 		"BeforePageDisplay": [
 			"MassMessageHooks::onBeforePageDisplay"
+		],
+		"ListDefinedTags": [
+			"MassMessageHooks::onRegisterTags"
+		],
+		"ChangeTagsListActive": [
+			"MassMessageHooks::onRegisterTags"
 		]
 	},
 	"ContentHandlers": {

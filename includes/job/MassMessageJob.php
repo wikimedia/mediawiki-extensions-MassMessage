@@ -206,7 +206,16 @@ class MassMessageJob extends Job {
 			$params['bot'] = true;
 		}
 
-		$this->makeAPIRequest( $params );
+		$result = $this->makeAPIRequest( $params );
+
+		// Apply change tag if the edit succeeded
+		$resultData = $result->getResultData();
+		if ( !array_key_exists( 'error', $resultData ) ) {
+			$revId = $resultData['edit']['newrevid'];
+			DeferredUpdates::addCallableUpdate( function() use ( $revId ) {
+				ChangeTags::addTags( 'massmessage-delivery', null, $revId, null );
+			} );
+		}
 	}
 
 	protected function addLQTThread() {
@@ -255,6 +264,11 @@ class MassMessageJob extends Job {
 		return $text;
 	}
 
+	/**
+	 * Construct and make an API request based on the given params and return the results
+	 * @param array $params
+	 * @return ApiResult
+	 */
 	protected function makeAPIRequest( array $params ) {
 		global $wgHooks, $wgUser, $wgRequest;
 
@@ -313,5 +327,7 @@ class MassMessageJob extends Job {
 		$context->setRequest( $oldCRequest );
 		$wgUser = $oldUser;
 		$wgRequest = $oldRequest;
+
+		return $api->getResult();
 	}
 }
