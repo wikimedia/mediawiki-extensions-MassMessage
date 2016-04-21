@@ -120,5 +120,7 @@
 	"apihelp-massmessage-example-1": "שליחת הודעה לרשימה ב־[[Signpost Spamlist]] עם הנושא \"New Signpost\", וגוף ההודעה \"Please read it\"",
 	"apihelp-query+mmsites-description": "שירות בקשות השלמה אוטומטית לשדה אתר בהודעות המוניות.",
 	"apihelp-query+mmsites-param-term": "איזו תחילית לחפש.",
-	"apihelp-query+mmsites-example-1": "השלמה אוטומטית של \"en\""
+	"apihelp-query+mmsites-example-1": "השלמה אוטומטית של \"en\"",
+	"tag-massmessage-delivery": "משלוח הודעה המונית",
+	"tag-massmessage-delivery-description": "שליחת הודעה באמצעות [[:mw:Extension:MassMessage|הרחבה לשליחת הודעות למשתמשים מרובים]]"
 }

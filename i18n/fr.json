@@ -128,5 +128,7 @@
 	"apihelp-massmessage-example-1": "Envoyer un message à la liste [[Signpost Spamlist]] avec le sujet « Nouvel indicateur », et un corps de message de « Merci de le lire »",
 	"apihelp-query+mmsites-description": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
 	"apihelp-query+mmsites-param-term": "Le préfixe à rechercher.",
-	"apihelp-query+mmsites-example-1": "Saisie semi-automatique \"en\""
+	"apihelp-query+mmsites-example-1": "Saisie semi-automatique \"en\"",
+	"tag-massmessage-delivery": "distribution de MassMessage",
+	"tag-massmessage-delivery-description": "Message distribué en utilisant [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }

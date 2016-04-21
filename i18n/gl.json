@@ -122,5 +122,7 @@
 	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"Signpost Novo\", e corpo da mensaxe \"Por favor léao\"",
 	"apihelp-query+mmsites-description": "Serve peticións autocompletas para o campo de sitio en MensaxesMasivas.",
 	"apihelp-query+mmsites-param-term": "Prefixo polo cal buscar.",
-	"apihelp-query+mmsites-example-1": "Autocompletar \"en\""
+	"apihelp-query+mmsites-example-1": "Autocompletar \"en\"",
+	"tag-massmessage-delivery": "Envío de mensaxes en masa",
+	"tag-massmessage-delivery-description": "Envío de mensaxes en masa usando [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }

@@ -120,5 +120,7 @@
 	"apihelp-massmessage-param-subject": "Betreffzeile der Nachricht.",
 	"apihelp-massmessage-param-message": "Text des Nachrichtenkörpers.",
 	"apihelp-query+mmsites-param-term": "Das Präfix, nach das gesucht werden soll.",
-	"apihelp-query+mmsites-example-1": "„en“ vervollständigen"
+	"apihelp-query+mmsites-example-1": "„en“ vervollständigen",
+	"tag-massmessage-delivery": "Versand von Massennachrichten",
+	"tag-massmessage-delivery-description": "Versand von Nachrichten mithilfe der Erweiterung „[[:mw:Extension:MassMessage|MassMessage]]“"
 }
