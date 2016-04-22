@@ -129,6 +129,6 @@
 	"apihelp-query+mmsites-description": "为自动完成大量消息中网站字段的请求而提供服务。",
 	"apihelp-query+mmsites-param-term": "要搜索的前缀。",
 	"apihelp-query+mmsites-example-1": "自动完成“en”",
-	"tag-massmessage-delivery": "使用MassMessage发送",
+	"tag-massmessage-delivery": "群发消息递送",
 	"tag-massmessage-delivery-description": "通过[[:mw:Extension:MassMessage|Extension:MassMessage]]发送"
 }
