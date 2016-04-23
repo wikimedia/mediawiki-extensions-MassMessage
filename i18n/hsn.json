@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"SolidBlock"
+		]
+	},
+	"tag-massmessage-delivery": "群发消息递送",
+	"tag-massmessage-delivery-description": "从[[:mw:Extension:MassMessage|Extension:MassMessage]]发出克"
+}
