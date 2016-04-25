@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Christian List",
-			"Sarrus"
+			"Sarrus",
+			"Simeondahl"
 		]
 	},
 	"massmessage": "Send massebesked",
@@ -37,5 +38,7 @@
 	"logentry-massmessage-skipoptout": "Levering af \"$4\" til $3 blev sprunget over, fordi målet har fravalgt at modtage beskeder",
 	"logentry-massmessage-skipnouser": "Levering af \"$4\" til $3 blev sprunget over, fordi brugerkontoen ikke findes",
 	"massmessage-cannot-rename": "Dette er en systemkonto og kan ikke omdøbes.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Send en til besked]] eller [[Special:Statistics|se hvor mange meddelelser der er i kø]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Send en til besked]] eller [[Special:Statistics|se hvor mange meddelelser der er i kø]].",
+	"massmessage-content-addedlistheading": "Sider tilføjet:",
+	"massmessage-summary-addmulti": "Tilføjet $1 {{PLURAL:$1|side|sider}}"
 }
