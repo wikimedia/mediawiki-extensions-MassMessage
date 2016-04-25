@@ -110,7 +110,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * Build and return the aossociative array for the content radio button field.
+	 * Build and return the associative array for the content radio button field.
 	 * @return array
 	 */
 	protected function getContentOptions() {
