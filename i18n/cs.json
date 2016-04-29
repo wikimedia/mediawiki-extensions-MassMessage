@@ -62,5 +62,7 @@
 	"massmessage-edit-content": "Cílové stránky:",
 	"massmessage-edit-summary": "Shrnutí editace:",
 	"massmessage-list-category": "Distribuční seznamy MassMessage",
-	"massmessage-list-category-desc": "Stránka je seznamem příjemců pro rozšíření [[Special:MassMessage|MassMessage]]."
+	"massmessage-list-category-desc": "Stránka je seznamem příjemců pro rozšíření [[Special:MassMessage|MassMessage]].",
+	"tag-massmessage-delivery": "Doručení hromadné zprávy",
+	"tag-massmessage-delivery-description": "Doručení zprávy pomocí [[:mw:Extension:MassMessage|rozšíření MassMessage]]"
 }
