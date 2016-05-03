@@ -2,9 +2,40 @@
 	"@metadata": {
 		"authors": [
 			"DCLXVI",
-			"Borislav"
+			"Borislav",
+			"Spiritia"
 		]
 	},
+	"massmessage": "Доставяне на масови съобщения",
+	"createmassmessagelist": "Създаване на списък от адресати за доставка на масови съобщения",
+	"editmassmessagelist": "Редактиране на списъка от адресати за доставяне на масови съобщения",
+	"massmessage-desc": "Позволява лесното изпращане на съобщение до списък от потребители",
+	"massmessage-form-spamlist": "Страница или категория, съдържаща списък от страници, на които да се достави съобщението:",
+	"massmessage-form-subject": "Резюме на съобщението (използвано и като резюме на редакцията):",
+	"massmessage-form-message": "Пълен текст на съобщението:",
+	"massmessage-form-preview": "Предварителен преглед",
+	"massmessage-form-submit": "Изпращане",
+	"massmessage-fieldset-preview": "Предварителен преглед",
+	"massmessage-fieldset-info": "Информация",
+	"massmessage-preview-count": "Съобщението ще бъде доставено до {{PLURAL:$1|$1 страница|$1 страници}}.",
+	"massmessage-submitted": "Заявката ви за доставка на съобщение до {{PLURAL:$1|$1 страница|$1 страници}} е вече в опашката.",
+	"massmessage-just-preview": "Това е само предварителен преглед. Натиснете „{{int:massmessage-form-submit}}“, за да изпратите съобщението.",
+	"massmessage-spamlist-doesnotexist": "Указаната страница или категория от страници с адресати на съобщението не съществува.",
+	"massmessage-spamlist-invalid": "Указаната страница не съдържа валиден списък от адресати.",
+	"massmessage-empty-subject": "Липсва резюме на съобщението.",
+	"massmessage-empty-message": "Липсва текст на съобщението.",
+	"massmessage-no-timestamp": "Внимание: Съобщението ви не съдържа подпис или индикация за дата и час.",
+	"massmessage-form-header": "Използвайте формуляра по-долу, за да изпратите съобщения до указан списък от адресати. Всички полета са задължителни  ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage вижте помощната страница]).",
+	"massmessage-queued-count": "[[Special:MassMessage|Масови съобщения]] в опашката",
+	"massmessage-hidden-comment": "<!-- Съобщението е изпратено от User:$1@$2, използвайки списъка с адресати от $3 -->",
+	"massmessage-optout-category": "Изрично отказана доставка на масови съобщения",
+	"massmessage-badhtml": "Съобщението ви може да съдържа {{PLURAL:$2|незатворен HTML етикет|незатворени HTML етикети}}: $1.",
 	"massmessage-parse-badurl": "„$1“ не е валиден сайт.",
-	"log-name-massmessage": "Дневник на масовите съобщения"
+	"massmessage-parse-badpage": "„$1“ не е валидно заглавие на страница.",
+	"massmessage-parse-badexternal": "„$1“ не е валидно заглавие на страница. Междууики заглавията трябва да се укажат използвайки параметъра за проекта (<kbd>|site=www.example.org</kbd>).",
+	"massmessage-global-disallowed": "Съобщения могат да се изпращат само до локални страници.",
+	"right-massmessage": "Изпращане на съобщение едновременно до много потребители",
+	"log-name-massmessage": "Дневник на масовите съобщения",
+	"logentry-massmessage-send": "$1 {{GENDER:$2|изпрати съобщение}} до $3",
+	"logentry-massmessage-failure": "Доставката на „$4“ до $3 беше неуспешна, с код на грешката <code>$5</code>"
 }
