@@ -43,7 +43,7 @@ class MassMessageHooks {
 			$msg = wfMessage( 'massmessage-target-local' )->params( $data['title'] )->plain();
 		}
 
-		return array( $msg, 'noparse' => false );
+		return [ $msg, 'noparse' => false ];
 	}
 
 	/**
@@ -61,10 +61,10 @@ class MassMessageHooks {
 		$output = $parser->getOutput();
 		$current = $output->getProperty( 'massmessage-targets' );
 		if ( !$current ) {
-			$output->setProperty( 'massmessage-targets', serialize( array( $data ) ) );
+			$output->setProperty( 'massmessage-targets', serialize( [ $data ] ) );
 		} else {
 			$output->setProperty( 'massmessage-targets', serialize(
-				array_merge( unserialize( $current ),  array( $data ) ) ) );
+				array_merge( unserialize( $current ),  [ $data ] ) ) );
 		}
 		return '';
 	}
@@ -125,7 +125,7 @@ class MassMessageHooks {
 		/**
 		 * @var SplFileInfo $fileInfo
 		 */
-		$ourFiles = array();
+		$ourFiles = [];
 		foreach ( new RecursiveIteratorIterator( $directoryIterator ) as $fileInfo ) {
 			if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
 				$ourFiles[] = $fileInfo->getPathname();

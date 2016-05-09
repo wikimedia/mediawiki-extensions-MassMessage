@@ -95,9 +95,9 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			if ( $this->rev ) {
 				$revId = $this->rev->getId();
 				$query = ( $revId !== $this->title->getLatestRevId() ) ?
-					array( 'oldid' => $revId ) : array();
+					[ 'oldid' => $revId ] : [];
 			} else {
-				$query = array();
+				$query = [];
 			}
 			$out->addBacklinkSubtitle( $this->title, $query );
 
@@ -110,7 +110,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 			// Protection warnings; modified from EditPage::showHeader()
 			if ( $this->title->isProtected( 'edit' )
-				&& MWNamespace::getRestrictionLevels( $this->title->getNamespace() ) !== array( '' )
+				&& MWNamespace::getRestrictionLevels( $this->title->getNamespace() ) !== [ '' ]
 			) {
 				if ( $this->title->isSemiProtected() ) {
 					$noticeMsg = 'semiprotectedpagewarning';
@@ -118,7 +118,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 					$noticeMsg = 'protectedpagewarning';
 				}
 				LogEventsList::showLogExtract( $out, 'protect', $this->title, '',
-					array( 'lim' => 1, 'msgKey' => array( $noticeMsg ) ) );
+					[ 'lim' => 1, 'msgKey' => [ $noticeMsg ] ] );
 			}
 		}
 	}
@@ -129,32 +129,32 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	protected function getFormFields() {
 		// Return an empty form if the title is invalid or if the user can't edit the list.
 		if ( !$this->rev ) {
-			return array();
+			return [];
 		}
 
 		$content = $this->rev->getContent( Revision::FOR_THIS_USER, $this->getUser() );
 		$description = $content->getDescription();
 		$targets = $content->getTargetStrings();
 
-		return array(
-			'description' => array(
+		return [
+			'description' => [
 				'type' => 'textarea',
 				'rows' => 5,
 				'default' => ( $description !== null ) ? $description : '',
 				'label-message' => 'massmessage-edit-description',
-			),
-			'content' => array(
+			],
+			'content' => [
 				'type' => 'textarea',
 				'default' => ( $targets !== null ) ? implode( "\n", $targets ) : '',
 				'label-message' => 'massmessage-edit-content',
-			),
-			'summary' => array(
+			],
+			'summary' => [
 				'type' => 'text',
 				'maxlength' => 255,
 				'size' => 60,
 				'label-message' => 'massmessage-edit-summary',
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -182,23 +182,23 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			} else {
 				$headerKey = 'massmessage-edit-header';
 			}
-			$html = Html::rawElement( 'p', array(), $this->msg( $headerKey )->parse() );
+			$html = Html::rawElement( 'p', [], $this->msg( $headerKey )->parse() );
 
 			// Deleted revision warning
 			if ( $this->rev->isDeleted( Revision::DELETED_TEXT ) ) {
-				$html .= Html::openElement( 'div', array( 'class' => 'mw-warning plainlinks' ) );
-				$html .= Html::rawElement( 'p', array(),
+				$html .= Html::openElement( 'div', [ 'class' => 'mw-warning plainlinks' ] );
+				$html .= Html::rawElement( 'p', [],
 					$this->msg( 'rev-deleted-text-view' )->parse() );
 				$html .= Html::closeElement( 'div' );
 			}
 
 			// Old revision warning
 			if ( $this->rev->getId() !== $this->title->getLatestRevID() ) {
-				$html .= Html::rawElement( 'p', array(), $this->msg( 'editingold' )->parse() );
+				$html .= Html::rawElement( 'p', [], $this->msg( 'editingold' )->parse() );
 			}
 		} else {
 			// Error determined in setParameter()
-			$html = Html::rawElement( 'p', array(), $this->msg( $this->errorMsgKey )->parse() );
+			$html = Html::rawElement( 'p', [], $this->msg( $this->errorMsgKey )->parse() );
 		}
 		return $html;
 	}
@@ -273,8 +273,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	protected static function parseInput( $input ) {
 		$lines = array_filter( explode( "\n", $input ), 'trim' ); // Array of non-empty lines
 
-		$targets = array();
-		$invalidTargets = array();
+		$targets = [];
+		$invalidTargets = [];
 		foreach ( $lines as $line ) {
 			$target = MassMessageListContentHandler::extractTarget( $line );
 			if ( array_key_exists( 'errors', $target ) ) {

@@ -20,23 +20,23 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 	}
 
 	public function testAdd() {
-		$result = $this->doApiRequestWithToken( array(
+		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
 			'add' => 'A|A|A@en.wikipedia.org|_|_|A@invalid.org|_@invalid.org'
-		) );
-		$expected = array( 'editmassmessagelist' => array(
+		] );
+		$expected = [ 'editmassmessagelist' => [
 			'result' => 'Done',
-			'added' => array(
-				array( 'title' => 'A', 'missing' => '' ),
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' )
-			),
-			'invalidadd' => array(
-				array( '*' => '_', 'invalidtitle' => '' ),
-				array( '*' => 'A@invalid.org', 'invalidsite' => '' ),
-				array( '*' => '_@invalid.org', 'invalidtitle' => '', 'invalidsite' => '' )
-			)
-		) );
+			'added' => [
+				[ 'title' => 'A', 'missing' => '' ],
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ]
+			],
+			'invalidadd' => [
+				[ '*' => '_', 'invalidtitle' => '' ],
+				[ '*' => 'A@invalid.org', 'invalidsite' => '' ],
+				[ '*' => '_@invalid.org', 'invalidtitle' => '', 'invalidsite' => '' ]
+			]
+		] ];
 		$this->assertEquals( $expected, $result[0] );
 	}
 
@@ -48,22 +48,22 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 		);
 		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
 		$page->doEditContent( $content, 'summary' );
-		$result = $this->doApiRequestWithToken( array(
+		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
 			'remove' => 'A|A|B|B|A@en.wikipedia.org|_'
-		) );
-		$expected = array( 'editmassmessagelist' => array(
+		] );
+		$expected = [ 'editmassmessagelist' => [
 			'result' => 'Done',
-			'removed' => array(
-				array( 'title' => 'B' ),
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' )
-			),
-			'invalidremove' => array(
+			'removed' => [
+				[ 'title' => 'B' ],
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ]
+			],
+			'invalidremove' => [
 				'A',
 				'_'
-			)
-		) );
+			]
+		] ];
 		$this->assertEquals( $expected, $result[0] );
 	}
 
@@ -75,22 +75,22 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 		);
 		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
 		$page->doEditContent( $content, 'summary' );
-		$result = $this->doApiRequestWithToken( array(
+		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
 			'add' => 'B|C|D',
 			'remove' => 'A@en.wikipedia.org|B|C'
-		) );
-		$expected = array( 'editmassmessagelist' => array(
+		] );
+		$expected = [ 'editmassmessagelist' => [
 			'result' => 'Success',
-			'added' => array(
-				array( 'title' => 'D', 'missing' => '' )
-			),
-			'removed' => array(
-				array( 'title' => 'B' ),
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' )
-			)
-		) );
+			'added' => [
+				[ 'title' => 'D', 'missing' => '' ]
+			],
+			'removed' => [
+				[ 'title' => 'B' ],
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ]
+			]
+		] ];
 		$this->assertEquals( $expected, $result[0] );
 	}
 }

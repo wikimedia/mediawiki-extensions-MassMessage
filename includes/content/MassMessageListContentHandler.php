@@ -65,7 +65,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		IContextSource $context
 	) {
 		$jsonText = FormatJson::encode(
-			array( 'description' => $description, 'targets' => $targets )
+			[ 'description' => $description, 'targets' => $targets ]
 		);
 		if ( $jsonText === null ) {
 			return Status::newFatal( 'massmessage-ch-tojsonerror' );
@@ -75,14 +75,14 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$der = new DerivativeContext( $context );
 		$request = new DerivativeRequest(
 			$context->getRequest(),
-			array(
+			[
 				'action' => 'edit',
 				'title' => $title->getFullText(),
 				'contentmodel' => 'MassMessageListContent',
 				'text' => $jsonText,
 				'summary' => $summary,
 				'token' => $context->getUser()->getEditToken(),
-			),
+			],
 			true // Treat data as POSTed
 		);
 		$der->setRequest( $request );
@@ -146,7 +146,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			$site = null;
 		}
 
-		$result = array();
+		$result = [];
 
 		$title = Title::newFromText( $titleText );
 		if ( !$title

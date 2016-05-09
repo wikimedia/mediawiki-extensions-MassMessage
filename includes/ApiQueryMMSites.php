@@ -12,7 +12,7 @@ class ApiQueryMMSites extends ApiQueryBase {
 
 		$sites = array_keys( MassMessage::getDatabases() );
 		sort( $sites );
-		$matches = array();
+		$matches = [];
 		foreach ( $sites as $site ) {
 			if ( strpos( $site, $term ) === 0 ) {
 				$matches[] = $site;
@@ -32,12 +32,12 @@ class ApiQueryMMSites extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'term' => array(
+		return [
+			'term' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			)
-		);
+			]
+		];
 	}
 
 	public function isInternal() {
@@ -48,9 +48,9 @@ class ApiQueryMMSites extends ApiQueryBase {
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=mmsites&term=en'
 				=> 'apihelp-query+mmsites-example-1',
-		);
+		];
 	}
 }

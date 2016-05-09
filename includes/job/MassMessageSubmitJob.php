@@ -39,7 +39,7 @@ class MassMessageSubmitJob extends Job {
 		$data = $this->params['data'];
 		$pages = $this->params['pages'];
 		$class = $this->params['class'];
-		$jobsByTarget = array();
+		$jobsByTarget = [];
 
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );

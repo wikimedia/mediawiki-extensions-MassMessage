@@ -3,14 +3,14 @@
 class MassMessageListContentTest extends MassMessageTestCase {
 
 	public static function provideIsValid() {
-		return array(
-			array( '{}', false ),
-			array( '{"description":"","targets":""}', false ),
-			array( '{"description":"","targets":[]}', true ),
-			array( '{"description":"","targets":["A"]}', false ),
-			array( '{"description":"foo","targets":[{"title":"A"}]}', true ),
-			array( '{"description":"foo","targets":[{"title":"_"}]}', false )
-		);
+		return [
+			[ '{}', false ],
+			[ '{"description":"","targets":""}', false ],
+			[ '{"description":"","targets":[]}', true ],
+			[ '{"description":"","targets":["A"]}', false ],
+			[ '{"description":"foo","targets":[{"title":"A"}]}', true ],
+			[ '{"description":"foo","targets":[{"title":"_"}]}', false ]
+		];
 	}
 
 	/**
@@ -25,12 +25,12 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	public static function provideHasInvalidTargets() {
-		return array(
-			array( '{"description":"","targets":[{"title":"A"}]}', false ),
-			array( '{"description":"","targets":[{"title":"A","site":"en.wikipedia.org"}]}',
-				false ),
-			array( '{"description":"","targets":[{"title":"A","site":"invalid.org"}]}', true )
-		);
+		return [
+			[ '{"description":"","targets":[{"title":"A"}]}', false ],
+			[ '{"description":"","targets":[{"title":"A","site":"en.wikipedia.org"}]}',
+				false ],
+			[ '{"description":"","targets":[{"title":"A","site":"invalid.org"}]}', true ]
+		];
 	}
 
 	/**
@@ -61,10 +61,10 @@ class MassMessageListContentTest extends MassMessageTestCase {
 			. '{"title":"B","site":"en.wikipedia.org"}'
 			. ']}';
 		$content = new MassMessageListContent( $text );
-		$expected = array(
-			array( 'title' => 'A' ),
-			array( 'title' => 'B', 'site' => 'en.wikipedia.org' )
-		);
+		$expected = [
+			[ 'title' => 'A' ],
+			[ 'title' => 'B', 'site' => 'en.wikipedia.org' ]
+		];
 		$this->assertEquals( $expected, $content->getTargets() );
 	}
 
@@ -78,10 +78,10 @@ class MassMessageListContentTest extends MassMessageTestCase {
 			. '{"title":"C","site":"invalid.org"}'
 			. ']}';
 		$content = new MassMessageListContent( $text );
-		$expected = array(
-			array( 'title' => 'A' ),
-			array( 'title' => 'B', 'site' => 'en.wikipedia.org' )
-		);
+		$expected = [
+			[ 'title' => 'A' ],
+			[ 'title' => 'B', 'site' => 'en.wikipedia.org' ]
+		];
 		$this->assertEquals( $expected, $content->getValidTargets() );
 	}
 
@@ -97,11 +97,11 @@ class MassMessageListContentTest extends MassMessageTestCase {
 			. '{"title":"User talk:C","site":"en.wikipedia.org"}'
 			. ']}';
 		$content = new MassMessageListContent( $text );
-		$expected = array(
+		$expected = [
 			'User talk:A',
 			'User talk:B@en.wikipedia.org@test.wikipedia.org',
 			'User talk:C@en.wikipedia.org'
-		);
+		];
 		$this->assertEquals( $expected, $content->getTargetStrings() );
 	}
 }

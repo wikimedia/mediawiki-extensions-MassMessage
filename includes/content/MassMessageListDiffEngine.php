@@ -32,8 +32,8 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 		if ( trim( $descDiff ) !== '' ) {
 			$output .= Html::openElement( 'tr' );
 			$output .= Html::openElement( 'td',
-				array( 'colspan' => 4, 'id' => 'mw-massmessage-diffdescheader' ) );
-			$output .= Html::element( 'h4', array(),
+				[ 'colspan' => 4, 'id' => 'mw-massmessage-diffdescheader' ] );
+			$output .= Html::element( 'h4', [],
 				$this->msg( 'massmessage-diff-descheader' )->text() );
 			$output .= Html::closeElement( 'td' );
 			$output .= Html::closeElement( 'tr' );
@@ -50,8 +50,8 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 		if ( trim( $targetsDiff ) !== '' ) {
 			$output .= Html::openElement( 'tr' );
 			$output .= Html::openElement( 'td',
-				array( 'colspan' => 4, 'id' => 'mw-massmessage-difftargetsheader' ) );
-			$output .= Html::element( 'h4', array(),
+				[ 'colspan' => 4, 'id' => 'mw-massmessage-difftargetsheader' ] );
+			$output .= Html::element( 'h4', [],
 				$this->msg( 'massmessage-diff-targetsheader' )->text() );
 			$output .= Html::closeElement( 'td' );
 			$output .= Html::closeElement( 'tr' );

@@ -68,7 +68,7 @@ class SpecialMassMessage extends SpecialPage {
 		}
 		$form->setWrapperLegendMsg( 'massmessage' );
 		$form->suppressDefaultSubmit(); // We use our own buttons.
-		$form->setSubmitCallback( array( $this, 'callback' ) );
+		$form->setSubmitCallback( [ $this, 'callback' ] );
 		$form->setMethod( 'post' );
 
 		$form->prepareForm();
@@ -114,18 +114,18 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected function createForm() {
 		$request = $this->getRequest();
-		$m = array();
+		$m = [];
 		// Who to send to
-		$m['spamlist'] = array(
+		$m['spamlist'] = [
 			'id' => 'mw-massmessage-form-spamlist',
 			'name' => 'spamlist',
 			'type' => 'text',
 			'tabindex' => '1',
 			'label-message' => 'massmessage-form-spamlist',
 			'default' => $request->getText( 'spamlist' )
-		);
+		];
 		// The subject line
-		$m['subject'] = array(
+		$m['subject'] = [
 			'id' => 'mw-massmessage-form-subject',
 			'name' => 'subject',
 			'type' => 'text',
@@ -133,37 +133,37 @@ class SpecialMassMessage extends SpecialPage {
 			'label-message' => 'massmessage-form-subject',
 			'default' => $request->getText( 'subject' ),
 			'maxlength' => 240
-		);
+		];
 
 		// The message to send
-		$m['message'] = array(
+		$m['message'] = [
 			'id' => 'mw-massmessage-form-message',
 			'name' => 'message',
 			'type' => 'textarea',
 			'tabindex' => '3',
 			'label-message' => 'massmessage-form-message',
 			'default' => $request->getText( 'message' )
-		);
+		];
 
 		if ( $this->state === 'preview' ) {
 			// Adds it right before the 'Send' button
 			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse' );
-			$m['submit-button'] = array(
+			$m['submit-button'] = [
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',
 				'type' => 'submit',
 				'tabindex' => '4',
 				'default' => $this->msg( 'massmessage-form-submit' )->text()
-			);
+			];
 		}
 
-		$m['preview-button'] = array(
+		$m['preview-button'] = [
 			'id' => 'mw-massmessage-form-preview-button',
 			'name' => 'preview-button',
 			'type' => 'submit',
 			'tabindex' => '5',
 			'default' => $this->msg( 'massmessage-form-preview' )->text()
-		);
+		];
 
 		return $m;
 	}
@@ -203,8 +203,8 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return array
 	 */
 	protected function getUnclosedTags( $message ) {
-		$startTags = array();
-		$endTags = array();
+		$startTags = [];
+		$endTags = [];
 
 		// For start tags, ignore ones that contain '/' (assume those are self-closing).
 		preg_match_all( '|\<([\w]+)[^/]*?>|', $message, $startTags );
@@ -216,20 +216,20 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Stop and return an empty array if there are no HTML tags.
 		if ( empty( $startTags ) && empty( $endTags ) ) {
-			return array();
+			return [];
 		}
 
 		// Construct a set containing elements that do not need an end tag.
 		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
-		$voidElements = array();
-		$voidElementNames = array( 'area', 'base', 'br', 'col', 'command', 'embed','hr', 'img',
-			'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr' );
+		$voidElements = [];
+		$voidElementNames = [ 'area', 'base', 'br', 'col', 'command', 'embed','hr', 'img',
+			'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr' ];
 		foreach ( $voidElementNames as $name ) {
 			$voidElements[$name] = 1;
 		}
 
 		// Count start / end tags for each element, ignoring start tags of void elements.
-		$tags = array();
+		$tags = [];
 		foreach ( $startTags as $tag ) {
 			if ( !isset( $voidElements[$tag] ) ) {
 				if ( !isset( $tags[$tag] ) ) {
@@ -247,7 +247,7 @@ class SpecialMassMessage extends SpecialPage {
 			}
 		}
 
-		$results = array();
+		$results = [];
 		foreach ( $tags as $element => $num ) {
 			if ( $num > 0 ) {
 				$results[] = '<' . $element . '>';

@@ -8,7 +8,6 @@ class MassMessageListContent extends JsonContent {
 	 */
 	protected $description;
 
-
 	/**
 	 * Array of target pages
 	 * @var array|null
@@ -92,7 +91,7 @@ class MassMessageListContent extends JsonContent {
 		global $wgAllowGlobalMessaging;
 
 		$targets = $this->getTargets();
-		$validTargets = array();
+		$validTargets = [];
 		foreach ( $targets as $target ) {
 			if ( !array_key_exists( 'site', $target )
 				|| $wgAllowGlobalMessaging
@@ -112,7 +111,7 @@ class MassMessageListContent extends JsonContent {
 		global $wgCanonicalServer;
 
 		$targets = $this->getTargets();
-		$targetStrings = array();
+		$targetStrings = [];
 		foreach ( $targets as $target ) {
 			if ( array_key_exists( 'site', $target ) ) {
 				$targetStrings[] = $target['title'] . '@' . $target['site'];
@@ -139,7 +138,7 @@ class MassMessageListContent extends JsonContent {
 		if ( $data ) {
 			$this->description = isset( $data->description ) ? $data->description : null;
 			if ( isset( $data->targets ) && is_array( $data->targets ) ) {
-				$this->targets = array();
+				$this->targets = [];
 				foreach ( $data->targets as $target ) {
 					if ( !is_object( $target ) ) { // There is a malformed target.
 						$this->targets = null;
@@ -175,7 +174,7 @@ class MassMessageListContent extends JsonContent {
 		// Generate output HTML, if needed.
 		if ( $generateHtml ) {
 			if ( $this->hasInvalidTargets() ) {
-				$warning = Html::element( 'p', array( 'class' => 'error' ),
+				$warning = Html::element( 'p', [ 'class' => 'error' ],
 					wfMessage( 'massmessage-content-invalidtargets' )->inLanguage( $lang )->text()
 				);
 			} else {
@@ -208,14 +207,14 @@ class MassMessageListContent extends JsonContent {
 	protected function getTargetsHtml( Language $lang ) {
 		global $wgScript;
 
-		$html = Html::element( 'h2', array(),
+		$html = Html::element( 'h2', [],
 			wfMessage( 'massmessage-content-pages' )->inLanguage( $lang )->text() );
 
 		$sites = $this->getTargetsBySite();
 
 		// If the list is empty
 		if ( count( $sites ) === 0 ) {
-			$html .= Html::element( 'p', array(),
+			$html .= Html::element( 'p', [],
 				wfMessage( 'massmessage-content-empty' )->inLanguage( $lang )->text() );
 			return $html;
 		}
@@ -236,11 +235,11 @@ class MassMessageListContent extends JsonContent {
 		foreach ( $sites as $site => $targets ) {
 			if ( $printSites ) {
 				if ( $site === 'local' ) {
-					$html .= Html::element( 'p', array(),
+					$html .= Html::element( 'p', [],
 						wfMessage( 'massmessage-content-localpages' )->inLanguage( $lang )->text()
 					);
 				} else {
-					$html .= Html::element( 'p', array(),
+					$html .= Html::element( 'p', [],
 						wfMessage( 'massmessage-content-pagesonsite', $site )->inLanguage( $lang )
 						->text()
 					);
@@ -263,18 +262,18 @@ class MassMessageListContent extends JsonContent {
 
 				// Generate the HTML for the remove link.
 				$removeLink = Html::element( 'a',
-					array(
+					[
 						'data-title' => $title->getPrefixedText(),
 						'data-site' => $site,
 						'href' => '#',
-					),
+					],
 					wfMessage( 'massmessage-content-remove' )->inLanguage( $lang )->text()
 				);
 
 				$html .= Html::openElement( 'li' );
-				$html .= Html::rawElement( 'span', array( 'class' => 'mw-massmessage-targetlink' ),
+				$html .= Html::rawElement( 'span', [ 'class' => 'mw-massmessage-targetlink' ],
 					$targetLink );
-				$html .= Html::rawElement( 'span', array( 'class' => 'mw-massmessage-removelink' ),
+				$html .= Html::rawElement( 'span', [ 'class' => 'mw-massmessage-removelink' ],
 					'(' . $removeLink . ')' );
 				$html .= Html::closeElement( 'li' );
 			}
@@ -291,7 +290,7 @@ class MassMessageListContent extends JsonContent {
 	 */
 	protected function getTargetsBySite() {
 		$targets = $this->getTargets();
-		$results = array();
+		$results = [];
 		foreach ( $targets as $target ) {
 			if ( array_key_exists( 'site', $target ) ) {
 				$results[$target['site']][] = $target['title'];
@@ -311,33 +310,33 @@ class MassMessageListContent extends JsonContent {
 	 protected static function getAddForm( Language $lang ) {
 		global $wgAllowGlobalMessaging, $wgCanonicalServer;
 
-		$html = Html::openElement( 'div', array( 'id' => 'mw-massmessage-addpages' ) );
-		$html .= Html::element( 'h2', array(),
+		$html = Html::openElement( 'div', [ 'id' => 'mw-massmessage-addpages' ] );
+		$html .= Html::element( 'h2', [],
 			wfMessage( 'massmessage-content-addheading' )->inLanguage( $lang )->text() );
 
 		// Form
-		$html .= Html::openElement( 'form', array( 'id' => 'mw-massmessage-addform' ) );
-		$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addtitle' ),
+		$html .= Html::openElement( 'form', [ 'id' => 'mw-massmessage-addform' ] );
+		$html .= Html::element( 'label', [ 'for' => 'mw-massmessage-addtitle' ],
 			wfMessage( 'massmessage-content-addtitle' )->inLanguage( $lang )->text() );
-		$html .= Html::input( 'title', '', 'text', array( 'id' => 'mw-massmessage-addtitle' ) );
+		$html .= Html::input( 'title', '', 'text', [ 'id' => 'mw-massmessage-addtitle' ] );
 		if ( $wgAllowGlobalMessaging && count( MassMessage::getDatabases() ) > 1 ) {
-			$html .= Html::element( 'label', array( 'for' => 'mw-massmessage-addsite' ),
+			$html .= Html::element( 'label', [ 'for' => 'mw-massmessage-addsite' ],
 				wfMessage( 'massmessage-content-addsite' )->inLanguage( $lang )->text() );
-			$html .= Html::input( 'site', '', 'text', array(
+			$html .= Html::input( 'site', '', 'text', [
 				'id' => 'mw-massmessage-addsite',
 				'placeholder' => MassMessage::getBaseUrl( $wgCanonicalServer )
-			) );
+			] );
 		}
 		$html .= Html::input( 'submit',
 			wfMessage( 'massmessage-content-addsubmit' )->inLanguage( $lang )->escaped(),
-			'submit', array( 'id' => 'mw-massmessage-addsubmit' ) );
+			'submit', [ 'id' => 'mw-massmessage-addsubmit' ] );
 		$html .= Html::closeElement( 'form' );
 
 		// List of added pages
-		$html .= Html::openElement( 'div', array( 'id' => 'mw-massmessage-addedlist' ) );
-		$html .= Html::element( 'p', array(),
+		$html .= Html::openElement( 'div', [ 'id' => 'mw-massmessage-addedlist' ] );
+		$html .= Html::element( 'p', [],
 			wfMessage( 'massmessage-content-addedlistheading' )->inLanguage( $lang )->text() );
-		$html .= Html::element( 'ul', array(), '' );
+		$html .= Html::element( 'ul', [], '' );
 		$html .= Html::closeElement( 'div' );
 
 		$html .= Html::closeElement( 'div' );

@@ -14,7 +14,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->mergeMwGlobalArrayValue(
-			'wgGroupPermissions', array( '*' => array( 'editcontentmodel' => true ) )
+			'wgGroupPermissions', [ '*' => [ 'editcontentmodel' => true ] ]
 		);
 	}
 
@@ -32,10 +32,10 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	public function testEdit() {
 		$this->doLogin();
 		$title = Title::newFromText( self::$spamlist );
-		$targets = array(
-			array( 'title' => 'A' ),
-			array( 'title' => 'B','site' => 'en.wikipedia.org' )
-		);
+		$targets = [
+			[ 'title' => 'A' ],
+			[ 'title' => 'B','site' => 'en.wikipedia.org' ]
+		];
 		$result = MassMessageListContentHandler::edit(
 			$title,
 			'description',
@@ -71,19 +71,19 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 * @covers MassMessageListContentHandler::normalizeTargetArray
 	 */
 	public function testNormalizeTargetArray() {
-		$input = array(
-			array( 'title' => 'A', 'site' => 'en.wikipedia.org' ),
-			array( 'title' => 'B', 'site' => 'de.wikipedia.org' ),
-			array( 'title' => 'D' ),
-			array( 'title' => 'C' ),
-			array( 'title' => 'A', 'site' => 'en.wikipedia.org' )
-		);
-		$expected = array(
-			array( 'title' => 'C' ),
-			array( 'title' => 'D' ),
-			array( 'title' => 'B', 'site' => 'de.wikipedia.org' ),
-			array( 'title' => 'A', 'site' => 'en.wikipedia.org' )
-		);
+		$input = [
+			[ 'title' => 'A', 'site' => 'en.wikipedia.org' ],
+			[ 'title' => 'B', 'site' => 'de.wikipedia.org' ],
+			[ 'title' => 'D' ],
+			[ 'title' => 'C' ],
+			[ 'title' => 'A', 'site' => 'en.wikipedia.org' ]
+		];
+		$expected = [
+			[ 'title' => 'C' ],
+			[ 'title' => 'D' ],
+			[ 'title' => 'B', 'site' => 'de.wikipedia.org' ],
+			[ 'title' => 'A', 'site' => 'en.wikipedia.org' ]
+		];
 		$this->assertEquals(
 			$expected,
 			MassMessageListContentHandler::normalizeTargetArray( $input )
@@ -91,32 +91,32 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	public static function provideCompareTargets() {
-		return array(
-			array(
-				array( 'title' => 'A' ),
-				array( 'title' => 'B' ),
-			-1 ),
-			array(
-				array( 'title' => 'A' ),
-				array( 'title' => 'A' ),
-			0 ),
-			array(
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' ),
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' ),
-			0 ),
-			array(
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' ),
-				array( 'title' => 'B', 'site' => 'en.wikipedia.org' ),
-			-1 ),
-			array(
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' ),
-				array( 'title' => 'B' ),
-			1 ),
-			array(
-				array( 'title' => 'A', 'site' => 'en.wikipedia.org' ),
-				array( 'title' => 'B', 'site' => 'de.wikipedia.org' ),
-			1 )
-		);
+		return [
+			[
+				[ 'title' => 'A' ],
+				[ 'title' => 'B' ],
+			-1 ],
+			[
+				[ 'title' => 'A' ],
+				[ 'title' => 'A' ],
+			0 ],
+			[
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ],
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ],
+			0 ],
+			[
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ],
+				[ 'title' => 'B', 'site' => 'en.wikipedia.org' ],
+			-1 ],
+			[
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ],
+				[ 'title' => 'B' ],
+			1 ],
+			[
+				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ],
+				[ 'title' => 'B', 'site' => 'de.wikipedia.org' ],
+			1 ]
+		];
 	}
 
 	/**
@@ -133,18 +133,18 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	public static function provideExtractTarget() {
-		return array(
-			array( 'A', array( 'title' => 'A' ) ),
-			array( 'A@test.wikipedia.org', array( 'title' => 'A' ) ),
-			array( 'A@domain.org@test.wikipedia.org', array( 'title' => 'A@domain.org' ) ),
-			array( 'A@en.wikipedia.org', array( 'title' => 'A', 'site' => 'en.wikipedia.org' ) ),
-			array( 'a@EN.WIKIPEDIA.ORG', array( 'title' => 'A', 'site' => 'en.wikipedia.org' ) ),
-			array( 'A@domain.org@en.wikipedia.org',
-				array( 'title' => 'A@domain.org', 'site' => 'en.wikipedia.org' ) ),
-			array( '_', array( 'errors' => array( 'invalidtitle' ) ) ),
-			array( 'A@invalid.org', array( 'title' => 'A', 'errors' => array( 'invalidsite' ) ) ),
-			array( '_@invalid.org', array( 'errors' => array( 'invalidtitle', 'invalidsite' ) ) )
-		);
+		return [
+			[ 'A', [ 'title' => 'A' ] ],
+			[ 'A@test.wikipedia.org', [ 'title' => 'A' ] ],
+			[ 'A@domain.org@test.wikipedia.org', [ 'title' => 'A@domain.org' ] ],
+			[ 'A@en.wikipedia.org', [ 'title' => 'A', 'site' => 'en.wikipedia.org' ] ],
+			[ 'a@EN.WIKIPEDIA.ORG', [ 'title' => 'A', 'site' => 'en.wikipedia.org' ] ],
+			[ 'A@domain.org@en.wikipedia.org',
+				[ 'title' => 'A@domain.org', 'site' => 'en.wikipedia.org' ] ],
+			[ '_', [ 'errors' => [ 'invalidtitle' ] ] ],
+			[ 'A@invalid.org', [ 'title' => 'A', 'errors' => [ 'invalidsite' ] ] ],
+			[ '_@invalid.org', [ 'errors' => [ 'invalidtitle', 'invalidsite' ] ] ]
+		];
 	}
 
 	/**

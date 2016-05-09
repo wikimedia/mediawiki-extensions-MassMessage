@@ -113,9 +113,9 @@ class MassMessageJob extends Job {
 		$logEntry = new ManualLogEntry( 'massmessage', $reason );
 		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $this->title );
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::subject' => $this->params['subject']
-		) );
+		] );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
@@ -131,10 +131,10 @@ class MassMessageJob extends Job {
 		$logEntry = new ManualLogEntry( 'massmessage', 'failure' );
 		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $this->title );
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::subject' => $this->params['subject'],
 			'5::reason' => $reason,
-		) );
+		] );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
@@ -192,7 +192,7 @@ class MassMessageJob extends Job {
 
 	protected function editPage() {
 		$user = $this->getUser();
-		$params = array(
+		$params = [
 			'action' => 'edit',
 			'title' => $this->title->getPrefixedText(),
 			'section' => 'new',
@@ -200,7 +200,7 @@ class MassMessageJob extends Job {
 			'text' => $this->makeText(),
 			'notminor' => true,
 			'token' => $user->getEditToken()
-		);
+		];
 
 		if ( $this->title->getNamespace() === NS_USER_TALK ) {
 			$params['bot'] = true;
@@ -220,28 +220,28 @@ class MassMessageJob extends Job {
 
 	protected function addLQTThread() {
 		$user = $this->getUser();
-		$params = array(
+		$params = [
 			'action' => 'threadaction',
 			'threadaction' => 'newthread',
 			'talkpage' => $this->title,
 			'subject' => $this->params['subject'],
 			'text' => $this->makeText( self::STRIP_TILDES ),
 			'token' => $user->getEditToken()
-		); // LQT will automatically mark the edit as bot if we're a bot
+		]; // LQT will automatically mark the edit as bot if we're a bot
 
 		$this->makeAPIRequest( $params );
 	}
 
 	protected function addFlowTopic() {
 		$user = $this->getUser();
-		$params = array(
+		$params = [
 			'action' => 'flow',
 			'page' => $this->title->getPrefixedText(),
 			'submodule' => 'new-topic',
 			'nttopic' => $this->params['subject'],
 			'ntcontent' => $this->makeText( self::STRIP_TILDES ),
 			'token' => $user->getEditToken(),
-		);
+		];
 
 		$this->makeAPIRequest( $params );
 	}

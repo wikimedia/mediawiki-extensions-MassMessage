@@ -21,8 +21,8 @@ class SendMassMessages extends Maintenance {
 	}
 
 	public function execute() {
-		$info = array();
-		foreach ( array( 'pagelist', 'subject', 'message' ) as $arg ) {
+		$info = [];
+		foreach ( [ 'pagelist', 'subject', 'message' ] as $arg ) {
 			$option = $this->getOption( $arg );
 			if ( !is_file( $this->getOption( $arg ) ) ) {
 				$this->error( "Error: required argument $arg was passed an invalid filename.\n", 1 );
@@ -44,27 +44,27 @@ class SendMassMessages extends Maintenance {
 			$this->error( "Error: could not open pagelist file: \"$list\".\n", 1 );
 		}
 
-		$pages = array();
+		$pages = [];
 		$this->output( "Reading from \"$list\".\n" );
 
 		// @codingStandardsIgnoreStart
 		while ( $line = trim( fgets( $file ) ) ) {
 		// @codingStandardsIgnoreEnd
 			$exp = explode( "\t", $line );
-			$pages[] = array(
+			$pages[] = [
 				'title' => $exp[0],
 				'wiki' => $exp[1],
-			);
+			];
 		}
 
 		fclose( $file );
 
 		// Submit the jobs
-		$params = array(
+		$params = [
 			'data' => $info,
 			'pages' => $pages,
 			'class' => 'MassMessageServerSideJob',
-		);
+		];
 
 		$submitJob = new MassMessageSubmitJob(
 			Title::newFromText( 'SendMassMessages' ),

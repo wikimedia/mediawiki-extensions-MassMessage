@@ -37,12 +37,12 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 * Checks to make sure that the output looks good too
 	 */
 	public function testSending() {
-		$apiResult = $this->doApiRequestWithToken( array(
+		$apiResult = $this->doApiRequestWithToken( [
 			'action' => 'massmessage',
 			'spamlist' => self::$spamlist,
 			'message' => 'message',
 			'subject' => 'subjectline'
-		) );
+		] );
 
 		$apiResult = $apiResult[0];
 		$this->assertArrayHasKey( 'massmessage', $apiResult );
@@ -58,19 +58,19 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	public function testInvalidSpamlist() {
 		$this->setExpectedException( 'UsageException',
 			'The specified delivery list page or category does not exist.' );
-		$this->doApiRequestWithToken( array(
+		$this->doApiRequestWithToken( [
 			'action' => 'massmessage',
 			'spamlist' => '<InvalidPageTitle>',
 			'subject' => 'subject',
 			'message' => 'msg'
-		) );
+		] );
 	}
 
 	public static function provideCount() {
-		return array(
-			array( self::$spamlist, 1 ),
-			array( self::$emptyspamlist, 0 )
-		);
+		return [
+			[ self::$spamlist, 1 ],
+			[ self::$emptyspamlist, 0 ]
+		];
 	}
 
 	/**
@@ -80,12 +80,12 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 * @param $count integer value of what count should be
 	 */
 	public function testCount( $page, $count ) {
-		$apiResult = $this->doApiRequestWithToken( array(
+		$apiResult = $this->doApiRequestWithToken( [
 			'action' => 'massmessage',
 			'spamlist' => $page,
 			'message' => 'message',
 			'subject' => 'subjectline'
-		) );
+		] );
 		$this->assertEquals( $count, $apiResult[0]['massmessage']['count'] );
 	}
 

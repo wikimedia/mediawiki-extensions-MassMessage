@@ -41,7 +41,7 @@ class MassMessage {
 		global $wgMassMessageAccountUsername;
 
 		$user = User::newSystemUser(
-			$wgMassMessageAccountUsername, array( 'steal' => true )
+			$wgMassMessageAccountUsername, [ 'steal' => true ]
 		);
 		// Make the user a bot so it doesn't look weird
 		$user->addGroup( 'bot' );
@@ -55,7 +55,7 @@ class MassMessage {
 	 * @return string
 	 */
 	public static function getBaseUrl( $url ) {
-		static $mapping = array();
+		static $mapping = [];
 
 		if ( isset( $mapping[$url] ) ) {
 			return $mapping[$url];
@@ -83,7 +83,7 @@ class MassMessage {
 			$data = $wgMemc->get( $key );
 			if ( $data === false ) {
 				$dbs = $wgConf->getLocalDatabases();
-				$mapping = array();
+				$mapping = [];
 				foreach ( $dbs as $dbname ) {
 					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
 					$site = self::getBaseUrl( $url );
@@ -127,7 +127,7 @@ class MassMessage {
 			return self::parserError( 'massmessage-parse-badpage', $page );
 		}
 
-		$data = array( 'title' => $page, 'site' => trim( $site ) );
+		$data = [ 'title' => $page, 'site' => trim( $site ) ];
 		if ( $data['site'] === '' ) {
 			$data['site'] = self::getBaseUrl( $wgCanonicalServer );
 			$data['wiki'] = wfWikiID();
@@ -165,13 +165,13 @@ class MassMessage {
 		if ( $param ) {
 			$msg->params( $param );
 		}
-		return array(
+		return [
 			'<strong class="error">' .
 			$msg->inContentLanguage()->plain() .
 			'</strong>',
 			'noparse' => false,
 			'error' => true,
-		);
+		];
 	}
 
 	/**
@@ -213,16 +213,16 @@ class MassMessage {
 				$url = $spamlist->getFullUrl();
 			} else {
 				$url = $spamlist->getFullURL(
-					array( 'oldid' => $spamlist->getLatestRevID() ),
+					[ 'oldid' => $spamlist->getLatestRevID() ],
 					false,
 					PROTO_CANONICAL
 				);
 			}
-			$data['comment'] = array(
+			$data['comment'] = [
 				RequestContext::getMain()->getUser()->getName(),
 				wfWikiID(),
 				$url
-			);
+			];
 		} else { // $spamlist contains a message key for an error message
 			$status->fatal( $spamlist );
 		}
@@ -289,9 +289,9 @@ class MassMessage {
 		$logEntry->setPerformer( $user );
 		$logEntry->setTarget( $spamlist );
 		$logEntry->setComment( $subject );
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::revid' => $spamlist->getLatestRevID(),
-		) );
+		] );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
@@ -314,18 +314,18 @@ class MassMessage {
 		// Log it.
 		self::logToWiki( $spamlist, $user, $data['subject'] );
 
-		$data += array(
+		$data += [
 			'userId' => CentralIdLookup::factory()
 				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
 			'originWiki' => wfWikiID(),
-		);
+		];
 
 		// Insert it into the job queue.
-		$params = array(
+		$params = [
 			'data' => $data,
 			'pages' => $pages,
 			'class' => 'MassMessageJob',
-		);
+		];
 		$job = new MassMessageSubmitJob( $spamlist, $params );
 		JobQueueGroup::singleton()->push( $job );
 
@@ -362,7 +362,7 @@ class MassMessage {
 		// Trim off the timezone to replace at the end
 		$output = $exemplarTimestamp;
 		$tzRegex = '/\s*\(\w+\)\s*$/';
-		$tzMatches = array();
+		$tzMatches = [];
 		preg_match( $tzRegex, $output, $tzMatches );
 		$output = preg_replace( $tzRegex, '', $output );
 		$output = preg_quote( $output, '/' );

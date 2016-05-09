@@ -7,7 +7,7 @@ class MassMessageSubmitJobTest extends MediaWikiTestCase {
 	 * @dataProvider provideGetJobs
 	 */
 	public function testGetJobs( $data, $pages ) {
-		$params = array( 'data' => $data, 'pages' => $pages );
+		$params = [ 'data' => $data, 'pages' => $pages ];
 		$job = new MassMessageSubmitJob(
 			$this->getMock( 'Title' ),
 			$params
@@ -42,23 +42,23 @@ class MassMessageSubmitJobTest extends MediaWikiTestCase {
 	}
 
 	public static function provideGetJobs() {
-		$data = array(
+		$data = [
 			'some data' => 'some value',
 			'other key' => 'other value'
-		);
+		];
 
-		$pages = array( array(
+		$pages = [ [
 			'wiki' => 'enwiki',
 			'title' => 'Foo baz',
-		) );
+		] ];
 
-		return array(
-			array( $data, $pages ),
-			array( $data, $pages + array( array( 'wiki' => 'dewiki', 'title' => 'Baz foo' ) ) ),
-			array(
-				$data + array( 'message' => 'rar' ),
-				$pages + array( array( 'wiki' => 'zzwiki', 'title' => 'Title!' ) )
-			),
-		);
+		return [
+			[ $data, $pages ],
+			[ $data, $pages + [ [ 'wiki' => 'dewiki', 'title' => 'Baz foo' ] ] ],
+			[
+				$data + [ 'message' => 'rar' ],
+				$pages + [ [ 'wiki' => 'zzwiki', 'title' => 'Title!' ] ]
+			],
+		];
 	}
 }

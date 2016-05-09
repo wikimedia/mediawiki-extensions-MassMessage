@@ -23,27 +23,27 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
-		return array(
-			'title' => array(
+		return [
+			'title' => [
 				'type' => 'text',
 				'label-message' => 'massmessage-create-title',
-			),
-			'description' => array(
+			],
+			'description' => [
 				'type' => 'textarea',
 				'rows' => 5,
 				'label-message' => 'massmessage-create-description',
-			),
-			'content' => array(
+			],
+			'content' => [
 				'type' => 'radio',
 				'options' => $this->getContentOptions(),
 				'default' => 'new',
 				'label-message' => 'massmessage-create-content',
-			),
-			'source' => array(
+			],
+			'source' => [
 				'type' => 'text',
 				'label-message' => 'massmessage-create-source',
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -85,7 +85,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 				);
 			}
 		} else {
-			$targets = array();
+			$targets = [];
 			$editSummaryMsg = $this->msg( 'massmessage-create-editsummary' );
 		}
 
@@ -114,12 +114,12 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getContentOptions() {
-		$mapping = array(
+		$mapping = [
 			'massmessage-create-new' => 'new',
 			'massmessage-create-import' => 'import',
-		);
+		];
 
-		$options = array();
+		$options = [];
 		foreach ( $mapping as $msgKey => $option ) {
 			$options[$this->msg( $msgKey )->escaped()] = $option;
 		}
@@ -137,9 +137,9 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			return null;
 		}
 
-		$targets = array();
+		$targets = [];
 		foreach ( $pages as $page ) {
-			$target = array( 'title' => $page['title'] );
+			$target = [ 'title' => $page['title'] ];
 			if ( $page['wiki'] !== wfWikiID() ) {
 				$target['site'] = $page['site'];
 			}

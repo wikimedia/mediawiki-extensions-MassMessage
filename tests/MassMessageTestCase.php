@@ -11,15 +11,15 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 		global $wgConf, $wgLocalDatabases;
 		parent::setUpBeforeClass();
 		$wgConf = new SiteConfiguration;
-		$wgConf->wikis = array( 'enwiki', 'dewiki', 'frwiki', 'wiki' );
-		$wgConf->suffixes = array( 'wiki' );
-		$wgConf->settings = array(
-			'wgServer' => array(
+		$wgConf->wikis = [ 'enwiki', 'dewiki', 'frwiki', 'wiki' ];
+		$wgConf->suffixes = [ 'wiki' ];
+		$wgConf->settings = [
+			'wgServer' => [
 				'enwiki' => '//en.wikipedia.org',
 				'dewiki' => '//de.wikipedia.org',
 				'frwiki' => '//fr.wikipedia.org',
-			),
-		);
+			],
+		];
 		$wgLocalDatabases =& $wgConf->getLocalDatabases();
 	}
 

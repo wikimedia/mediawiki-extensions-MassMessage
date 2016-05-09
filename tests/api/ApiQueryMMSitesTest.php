@@ -8,15 +8,15 @@
 class ApiQueryMMSitesTest extends MassMessageApiTestCase {
 
 	public function testQuery() {
-		$result = $this->doApiRequest( array(
+		$result = $this->doApiRequest( [
 			'action' => 'query',
 			'list' => 'mmsites',
 			'term' => 'en'
-		) );
+		] );
 		$this->assertArrayHasKey( 'query', $result[0] );
 
 		$this->assertEquals(
-			array( 'mmsites' => array( 'en.wikipedia.org' ) ),
+			[ 'mmsites' => [ 'en.wikipedia.org' ] ],
 			$result[0]['query']
 		);
 	}

@@ -26,32 +26,31 @@ class ApiMassMessage extends ApiBase {
 		$this->getResult()->addValue(
 			null,
 			$this->getModuleName(),
-			array( 'result' => 'success', 'count' => $count )
+			[ 'result' => 'success', 'count' => $count ]
 		);
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'spamlist' => array(
+		return [
+			'spamlist' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'subject' => array(
+			],
+			'subject' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'message' => array(
+			],
+			'message' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
+			],
 			'token' => null,
-		);
+		];
 	}
 
 	public function mustBePosted() {
 		return true;
 	}
-
 
 	public function needsToken() {
 		return 'csrf';
@@ -69,15 +68,15 @@ class ApiMassMessage extends ApiBase {
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .
 			'&message=Please%20read%20it&token=TOKEN'
 				=> 'apihelp-massmessage-example-1',
-		);
+		];
 	}
 
 	public function getHelpUrls() {
-		return array( 'https://www.mediawiki.org/wiki/Extension:MassMessage/API' );
+		return [ 'https://www.mediawiki.org/wiki/Extension:MassMessage/API' ];
 	}
 
 }

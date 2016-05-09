@@ -9,12 +9,12 @@
 class MassMessageTest extends MassMessageTestCase {
 
 	public static function provideGetDBName() {
-		return array(
-			array( 'en.wikipedia.org', 'enwiki' ),
-			array( 'fr.wikipedia.org', 'frwiki' ),
-			array( 'de.wikipedia.org', 'dewiki' ),
-			array( 'not.a.wiki.known.to.us', null ),
-		);
+		return [
+			[ 'en.wikipedia.org', 'enwiki' ],
+			[ 'fr.wikipedia.org', 'frwiki' ],
+			[ 'de.wikipedia.org', 'dewiki' ],
+			[ 'not.a.wiki.known.to.us', null ],
+		];
 	}
 
 	/**
@@ -33,12 +33,12 @@ class MassMessageTest extends MassMessageTestCase {
 	 * @return array
 	 */
 	public static function provideGetBaseUrl() {
-		return array(
-			array( 'http://en.wikipedia.org', 'en.wikipedia.org' ),
-			array( 'https://en.wikipedia.org/wiki/Blah', 'en.wikipedia.org' ),
-			array( 'http://en.wikipedia.org:80/wiki/Blah', 'en.wikipedia.org:80' ),
-			array( '//test.wikidata.org/wiki/User talk:Example', 'test.wikidata.org' ),
-		);
+		return [
+			[ 'http://en.wikipedia.org', 'en.wikipedia.org' ],
+			[ 'https://en.wikipedia.org/wiki/Blah', 'en.wikipedia.org' ],
+			[ 'http://en.wikipedia.org:80/wiki/Blah', 'en.wikipedia.org:80' ],
+			[ '//test.wikidata.org/wiki/User talk:Example', 'test.wikidata.org' ],
+		];
 	}
 
 	/**
@@ -53,11 +53,11 @@ class MassMessageTest extends MassMessageTestCase {
 	}
 
 	public static function provideGetMessengerUser() {
-		return array(
-			array( 'MessengerBot' ),
-			array( 'EdwardsBot' ),
-			array( 'Blah blah blah' ),
-		);
+		return [
+			[ 'MessengerBot' ],
+			[ 'EdwardsBot' ],
+			[ 'Blah blah blah' ],
+		];
 	}
 
 	/**

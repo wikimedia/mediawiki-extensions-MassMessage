@@ -27,12 +27,12 @@ class ApiEditMassMessageList extends ApiBase {
 		$newTargets = $targets; // Create a copy.
 
 		if ( isset( $data['add'] ) ) {
-			$invalidAdd = array();
+			$invalidAdd = [];
 
 			foreach ( $data['add'] as $page ) {
 				$target = MassMessageListContentHandler::extractTarget( $page );
 				if ( isset( $target['errors'] ) ) {
-					$item = array( '*' => $page );
+					$item = [ '*' => $page ];
 					foreach ( $target['errors'] as $error ) {
 						$item[$error] = '';
 					}
@@ -48,8 +48,8 @@ class ApiEditMassMessageList extends ApiBase {
 		}
 
 		if ( isset( $data['remove'] ) ) {
-			$toRemove = array();
-			$invalidRemove = array();
+			$toRemove = [];
+			$invalidRemove = [];
 
 			foreach ( $data['remove'] as $page ) {
 				$target = MassMessageListContentHandler::extractTarget( $page );
@@ -72,14 +72,14 @@ class ApiEditMassMessageList extends ApiBase {
 			$added = array_values( array_udiff( $newTargets, $targets,
 				'MassMessageListContentHandler::compareTargets' ) );
 		} else {
-			$added = array();
+			$added = [];
 		}
 
 		if ( isset( $data['remove'] ) ) {
 			$removed = array_values( array_udiff( $targets, $newTargets,
 				'MassMessageListContentHandler::compareTargets' ) );
 		} else {
-			$removed = array();
+			$removed = [];
 		}
 
 		// Make an edit only if there are added or removed pages
@@ -98,7 +98,7 @@ class ApiEditMassMessageList extends ApiBase {
 		}
 
 		$result = $this->getResult();
-		$resultArray = array( 'result' => 'Success' );
+		$resultArray = [ 'result' => 'Success' ];
 
 		if ( isset( $data['add'] ) ) {
 			$resultArray['added'] = $added;
@@ -200,27 +200,26 @@ class ApiEditMassMessageList extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'spamlist' => array(
+		return [
+			'spamlist' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'add' => array(
+			],
+			'add' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true
-			),
-			'remove' => array(
+			],
+			'remove' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true
-			),
+			],
 			'token' => null,
-		);
+		];
 	}
 
 	public function mustBePosted() {
 		return true;
 	}
-
 
 	public function needsToken() {
 		return 'csrf';
@@ -238,15 +237,15 @@ class ApiEditMassMessageList extends ApiBase {
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar' .
 			'&remove=Talk%3ABaz&token=TOKEN'
 				=> 'apihelp-editmassmessagelist-example-1',
-		);
+		];
 	}
 
 	public function getHelpUrls() {
-		return array( 'https://www.mediawiki.org/wiki/Extension:MassMessage/API' );
+		return [ 'https://www.mediawiki.org/wiki/Extension:MassMessage/API' ];
 	}
 
 }

@@ -103,15 +103,15 @@ class MassMessageTargets {
 		global $wgCanonicalServer;
 
 		$members = Category::newFromTitle( $spamlist )->getMembers();
-		$targets = array();
+		$targets = [];
 
 		/** @var Title $member */
 		foreach ( $members as $member ) {
-			$targets[] = array(
+			$targets[] = [
 				'title' => $member->getPrefixedText(),
 				'wiki' => wfWikiID(),
 				'site' => MassMessage::getBaseUrl( $wgCanonicalServer ),
-			);
+			];
 		}
 		return $targets;
 	}
@@ -163,7 +163,7 @@ class MassMessageTargets {
 		if ( $data ) {
 			return $data;
 		} else {
-			return array(); // No parser functions on page
+			return []; // No parser functions on page
 		}
 	}
 }

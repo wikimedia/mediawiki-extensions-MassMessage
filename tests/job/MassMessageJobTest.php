@@ -7,16 +7,16 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 */
 	private function simulateJob( $title ) {
 		$subject = md5( MWCryptRand::generateHex( 15 ) );
-		$params = array(
+		$params = [
 			'subject' => $subject,
 			'message' => 'This is a message.',
 			'title' => $title->getFullText()
-		);
-		$params['comment'] = array(
+		];
+		$params['comment'] = [
 			User::newFromName( 'Admin' ),
 			'metawiki',
 			'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5'
-		);
+		];
 		$job = new MassMessageJob( $title, $params );
 		$job->run();
 		return $subject;
@@ -67,7 +67,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers MassMessageJob::isOptedOut
 	 */
 	public function testOptOut() {
-		$fakejob = new MassMessageJob( Title::newMainPage(), array() );
+		$fakejob = new MassMessageJob( Title::newMainPage(), [] );
 		$target = Title::newFromText( 'Project:Opt out test page' );
 		self::updatePage( $target, '[[Category:Opted-out of message delivery]]' );
 		$this->assertTrue( $fakejob->isOptedOut( $target ) );
