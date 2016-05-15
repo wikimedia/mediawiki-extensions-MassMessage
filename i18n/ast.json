@@ -78,6 +78,8 @@
 	"massmessage-create-import": "Importar páxines dende una llista o categoría esistente",
 	"massmessage-create-source": "Fonte:",
 	"massmessage-create-editsummary": "Crear llista d'entrega de mensaxes en masa",
+	"massmessage-create-editsummary-import": "Crear una llista d'entrega de mensaxes en masa con destinatarios de [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Crear una llista d'entrega de mensaxes en masa con destinatarios de [[$1]]",
 	"massmessage-create-invalidtitle": "O títulu especificáu nun ye válidu.",
 	"massmessage-create-exists": "Yá existe una páxina col títulu especificáu.",
 	"massmessage-create-nopermission": "Nun tienes permisu pa crear una llista con esti títulu.",
@@ -117,5 +119,7 @@
 	"apihelp-massmessage-example-1": "Unviar un mensaxe a la llista de [[Signpost Spamlist]] col asuntu \"New Signpost\", y col cuerpu de mensaxe \"Please read it\"",
 	"apihelp-query+mmsites-description": "Sirvir solicitúes d'autocompletáu pal campu de sitiu en MassMessage.",
 	"apihelp-query+mmsites-param-term": "El prefixu a buscar.",
-	"apihelp-query+mmsites-example-1": "Autocompletar \"ast\""
+	"apihelp-query+mmsites-example-1": "Autocompletar \"ast\"",
+	"tag-massmessage-delivery": "Entrega de mensaxes en masa",
+	"tag-massmessage-delivery-description": "Entrega de mensaxes usando [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }
