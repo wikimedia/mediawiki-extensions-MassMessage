@@ -119,5 +119,7 @@
 	"apihelp-massmessage-example-1": "Испрати порака на списокот во [[Signpost Spamlist]] со насловот „Нов патоказ“ и содржина „Прочитајте ја“",
 	"apihelp-query+mmsites-description": "Опслужувај барања за самодополнување на полето за мреж. место во Масовна порака.",
 	"apihelp-query+mmsites-param-term": "Претставката што треба да се побара.",
-	"apihelp-query+mmsites-example-1": "Автодополни го „mk“"
+	"apihelp-query+mmsites-example-1": "Автодополни го „mk“",
+	"tag-massmessage-delivery": "Достава на масовни пораки",
+	"tag-massmessage-delivery-description": "Масовна достава на пораки со помош на додатокот „[[:mw:Extension:MassMessage|Масовни пораки]]“"
 }
