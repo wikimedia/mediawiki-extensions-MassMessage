@@ -34,7 +34,7 @@
 	"massmessage-hidden-comment": "<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->",
 	"massmessage-optout-category": "Відмова від доставки повідомлень",
 	"massmessage-badhtml": "Ваше повідомлення, можливо, має {{PLURAL:$2|1=незакритий теґ HTML|незакриті теґи HTML}}:  $1 .",
-	"massmessage-parse-badurl": "\"$1\" не є коректним сайтом",
+	"massmessage-parse-badurl": "«$1» не є коректним сайтом.",
 	"massmessage-parse-badpage": "\"$1\" не є коректною назвою сторінки",
 	"massmessage-parse-badexternal": "\"$1\" не є допустимим заголовком сторінки. Цільові параметри інтервікі повинні бути зазначені через параметр site (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Повідомлення можна надіслати лише до місцевих сторінок.",
