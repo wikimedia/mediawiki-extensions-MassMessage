@@ -6,7 +6,8 @@
 			"Ата",
 			"Olion",
 			"Piramidion",
-			"Максим Підліснюк"
+			"Максим Підліснюк",
+			"Base"
 		]
 	},
 	"massmessage": "Масове надсилання повідомлень",
@@ -83,6 +84,8 @@
 	"massmessage-create-import": "Імпорт сторінок з існуючого списку або категорії",
 	"massmessage-create-source": "Джерело:",
 	"massmessage-create-editsummary": "Створити список масової доставки повідомлення",
+	"massmessage-create-editsummary-import": "Створити список масової доставки повідомлень з цілями взятими з [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Створити список масової доставки повідомлень з цілями взятими з [[$1]]",
 	"massmessage-create-invalidtitle": "Зазначена назва є неприпустимою.",
 	"massmessage-create-exists": "Сторінка з такою назвою вже існує.",
 	"massmessage-create-nopermission": "У вас немає дозволу на створення списку з такою назвою.",
@@ -122,5 +125,7 @@
 	"apihelp-massmessage-example-1": "Надіслати повідомлення списку у [[Signpost Spamlist]] з темою «New Signpost» і текстом повідомлення «Please read it»",
 	"apihelp-query+mmsites-description": "Подавати запити автозаповнення поля сайту у pristine.",
 	"apihelp-query+mmsites-param-term": "Префікс для пошуку.",
-	"apihelp-query+mmsites-example-1": "Автозаповнення «en»"
+	"apihelp-query+mmsites-example-1": "Автозаповнення «en»",
+	"tag-massmessage-delivery": "Доставка масових повідомлень",
+	"tag-massmessage-delivery-description": "Доставка повідомлень з використанням [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
 }

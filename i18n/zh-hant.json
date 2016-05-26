@@ -114,5 +114,7 @@
 	"apihelp-massmessage-param-subject": "訊息主旨。",
 	"apihelp-massmessage-param-message": "訊息內容。",
 	"apihelp-query+mmsites-param-term": "要搜尋的字首。",
-	"apihelp-query+mmsites-example-1": "自動完成「en」"
+	"apihelp-query+mmsites-example-1": "自動完成「en」",
+	"tag-massmessage-delivery": "傳送大量訊息",
+	"tag-massmessage-delivery-description": "使用[[:mw:Extension:MassMessage|Extension:MassMessage]]傳送。"
 }
