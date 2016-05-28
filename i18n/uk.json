@@ -127,5 +127,5 @@
 	"apihelp-query+mmsites-param-term": "Префікс для пошуку.",
 	"apihelp-query+mmsites-example-1": "Автозаповнення «en»",
 	"tag-massmessage-delivery": "Доставка масових повідомлень",
-	"tag-massmessage-delivery-description": "Доставка повідомлень з використанням [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
+	"tag-massmessage-delivery-description": "Доставка повідомлень з використанням [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }
