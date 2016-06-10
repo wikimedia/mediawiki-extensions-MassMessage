@@ -34,7 +34,7 @@
 	"massmessage-parse-badpage": "\"$1\" אינו שם דף תקין.",
 	"massmessage-parse-badexternal": "\"$1\" הוא לא כותרת דף תקינה. יעדים בין־לשוניים צריכים להיות מוזנים באמצעות הפרמטר site‏ (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "אפשר לשלוח הודעות רק לדפים מקומיים.",
-	"right-massmessage": "שליחת הודעות למשתמשים מרובים",
+	"right-massmessage": "שליחת הודעות למשתמשים מרובים בפעולה אחת",
 	"action-massmessage": "לשלוח הודעות למשתמשים רבים",
 	"log-name-massmessage": "יומן הודעות המוניות",
 	"log-description-massmessage": "האירועים האלה עוקבים אחרי שליחת הודעות.",
