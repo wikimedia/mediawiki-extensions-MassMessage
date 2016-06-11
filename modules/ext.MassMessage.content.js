@@ -88,7 +88,7 @@
 				$link.attr( 'data-site' ) === 'local' ? '' : $link.attr( 'data-site' )
 			);
 
-			( new mw.Api() ).postWithToken( 'edit', {
+			( new mw.Api() ).postWithToken( 'csrf', {
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
 				remove: param
@@ -159,7 +159,7 @@
 			// Clear previous error messages.
 			$( '#mw-massmessage-addform .error' ).remove();
 
-			( new mw.Api() ).postWithToken( 'edit', {
+			( new mw.Api() ).postWithToken( 'csrf', {
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
 				add: getApiParam( title, site )
