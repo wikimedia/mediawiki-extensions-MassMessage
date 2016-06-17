@@ -35,7 +35,7 @@
 	"massmessage-parse-badexternal": "\"$1\" הוא לא כותרת דף תקינה. יעדים בין־לשוניים צריכים להיות מוזנים באמצעות הפרמטר site‏ (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "אפשר לשלוח הודעות רק לדפים מקומיים.",
 	"right-massmessage": "שליחת הודעות למשתמשים מרובים בפעולה אחת",
-	"action-massmessage": "לשלוח הודעות למשתמשים רבים",
+	"action-massmessage": "לשלוח הודעות למשתמשים מרובים בפעולה אחת",
 	"log-name-massmessage": "יומן הודעות המוניות",
 	"log-description-massmessage": "האירועים האלה עוקבים אחרי שליחת הודעות.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3",
