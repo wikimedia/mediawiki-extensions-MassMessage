@@ -22,7 +22,7 @@
 	"massmessage-preview-count": "A sua mensagem vai ser enviada para {{PLURAL:$1|$1 página|$1 páginas}}.",
 	"massmessage-submitted": "O seu pedido de entrega da mensagem em {{PLURAL:$1|$1 página|$1 páginas}} foi colocado em lista de espera.",
 	"massmessage-just-preview": "Isto é apenas uma antevisão. Clique em \"{{int:massmessage-form-submit}}\" para enviar a mensagem.",
-	"massmessage-spamlist-doesnotexist": "A página de lista de entrega especificada ou categoria não existe.",
+	"massmessage-spamlist-doesnotexist": "A lista de páginas especificada não existe.",
 	"massmessage-spamlist-invalid": "A página especificada não contém uma lista de entrega válida.",
 	"massmessage-empty-subject": "O campo de assunto está vazio.",
 	"massmessage-empty-message": "O corpo da mensagem está vazio.",

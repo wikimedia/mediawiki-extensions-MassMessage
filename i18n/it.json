@@ -23,7 +23,7 @@
 	"massmessage-preview-count": "Il tuo messaggio verrà inviato a {{PLURAL:$1|$1 pagina|$1 pagine}}.",
 	"massmessage-submitted": "L'invio del tuo messaggio su {{PLURAL:$1|$1 pagina|$1 pagine}} è stato accodato.",
 	"massmessage-just-preview": "Questa è solo un anteprima. Premi \"{{int:massmessage-form-submit}}\" per inviare il messaggio.",
-	"massmessage-spamlist-doesnotexist": "L'elenco di consegna o la categoria indicati non esistono.",
+	"massmessage-spamlist-doesnotexist": "L'elenco di pagine indicato non esiste.",
 	"massmessage-spamlist-invalid": "La pagina indicata non contiene un'elenco di consegna valido.",
 	"massmessage-empty-subject": "La riga dell'oggetto è vuota.",
 	"massmessage-empty-message": "Il corpo del messaggio è vuoto.",

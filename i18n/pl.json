@@ -26,7 +26,7 @@
 	"massmessage-preview-count": "Twoja wiadomość będzie wysyłana do  {{PLURAL:$1|   $1  page| $1  stron}}.",
 	"massmessage-submitted": "Zlecenie dostarczenia twojej wiadomości do {{PLURAL:$1|$1 strony|$1 stron}} zostało umieszczone w kolejce.",
 	"massmessage-just-preview": "To jest tylko podgląd. Naciśnij \"{{int:massmessage-form-submit}}\" aby wysłać wiadomość.",
-	"massmessage-spamlist-doesnotexist": "Określona lista stron lub katgorii nie istnieje.",
+	"massmessage-spamlist-doesnotexist": "Określona lista stron nie istnieje.",
 	"massmessage-empty-subject": "Pole tematu jest puste.",
 	"massmessage-empty-message": "Treść wiadomości jest pusta.",
 	"massmessage-no-timestamp": "Ostrzeżenie: Twoja wiadomość nie zawiera sygnatury czasowej lub podpisu.",
