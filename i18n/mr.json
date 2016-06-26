@@ -20,7 +20,7 @@
 	"massmessage-preview-count": "आपला संदेश {{PLURAL:$1|$1 पानाला|$1 पानांना}} पाठविल्या जाईल.",
 	"massmessage-submitted": "{{PLURAL:$1|$1 पानास|$1 पानांना}} असलेले आपले संदेश वितरण रांगेत ठेविल्या गेले आहे.",
 	"massmessage-just-preview": "ही फक्त झलक आहे. संदेश पाठविण्यास \"{{int:massmessage-form-submit}}\" हे बटन दाबा.",
-	"massmessage-spamlist-doesnotexist": "उल्लेखित वितरण यादी असलेले  पान किंवा वर्ग अस्तित्वात नाही.",
+	"massmessage-spamlist-doesnotexist": "उल्लेखित पानांची यादी अस्तित्वात नाही.",
 	"massmessage-spamlist-invalid": "नमूद केलेल्या पानात वैध वितरण यादी नाही.",
 	"massmessage-empty-subject": "विषय रिकामा आहे.",
 	"massmessage-empty-message": "संदेशाचा मायना रिकामा आहे.",
