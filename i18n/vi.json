@@ -19,7 +19,8 @@
 	"massmessage-preview-count": "Thông báo của bạn sẽ được gửi cho $1 trang.",
 	"massmessage-submitted": "Tin nhắn của bạn cho $1 trang đã được xếp hàng đợi.",
 	"massmessage-just-preview": "Đây chỉ là một bản xem trước. Hãy bấm “{{int:massmessage-form-submit}}” để gửi tin nhắn.",
-	"massmessage-spamlist-doesnotexist": "Trang hoặc thể loại có danh sách phân phát không tồn tại.",
+	"massmessage-spamlist-doesnotexist": "Danh sách trang được chỉ định không tồn tại.",
+	"massmessage-spamlist-notargets": "Danh sách trang được chỉ định không có trang đích nào.",
 	"massmessage-spamlist-invalid": "Trang không có danh sách phân phát hợp lệ.",
 	"massmessage-empty-subject": "Tin nhắn không có tiêu đề.",
 	"massmessage-empty-message": "Tin nhắn không có nội dung.",
@@ -79,6 +80,8 @@
 	"massmessage-create-import": "Nhập trang từ một danh sách hoặc thể loại đã tồn tại",
 	"massmessage-create-source": "Nguồn:",
 	"massmessage-create-editsummary": "Tạo danh sách gửi thông báo rộng rãi",
+	"massmessage-create-editsummary-import": "Tạo danh sách gửi thông báo rộng rãi cho các trang đích tại [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Tạo danh sách gửi thông báo rộng rãi cho các trang đích tại [[$1]]",
 	"massmessage-create-invalidtitle": "Tên trang đã chỉ định là không hợp lệ.",
 	"massmessage-create-exists": "Đã có một trang với tên được chỉ định.",
 	"massmessage-create-nopermission": "Bạn không có quyền tạo danh sách với tên này.",
@@ -110,5 +113,7 @@
 	"apihelp-editmassmessagelist-param-add": "Tiêu đề để thêm vào danh sách.",
 	"apihelp-editmassmessagelist-param-remove": "Tiêu đề để loại bỏ khỏi danh sách.",
 	"apihelp-query+mmsites-param-term": "Tiền tố để tìm kiếm.",
-	"apihelp-query+mmsites-example-1": "Tự động điền “vi”"
+	"apihelp-query+mmsites-example-1": "Tự động điền “vi”",
+	"tag-massmessage-delivery": "thông báo gửi rộng rãi",
+	"tag-massmessage-delivery-description": "Thông báo gửi rộng rãi qua [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }

@@ -6,7 +6,8 @@
 			"Priviet",
 			"아라",
 			"Revi",
-			"SeoJeongHo"
+			"SeoJeongHo",
+			"Ykhwong"
 		]
 	},
 	"massmessage": "메시지 대량 보내기",
@@ -64,7 +65,7 @@
 	"massmessage-content-addsite": "사이트:",
 	"massmessage-content-addsubmit": "문서 추가",
 	"massmessage-content-addedlistheading": "추가된 문서:",
-	"massmessage-content-addeditem": "$2 의 $1",
+	"massmessage-content-addeditem": "$2의 $1",
 	"massmessage-content-alreadyinlist": "이 문서는 이미 목록에 있습니다.",
 	"massmessage-content-invalidtitlesite": "제목과 사이트가 유효하지 않습니다.",
 	"massmessage-content-invalidtitle": "제목이 유효하지 않습니다.",

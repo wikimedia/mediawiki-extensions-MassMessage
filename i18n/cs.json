@@ -4,7 +4,8 @@
 			"Mormegil",
 			"Utar",
 			"Aktron",
-			"Vks"
+			"Vks",
+			"Dvorapa"
 		]
 	},
 	"massmessage": "Poslat hromadnou zprávu",
@@ -17,7 +18,7 @@
 	"massmessage-fieldset-preview": "Náhled",
 	"massmessage-submitted": "Požadované doručení zprávy na {{PLURAL:$1|$1 stránku|$1 stránky|$1 stránek}} bylo zařazeno do fronty.",
 	"massmessage-just-preview": "Toto je jen náhled. Pro odeslání zprávy klikněte na „{{int:massmessage-form-submit}}“.",
-	"massmessage-spamlist-doesnotexist": "Uvedená stránka či kategorie s distribučním seznamem neexistuje.",
+	"massmessage-spamlist-doesnotexist": "Zadaný seznam stránek neexistuje.",
 	"massmessage-spamlist-invalid": "Uvedená stránka neobsahuje platný distribuční seznam.",
 	"massmessage-empty-subject": "Předmět je prázdný.",
 	"massmessage-empty-message": "Tělo zprávy je prázdné.",
