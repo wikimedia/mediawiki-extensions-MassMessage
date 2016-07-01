@@ -18,7 +18,7 @@
 	"massmessage-preview-count": "Вашата порака ќе биде испратена на {{PLURAL:$1|една страница|$1 страници}}.",
 	"massmessage-submitted": "Испраќањето на пораката на {{PLURAL:$1|$1 страница|$1 страници}} е ставено во редица.",
 	"massmessage-just-preview": "Ова е само преглед. Стиснете на „{{int:massmessage-form-submit}}“ за да ја испратите пораката.",
-	"massmessage-spamlist-doesnotexist": "Укажаната страница со список за достава не постои.",
+	"massmessage-spamlist-doesnotexist": "Укажаниот список на страници не постои.",
 	"massmessage-spamlist-invalid": "Укажаната страница не содржи важечки список за достава.",
 	"massmessage-empty-subject": "Насловот е празен.",
 	"massmessage-empty-message": "Порака нема текст.",
