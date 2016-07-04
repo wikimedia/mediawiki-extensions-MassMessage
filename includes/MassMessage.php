@@ -195,9 +195,8 @@ class MassMessage {
 	 * Verify and cleanup the main user submitted data
 	 * @param array &$data should have subject, message, and spamlist keys
 	 * @param Status &$status
-	 * @param IContextSource $ctx
 	 */
-	public static function verifyData( array &$data, Status &$status, IContextSource $ctx ) {
+	public static function verifyData( array &$data, Status &$status ) {
 		// Trim all the things!
 		foreach ( $data as $k => $v ) {
 			$data[$k] = trim( $v );
@@ -220,18 +219,10 @@ class MassMessage {
 				);
 			}
 			$data['comment'] = [
-				$ctx->getUser()->getName(),
+				RequestContext::getMain()->getUser()->getName(),
 				wfWikiID(),
 				$url
 			];
-
-			// Check that the spamlist has targets
-			$targets = MassMessageTargets::getParserFunctionTargets( $spamlist, $ctx );
-			if ( !is_array( $targets ) ) {
-				$status->fatal( $targets );
-			} elseif ( !$targets ) {
-				$status->fatal( 'massmessage-spamlist-notargets' );
-			}
 		} else { // $spamlist contains a message key for an error message
 			$status->fatal( $spamlist );
 		}

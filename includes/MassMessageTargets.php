@@ -140,27 +140,11 @@ class MassMessageTargets {
 	 * Get an array of targets via the #target parser function
 	 * @param  Title $spamlist
 	 * @param  IContextSource $context
-	 * @return array|string if a string, it'll be the error message key
+	 * @return array
 	 */
-	public static function getParserFunctionTargets( Title $spamlist ) {
-		global $wgMemc;
+	protected static function getParserFunctionTargets( Title $spamlist ) {
 		$page = WikiPage::factory( $spamlist );
-
-		$content = $page->getContent( Revision::RAW );
-		$text = $content->getNativeData();
-
-		$key = wfMemcKey( 'massmessage', 'targets', $page->getRevision()->getId() );
-		$data = $wgMemc->get( $key );
-		if ( $data !== false ) {
-			return $data;
-		}
-		if ( $content instanceof WikitextContent ) {
-			// The content type should have already been checked
-			// earlier, but we'll be safe.
-			$text = $content->getNativeData();
-		} else {
-			return 'massmessage-spamlist-doesnotexist';
-		}
+		$text = $page->getContent( Revision::RAW )->getNativeData();
 
 		// Prep the parser
 		$parserOptions = $page->makeParserOptions( 'canonical' );
@@ -177,11 +161,9 @@ class MassMessageTargets {
 		$data = unserialize( $output->getProperty( 'massmessage-targets' ) );
 
 		if ( $data ) {
-			$data = self::normalizeTargets( $data );
+			return $data;
 		} else {
-			$data = []; // No parser functions on page
+			return []; // No parser functions on page
 		}
-		$wgMemc->set( $key, $data, 60 * 60 );
-		return $data;
 	}
 }

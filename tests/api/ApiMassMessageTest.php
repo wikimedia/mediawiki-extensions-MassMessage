@@ -9,14 +9,14 @@
 class ApiMassMessageTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'Help:ApiMassMessageTest_spamlist';
-	protected static $spamlist2 = 'Help:ApiMassMessageTest_spamlist2';
+	protected static $emptyspamlist = 'Help:ApiMassMessageTest_spamlist2';
 
 	protected function setUp() {
 		parent::setUp();
 		$spamlist = Title::newFromText( self::$spamlist );
 		self::updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );
-		$emptyspamlist = Title::newFromText( self::$spamlist2 );
-		self::updatePage( $emptyspamlist, '{{#target:Project:ApiTest2}}{{#target:Project:ApiTest3}}' );
+		$emptyspamlist = Title::newFromText( self::$emptyspamlist );
+		self::updatePage( $emptyspamlist, 'rawr' );
 		$this->doLogin();
 	}
 
@@ -57,7 +57,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 */
 	public function testInvalidSpamlist() {
 		$this->setExpectedException( 'UsageException',
-			'The specified list of pages does not exist.' );
+			'The specified delivery list page or category does not exist.' );
 		$this->doApiRequestWithToken( [
 			'action' => 'massmessage',
 			'spamlist' => '<InvalidPageTitle>',
@@ -69,7 +69,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	public static function provideCount() {
 		return [
 			[ self::$spamlist, 1 ],
-			[ self::$spamlist2, 2 ]
+			[ self::$emptyspamlist, 0 ]
 		];
 	}
 
