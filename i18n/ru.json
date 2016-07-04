@@ -21,7 +21,7 @@
 	"massmessage-preview-count": "Ваше сообщение будет отправлено на $1 {{PLURAL:$1|страницу|страницы|страниц}}.",
 	"massmessage-submitted": "Доставка вашего сообщения на {{PLURAL:$1|$1 страницу|$1 страницы|$1 страниц}} была поставлена в очередь.",
 	"massmessage-just-preview": "Это только предварительный просмотр. Нажмите «{{int:massmessage-form-submit}}» для отправки сообщения.",
-	"massmessage-spamlist-doesnotexist": "Указанная страница или категория списка доставки не существует.",
+	"massmessage-spamlist-doesnotexist": "Указанный список страниц не существует.",
 	"massmessage-spamlist-invalid": "Указанная страница не содержит допустимого списка доставки.",
 	"massmessage-empty-subject": "Строка с темой не заполнена.",
 	"massmessage-empty-message": "Отсутствует текст сообщения.",
