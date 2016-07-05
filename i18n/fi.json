@@ -33,7 +33,7 @@
 	"right-massmessage": "Lähettää viesti usealle käyttäjälle yhtä aikaa",
 	"action-massmessage": "lähettää viestiä usealle käyttäjälle samalla kertaa",
 	"log-name-massmessage": "Joukkoviestien loki",
-	"log-description-massmessage": "Nämä tapahtumat merkitsevät käyttäjiä, jotka lähettävät viestejä.",
+	"log-description-massmessage": "Nämä lokitapahtumat seuraavat käyttäjien lähettämiä viestejä.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|lähetti viestin}} luetteloon $3",
 	"logentry-massmessage-failure": "Viestin \"$4\" toimittaminen kohteeseen $3 ei onnistunut. Virhekoodi on <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Viestiä \"$4\" ei toimitettu kohteeseen $3, koska kohde on sellaisessa nimiavaruudessa, johon ei voi lähettää viestejä",
