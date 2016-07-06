@@ -5,7 +5,9 @@
 			"Ebraminio",
 			"Reza1615",
 			"Mjbmr",
-			"Americophile"
+			"Americophile",
+			"4nn1l2",
+			"Alifakoor"
 		]
 	},
 	"massmessage": "ارسال انبوه پیام",
@@ -20,7 +22,7 @@
 	"massmessage-fieldset-info": "اطلاعات",
 	"massmessage-submitted": "رساندن پیامتان به {{PLURAL:$1|$1 page|$1 صفحه}} در صف قرار گرفت.",
 	"massmessage-just-preview": "این فقط یک پیش‌نمایش است. «{{int:massmessage-form-submit}}» را برای ارسال پیام بفشارید.",
-	"massmessage-spamlist-doesnotexist": "صفحه-فهرست صفحه مشخص‌شده موجود نیست.",
+	"massmessage-spamlist-doesnotexist": "رده یا صفحهٔ لیست مراسلات مورد نظر وجود ندارد.",
 	"massmessage-empty-subject": "خط موضوع خالی است.",
 	"massmessage-empty-message": "بدنهٔ پیام خالی است.",
 	"massmessage-unescaped-langlinks": "هشدار: پیوندهای زبان غیررها در پیام شما وجود دارد.",
