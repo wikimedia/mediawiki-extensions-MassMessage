@@ -256,7 +256,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return $editResult;
 		}
 
-		$this->getOutput()->redirect( $this->title->getFullUrl() );
+		$this->getOutput()->redirect( $this->title->getFullURL() );
 		return Status::newGood();
 	}
 
