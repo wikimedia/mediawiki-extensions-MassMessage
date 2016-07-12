@@ -15,7 +15,7 @@
 	"massmessage-fieldset-preview": "Kucken ouni ze späicheren",
 	"massmessage-fieldset-info": "Informatioun",
 	"massmessage-just-preview": "De Message gëtt just gewisen. Klickt \"{{int:massmessage-form-submit}}\" fir de Message ze schécken.",
-	"massmessage-spamlist-doesnotexist": "Déi spezifizéiert Lëscht vu Säite gëtt et net.",
+	"massmessage-spamlist-doesnotexist": "Déi spezifizéiert Lëscht vu Säite oder Kategorie gëtt et net.",
 	"massmessage-empty-subject": "D'Linn mam Sujet ass eidel.",
 	"massmessage-empty-message": "Den Inhalt vum Message ass eidel.",
 	"massmessage-unescaped-langlinks": "Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.",
