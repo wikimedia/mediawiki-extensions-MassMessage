@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Silraks"
+		]
+	},
+	"massmessage-form-preview": "Pirmskats",
+	"massmessage-form-submit": "Sūtīt",
+	"massmessage-fieldset-preview": "Pirmskats",
+	"massmessage-fieldset-info": "Informācija",
+	"massmessage-content-removeyes": "Noņemt",
+	"massmessage-content-removeno": "Atcelt",
+	"massmessage-content-addtitle": "Nosaukums:",
+	"massmessage-content-addsite": "Vietne:",
+	"massmessage-content-adderror": "API Kļūda: $1",
+	"massmessage-create-description": "Apraksts:",
+	"massmessage-create-content": "Saturs:",
+	"massmessage-create-source": "Avots:",
+	"massmessage-edit-pagetitle": "Labo $1",
+	"massmessage-edit-title": "Nosaukums:",
+	"massmessage-edit-description": "Apraksts:",
+	"massmessage-edit-content": "Mērķa lapas:",
+	"massmessage-edit-summary": "Izmaiņu kopsavilkums:",
+	"massmessage-summary-add": "Pievienots [[:$1]]",
+	"massmessage-summary-addonsite": "Pievienots $1 uz $2",
+	"massmessage-summary-remove": "Noņemts [[:$1]]",
+	"massmessage-summary-removeonsite": "Noņemts $1 no $2"
+}
