@@ -43,7 +43,7 @@
 	"log-name-massmessage": "대량 메시지 기록",
 	"log-description-massmessage": "이 기록 내용은 메시지를 보낸 사용자를 추적합니다.",
 	"logentry-massmessage-send": "$1 사용자가 $3에 {{GENDER:$2|메시지를 보냈습니다}}",
-	"logentry-massmessage-failure": "$3에 \"$4\"(을)를 보내지 못했으며 오류 코드는 <code>$5</code>입니다",
+	"logentry-massmessage-failure": "$3에 \"$4\"을(를) 보내지 못했으며 오류 코드는 <code>$5</code>입니다",
 	"logentry-massmessage-skipbadns": "\"$4\"의 $3으로의 배달은 해당 이름공간에 문서를 쓸 수 없었기 때문에 넘어갔습니다.",
 	"logentry-massmessage-skipoptout": "\"$4\"의 $3으로의 배달이 목표가 메시지 배달을 받지 않도록 설정했기 때문에 넘어갔습니다.",
 	"logentry-massmessage-skipnouser": "\"$4\"의 \"$3\"으로의 배달이 사용자 계정이 존재하지 않기 때문에 넘어갔습니다.",
