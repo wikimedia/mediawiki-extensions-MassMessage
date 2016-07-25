@@ -34,6 +34,7 @@
 	"massmessage-badhtml": "A sua mensagem pode conter {{PLURAL:$2|uma marcação HTML|várias marcações HTML}} por fechar: $1.",
 	"massmessage-parse-badurl": "\"$1\" não é um sítio válido.",
 	"massmessage-parse-badpage": "\"$1\" não é um título de página válido.",
+	"massmessage-parse-badexternal": "\"$1\" não é um título de página válido. Os destinos interwiki devem ser especificados ao utilizar o parâmetro 'sítio' (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "As mensagens só podem ser enviadas para páginas locais.",
 	"right-massmessage": "Enviar uma mensagem para vários utilizadores ao mesmo tempo",
 	"action-massmessage": "enviar uma mensagem para vários utilizadores ao mesmo tempo",
