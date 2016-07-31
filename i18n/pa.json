@@ -1,8 +1,29 @@
 {
 	"@metadata": {
 		"authors": [
-			"Babanwalia"
+			"Babanwalia",
+			"Tow"
 		]
 	},
-	"massmessage-fieldset-info": "ਜਾਣਕਾਰੀ"
+	"massmessage-form-submit": "ਭੇਜੋ",
+	"massmessage-fieldset-preview": "ਝਲਕ",
+	"massmessage-fieldset-info": "ਜਾਣਕਾਰੀ",
+	"massmessage-content-removeyes": "ਹਟਾਓ",
+	"massmessage-content-removeno": "ਰੱਦ ਕਰੋ",
+	"massmessage-content-emptylist": "(ਕੋਈ ਨਹੀਂ)",
+	"massmessage-content-addtitle": "ਸਿਰਲੇਖ:",
+	"massmessage-content-addsite": "ਸਾਈਟ:",
+	"massmessage-content-addsubmit": "ਸਫ਼ਾ ਜੋੜੋ",
+	"massmessage-content-addedlistheading": "ਜੋੜੇ ਹੋਏ ਸਫ਼ੇ:",
+	"massmessage-content-addeditem": "$2 'ਤੇ $1",
+	"massmessage-content-invalidtitlesite": "ਸਿਰਲੇਖ ਅਤੇ ਥੜ ਗਲਤ ਹਨ।",
+	"massmessage-content-invalidtitle": "ਸਿਰਲੇਖ ਗਲਤ ਹੈ।",
+	"massmessage-content-invalidsite": "ਥੜ ਗ਼ਲਤ ਹੈ",
+	"massmessage-create-title": "ਸਿਰਲੇਖ:",
+	"massmessage-create-description": "ਵੇਰਵਾ:",
+	"massmessage-create-content": "ਸਮੱਗਰੀ:",
+	"massmessage-create-source": "ਸਰੋਤ:",
+	"massmessage-edit-title": "ਸਿਰਲੇਖ:",
+	"massmessage-edit-description": "ਵੇਰਵਾ:",
+	"massmessage-edit-summary": "ਸੋਧ ਸਾਰ:"
 }
