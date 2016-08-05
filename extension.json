@@ -61,9 +61,6 @@
 		"UserGetReservedNames": [
 			"MassMessageHooks::onUserGetReservedNames"
 		],
-		"UnitTestsList": [
-			"MassMessageHooks::onUnitTestsList"
-		],
 		"BeforeEchoEventInsert": [
 			"MassMessageHooks::onBeforeEchoEventInsert"
 		],
@@ -211,8 +208,8 @@
 		"MassMessageListContent": "includes/content/MassMessageListContent.php",
 		"MassMessageListContentHandler": "includes/content/MassMessageListContentHandler.php",
 		"MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php",
-		"MassMessageTestCase": "tests/MassMessageTestCase.php",
-		"MassMessageApiTestCase": "tests/MassMessageApiTestCase.php"
+		"MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
+		"MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php"
 	},
 	"manifest_version": 1
 }
