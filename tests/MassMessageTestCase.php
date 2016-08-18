@@ -6,12 +6,11 @@
 
 abstract class MassMessageTestCase extends MediaWikiTestCase {
 
-	public static function setUpBeforeClass() {
-		// $wgConf ewwwww
-		global $wgConf, $wgLocalDatabases;
-		parent::setUpBeforeClass();
+	protected function setUp() {
+		global $wgLqtPages, $wgContLang;
+		parent::setUp();
 		$wgConf = new SiteConfiguration;
-		$wgConf->wikis = [ 'enwiki', 'dewiki', 'frwiki', 'wiki' ];
+		$wgConf->wikis = [ 'enwiki', 'dewiki', 'frwiki' ];
 		$wgConf->suffixes = [ 'wiki' ];
 		$wgConf->settings = [
 			'wgServer' => [
@@ -19,13 +18,16 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 				'dewiki' => '//de.wikipedia.org',
 				'frwiki' => '//fr.wikipedia.org',
 			],
+			'wgCanonicalServer' => [
+				'enwiki' => 'https://en.wikipedia.org',
+				'dewiki' => 'https://de.wikipedia.org',
+				'frwiki' => 'https://fr.wikipedia.org',
+			],
+			'wgArticlePath' => [
+				'default' => '/wiki/$1',
+			],
 		];
-		$wgLocalDatabases =& $wgConf->getLocalDatabases();
-	}
-
-	protected function setUp() {
-		global $wgLqtPages, $wgContLang;
-		parent::setUp();
+		$this->setMwGlobals( 'wgConf', $wgConf );
 		$proj = $wgContLang->getFormattedNsText( NS_PROJECT );
 		$wgLqtPages[] = $proj . ':LQT test';
 		// Create a redirect
