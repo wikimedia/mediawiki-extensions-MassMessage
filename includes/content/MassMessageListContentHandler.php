@@ -10,21 +10,6 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	}
 
 	/**
-	 * @param string $text
-	 * @param string $format
-	 * @return MassMessageListContent
-	 * @throws MWContentSerializationException
-	 */
-	public function unserializeContent( $text, $format = null ) {
-		$this->checkFormat( $format );
-		$content = new MassMessageListContent( $text );
-		if ( !$content->isValid() ) {
-			throw new MWContentSerializationException( 'The delivery list content is invalid.' );
-		}
-		return $content;
-	}
-
-	/**
 	 * @return MassMessageListContent
 	 */
 	public function makeEmptyContent() {
