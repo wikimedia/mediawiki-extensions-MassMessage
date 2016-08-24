@@ -5,7 +5,8 @@
 			"مشعل الحربي",
 			"زكريا",
 			"Fatz",
-			"Meno25"
+			"Meno25",
+			"بدارين"
 		]
 	},
 	"massmessage": "إرسال رسالة جماعية",
@@ -41,5 +42,6 @@
 	"massmessage-create-editsummary": "إنشاء قائمة توصيل رسائل كمية",
 	"massmessage-create-exists-short": "لقد تم استخدام العنوان من قبل",
 	"massmessage-create-invalidsource-short": "قائمة غير صالحة",
-	"massmessage-list-category": "قوائم بعث الرسائل الكمية"
+	"massmessage-list-category": "قوائم بعث الرسائل الكمية",
+	"tag-massmessage-delivery": "تسليم رسائل كمية"
 }
