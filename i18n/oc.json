@@ -18,6 +18,7 @@
 	"massmessage-spamlist-doesnotexist": "La pagina especificada de la lista de las liurasons o la categoria existís pas.",
 	"massmessage-empty-subject": "La linha del subjècte es voida.",
 	"massmessage-empty-message": "Lo còs del messatge es void.",
+	"massmessage-unescaped-langlinks": "Atencion : i a de ligams de lenga non escapats dins vòstre messatge.",
 	"massmessage-form-header": "Utilizatz lo formulari çaijós per mandar de messatges a una lista indicada. Totes los camps son obligatòris.",
 	"massmessage-queued-count": "[[Special:MassMessage|Messatges de massa]] en fila d'espèra",
 	"massmessage-hidden-comment": "<!-- Message mandat per User:$1@$2 en utilizant la lista a $3 -->",
