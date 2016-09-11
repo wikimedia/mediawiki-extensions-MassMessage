@@ -158,7 +158,7 @@ class MassMessageTargets {
 
 		// Parse
 		$output = $parser->parse( $text, $spamlist, $parserOptions );
-		$data = unserialize( $output->getProperty( 'massmessage-targets' ) );
+		$data = $output->getExtensionData( 'massmessage-targets' );
 
 		if ( $data ) {
 			return $data;

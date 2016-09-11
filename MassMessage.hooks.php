@@ -59,12 +59,12 @@ class MassMessageHooks {
 			return ''; // Output doesn't matter
 		}
 		$output = $parser->getOutput();
-		$current = $output->getProperty( 'massmessage-targets' );
+		$current = $output->getExtensionData( 'massmessage-targets' );
 		if ( !$current ) {
-			$output->setProperty( 'massmessage-targets', serialize( [ $data ] ) );
+			$output->setExtensionData( 'massmessage-targets', [ $data ] );
 		} else {
-			$output->setProperty( 'massmessage-targets', serialize(
-				array_merge( unserialize( $current ),  [ $data ] ) ) );
+			$output->setExtensionData( 'massmessage-targets',
+				array_merge( $current,  [ $data ] ) );
 		}
 		return '';
 	}
