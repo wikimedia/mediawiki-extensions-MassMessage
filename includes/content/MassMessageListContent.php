@@ -52,19 +52,7 @@ class MassMessageListContent extends JsonContent {
 	 * @return bool
 	 */
 	public function hasInvalidTargets() {
-		global $wgAllowGlobalMessaging;
-
-		$targets = $this->getTargets();
-		foreach ( $targets as $target ) {
-			if ( array_key_exists( 'site', $target ) ) {
-				if ( !$wgAllowGlobalMessaging
-					|| MassMessage::getDBName( $target['site'] ) === null
-				) {
-					return true;
-				}
-			}
-		}
-		return false;
+		return count( $this->getTargets() ) !== count( $this->getValidTargets() );
 	}
 
 	/**
