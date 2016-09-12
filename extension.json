@@ -45,6 +45,11 @@
 			"i18n"
 		]
 	},
+	"GrantPermissions": {
+		"highvolume": {
+			"massmessage": true
+		}
+	},
 	"Hooks": {
 		"ParserFirstCallInit": [
 			"MassMessageHooks::onParserFirstCallInit"
