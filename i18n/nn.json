@@ -36,5 +36,6 @@
 	"logentry-massmessage-skipoptout": "Leveringa av «$4» til «$3» vart hoppa over av di målet har valt bort meldingsmottak",
 	"logentry-massmessage-skipnouser": "Leveringa av «$4» til «$3» vart hoppa over av di brukarkontoen ikkje finst",
 	"massmessage-cannot-rename": "Dette er ein systemkonto og kan ikkje døypast om.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Send endå ei melding]] eller [[Special:Statistics|sjå kor mange meldingar som er i kø]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Send endå ei melding]] eller [[Special:Statistics|sjå kor mange meldingar som er i kø]].",
+	"tag-massmessage-delivery": "massemeldingslevering"
 }
