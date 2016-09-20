@@ -137,8 +137,9 @@ class MassMessageHooks {
 	 */
 	public static function onBeforeEchoEventInsert( EchoEvent $event ) {
 		// Don't spam a user with mention notifications if it's a MassMessage
-		if ( $event->getType() == 'mention' && $event->getAgent() && // getAgent() can return null
-			$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId() ) {
+		if ( ( $event->getType() == 'mention' || $event->getType() == 'flow-mention' ) &&
+				$event->getAgent() && // getAgent() can return null
+				$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId() ) {
 			return false;
 		}
 
