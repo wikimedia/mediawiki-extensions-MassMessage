@@ -4,5 +4,22 @@
 			"बिप्लब आनन्द"
 		]
 	},
+	"massmessage": "सामूहिक सन्देश भेजी",
+	"createmassmessagelist": "सामूहिक सन्देश सूची बनाबी",
+	"editmassmessagelist": "सामूहिक सन्देश सूची सम्पादित करी",
+	"massmessage-desc": "प्रयोगकर्ताक अनेक सदस्यसभक एक सूचीके सामूहिक सन्देश पठाबैमे मदति करैत अछि",
+	"massmessage-form-spamlist": "पृष्ठ वा श्रेणी जाहिमे अहाँ सन्देश पठाबै लेल चाहैत अछि:",
+	"massmessage-form-subject": "सन्देशक विषय (सम्पादन सारांशक रुपमे प्रयुक्त):",
+	"massmessage-form-message": "सन्देश:",
+	"massmessage-form-preview": "पूर्वावलोकन",
+	"massmessage-form-submit": "पठाबी",
+	"massmessage-fieldset-preview": "पूर्वावलोकन",
+	"massmessage-fieldset-info": "जानकारी",
+	"massmessage-preview-count": "निम्न {{PLURAL:$1|$1 पृष्ठ|$1 पृष्ठसभ}}पर अहाँक सन्देश पठाएल जाइत।",
+	"massmessage-submitted": "{{PLURAL:$1|$1 पृष्ठ|$1 पृष्ठसभ}} पर पठाबैक लेल अहाँक सन्देश पङ्क्तिमे जोडि देल गेल अछि।",
+	"massmessage-just-preview": "ई मात्र एक झलक छी । सन्देश पठाबैक लेल \"{{int:massmessage-form-submit}}\" पर क्लिक करी।",
+	"massmessage-empty-subject": "विषय खाली अछि।",
+	"massmessage-empty-message": "सन्देश खाली अछि।",
+	"massmessage-unescaped-langlinks": "चेतावनी: अहाँक सन्देशमे बिना कोलनक अन्तरविकि लिङ्कसभ अछि।",
 	"logentry-massmessage-send": "$1 ने $3 {{GENDER:$2|के सन्देश भेजलक}}"
 }

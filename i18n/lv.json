@@ -1,17 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Silraks"
+			"Silraks",
+			"Papuass"
 		]
 	},
+	"massmessage": "Sūtīt masu ziņojums",
 	"massmessage-form-preview": "Pirmskats",
 	"massmessage-form-submit": "Sūtīt",
 	"massmessage-fieldset-preview": "Pirmskats",
 	"massmessage-fieldset-info": "Informācija",
+	"massmessage-content-pages": "Lapas šajā sarakstā",
+	"massmessage-content-remove": "noņemt",
 	"massmessage-content-removeyes": "Noņemt",
 	"massmessage-content-removeno": "Atcelt",
+	"massmessage-content-addheading": "Pievienot lapas",
 	"massmessage-content-addtitle": "Nosaukums:",
 	"massmessage-content-addsite": "Vietne:",
+	"massmessage-content-addsubmit": "Pievienot lapu",
 	"massmessage-content-adderror": "API Kļūda: $1",
 	"massmessage-create-description": "Apraksts:",
 	"massmessage-create-content": "Saturs:",
