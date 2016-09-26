@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"MaGa"
+			"MaGa",
+			"Ex13"
 		]
 	},
-	"massmessage": "Slanje masovnih poruka"
+	"massmessage": "Slanje masovnih poruka",
+	"tag-massmessage-delivery": "Isporuka masovne poruke"
 }
