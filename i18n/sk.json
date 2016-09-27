@@ -5,5 +5,7 @@
 		]
 	},
 	"log-name-massmessage": "Záznam hromadných správ",
-	"log-description-massmessage": "Toto je záznam používateľov, odosielajúcich hromadné správy."
+	"log-description-massmessage": "Toto je záznam používateľov, odosielajúcich hromadné správy.",
+	"tag-massmessage-delivery": "doručenie hromadnej správy",
+	"tag-massmessage-delivery-description": "Doručenie správy pomocou rozšírenia [[:mw:Extension:MassMessage|MassMessage]]"
 }
