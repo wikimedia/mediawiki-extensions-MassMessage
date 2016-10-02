@@ -6,7 +6,8 @@
 			"زكريا",
 			"Fatz",
 			"Meno25",
-			"بدارين"
+			"بدارين",
+			"ديفيد"
 		]
 	},
 	"massmessage": "إرسال رسالة جماعية",
@@ -64,5 +65,6 @@
 	"massmessage-edit-content": "الصفحات المستهدفة:",
 	"massmessage-edit-summary": "ملخص التعديل:",
 	"massmessage-list-category": "قوائم بعث الرسائل الكمية",
-	"tag-massmessage-delivery": "تسليم رسائل كمية"
+	"tag-massmessage-delivery": "تسليم رسائل كمية",
+	"tag-massmessage-delivery-description": "تسليم رسالة باستخدام [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }
