@@ -44,7 +44,9 @@ class MassMessage {
 			$wgMassMessageAccountUsername, [ 'steal' => true ]
 		);
 		// Make the user a bot so it doesn't look weird
-		$user->addGroup( 'bot' );
+		if ( !in_array( 'bot', $user->getGroups() ) ) {
+			$user->addGroup( 'bot' );
+		}
 
 		return $user;
 	}
