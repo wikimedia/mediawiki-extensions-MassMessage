@@ -80,6 +80,7 @@
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-content": "Strony docelowe:",
 	"massmessage-edit-summary": "Opis zmian:",
+	"massmessage-edit-headermulti": "Użyj poniższego formularza do zmodyfikowania opisu listy lub edycji listy stron docelowych. Każdą stronę docelową należy wpisywać w oddzielnych liniach i korzystać z formatu tytuł@domena (np. User_talk:Example@en.wikipedia.org), aby określić stronę na innej wiki.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|Następująca strona jest nieprawidłowa|Następujące strony są nieprawidłowe}}:\n$2",
 	"massmessage-edit-missingsummary": "Nie wprowadzono opisu zmian. Jeżeli klikniesz ponownie na \"{{int:htmlform-submit}}\", Twoje zmiany zostaną zapisane bez niego.",
 	"massmessage-edit-nopermission": "Nie masz uprawnień do edytowania tej listy.",
