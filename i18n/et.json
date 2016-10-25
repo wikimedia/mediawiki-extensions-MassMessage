@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pikne"
+			"Pikne",
+			"Cumbril"
 		]
 	},
 	"massmessage": "Hulgasõnumi saatmine",
@@ -52,5 +53,7 @@
 	"massmessage-create-invalidtitle": "Määratud pealkiri on vigane.",
 	"massmessage-edit-invalidtitle": "Selle pealkirja all pole sobivat hulgasõnumi saatmisloendit.",
 	"massmessage-list-category": "Hulgasõnumi saatmisloendid",
-	"massmessage-list-category-desc": "See lehekülg on [[Special:MassMessage|hulgasõnumi]] tarkvaralisa saatmisloend."
+	"massmessage-list-category-desc": "See lehekülg on [[Special:MassMessage|hulgasõnumi]] tarkvaralisa saatmisloend.",
+	"tag-massmessage-delivery": "Hulgasõnumi väljastus",
+	"tag-massmessage-delivery-description": "Sõnumi saatmine [[:mw:Extension:MassMessage|Lisa:Hulgasõnum]]i abil"
 }
