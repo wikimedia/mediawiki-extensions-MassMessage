@@ -130,6 +130,7 @@
 	"apihelp-query+mmsites-description": "{{doc-apihelp-description|query+mmsites}}",
 	"apihelp-query+mmsites-param-term": "Label of an input area. Connected site names will be returned if they match the provided prefix (e.g. entering \"meta\" may return \"metawiki\").\n----\n{{doc-apihelp-param|query+mmsites|term}}",
 	"apihelp-query+mmsites-example-1": "{{doc-apihelp-example|query+mmsites}}",
+	"apierror-massmessage-invalidspamlist": "{{doc-apierror}}",
 	"tag-massmessage-delivery": "Change tag for MassMessage delivery edits",
 	"tag-massmessage-delivery-description": "Description for MassMessage delivery change tag"
 }

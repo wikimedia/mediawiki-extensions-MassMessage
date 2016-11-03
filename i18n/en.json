@@ -124,6 +124,7 @@
 	"apihelp-query+mmsites-description": "Serve autocomplete requests for the site field in MassMessage.",
 	"apihelp-query+mmsites-param-term": "The prefix to search for.",
 	"apihelp-query+mmsites-example-1": "Autocomplete \"en\"",
+	"apierror-massmessage-invalidspamlist": "The specified spamlist is invalid.",
 	"tag-massmessage-delivery": "MassMessage delivery",
 	"tag-massmessage-delivery-description": "Message delivery using [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }

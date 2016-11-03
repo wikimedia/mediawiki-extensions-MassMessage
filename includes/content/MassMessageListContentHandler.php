@@ -75,6 +75,8 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		try {
 			$api = new ApiMain( $der, true );
 			$api->execute();
+		} catch ( ApiUsageException $e ) {
+			return Status::wrap( $e->getStatusValue() );
 		} catch ( UsageException $e ) {
 			return Status::newFatal( $context->msg( 'massmessage-ch-apierror',
 				$e->getCodeString() ) );
