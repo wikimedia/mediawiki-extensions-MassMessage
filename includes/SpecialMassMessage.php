@@ -277,7 +277,7 @@ class SpecialMassMessage extends SpecialPage {
 		$this->getOutput()->addHTML( $infoFieldset );
 
 		// Use a mock target as the context for rendering the preview
-		$mockTarget = Title::newFromText( 'Project:Example' );
+		$mockTarget = Title::newFromText( 'Project:MassMessage:A page that should not exist' );
 		$wikipage = WikiPage::factory( $mockTarget );
 
 		// Convert into a content object
