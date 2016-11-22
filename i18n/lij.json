@@ -4,5 +4,7 @@
 			"Giromin Cangiaxo"
 		]
 	},
-	"massmessage-queued-count": "[[Special:MassMessage|Messaggi mascivi]] in coa"
+	"massmessage-queued-count": "[[Special:MassMessage|Messaggi mascivi]] in coa",
+	"massmessage-list-category": "Lista de consegna MassMessage",
+	"massmessage-list-category-desc": "Sta paggina a l'è 'na lista de consegna pe l'estenscion [[Special:MassMessage|MassMessage]]."
 }
