@@ -18,7 +18,7 @@
 	"massmessage-form-submit": "Enviar",
 	"massmessage-fieldset-preview": "Vista previa",
 	"massmessage-fieldset-info": "Información",
-	"massmessage-preview-count": "A súa mensaxe será enviada a {{PLURAL:$1|$1 páxina|$1 páxinas}}.",
+	"massmessage-preview-count": "A túa mensaxe será enviada a {{PLURAL:$1|$1 páxina|$1 páxinas}}.",
 	"massmessage-submitted": "A entrega da súa mensaxe a {{PLURAL:$1|unha páxina|$1 páxinas}} púxose á cola.",
 	"massmessage-just-preview": "Isto só é unha vista previa. Prema en \"{{int:massmessage-form-submit}}\" para enviar a mensaxe.",
 	"massmessage-spamlist-doesnotexist": "A páxina ou categoría coa lista de entrega especificada non existe.",
