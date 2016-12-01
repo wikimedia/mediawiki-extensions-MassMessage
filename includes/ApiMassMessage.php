@@ -9,8 +9,12 @@
  */
 class ApiMassMessage extends ApiBase {
 	public function execute() {
-		if ( !$this->getUser()->isAllowed( 'massmessage' ) ) {
-			$this->dieUsageMsg( 'permissiondenied' );
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
+			$this->checkUserRightsAny( 'massmessage' );
+		} else {
+			if ( !$this->getUser()->isAllowed( 'massmessage' ) ) {
+				$this->dieUsageMsg( 'permissiondenied' );
+			}
 		}
 
 		$data = $this->extractRequestParams();

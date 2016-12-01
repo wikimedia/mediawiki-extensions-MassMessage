@@ -309,6 +309,22 @@ class MassMessageJob extends Job {
 			try {
 				$api->execute();
 				break; // Continue after the while block if the API request succeeds
+			} catch ( ApiUsageException $e ) {
+				$attemptCount++;
+				$isEditConflict = false;
+				foreach ( $e->getStatusValue()->getErrors() as $error ) {
+					if ( ApiMessage::create( $error )->getApiCode() === 'editconflict' ) {
+						$isEditConflict = true;
+						break;
+					}
+				}
+				// If the failure is not caused by an edit conflict or if there
+				// have been too many failures, log the error and continue
+				// execution. Otherwise retry the request.
+				if ( !$isEditConflict || $attemptCount >= 5 ) {
+					$this->logLocalFailure( $errorCode );
+					break;
+				}
 			} catch ( UsageException $e ) {
 				$attemptCount++;
 				$errorCode = $e->getCodeString();
