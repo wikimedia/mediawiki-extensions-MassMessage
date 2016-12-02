@@ -123,6 +123,7 @@
 	"apihelp-massmessage-param-message": "Text des Nachrichtenkörpers.",
 	"apihelp-query+mmsites-param-term": "Das Präfix, nach dem gesucht werden soll.",
 	"apihelp-query+mmsites-example-1": "„en“ vervollständigen",
+	"apierror-massmessage-invalidspamlist": "Die angegebene Spamliste ist ungültig.",
 	"tag-massmessage-delivery": "Versand von Massennachrichten",
 	"tag-massmessage-delivery-description": "Versand von Nachrichten mithilfe der Erweiterung „[[:mw:Extension:MassMessage|MassMessage]]“"
 }

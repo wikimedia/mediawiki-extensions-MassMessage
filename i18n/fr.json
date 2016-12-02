@@ -129,6 +129,7 @@
 	"apihelp-query+mmsites-description": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
 	"apihelp-query+mmsites-param-term": "Le préfixe à rechercher.",
 	"apihelp-query+mmsites-example-1": "Saisie semi-automatique \"en\"",
+	"apierror-massmessage-invalidspamlist": "La liste spécifiée des pourriels n’est pas valide.",
 	"tag-massmessage-delivery": "distribution de MassMessage",
 	"tag-massmessage-delivery-description": "Message distribué en utilisant [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }
