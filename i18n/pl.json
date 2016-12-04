@@ -92,6 +92,7 @@
 	"massmessage-summary-removeonsite": "Usunięto $1 na $2",
 	"massmessage-summary-removemulti": "Usunięto $1 {{PLURAL:$1|stronę|strony|stron}}",
 	"massmessage-list-category": "Listy odbiorców masowych wiadomości",
+	"apierror-massmessage-invalidspamlist": "Lista określająca spam jest nieprawidłowa.",
 	"tag-massmessage-delivery": "Wiadomość MassMessage",
 	"tag-massmessage-delivery-description": "Dostarczenie masowej wiadomości poprzez [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }
