@@ -21,6 +21,11 @@ $magicWords['arz'] = array(
 	'target' => array( 0, 'هدف' ),
 );
 
+/** Bengali (বাংলা) */
+$magicWords['bn'] = array(
+	'target' => array( 0, 'লক্ষ্য' ),
+);
+
 /** Czech (čeština) */
 $magicWords['cs'] = array(
 	'target' => array( 0, 'cíl' ),
