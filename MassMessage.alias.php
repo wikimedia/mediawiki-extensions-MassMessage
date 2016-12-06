@@ -35,6 +35,13 @@ $specialPageAliases['bgn'] = array(
 	'EditMassMessageList' => array( 'بَزین_پیامی_لیست_ئی_دستکاری_کورتین' ),
 );
 
+/** Bengali (বাংলা) */
+$specialPageAliases['bn'] = array(
+	'MassMessage' => array( 'গণ_বার্তা' ),
+	'CreateMassMessageList' => array( 'গণ_বার্তার_তালিকা_তৈরি' ),
+	'EditMassMessageList' => array( 'গণ_বার্তার_তালিকা_সম্পাদনা' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'MassMessage' => array( 'Massennachrichten' ),
