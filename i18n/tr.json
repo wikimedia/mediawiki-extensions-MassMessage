@@ -3,7 +3,8 @@
 		"authors": [
 			"Emperyan",
 			"Violetanka",
-			"HakanIST"
+			"HakanIST",
+			"Superyetkin"
 		]
 	},
 	"massmessage": "Toplu ileti gönderin",
@@ -106,7 +107,7 @@
 	"massmessage-summary-remove": "[[:$1]] Kaldırıldı",
 	"massmessage-summary-removeonsite": "$2 deki $1 çıkarıldı",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|sayfa|sayfa}} çıkarıldı",
-	"massmessage-list-category": "Topluİleti gönderim listeleri",
+	"massmessage-list-category": "Toplu mesaj gönderim listeleri",
 	"massmessage-list-category-desc": "Bu sayfa [[Special:MassMessage|MassMessage]] eklentisi için bir teslimat listesidir.",
 	"apihelp-editmassmessagelist-description": "Toplu ileti teslimat listesini düzenle.",
 	"apihelp-editmassmessagelist-param-spamlist": "Güncellenecek teslimat listesinin başlığı.",
