@@ -6,5 +6,6 @@
 		]
 	},
 	"massmessage": "Slanje masovnih poruka",
-	"tag-massmessage-delivery": "Isporuka masovne poruke"
+	"tag-massmessage-delivery": "isporuka masovne poruke",
+	"tag-massmessage-delivery-description": "Isporuka poruka uz pomoć dodatka [[:mw:Extension:MassMessage|MassMessage]]"
 }
