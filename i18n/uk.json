@@ -126,6 +126,7 @@
 	"apihelp-query+mmsites-description": "Подавати запити автозаповнення поля сайту у pristine.",
 	"apihelp-query+mmsites-param-term": "Префікс для пошуку.",
 	"apihelp-query+mmsites-example-1": "Автозаповнення «en»",
+	"apierror-massmessage-invalidspamlist": "Вказаний спам-список недійсний.",
 	"tag-massmessage-delivery": "Доставка масових повідомлень",
 	"tag-massmessage-delivery-description": "Доставка повідомлень з використанням [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }
