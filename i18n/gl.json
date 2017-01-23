@@ -123,6 +123,7 @@
 	"apihelp-query+mmsites-description": "Serve peticións autocompletas para o campo de sitio en MensaxesMasivas.",
 	"apihelp-query+mmsites-param-term": "Prefixo polo cal buscar.",
 	"apihelp-query+mmsites-example-1": "Autocompletar \"en\"",
+	"apierror-massmessage-invalidspamlist": "A lista de spam especificada non é válida.",
 	"tag-massmessage-delivery": "Envío de mensaxes en masa",
 	"tag-massmessage-delivery-description": "Envío de mensaxes en masa usando [[:mw:Extension:MassMessage|Extension:MassMessage]]"
 }
