@@ -319,10 +319,13 @@ class MassMessageJob extends Job {
 					}
 				}
 				// If the failure is not caused by an edit conflict or if there
-				// have been too many failures, log the error and continue
+				// have been too many failures, log the (first) error and continue
 				// execution. Otherwise retry the request.
 				if ( !$isEditConflict || $attemptCount >= 5 ) {
-					$this->logLocalFailure( $errorCode );
+					foreach ( $e->getStatusValue()->getErrors() as $error ) {
+						$this->logLocalFailure( ApiMessage::create( $error )->getApiCode() );
+						break;
+					}
 					break;
 				}
 			} catch ( UsageException $e ) {
