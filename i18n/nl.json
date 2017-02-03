@@ -9,7 +9,8 @@
 			"Sjoerddebruin",
 			"SPQRobin",
 			"Multichill",
-			"Romaine"
+			"Romaine",
+			"Mainframe98"
 		]
 	},
 	"massmessage": "Bulkberichten verzenden",
@@ -112,5 +113,10 @@
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|pagina|pagina's}} verwijderd",
 	"massmessage-list-category": "MassMessage-afleverlijsten",
 	"massmessage-list-category-desc": "De pagina is een afleverlijst voor de uitbreiding [[Special:MassMessage|MassMessage]]",
+	"apihelp-editmassmessagelist-description": "Bewerk een afleverlijst.",
+	"apihelp-editmassmessagelist-param-add": "Titels om aan de lijst toe te voegen.",
+	"apihelp-editmassmessagelist-param-remove": "Titels om van de lijst te verwijderen.",
+	"apihelp-massmessage-description": "Stuur een bericht naar een lijst van pagina's.",
+	"apihelp-query+mmsites-param-term": "Het voorvoegsel om op te zoeken.",
 	"tag-massmessage-delivery": "MassMessage-bezorging"
 }
