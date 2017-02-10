@@ -13,6 +13,7 @@
 	"massmessage-form-preview": "Apercebut",
 	"massmessage-form-submit": "Mandar",
 	"massmessage-fieldset-preview": "Apercebut",
+	"massmessage-fieldset-info": "Informacion",
 	"massmessage-submitted": "Lo mandadís de vòstre messatge a {{PLURAL:$1|$1 pagina|$1 paginas}} es estat mes en fila d’espèra.",
 	"massmessage-just-preview": "Aquò's simplament un apercebut. Quichatz sus « {{int:massmessage-form-submit}} » per mandar lo messatge.",
 	"massmessage-spamlist-doesnotexist": "La pagina especificada de la lista de las liurasons o la categoria existís pas.",

@@ -4,6 +4,8 @@
 			"Srdjan m"
 		]
 	},
+	"right-massmessage": "Masovno slanje poruka",
+	"action-massmessage": "masovno šaljete poruke",
 	"log-name-massmessage": "Zapisnik masovnih poruka",
 	"log-description-massmessage": "Ovaj zapisnik prati poslane poruke.",
 	"logentry-massmessage-skipbadns": "Poruka \"$4\" nije poslana u $3 jer je odredište u imenskom prostoru u kojem se ne može objavljivati",
