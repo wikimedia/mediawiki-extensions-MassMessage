@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"MaGa",
-			"Ex13"
+			"Ex13",
+			"Bugoslav"
 		]
 	},
 	"massmessage": "Slanje masovnih poruka",
+	"log-name-massmessage": "Evidencija isporuka masovne poruke",
 	"tag-massmessage-delivery": "isporuka masovne poruke",
 	"tag-massmessage-delivery-description": "Isporuka poruka uz pomoć dodatka [[:mw:Extension:MassMessage|MassMessage]]"
 }
