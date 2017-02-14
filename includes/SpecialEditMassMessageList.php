@@ -299,4 +299,12 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	public function isListed() {
 		return false;
 	}
+
+	/**
+	 * @return string
+	 */
+	protected function getDisplayFormat() {
+		return 'ooui';
+	}
+
 }

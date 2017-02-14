@@ -155,6 +155,7 @@
 				"massmessage-create-invalidsource-short"
 			],
 			"dependencies": [
+				"oojs-ui-core",
 				"mediawiki.jqueryMsg",
 				"ext.MassMessage.autocomplete"
 			]

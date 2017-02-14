@@ -1,22 +1,18 @@
-( function ( mw, $ ) {
+( function ( mw, $, OO ) {
 	$( function () {
 		/*global setTimeout, clearTimeout*/
 		'use strict';
 
 		var checkTitle, checkSource, pageIsValidSource,
 			checkSourceTimeout = -1,
-			$formTitle = $( '#mw-input-wptitle' ),
-			$formSource = $( '#mw-input-wpsource' ),
-			$formSourceTr = $formSource.parent().parent(),
-			$titleStatus = $( '<span>' )
-				.attr( 'id', 'mw-input-wptitle-status' )
-				.insertAfter( $formTitle ),
-			$sourceStatus = $( '<span>' )
-				.attr( 'id', 'mw-input-wptitle-status' )
-				.insertAfter( $formSource );
+			$titleStatus = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
+			$sourceStatus =  OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
+			$formTitle = $titleStatus.getField(),
+			$formSource = $sourceStatus.getField(),
+			$formSourceTr = $formSource.$element.parent().parent();
 
 		checkTitle = function () {
-			var title = $formTitle.val();
+			var title = $formTitle.getValue();
 			if ( title ) {
 				( new mw.Api() ).get( {
 					action: 'query',
@@ -30,21 +26,20 @@
 						!data.query.pages[ 0 ].missing
 					) {
 						// Page with title already exists
-						$titleStatus.addClass( 'invalid' )
-							.text( mw.message( 'massmessage-create-exists-short' ).text() );
+						$titleStatus.setErrors( [ mw.message( 'massmessage-create-exists-short' ).text() ] );
 					} else {
 						// Clear validation error
-						$titleStatus.removeClass( 'invalid' ).text( '' );
+						$titleStatus.setErrors( [] );
 					}
 				} );
 			} else {
 				// Don't display an error if there is no input
-				$titleStatus.removeClass( 'invalid' ).text( '' );
+				$titleStatus.setErrors( [] );
 			}
 		};
 
 		checkSource = function () {
-			var source = $formSource.val();
+			var source = $formSource.getValue();
 			if ( source ) {
 				( new mw.Api() ).get( {
 					action: 'query',
@@ -54,14 +49,13 @@
 				} ).done( function ( data ) {
 					if ( pageIsValidSource( data ) ) {
 						// Clear validation error
-						$sourceStatus.removeClass( 'invalid' ).text( '' );
+						$sourceStatus.setErrors( [] );
 					} else {
-						$sourceStatus.addClass( 'invalid' )
-							.text( mw.message( 'massmessage-create-invalidsource-short' ).text() );
+						$sourceStatus.setErrors( [ mw.message( 'massmessage-create-invalidsource-short' ).text() ] );
 					}
 				} );
 			} else {
-				$sourceStatus.removeClass( 'invalid' ).text( '' );
+				$sourceStatus.setErrors( [] );
 			}
 		};
 
@@ -84,33 +78,33 @@
 		};
 
 		// Set the correct field state on load.
-		if ( !$( '#mw-input-wpcontent-import' ).is( ':checked' ) ) {
+		if ( !$( '[value="import"][type="radio"]' ).is( ':checked' ) ) {
 			$formSourceTr.hide(); // Progressive disclosure
 		}
 
-		$( '#mw-input-wpcontent-new' ).click( function () {
+		$( '#mw-input-wpcontent' ).find( '[value="new"]' ).click( function () {
 			$formSourceTr.hide();
 		} );
 
-		$( '#mw-input-wpcontent-import' ).click( function () {
+		$( '#mw-input-wpcontent' ).find( '[value="import"]' ).click( function () {
 			$formSourceTr.show();
 		} );
 
 		// Warn if page title is already in use
-		$formTitle.one( 'blur', function () {
+		$formTitle.$input.one( 'blur', function () {
 			checkTitle();
-			$formTitle.on( 'input autocompletechange', checkTitle );
+			$formTitle.on( 'change', checkTitle );
 		} );
 
 		// Warn if delivery list source is invalid
-		$formSource.on( 'input autocompleteselect', function () {
+		$formSource.$input.on( 'input autocompleteselect', function () {
 			// Debouncing - don't want to make an API call per request, nor give an error
 			// when the user starts typing
-			$sourceStatus.removeClass( 'invalid' ).text( '' );
+			$sourceStatus.setErrors( [] );
 			clearTimeout( checkSourceTimeout );
 			checkSourceTimeout = setTimeout( checkSource, 300 );
 		} );
 
-		mw.massmessage.enableTitleComplete( $formSource );
+		mw.massmessage.enableTitleComplete( $formSource.$input );
 	} );
-}( mediaWiki, jQuery ) );
+}( mediaWiki, jQuery, OO ) );

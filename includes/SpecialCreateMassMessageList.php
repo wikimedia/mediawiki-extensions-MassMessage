@@ -147,4 +147,12 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		}
 		return MassMessageListContentHandler::normalizeTargetArray( $targets );
 	}
+
+	/**
+	 * @return string
+	 */
+	protected function getDisplayFormat() {
+		return 'ooui';
+	}
+
 }
