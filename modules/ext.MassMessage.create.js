@@ -5,6 +5,7 @@
 
 		var checkTitle, checkSource, pageIsValidSource,
 			checkSourceTimeout = -1,
+			queryTitleApiRequest,
 			$titleStatus = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
 			$sourceStatus =  OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
 			$formTitle = $titleStatus.getField(),
@@ -14,7 +15,11 @@
 		checkTitle = function () {
 			var title = $formTitle.getValue();
 			if ( title ) {
-				( new mw.Api() ).get( {
+				if ( queryTitleApiRequest ) {
+					queryTitleApiRequest.abort();
+					queryTitleApiRequest = undefined;
+				}
+				queryTitleApiRequest = ( new mw.Api() ).get( {
 					action: 'query',
 					prop: 'info',
 					titles: title,
