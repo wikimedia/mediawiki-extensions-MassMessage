@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Y-M D",
-			"Fohanno"
+			"Fohanno",
+			"Fulup"
 		]
 	},
 	"massmessage": "Kas ur gemennadenn a-vras",
@@ -11,7 +12,7 @@
 	"massmessage-form-submit": "Kas",
 	"massmessage-fieldset-preview": "Rakwelet",
 	"massmessage-fieldset-info": "Titouroù",
-	"massmessage-submitted": "Lakaet eo bet ho kemennadenn er roll gortoz.",
+	"massmessage-submitted": "Lakaet eo bet ho kemennadenn {{PLURAL:$1|d'$1 bajenn|da $1 pajenn}} er roll gortoz.",
 	"massmessage-just-preview": "N'eo nemet ur rakweladenn. Pouezit war \" {{int:massmessage-form-submit}} \" evit kas ar gemennadenn.",
 	"massmessage-empty-message": "Goullo eo korf ar gemennadenn.",
 	"massmessage-parse-badurl": "\"$1\" n'eo ket ul lec'hienn reizh.",
