@@ -18,6 +18,7 @@
 	"massmessage-empty-message": "ტექსტის ველი ცარიელია.",
 	"massmessage-parse-badurl": "„$1“ არ არის სწორი საიტი.",
 	"massmessage-parse-badpage": "„$1“ არ არის გვერდის სწორი სათაური.",
+	"log-name-massmessage": "მასობრივი შეტყობინების ჟურნალი",
 	"massmessage-content-pages": "გვერდები ამ სიაში",
 	"massmessage-content-pagesonsite": "გვერდები $1-ზე:",
 	"massmessage-content-localpages": "გვერდები ამ ვიკიში:",
