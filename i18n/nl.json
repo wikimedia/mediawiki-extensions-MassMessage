@@ -27,9 +27,9 @@
 	"massmessage-preview-count": "Uw bericht wordt naar {{PLURAL:$1|$1 pagina|$1 pagina's}} verzonden.",
 	"massmessage-submitted": "Uw bericht voor {{PLURAL:$1|één pagina|$1 pagina's}} is in de wachtrij geplaatst.",
 	"massmessage-just-preview": "Dit is enkel een voorvertoning. Klik op \"{{int:massmessage-form-submit}}\" om het bericht te verzenden.",
-	"massmessage-spamlist-doesnotexist": "De opgegeven afleverlijst of categorie bestaat niet.",
+	"massmessage-spamlist-doesnotexist": "De opgegeven afleverlijst pagina of categorie bestaat niet.",
 	"massmessage-spamlist-invalid": "De opgegeven pagina bevat geen geldige afleverlijst.",
-	"massmessage-empty-subject": "Er wordt geen onderwerp aangegeven.",
+	"massmessage-empty-subject": "Er is geen onderwerp opgegeven.",
 	"massmessage-empty-message": "Het bericht bevat geen tekst.",
 	"massmessage-unescaped-langlinks": "Waarschuwing: uw bericht bevat onjuiste taalkoppelingen.",
 	"massmessage-no-timestamp": "Waarschuwing: uw bericht bevat geen tijdstempel of handtekening.",
@@ -114,9 +114,14 @@
 	"massmessage-list-category": "MassMessage-afleverlijsten",
 	"massmessage-list-category-desc": "De pagina is een afleverlijst voor de uitbreiding [[Special:MassMessage|MassMessage]]",
 	"apihelp-editmassmessagelist-description": "Bewerk een afleverlijst.",
+	"apihelp-editmassmessagelist-param-spamlist": "Titel van de afleverlijst om bij te werken.",
 	"apihelp-editmassmessagelist-param-add": "Titels om aan de lijst toe te voegen.",
 	"apihelp-editmassmessagelist-param-remove": "Titels om van de lijst te verwijderen.",
+	"apihelp-editmassmessagelist-example-1": "Vieg [[User talk:Foo]] en [[Talk:Bar]] toe aan de afleverlijst [[Example]] en verwijder [[Talk:Baz]] van deze",
 	"apihelp-massmessage-description": "Stuur een bericht naar een lijst van pagina's.",
+	"apihelp-massmessage-param-subject": "Onderwerpregel van het bericht.",
+	"apihelp-massmessage-param-message": "Berichttekst.",
 	"apihelp-query+mmsites-param-term": "Het voorvoegsel om op te zoeken.",
-	"tag-massmessage-delivery": "MassMessage-bezorging"
+	"tag-massmessage-delivery": "MassMessage-bezorging",
+	"tag-massmessage-delivery-description": "Bulkbericht verzending met [[:mw:Extension:MassMessage|Uitbreiding:MassMessage]]"
 }
