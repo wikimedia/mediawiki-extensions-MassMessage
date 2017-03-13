@@ -22,12 +22,14 @@
 	"massmessage-preview-count": "আপনার বার্তাটি {{PLURAL:$1|$1টি পাতায়}} পাঠানো হবে।",
 	"massmessage-submitted": "{{PLURAL:$1|$1টি পাতায়}} আপনার পাঠানো বার্তাটি অপেক্ষমান রয়েছে।",
 	"massmessage-just-preview": "এটি শুধুমাত্র একটি প্রাকদর্শন। বার্তা পাঠাতে \"{{int:massmessage-form-submit}}\" চাপুন।",
-	"massmessage-spamlist-doesnotexist": "নির্দিষ্ট বিতরণ তালিকা পাতা বা বিষয়শ্রেণীর কোন অস্তিত্ব নেই।",
+	"massmessage-spamlist-doesnotexist": "নির্দিষ্টকৃত বিতরণের তালিকা পাতা বা বিষয়শ্রেণীর কোন অস্তিত্ব নেই।",
 	"massmessage-empty-subject": "বিষয় লাইনটি খালি।",
 	"massmessage-empty-message": "বার্তার মূল অংশ খালি।",
+	"massmessage-form-header": "নির্দিষ্ট করা একটি তালিকা থেকে বার্তা পাঠাতে নিচের ফরমটি ব্যবহার করুন। সবগুলি ঘর পূরণ করা প্রয়োজন ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage আরও তথ্য])।",
 	"massmessage-queued-count": "সারিবদ্ধ [[Special:MassMessage|গণ বার্তা]]",
 	"massmessage-hidden-comment": "<!-- $3-এর তালিকা ব্যবহার করে বার্তাটি ব্যবহারকারী:$1@$2 পাঠিয়েছেন -->",
 	"massmessage-optout-category": "গণবার্তা বিতরণ প্রাপ্তি থেকে অব্যাহতি",
+	"massmessage-badhtml": "আপনার বার্তায় {{PLURAL:$2|একটি অ-বন্ধকৃত HTML ট্যাগ|অ-বন্ধকৃত HTML ট্যাগ}} থাকতে পারে: $1।",
 	"massmessage-parse-badurl": "\"$1\" কোন বৈধ সাইট নয়।",
 	"massmessage-parse-badpage": "\"$1\" কোন বৈধ পাতার শিরোনাম নয়।",
 	"massmessage-global-disallowed": "বার্তা শুধুমাত্র স্থানীয় পাতাসমূহে পাঠানো যেতে পারে।",
@@ -85,5 +87,6 @@
 	"massmessage-summary-removemulti": "$1টি {{PLURAL:$1|পাতা}} সরানো হয়েছে",
 	"massmessage-list-category": "গণবার্তা বিতরণ তালিকা",
 	"massmessage-list-category-desc": "এই পাতাটি [[Special:MassMessage|গণবার্তা]] এক্সটেনশনের বিতরণ তালিকা।",
-	"apihelp-query+mmsites-example-1": "স্বয়ংপূরণ \"bn\""
+	"apihelp-query+mmsites-example-1": "স্বয়ংপূরণ \"bn\"",
+	"tag-massmessage-delivery": "গণবার্তা বিতরণ"
 }
