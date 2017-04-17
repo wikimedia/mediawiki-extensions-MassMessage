@@ -2,12 +2,11 @@
 Styles inline validation warnings
  */
 #mw-massmessage-form-spamlist-status.invalid,
-#mw-input-wptitle-status.invalid,
 #mw-input-wptitle-status.invalid {
 	border: 1px solid #d33;
 	border-bottom-right-radius: 0.8em;
 	border-top-right-radius: 0.8em;
 	background-color: #fee7e6;
-	color: black;
+	color: #000;
 	padding: 2px 1em;
 }

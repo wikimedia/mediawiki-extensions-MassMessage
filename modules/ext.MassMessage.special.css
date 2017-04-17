@@ -4,5 +4,5 @@ Formats the Save/Preview buttons to show up on the same line
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField,
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField .mw-label,
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField .mw-input {
-    display: inline;
+	display: inline;
 }
