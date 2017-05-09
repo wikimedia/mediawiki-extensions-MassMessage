@@ -7,9 +7,16 @@
 	},
 	"massmessage-form-submit": "Bidali",
 	"massmessage-fieldset-info": "Informazioa",
+	"massmessage-content-removeconf": "Orrialde hau zerrendatik kendu?",
+	"massmessage-content-removeyes": "Kendu",
+	"massmessage-content-removeno": "Utzi",
+	"massmessage-content-empty": "Ez dago orririk zerrenda honetan.",
+	"massmessage-content-addtitle": "Izenburua:",
+	"massmessage-content-addsite": "Gunea:",
 	"massmessage-create-title": "Izenburua:",
 	"massmessage-create-description": "Deskribapena:",
 	"massmessage-create-content": "Edukia:",
 	"massmessage-edit-title": "Izenburua:",
-	"massmessage-edit-description": "Deskribapena:"
+	"massmessage-edit-description": "Deskribapena:",
+	"massmessage-edit-nopermission": "Ez duzu zerrenda editatzeko baimenik."
 }
