@@ -21,7 +21,7 @@
 		$msg.after( $warnings );
 		$warnings.hide();
 
-		$msg.on( 'keyup', $.debounce( 500, function ( ) {
+		$msg.on( 'keyup', $.debounce( 500, function () {
 			var code, matches, tags, results, tag;
 
 			code = $.trim( $msg.val() );

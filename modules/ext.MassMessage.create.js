@@ -1,13 +1,12 @@
 ( function ( mw, $, OO ) {
 	$( function () {
-		/*global setTimeout, clearTimeout*/
 		'use strict';
 
 		var checkTitle, checkSource, pageIsValidSource,
 			checkSourceTimeout = -1,
 			queryTitleApiRequest,
 			$titleStatus = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
-			$sourceStatus =  OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
+			$sourceStatus = OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
 			$formTitle = $titleStatus.getField(),
 			$formSource = $sourceStatus.getField(),
 			$formSourceTr = $formSource.$element.parent().parent();

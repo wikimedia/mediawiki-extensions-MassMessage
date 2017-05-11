@@ -1,6 +1,5 @@
 ( function ( mw, $ ) {
 	$( function () {
-		/*global alert*/
 		'use strict';
 
 		var listShown = false,
@@ -108,6 +107,7 @@
 				} );
 			} )
 			.fail( function ( errorCode ) {
+				// eslint-disable-next-line no-alert
 				alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );
 			} );
 		};
@@ -173,7 +173,7 @@
 						appendAdded(
 							page.title,
 							( 'site' in page ) ? page.site : '',
-							( 'missing' in page ) ? true : false
+							'missing' in page
 						);
 						// Clear the input fields
 						$( '#mw-massmessage-addtitle' ).val( '' );
