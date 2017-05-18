@@ -131,5 +131,11 @@
 	"apihelp-query+mmsites-example-1": "Saisie semi-automatique \"en\"",
 	"apierror-massmessage-invalidspamlist": "La liste spécifiée des pourriels n’est pas valide.",
 	"tag-massmessage-delivery": "distribution de MassMessage",
-	"tag-massmessage-delivery-description": "Message distribué en utilisant [[:mw:Extension:MassMessage|Extension:MassMessage]]"
+	"tag-massmessage-delivery-description": "Message distribué en utilisant [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"log-action-filter-massmessage": "Type d’entrée du journal",
+	"log-action-filter-massmassage-send": "Envoi d’un message de masse",
+	"log-action-filter-massmassage-failure": "Échec de distribution d’un message de masse",
+	"log-action-filter-massmassage-skipoptout": "Cible omise à cause d’un choix d’exclusion",
+	"log-action-filter-massmassage-skipnouser": "Cible omise à cause d’un utilisateur cible inexistant",
+	"log-action-filter-massmassage-skipbadns": "Cible omise à cause d’un espace de noms interdit"
 }

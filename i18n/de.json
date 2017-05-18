@@ -125,5 +125,11 @@
 	"apihelp-query+mmsites-example-1": "„en“ vervollständigen",
 	"apierror-massmessage-invalidspamlist": "Die angegebene Spamliste ist ungültig.",
 	"tag-massmessage-delivery": "Versand von Massennachrichten",
-	"tag-massmessage-delivery-description": "Versand von Nachrichten mithilfe der Erweiterung „[[:mw:Extension:MassMessage|MassMessage]]“"
+	"tag-massmessage-delivery-description": "Versand von Nachrichten mithilfe der Erweiterung „[[:mw:Extension:MassMessage|MassMessage]]“",
+	"log-action-filter-massmessage": "Typ des Logbucheintrags",
+	"log-action-filter-massmassage-send": "Versand von Massennachrichten",
+	"log-action-filter-massmassage-failure": "Massennachrichten-Versandfehler",
+	"log-action-filter-massmassage-skipoptout": "Auslassung eines Ziels aufgrund eines Opt-Outs",
+	"log-action-filter-massmassage-skipnouser": "Auslassung eines Ziels aufgrund eines nicht vorhandenen Zielbenutzers",
+	"log-action-filter-massmassage-skipbadns": "Auslassung eines Ziels aufgrund eines nicht erlaubten Namensraumes"
 }

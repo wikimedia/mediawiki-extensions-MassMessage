@@ -122,5 +122,11 @@
 	"apihelp-query+mmsites-example-1": "Автодополни го „mk“",
 	"apierror-massmessage-invalidspamlist": "Укажаниот список на спам е неважечки.",
 	"tag-massmessage-delivery": "Достава на масовни пораки",
-	"tag-massmessage-delivery-description": "Масовна достава на пораки со помош на додатокот „[[:mw:Extension:MassMessage|Масовни пораки]]“"
+	"tag-massmessage-delivery-description": "Масовна достава на пораки со помош на додатокот „[[:mw:Extension:MassMessage|Масовни пораки]]“",
+	"log-action-filter-massmessage": "Вид дневнички запис",
+	"log-action-filter-massmassage-send": "Поднесување на масовни пораки",
+	"log-action-filter-massmassage-failure": "Неуспех во доставата на масовната порака",
+	"log-action-filter-massmassage-skipoptout": "Прескокнување цел поради изземање",
+	"log-action-filter-massmassage-skipnouser": "Прескокнување цел поради непотоечки целен корисник",
+	"log-action-filter-massmassage-skipbadns": "Прескокнување цел поради недозволен именски простор"
 }

@@ -123,5 +123,11 @@
 	"apihelp-query+mmsites-example-1": "השלמה אוטומטית של \"en\"",
 	"apierror-massmessage-invalidspamlist": "רשימת הספאם שצוינה אינה תקינה.",
 	"tag-massmessage-delivery": "משלוח הודעה המונית",
-	"tag-massmessage-delivery-description": "שליחת הודעה באמצעות [[:mw:Extension:MassMessage|הרחבה לשליחת הודעות למשתמשים מרובים]]"
+	"tag-massmessage-delivery-description": "שליחת הודעה באמצעות [[:mw:Extension:MassMessage|הרחבה לשליחת הודעות למשתמשים מרובים]]",
+	"log-action-filter-massmessage": "סוג רשימת יומן",
+	"log-action-filter-massmassage-send": "שליחה בהודעה המונית",
+	"log-action-filter-massmassage-failure": "כשל בשליחת הודעה המונית",
+	"log-action-filter-massmassage-skipoptout": "דילוג על יעד בגלל ביטול רישום",
+	"log-action-filter-massmassage-skipnouser": "דילוג על יעד בגלל שמשתמש היעד אינו קיים",
+	"log-action-filter-massmassage-skipbadns": "דילוג על יעד בגלל מרחב שם אסור"
 }
