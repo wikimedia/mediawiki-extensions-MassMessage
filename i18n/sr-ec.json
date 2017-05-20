@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Srdjan m"
+			"Srdjan m",
+			"Obsuser"
 		]
 	},
 	"massmessage": "Масовно слање поруке",
@@ -34,5 +35,11 @@
 	"massmessage-edit-description": "Опис:",
 	"massmessage-edit-summary": "Опис измене:",
 	"massmessage-summary-addmulti": "Додато страница: {{PLURAL:$1|$1}}",
-	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}"
+	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}",
+	"log-action-filter-massmessage": "Тип дневничког записа",
+	"log-action-filter-massmassage-send": "Подношење масовне поруке",
+	"log-action-filter-massmassage-failure": "Неуспешна испорука масовне поруке",
+	"log-action-filter-massmassage-skipoptout": "Циљ прескочен због изузимања",
+	"log-action-filter-massmassage-skipnouser": "Циљ прескочен због непостојања циљног корисника",
+	"log-action-filter-massmassage-skipbadns": "Циљ прескочен због забрањеног именског простора"
 }

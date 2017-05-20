@@ -124,5 +124,6 @@
 	"apihelp-query+mmsites-example-1": "Autofullfør «en»",
 	"apierror-massmessage-invalidspamlist": "Den angitte spamlista er ugyldig.",
 	"tag-massmessage-delivery": "massemeldingslevering",
-	"tag-massmessage-delivery-description": "Meldingslevering med [[:mw:Extension:MassMessage|Extension:MassMessage]]"
+	"tag-massmessage-delivery-description": "Meldingslevering med [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"log-action-filter-massmessage": "Type loggoppføring"
 }

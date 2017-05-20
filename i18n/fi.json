@@ -44,5 +44,7 @@
 	"createmassmessagelist-legend": "Luo joukkoviestin lähetysluettelo",
 	"massmessage-create-new": "Luo uusi vastaanottajien luettelo",
 	"massmessage-create-import": "Tuo sivut olemassa olevasta luettelosta tai luokasta",
-	"massmessage-list-category": "Joukkoviestien lähetysluettelot"
+	"massmessage-list-category": "Joukkoviestien lähetysluettelot",
+	"log-action-filter-massmessage": "Lokitietueen tyyppi",
+	"log-action-filter-massmassage-failure": "Massaviestin epäonnistuneet toimitukset"
 }
