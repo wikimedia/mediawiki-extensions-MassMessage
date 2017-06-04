@@ -7,6 +7,7 @@
 		]
 	},
 	"massmessage": "Slanje masovnih poruka",
+	"createmassmessagelist": "Stvori popis isporuka masovne poruke",
 	"log-name-massmessage": "Evidencija isporuka masovne poruke",
 	"tag-massmessage-delivery": "isporuka masovne poruke",
 	"tag-massmessage-delivery-description": "Isporuka poruka uz pomoć dodatka [[:mw:Extension:MassMessage|MassMessage]]"
