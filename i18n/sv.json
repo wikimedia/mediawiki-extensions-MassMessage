@@ -100,5 +100,6 @@
 	"apihelp-massmessage-description": "Skicka ett meddelande till en lista över sidor.",
 	"apihelp-massmessage-param-subject": "Meddelandets ämnesrad.",
 	"apihelp-massmessage-param-message": "Meddelandets innehållstext.",
-	"apihelp-query+mmsites-param-term": "Prefixet att söka efter."
+	"apihelp-query+mmsites-param-term": "Prefixet att söka efter.",
+	"log-action-filter-massmessage": "Typ av loggpost"
 }
