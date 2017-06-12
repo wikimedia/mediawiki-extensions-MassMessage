@@ -6,5 +6,6 @@
 	},
 	"massmessage-content-remove": "manina",
 	"massmessage-create-description": "E witcikemakak:",
-	"massmessage-edit-description": "E witcikemakak:"
+	"massmessage-edit-description": "E witcikemakak:",
+	"massmessage-summary-remove": "Manina [[:$1]]"
 }
