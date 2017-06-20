@@ -78,4 +78,3 @@ class SendMassMessages extends Maintenance {
 
 $maintClass = 'SendMassMessages';
 require_once RUN_MAINTENANCE_IF_MAIN;
-

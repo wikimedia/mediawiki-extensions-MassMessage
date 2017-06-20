@@ -127,7 +127,6 @@ class MassMessageJob extends Job {
 	 * @param $reason string
 	 */
 	protected function logLocalFailure( $reason ) {
-
 		$logEntry = new ManualLogEntry( 'massmessage', 'failure' );
 		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $this->title );
@@ -212,7 +211,7 @@ class MassMessageJob extends Job {
 		$resultData = $result->getResultData();
 		if ( !array_key_exists( 'error', $resultData ) ) {
 			$revId = $resultData['edit']['newrevid'];
-			DeferredUpdates::addCallableUpdate( function() use ( $revId ) {
+			DeferredUpdates::addCallableUpdate( function () use ( $revId ) {
 				ChangeTags::addTags( 'massmessage-delivery', null, $revId, null );
 			} );
 		}
