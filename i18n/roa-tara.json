@@ -16,7 +16,7 @@
 	"massmessage-preview-count": "'U messàgge tue ha state mannate a {{PLURAL:$1|$1 pàgene|$1 pàggene}}.",
 	"massmessage-submitted": "'U messàgge tune ha state mannate a  {{PLURAL:$1|$1 pàgene|$1 pàggene}} in code.",
 	"massmessage-just-preview": "Queste jè sulamende 'n'andeprime. Cazze \"{{int:massmessage-form-submit}}\" pe mannà 'u messàgge.",
-	"massmessage-spamlist-doesnotexist": "'A pàgene de l'elenghe specificate de le spediziune o 'a categorije non g'esiste.",
+	"massmessage-spamlist-doesnotexist": "'A pàgene o 'a categorije de l'elenghe de le spediziune non g'esiste.",
 	"massmessage-spamlist-invalid": "'A pàgena specificate non ge tène 'n'elenghe de spediziune valide.",
 	"massmessage-empty-subject": "'A linèe de l'oggette jè vacande.",
 	"massmessage-empty-message": "'U cuèrpe d'u messàgge jè vacande.",
