@@ -40,6 +40,7 @@
 	"massmessage-badhtml": "Uw bericht heeft mogelijk {{PLURAL:$2|een ongesloten HTML-label|ongesloten HTML-label}}: $1.",
 	"massmessage-parse-badurl": "\"$1\" is geen geldige site.",
 	"massmessage-parse-badpage": "\"$1\" is geen geldige paginanaam.",
+	"massmessage-parse-badexternal": "\"$1\" is geen geldige paginatitel. Interwiki doelen moeten worden opgegeven door middel van de site parameter (<kbd>|site=www.example.org</kbd>)",
 	"massmessage-global-disallowed": "Berichten kunnen alleen afgeleverd worden op lokale pagina's.",
 	"right-massmessage": "Berichten verzenden aan meerdere ontvangers tegelijk",
 	"action-massmessage": "berichten te verzenden aan meerdere ontvangers tegelijk",
@@ -119,9 +120,11 @@
 	"apihelp-editmassmessagelist-param-remove": "Titels om van de lijst te verwijderen.",
 	"apihelp-editmassmessagelist-example-1": "Vieg [[User talk:Foo]] en [[Talk:Bar]] toe aan de afleverlijst [[Example]] en verwijder [[Talk:Baz]] van deze",
 	"apihelp-massmessage-description": "Stuur een bericht naar een lijst van pagina's.",
+	"apihelp-massmessage-summary": "Stuur een bericht naar een lijst van pagina's.",
 	"apihelp-massmessage-param-subject": "Onderwerpregel van het bericht.",
 	"apihelp-massmessage-param-message": "Berichttekst.",
 	"apihelp-query+mmsites-param-term": "Het voorvoegsel om op te zoeken.",
 	"tag-massmessage-delivery": "MassMessage-bezorging",
-	"tag-massmessage-delivery-description": "Bulkbericht verzending met [[:mw:Extension:MassMessage|Uitbreiding:MassMessage]]"
+	"tag-massmessage-delivery-description": "Bulkbericht verzending met [[:mw:Extension:MassMessage|Uitbreiding:MassMessage]]",
+	"log-action-filter-massmessage": "Soort logboekregel"
 }
