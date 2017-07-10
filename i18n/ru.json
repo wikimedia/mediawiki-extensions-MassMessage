@@ -4,7 +4,8 @@
 			"Kaganer",
 			"NBS",
 			"Okras",
-			"Striking Blue"
+			"Striking Blue",
+			"Ole Yves"
 		]
 	},
 	"massmessage": "Отправить массовое сообщение",
@@ -112,5 +113,7 @@
 	"apihelp-editmassmessagelist-example-1": "Добавить [[User talk:Foo]] и [[Talk:Bar]] в список доставки [[Example]], а также удалить [[Talk:Baz]] из него",
 	"apihelp-massmessage-param-subject": "Тема сообщения.",
 	"apihelp-massmessage-param-message": "Текст сообщения.",
-	"apihelp-query+mmsites-param-term": "Префикс для поиска."
+	"apihelp-query+mmsites-param-term": "Префикс для поиска.",
+	"tag-massmessage-delivery": "доставка MassMessage",
+	"tag-massmessage-delivery-description": "Доставка сообщений, используя [[:mw:Extension:MassMessage|расширение MassMessage]]"
 }
