@@ -8,7 +8,8 @@
 			"Jefersonmoraes",
 			"He7d3r",
 			"Araceletorres",
-			"Luan"
+			"Luan",
+			"Felipe L. Ewald"
 		]
 	},
 	"massmessage": "Enviar mensagem em massa",
@@ -113,16 +114,19 @@
 	"massmessage-list-category": "Listas de entrega de mensagens em massa",
 	"massmessage-list-category-desc": "A página é uma lista de entrega para a extensão [[Special:MassMessage|MassMessage]].",
 	"apihelp-editmassmessagelist-description": "Editar lista de entrega de mensagem em massa.",
+	"apihelp-editmassmessagelist-summary": "Editar lista de entrega de mensagem em massa.",
 	"apihelp-editmassmessagelist-param-spamlist": "Título da lista de entrega para atualizar.",
 	"apihelp-editmassmessagelist-param-add": "Títulos para adicionar à lista.",
 	"apihelp-editmassmessagelist-param-remove": "Títulos para remover da lista.",
 	"apihelp-editmassmessagelist-example-1": "Adicionar [[User talk:Foo]] e [[Talk:Bar]] à lista de entrega [[Example]] e remover [[Talk:Baz]] dela",
 	"apihelp-massmessage-description": "Enviar uma mensagem para uma lista de páginas.",
+	"apihelp-massmessage-summary": "Enviar uma mensagem para uma lista de páginas.",
 	"apihelp-massmessage-param-spamlist": "Página que contém uma lista de páginas para deixar uma mensagem.",
 	"apihelp-massmessage-param-subject": "Linha do assunto da mensagem.",
 	"apihelp-massmessage-param-message": "Texto do corpo da mensagem.",
 	"apihelp-massmessage-example-1": "Enviar uma mensagem para a lista [[Signpost Spamlist]] com o assunto \"Novo Signpost\", e o corpo da mensagem \"Por favor, leia-o\"",
 	"apihelp-query+mmsites-description": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
+	"apihelp-query+mmsites-summary": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
 	"apihelp-query+mmsites-param-term": "O prefixo para buscar.",
 	"apihelp-query+mmsites-example-1": "Autocompletar \"en\""
 }
