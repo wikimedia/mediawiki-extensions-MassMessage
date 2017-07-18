@@ -21,7 +21,7 @@
 	"massmessage-form-message": "Corpo da mensagem:",
 	"massmessage-form-preview": "Visualizar",
 	"massmessage-form-submit": "Enviar",
-	"massmessage-fieldset-preview": "Visualização",
+	"massmessage-fieldset-preview": "Visualizar",
 	"massmessage-fieldset-info": "Informação",
 	"massmessage-preview-count": "A sua mensagem será enviada para {{PLURAL:$1|$1 página|$1 páginas}}.",
 	"massmessage-submitted": "A entrega de sua mensagem a {{PLURAL:$1|$1 página|$1 páginas}} foi adicionada à lista de ações a serem executadas.",
