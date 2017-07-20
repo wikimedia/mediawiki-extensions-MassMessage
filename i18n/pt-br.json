@@ -128,5 +128,8 @@
 	"apihelp-query+mmsites-description": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
 	"apihelp-query+mmsites-summary": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
 	"apihelp-query+mmsites-param-term": "O prefixo para buscar.",
-	"apihelp-query+mmsites-example-1": "Autocompletar \"en\""
+	"apihelp-query+mmsites-example-1": "Autocompletar \"en\"",
+	"tag-massmessage-delivery": "Entrega MassMessage",
+	"log-action-filter-massmessage": "Tipo de entrada de log",
+	"log-action-filter-massmassage-send": "Envio de mensagem em massa"
 }
