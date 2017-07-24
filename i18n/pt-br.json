@@ -131,5 +131,7 @@
 	"apihelp-query+mmsites-example-1": "Autocompletar \"en\"",
 	"tag-massmessage-delivery": "Entrega MassMessage",
 	"log-action-filter-massmessage": "Tipo de entrada de log",
-	"log-action-filter-massmassage-send": "Envio de mensagem em massa"
+	"log-action-filter-massmassage-send": "Envio de mensagem em massa",
+	"log-action-filter-massmassage-failure": "Falha na entrega de mensagens em massa",
+	"log-action-filter-massmassage-skipoptout": "Alvo pulado por causa da opt-out"
 }
