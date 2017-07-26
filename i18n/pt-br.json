@@ -86,6 +86,8 @@
 	"massmessage-create-import": "Importar páginas de uma lista ou categoria existente",
 	"massmessage-create-source": "Fonte:",
 	"massmessage-create-editsummary": "Criar lista de entrega de mensagens em massa",
+	"massmessage-create-editsummary-import": "Crie uma lista de entrega de mensagens em massa com alvos de [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Crie uma lista de entrega de mensagens em massa com alvos de [[$1]]",
 	"massmessage-create-invalidtitle": "O título especificado é inválido.",
 	"massmessage-create-exists": "Já existe uma página com o título especificado.",
 	"massmessage-create-nopermission": "Você não tem permissão para criar uma lista com este título.",
@@ -129,9 +131,13 @@
 	"apihelp-query+mmsites-summary": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
 	"apihelp-query+mmsites-param-term": "O prefixo para buscar.",
 	"apihelp-query+mmsites-example-1": "Autocompletar \"en\"",
+	"apierror-massmessage-invalidspamlist": "A lista de spam especificada é inválida.",
 	"tag-massmessage-delivery": "Entrega MassMessage",
+	"tag-massmessage-delivery-description": "Envio de mensagens usando [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipo de entrada de log",
 	"log-action-filter-massmassage-send": "Envio de mensagem em massa",
 	"log-action-filter-massmassage-failure": "Falha na entrega de mensagens em massa",
-	"log-action-filter-massmassage-skipoptout": "Alvo pulado por causa da opt-out"
+	"log-action-filter-massmassage-skipoptout": "Alvo pulado por causa da opt-out",
+	"log-action-filter-massmassage-skipnouser": "Alvo ignorado por causa do usuário alvo não existir",
+	"log-action-filter-massmassage-skipbadns": "Alvo ignorado por causa do espaço nominal proibido"
 }
