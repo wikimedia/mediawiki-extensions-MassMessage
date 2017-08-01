@@ -37,6 +37,7 @@
 	"logentry-massmessage-skipoptout": "'A spedizione de \"$4\" a $3 ha state zumbate purcé 'a destinazione non ge vole le messàgge de masse",
 	"logentry-massmessage-skipnouser": "'A spedizione de \"$4\" a $3 ha state zumbate purcé 'u cunde utende non g'esiste",
 	"massmessage-cannot-rename": "Quiste jè 'nu cunde de sisteme e non ge pò essere renominate.",
+	"massmessage-content-remove": "live",
 	"massmessage-content-removeyes": "Live",
 	"massmessage-content-removeno": "Annulle",
 	"massmessage-content-empty": "Non ge stonne pàggene jndr'à st'elenghe.",
@@ -57,5 +58,6 @@
 	"massmessage-diff-targetsheader": "Cangiaminde de le pàggene:",
 	"massmessage-create-title": "Titole:",
 	"massmessage-create-description": "Descrizione:",
-	"massmessage-create-content": "Condenute:"
+	"massmessage-create-content": "Condenute:",
+	"massmessage-edit-title": "Titole:"
 }
