@@ -127,7 +127,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$delimiterPos = strrpos( $target, '@' );
 		if ( $delimiterPos !== false && $delimiterPos < strlen( $target ) ) {
 			$titleText = substr( $target, 0, $delimiterPos );
-			$site = strtolower( substr( $target, $delimiterPos+1 ) );
+			$site = strtolower( substr( $target, $delimiterPos + 1 ) );
 		} else {
 			$titleText = $target;
 			$site = null;
