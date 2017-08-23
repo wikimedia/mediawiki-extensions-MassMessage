@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geraki"
+			"Geraki",
+			"Protnet"
 		]
 	},
 	"massmessage": "Αποστολή μαζικού μηνύματος",
@@ -31,7 +32,7 @@
 	"log-name-massmessage": "Καταγραφή μαζικών μηνυμάτων",
 	"log-description-massmessage": "Αυτά τα γεγονότα παρακολουθούν τους χρήστες που κάνουν αποστολή μηνυμάτων.",
 	"logentry-massmessage-send": "{{GENDER:$2|Ο|Η}} $1 έστειλε μήνυμα στην $3",
-	"logentry-massmessage-failure": "Παράδοση του \"$4\" στην $3 απέτυχε με κωδικό σφάλματος <code>$5</code>",
+	"logentry-massmessage-failure": "Η παράδοση του «$4» στην $3 απέτυχε με κωδικό σφάλματος <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Παράδοση του \"$4\" στην $3 παραλείφθηκε επειδή ο στόχος ήταν σε ένα χώρο ονομάτων στον οποίο δεν μπορεί να αναρτηθεί",
 	"logentry-massmessage-skipoptout": "Παράδοση του \"$4\" στην $3 παραλείφθηκε επειδή ο στόχος έχει αποεπιλέξει την παράδοση μηνυμάτων",
 	"logentry-massmessage-skipnouser": "Παράδοση του \"$4\" στη $3 παραλείφθηκε επειδή ο λογαριασμός χρήστη δεν υπάρχει",
