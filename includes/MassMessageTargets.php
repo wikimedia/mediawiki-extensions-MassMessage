@@ -96,7 +96,7 @@ class MassMessageTargets {
 
 	/**
 	 * Get an array of targets from a category
-	 * @param  Title $spamlist
+	 * @param Title $spamlist
 	 * @return array
 	 */
 	protected static function getCategoryTargets( Title $spamlist ) {
@@ -138,8 +138,7 @@ class MassMessageTargets {
 
 	/**
 	 * Get an array of targets via the #target parser function
-	 * @param  Title $spamlist
-	 * @param  IContextSource $context
+	 * @param Title $spamlist
 	 * @return array
 	 */
 	protected static function getParserFunctionTargets( Title $spamlist ) {

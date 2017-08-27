@@ -25,7 +25,7 @@ class MassMessageServerSideJob extends MassMessageJob {
 
 	/**
 	 * Don't add any hidden comments
-	 * @param $stripTildes bool ignored
+	 * @param bool $stripTildes ignored
 	 * @return string
 	 */
 	function makeText( $stripTildes = false ) {

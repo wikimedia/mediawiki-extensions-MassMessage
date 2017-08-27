@@ -173,7 +173,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * Does some basic verification of data
 	 * Decides whether to show the preview screen or the submitted message
 	 *
-	 * @param $data Array
+	 * @param array $data
 	 * @return Status|bool
 	 */
 	public function callback( array $data ) {
@@ -198,7 +198,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * Returns an array containing possibly unclosed HTML tags in $message
 	 * TODO: Use an HTML parser instead of regular expressions
 	 *
-	 * @param $message string
+	 * @param string $message
 	 * @return array
 	 */
 	protected function getUnclosedTags( $message ) {
@@ -261,7 +261,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * A preview/confirmation screen
 	 * The preview generation code was hacked up from EditPage.php
 	 *
-	 * @param $data Array
+	 * @param array $data
 	 */
 	protected function preview( array $data ) {
 		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );

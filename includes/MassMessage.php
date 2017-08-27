@@ -13,7 +13,7 @@ class MassMessage {
 	/**
 	 * Function to follow redirects
 	 *
-	 * @param $title Title
+	 * @param Title $title
 	 * @return Title|null null if the page is an interwiki redirect
 	 */
 	public static function followRedirect( Title $title ) {
@@ -101,7 +101,7 @@ class MassMessage {
 
 	/**
 	 * Get database name from URL hostname
-	 * @param  string $host
+	 * @param string $host
 	 * @return string
 	 */
 	public static function getDBName( $host ) {
@@ -158,8 +158,8 @@ class MassMessage {
 	/**
 	 * Helper function for processPFData
 	 * Inspired from the Cite extension
-	 * @param $key string message key
-	 * @param $param string parameter for the message
+	 * @param string $key message key
+	 * @param string $param parameter for the message
 	 * @return array
 	 */
 	public static function parserError( $key, $param = null ) {
@@ -243,7 +243,7 @@ class MassMessage {
 	/**
 	 * Parse and normalize the spamlist
 	 *
-	 * @param $title string
+	 * @param string $title
 	 * @return Title|string string will be a error message key
 	 */
 	public static function getSpamlist( $title ) {

@@ -20,8 +20,8 @@ class MassMessageTest extends MassMessageTestCase {
 	/**
 	 * @covers MassMessage::getDBName
 	 * @dataProvider provideGetDBName
-	 * @param $url
-	 * @param $expected
+	 * @param string $url
+	 * @param string $expected
 	 */
 	public function testGetDBName( $url, $expected ) {
 		$dbname = MassMessage::getDBName( $url );
@@ -63,7 +63,7 @@ class MassMessageTest extends MassMessageTestCase {
 	/**
 	 * @covers MassMessage::getMessengerUser
 	 * @dataProvider provideGetMessengerUser
-	 * @param $name
+	 * @param string $name
 	 */
 	public function testGetMessengerUser( $name ) {
 		$this->setMwGlobals( 'wgMassMessageAccountUsername', $name );

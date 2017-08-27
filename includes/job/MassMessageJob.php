@@ -67,7 +67,7 @@ class MassMessageJob extends Job {
 	/**
 	 * Checks whether the target page is in an opt-out category
 	 *
-	 * @param $title Title
+	 * @param Title $title
 	 * @return bool
 	 */
 	public function isOptedOut( Title $title ) {
@@ -87,7 +87,7 @@ class MassMessageJob extends Job {
 
 	/**
 	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn
-	 * @param  Title $title
+	 * @param Title $title
 	 * @return Title|null null if we shouldn't post on that title
 	 */
 	protected function normalizeTitle( Title $title ) {
@@ -107,7 +107,7 @@ class MassMessageJob extends Job {
 	/**
 	 * Log any skips on the target site
 	 *
-	 * @param $reason string log subtype
+	 * @param string $reason log subtype
 	 */
 	protected function logLocalSkip( $reason ) {
 		$logEntry = new ManualLogEntry( 'massmessage', $reason );
@@ -124,7 +124,7 @@ class MassMessageJob extends Job {
 	/**
 	 * Log any message failures on the target site.
 	 *
-	 * @param $reason string
+	 * @param string $reason
 	 */
 	protected function logLocalFailure( $reason ) {
 		$logEntry = new ManualLogEntry( 'massmessage', 'failure' );

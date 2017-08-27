@@ -78,8 +78,8 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	/**
 	 * Tests that the value of 'count' is correct
 	 * @dataProvider provideCount
-	 * @param $page string of page title
-	 * @param $count integer value of what count should be
+	 * @param string $page string of page title
+	 * @param int $count integer value of what count should be
 	 */
 	public function testCount( $page, $count ) {
 		$apiResult = $this->doApiRequestWithToken( [

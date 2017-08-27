@@ -39,7 +39,7 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 
 	/**
 	 * Updates $title with the provided $text
-	 * @param Title title
+	 * @param Title $title
 	 * @param string $text
 	 */
 	public static function updatePage( $title, $text ) {

@@ -98,7 +98,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	/**
 	 * Compare two targets for ordering
 	 * @param array $a
-	 * @paran array $b
+	 * @param array $b
 	 * @return int
 	 */
 	public static function compareTargets( $a, $b ) {

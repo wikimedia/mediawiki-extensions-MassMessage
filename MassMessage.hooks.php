@@ -8,7 +8,7 @@ class MassMessageHooks {
 
 	/**
 	 * Hook to load our parser function
-	 * @param  Parser $parser
+	 * @param Parser &$parser
 	 * @return bool
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
@@ -21,8 +21,8 @@ class MassMessageHooks {
 	 * Prepares the human facing output
 	 * Hostname is optional for local delivery
 	 * @param Parser $parser
-	 * @param string $site
 	 * @param string $page
+	 * @param string $site
 	 * @return array
 	 */
 	public static function outputParserFunction( Parser $parser, $page, $site = '' ) {
@@ -71,7 +71,7 @@ class MassMessageHooks {
 
 	/**
 	 * Add our username to the list of reserved ones
-	 * @param $reservedUsernames array
+	 * @param array &$reservedUsernames
 	 * @return bool
 	 */
 	public static function onUserGetReservedNames( &$reservedUsernames ) {
@@ -82,9 +82,9 @@ class MassMessageHooks {
 
 	/**
 	 * If someone is trying to rename the bot, don't let them.
-	 * @param $uid int
-	 * @param $oldName string
-	 * @param $newName string
+	 * @param int $uid
+	 * @param string $oldName
+	 * @param string $newName
 	 * @return bool|string
 	 */
 	public static function onRenameUserPreRename( $uid, $oldName, $newName ) {
@@ -97,7 +97,7 @@ class MassMessageHooks {
 
 	/**
 	 * Add a row with the number of queued messages to Special:Statistics
-	 * @param  array $extraStats
+	 * @param array &$extraStats
 	 * @return bool
 	 */
 	public static function onSpecialStatsAddExtra( &$extraStats ) {
@@ -107,7 +107,7 @@ class MassMessageHooks {
 
 	/**
 	 * Add the number of queued messages to &meta=siteinfo&siprop=statistics
-	 * @param $result array
+	 * @param array &$result
 	 * @return bool
 	 */
 	public static function onAPIQuerySiteInfoStatisticsInfo( &$result ) {
@@ -120,7 +120,7 @@ class MassMessageHooks {
 	 * Called only if the context is a MassMessage job (bug 69381)
 	 * @see bug 58237
 	 * @param User $user
-	 * @param array $rights
+	 * @param array &$rights
 	 * @return bool
 	 */
 	public static function onUserGetRights( User $user, array &$rights ) {
@@ -132,7 +132,7 @@ class MassMessageHooks {
 
 	/**
 	 * Echo!
-	 * @param $event EchoEvent
+	 * @param EchoEvent $event
 	 * @return bool
 	 */
 	public static function onBeforeEchoEventInsert( EchoEvent $event ) {
