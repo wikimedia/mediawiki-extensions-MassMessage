@@ -114,5 +114,11 @@
 	"apihelp-query+mmsites-param-term": "Tiền tố để tìm kiếm.",
 	"apihelp-query+mmsites-example-1": "Tự động điền “vi”",
 	"tag-massmessage-delivery": "thông báo gửi rộng rãi",
-	"tag-massmessage-delivery-description": "Thông báo gửi rộng rãi qua [[:mw:Extension:MassMessage|Extension:MassMessage]]"
+	"tag-massmessage-delivery-description": "Thông báo gửi rộng rãi qua [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"log-action-filter-massmessage": "Kiểu mục nhật trình",
+	"log-action-filter-massmassage-send": "Đệ trình thông báo rộng rãi",
+	"log-action-filter-massmassage-failure": "Thất bại khi gửi thông báo rộng rãi",
+	"log-action-filter-massmassage-skipoptout": "Đã bỏ qua đích vì người đã quyết định từ chối",
+	"log-action-filter-massmassage-skipnouser": "Đã bỏ qua đích vì người dùng đích không tồn tại",
+	"log-action-filter-massmassage-skipbadns": "Đã bỏ qua đích vì không gian tên bị cấm"
 }
