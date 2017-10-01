@@ -18,6 +18,7 @@ class SendMassMessages extends Maintenance {
 		$this->addOption( 'pagelist', 'Name of file with a list of pages to send to in it', true, true );
 		$this->addOption( 'subject', 'Name of file with the subject in it', true, true );
 		$this->addOption( 'message', 'Name of file with the message body in it', true, true );
+		$this->requireExtension( 'MassMessage' );
 	}
 
 	public function execute() {
