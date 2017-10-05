@@ -85,6 +85,11 @@ $magicWords['nn'] = [
 	'target' => [ 0, 'mål' ],
 ];
 
+/** Urdu (اردو) */
+$magicWords['ur'] = [
+	'target' => [ 0, 'ہدف' ],
+];
+
 /** Vietnamese (Tiếng Việt) */
 $magicWords['vi'] = [
 	'target' => [ 0, 'đích' ],
