@@ -5,7 +5,8 @@
 			"Cwlin0416",
 			"Justincheng12345",
 			"LNDDYL",
-			"Bowleerin"
+			"Bowleerin",
+			"A2093064"
 		]
 	},
 	"massmessage": "傳送大量訊息",
@@ -118,5 +119,6 @@
 	"apihelp-query+mmsites-param-term": "要搜尋的字首。",
 	"apihelp-query+mmsites-example-1": "自動完成「en」",
 	"tag-massmessage-delivery": "傳送大量訊息",
-	"tag-massmessage-delivery-description": "使用[[:mw:Extension:MassMessage|Extension:MassMessage]]傳送。"
+	"tag-massmessage-delivery-description": "使用[[:mw:Extension:MassMessage|Extension:MassMessage]]傳送。",
+	"log-action-filter-massmessage": "日誌記錄類型"
 }
