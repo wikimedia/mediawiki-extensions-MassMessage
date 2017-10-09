@@ -92,6 +92,7 @@
 	"apihelp-massmessage-description": "문서 목록에 메시지를 보냅니다.",
 	"apihelp-massmessage-summary": "문서 목록에 메시지를 보냅니다.",
 	"apierror-massmessage-invalidspamlist": "지정된 스팸리스트가 올바르지 않습니다.",
+	"tag-massmessage-delivery-description": "[[:mw:Extension:MassMessage|확장기능:대량메시지]]를 사용하여 메시지 전송",
 	"log-action-filter-massmassage-send": "대량 메시지 제출",
 	"log-action-filter-massmassage-failure": "대량 메시지 전송 실패"
 }
