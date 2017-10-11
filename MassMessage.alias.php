@@ -128,6 +128,13 @@ $specialPageAliases['pt'] = [
 	'MassMessage' => [ 'Mensagens_em_massa', 'Mensagem_em_massa' ],
 ];
 
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = [
+	'MassMessage' => [ 'اجتماعی_پیغام' ],
+	'CreateMassMessageList' => [ 'تخلیق_فہرست_اجتماعی_پیغام' ],
+	'EditMassMessageList' => [ 'ترمیم_فہرست_اجتماعی_پیغام' ],
+];
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = [
 	'MassMessage' => [ 'Nhắn_tin_cho_nhiều_người', 'Tin_nhắn_cho_nhiều_người', 'Nhắn_tin_hàng_loạt', 'Tin_nhắn_hàng_loạt' ],
