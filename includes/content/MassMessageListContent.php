@@ -36,7 +36,7 @@ class MassMessageListContent extends JsonContent {
 		if ( !is_string( $this->description ) || !is_array( $this->targets ) ) {
 			return false;
 		}
-		foreach ( $this->targets as $target ) {
+		foreach ( $this->getTargets() as $target ) {
 			if ( !is_array( $target )
 				|| !array_key_exists( 'title', $target )
 				|| Title::newFromText( $target['title'] ) === null
@@ -64,11 +64,14 @@ class MassMessageListContent extends JsonContent {
 	}
 
 	/**
-	 * @return array|null
+	 * @return array
 	 */
 	public function getTargets() {
 		$this->decode();
-		return $this->targets;
+		if ( is_array( $this->targets ) ) {
+			return $this->targets;
+		}
+		return [];
 	}
 
 	/**
