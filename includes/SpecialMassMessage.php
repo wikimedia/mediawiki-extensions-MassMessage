@@ -60,7 +60,7 @@ class SpecialMassMessage extends SpecialPage {
 			$this->state = 'form';
 		}
 
-		$form = new HtmlForm( $this->createForm(), $context );
+		$form = new HTMLForm( $this->createForm(), $context );
 		$form->setId( 'mw-massmessage-form' );
 		$form->setDisplayFormat( 'div' );
 		if ( $this->state === 'form' ) {
