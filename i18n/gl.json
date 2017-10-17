@@ -131,5 +131,6 @@
 	"tag-massmessage-delivery-description": "Envío de mensaxes en masa usando [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipo de entrada de rexistro",
 	"log-action-filter-massmassage-send": "Envío dunha mensaxe en masa",
-	"log-action-filter-massmassage-failure": "Erro de distribución de mensaxe en masa"
+	"log-action-filter-massmassage-failure": "Erro de distribución de mensaxe en masa",
+	"log-action-filter-massmassage-skipoptout": "Destinatario ignorado por ter a opción de exclusión"
 }
