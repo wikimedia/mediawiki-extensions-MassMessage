@@ -131,9 +131,9 @@
 	"tag-massmessage-delivery": "MassMessage delivery",
 	"tag-massmessage-delivery-description": "Message delivery using [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Type of log entry",
-	"log-action-filter-massmassage-send": "Mass message submission",
-	"log-action-filter-massmassage-failure": "Mass message delivery failure",
-	"log-action-filter-massmassage-skipoptout": "Target skip because of opt-out",
-	"log-action-filter-massmassage-skipnouser": "Target skip because of non-existing target user",
-	"log-action-filter-massmassage-skipbadns": "Target skip because of forbidden namespace"
+	"log-action-filter-massmessage-send": "Mass message submission",
+	"log-action-filter-massmessage-failure": "Mass message delivery failure",
+	"log-action-filter-massmessage-skipoptout": "Target skip because of opt-out",
+	"log-action-filter-massmessage-skipnouser": "Target skip because of non-existing target user",
+	"log-action-filter-massmessage-skipbadns": "Target skip because of forbidden namespace"
 }

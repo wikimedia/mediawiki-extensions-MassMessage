@@ -137,9 +137,9 @@
 	"tag-massmessage-delivery": "Change tag for MassMessage delivery edits",
 	"tag-massmessage-delivery-description": "Description for MassMessage delivery change tag",
 	"log-action-filter-massmessage": "{{doc-log-action-filter-type|massmessage}}",
-	"log-action-filter-massmassage-send": "{{doc-log-action-filter-type|massmessage|send}}",
-	"log-action-filter-massmassage-failure": "{{doc-log-action-filter-type|massmessage|failure}}",
-	"log-action-filter-massmassage-skipoptout": "{{doc-log-action-filter-type|massmessage|skipoptout}}",
-	"log-action-filter-massmassage-skipnouser": "{{doc-log-action-filter-type|massmessage|skipnouser}}",
-	"log-action-filter-massmassage-skipbadns": "{{doc-log-action-filter-type|massmessage|skipbadns}}"
+	"log-action-filter-massmessage-send": "{{doc-log-action-filter-type|massmessage|send}}",
+	"log-action-filter-massmessage-failure": "{{doc-log-action-filter-type|massmessage|failure}}",
+	"log-action-filter-massmessage-skipoptout": "{{doc-log-action-filter-type|massmessage|skipoptout}}",
+	"log-action-filter-massmessage-skipnouser": "{{doc-log-action-filter-type|massmessage|skipnouser}}",
+	"log-action-filter-massmessage-skipbadns": "{{doc-log-action-filter-type|massmessage|skipbadns}}"
 }
