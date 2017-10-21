@@ -72,11 +72,11 @@ class MassMessage {
 	}
 
 	/**
-	* Get a mapping from site domains to database names
-	* Requires $wgConf to be set up properly
-	* Tries to read from cache if possible
-	* @return array
-	*/
+	 * Get a mapping from site domains to database names
+	 * Requires $wgConf to be set up properly
+	 * Tries to read from cache if possible
+	 * @return array
+	 */
 	public static function getDatabases() {
 		global $wgConf, $wgMemc;
 		static $mapping = null;
