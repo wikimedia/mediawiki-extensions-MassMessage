@@ -136,9 +136,9 @@
 	"tag-massmessage-delivery": "群发消息递送",
 	"tag-massmessage-delivery-description": "通过[[:mw:Extension:MassMessage|Extension:MassMessage]]发送",
 	"log-action-filter-massmessage": "日志记录类型",
-	"log-action-filter-massmassage-send": "大量信息提交",
-	"log-action-filter-massmassage-failure": "大量信息递送失败",
-	"log-action-filter-massmassage-skipoptout": "因不接受订阅而跳过目标",
-	"log-action-filter-massmassage-skipnouser": "因目标用户不存在而跳过目标",
-	"log-action-filter-massmassage-skipbadns": "因名字空间被禁止而跳过目标"
+	"log-action-filter-massmessage-send": "大量信息提交",
+	"log-action-filter-massmessage-failure": "大量信息递送失败",
+	"log-action-filter-massmessage-skipoptout": "因不接受订阅而跳过目标",
+	"log-action-filter-massmessage-skipnouser": "因目标用户不存在而跳过目标",
+	"log-action-filter-massmessage-skipbadns": "因名字空间被禁止而跳过目标"
 }
