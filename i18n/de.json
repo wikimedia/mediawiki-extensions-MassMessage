@@ -113,11 +113,13 @@
 	"massmessage-list-category": "Massennachrichten-Versandlisten",
 	"massmessage-list-category-desc": "Die Seite ist eine Versandliste für die [[Special:MassMessage|Massennachrichten]]-Erweiterung.",
 	"apihelp-editmassmessagelist-description": "Massennachrichten-Versandliste bearbeiten",
+	"apihelp-editmassmessagelist-summary": "Bearbeitet eine Massennachrichten-Versandliste.",
 	"apihelp-editmassmessagelist-param-spamlist": "Titel der zu aktualisierenden Versandliste.",
 	"apihelp-editmassmessagelist-param-add": "Titel, die zur Liste hinzugefügt werden sollen.",
 	"apihelp-editmassmessagelist-param-remove": "Titel, die von der Liste entfernt werden sollen.",
 	"apihelp-editmassmessagelist-example-1": "Fügt [[User talk:Foo]] und [[Talk:Bar]] zu der Versandliste [[Example]] hinzu und entfernt [[Talk:Baz]] von ihr",
 	"apihelp-massmessage-description": "Sendet eine Nachricht an eine Liste von Seiten.",
+	"apihelp-massmessage-summary": "Sendet eine Nachricht an eine Liste von Seiten.",
 	"apihelp-massmessage-param-spamlist": "Seite, die eine Liste mit Seiten enthält, auf denen Nachrichten hinterlassen werden sollen.",
 	"apihelp-massmessage-param-subject": "Betreffzeile der Nachricht.",
 	"apihelp-massmessage-param-message": "Text des Nachrichtenkörpers.",
@@ -127,9 +129,9 @@
 	"tag-massmessage-delivery": "Versand von Massennachrichten",
 	"tag-massmessage-delivery-description": "Versand von Nachrichten mithilfe der Erweiterung „[[:mw:Extension:MassMessage|MassMessage]]“",
 	"log-action-filter-massmessage": "Typ des Logbucheintrags",
-	"log-action-filter-massmassage-send": "Versand von Massennachrichten",
-	"log-action-filter-massmassage-failure": "Massennachrichten-Versandfehler",
-	"log-action-filter-massmassage-skipoptout": "Auslassung eines Ziels aufgrund eines Opt-Outs",
-	"log-action-filter-massmassage-skipnouser": "Auslassung eines Ziels aufgrund eines nicht vorhandenen Zielbenutzers",
-	"log-action-filter-massmassage-skipbadns": "Auslassung eines Ziels aufgrund eines nicht erlaubten Namensraumes"
+	"log-action-filter-massmessage-send": "Versand von Massennachrichten",
+	"log-action-filter-massmessage-failure": "Massennachrichten-Versandfehler",
+	"log-action-filter-massmessage-skipoptout": "Auslassung eines Ziels aufgrund eines Opt-Outs",
+	"log-action-filter-massmessage-skipnouser": "Auslassung eines Ziels aufgrund eines nicht vorhandenen Zielbenutzers",
+	"log-action-filter-massmessage-skipbadns": "Auslassung eines Ziels aufgrund eines nicht erlaubten Namensraumes"
 }

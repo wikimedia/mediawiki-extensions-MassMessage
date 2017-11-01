@@ -3,13 +3,32 @@
 		"authors": [
 			"Ahdan",
 			"Iwan Novirion",
-			"Bennylin"
+			"Bennylin",
+			"Rachmat04"
 		]
 	},
 	"massmessage": "Kirim pesan massal",
 	"createmassmessagelist": "Buat daftar penerima pesan massal",
 	"editmassmessagelist": "Sunting daftar penerima pesan massal",
+	"massmessage-desc": "Izinkan pengguna mengirimkan pesan dengan mudah kepada daftar pengguna tujuan",
+	"massmessage-form-spamlist": "Halaman atau kategori yang berisi daftar halaman tujuan pengiriman pesan:",
+	"massmessage-form-subject": "Subjek pesan (juga digunakan sebagai ringkasan suntingan):",
+	"massmessage-form-message": "Isi pesan:",
+	"massmessage-form-preview": "Pratayang",
+	"massmessage-form-submit": "Kirim",
+	"massmessage-fieldset-preview": "Pratayang",
 	"massmessage-fieldset-info": "Informasi",
 	"massmessage-preview-count": "Pesan anda akan dikirim ke  {{PLURAL:$1|   $1  page| $1  halaman}}.",
+	"massmessage-submitted": "Pengiriman pesan kepada {{PLURAL:$1|$1 halaman|$1 halaman}} telah berada dalam daftar antrean.",
+	"massmessage-just-preview": "Ini hanyalah sebuah pratayang. Tekan \"{{int:massmessage-form-submit}}\" untuk mengirimkan pesan.",
+	"massmessage-spamlist-doesnotexist": "Halaman daftar pengiriman yang ditentukan tidak ada.",
+	"massmessage-spamlist-invalid": "Halaman tersebut tidak berisi daftar pengiriman yang sah.",
+	"massmessage-empty-subject": "Baris subjek kosong.",
+	"massmessage-empty-message": "Isi pesan kosong.",
+	"massmessage-unescaped-langlinks": "Peringatan: Terdapat pranala bahasa tak lepas dalam pesan Anda.",
+	"massmessage-no-timestamp": "Peringatan: Pesan Anda tidak memuat stempel waktu atau tanda tangan.",
+	"massmessage-form-header": "Gunakan formulir di bawah untuk mengirimkan pesan kepada daftar yang telah ditentukan. Semua kotak isian wajib diisi ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage informasi lanjutan]).",
+	"massmessage-queued-count": "[[Special:MassMessage|Pesan massal]] dalam antrian",
+	"massmessage-hidden-comment": "<!-- Pesan dikirim oleh Pengguna:$1@$2 dengan menggunakan daftar di $3 -->",
 	"massmessage-list-category": "Daftar penerima pesan massal"
 }
