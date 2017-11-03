@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"Baloch Khan"
 		]
 	},
 	"massmessage": "ډله ايز پيغام لېږل",
@@ -12,6 +13,7 @@
 	"massmessage-fieldset-preview": "مخليدنه",
 	"massmessage-preview-count": "ستاسې پيغام به {{PLURAL:$1|$1 مخ|$1 مخونو}} ته ولېږل شي.",
 	"massmessage-submitted": "ستاسو پيغام ولېږل شو!",
+	"massmessage-queued-count": "[[Special:MassMessage|ډله ايز پيغام]] په قطار کې",
 	"log-name-massmessage": "ډله ايز پيغام يادښت",
 	"log-description-massmessage": "دا پېښې د کارنانو لېږل شوي پيغامونه څاري.",
 	"logentry-massmessage-send": "$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}",
