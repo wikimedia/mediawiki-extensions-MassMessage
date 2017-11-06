@@ -88,7 +88,7 @@
 	"massmessage-create-nopermission": "Non ten os permisos para crear unha lista con este título.",
 	"massmessage-create-invalidsource": "A fonte indicada non é unha lista de envío válida ou categoría que conteña polo menos unha páxina.",
 	"massmessage-create-exists-short": "Xa en uso",
-	"massmessage-create-invalidsource-short": "Lista inválida",
+	"massmessage-create-invalidsource-short": "Lista non válida",
 	"editmassmessagelist-legend": "Editar lista de entrega de mensaxes en masa",
 	"massmessage-edit-pagetitle": "Editando $1",
 	"massmessage-edit-title": "Título:",
@@ -130,7 +130,7 @@
 	"tag-massmessage-delivery": "Envío de mensaxes en masa",
 	"tag-massmessage-delivery-description": "Envío de mensaxes en masa usando [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipo de entrada de rexistro",
-	"log-action-filter-massmassage-send": "Envío dunha mensaxe en masa",
-	"log-action-filter-massmassage-failure": "Erro de distribución de mensaxe en masa",
-	"log-action-filter-massmassage-skipoptout": "Destinatario ignorado por ter a opción de exclusión"
+	"log-action-filter-massmessage-send": "Envío dunha mensaxe en masa",
+	"log-action-filter-massmessage-failure": "Erro de distribución de mensaxe en masa",
+	"log-action-filter-massmessage-skipoptout": "Destinatario ignorado por ter a opción de exclusión"
 }
