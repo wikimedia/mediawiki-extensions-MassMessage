@@ -101,7 +101,7 @@
 	"massmessage-edit-invalidtitle": "Não há nenhuma lista válida de entrega de mensagens em massa com este título.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|A seguinte página é inválida|As seguintes páginas são inválidas}}: $2",
 	"massmessage-edit-missingsummary": "Não especificou um resumo de edição. Se clicar \"{{int:htmlform-submit}}\" de novo, a sua edição será gravada sem resumo.",
-	"massmessage-edit-nopermission": "Não possui permissão para editar a lista.",
+	"massmessage-edit-nopermission": "Não tem permissão para editar a lista.",
 	"massmessage-summary-addremove": "{{PLURAL:$1|Foi adicionada $1 página|Foram adicionadas $1 páginas}} e {{PLURAL:$2|removida $2 página|removidas $2 páginas}}",
 	"massmessage-summary-add": "Foi adicionada [[:$1]]",
 	"massmessage-summary-addonsite": "Foi adicionada $1 em $2",
@@ -131,9 +131,9 @@
 	"tag-massmessage-delivery": "Entrega de mensagens em massa",
 	"tag-massmessage-delivery-description": "Entrega de mensagens em massa usando a extensão [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipo de entrada do registo",
-	"log-action-filter-massmassage-send": "Envio de uma mensagem em massa",
-	"log-action-filter-massmassage-failure": "Falha de entrega de mensagem em massa",
-	"log-action-filter-massmassage-skipoptout": "Destinatário ignorado por ter opção de exclusão",
-	"log-action-filter-massmassage-skipnouser": "Destinatário ignorado por ser um utilizador inexistente",
-	"log-action-filter-massmassage-skipbadns": "Destinatário ignorado devido a um espaço nominal proibido"
+	"log-action-filter-massmessage-send": "Envio de uma mensagem em massa",
+	"log-action-filter-massmessage-failure": "Falha de entrega de mensagem em massa",
+	"log-action-filter-massmessage-skipoptout": "Destinatário ignorado por ter opção de exclusão",
+	"log-action-filter-massmessage-skipnouser": "Destinatário ignorado por ser um utilizador inexistente",
+	"log-action-filter-massmessage-skipbadns": "Destinatário ignorado devido a um espaço nominal proibido"
 }
