@@ -10,6 +10,8 @@
 	"createmassmessagelist": "Stvori popis isporuka masovne poruke",
 	"massmessage-queued-count": "[[Special:MassMessage|Masovne poruke]] u redu čekanja",
 	"log-name-massmessage": "Evidencija isporuka masovne poruke",
+	"logentry-massmessage-failure": "Dostava poruke »$4« na stranicu $3 nije uspjela, s kôdom pogrješke: <code>$5</code>",
+	"logentry-massmessage-skipbadns": "Dostava poruke »$4« na stranicu $3 nije izvršena jer je odredište u imenskom prostoru koji nije predviđen za objavljivanje poruka.",
 	"tag-massmessage-delivery": "isporuka masovne poruke",
 	"tag-massmessage-delivery-description": "Isporuka poruka uz pomoć dodatka [[:mw:Extension:MassMessage|MassMessage]]"
 }

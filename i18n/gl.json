@@ -132,5 +132,7 @@
 	"log-action-filter-massmessage": "Tipo de entrada de rexistro",
 	"log-action-filter-massmessage-send": "Envío dunha mensaxe en masa",
 	"log-action-filter-massmessage-failure": "Erro de distribución de mensaxe en masa",
-	"log-action-filter-massmessage-skipoptout": "Destinatario ignorado por ter a opción de exclusión"
+	"log-action-filter-massmessage-skipoptout": "Destinatario ignorado por ter a opción de exclusión",
+	"log-action-filter-massmessage-skipnouser": "Obxectivo ignorado por non existir o usuario obxectivo",
+	"log-action-filter-massmessage-skipbadns": "Obxectivo ignorado por espazo de nomes prohibido"
 }
