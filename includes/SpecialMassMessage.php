@@ -283,7 +283,6 @@ class SpecialMassMessage extends SpecialPage {
 		$content = ContentHandler::makeContent( $data['message'], $mockTarget );
 		// Parser stuff. Taken from EditPage::getPreviewText()
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
-		$parserOptions->setEditSection( false );
 		$parserOptions->setIsPreview( true );
 		$parserOptions->setIsSectionPreview( false );
 		$content = $content->addSectionHeader( $data['subject'] );
@@ -295,7 +294,7 @@ class SpecialMassMessage extends SpecialPage {
 		$parserOutput = $content->getParserOutput( $mockTarget, null, $parserOptions );
 		$previewFieldset = Xml::fieldset(
 			$this->msg( 'massmessage-fieldset-preview' )->text(),
-			$parserOutput->getText()
+			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] )
 		);
 		$this->getOutput()->addHTML( $previewFieldset );
 
