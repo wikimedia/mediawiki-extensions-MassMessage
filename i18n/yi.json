@@ -4,7 +4,32 @@
 			"פוילישער"
 		]
 	},
+	"massmessage": "שיקן מאסן־מעלדונג",
+	"massmessage-form-message": "מעלדונג־טעקסט:",
 	"massmessage-form-preview": "פֿאראויסשטעלונג",
+	"massmessage-form-submit": "שיקן",
 	"massmessage-fieldset-preview": "פֿאראויסשטעלונג",
-	"massmessage-hidden-comment": "<!-- אנזאג געשיקט דורך User:$1@$2 ניצנדיק די ליסטע ביי $3 -->"
+	"massmessage-fieldset-info": "אינפֿארמאציע",
+	"massmessage-preview-count": "אייער מעלדונג וועט מען שיקן צו {{PLURAL:$1|$1 בלאט|$1 בלעטער}}.",
+	"massmessage-empty-subject": "די סוביעקט־שורה איז ליידיג.",
+	"massmessage-empty-message": "דער מעלדונג־קערפער איז ליידיג.",
+	"massmessage-hidden-comment": "<!-- אנזאג געשיקט דורך User:$1@$2 ניצנדיק די ליסטע ביי $3 -->",
+	"massmessage-parse-badpage": "\"$1\" איז נישט קיין גילטיקער בלאט־טיטל.",
+	"massmessage-content-pages": "בלעטער אין דער דאזיקער רשימה",
+	"massmessage-content-pagesonsite": "בלעטער אויף $1:",
+	"massmessage-content-remove": "אַראָפּנעמען",
+	"massmessage-content-removeno": "אַנולירן",
+	"massmessage-content-addheading": "צולייגן בלעטער",
+	"massmessage-content-addtitle": "טיטל:",
+	"massmessage-content-addsite": "וועבזײַטל:",
+	"massmessage-content-addsubmit": "צולייגן בלאט",
+	"massmessage-content-addedlistheading": "בלעטער צוגעלייגט:",
+	"massmessage-content-addeditem": "$1 אויף $2",
+	"massmessage-create-title": "טיטל:",
+	"massmessage-create-description": "באַשרײבונג:",
+	"massmessage-create-content": "אינהאַלט:",
+	"massmessage-edit-title": "טיטל:",
+	"massmessage-edit-description": "באַשרײבונג:",
+	"massmessage-edit-content": "צילבלעטער:",
+	"massmessage-edit-summary": "רעדאקטירונג רעזומע:"
 }
