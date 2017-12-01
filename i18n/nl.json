@@ -10,7 +10,8 @@
 			"SPQRobin",
 			"Multichill",
 			"Romaine",
-			"Mainframe98"
+			"Mainframe98",
+			"Mar(c)"
 		]
 	},
 	"massmessage": "Bulkberichten verzenden",
@@ -118,7 +119,7 @@
 	"apihelp-editmassmessagelist-param-spamlist": "Titel van de afleverlijst om bij te werken.",
 	"apihelp-editmassmessagelist-param-add": "Titels om aan de lijst toe te voegen.",
 	"apihelp-editmassmessagelist-param-remove": "Titels om van de lijst te verwijderen.",
-	"apihelp-editmassmessagelist-example-1": "Vieg [[User talk:Foo]] en [[Talk:Bar]] toe aan de afleverlijst [[Example]] en verwijder [[Talk:Baz]] van deze",
+	"apihelp-editmassmessagelist-example-1": "Voeg [[User talk:Foo]] en [[Talk:Bar]] toe aan de afleverlijst [[Example]] en verwijder [[Talk:Baz]] van deze",
 	"apihelp-massmessage-description": "Stuur een bericht naar een lijst van pagina's.",
 	"apihelp-massmessage-summary": "Stuur een bericht naar een lijst van pagina's.",
 	"apihelp-massmessage-param-subject": "Onderwerpregel van het bericht.",
