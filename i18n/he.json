@@ -125,9 +125,9 @@
 	"tag-massmessage-delivery": "משלוח הודעה המונית",
 	"tag-massmessage-delivery-description": "שליחת הודעה באמצעות [[:mw:Extension:MassMessage|הרחבה לשליחת הודעות למשתמשים מרובים]]",
 	"log-action-filter-massmessage": "סוג רשימת יומן",
-	"log-action-filter-massmassage-send": "שליחה בהודעה המונית",
-	"log-action-filter-massmassage-failure": "כשל בשליחת הודעה המונית",
-	"log-action-filter-massmassage-skipoptout": "דילוג על יעד בגלל ביטול רישום",
-	"log-action-filter-massmassage-skipnouser": "דילוג על יעד בגלל שמשתמש היעד אינו קיים",
-	"log-action-filter-massmassage-skipbadns": "דילוג על יעד בגלל מרחב שם אסור"
+	"log-action-filter-massmessage-send": "שליחה בהודעה המונית",
+	"log-action-filter-massmessage-failure": "כשל בשליחת הודעה המונית",
+	"log-action-filter-massmessage-skipoptout": "דילוג על יעד בגלל ביטול רישום",
+	"log-action-filter-massmessage-skipnouser": "דילוג על יעד בגלל שמשתמש היעד אינו קיים",
+	"log-action-filter-massmessage-skipbadns": "דילוג על יעד בגלל מרחב שם אסור"
 }

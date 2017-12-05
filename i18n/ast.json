@@ -127,9 +127,9 @@
 	"tag-massmessage-delivery": "Entrega de mensaxes en masa",
 	"tag-massmessage-delivery-description": "Entrega de mensaxes usando [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipu d'entrada de rexistru",
-	"log-action-filter-massmassage-send": "Unviu de mensaxe masivu",
-	"log-action-filter-massmassage-failure": "Fallu na distribución de mensaxe masivu",
-	"log-action-filter-massmassage-skipoptout": "Saltóse'l destín por tar desapuntáu",
-	"log-action-filter-massmassage-skipnouser": "Saltóse'l destín por nun esistir el destinatariu",
-	"log-action-filter-massmassage-skipbadns": "Saltóse'l destín por tar nun espaciu de nomes torgáu"
+	"log-action-filter-massmessage-send": "Unviu de mensaxe masivu",
+	"log-action-filter-massmessage-failure": "Fallu na distribución de mensaxe masivu",
+	"log-action-filter-massmessage-skipoptout": "Saltóse'l destín por tar desapuntáu",
+	"log-action-filter-massmessage-skipnouser": "Saltóse'l destín por nun esistir el destinatariu",
+	"log-action-filter-massmessage-skipbadns": "Saltóse'l destín por tar nun espaciu de nomes torgáu"
 }

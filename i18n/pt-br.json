@@ -135,9 +135,9 @@
 	"tag-massmessage-delivery": "Entrega MassMessage",
 	"tag-massmessage-delivery-description": "Envio de mensagens usando [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipo de entrada de log",
-	"log-action-filter-massmassage-send": "Envio de mensagem em massa",
-	"log-action-filter-massmassage-failure": "Falha na entrega de mensagens em massa",
-	"log-action-filter-massmassage-skipoptout": "Alvo pulado por causa da opt-out",
-	"log-action-filter-massmassage-skipnouser": "Alvo ignorado por causa do usuário alvo não existir",
-	"log-action-filter-massmassage-skipbadns": "Alvo ignorado por causa do espaço nominal proibido"
+	"log-action-filter-massmessage-send": "Envio de mensagem em massa",
+	"log-action-filter-massmessage-failure": "Falha na entrega de mensagens em massa",
+	"log-action-filter-massmessage-skipoptout": "Alvo pulado por causa da opt-out",
+	"log-action-filter-massmessage-skipnouser": "Alvo ignorado por causa do usuário alvo não existir",
+	"log-action-filter-massmessage-skipbadns": "Alvo ignorado por causa do espaço nominal proibido"
 }

@@ -129,9 +129,9 @@
 	"tag-massmessage-delivery": "massemeldingslevering",
 	"tag-massmessage-delivery-description": "Meldingslevering med [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Type loggoppføring",
-	"log-action-filter-massmassage-send": "Massemeldingslevering",
-	"log-action-filter-massmassage-failure": "Feil under massemeldingslevering",
-	"log-action-filter-massmassage-skipoptout": "Hoppet over målet på grunn av reservering",
-	"log-action-filter-massmassage-skipnouser": "Hoppet over målet på grunn av ikke-eksisterende målbruker",
-	"log-action-filter-massmassage-skipbadns": "Hoppet over målet på grunn av forbudt navnerom"
+	"log-action-filter-massmessage-send": "Massemeldingslevering",
+	"log-action-filter-massmessage-failure": "Feil under massemeldingslevering",
+	"log-action-filter-massmessage-skipoptout": "Hoppet over målet på grunn av reservering",
+	"log-action-filter-massmessage-skipnouser": "Hoppet over målet på grunn av ikke-eksisterende målbruker",
+	"log-action-filter-massmessage-skipbadns": "Hoppet over målet på grunn av forbudt navnerom"
 }

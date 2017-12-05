@@ -37,9 +37,9 @@
 	"massmessage-summary-addmulti": "Додато страница: {{PLURAL:$1|$1}}",
 	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}",
 	"log-action-filter-massmessage": "Тип дневничког записа",
-	"log-action-filter-massmassage-send": "Подношење масовне поруке",
-	"log-action-filter-massmassage-failure": "Неуспешна испорука масовне поруке",
-	"log-action-filter-massmassage-skipoptout": "Циљ прескочен због изузимања",
-	"log-action-filter-massmassage-skipnouser": "Циљ прескочен због непостојања циљног корисника",
-	"log-action-filter-massmassage-skipbadns": "Циљ прескочен због забрањеног именског простора"
+	"log-action-filter-massmessage-send": "Подношење масовне поруке",
+	"log-action-filter-massmessage-failure": "Неуспешна испорука масовне поруке",
+	"log-action-filter-massmessage-skipoptout": "Циљ прескочен због изузимања",
+	"log-action-filter-massmessage-skipnouser": "Циљ прескочен због непостојања циљног корисника",
+	"log-action-filter-massmessage-skipbadns": "Циљ прескочен због забрањеног именског простора"
 }

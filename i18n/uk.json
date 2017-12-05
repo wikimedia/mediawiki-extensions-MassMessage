@@ -133,9 +133,9 @@
 	"tag-massmessage-delivery": "Доставка масових повідомлень",
 	"tag-massmessage-delivery-description": "Доставка повідомлень з використанням [[:mw:Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Тип запису у журналі",
-	"log-action-filter-massmassage-send": "Надсилання масового повідомлення",
-	"log-action-filter-massmassage-failure": "Невдача доставки масового повідомлення",
-	"log-action-filter-massmassage-skipoptout": "Ціль пропущено через відмову від отримання",
-	"log-action-filter-massmassage-skipnouser": "Ціль пропущено, оскільки цільовий користувач не існує",
-	"log-action-filter-massmassage-skipbadns": "Ціль пропущено через заборонений простір назв"
+	"log-action-filter-massmessage-send": "Надсилання масового повідомлення",
+	"log-action-filter-massmessage-failure": "Невдача доставки масового повідомлення",
+	"log-action-filter-massmessage-skipoptout": "Ціль пропущено через відмову від отримання",
+	"log-action-filter-massmessage-skipnouser": "Ціль пропущено, оскільки цільовий користувач не існує",
+	"log-action-filter-massmessage-skipbadns": "Ціль пропущено через заборонений простір назв"
 }
