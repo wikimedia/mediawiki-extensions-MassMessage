@@ -3,6 +3,12 @@
  * Difference engine for MassMessageListContent
  */
 
+namespace MediaWiki\MassMessage;
+
+use Html;
+use Content;
+use DifferenceEngine;
+
 class MassMessageListDiffEngine extends DifferenceEngine {
 
 	/**

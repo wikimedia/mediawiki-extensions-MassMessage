@@ -1,4 +1,11 @@
 <?php
+namespace MediaWiki\MassMessage;
+
+use WikiPage;
+use Title;
+use User;
+use ContentHandler;
+use UsageException;
 
 /**
  * Tests for the API module to send messages
@@ -6,6 +13,7 @@
  * @group Database
  * @group medium
  */
+
 class ApiMassMessageTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'Help:ApiMassMessageTest_spamlist';

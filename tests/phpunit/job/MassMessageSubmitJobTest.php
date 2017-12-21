@@ -1,9 +1,13 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use MediaWikiTestCase;
+
 class MassMessageSubmitJobTest extends MediaWikiTestCase {
 
 	/**
-	 * @covers MassMessageSubmitJob::getJobs
+	 * @covers \Mediawiki\MassMessage\MassMessageSubmitJob::getJobs
 	 * @dataProvider provideGetJobs
 	 */
 	public function testGetJobs( $data, $pages ) {
@@ -19,7 +23,7 @@ class MassMessageSubmitJobTest extends MediaWikiTestCase {
 			/** @var MassMessageJob $job */
 			foreach ( $jobs as $job ) {
 				$count++;
-				$this->assertInstanceOf( 'MassMessageJob', $job );
+				$this->assertInstanceOf( MassMessageJob::class, $job );
 				$params = $job->getParams();
 				foreach ( $data as $key => $val ) {
 					$this->assertArrayHasKey( $key, $params );

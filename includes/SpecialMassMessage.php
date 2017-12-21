@@ -11,6 +11,17 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+namespace MediaWiki\MassMessage;
+
+use Status;
+use EditPage;
+use HTMLForm;
+use WikiPage;
+use ContentHandler;
+use SpecialPage;
+use Xml;
+use Title;
+
 class SpecialMassMessage extends SpecialPage {
 
 	/**

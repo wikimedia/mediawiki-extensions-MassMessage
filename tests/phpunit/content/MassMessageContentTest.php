@@ -1,5 +1,7 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
 class MassMessageListContentTest extends MassMessageTestCase {
 
 	public static function provideIsValid() {
@@ -14,7 +16,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::isValid
+	 * @covers \Mediawiki\MassMessage\MassMessageListContent::isValid
 	 * @dataProvider provideIsValid
 	 * @param string $text
 	 * @param bool $expected
@@ -34,7 +36,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::hasInvalidTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageListContent::hasInvalidTargets
 	 * @dataProvider provideHasInvalidTargets
 	 * @param string $text
 	 * @param bool $expected
@@ -45,7 +47,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::getDescription
+	 * @covers\Mediawiki\MassMessage\ MassMessageListContent::getDescription
 	 */
 	public function testGetDescription() {
 		$content = new MassMessageListContent( '{"description":"foo","targets":[]}' );
@@ -53,7 +55,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::getTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageListContent::getTargets
 	 */
 	public function testGetTargets() {
 		$text = '{"description":"","targets":['
@@ -69,7 +71,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::getValidTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageListContent::getValidTargets
 	 */
 	public function testGetValidTargets() {
 		$text = '{"description":"","targets":['
@@ -86,7 +88,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageListContent::getTargetStrings
+	 * @covers \Mediawiki\MassMessage\MassMessageListContent::getTargetStrings
 	 */
 	public function testGetTargetStrings() {
 		// Temporarily set $wgCanonicalServer for this test so its value is predictable.

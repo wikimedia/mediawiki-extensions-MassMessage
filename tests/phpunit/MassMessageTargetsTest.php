@@ -1,4 +1,10 @@
 <?php
+namespace MediaWiki\MassMessage;
+
+use WikiPage;
+use Title;
+use ContentHandler;
+use WikitextContent;
 
 /**
  * Tests for functions related to target processing
@@ -49,9 +55,9 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageTargets::getTargets
-	 * @covers MassMessageTargets::normalizeTargets
-	 * @covers MassMessageTargets::getParserFunctionTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageTargets::getTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageTargets::normalizeTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageTargets::getParserFunctionTargets
 	 * @dataProvider provideGetParserFunctionTargets
 	 * @param string $text Text of the page to create
 	 * @param array $check Stuff to check against
@@ -79,8 +85,8 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageTargets::getTargets
-	 * @covers MassMessageTargets::getCategoryTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageTargets::getTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageTargets::getCategoryTargets
 	 */
 	public function testGetCategoryTargets() {
 		$page = Title::newFromText( 'Talk:Testing1234' );
@@ -95,8 +101,8 @@ class MassMessageTargetsTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessageTargets::getTargets
-	 * @covers MassMessageTargets::getMassMessageListContentTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageTargets::getTargets
+	 * @covers \Mediawiki\MassMessage\MassMessageTargets::getMassMessageListContentTargets
 	 */
 	public function testGetMassMessageListContentTargets() {
 		$text = '{"description":"","targets":['

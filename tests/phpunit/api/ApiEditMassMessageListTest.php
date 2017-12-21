@@ -1,4 +1,9 @@
 <?php
+namespace MediaWiki\MassMessage;
+
+use Title;
+use ContentHandler;
+use WikiPage;
 
 /**
  * Tests for the API module to edit a MassMessage delivery list
@@ -6,6 +11,7 @@
  * @group Database
  * @group medium
  */
+
 class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'ApiEditMMListTest_spamlist';

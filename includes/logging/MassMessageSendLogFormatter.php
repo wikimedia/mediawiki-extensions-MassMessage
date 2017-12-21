@@ -5,6 +5,13 @@
  * This lets us link to the specific revid used to send the message
  */
 
+namespace MediaWiki\MassMessage;
+
+use Linker;
+use Message;
+use SpecialPage;
+use LogFormatter;
+
 class MassMessageSendLogFormatter extends LogFormatter {
 
 	protected function getMessageParameters() {

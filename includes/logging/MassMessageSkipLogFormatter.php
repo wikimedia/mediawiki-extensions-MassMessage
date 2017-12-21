@@ -5,6 +5,12 @@
  * Parses the message summary so wikilinks work
  */
 
+namespace MediaWiki\MassMessage;
+
+use Linker;
+use Message;
+use LogFormatter;
+
 class MassMessageSkipLogFormatter extends LogFormatter {
 
 	/**

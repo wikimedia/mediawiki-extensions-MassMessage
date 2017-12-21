@@ -8,6 +8,16 @@
  * @author Kunal Mehta
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
+namespace MediaWiki\MassMessage;
+
+use Title;
+use WikiPage;
+use Job;
+use WikitextContent;
+use Revision;
+use Exception;
+
 class MassMessageServerSideJob extends MassMessageJob {
 	public function __construct( Title $title, array $params, $id = 0 ) {
 		Job::__construct( 'MassMessageServerSideJob', $title, $params, $id );

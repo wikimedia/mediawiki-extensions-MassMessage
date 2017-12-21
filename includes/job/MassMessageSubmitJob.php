@@ -1,4 +1,10 @@
 <?php
+namespace MediaWiki\MassMessage;
+
+use Title;
+use Job;
+use JobQueueGroup;
+
 /**
  * JobQueue class to queue other jobs
  *
@@ -8,11 +14,12 @@
  * @author Kunal Mehta
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 class MassMessageSubmitJob extends Job {
 	public function __construct( Title $title, array $params, $id = 0 ) {
 		// Back-compat
 		if ( !isset( $params['class'] ) ) {
-			$params['class'] = 'MassMessageJob';
+			$params['class'] = MassMessageJob::class;
 		}
 		parent::__construct( 'MassMessageSubmitJob', $title, $params, $id );
 	}

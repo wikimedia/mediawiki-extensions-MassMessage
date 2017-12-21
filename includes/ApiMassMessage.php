@@ -1,4 +1,11 @@
 <?php
+
+
+namespace MediaWiki\MassMessage;
+
+use Status;
+use ApiBase;
+
 /**
  * API module to send MassMessages
  *
@@ -7,6 +14,7 @@
  * @author Kunal Mehta
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 class ApiMassMessage extends ApiBase {
 	public function execute() {
 		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {

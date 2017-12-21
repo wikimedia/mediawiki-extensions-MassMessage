@@ -1,5 +1,17 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use FormatJson;
+use Status;
+use Title;
+use DerivativeContext;
+use JsonContentHandler;
+use DerivativeRequest;
+use ApiMain;
+use IContextSource;
+use ApiUsageException;
+
 class MassMessageListContentHandler extends JsonContentHandler {
 
 	/**
@@ -20,14 +32,14 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	 * @return string
 	 */
 	protected function getContentClass() {
-		return 'MassMessageListContent';
+		return MassMessageListContent::class;
 	}
 
 	/**
 	 * @return string
 	 */
 	protected function getDiffEngineClass() {
-		return 'MassMessageListDiffEngine';
+		return MassMessageListDiffEngine::class;
 	}
 
 	/**

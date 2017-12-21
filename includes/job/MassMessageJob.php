@@ -10,6 +10,23 @@
  * @author Kunal Mehta
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
+namespace MediaWiki\MassMessage;
+
+use Title;
+use WikiPage;
+use User;
+use RequestContext;
+use ApiMain;
+use CentralIdLookup;
+use DerivativeRequest;
+use ManualLogEntry;
+use Job;
+use DeferredUpdates;
+use ChangeTags;
+use ApiMessage;
+use LqtDispatch;
+
 class MassMessageJob extends Job {
 
 	const STRIP_TILDES = true;
@@ -273,8 +290,8 @@ class MassMessageJob extends Job {
 
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed
 		// Done here so that it's not unnecessarily called on every page load
-		$wgHooks['UserGetRights'][] = 'MassMessageHooks::onUserGetRights';
-		$wgHooks['EmailConfirmed'][] = 'MassMessageHooks::onEmailConfirmed';
+		$wgHooks['UserGetRights'][] = 'MediaWiki\\MassMessage\\MassMessageHooks::onUserGetRights';
+		$wgHooks['EmailConfirmed'][] = 'MediaWiki\\MassMessage\\MassMessageHooks::onEmailConfirmed';
 
 		$oldRequest = $wgRequest;
 		$oldUser = $wgUser;

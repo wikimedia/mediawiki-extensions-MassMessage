@@ -4,6 +4,15 @@
  * Hooks!
  */
 
+namespace MediaWiki\MassMessage;
+
+use SpecialPage;
+use OutputPage;
+use Parser;
+use Skin;
+use EchoEvent;
+use User;
+
 class MassMessageHooks {
 
 	/**
@@ -12,7 +21,8 @@ class MassMessageHooks {
 	 * @return bool
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
-		$parser->setFunctionHook( 'target', 'MassMessageHooks::outputParserFunction' );
+		$parser->setFunctionHook( 'target',
+			'MediaWiki\\MassMessage\\MassMessageHooks::outputParserFunction' );
 		return true;
 	}
 
