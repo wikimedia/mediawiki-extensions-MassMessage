@@ -26,7 +26,7 @@
 	"massmessage-spamlist-invalid": "A página especificada não contém uma lista de entrega válida.",
 	"massmessage-empty-subject": "O campo do assunto está vazio.",
 	"massmessage-empty-message": "O corpo da mensagem está vazio.",
-	"massmessage-unescaped-langlinks": "Aviso: Há links interlínguas na sua mensagem que não começam com dois pontos.",
+	"massmessage-unescaped-langlinks": "Aviso: Há hiperligações interlínguas na sua mensagem que não começam com dois pontos.",
 	"massmessage-no-timestamp": "Aviso: A sua mensagem não inclui data e hora, nem assinatura.",
 	"massmessage-form-header": "Use o formulário abaixo para mandar mensagens a uma lista especificada de páginas. Todos os campos são obrigatórios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mais informações]).",
 	"massmessage-queued-count": "[[Special:MassMessage|Mensagens em massa]] na fila de espera",
