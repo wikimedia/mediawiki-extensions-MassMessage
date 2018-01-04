@@ -16,7 +16,7 @@ class ApiQueryMMSites extends ApiQueryBase {
 		$params = $this->extractRequestParams();
 		$term = strtolower( $params['term'] );
 
-		$sites = array_keys( MassMessage::getDatabases() );
+		$sites = array_keys( DatabaseLookup::getDatabases() );
 		sort( $sites );
 		$matches = [];
 		foreach ( $sites as $site ) {

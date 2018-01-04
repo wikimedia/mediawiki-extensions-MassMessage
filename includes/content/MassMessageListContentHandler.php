@@ -157,8 +157,8 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			$result['title'] = $title->getPrefixedText(); // Use the canonical form.
 		}
 
-		if ( $site !== null && $site !== MassMessage::getBaseUrl( $wgCanonicalServer ) ) {
-			if ( !$wgAllowGlobalMessaging || MassMessage::getDBName( $site ) === null ) {
+		if ( $site !== null && $site !== UrlHelper::getBaseUrl( $wgCanonicalServer ) ) {
+			if ( !$wgAllowGlobalMessaging || DatabaseLookup::getDBName( $site ) === null ) {
 				$result['errors'][] = 'invalidsite';
 			} else {
 				$result['site'] = $site;

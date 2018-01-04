@@ -211,6 +211,8 @@
 		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/ApiQueryMMSites.php",
 		"MediaWiki\\MassMessage\\MassMessage": "includes/MassMessage.php",
 		"MediaWiki\\MassMessage\\MassMessageTargets": "includes/MassMessageTargets.php",
+		"MediaWiki\\MassMessage\\DatabaseLookup": "includes/DatabaseLookup.php",
+		"MediaWiki\\MassMessage\\UrlHelper": "includes/UrlHelper.php",
 		"MediaWiki\\MassMessage\\SpecialMassMessage": "includes/SpecialMassMessage.php",
 		"MediaWiki\\MassMessage\\SpecialCreateMassMessageList": "includes/SpecialCreateMassMessageList.php",
 		"MediaWiki\\MassMessage\\SpecialEditMassMessageList": "includes/SpecialEditMassMessageList.php",
