@@ -1,5 +1,15 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use Title;
+use Revision;
+use Status;
+use EditPage;
+use Html;
+use FormSpecialPage;
+use HTMLForm;
+
 class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**

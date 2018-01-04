@@ -1,4 +1,7 @@
 <?php
+namespace MediaWiki\MassMessage;
+
+use Title;
 
 /**
  * Tests for the MassMessage extension...
@@ -18,7 +21,7 @@ class MassMessageTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessage::getDBName
+	 * @covers \Mediawiki\MassMessage\MassMessage::getDBName
 	 * @dataProvider provideGetDBName
 	 * @param string $url
 	 * @param string $expected
@@ -42,7 +45,7 @@ class MassMessageTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessage::getBaseUrl
+	 * @covers \Mediawiki\MassMessage\MassMessage::getBaseUrl
 	 * @dataProvider provideGetBaseUrl
 	 * @param  string $url      raw url to parse
 	 * @param  string $expected expected value
@@ -61,7 +64,7 @@ class MassMessageTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessage::getMessengerUser
+	 * @covers \Mediawiki\MassMessage\MassMessage::getMessengerUser
 	 * @dataProvider provideGetMessengerUser
 	 * @param string $name
 	 */
@@ -73,7 +76,7 @@ class MassMessageTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers MassMessage::followRedirect
+	 * @covers \Mediawiki\MassMessage\MassMessage::followRedirect
 	 */
 	public function testFollowRedirect() {
 		$title = Title::newfromtext( 'R1' );

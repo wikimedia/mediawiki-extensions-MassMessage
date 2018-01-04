@@ -5,6 +5,10 @@
  * This lets us use <code></code> tags in the message
  */
 
+namespace MediaWiki\MassMessage;
+
+use LogFormatter;
+
 class MassMessageFailureLogFormatter extends LogFormatter {
 
 	/**

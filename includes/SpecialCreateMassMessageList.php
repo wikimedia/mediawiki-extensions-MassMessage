@@ -1,5 +1,11 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use Title;
+use Status;
+use FormSpecialPage;
+
 class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	public function __construct() {

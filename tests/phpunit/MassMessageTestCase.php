@@ -1,4 +1,12 @@
 <?php
+namespace MediaWiki\MassMessage;
+
+use MediaWikiTestCase;
+use Title;
+use WikiPage;
+use ContentHandler;
+use SiteConfiguration;
+use User;
 
 /**
  * Abstract test case containing setup code and common functions

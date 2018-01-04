@@ -1,9 +1,18 @@
 <?php
+
+namespace MediaWiki\MassMessage;
+
+use Title;
+use Revision;
+use ApiBase;
+use LinkBatch;
+
 /**
  * API module to edit a MassMessage delivery list
  *
  * @ingroup API
  */
+
 class ApiEditMassMessageList extends ApiBase {
 
 	public function execute() {
@@ -69,19 +78,19 @@ class ApiEditMassMessageList extends ApiBase {
 			$invalidRemove = array_unique( $invalidRemove );
 
 			$newTargets = array_values( array_udiff( $newTargets, $toRemove,
-				'MassMessageListContentHandler::compareTargets' ) );
+				'MediaWiki\\MassMessage\\MassMessageListContentHandler::compareTargets' ) );
 		}
 
 		if ( isset( $data['add'] ) ) {
 			$added = array_values( array_udiff( $newTargets, $targets,
-				'MassMessageListContentHandler::compareTargets' ) );
+				'MediaWiki\\MassMessage\\MassMessageListContentHandler::compareTargets' ) );
 		} else {
 			$added = [];
 		}
 
 		if ( isset( $data['remove'] ) ) {
 			$removed = array_values( array_udiff( $targets, $newTargets,
-				'MassMessageListContentHandler::compareTargets' ) );
+				'MediaWiki\\MassMessage\\MassMessageListContentHandler::compareTargets' ) );
 		} else {
 			$removed = [];
 		}

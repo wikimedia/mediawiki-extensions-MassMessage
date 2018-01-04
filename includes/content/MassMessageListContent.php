@@ -1,5 +1,16 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use Language;
+use Html;
+use Linker;
+use ParserOptions;
+use ParserOutput;
+use JsonContent;
+use Title;
+use LinkBatch;
+
 class MassMessageListContent extends JsonContent {
 
 	/**

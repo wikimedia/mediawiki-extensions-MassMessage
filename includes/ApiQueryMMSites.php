@@ -4,6 +4,12 @@
  *
  * @ingroup API
  */
+
+namespace MediaWiki\MassMessage;
+
+use ApiBase;
+use ApiQueryBase;
+
 class ApiQueryMMSites extends ApiQueryBase {
 
 	public function execute() {

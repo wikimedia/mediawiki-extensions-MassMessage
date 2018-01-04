@@ -8,6 +8,22 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+namespace MediaWiki\MassMessage;
+
+use Parser;
+use ParserOptions;
+use Exception;
+use Title;
+use WikiPage;
+use User;
+use JobQueueGroup;
+use CentralIdLookup;
+use Revision;
+use ManualLogEntry;
+use WikiMap;
+use Status;
+use RequestContext;
+
 class MassMessage {
 
 	/**
@@ -326,7 +342,7 @@ class MassMessage {
 		$params = [
 			'data' => $data,
 			'pages' => $pages,
-			'class' => 'MassMessageJob',
+			'class' => MassMessageJob::class,
 		];
 		$job = new MassMessageSubmitJob( $spamlist, $params );
 		JobQueueGroup::singleton()->push( $job );

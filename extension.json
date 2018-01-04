@@ -31,14 +31,14 @@
 		"MassMessageMagic": "MassMessage.i18n.magic.php"
 	},
 	"APIModules": {
-		"massmessage": "ApiMassMessage",
-		"editmassmessagelist": "ApiEditMassMessageList"
+		"massmessage": "MediaWiki\\MassMessage\\ApiMassMessage",
+		"editmassmessagelist": "MediaWiki\\MassMessage\\ApiEditMassMessageList"
 	},
 	"LogTypes": [
 		"massmessage"
 	],
 	"APIListModules": {
-		"mmsites": "ApiQueryMMSites"
+		"mmsites": "MediaWiki\\MassMessage\\ApiQueryMMSites"
 	},
 	"MessagesDirs": {
 		"MassMessage": [
@@ -52,38 +52,38 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
-			"MassMessageHooks::onParserFirstCallInit"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onParserFirstCallInit"
 		],
 		"SpecialStatsAddExtra": [
-			"MassMessageHooks::onSpecialStatsAddExtra"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onSpecialStatsAddExtra"
 		],
 		"APIQuerySiteInfoStatisticsInfo": [
-			"MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo"
 		],
 		"RenameUserPreRename": [
-			"MassMessageHooks::onRenameUserPreRename"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onRenameUserPreRename"
 		],
 		"UserGetReservedNames": [
-			"MassMessageHooks::onUserGetReservedNames"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onUserGetReservedNames"
 		],
 		"BeforeEchoEventInsert": [
-			"MassMessageHooks::onBeforeEchoEventInsert"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onBeforeEchoEventInsert"
 		],
 		"SkinTemplateNavigation": [
-			"MassMessageHooks::onSkinTemplateNavigation"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation"
 		],
 		"BeforePageDisplay": [
-			"MassMessageHooks::onBeforePageDisplay"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onBeforePageDisplay"
 		],
 		"ListDefinedTags": [
-			"MassMessageHooks::onRegisterTags"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
 		],
 		"ChangeTagsListActive": [
-			"MassMessageHooks::onRegisterTags"
+			"MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
 		]
 	},
 	"ContentHandlers": {
-		"MassMessageListContent": "MassMessageListContentHandler"
+		"MassMessageListContent": "MediaWiki\\MassMessage\\MassMessageListContentHandler"
 	},
 	"ResourceModules": {
 		"ext.MassMessage.autocomplete": {
@@ -170,9 +170,9 @@
 		"remoteExtPath": "MassMessage/modules"
 	},
 	"JobClasses": {
-		"MassMessageJob": "MassMessageJob",
-		"MassMessageSubmitJob": "MassMessageSubmitJob",
-		"MassMessageServerSideJob": "MassMessageServerSideJob"
+		"MassMessageJob": "MediaWiki\\MassMessage\\MassMessageJob",
+		"MassMessageSubmitJob": "MediaWiki\\MassMessage\\MassMessageSubmitJob",
+		"MassMessageServerSideJob": "MediaWiki\\MassMessage\\MassMessageServerSideJob"
 	},
 	"GroupPermissions": {
 		"sysop": {
@@ -181,11 +181,11 @@
 	},
 	"LogActionsHandlers": {
 		"massmessage/*": "LogFormatter",
-		"massmessage/send": "MassMessageSendLogFormatter",
-		"massmessage/failure": "MassMessageFailureLogFormatter",
-		"massmessage/skipoptout": "MassMessageSkipLogFormatter",
-		"massmessage/skipnouser": "MassMessageSkipLogFormatter",
-		"massmessage/skipbadns": "MassMessageSkipLogFormatter"
+		"massmessage/send": "MediaWiki\\MassMessage\\MassMessageSendLogFormatter",
+		"massmessage/failure": "MediaWiki\\MassMessage\\MassMessageFailureLogFormatter",
+		"massmessage/skipoptout": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter",
+		"massmessage/skipnouser": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter",
+		"massmessage/skipbadns": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter"
 	},
 	"ActionFilteredLogs": {
 		"massmessage": {
@@ -200,31 +200,31 @@
 		"massmessage"
 	],
 	"SpecialPages": {
-		"MassMessage": "SpecialMassMessage",
-		"CreateMassMessageList": "SpecialCreateMassMessageList",
-		"EditMassMessageList": "SpecialEditMassMessageList"
+		"MassMessage": "MediaWiki\\MassMessage\\SpecialMassMessage",
+		"CreateMassMessageList": "MediaWiki\\MassMessage\\SpecialCreateMassMessageList",
+		"EditMassMessageList": "MediaWiki\\MassMessage\\SpecialEditMassMessageList"
 	},
 	"AutoloadClasses": {
-		"MassMessageHooks": "MassMessage.hooks.php",
-		"ApiMassMessage": "includes/ApiMassMessage.php",
-		"ApiEditMassMessageList": "includes/ApiEditMassMessageList.php",
-		"ApiQueryMMSites": "includes/ApiQueryMMSites.php",
-		"MassMessage": "includes/MassMessage.php",
-		"MassMessageTargets": "includes/MassMessageTargets.php",
-		"SpecialMassMessage": "includes/SpecialMassMessage.php",
-		"SpecialCreateMassMessageList": "includes/SpecialCreateMassMessageList.php",
-		"SpecialEditMassMessageList": "includes/SpecialEditMassMessageList.php",
-		"MassMessageJob": "includes/job/MassMessageJob.php",
-		"MassMessageServerSideJob": "includes/job/MassMessageServerSideJob.php",
-		"MassMessageSubmitJob": "includes/job/MassMessageSubmitJob.php",
-		"MassMessageFailureLogFormatter": "includes/logging/MassMessageFailureLogFormatter.php",
-		"MassMessageSendLogFormatter": "includes/logging/MassMessageSendLogFormatter.php",
-		"MassMessageSkipLogFormatter": "includes/logging/MassMessageSkipLogFormatter.php",
-		"MassMessageListContent": "includes/content/MassMessageListContent.php",
-		"MassMessageListContentHandler": "includes/content/MassMessageListContentHandler.php",
-		"MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php",
-		"MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
-		"MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php"
+		"MediaWiki\\MassMessage\\MassMessageHooks": "MassMessage.hooks.php",
+		"MediaWiki\\MassMessage\\ApiMassMessage": "includes/ApiMassMessage.php",
+		"MediaWiki\\MassMessage\\ApiEditMassMessageList": "includes/ApiEditMassMessageList.php",
+		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/ApiQueryMMSites.php",
+		"MediaWiki\\MassMessage\\MassMessage": "includes/MassMessage.php",
+		"MediaWiki\\MassMessage\\MassMessageTargets": "includes/MassMessageTargets.php",
+		"MediaWiki\\MassMessage\\SpecialMassMessage": "includes/SpecialMassMessage.php",
+		"MediaWiki\\MassMessage\\SpecialCreateMassMessageList": "includes/SpecialCreateMassMessageList.php",
+		"MediaWiki\\MassMessage\\SpecialEditMassMessageList": "includes/SpecialEditMassMessageList.php",
+		"MediaWiki\\MassMessage\\MassMessageJob": "includes/job/MassMessageJob.php",
+		"MediaWiki\\MassMessage\\MassMessageServerSideJob": "includes/job/MassMessageServerSideJob.php",
+		"MediaWiki\\MassMessage\\MassMessageSubmitJob": "includes/job/MassMessageSubmitJob.php",
+		"MediaWiki\\MassMessage\\MassMessageFailureLogFormatter": "includes/logging/MassMessageFailureLogFormatter.php",
+		"MediaWiki\\MassMessage\\MassMessageSendLogFormatter": "includes/logging/MassMessageSendLogFormatter.php",
+		"MediaWiki\\MassMessage\\MassMessageSkipLogFormatter": "includes/logging/MassMessageSkipLogFormatter.php",
+		"MediaWiki\\MassMessage\\MassMessageListContent": "includes/content/MassMessageListContent.php",
+		"MediaWiki\\MassMessage\\MassMessageListContentHandler": "includes/content/MassMessageListContentHandler.php",
+		"MediaWiki\\MassMessage\\MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php",
+		"MediaWiki\\MassMessage\\MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
+		"MediaWiki\\MassMessage\\MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php"
 	},
 	"manifest_version": 1
 }

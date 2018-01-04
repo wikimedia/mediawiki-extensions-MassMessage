@@ -4,6 +4,14 @@
  * Functions related to target processing
  */
 
+namespace MediaWiki\MassMessage;
+
+use Title;
+use Revision;
+use Category;
+use Parser;
+use WikiPage;
+
 class MassMessageTargets {
 
 	/**
@@ -152,7 +160,7 @@ class MassMessageTargets {
 		// Now overwrite it
 		$parser->setFunctionHook(
 			'target',
-			'MassMessageHooks::storeDataParserFunction'
+			'MediaWiki\\MassMessage\\MassMessageHooks::storeDataParserFunction'
 		);
 
 		// Parse
