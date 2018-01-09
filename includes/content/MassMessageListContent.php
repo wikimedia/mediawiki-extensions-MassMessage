@@ -97,7 +97,7 @@ class MassMessageListContent extends JsonContent {
 		foreach ( $targets as $target ) {
 			if ( !array_key_exists( 'site', $target )
 				|| $wgAllowGlobalMessaging
-				&& MassMessage::getDBName( $target['site'] ) !== null
+				&& DatabaseLookup::getDBName( $target['site'] ) !== null
 			) {
 				$validTargets[] = $target;
 			}
@@ -120,7 +120,7 @@ class MassMessageListContent extends JsonContent {
 			} elseif ( strpos( $target['title'], '@' ) !== false ) {
 				// List the site if it'd otherwise be ambiguous
 				$targetStrings[] = $target['title'] . '@'
-					. MassMessage::getBaseUrl( $wgCanonicalServer );
+					. UrlHelper::getBaseUrl( $wgCanonicalServer );
 			} else {
 				$targetStrings[] = $target['title'];
 			}
@@ -321,12 +321,12 @@ class MassMessageListContent extends JsonContent {
 		$html .= Html::element( 'label', [ 'for' => 'mw-massmessage-addtitle' ],
 			wfMessage( 'massmessage-content-addtitle' )->inLanguage( $lang )->text() );
 		$html .= Html::input( 'title', '', 'text', [ 'id' => 'mw-massmessage-addtitle' ] );
-		if ( $wgAllowGlobalMessaging && count( MassMessage::getDatabases() ) > 1 ) {
+		if ( $wgAllowGlobalMessaging && count( DatabaseLookup::getDatabases() ) > 1 ) {
 			$html .= Html::element( 'label', [ 'for' => 'mw-massmessage-addsite' ],
 				wfMessage( 'massmessage-content-addsite' )->inLanguage( $lang )->text() );
 			$html .= Html::input( 'site', '', 'text', [
 				'id' => 'mw-massmessage-addsite',
-				'placeholder' => MassMessage::getBaseUrl( $wgCanonicalServer )
+				'placeholder' => UrlHelper::getBaseUrl( $wgCanonicalServer )
 			] );
 		}
 		$html .= Html::input( 'submit',

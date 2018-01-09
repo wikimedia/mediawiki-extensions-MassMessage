@@ -90,7 +90,7 @@ class MassMessageTargets {
 					$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()],
 						$title->getText() );
 				}
-				$title = MassMessage::followRedirect( $title );
+				$title = UrlHelper::followRedirect( $title );
 				if ( $title === null ) {
 					continue; // Interwiki redirect
 				}
@@ -118,7 +118,7 @@ class MassMessageTargets {
 			$targets[] = [
 				'title' => $member->getPrefixedText(),
 				'wiki' => wfWikiID(),
-				'site' => MassMessage::getBaseUrl( $wgCanonicalServer ),
+				'site' => UrlHelper::getBaseUrl( $wgCanonicalServer ),
 			];
 		}
 		return $targets;
@@ -135,9 +135,9 @@ class MassMessageTargets {
 		$targets = Revision::newFromTitle( $spamlist )->getContent()->getValidTargets();
 		foreach ( $targets as &$target ) {
 			if ( array_key_exists( 'site', $target ) ) {
-				$target['wiki'] = MassMessage::getDBName( $target['site'] );
+				$target['wiki'] = DatabaseLookup::getDBName( $target['site'] );
 			} else {
-				$target['site'] = MassMessage::getBaseUrl( $wgCanonicalServer );
+				$target['site'] = UrlHelper::getBaseUrl( $wgCanonicalServer );
 				$target['wiki'] = wfWikiId();
 			}
 		}

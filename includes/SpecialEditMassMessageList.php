@@ -187,7 +187,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 		if ( $this->rev ) {
 			// Instructions
-			if ( $wgAllowGlobalMessaging && count( MassMessage::getDatabases() ) > 1 ) {
+			if ( $wgAllowGlobalMessaging && count( DatabaseLookup::getDatabases() ) > 1 ) {
 				$headerKey = 'massmessage-edit-headermulti';
 			} else {
 				$headerKey = 'massmessage-edit-header';

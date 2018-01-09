@@ -14,37 +14,15 @@ use Parser;
 use ParserOptions;
 use Exception;
 use Title;
-use WikiPage;
 use User;
 use JobQueueGroup;
 use CentralIdLookup;
 use Revision;
 use ManualLogEntry;
-use WikiMap;
-use Status;
 use RequestContext;
+use Status;
 
 class MassMessage {
-
-	/**
-	 * Function to follow redirects
-	 *
-	 * @param Title $title
-	 * @return Title|null null if the page is an interwiki redirect
-	 */
-	public static function followRedirect( Title $title ) {
-		if ( !$title->isRedirect() ) {
-			return $title;
-		}
-		$wikipage = WikiPage::factory( $title );
-
-		$target = $wikipage->followRedirect();
-		if ( $target instanceof Title ) {
-			return $target;
-		} else {
-			return null; // Interwiki redirect
-		}
-	}
 
 	/**
 	 * Sets up the messenger account for our use if it hasn't been already.
@@ -68,71 +46,6 @@ class MassMessage {
 	}
 
 	/**
-	 * Returns the basic hostname and port using wfParseUrl
-	 * @param string $url
-	 * @return string
-	 */
-	public static function getBaseUrl( $url ) {
-		static $mapping = [];
-
-		if ( isset( $mapping[$url] ) ) {
-			return $mapping[$url];
-		}
-
-		$parse = wfParseUrl( $url );
-		$mapping[$url] = $parse['host'];
-		if ( isset( $parse['port'] ) ) {
-			$mapping[$url] .= ':' . $parse['port'];
-		}
-		return $mapping[$url];
-	}
-
-	/**
-	 * Get a mapping from site domains to database names
-	 * Requires $wgConf to be set up properly
-	 * Tries to read from cache if possible
-	 * @return array
-	 */
-	public static function getDatabases() {
-		global $wgConf, $wgMemc;
-		static $mapping = null;
-		if ( $mapping === null ) {
-			$key = wfGlobalCacheKey( 'massmessage:urltodb' );
-			$data = $wgMemc->get( $key );
-			if ( $data === false ) {
-				$dbs = $wgConf->getLocalDatabases();
-				$mapping = [];
-				foreach ( $dbs as $dbname ) {
-					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
-					$site = self::getBaseUrl( $url );
-					$mapping[$site] = $dbname;
-				}
-				$wgMemc->set( $key, $mapping, 60 * 60 );
-			} else {
-				$mapping = $data;
-			}
-		}
-		return $mapping;
-	}
-
-	/**
-	 * Get database name from URL hostname
-	 * @param string $host
-	 * @return string
-	 */
-	public static function getDBName( $host ) {
-		global $wgMassMessageWikiAliases;
-		$mapping = self::getDatabases();
-		if ( isset( $mapping[$host] ) ) {
-			return $mapping[$host];
-		}
-		if ( isset( $wgMassMessageWikiAliases[$host] ) ) {
-			return $wgMassMessageWikiAliases[$host];
-		}
-		return null; // Couldn't find anything
-	}
-
-	/**
 	 * Verify that parser function data is valid and return processed data as an array
 	 * @param string $page
 	 * @param string $site
@@ -147,10 +60,10 @@ class MassMessage {
 
 		$data = [ 'title' => $page, 'site' => trim( $site ) ];
 		if ( $data['site'] === '' ) {
-			$data['site'] = self::getBaseUrl( $wgCanonicalServer );
+			$data['site'] = UrlHelper::getBaseUrl( $wgCanonicalServer );
 			$data['wiki'] = wfWikiID();
 		} else {
-			$data['wiki'] = self::getDBName( $data['site'] );
+			$data['wiki'] = DatabaseLookup::getDBName( $data['site'] );
 			if ( $data['wiki'] === null ) {
 				return self::parserError( 'massmessage-parse-badurl', $site );
 			}
@@ -274,7 +187,7 @@ class MassMessage {
 			return 'massmessage-spamlist-doesnotexist';
 		} else {
 			// Page exists, follow a redirect if possible
-			$target = self::followRedirect( $spamlist );
+			$target = UrlHelper::followRedirect( $spamlist );
 			if ( $target === null || !$target->exists() ) {
 				return 'massmessage-spamlist-invalid'; // Interwiki redirect or non-existent page.
 			} else {
