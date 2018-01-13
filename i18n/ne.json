@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"NehalDaveND"
+			"NehalDaveND",
+			"बिप्लब आनन्द"
 		]
 	},
+	"massmessage": "सामूहिक सन्देश पठाउनुहोस्",
+	"createmassmessagelist": "सामूहिक सन्देश पठाउन सूची तयार गर्नुहोस्",
 	"massmessage-form-preview": "पूर्वावलोकन",
 	"massmessage-form-submit": "पठाउनुहोस्",
 	"massmessage-fieldset-preview": "पूर्वावलोकन",
