@@ -40,5 +40,7 @@
 	"massmessage-cannot-rename": "Det as en süsteemkonto an koon ei amnäämd wurd.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Ian bööd muar schüür]] of iarst ans [[Special:Statistics|luke, hü fölen al üüb a postluuper teew]].",
 	"createmassmessagelist-legend": "Streibriaf-adreslist maage",
-	"massmessage-create-editsummary": "Streibriaf-adreslist maage"
+	"massmessage-create-editsummary": "Streibriaf-adreslist maage",
+	"tag-massmessage-delivery": "Ferschüüren faan streibriaw",
+	"log-action-filter-massmessage-send": "Ferschüüren faan streibriaw"
 }
