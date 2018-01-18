@@ -44,7 +44,7 @@
 	"logentry-massmessage-skipoptout": "توصيل \"$4\" إلى $3 تم تجاوزه لأن الهدف ألغى اشتراكه في توصيل الرسائل",
 	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
 	"massmessage-cannot-rename": "هذا حساب نظام ولا يمكن إعادة تسميته.",
-	"massmessage-nextsteps": "[[خاص:رسائل كمية|أرسل رسالة أخرى]] أو [[خاص:إحصاءات|شاهد عدد الرسائل في الطابور]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|أرسل رسالة أخرى]] أو [[Special:MassMessage|شاهد عدد الرسائل في الطابور]].",
 	"massmessage-content-pages": "الصفحات في القائمة",
 	"massmessage-content-localpages": "الصفحات على هذا الويكي:",
 	"massmessage-content-remove": "حذف",
