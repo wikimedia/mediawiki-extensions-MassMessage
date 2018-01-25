@@ -7,7 +7,8 @@
 			"아라",
 			"Revi",
 			"SeoJeongHo",
-			"Ykhwong"
+			"Ykhwong",
+			"IRTC1015"
 		]
 	},
 	"massmessage": "메시지 대량 보내기",
@@ -96,6 +97,7 @@
 	"apihelp-massmessage-param-message": "메시지 본문입니다.",
 	"apihelp-massmessage-example-1": "[[Signpost Spamlist]]의 목록에 \"New Signpost\"라는 제목과 \"Please read it\"라는 본문의 메시지를 보냅니다",
 	"apierror-massmessage-invalidspamlist": "지정된 스팸리스트가 올바르지 않습니다.",
+	"tag-massmessage-delivery": "대량 메시지 전송",
 	"tag-massmessage-delivery-description": "[[:mw:Extension:MassMessage|확장기능:대량메시지]]를 사용하여 메시지 전송",
 	"log-action-filter-massmessage-send": "대량 메시지 제출",
 	"log-action-filter-massmessage-failure": "대량 메시지 전송 실패"
