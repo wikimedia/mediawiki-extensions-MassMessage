@@ -9,6 +9,8 @@ use EditPage;
 use Html;
 use FormSpecialPage;
 use HTMLForm;
+use MWNamespace;
+use LogEventsList;
 
 class SpecialEditMassMessageList extends FormSpecialPage {
 
