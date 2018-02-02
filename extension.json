@@ -108,11 +108,9 @@
 			]
 		},
 		"ext.MassMessage.special": {
-			"position": "top",
 			"styles": "ext.MassMessage.special.css"
 		},
 		"ext.MassMessage.content": {
-			"position": "top",
 			"styles": "ext.MassMessage.content.css"
 		},
 		"ext.MassMessage.content.js": {
@@ -140,11 +138,9 @@
 			]
 		},
 		"ext.MassMessage.content.noedit": {
-			"position": "top",
 			"styles": "ext.MassMessage.content.noedit.css"
 		},
 		"ext.MassMessage.content.nojs": {
-			"position": "top",
 			"styles": "ext.MassMessage.content.nojs.css"
 		},
 		"ext.MassMessage.create": {
