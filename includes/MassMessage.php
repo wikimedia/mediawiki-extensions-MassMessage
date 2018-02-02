@@ -240,7 +240,7 @@ class MassMessage {
 		$spamlist = self::getSpamlist( $data['spamlist'] );
 
 		// Get the array of pages to deliver to.
-		$pages = MassMessageTargets::getTargets( $spamlist );
+		$pages = SpamlistLookup::getTargets( $spamlist );
 
 		// Log it.
 		self::logToWiki( $spamlist, $user, $data['subject'] );

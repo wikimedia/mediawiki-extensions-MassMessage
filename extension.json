@@ -210,9 +210,12 @@
 		"MediaWiki\\MassMessage\\ApiEditMassMessageList": "includes/ApiEditMassMessageList.php",
 		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/ApiQueryMMSites.php",
 		"MediaWiki\\MassMessage\\MassMessage": "includes/MassMessage.php",
-		"MediaWiki\\MassMessage\\MassMessageTargets": "includes/MassMessageTargets.php",
+		"MediaWiki\\MassMessage\\SpamlistLookup": "includes/SpamlistLookup.php",
 		"MediaWiki\\MassMessage\\DatabaseLookup": "includes/DatabaseLookup.php",
 		"MediaWiki\\MassMessage\\UrlHelper": "includes/UrlHelper.php",
+		"MediaWiki\\MassMessage\\CategorySpamlistLookup": "includes/CategorySpamlistLookup.php",
+		"MediaWiki\\MassMessage\\ListContentSpamlistLookup": "includes/ListContentSpamlistLookup.php",
+		"MediaWiki\\MassMessage\\ParserFunctionSpamlistLookup": "includes/ParserFunctionSpamlistLookup.php",
 		"MediaWiki\\MassMessage\\SpecialMassMessage": "includes/SpecialMassMessage.php",
 		"MediaWiki\\MassMessage\\SpecialCreateMassMessageList": "includes/SpecialCreateMassMessageList.php",
 		"MediaWiki\\MassMessage\\SpecialEditMassMessageList": "includes/SpecialEditMassMessageList.php",
@@ -227,6 +230,7 @@
 		"MediaWiki\\MassMessage\\MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php",
 		"MediaWiki\\MassMessage\\MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
 		"MediaWiki\\MassMessage\\MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php"
+
 	},
 	"manifest_version": 1
 }
