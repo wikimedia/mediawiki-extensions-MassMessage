@@ -163,7 +163,10 @@
 		},
 		"ext.MassMessage.edit": {
 			"scripts": "ext.MassMessage.edit.js",
-			"dependencies": "jquery.byteLimit"
+			"dependencies": [
+				"oojs-ui",
+				"mediawiki.widgets.visibleByteLimit"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
