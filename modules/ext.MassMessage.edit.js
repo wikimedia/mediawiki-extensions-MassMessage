@@ -4,6 +4,10 @@
 
 		// Limit edit summaries to 240 bytes
 		// From ext.MassMessage.special.js
-		$( '#mw-input-wpsummary' ).byteLimit();
+		var $summary = $( '#mw-input-wpsummary' );
+
+		if ( $summary.length ) {
+			mw.widgets.visibleByteLimit( OO.ui.infuse( $summary ) );
+		}
 	} );
 }( mediaWiki, jQuery ) );
