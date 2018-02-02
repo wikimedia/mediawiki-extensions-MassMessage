@@ -152,6 +152,7 @@
 			],
 			"dependencies": [
 				"oojs-ui-core",
+				"mediawiki.htmlform.ooui",
 				"mediawiki.jqueryMsg",
 				"ext.MassMessage.autocomplete"
 			]
