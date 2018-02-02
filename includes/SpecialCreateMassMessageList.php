@@ -37,6 +37,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			'description' => [
 				'type' => 'textarea',
 				'rows' => 5,
+				'useeditfont' => true,
 				'label-message' => 'massmessage-create-description',
 			],
 			'content' => [
