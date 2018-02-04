@@ -20,7 +20,7 @@
 					title: title
 				};
 				if ( missing ) {
-					targetAttribs[ 'class' ] = 'new';
+					targetAttribs.class = 'new';
 				}
 				targetLink = mw.html.element( 'a', targetAttribs, title );
 			} else {
@@ -91,8 +91,7 @@
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
 				remove: param
-			} )
-			.done( function () {
+			} ).done( function () {
 				$link.closest( 'li' ).fadeOut( 400, function () { // 400 is the default duration.
 					var $list = $link.closest( 'ul' );
 
@@ -105,8 +104,7 @@
 						);
 					}
 				} );
-			} )
-			.fail( function ( errorCode ) {
+			} ).fail( function ( errorCode ) {
 				// eslint-disable-next-line no-alert
 				alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );
 			} );
@@ -163,8 +161,7 @@
 				action: 'editmassmessagelist',
 				spamlist: mw.config.get( 'wgPageName' ),
 				add: getApiParam( title, site )
-			} )
-			.done( function ( data ) {
+			} ).done( function ( data ) {
 				apiResult = data.editmassmessagelist;
 
 				if ( apiResult.result === 'Success' ) {
@@ -191,8 +188,7 @@
 						showAddError( 'massmessage-content-invalidsite' );
 					}
 				}
-			} )
-			.fail( function ( errorCode ) {
+			} ).fail( function ( errorCode ) {
 				showAddError( 'massmessage-content-adderror', errorCode );
 			} );
 		} );

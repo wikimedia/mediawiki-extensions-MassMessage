@@ -29,8 +29,7 @@
 					action: 'query',
 					list: 'mmsites',
 					term: request.term
-				} )
-				.done( function ( data ) {
+				} ).done( function ( data ) {
 					response( data.query.mmsites );
 				} );
 			}

@@ -32,7 +32,7 @@
 
 			// Ignore tags that have '/' outside of the first character
 			// (assume those are self closing).
-			matches = code.match( /<[\w\/][^\/]*?>/g );
+			matches = code.match( /<[\w/][^/]*?>/g );
 			if ( !matches ) {
 				$warnings.hide();
 				return;
