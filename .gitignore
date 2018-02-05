@@ -5,3 +5,4 @@
 composer.lock
 vendor
 node_modules/
+tests/phan/issues

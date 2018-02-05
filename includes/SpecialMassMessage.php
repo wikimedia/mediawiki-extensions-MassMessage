@@ -47,6 +47,9 @@ class SpecialMassMessage extends SpecialPage {
 		return true;
 	}
 
+	/**
+	 * @param null|string $par
+	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
 		$context = $this->getContext();

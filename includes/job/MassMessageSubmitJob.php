@@ -40,7 +40,7 @@ class MassMessageSubmitJob extends Job {
 	}
 
 	/**
-	 * @return Job[][]
+	 * @return \Job[][]
 	 */
 	public function getJobs() {
 		$data = $this->params['data'];

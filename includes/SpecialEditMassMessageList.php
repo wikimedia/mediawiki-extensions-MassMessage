@@ -144,6 +144,9 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return [];
 		}
 
+		/**
+		 * @var MassMessageListContent $content
+		 */
 		$content = $this->rev->getContent( Revision::FOR_THIS_USER, $this->getUser() );
 		$description = $content->getDescription();
 		$targets = $content->getTargetStrings();
@@ -230,7 +233,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**
 	 * @param array $data
-	 * @param HTMLForm $form
+	 * @param HTMLForm|null $form
 	 * @return Status
 	 */
 	public function onSubmit( array $data, HTMLForm $form = null ) {

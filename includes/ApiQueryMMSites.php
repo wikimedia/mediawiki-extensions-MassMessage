@@ -33,6 +33,11 @@ class ApiQueryMMSites extends ApiQueryBase {
 		$result->addValue( 'query', $this->getModuleName(), $matches );
 	}
 
+	/**
+	 * @param array $params
+	 *
+	 * @return string
+	 */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}

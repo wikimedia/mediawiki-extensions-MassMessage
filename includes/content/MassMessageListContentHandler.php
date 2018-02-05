@@ -11,6 +11,7 @@ use DerivativeRequest;
 use ApiMain;
 use IContextSource;
 use ApiUsageException;
+use UsageException;
 
 class MassMessageListContentHandler extends JsonContentHandler {
 

@@ -8,6 +8,7 @@ namespace MediaWiki\MassMessage;
 use Html;
 use Content;
 use DifferenceEngine;
+use Exception;
 
 class MassMessageListDiffEngine extends DifferenceEngine {
 
@@ -47,8 +48,8 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 		}
 
 		$targetsDiff = $this->generateTextDiffBody(
-			implode( $old->getTargetStrings(), "\n" ),
-			implode( $new->getTargetStrings(), "\n" )
+			implode( "\n", $old->getTargetStrings() ),
+			implode( "\n", $new->getTargetStrings() )
 		);
 		if ( $targetsDiff === false ) {
 			return false;

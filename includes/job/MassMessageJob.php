@@ -26,6 +26,8 @@ use DeferredUpdates;
 use ChangeTags;
 use ApiMessage;
 use LqtDispatch;
+use ApiUsageException;
+use UsageException;
 
 class MassMessageJob extends Job {
 
@@ -283,7 +285,7 @@ class MassMessageJob extends Job {
 	/**
 	 * Construct and make an API request based on the given params and return the results
 	 * @param array $params
-	 * @return ApiResult
+	 * @return \ApiResult
 	 */
 	protected function makeAPIRequest( array $params ) {
 		global $wgHooks, $wgUser, $wgRequest;
