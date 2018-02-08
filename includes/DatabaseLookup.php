@@ -2,6 +2,7 @@
 namespace MediaWiki\MassMessage;
 
 use WikiMap;
+use MediaWiki\MediaWikiServices;
 
 class DatabaseLookup {
 
@@ -12,24 +13,29 @@ class DatabaseLookup {
 	 * @return array
 	 */
 	public static function getDatabases() {
-		global $wgConf, $wgMemc;
 		static $mapping = null;
 		if ( $mapping === null ) {
-			$key = wfGlobalCacheKey( 'massmessage:urltodb' );
-			$data = $wgMemc->get( $key );
-			if ( $data === false ) {
-				$dbs = $wgConf->getLocalDatabases();
-				$mapping = [];
-				foreach ( $dbs as $dbname ) {
-					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
-					$site = UrlHelper::getBaseUrl( $url );
-					$mapping[$site] = $dbname;
+			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+
+			$mapping = $cache->getWithSetCallback(
+				$cache->makeGlobalKey( 'massmessage', 'urltodb' ),
+				$cache::TTL_HOUR,
+				function () {
+					global $wgConf;
+
+					$dbs = $wgConf->getLocalDatabases();
+					$mapping = [];
+					foreach ( $dbs as $dbname ) {
+						$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
+						$site = UrlHelper::getBaseUrl( $url );
+						$mapping[$site] = $dbname;
+					}
+
+					return $mapping;
 				}
-				$wgMemc->set( $key, $mapping, 60 * 60 );
-			} else {
-				$mapping = $data;
-			}
+			);
 		}
+
 		return $mapping;
 	}
 
