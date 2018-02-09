@@ -6,6 +6,9 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MediaWikiServices;
+use WANObjectCache;
+
 use Title;
 
 abstract class SpamlistLookup {
@@ -32,39 +35,38 @@ abstract class SpamlistLookup {
 	 * @return array|null
 	 */
 	public static function getTargets( Title $spamlist, $normalize = true ) {
-		global $wgMemc;
-
 		if ( !$spamlist->exists() && !$spamlist->inNamespace( NS_CATEGORY ) ) {
 			return null;
 		}
 
 		$lookup = self::factory( $spamlist );
-		// Try to lookup cached targets
-		$cacheKey = null;
-		if ( $lookup->isCachable() ) {
-			$cacheKey = wfMemcKey( 'massmessage', 'targets', $spamlist->getLatestRevId(),
-				$spamlist->getTouched() );
-			$cacheTargets = $wgMemc->get( $cacheKey );
-			if ( $cacheTargets !== false ) {
-				return $cacheTargets;
+		$callback = function ( $old = null, &$ttl = null ) use ( $lookup, $spamlist, $normalize ) {
+			$targets = $lookup->fetchTargets();
+			if ( $targets && $normalize ) {
+				$value = self::normalizeTargets( $targets );
+			} else {
+				$value = $targets;
+				// Do not cache negatives (null or []) nor non-normalized lists
+				$ttl = WANObjectCache::TTL_UNCACHEABLE;
 			}
-		}
 
-		$targets = $lookup->fetchTargets();
+			return $value;
+		};
 
-		if ( !$targets ) {
-			return $targets; // null or empty array
-		}
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 
-		if ( $normalize ) {
-			$normalized = self::normalizeTargets( $targets );
-			if ( $cacheKey ) { // $spamlist is not a category
-				$wgMemc->set( $cacheKey, $normalized, 60 * 20 );
-			}
-			return $normalized;
-		} else {
-			return $targets;
-		}
+		return $lookup->isCachable()
+			? $cache->getWithSetCallback(
+				$cache->makeKey(
+					'massmessage',
+					'targets',
+					$spamlist->getLatestRevId(),
+					$spamlist->getTouched()
+				),
+				$cache::TTL_HOUR,
+				$callback
+			)
+			: $callback();
 	}
 
 	/**
