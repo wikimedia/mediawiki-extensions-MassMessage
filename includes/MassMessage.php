@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
 
 /**
  * Some core functions needed by the extension.
@@ -21,6 +20,7 @@ use JobQueueGroup;
 use CentralIdLookup;
 use Revision;
 use ManualLogEntry;
+use MediaWiki\MediaWikiServices;
 use RequestContext;
 use Status;
 
