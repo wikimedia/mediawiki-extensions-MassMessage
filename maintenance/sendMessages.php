@@ -16,7 +16,7 @@ use Title;
  * Excepts a page list formatted as a .tsv file, with "PageName\tWikiId" on each line
  * Subject line and message body are also stored as files
  */
-class SendMassMessages extends Maintenance {
+class SendMessages extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addOption( 'pagelist', 'Name of file with a list of pages to send to in it', true, true );
@@ -81,5 +81,5 @@ class SendMassMessages extends Maintenance {
 	}
 }
 
-$maintClass = 'SendMassMessages';
+$maintClass = SendMessages::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -158,7 +158,7 @@ class MassMessageHooks {
 
 	/**
 	 * Override the Edit tab for delivery lists
-	 * @param SkinTemplate &$sktemplate
+	 * @param \SkinTemplate &$sktemplate
 	 * @param array &$links
 	 * @return bool
 	 */

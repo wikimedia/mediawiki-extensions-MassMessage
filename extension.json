@@ -205,7 +205,7 @@
 		"EditMassMessageList": "MediaWiki\\MassMessage\\SpecialEditMassMessageList"
 	},
 	"AutoloadClasses": {
-		"MediaWiki\\MassMessage\\MassMessageHooks": "MassMessage.hooks.php",
+		"MediaWiki\\MassMessage\\MassMessageHooks": "includes/MassMessageHooks.php",
 		"MediaWiki\\MassMessage\\ApiMassMessage": "includes/ApiMassMessage.php",
 		"MediaWiki\\MassMessage\\ApiEditMassMessageList": "includes/ApiEditMassMessageList.php",
 		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/ApiQueryMMSites.php",
