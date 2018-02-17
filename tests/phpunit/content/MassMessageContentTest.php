@@ -47,7 +47,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers\Mediawiki\MassMessage\ MassMessageListContent::getDescription
+	 * @covers \Mediawiki\MassMessage\MassMessageListContent::getDescription
 	 */
 	public function testGetDescription() {
 		$content = new MassMessageListContent( '{"description":"foo","targets":[]}' );

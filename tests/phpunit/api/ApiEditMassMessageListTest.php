@@ -10,8 +10,8 @@ use WikiPage;
  * @group API
  * @group Database
  * @group medium
+ * @covers \MediaWiki\MassMessage\ApiEditMassMessageList
  */
-
 class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'ApiEditMMListTest_spamlist';

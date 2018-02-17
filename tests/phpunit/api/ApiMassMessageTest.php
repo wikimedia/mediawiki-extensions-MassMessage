@@ -12,8 +12,8 @@ use UsageException;
  * @group API
  * @group Database
  * @group medium
+ * @covers \MediaWiki\MassMessage\ApiMassMessage
  */
-
 class ApiMassMessageTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'Help:ApiMassMessageTest_spamlist';
