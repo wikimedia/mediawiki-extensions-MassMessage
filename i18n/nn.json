@@ -37,5 +37,18 @@
 	"logentry-massmessage-skipnouser": "Leveringa av «$4» til «$3» vart hoppa over av di brukarkontoen ikkje finst",
 	"massmessage-cannot-rename": "Dette er ein systemkonto og kan ikkje døypast om.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Send endå ei melding]] eller [[Special:Statistics|sjå kor mange meldingar som er i kø]].",
+	"massmessage-content-pages": "Sider i denne lista",
+	"massmessage-content-pagesonsite": "Sider på $1:",
+	"massmessage-content-localpages": "Sider på denne wikien:",
+	"massmessage-content-remove": "fjern",
+	"massmessage-content-addtitle": "Tittel:",
+	"massmessage-content-addsite": "Nettstad:",
+	"massmessage-content-addsubmit": "Legg til side",
+	"massmessage-content-addedlistheading": "Sider lagde til:",
+	"massmessage-content-addeditem": "$1 på $2",
+	"massmessage-content-alreadyinlist": "Sida er alt i lista.",
+	"massmessage-content-invalidtitlesite": "Tittelen og nettstaden er ugyldige.",
+	"massmessage-content-invalidtitle": "Tittelen er ugyldig.",
+	"massmessage-content-invalidsite": "Nettstaden er ugyldig.",
 	"tag-massmessage-delivery": "massemeldingslevering"
 }
