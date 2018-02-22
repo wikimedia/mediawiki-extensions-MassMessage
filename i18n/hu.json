@@ -5,7 +5,8 @@
 			"Csega",
 			"Tgr",
 			"Tacsipacsi",
-			"Urbalazs"
+			"Urbalazs",
+			"Bináris"
 		]
 	},
 	"massmessage": "Tömeges üzenet küldése",
@@ -100,5 +101,6 @@
 	"apihelp-massmessage-param-subject": "Az üzenet tárgysora.",
 	"apihelp-massmessage-param-message": "Az üzenet törzse.",
 	"apihelp-massmessage-example-1": "Üzenet küldése a [[Signpost Spamlist]] lista használatával, „New Signpost” tárggyal és „Please read it” üzenettörzzsel",
+	"tag-massmessage-delivery": "Tömeges üzenetküldés",
 	"log-action-filter-massmessage": "Naplóbejegyzés típusa"
 }

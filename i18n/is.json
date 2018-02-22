@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sveinn í Felli"
+		]
+	},
+	"massmessage-form-preview": "Forskoða",
+	"massmessage-form-submit": "Senda",
+	"massmessage-fieldset-preview": "Forskoða",
+	"massmessage-fieldset-info": "Upplýsingar",
+	"massmessage-content-remove": "fjarlægja",
+	"massmessage-content-removeyes": "Fjarlægja",
+	"massmessage-content-removeno": "Hætta við",
+	"massmessage-content-empty": "Engar útgáfur eru í þessum lista.",
+	"massmessage-content-emptylist": "(ekkert)",
+	"massmessage-content-addtitle": "Titill:",
+	"massmessage-content-addsite": "Staður:",
+	"massmessage-content-addsubmit": "Bæta við síðu",
+	"massmessage-content-addeditem": "$1 á $2",
+	"massmessage-create-title": "Titill:",
+	"massmessage-create-description": "Lýsing:",
+	"massmessage-create-content": "Innihald",
+	"massmessage-create-source": "Uppruni:",
+	"massmessage-edit-pagetitle": "Breyti $1",
+	"massmessage-edit-title": "Titill:",
+	"massmessage-edit-description": "Lýsing:",
+	"massmessage-edit-summary": "Breytingarágrip:",
+	"massmessage-summary-add": "Bætti við [[:$1]]",
+	"massmessage-summary-remove": "Fjarlægði [[:$1]]"
+}
