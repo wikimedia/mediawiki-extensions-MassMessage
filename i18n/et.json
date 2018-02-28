@@ -51,9 +51,16 @@
 	"massmessage-create-import": "Impordi leheküljed olemasolevast loendist või kategooriast",
 	"massmessage-create-source": "Allikas:",
 	"massmessage-create-invalidtitle": "Määratud pealkiri on vigane.",
+	"massmessage-create-exists": "Määratud pealkirjaga lehekülg on juba olemas.",
 	"massmessage-edit-invalidtitle": "Selle pealkirja all pole sobivat hulgasõnumi saatmisloendit.",
 	"massmessage-list-category": "Hulgasõnumi saatmisloendid",
 	"massmessage-list-category-desc": "See lehekülg on [[Special:MassMessage|hulgasõnumi]] tarkvaralisa saatmisloend.",
 	"tag-massmessage-delivery": "Hulgasõnumi väljastus",
-	"tag-massmessage-delivery-description": "Sõnumi saatmine [[:mw:Extension:MassMessage|Lisa:Hulgasõnum]]i abil"
+	"tag-massmessage-delivery-description": "Sõnumi saatmine [[:mw:Extension:MassMessage|Lisa:Hulgasõnum]]i abil",
+	"log-action-filter-massmessage": "Logikande tüüp:",
+	"log-action-filter-massmessage-send": "Hulgasõnumi saatmine",
+	"log-action-filter-massmessage-failure": "Hulgasõnumi laialisaatmise nurjumine",
+	"log-action-filter-massmessage-skipoptout": "Sihtlehekülje vahelejätmine äraütlemise tõttu",
+	"log-action-filter-massmessage-skipnouser": "Sihtlehekülje vahelejätmine olematu kasutaja tõttu",
+	"log-action-filter-massmessage-skipbadns": "Sihtlehekülje vahelejätmine keelatud nimeruumi tõttu"
 }
