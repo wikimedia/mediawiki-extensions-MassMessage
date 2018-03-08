@@ -9,7 +9,8 @@
 			"SeoJeongHo",
 			"Ykhwong",
 			"IRTC1015",
-			"Nuevo Paso"
+			"Nuevo Paso",
+			"Garam"
 		]
 	},
 	"massmessage": "메시지 대량 보내기",
@@ -46,9 +47,9 @@
 	"log-description-massmessage": "이 기록 내용은 메시지를 보낸 사용자를 추적합니다.",
 	"logentry-massmessage-send": "$1님이 $3에 {{GENDER:$2|메시지를 보냈습니다}}",
 	"logentry-massmessage-failure": "$3에 \"$4\"을(를) 보내지 못했으며 오류 코드는 <code>$5</code>입니다",
-	"logentry-massmessage-skipbadns": "$3(으)로 향한 \"$4\"의 배달이 해당 이름공간에 문서를 쓸 수 없었기 때문에 건너뛰었습니다",
-	"logentry-massmessage-skipoptout": "$3(으)로 향한 \"$4\"의 배달이 목적지에서 메시지 배달을 받지 않도록 설정했기 때문에 건너뛰었습니다",
-	"logentry-massmessage-skipnouser": "\"$3\"(으)로 향한 \"$4\"의 배달이 사용자 계정이 존재하지 않기 때문에 건너뛰었습니다",
+	"logentry-massmessage-skipbadns": "\"$4\"에서 $3까지의 전달은 대상이 이름공간 내에 작성될 수 없기 때문에 건너뛰었습니다",
+	"logentry-massmessage-skipoptout": "\"$4\"에서 $3까지의 전달은 대싱이 알림 전달을 받지 않도록 설정하였기 때문에 건너뛰었습니다",
+	"logentry-massmessage-skipnouser": "\"$4\"에서 $3까지의 전달은 사용자 계정이 존재하지 않기 때문에 건너뛰었습니다",
 	"massmessage-cannot-rename": "이 계정은 시스템 계정이고 이름을 바꿀 수 없습니다.",
 	"massmessage-nextsteps": "[[Special:MassMessage|다른 메시지 보내기]] 혹은 [[Special:Statistics|얼마나 많은 메시지들이 대기 중인지 보기]]",
 	"massmessage-content-pages": "이 목록의 문서",
@@ -99,7 +100,7 @@
 	"apihelp-massmessage-example-1": "[[Signpost Spamlist]]의 목록에 \"New Signpost\"라는 제목과 \"Please read it\"라는 본문의 메시지를 보냅니다",
 	"apierror-massmessage-invalidspamlist": "지정된 스팸리스트가 올바르지 않습니다.",
 	"tag-massmessage-delivery": "대량 메시지 전송",
-	"tag-massmessage-delivery-description": "[[:mw:Extension:MassMessage|확장기능:대량메시지]]를 사용하여 전송된 메시지",
+	"tag-massmessage-delivery-description": "[[:mw:Extension:MassMessage|확장기능:대량메시지]]를 사용하여 전송한 알림",
 	"log-action-filter-massmessage-send": "대량 메시지 제출",
 	"log-action-filter-massmessage-failure": "대량 메시지 전송 실패"
 }
