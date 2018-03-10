@@ -12,7 +12,6 @@ use RequestContext;
  * @group Database
  * @group medium
  */
-
 class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'MassMessageListCHTest_spamlist';

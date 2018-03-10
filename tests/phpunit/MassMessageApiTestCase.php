@@ -7,7 +7,6 @@ use SiteConfiguration;
 /**
  * Abstract test case containing setup code and common functions
  */
-
 abstract class MassMessageApiTestCase extends ApiTestCase {
 
 	public static function setUpBeforeClass() {

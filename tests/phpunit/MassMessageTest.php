@@ -6,7 +6,6 @@ namespace MediaWiki\MassMessage;
  *
  * @group Database
  */
-
 class MassMessageTest extends MassMessageTestCase {
 
 	public static function provideGetMessengerUser() {

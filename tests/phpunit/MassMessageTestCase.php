@@ -11,7 +11,6 @@ use User;
 /**
  * Abstract test case containing setup code and common functions
  */
-
 abstract class MassMessageTestCase extends MediaWikiTestCase {
 
 	protected function setUp() {

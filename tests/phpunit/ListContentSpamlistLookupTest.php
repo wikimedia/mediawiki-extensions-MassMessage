@@ -9,7 +9,6 @@ use ContentHandler;
 /**
  * Tests for MassMessage List Content related to target processing
  */
-
 class ListContentSpamlistLookupTest extends MassMessageTestCase {
 
 	/**

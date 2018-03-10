@@ -7,7 +7,6 @@ use Title;
 /**
  * Tests for Parser functions related to target processing
  */
-
 class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 
 	/**
