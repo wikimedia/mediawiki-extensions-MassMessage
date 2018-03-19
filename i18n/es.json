@@ -133,5 +133,7 @@
 	"apihelp-query+mmsites-example-1": "Autocompletar \"es\"",
 	"tag-massmessage-delivery": "Distribución de MassMessage",
 	"tag-massmessage-delivery-description": "Mensaje distribuido usando [[:mw:Extension:MassMessage|Extensión:MassMessage]]",
-	"log-action-filter-massmessage": "Tipo de entrada del registro"
+	"log-action-filter-massmessage": "Tipo de entrada del registro",
+	"log-action-filter-massmessage-send": "Envío masivo de mensajes",
+	"log-action-filter-massmessage-failure": "Fallo de envío masivo de mensajes"
 }
