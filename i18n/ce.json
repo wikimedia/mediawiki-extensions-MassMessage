@@ -58,5 +58,7 @@
 	"massmessage-summary-remove": "ДӀаяьхна [[:$1]]",
 	"massmessage-summary-removeonsite": "$1 хийцина тӀе $2",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|дӀаяьккхина агӀо}}",
-	"massmessage-list-category": "Дукху дӀакхачоран могӀам"
+	"massmessage-list-category": "Дукху дӀакхачоран могӀам",
+	"tag-massmessage-delivery": "MassMessage дӀакхачор",
+	"tag-massmessage-delivery-description": "Хаам дӀакхачор, [[:mw:Extension:MassMessage|MassMessage шордар]] гӀоьнца"
 }
