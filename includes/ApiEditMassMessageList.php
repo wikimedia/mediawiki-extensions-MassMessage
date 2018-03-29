@@ -26,11 +26,7 @@ class ApiEditMassMessageList extends ApiBase {
 			|| !$spamlist->exists()
 			|| !$spamlist->hasContentModel( 'MassMessageListContent' )
 		) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( 'apierror-massmessage-invalidspamlist', 'invalidspamlist' );
-			} else {
-				$this->dieUsage( 'The specified spamlist is invalid', 'invalidspamlist' );
-			}
+			$this->dieWithError( 'apierror-massmessage-invalidspamlist', 'invalidspamlist' );
 		}
 
 		/** @var MassMessageListContent $content */
