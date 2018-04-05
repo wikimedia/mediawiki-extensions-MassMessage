@@ -1,8 +1,28 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nullzero"
+			"Nullzero",
+			"Aefgh39622",
+			"Horus"
 		]
 	},
-	"massmessage-optout-category": "หน้าที่ไม่รับข้อความ"
+	"massmessage": "ส่งสารหมู่",
+	"createmassmessagelist": "สร้างรายการส่งสารหมู่",
+	"editmassmessagelist": "แก้ไขรายการส่งสารหมู่",
+	"massmessage-desc": "ทำให้ผู้ใช้สามารถส่งสารหารายการผู้ใช้ได้โดยง่าย",
+	"massmessage-form-spamlist": "หน้าหรือหมวดหมู่ที่มีรายการหน้าที่จะทิ้งสารไว้:",
+	"massmessage-form-subject": "หัวเรื่องสาร (ใช้เป็นความย่อการแก้ไขด้วย):",
+	"massmessage-form-message": "ตัวสาร:",
+	"massmessage-form-preview": "แสดงตัวอย่าง",
+	"massmessage-form-submit": "ส่ง",
+	"massmessage-fieldset-preview": "แสดงตัวอย่าง",
+	"massmessage-fieldset-info": "สารสนเทศ",
+	"massmessage-preview-count": "จะส่งสารของคุณไป {{PLURAL:$1|$1 หน้า}}",
+	"massmessage-submitted": "การส่งข้อความของคุณไป {{PLURAL:$1|$1 หน้า}}ถูกจัดคิวแล้ว",
+	"massmessage-just-preview": "นี่เป็นเพียงการแสดงตัวอย่าง กด \"{{int:massmessage-form-submit}}\" เพื่อส่งสาร",
+	"massmessage-spamlist-invalid": "หน้าที่ระบุไม่มีรายการส่งที่ถูกต้อง",
+	"massmessage-queued-count": "[[Special:MassMessage|สารหมู่]]ที่อยู่ในคิว",
+	"massmessage-optout-category": "หน้าที่ไม่รับข้อความ",
+	"right-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน",
+	"action-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน"
 }
