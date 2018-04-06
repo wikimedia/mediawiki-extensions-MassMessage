@@ -69,7 +69,7 @@ class SendMessages extends Maintenance {
 		$params = [
 			'data' => $info,
 			'pages' => $pages,
-			'class' => 'MassMessageServerSideJob',
+			'class' => MassMessageServerSideJob::class,
 		];
 
 		$submitJob = new MassMessageSubmitJob(
