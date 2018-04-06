@@ -2,9 +2,7 @@
 
 $cfg = require __DIR__ . '/../../vendor/mediawiki/mediawiki-phan-config/src/config.php';
 
-$cfg['suppress_issue_types'] = [
-	// Linker::link(), wfMemcKey(), wfGlobalCacheKey() are false-positive
-	'PhanDeprecatedFunction',
+$cfg['suppress_issue_types'] = array_merge( $cfg['suppress_issue_types'], [
 	// IContextSource::msg() takes multiple parameters
 	'PhanParamTooMany',
 	// \LogFormatter->parsedParameters Error depends on core
@@ -17,6 +15,6 @@ $cfg['suppress_issue_types'] = [
 	'PhanUndeclaredClassInCallable',
 	// False-positive
 	'PhanUndeclaredStaticMethod',
-];
+] );
 
 return $cfg;
