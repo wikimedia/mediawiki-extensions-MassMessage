@@ -12,7 +12,7 @@ use JobQueueGroup;
  * @file
  * @ingroup JobQueue
  * @author Kunal Mehta
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL-2.0-or-later
  */
 
 class MassMessageSubmitJob extends Job {
