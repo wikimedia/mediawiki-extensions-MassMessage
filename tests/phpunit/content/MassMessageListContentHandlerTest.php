@@ -3,7 +3,6 @@ namespace MediaWiki\MassMessage;
 
 use Title;
 use Revision;
-use RequestContext;
 
 /**
  * This inherits ApiTestCase because MassMessageListContentHandler::edit goes through
@@ -17,9 +16,15 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	protected static $spamlist = 'MassMessageListCHTest_spamlist';
 
 	public function setUp() {
+		global $wgGroupPermissions;
 		parent::setUp();
 		$this->mergeMwGlobalArrayValue(
-			'wgGroupPermissions', [ '*' => [ 'editcontentmodel' => true ] ]
+			'wgGroupPermissions', [
+				'*' => array_merge(
+					$wgGroupPermissions['*'],
+					[ 'editcontentmodel' => true ]
+				)
+			]
 		);
 	}
 
@@ -46,7 +51,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			'description',
 			$targets,
 			'summary',
-			RequestContext::getMain()
+			$this->apiContext
 		);
 		$this->assertTrue( $result->isGood() );
 		$rev = Revision::newFromTitle( $title );
@@ -67,7 +72,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			'description',
 			'not a target array',
 			'summary',
-			new RequestContext
+			$this->apiContext
 		);
 		$this->assertFalse( $result->isGood() );
 	}
