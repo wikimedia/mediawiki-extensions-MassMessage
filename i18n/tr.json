@@ -116,5 +116,6 @@
 	"apihelp-editmassmessagelist-param-spamlist": "Güncellenecek teslimat listesinin başlığı.",
 	"apihelp-editmassmessagelist-param-add": "Listeye eklenecek başlıklar.",
 	"apihelp-editmassmessagelist-param-remove": "Listeden çıkarılacak başlıklar.",
+	"tag-massmessage-delivery": "Toplu mesaj teslimi",
 	"tag-massmessage-delivery-description": "[[:mw:Extension:MassMessage|Extension:MassMessage]] kullanılarak mesaj teslimatı"
 }
