@@ -3,7 +3,8 @@
 		"authors": [
 			"Milicevic01",
 			"Srdjan m",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
 	"massmessage": "Масовно слање поруке",
@@ -36,6 +37,7 @@
 	"massmessage-edit-summary": "Опис измене:",
 	"massmessage-summary-addmulti": "Додато страница: {{PLURAL:$1|$1}}",
 	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}",
+	"tag-massmessage-delivery": "испорука масовне поруке",
 	"log-action-filter-massmessage": "Тип дневничког записа",
 	"log-action-filter-massmessage-send": "Подношење масовне поруке",
 	"log-action-filter-massmessage-failure": "Неуспешна испорука масовне поруке",

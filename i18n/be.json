@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Artsiom91"
+		]
+	},
+	"log-name-massmessage": "Журнал масавых паведамленняў",
+	"log-description-massmessage": "Гэта журнал, які адсочвае масавыя адпраўкі паведамленняў.",
+	"logentry-massmessage-failure": "Дастаўка «$4» для $3 пацярпела няўдачу з кодам памылкі <code>$5</code>",
+	"logentry-massmessage-skipbadns": "Дастаўка «$4» для $3 была прапушчана, бо мэтавая старонка знаходзіцца ў недасягальнай прасторы назваў",
+	"logentry-massmessage-skipnouser": "Дастаўка «$4» для $3 была прапушчана, бо ўліковы запіс карыстальніка не існуе",
+	"log-action-filter-massmessage": "Тып журнала",
+	"log-action-filter-massmessage-failure": "Няўдалая дастаўка масавых паведамленняў",
+	"log-action-filter-massmessage-skipoptout": "Мэта прапушчана з-за адмовы ад атрыманняў",
+	"log-action-filter-massmessage-skipnouser": "Мэта прапушчана, бо мэтавы ўдзельнік не існуе",
+	"log-action-filter-massmessage-skipbadns": "Мэта прапушчана з-за недапушчальнай прасторы назваў"
+}
