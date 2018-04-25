@@ -122,6 +122,7 @@
 	"apihelp-massmessage-param-message": "טקסט גוף ההודעה.",
 	"apihelp-massmessage-example-1": "שליחת הודעה לרשימה ב־[[Signpost Spamlist]] עם הנושא \"New Signpost\", וגוף ההודעה \"Please read it\"",
 	"apihelp-query+mmsites-description": "שירות בקשות השלמה אוטומטית לשדה אתר בהודעות המוניות.",
+	"apihelp-query+mmsites-summary": "שירות בקשות השלמה אוטומטית לשדה האתר בהודעות המוניות.",
 	"apihelp-query+mmsites-param-term": "איזו תחילית לחפש.",
 	"apihelp-query+mmsites-example-1": "השלמה אוטומטית של \"en\"",
 	"apierror-massmessage-invalidspamlist": "רשימת הספאם שצוינה אינה תקינה.",
