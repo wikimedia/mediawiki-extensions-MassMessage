@@ -21,7 +21,7 @@
 		"MassMessageWikiAliases": {}
 	},
 	"requires": {
-		"MediaWiki": ">= 1.27.0"
+		"MediaWiki": ">= 1.31.0"
 	},
 	"TrackingCategories": [
 		"massmessage-list-category"
@@ -182,7 +182,7 @@
 	"LogActionsHandlers": {
 		"massmessage/*": "LogFormatter",
 		"massmessage/send": "MediaWiki\\MassMessage\\MassMessageSendLogFormatter",
-		"massmessage/failure": "MediaWiki\\MassMessage\\MassMessageFailureLogFormatter",
+		"massmessage/failure": "WikitextLogFormatter",
 		"massmessage/skipoptout": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter",
 		"massmessage/skipnouser": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter",
 		"massmessage/skipbadns": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter"
@@ -222,7 +222,6 @@
 		"MediaWiki\\MassMessage\\MassMessageJob": "includes/job/MassMessageJob.php",
 		"MediaWiki\\MassMessage\\MassMessageServerSideJob": "includes/job/MassMessageServerSideJob.php",
 		"MediaWiki\\MassMessage\\MassMessageSubmitJob": "includes/job/MassMessageSubmitJob.php",
-		"MediaWiki\\MassMessage\\MassMessageFailureLogFormatter": "includes/logging/MassMessageFailureLogFormatter.php",
 		"MediaWiki\\MassMessage\\MassMessageSendLogFormatter": "includes/logging/MassMessageSendLogFormatter.php",
 		"MediaWiki\\MassMessage\\MassMessageSkipLogFormatter": "includes/logging/MassMessageSkipLogFormatter.php",
 		"MediaWiki\\MassMessage\\MassMessageListContent": "includes/content/MassMessageListContent.php",
