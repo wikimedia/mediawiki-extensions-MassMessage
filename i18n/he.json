@@ -112,7 +112,7 @@
 	"apihelp-editmassmessagelist-description": "עריכה רשימת מסירה המונית.",
 	"apihelp-editmassmessagelist-summary": "עריכה של רשימת מסירה המונית.",
 	"apihelp-editmassmessagelist-param-spamlist": "כותרת רשימת המסירה שצריך לעדכן.",
-	"apihelp-editmassmessagelist-param-add": "כותרת שיתווספו לרשימה.",
+	"apihelp-editmassmessagelist-param-add": "כותרות שיתווספו לרשימה.",
 	"apihelp-editmassmessagelist-param-remove": "כותרות שיוסרו מהרשימה.",
 	"apihelp-editmassmessagelist-example-1": "הוספת [[User talk:Foo]] ו־[[Talk:Bar]] לרשימת המסירה [[Example]] והסרת [[Talk:Baz]] ממנה",
 	"apihelp-massmessage-description": "שליחת הודעה לרשימת דפים.",
