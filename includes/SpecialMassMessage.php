@@ -322,7 +322,9 @@ class SpecialMassMessage extends SpecialPage {
 		if ( !empty( $unclosedTags ) ) {
 			$this->status->fatal(
 				$this->msg( 'massmessage-badhtml' )
-					->params( htmlspecialchars( $this->getLanguage()->commaList( $unclosedTags ) ) )
+					->params( $this->getLanguage()->commaList(
+						array_map( 'htmlspecialchars', $unclosedTags )
+					) )
 					->numParams( count( $unclosedTags ) )
 			);
 		}
