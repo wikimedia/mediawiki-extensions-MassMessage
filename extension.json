@@ -161,7 +161,7 @@
 			"scripts": "ext.MassMessage.edit.js",
 			"dependencies": [
 				"oojs-ui",
-				"mediawiki.widgets.visibleByteLimit"
+				"mediawiki.widgets.visibleLengthLimit"
 			]
 		}
 	},
