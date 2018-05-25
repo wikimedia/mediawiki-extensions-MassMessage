@@ -90,7 +90,7 @@ class MassMessage {
 	 * Helper function for processPFData
 	 * Inspired from the Cite extension
 	 * @param string $key message key
-	 * @param string $param parameter for the message
+	 * @param string|null $param parameter for the message
 	 * @return array
 	 */
 	public static function parserError( $key, $param = null ) {
