@@ -1,13 +1,44 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Janezdrilc"
 		]
 	},
+	"massmessage": "Pošlji masovno sporočilo",
+	"massmessage-form-message": "Sporočilo:",
+	"massmessage-form-preview": "Predogled",
+	"massmessage-form-submit": "Pošlji",
+	"massmessage-fieldset-preview": "Predogled",
+	"massmessage-fieldset-info": "Informacije",
+	"massmessage-preview-count": "Tvoje sporočilo bo poslano {{PLURAL:$1|$1 strani|$1 stranema|$1 stranem}}.",
 	"massmessage-submitted": "Dostava vašega sporočila na {{PLURAL:$1|$1 stran|$1 strani}} je bila vnesena v čakalno vrsto.",
+	"massmessage-just-preview": "To je samo predogled. Pritisni \"{{int:massmessage-form-submit}}\", da pošlješ sporočilo.",
+	"massmessage-empty-subject": "Vrstica s predmetom je prazna.",
+	"massmessage-empty-message": "Polje za sporočilo je prazno.",
+	"massmessage-no-timestamp": "Pozor: Tvoje sporočilo ne vsebuje podpisa ali sistemskega datuma.",
+	"massmessage-queued-count": "[[Special:MassMessage|Masovna sporočila]] na čakanju",
 	"massmessage-parse-badurl": "»$1« ni veljavna stran",
 	"massmessage-parse-badpage": "»$1« ni veljaven naslov strani",
+	"log-name-massmessage": "Dnevnik masovnih sporočil",
 	"logentry-massmessage-skipbadns": "Dostava »$4« na stran $3 je bila preskočena, ker je bil cilj v imenskem prostoru, v katerem ni mogoče objavljati",
 	"logentry-massmessage-skipoptout": "Dostava »$4« na stran $3 je bila preskočena, ker je cilj zavrnil dostavo sporočil",
-	"logentry-massmessage-skipnouser": "Dostava »$4« na $3 je bila preskočena, ker uporabniški račun ne obstaja"
+	"logentry-massmessage-skipnouser": "Dostava »$4« na $3 je bila preskočena, ker uporabniški račun ne obstaja",
+	"massmessage-content-localpages": "Strani na tem wikiju:",
+	"massmessage-content-remove": "odstrani",
+	"massmessage-content-removeconf": "Odstranim to stran iz seznama?",
+	"massmessage-content-removeyes": "Odstrani",
+	"massmessage-content-removeno": "Prekliči",
+	"massmessage-content-empty": "Na tem seznamu ni strani.",
+	"massmessage-content-emptylist": "(nobena)",
+	"massmessage-content-addheading": "Dodaj strani",
+	"massmessage-content-addtitle": "Naslov:",
+	"massmessage-content-addsite": "Spletna stran:",
+	"massmessage-content-addsubmit": "Dodaj stran",
+	"massmessage-content-addedlistheading": "Dodane strani:",
+	"massmessage-content-addeditem": "$1 na $2",
+	"massmessage-content-alreadyinlist": "Ta stran je že na seznamu.",
+	"massmessage-content-invalidtitlesite": "Naslov in stran sta neveljavna.",
+	"massmessage-content-invalidtitle": "Neveljaven naslov.",
+	"massmessage-content-invalidsite": "Neveljavna stran."
 }
