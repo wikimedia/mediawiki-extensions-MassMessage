@@ -25,6 +25,7 @@
 	"massmessage-empty-subject": "بەشی بابەت واڵایە.",
 	"massmessage-empty-message": "بەشی دەقی پەیام واڵایە.",
 	"massmessage-no-timestamp": "ھۆشدار: پەیامەکەت واژوونەکراوە.",
+	"massmessage-form-header": "ئەم فۆرمەی خوارەوە بۆ ناردنی پەیام بۆ پێڕستی ئاماژەپێدراو بەکاربێنە. ھەموو بەشەکان پێویستە پڕبکرێنەوە ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage زانیاریی زیاتر]).",
 	"massmessage-hidden-comment": "<!-- پەیامەکە لەلایەن بەکارھێنەر:$1@$2 نێردراوە بە بەکارھێنانی ئەم پێڕستە: $3 -->",
 	"massmessage-parse-badurl": "«$1» پێگەیەکی دروست نییە.",
 	"massmessage-parse-badpage": "«$1» ناوێکی دروستی پەڕە نییە.",
