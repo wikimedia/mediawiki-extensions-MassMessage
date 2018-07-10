@@ -4,8 +4,14 @@
 			"Teslaton"
 		]
 	},
+	"massmessage": "Poslať hromadnú správu",
+	"createmassmessagelist": "Vytvoriť distribučný zoznam pre hromadné správy",
 	"log-name-massmessage": "Záznam hromadných správ",
 	"log-description-massmessage": "Toto je záznam používateľov, odosielajúcich hromadné správy.",
+	"createmassmessagelist-legend": "Vytvoriť distribučný zoznam pre hromadné správy",
+	"massmessage-create-editsummary": "Vytvoriť distribučný zoznam pre hromadné správy",
+	"massmessage-create-editsummary-import": "Vytvoriť distribučný zoznam pre hromadné správy s položkami z [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Vytvoriť distribučný zoznam pre hromadné správy s položkami z [[$1]]",
 	"tag-massmessage-delivery": "doručenie hromadnej správy",
 	"tag-massmessage-delivery-description": "Doručenie správy pomocou rozšírenia [[:mw:Extension:MassMessage|MassMessage]]"
 }
