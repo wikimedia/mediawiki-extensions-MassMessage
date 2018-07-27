@@ -31,7 +31,7 @@
 	"massmessage-create-description": "Опис:",
 	"massmessage-create-content": "Садржај:",
 	"massmessage-create-source": "Извор:",
-	"massmessage-create-invalidtitle": "Наведени наслов није ваљан.",
+	"massmessage-create-invalidtitle": "Наведени наслов није валидан.",
 	"massmessage-edit-title": "Наслов:",
 	"massmessage-edit-description": "Опис:",
 	"massmessage-edit-summary": "Опис измене:",
