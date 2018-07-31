@@ -5,10 +5,12 @@
 			"Utar",
 			"Aktron",
 			"Vks",
-			"Dvorapa"
+			"Dvorapa",
+			"Martin Urbanec"
 		]
 	},
 	"massmessage": "Poslat hromadnou zprávu",
+	"createmassmessagelist": "Vytvořit distribuční seznam pro hromadné zprávy",
 	"massmessage-desc": "Umožňuje uživatelům snadno odesílat zprávy seznamu uživatelů",
 	"massmessage-form-spamlist": "Stránka nebo kategorie obsahující seznam stránek, na kterých se má zanechat zpráva:",
 	"massmessage-form-subject": "Předmět zprávy (použit také jako shrnutí editace):",
@@ -56,6 +58,7 @@
 	"massmessage-create-description": "Popis:",
 	"massmessage-create-content": "Obsah:",
 	"massmessage-create-new": "Vytvořit nový distribuční seznam",
+	"massmessage-create-import": "Importovat stránky z existujícího seznamu nebo kategorie",
 	"massmessage-create-exists-short": "Již se používá",
 	"massmessage-create-invalidsource-short": "Neplatný seznam",
 	"massmessage-edit-title": "Název:",
