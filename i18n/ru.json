@@ -7,7 +7,8 @@
 			"Striking Blue",
 			"Ole Yves",
 			"Mailman",
-			"Stjn"
+			"Stjn",
+			"Vlad5250"
 		]
 	},
 	"massmessage": "Отправить массовое сообщение",
@@ -38,7 +39,7 @@
 	"massmessage-parse-badurl": "«$1» — некорректный адрес сайта.",
 	"massmessage-parse-badpage": "«$1» — некорректный заголовок страницы.",
 	"massmessage-global-disallowed": "Сообщения могут быть отправлены только на локальные страницы.",
-	"right-massmessage": "массовая отправка сообщений",
+	"right-massmessage": "отправка сообщений нескольким участникам одновременно",
 	"action-massmessage": "массовую отправку сообщений",
 	"log-name-massmessage": "Журнал массовых сообщений",
 	"log-description-massmessage": "Это журнал, отслеживающий массовые рассылки сообщений.",

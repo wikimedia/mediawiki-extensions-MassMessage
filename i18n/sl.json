@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eleassar",
-			"Janezdrilc"
+			"Janezdrilc",
+			"Dbc334"
 		]
 	},
 	"massmessage": "Pošlji masovno sporočilo",
@@ -59,6 +60,8 @@
 	"apihelp-massmessage-param-subject": "Vrstica zadeve sporočila.",
 	"apihelp-massmessage-param-message": "Telo sporočila.",
 	"apihelp-query+mmsites-param-term": "Predpona za iskanje",
+	"tag-massmessage-delivery": "Dostava MassMessage",
+	"tag-massmessage-delivery-description": "Dostava sporočil z uporabo [[:mw:Extension:MassMessage|Razširitev:MassMessage]]",
 	"log-action-filter-massmessage": "Vrsta dnevniškega vnosa",
 	"log-action-filter-massmessage-failure": "Spodletelo poslanje masovnega sporočila"
 }
