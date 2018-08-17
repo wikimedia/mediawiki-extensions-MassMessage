@@ -41,6 +41,13 @@ $specialPageAliases['bn'] = [
 	'EditMassMessageList' => [ 'গণ_বার্তার_তালিকা_সম্পাদনা' ],
 ];
 
+/** Czech (čeština) */
+$specialPageAliases['cs'] = [
+	'MassMessage' => [ 'Hromadná_zpráva' ],
+	'CreateMassMessageList' => [ 'Vytvořit_distribuční_seznam_pro_hromadné_zprávy' ],
+	'EditMassMessageList' => [ 'Editovat_distribuční_seznam_pro_hromadné_zprávy' ],
+];
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = [
 	'MassMessage' => [ 'Massennachrichten' ],
