@@ -135,6 +135,20 @@ $specialPageAliases['pt'] = [
 	'MassMessage' => [ 'Mensagens_em_massa', 'Mensagem_em_massa' ],
 ];
 
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
+$specialPageAliases['sr-ec'] = [
+	'MassMessage' => [ 'Масовно_слање_порука' ],
+	'CreateMassMessageList' => [ 'Направи_списак_за_масовно_слање_порука' ],
+	'EditMassMessageList' => [ 'Измени_списак_за_масовно_слање_порука' ],
+];
+
+/** Serbian (Latin script) (srpski (latinica)‎) */
+$specialPageAliases['sr-el'] = [
+	'MassMessage' => [ 'Masovno_slanje_poruka' ],
+	'CreateMassMessageList' => [ 'Napravi_spisak_za_masovno_slanje_poruka' ],
+	'EditMassMessageList' => [ 'Izmeni_spisak_za_masovno_slanje_poruka' ],
+];
+
 /** Urdu (اردو) */
 $specialPageAliases['ur'] = [
 	'MassMessage' => [ 'اجتماعی_پیغام' ],
