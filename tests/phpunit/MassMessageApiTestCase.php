@@ -9,20 +9,26 @@ use SiteConfiguration;
  */
 abstract class MassMessageApiTestCase extends ApiTestCase {
 
-	public static function setUpBeforeClass() {
-		// $wgConf ewwwww
-		global $wgConf, $wgLocalDatabases;
-		parent::setUpBeforeClass();
-		$wgConf = new SiteConfiguration;
-		$wgConf->wikis = [ 'enwiki', 'dewiki', 'frwiki', 'wiki' ];
-		$wgConf->suffixes = [ 'wiki' ];
-		$wgConf->settings = [
+	protected function setUp() {
+		parent::setUp();
+		$conf = new SiteConfiguration;
+		$conf->wikis = [ 'enwiki', 'dewiki', 'frwiki' ];
+		$conf->suffixes = [ 'wiki' ];
+		$conf->settings = [
 			'wgServer' => [
 				'enwiki' => '//en.wikipedia.org',
 				'dewiki' => '//de.wikipedia.org',
 				'frwiki' => '//fr.wikipedia.org',
 			],
+			'wgCanonicalServer' => [
+				'enwiki' => 'https://en.wikipedia.org',
+				'dewiki' => 'https://de.wikipedia.org',
+				'frwiki' => 'https://fr.wikipedia.org',
+			],
+			'wgArticlePath' => [
+				'default' => '/wiki/$1',
+			],
 		];
-		$wgLocalDatabases =& $wgConf->getLocalDatabases();
+		$this->setMwGlobals( 'wgConf', $conf );
 	}
 }
