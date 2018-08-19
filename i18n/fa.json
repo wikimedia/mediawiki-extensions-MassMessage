@@ -8,7 +8,8 @@
 			"Americophile",
 			"4nn1l2",
 			"Alifakoor",
-			"Huji"
+			"Huji",
+			"Ladsgroup"
 		]
 	},
 	"massmessage": "ارسال انبوه پیام",
@@ -123,5 +124,6 @@
 	"apihelp-query+mmsites-param-term": "پیشوندی که جستجو شود.",
 	"apihelp-query+mmsites-example-1": "تکمیل خودکار «en»",
 	"tag-massmessage-delivery": "ارسال پیام انبوه",
-	"tag-massmessage-delivery-description": "ارسال پیام انبوه توسط [[:mw:Extension:MassMessage|Extension:MassMessage]]"
+	"tag-massmessage-delivery-description": "ارسال پیام انبوه توسط [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"log-action-filter-massmessage": "نوع سیاهه"
 }
