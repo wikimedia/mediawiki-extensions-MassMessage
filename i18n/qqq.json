@@ -80,7 +80,6 @@
 	"massmessage-diff-descheader": "Header for the diff of the description between two revisions",
 	"massmessage-diff-targetsheader": "Header for the diff of the target pages between two revisions",
 	"massmessage-ch-tojsonerror": "Error message shown when the input could not be successfully encoded as a delivery list",
-	"massmessage-ch-apierror": "Error message shown when a request to the edit API to update a delivery list failed.\n\nParameters:\n* $1 - error code string",
 	"createmassmessagelist-legend": "Form legend for [[Special:CreateMassMessageList]]",
 	"massmessage-create-title": "Label for an inputbox on [[Special:CreateMassMessageList]]\n{{Identical|Title}}",
 	"massmessage-create-description": "Label for a textarea on [[Special:CreateMassMessageList]]\n{{Identical|Description}}",

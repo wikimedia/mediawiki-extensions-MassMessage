@@ -73,7 +73,6 @@
 	"massmessage-diff-descheader": "Changes in the description:",
 	"massmessage-diff-targetsheader": "Changes in the pages:",
 	"massmessage-ch-tojsonerror": "The list could not be encoded for storage.",
-	"massmessage-ch-apierror": "Editing the list through the API failed with error code $1.",
 	"createmassmessagelist-legend": "Create mass message delivery list",
 	"massmessage-create-title": "Title:",
 	"massmessage-create-description": "Description:",

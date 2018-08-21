@@ -11,7 +11,6 @@ use DerivativeRequest;
 use ApiMain;
 use IContextSource;
 use ApiUsageException;
-use UsageException;
 
 class MassMessageListContentHandler extends JsonContentHandler {
 
@@ -90,9 +89,6 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			$api->execute();
 		} catch ( ApiUsageException $e ) {
 			return Status::wrap( $e->getStatusValue() );
-		} catch ( UsageException $e ) {
-			return Status::newFatal( $context->msg( 'massmessage-ch-apierror',
-				$e->getCodeString() ) );
 		}
 		return Status::newGood();
 	}

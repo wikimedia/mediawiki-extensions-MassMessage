@@ -1,11 +1,11 @@
 <?php
 namespace MediaWiki\MassMessage;
 
+use ApiUsageException;
 use WikiPage;
 use Title;
 use User;
 use ContentHandler;
-use UsageException;
 
 /**
  * Tests for the API module to send messages
@@ -65,7 +65,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 */
 	public function testInvalidSpamlist() {
 		$this->setExpectedException(
-			class_exists( ApiUsageException::class ) ? ApiUsageException::class : UsageException::class,
+			ApiUsageException::class,
 			'The specified delivery list page or category does not exist.'
 		);
 		$this->doApiRequestWithToken( [
