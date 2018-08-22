@@ -79,7 +79,6 @@
 	"massmessage-diff-descheader": "Changements dans la description :",
 	"massmessage-diff-targetsheader": "Changements dans les pages :",
 	"massmessage-ch-tojsonerror": "La liste n’a pas pu être encodée pour être stockée.",
-	"massmessage-ch-apierror": "La modification de la liste via l’API a échoué avec le code d’erreur $1.",
 	"createmassmessagelist-legend": "Créer une liste de diffusion de messages de masse",
 	"massmessage-create-title": "Titre :",
 	"massmessage-create-description": "Description :",

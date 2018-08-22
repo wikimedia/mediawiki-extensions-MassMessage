@@ -75,7 +75,6 @@
 	"massmessage-diff-descheader": "描述中的變更：",
 	"massmessage-diff-targetsheader": "頁面間的變更：",
 	"massmessage-ch-tojsonerror": "清單無法編碼供儲存庫使用。",
-	"massmessage-ch-apierror": "透過 API 編輯清單失敗，錯誤代碼 $1。",
 	"createmassmessagelist-legend": "建立大量訊息傳遞清單",
 	"massmessage-create-title": "標題：",
 	"massmessage-create-description": "描述：",

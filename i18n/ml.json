@@ -70,7 +70,6 @@
 	"massmessage-content-adderror": "എ.പി.ഐ. പിഴവ്:$1",
 	"massmessage-diff-descheader": "വിവരണത്തിൽ ഉള്ള മാറ്റങ്ങൾ:",
 	"massmessage-diff-targetsheader": "താളുകളിൽ ഉള്ള മാറ്റങ്ങൾ:",
-	"massmessage-ch-apierror": "$1 എന്ന പിഴവ് കോഡോടു കൂടി പട്ടിക എ.പി.ഐ. വഴി തിരുത്തൽ പരാജയപ്പെട്ടു.",
 	"createmassmessagelist-legend": "കൂട്ടസന്ദേശ സ്വീകരണി പട്ടിക സൃഷ്ടിക്കുക",
 	"massmessage-create-title": "തലക്കെട്ട്:",
 	"massmessage-create-description": "വിവരണം:",

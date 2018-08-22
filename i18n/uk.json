@@ -75,7 +75,6 @@
 	"massmessage-diff-descheader": "Зміни в описі:",
 	"massmessage-diff-targetsheader": "Зміни на сторінках:",
 	"massmessage-ch-tojsonerror": "Список не може бути закодовано для зберігання.",
-	"massmessage-ch-apierror": "Редагування списку через API не вдалося, код помилки $1.",
 	"createmassmessagelist-legend": "Створення листа доставки масового повідомлення",
 	"massmessage-create-title": "Заголовок:",
 	"massmessage-create-description": "Опис:",

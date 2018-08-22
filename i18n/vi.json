@@ -70,7 +70,6 @@
 	"massmessage-diff-descheader": "Thay đổi trong lời miêu tả:",
 	"massmessage-diff-targetsheader": "Thay đổi trong các trang:",
 	"massmessage-ch-tojsonerror": "Không thể mã hóa danh sách để lưu giữ.",
-	"massmessage-ch-apierror": "Thất bại khi sửa danh sách qua API; lỗi có mã $1.",
 	"createmassmessagelist-legend": "Tạo danh sách gửi thông báo rộng rãi",
 	"massmessage-create-title": "Tên trang:",
 	"massmessage-create-description": "Miêu tả:",

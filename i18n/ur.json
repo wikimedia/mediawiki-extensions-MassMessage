@@ -68,7 +68,6 @@
 	"massmessage-diff-descheader": "وضاحت میں تبدیلیاں:",
 	"massmessage-diff-targetsheader": "صفحات میں تبدیلیاں:",
 	"massmessage-ch-tojsonerror": "محفوظ رکھنے کے لیے فہرست کو اینکوڈ نہیں کیا جا سکا۔",
-	"massmessage-ch-apierror": "API کے ذریعہ فہرست میں ترمیم نہیں ہو سکی، خطا کوڈ: $1",
 	"createmassmessagelist-legend": "اجتماعی پیغام کی وصولی فہرست بنائیں",
 	"massmessage-create-title": "عنوان:",
 	"massmessage-create-description": "وضاحت:",

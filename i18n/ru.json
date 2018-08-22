@@ -75,7 +75,6 @@
 	"massmessage-diff-descheader": "Изменения в описании:",
 	"massmessage-diff-targetsheader": "Изменения на страницах:",
 	"massmessage-ch-tojsonerror": "Список не может быть закодирован для хранилища.",
-	"massmessage-ch-apierror": "Правка списка через API не удалась, код ошибки — $1.",
 	"createmassmessagelist-legend": "Создать список массовой доставки",
 	"massmessage-create-title": "Заголовок:",
 	"massmessage-create-description": "Описание:",

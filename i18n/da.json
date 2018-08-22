@@ -70,7 +70,6 @@
 	"massmessage-diff-descheader": "Ændringer i beskrivelsen:",
 	"massmessage-diff-targetsheader": "Ændringer i siderne:",
 	"massmessage-ch-tojsonerror": "Listen kunne ikke kodes for lagring.",
-	"massmessage-ch-apierror": "Redigering af listen via API mislykkedes med fejlkoden $1 .",
 	"createmassmessagelist-legend": "Opret leveringsliste for massebesked.",
 	"massmessage-create-title": "Titel:",
 	"massmessage-create-description": "Beskrivelse:",

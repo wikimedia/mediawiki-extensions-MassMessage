@@ -79,7 +79,6 @@
 	"massmessage-diff-descheader": "Wijzigingen in de beschrijving:",
 	"massmessage-diff-targetsheader": "Wijzigingen in de pagina's:",
 	"massmessage-ch-tojsonerror": "De lijst kon niet gecodeerd worden voor opslag.",
-	"massmessage-ch-apierror": "Het bewerken van de lijst via de API is mislukt met foutcode $1.",
 	"createmassmessagelist-legend": "Afleverlijst aanmaken",
 	"massmessage-create-title": "Paginanaam:",
 	"massmessage-create-description": "Beschrijving:",

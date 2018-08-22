@@ -78,7 +78,6 @@
 	"massmessage-diff-descheader": "描述中的更改：",
 	"massmessage-diff-targetsheader": "页面中的更改：",
 	"massmessage-ch-tojsonerror": "列表不能编码存储。",
-	"massmessage-ch-apierror": "通过API编辑列表失败，错误代码$1。",
 	"createmassmessagelist-legend": "创建大量信息递送列表",
 	"massmessage-create-title": "标题：",
 	"massmessage-create-description": "描述：",

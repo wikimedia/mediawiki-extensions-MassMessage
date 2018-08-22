@@ -69,7 +69,6 @@
 	"massmessage-content-adderror": "API-fel: $1",
 	"massmessage-diff-descheader": "Ändringar i beskrivningen:",
 	"massmessage-diff-targetsheader": "Förändringar i sidorna:",
-	"massmessage-ch-apierror": "Redigering av listan genom API:et misslyckades med felkod $1.",
 	"massmessage-create-title": "Titel:",
 	"massmessage-create-description": "Beskrivning:",
 	"massmessage-create-content": "Innehåll:",

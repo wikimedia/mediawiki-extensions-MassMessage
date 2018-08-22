@@ -69,7 +69,6 @@
 	"massmessage-diff-descheader": "Cambios na descripción:",
 	"massmessage-diff-targetsheader": "Cambios nes páxines:",
 	"massmessage-ch-tojsonerror": "Nun pudo codificase la llista pal almacenamientu.",
-	"massmessage-ch-apierror": "La edición de la llista al traviés de la API falló col códigu d'error $1.",
 	"createmassmessagelist-legend": "Crear llista d'entrega de mensaxes en masa",
 	"massmessage-create-title": "Títulu:",
 	"massmessage-create-description": "Descripción:",

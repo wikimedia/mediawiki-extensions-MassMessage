@@ -71,7 +71,6 @@
 	"massmessage-diff-descheader": "वर्णनातील बदल:",
 	"massmessage-diff-targetsheader": "पानातील बदल:",
 	"massmessage-ch-tojsonerror": "ही यादी भांडारणासाठी संकेतबद्ध करता आली नाही.",
-	"massmessage-ch-apierror": "या यादीचे एपीआय(API) मार्फतचे संपादन $1 त्रुटी संकेतासह अयशस्वी झाले.",
 	"createmassmessagelist-legend": "एकगठ्ठा संदेश वितरण यादी तयार करा",
 	"massmessage-create-title": "शीर्षक:",
 	"massmessage-create-description": "वर्णन:",

@@ -74,7 +74,6 @@
 	"massmessage-diff-descheader": "Änderungen in der Beschreibung:",
 	"massmessage-diff-targetsheader": "Änderungen auf den Seiten:",
 	"massmessage-ch-tojsonerror": "Die Liste konnte nicht zur Speicherung verschlüsselt werden.",
-	"massmessage-ch-apierror": "Das Bearbeiten der Liste durch die API ist mit dem Fehlercode $1 fehlgeschlagen.",
 	"createmassmessagelist-legend": "Massennachrichten-Versandliste erstellen",
 	"massmessage-create-title": "Titel:",
 	"massmessage-create-description": "Beschreibung:",

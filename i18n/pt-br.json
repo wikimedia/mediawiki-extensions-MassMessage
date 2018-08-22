@@ -77,7 +77,6 @@
 	"massmessage-diff-descheader": "Alterações na descrição:",
 	"massmessage-diff-targetsheader": "Alterações nas páginas:",
 	"massmessage-ch-tojsonerror": "A lista não pode ser codificada para armazenamento.",
-	"massmessage-ch-apierror": "A edição da lista, através do API, falhou com código de erro $1.",
 	"createmassmessagelist-legend": "Criar lista de entrega de mensagens em massa",
 	"massmessage-create-title": "Título:",
 	"massmessage-create-description": "Descrição:",

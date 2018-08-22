@@ -69,7 +69,6 @@
 	"massmessage-diff-descheader": "Промени во описот:",
 	"massmessage-diff-targetsheader": "Промени во страниците:",
 	"massmessage-ch-tojsonerror": "Списокот не може да се шифрира за складирање.",
-	"massmessage-ch-apierror": "Уредувањето на списокот преку извршникот не успеа со грешката $1.",
 	"createmassmessagelist-legend": "Создавање на списокот за достава на масовна порака.",
 	"massmessage-create-title": "Наслов:",
 	"massmessage-create-description": "Опис:",

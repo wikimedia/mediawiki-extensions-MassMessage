@@ -71,7 +71,6 @@
 	"massmessage-diff-descheader": "שינויים בתיאור:",
 	"massmessage-diff-targetsheader": "שינויים בדפים:",
 	"massmessage-ch-tojsonerror": "לא היה אפשר לקודד את הרשימה לאחסון.",
-	"massmessage-ch-apierror": "עריכה הרשימה דרך ה־API נכשלה עם הקוד $1.",
 	"createmassmessagelist-legend": "יצירת רשימת משלוח של הודעה המונית",
 	"massmessage-create-title": "כותרת:",
 	"massmessage-create-description": "תיאור:",

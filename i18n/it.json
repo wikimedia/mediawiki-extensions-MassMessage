@@ -73,7 +73,6 @@
 	"massmessage-diff-descheader": "Modifiche nella descrizione:",
 	"massmessage-diff-targetsheader": "Modifiche delle pagine:",
 	"massmessage-ch-tojsonerror": "Questo elenco non può essere codificato per la memorizzazione.",
-	"massmessage-ch-apierror": "Modifica dell'elenco tramite API non riuscita, con codice di errore $1.",
 	"createmassmessagelist-legend": "Crea elenco di consegna per messaggi massivi",
 	"massmessage-create-title": "Titolo:",
 	"massmessage-create-description": "Descrizione:",

@@ -76,7 +76,6 @@
 	"massmessage-diff-descheader": "التغييرات في الوصف:",
 	"massmessage-diff-targetsheader": "التغييرات في الصفحات:",
 	"massmessage-ch-tojsonerror": "لا يمكن ترميز القائمة للتخزين.",
-	"massmessage-ch-apierror": "فشل تحرير القائمة من خلال API برمز الخطأ $1.",
 	"createmassmessagelist-legend": "أنشيء قائمة توصيل رسائل كمية",
 	"massmessage-create-title": "العنوان:",
 	"massmessage-create-description": "الوصف:",

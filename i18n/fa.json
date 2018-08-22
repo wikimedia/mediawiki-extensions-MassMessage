@@ -77,7 +77,6 @@
 	"massmessage-diff-descheader": "تغییرات در توضیح:",
 	"massmessage-diff-targetsheader": "تغییرات در صفحه‌ها:",
 	"massmessage-ch-tojsonerror": "فهرست نمی‌توان برای ذخیره کدگذاری شود.",
-	"massmessage-ch-apierror": "ویرایش فهرست از طریق رابط برنامه‌نویسی ناموفق بود و کد خطای $1 برگرداند.",
 	"createmassmessagelist-legend": "ایجاد فهرست رساندن پیام انبوه",
 	"massmessage-create-title": "عنوان:",
 	"massmessage-create-description": "توضیحات:",
