@@ -25,7 +25,7 @@
 	"massmessage-unescaped-langlinks": "Hoiatus: Sinu muudatus sisaldab katkestamata keelelinke.",
 	"massmessage-no-timestamp": "Hoiatus: Sinu sõnum ei sisalda ajatemplit ega allkirja.",
 	"massmessage-form-header": "Kasuta järgmist vormi, et saata sõnum määratud loendisse. Kõik väljad on nõutavad ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage lisateave]).",
-	"massmessage-queued-count": "Järjekorras [[Special:MassMessage|hulgasõnumid]]",
+	"massmessage-queued-count": "Järjekorras [[Special:MassMessage|hulgasõnumeid]]",
 	"massmessage-hidden-comment": "<!-- Sõnumi saatis Kasutaja:$1@$2 loendisse leheküljel \"$3\". -->",
 	"massmessage-optout-category": "Ei soovi sõnumeid",
 	"massmessage-badhtml": "Sinu sõnumis võib olla sulgemata {{PLURAL:$2|HTML-silt|HTML-silte}}: $1.",
