@@ -10,11 +10,7 @@ module.exports = function ( grunt ) {
 
 	grunt.initConfig( {
 		eslint: {
-			all: [
-				'modules/*.js',
-				'!node_modules/**',
-				'!vendor/**'
-			]
+			all: '.'
 		},
 		banana: conf.MessagesDirs,
 		jsonlint: {
