@@ -6,7 +6,8 @@
 			"Aktron",
 			"Vks",
 			"Dvorapa",
-			"Martin Urbanec"
+			"Martin Urbanec",
+			"Danny B."
 		]
 	},
 	"massmessage": "Poslat hromadnou zprávu",
@@ -67,6 +68,6 @@
 	"massmessage-edit-summary": "Shrnutí editace:",
 	"massmessage-list-category": "Distribuční seznamy MassMessage",
 	"massmessage-list-category-desc": "Stránka je seznamem příjemců pro rozšíření [[Special:MassMessage|MassMessage]].",
-	"tag-massmessage-delivery": "doručena hromadná zpráva",
+	"tag-massmessage-delivery": "doručení hromadné zprávy",
 	"tag-massmessage-delivery-description": "Doručení zprávy pomocí [[:mw:Extension:MassMessage|rozšíření MassMessage]]"
 }
