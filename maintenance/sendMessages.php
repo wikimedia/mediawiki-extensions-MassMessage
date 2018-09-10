@@ -14,7 +14,7 @@ use Title;
 /**
  * Script to send MassMessages server-side
  *
- * Excepts a page list formatted as a .tsv file, with "PageName\tWikiId" on each line
+ * Expects a page list formatted as a .tsv file, with "PageName\tWikiId" on each line
  * Subject line and message body are also stored as files
  */
 class SendMessages extends Maintenance {

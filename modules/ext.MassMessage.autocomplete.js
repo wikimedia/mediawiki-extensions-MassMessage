@@ -1,5 +1,5 @@
 /**
- * Functions for autocomplete for titles and sites
+ * Functions for autocomplete of titles and sites
  * Mainly from from http://jqueryui.com/autocomplete/
  * and resources/mediawiki/mediawiki.searchSuggest.js
  */

@@ -8,7 +8,7 @@
 		'use strict';
 		var voidElements, $msg, $warnings;
 
-		// Construct a set containing elements that do not need an end tag.
+		// Construct a set containing HTML singleton elements (do not need an end tag).
 		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
 		voidElements = { area: 1, base: 1, br: 1, col: 1, command: 1,
 			embed: 1, hr: 1, img: 1, input: 1, keygen: 1, link: 1,
