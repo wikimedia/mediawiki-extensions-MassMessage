@@ -6,15 +6,15 @@ MassMessage is a [MediaWiki](https://www.mediawiki.org/) extension that lets you
 
     $wgNamespacesToPostIn = array( NS_PROJECT );
 
-This limits the bot to only posting in talk namespaces and the Project: namespace.
+This limits the extension to only posting in talk namespaces (by default) and the **Project:** namespace.
 
     $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
 
-This allows a user to specify a page in the User: namespace, and the bot will automatically convert it to the User talk: namespace.
+This allows a user to specify a page in the **User:** namespace, and the extension will automatically convert it to the **User talk:** namespace.
 
     $wgMassMessageAccountUsername = 'MediaWiki message delivery';
 
-The account name that the bot will post with. If this is an existing account, the extension will automatically take it over.
+The account name that the extension will post with. If this is an existing account, the extension will automatically take it over.
 
     $wgAllowGlobalMessaging = true;
 
@@ -22,14 +22,14 @@ Whether to enable sending messages from one wiki to another. Can be disabled on 
 
     $wgMassMessageWikiAliases = array( 'foo-old.example.org' => 'foowiki' );
 
-An mapping of domain names to their database name. Useful if you have moved or renamed a wiki and need previous input lists to continue working.
+A mapping of domain names to their database name. Useful if you have moved or renamed a wiki and need previous input lists to continue working.
 
-Messages are delivered using the [job queue](https://www.mediawiki.org/wiki/Manual:Job_queue). It is recommended that you set up a cron job to empty the queue rather than relying on web requests. You can view how many MassMessage jobs are still queued by visiting `Special:Version` on your wiki.
+Messages are delivered using the [job queue](https://www.mediawiki.org/wiki/Manual:Job_queue). It is recommended that you set up a cron job to empty the queue rather than relying on web requests. You can view how many MassMessage jobs are still queued by visiting `Special:Statistics` on your wiki (under "Other statistics" in the table).
 
 
 ## Usage
 
-Messages are delivered using Special:MassMessage, and can be used by anyone with the `massmessage` userright, which is given to the sysop group by default.
+Messages are delivered using **Special:MassMessage**, and can be used by anyone with the `massmessage` userrights, which is given to the sysop group by default.
 
 You will be allowed to preview how your message will look, after which a "Submit" button will appear.
 
@@ -39,14 +39,13 @@ The form requires three different fields:
 
 The input list provided to the special page must be formatted using a custom parser function.
 
+In the example below, the target page is `[[Project:Noticeboard]]` on your local site.
 
     {{#target:Project:Noticeboard}}
 
-In this example, the target page is `[[Project:Noticeboard]]` on your local site.
+In this one below, the target is `[[User talk:Example]]` on the "en.wikipedia.org" domain.
 
     {{#target:User talk:Example|en.wikipedia.org}}
-
-In this one, the target is `[[User talk:Example]]` on the "en.wikipedia.org" domain.
 
 ### Subject
 
