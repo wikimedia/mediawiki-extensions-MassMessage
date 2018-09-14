@@ -1,13 +1,12 @@
 <?php
 
-
 namespace MediaWiki\MassMessage;
 
-use Status;
 use ApiBase;
+use Status;
 
 /**
- * API module to send MassMessages
+ * API module to send MassMessages.
  *
  * @file
  * @ingroup API
@@ -68,6 +67,7 @@ class ApiMassMessage extends ApiBase {
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
+	 *
 	 * @return array
 	 */
 	protected function getExamplesMessages() {
@@ -78,6 +78,9 @@ class ApiMassMessage extends ApiBase {
 		];
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getHelpUrls() {
 		return [ 'https://www.mediawiki.org/wiki/Extension:MassMessage/API' ];
 	}

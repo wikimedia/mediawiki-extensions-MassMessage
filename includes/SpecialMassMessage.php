@@ -1,5 +1,16 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use ContentHandler;
+use EditPage;
+use HTMLForm;
+use SpecialPage;
+use Status;
+use Title;
+use WikiPage;
+use Xml;
+
 /**
  * Form to allow users to send messages
  * to a lot of users at once.
@@ -10,17 +21,6 @@
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
-namespace MediaWiki\MassMessage;
-
-use Status;
-use EditPage;
-use HTMLForm;
-use WikiPage;
-use ContentHandler;
-use SpecialPage;
-use Xml;
-use Title;
 
 class SpecialMassMessage extends SpecialPage {
 
@@ -118,7 +118,8 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
-	 * Note that this won't be initalized unless submit is called
+	 * Note that this won't be initalized unless submit is called.
+	 *
 	 * @return int
 	 */
 	public function getCount() {
@@ -185,9 +186,9 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
-	 * Callback function
-	 * Does some basic verification of data
-	 * Decides whether to show the preview screen or the submitted message
+	 * Callback function.
+	 * Does some basic verification of data.
+	 * Decides whether to show the preview screen or the submitted message.
 	 *
 	 * @param array $data
 	 * @return Status|bool
@@ -211,7 +212,8 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
-	 * Returns an array containing possibly unclosed HTML tags in $message
+	 * Returns an array containing possibly unclosed HTML tags in $message.
+	 *
 	 * TODO: Use an HTML parser instead of regular expressions
 	 *
 	 * @param string $message
@@ -274,8 +276,8 @@ class SpecialMassMessage extends SpecialPage {
 	}
 
 	/**
-	 * A preview/confirmation screen
-	 * The preview generation code was hacked up from EditPage.php
+	 * A preview/confirmation screen.
+	 * The preview generation code was hacked up from EditPage.php.
 	 *
 	 * @param array $data
 	 */

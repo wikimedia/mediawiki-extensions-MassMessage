@@ -1,5 +1,19 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use CentralIdLookup;
+use Exception;
+use JobQueueGroup;
+use ManualLogEntry;
+use MediaWiki\MediaWikiServices;
+use Parser;
+use ParserOptions;
+use RequestContext;
+use Revision;
+use Status;
+use Title;
+use User;
 
 /**
  * Some core functions needed by the extension.
@@ -8,21 +22,6 @@
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
-namespace MediaWiki\MassMessage;
-
-use Parser;
-use ParserOptions;
-use Exception;
-use Title;
-use User;
-use JobQueueGroup;
-use CentralIdLookup;
-use Revision;
-use ManualLogEntry;
-use MediaWiki\MediaWikiServices;
-use RequestContext;
-use Status;
 
 class MassMessage {
 

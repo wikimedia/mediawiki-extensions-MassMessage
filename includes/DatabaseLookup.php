@@ -1,15 +1,17 @@
 <?php
+
 namespace MediaWiki\MassMessage;
 
-use WikiMap;
 use MediaWiki\MediaWikiServices;
+use WikiMap;
 
 class DatabaseLookup {
 
 	/**
-	 * Get a mapping from site domains to database names
-	 * Requires $wgConf to be set up properly
-	 * Tries to read from cache if possible
+	 * Get a mapping from site domains to database names.
+	 * Requires $wgConf to be set up properly.
+	 * Tries to read from cache if possible.
+	 *
 	 * @return array
 	 */
 	public static function getDatabases() {
@@ -30,19 +32,18 @@ class DatabaseLookup {
 						$site = UrlHelper::getBaseUrl( $url );
 						$mapping[$site] = $dbname;
 					}
-
 					return $mapping;
 				}
 			);
 		}
-
 		return $mapping;
 	}
 
 	/**
-	 * Get database name from URL hostname
+	 * Get database name from URL hostname or null if nothing is found.
+	 *
 	 * @param string $host
-	 * @return string
+	 * @return string|null
 	 */
 	public static function getDBName( $host ) {
 		global $wgMassMessageWikiAliases;
@@ -55,5 +56,4 @@ class DatabaseLookup {
 		}
 		return null; // Couldn't find anything
 	}
-
 }

@@ -1,14 +1,15 @@
 <?php
-/**
- * API module to serve autocomplete requests for the site field in MassMessage
- *
- * @ingroup API
- */
 
 namespace MediaWiki\MassMessage;
 
 use ApiBase;
 use ApiQueryBase;
+
+/**
+ * API module to serve autocomplete requests for the site field in MassMessage.
+ *
+ * @ingroup API
+ */
 
 class ApiQueryMMSites extends ApiQueryBase {
 
@@ -35,7 +36,6 @@ class ApiQueryMMSites extends ApiQueryBase {
 
 	/**
 	 * @param array $params
-	 *
 	 * @return string
 	 */
 	public function getCacheMode( $params ) {

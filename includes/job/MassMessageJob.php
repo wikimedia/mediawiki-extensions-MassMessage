@@ -1,7 +1,25 @@
 <?php
+
+namespace MediaWiki\MassMessage;
+
+use ApiMain;
+use ApiMessage;
+use ApiUsageException;
+use ChangeTags;
+use CentralIdLookup;
+use DeferredUpdates;
+use DerivativeRequest;
+use Job;
+use LqtDispatch;
+use ManualLogEntry;
+use RequestContext;
+use Title;
+use User;
+use WikiPage;
+
 /**
- * Job Queue class to send a message to
- * a user.
+ * Job Queue class to send a message to a user.
+ *
  * Based on code from TranslationNotifications
  * https://mediawiki.org/wiki/Extension:TranslationNotifications
  *
@@ -10,23 +28,6 @@
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
-namespace MediaWiki\MassMessage;
-
-use Title;
-use WikiPage;
-use User;
-use RequestContext;
-use ApiMain;
-use CentralIdLookup;
-use DerivativeRequest;
-use ManualLogEntry;
-use Job;
-use DeferredUpdates;
-use ChangeTags;
-use ApiMessage;
-use LqtDispatch;
-use ApiUsageException;
 
 class MassMessageJob extends Job {
 
@@ -51,7 +52,7 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Execute the job
+	 * Execute the job.
 	 *
 	 * @return bool
 	 */
@@ -61,6 +62,7 @@ class MassMessageJob extends Job {
 			$this->setLastError( $status );
 			return false;
 		}
+
 		return true;
 	}
 
@@ -83,7 +85,7 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Checks whether the target page is in an opt-out category
+	 * Checks whether the target page is in an opt-out category.
 	 *
 	 * @param Title $title
 	 * @return bool
@@ -100,11 +102,13 @@ class MassMessageJob extends Job {
 				return true;
 			}
 		}
+
 		return false;
 	}
 
 	/**
-	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn
+	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn.
+	 *
 	 * @param Title $title
 	 * @return Title|null null if we shouldn't post on that title
 	 */
@@ -164,8 +168,8 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Send a message to a user
-	 * Modified from the TranslationNotification extension
+	 * Send a message to a user.
+	 * Modified from the TranslationNotification extension.
 	 *
 	 * @return bool
 	 */
@@ -264,7 +268,8 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Add some stuff to the end of the message
+	 * Add some stuff to the end of the message.
+	 *
 	 * @param bool $stripTildes Whether to strip trailing '~~~~'
 	 * @return string
 	 */
@@ -282,15 +287,16 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Construct and make an API request based on the given params and return the results
+	 * Construct and make an API request based on the given params and return the results.
+	 *
 	 * @param array $params
 	 * @return \ApiResult
 	 */
 	protected function makeAPIRequest( array $params ) {
 		global $wgHooks, $wgUser, $wgRequest;
 
-		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed
-		// Done here so that it's not unnecessarily called on every page load
+		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
+		// Done here so that it's not unnecessarily called on every page load.
 		$wgHooks['UserGetRights'][] = 'MediaWiki\\MassMessage\\MassMessageHooks::onUserGetRights';
 		$wgHooks['EmailConfirmed'][] = 'MediaWiki\\MassMessage\\MassMessageHooks::onEmailConfirmed';
 
@@ -303,7 +309,7 @@ class MassMessageJob extends Job {
 			true // was posted?
 		);
 		// New user objects will use $wgRequest, so we set that
-		// to our DerivativeRequest, so we don't run into any issues
+		// to our DerivativeRequest, so we don't run into any issues.
 		$wgUser = $this->getUser();
 		$wgUser->clearInstanceCache(); // Force rights reload (for IP block exemption)
 

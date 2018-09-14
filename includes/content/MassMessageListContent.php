@@ -2,31 +2,34 @@
 
 namespace MediaWiki\MassMessage;
 
-use Language;
 use Html;
+use JsonContent;
+use Language;
+use LinkBatch;
 use Linker;
 use ParserOptions;
 use ParserOutput;
-use JsonContent;
 use Title;
-use LinkBatch;
 
 class MassMessageListContent extends JsonContent {
 
 	/**
-	 * Description wikitext
+	 * Description wikitext.
+	 *
 	 * @var string|null
 	 */
 	protected $description;
 
 	/**
-	 * Array of target pages
+	 * Array of target pages.
+	 *
 	 * @var array|null
 	 */
 	protected $targets;
 
 	/**
-	 * Whether $description and $targets have been populated
+	 * Whether $description and $targets have been populated.
+	 *
 	 * @var bool
 	 */
 	protected $decoded = false;
@@ -40,6 +43,7 @@ class MassMessageListContent extends JsonContent {
 
 	/**
 	 * Decode and validate the contents.
+	 *
 	 * @return bool Whether the contents are valid
 	 */
 	public function isValid() {
@@ -59,7 +63,8 @@ class MassMessageListContent extends JsonContent {
 	}
 
 	/**
-	 * Whether the content object contains invalid targets
+	 * Whether the content object contains invalid targets.
+	 *
 	 * @return bool
 	 */
 	public function hasInvalidTargets() {
@@ -87,6 +92,7 @@ class MassMessageListContent extends JsonContent {
 
 	/**
 	 * Return only the targets that would be valid for delivery.
+	 *
 	 * @return array
 	 */
 	public function getValidTargets() {
@@ -107,6 +113,7 @@ class MassMessageListContent extends JsonContent {
 
 	/**
 	 * Return targets as an array of title or title@site strings.
+	 *
 	 * @return array
 	 */
 	public function getTargetStrings() {
@@ -157,6 +164,7 @@ class MassMessageListContent extends JsonContent {
 
 	/**
 	 * Fill $output with information derived from the content.
+	 *
 	 * @param Title $title
 	 * @param int $revId
 	 * @param ParserOptions $options
@@ -203,6 +211,7 @@ class MassMessageListContent extends JsonContent {
 	/**
 	 * Helper function for fillParserOutput; return HTML for displaying the list of pages.
 	 * Note that the function assumes that the contents are valid.
+	 *
 	 * @param Language $lang
 	 * @return string
 	 */
@@ -288,6 +297,7 @@ class MassMessageListContent extends JsonContent {
 	/**
 	 * Helper function for getTargetsHtml; return the array of targets sorted by site.
 	 * Note that the function assumes that the contents are valid.
+	 *
 	 * @return array
 	 */
 	protected function getTargetsBySite() {
@@ -306,6 +316,7 @@ class MassMessageListContent extends JsonContent {
 	/**
 	 * Helper function for fillParserOutput; return HTML for page-adding form and
 	 * (initially empty and hidden) list of added pages.
+	 *
 	 * @param Language $lang
 	 * @return string
 	 */

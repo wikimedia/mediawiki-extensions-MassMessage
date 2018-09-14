@@ -2,9 +2,9 @@
 
 namespace MediaWiki\MassMessage;
 
-use Title;
-use Status;
 use FormSpecialPage;
+use Status;
+use Title;
 
 class SpecialCreateMassMessageList extends FormSpecialPage {
 
@@ -18,6 +18,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	/**
 	 * Add ResourceLoader module and call parent implementation.
+	 *
 	 * @param string $par
 	 */
 	public function execute( $par ) {
@@ -118,6 +119,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	/**
 	 * Build and return the associative array for the content radio button field.
+	 *
 	 * @return array
 	 */
 	protected function getContentOptions() {
@@ -134,7 +136,9 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * Get targets from an existing delivery list or category; returns null on failure.
+	 * Get targets from an existing delivery list or category;
+	 * returns null on failure.
+	 *
 	 * @param Title $source
 	 * @return array|null
 	 */
@@ -161,5 +165,4 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}
-
 }

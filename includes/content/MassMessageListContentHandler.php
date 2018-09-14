@@ -2,15 +2,15 @@
 
 namespace MediaWiki\MassMessage;
 
+use ApiMain;
+use ApiUsageException;
+use DerivativeContext;
+use DerivativeRequest;
 use FormatJson;
+use IContextSource;
+use JsonContentHandler;
 use Status;
 use Title;
-use DerivativeContext;
-use JsonContentHandler;
-use DerivativeRequest;
-use ApiMain;
-use IContextSource;
-use ApiUsageException;
 
 class MassMessageListContentHandler extends JsonContentHandler {
 

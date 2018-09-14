@@ -1,12 +1,13 @@
 <?php
+
 namespace MediaWiki\MassMessage;
 
-use Title;
 use Job;
 use JobQueueGroup;
+use Title;
 
 /**
- * JobQueue class to queue other jobs
+ * JobQueue class to queue other jobs.
  *
  *
  * @file

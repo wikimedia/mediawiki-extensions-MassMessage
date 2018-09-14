@@ -2,13 +2,13 @@
 
 namespace MediaWiki\MassMessage;
 
-use Title;
-use Revision;
 use ApiBase;
 use LinkBatch;
+use Revision;
+use Title;
 
 /**
- * API module to edit a MassMessage delivery list
+ * API module to edit a MassMessage delivery list.
  *
  * @ingroup API
  */
@@ -29,7 +29,9 @@ class ApiEditMassMessageList extends ApiBase {
 			$this->dieWithError( 'apierror-massmessage-invalidspamlist', 'invalidspamlist' );
 		}
 
-		/** @var MassMessageListContent $content */
+		/**
+		 * @var MassMessageListContent $content
+		 */
 		$content = Revision::newFromTitle( $spamlist )->getContent();
 		$description = $content->getDescription();
 		$targets = $content->getTargets();
@@ -158,7 +160,8 @@ class ApiEditMassMessageList extends ApiBase {
 	}
 
 	/**
-	 * Get the edit summary
+	 * Get the edit summary.
+	 *
 	 * @param array $added
 	 * @param array $removed
 	 * @return string
@@ -240,6 +243,7 @@ class ApiEditMassMessageList extends ApiBase {
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
+	 *
 	 * @return array
 	 */
 	protected function getExamplesMessages() {

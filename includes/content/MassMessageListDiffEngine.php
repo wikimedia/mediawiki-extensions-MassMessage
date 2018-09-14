@@ -1,19 +1,21 @@
 <?php
-/**
- * Difference engine for MassMessageListContent
- */
 
 namespace MediaWiki\MassMessage;
 
-use Html;
 use Content;
 use DifferenceEngine;
 use Exception;
+use Html;
+
+/**
+ * Difference engine for MassMessageListContent.
+ */
 
 class MassMessageListDiffEngine extends DifferenceEngine {
 
 	/**
 	 * Implement our own diff rendering.
+	 *
 	 * @param Content $old Old content
 	 * @param Content $new New content
 	 *
@@ -64,7 +66,6 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 			$output .= Html::closeElement( 'tr' );
 			$output .= $targetsDiff;
 		}
-
 		return $output;
 	}
 }

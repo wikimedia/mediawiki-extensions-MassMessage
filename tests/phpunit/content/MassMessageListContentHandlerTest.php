@@ -1,8 +1,9 @@
 <?php
+
 namespace MediaWiki\MassMessage;
 
-use Title;
 use Revision;
+use Title;
 
 /**
  * This inherits ApiTestCase because MassMessageListContentHandler::edit goes through

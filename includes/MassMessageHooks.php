@@ -1,22 +1,23 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use EchoEvent;
+use OutputPage;
+use Parser;
+use Skin;
+use SpecialPage;
+use User;
+
 /**
  * Hooks!
  */
 
-namespace MediaWiki\MassMessage;
-
-use SpecialPage;
-use OutputPage;
-use Parser;
-use Skin;
-use EchoEvent;
-use User;
-
 class MassMessageHooks {
 
 	/**
-	 * Hook to load our parser function
+	 * Hook to load our parser function.
+	 *
 	 * @param Parser &$parser
 	 * @return bool
 	 */
@@ -27,9 +28,10 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Main parser function for {{#target:User talk:Example|en.wikipedia.org}}
-	 * Prepares the human facing output
-	 * Hostname is optional for local delivery
+	 * Main parser function for {{#target:User talk:Example|en.wikipedia.org}}.
+	 * Prepares the human facing output.
+	 * Hostname is optional for local delivery.
+	 *
 	 * @param Parser $parser
 	 * @param string $page
 	 * @param string $site
@@ -45,7 +47,7 @@ class MassMessageHooks {
 			return $data;
 		}
 
-		// Use a message so wikis can customize the output
+		// Use a message so wikis can customize the output.
 		if ( $wgAllowGlobalMessaging ) {
 			$msg = wfMessage( 'massmessage-target' )
 				->params( $data['site'], $wgScript, $data['title'] )->plain();
@@ -57,7 +59,8 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Reads the parser function and extracts the data from it
+	 * Reads the parser function and extracts the data from it.
+	 *
 	 * @param Parser $parser
 	 * @param string $page
 	 * @param string $site
@@ -81,6 +84,7 @@ class MassMessageHooks {
 
 	/**
 	 * Add our username to the list of reserved ones
+	 *
 	 * @param array &$reservedUsernames
 	 * @return bool
 	 */
@@ -92,6 +96,7 @@ class MassMessageHooks {
 
 	/**
 	 * If someone is trying to rename the bot, don't let them.
+	 *
 	 * @param int $uid
 	 * @param string $oldName
 	 * @param string $newName
@@ -106,7 +111,8 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Add a row with the number of queued messages to Special:Statistics
+	 * Add a row with the number of queued messages to Special:Statistics.
+	 *
 	 * @param array &$extraStats
 	 * @return bool
 	 */
@@ -116,7 +122,8 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Add the number of queued messages to &meta=siteinfo&siprop=statistics
+	 * Add the number of queued messages to &meta=siteinfo&siprop=statistics.
+	 *
 	 * @param array &$result
 	 * @return bool
 	 */
@@ -128,6 +135,7 @@ class MassMessageHooks {
 	/**
 	 * Makes the messenger sender exempt from IP blocks no matter what
 	 * Called only if the context is a MassMessage job (bug 69381)
+	 *
 	 * @see bug 58237
 	 * @param User $user
 	 * @param array &$rights
@@ -142,6 +150,7 @@ class MassMessageHooks {
 
 	/**
 	 * Echo!
+	 *
 	 * @param EchoEvent $event
 	 * @return bool
 	 */
@@ -152,12 +161,12 @@ class MassMessageHooks {
 				$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId() ) {
 			return false;
 		}
-
 		return true;
 	}
 
 	/**
-	 * Override the Edit tab for delivery lists
+	 * Override the Edit tab for delivery lists.
+	 *
 	 * @param \SkinTemplate &$sktemplate
 	 * @param array &$links
 	 * @return bool
@@ -200,7 +209,8 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Add scripts and styles
+	 * Add scripts and styles.
+	 *
 	 * @param OutputPage &$out
 	 * @param Skin &$skin
 	 * @return bool
@@ -222,7 +232,8 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Mark the messenger account's email as confirmed in job runs (bug 73061)
+	 * Mark the messenger account's email as confirmed in job runs (T75061).
+	 *
 	 * @param User $user
 	 * @param bool &$confirmed
 	 * @return bool
@@ -237,6 +248,7 @@ class MassMessageHooks {
 
 	/**
 	 * Register the change tag for MassMessage delivery
+	 *
 	 * @param array &$tags
 	 * @return bool
 	 */

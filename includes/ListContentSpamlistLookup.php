@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use Title;
 use Revision;
+use Title;
 
 class ListContentSpamlistLookup extends SpamlistLookup {
 
@@ -17,7 +17,8 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 	}
 
 	/**
-	 * Get an array of targets from a page with the MassMessageListContent model
+	 * Get an array of targets from a page with the MassMessageListContent model.
+	 *
 	 * @return array
 	 */
 	public function fetchTargets() {

@@ -1,14 +1,15 @@
 <?php
+
 namespace MediaWiki\MassMessage;
 
 use ApiUsageException;
-use WikiPage;
+use ContentHandler;
 use Title;
 use User;
-use ContentHandler;
+use WikiPage;
 
 /**
- * Tests for the API module to send messages
+ * Tests for the API module to send messages.
  * @group API
  * @group Database
  * @group medium

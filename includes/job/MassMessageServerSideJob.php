@@ -1,22 +1,22 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use Exception;
+use Job;
+use Revision;
+use Title;
+use WikiPage;
+use WikitextContent;
+
 /**
- * JobQueue class for jobs queued server side
+ * JobQueue class for jobs queued server side.
  *
  * @file
  * @ingroup JobQueue
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
-namespace MediaWiki\MassMessage;
-
-use Title;
-use WikiPage;
-use Job;
-use WikitextContent;
-use Revision;
-use Exception;
 
 class MassMessageServerSideJob extends MassMessageJob {
 	public function __construct( Title $title, array $params, $id = 0 ) {
@@ -34,7 +34,8 @@ class MassMessageServerSideJob extends MassMessageJob {
 	}
 
 	/**
-	 * Don't add any hidden comments
+	 * Don't add any hidden comments.
+	 *
 	 * @param bool $stripTildes ignored
 	 * @return string
 	 */

@@ -2,10 +2,10 @@
 
 namespace MediaWiki\MassMessage;
 
-use Title;
 use Parser;
-use WikiPage;
 use Revision;
+use Title;
+use WikiPage;
 
 class ParserFunctionSpamlistLookup extends SpamlistLookup {
 
@@ -19,7 +19,8 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 	}
 
 	/**
-	 * Get an array of targets via the #target parser function
+	 * Get an array of targets via the #target parser function.
+	 *
 	 * @return array
 	 */
 	public function fetchTargets() {

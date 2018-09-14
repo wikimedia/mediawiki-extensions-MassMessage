@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use Title;
 use Category;
+use Title;
 
 class CategorySpamlistLookup extends SpamlistLookup {
 

@@ -1,20 +1,20 @@
 <?php
 
+namespace MediaWiki\MassMessage;
+
+use MediaWiki\MediaWikiServices;
+use Title;
+use WANObjectCache;
+
 /**
  * Functions related to target processing
  */
 
-namespace MediaWiki\MassMessage;
-
-use MediaWiki\MediaWikiServices;
-use WANObjectCache;
-
-use Title;
-
 abstract class SpamlistLookup {
 
 	/**
-	 * Get an array of targets via the getTarget function
+	 * Get an array of targets via the getTarget function.
+	 *
 	 * @return array
 	 */
 	abstract public function fetchTargets();
@@ -49,7 +49,6 @@ abstract class SpamlistLookup {
 				// Do not cache negatives (null or []) nor non-normalized lists
 				$ttl = WANObjectCache::TTL_UNCACHEABLE;
 			}
-
 			return $value;
 		};
 
@@ -70,10 +69,11 @@ abstract class SpamlistLookup {
 	}
 
 	/**
-	 * Gets a Title and returns an object  depending on the content of $title.
-	 * Returns null if invalid
+	 * Gets a Title and returns an object depending on the content of $title.
+	 * Returns null if invalid.
+	 *
 	 * @param Title $title
-	 * @return object
+	 * @return object|null
 	 */
 	public static function factory( Title $title ) {
 		if ( $title->inNamespace( NS_CATEGORY ) ) {
@@ -88,15 +88,17 @@ abstract class SpamlistLookup {
 	}
 
 	/**
-	 * Returns True
-	 * @return Bool
+	 * Returns true
+	 *
+	 * @return bool
 	 */
 	public function isCachable() {
 		return true;
 	}
 
 	/**
-	 * Get array of normalized targets with duplicates removed
+	 * Get array of normalized targets with duplicates removed.
+	 *
 	 * @param array $data
 	 * @return array
 	 */
@@ -120,7 +122,6 @@ abstract class SpamlistLookup {
 				$target['title'] = $title->getPrefixedText();
 			}
 		}
-
 		// Return $data with duplicates removed
 		return array_unique( $data, SORT_REGULAR );
 	}

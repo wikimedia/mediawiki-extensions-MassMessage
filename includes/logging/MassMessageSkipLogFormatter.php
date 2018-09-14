@@ -1,15 +1,15 @@
 <?php
 
-/**
- * Log formatter for 'skip*' entries on Special:Log/massmessage
- * Parses the message summary so wikilinks work
- */
-
 namespace MediaWiki\MassMessage;
 
 use Linker;
-use Message;
 use LogFormatter;
+use Message;
+
+/**
+ * Log formatter for 'skip*' entries on Special:Log/massmessage.
+ * Parses the message summary so wikilinks work.
+ */
 
 class MassMessageSkipLogFormatter extends LogFormatter {
 
@@ -31,7 +31,6 @@ class MassMessageSkipLogFormatter extends LogFormatter {
 
 		// Bad things happens if the numbers are not in correct order
 		ksort( $this->parsedParameters );
-
 		return $this->parsedParameters;
 	}
 }

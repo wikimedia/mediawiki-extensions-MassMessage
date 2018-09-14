@@ -1,16 +1,16 @@
 <?php
 
-/**
- * Log formatter for 'send' entries on Special:Log/massmessage
- * This lets us link to the specific revid used to send the message
- */
-
 namespace MediaWiki\MassMessage;
 
 use Linker;
+use LogFormatter;
 use Message;
 use SpecialPage;
-use LogFormatter;
+
+/**
+ * Log formatter for 'send' entries on Special:Log/massmessage.
+ * This lets us link to the specific revid used to send the message.
+ */
 
 class MassMessageSendLogFormatter extends LogFormatter {
 

@@ -2,21 +2,22 @@
 
 namespace MediaWiki\MassMessage;
 
-use Title;
+use EditPage;
+use FormSpecialPage;
+use Html;
+use HTMLForm;
+use LogEventsList;
+use MWNamespace;
 use Revision;
 use Status;
-use EditPage;
-use Html;
-use FormSpecialPage;
-use HTMLForm;
-use MWNamespace;
-use LogEventsList;
+use Title;
 
 class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**
 	 * The title of the list to edit
 	 * If not null, the title refers to a delivery list.
+	 *
 	 * @var Title|null
 	 */
 	protected $title;
@@ -24,12 +25,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	/**
 	 * The revision to edit
 	 * If not null, the user can edit the delivery list.
+	 *
 	 * @var Revision|null
 	 */
 	protected $rev;
 
 	/**
 	 * The message key for the error encountered while parsing the title, if any
+	 *
 	 * @var string|null
 	 */
 	protected $errorMsgKey;
@@ -175,6 +178,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**
 	 * Hide the form if the title is invalid or if the user can't edit the list.
+	 *
 	 * @param HTMLForm $form
 	 */
 	protected function alterForm( HTMLForm $form ) {
@@ -186,6 +190,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**
 	 * Return instructions for the form and / or warnings.
+	 *
 	 * @return string
 	 */
 	protected function preText() {
@@ -221,6 +226,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 	/**
 	 * Return a copyright warning to be displayed below the form.
+	 *
 	 * @return string
 	 */
 	protected function postText() {
@@ -283,6 +289,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	/**
 	 * Parse user input into an array of targets and return it as the value of a Status object.
 	 * If input contains invalid data, the value is the array of invalid target strings.
+	 *
 	 * @param string $input
 	 * @return Status
 	 */
@@ -322,5 +329,4 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}
-
 }

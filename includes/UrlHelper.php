@@ -1,13 +1,14 @@
 <?php
+
 namespace MediaWiki\MassMessage;
 
-use WikiPage;
 use Title;
+use WikiPage;
 
 class UrlHelper {
 
 	/**
-	 * Function to follow redirects
+	 * Function to follow redirects.
 	 *
 	 * @param Title $title
 	 * @return Title|null null if the page is an interwiki redirect
@@ -27,7 +28,8 @@ class UrlHelper {
 	}
 
 	/**
-	 * Returns the basic hostname and port using wfParseUrl
+	 * Returns the basic hostname and port using wfParseUrl.
+	 *
 	 * @param string $url
 	 * @return string
 	 */
@@ -45,5 +47,4 @@ class UrlHelper {
 		}
 		return $mapping[$url];
 	}
-
 }

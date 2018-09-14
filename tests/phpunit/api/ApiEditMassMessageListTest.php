@@ -1,12 +1,13 @@
 <?php
+
 namespace MediaWiki\MassMessage;
 
-use Title;
 use ContentHandler;
+use Title;
 use WikiPage;
 
 /**
- * Tests for the API module to edit a MassMessage delivery list
+ * Tests for the API module to edit a MassMessage delivery list.
  * @group API
  * @group Database
  * @group medium
