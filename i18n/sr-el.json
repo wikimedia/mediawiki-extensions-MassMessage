@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Srdjan m"
+			"Srdjan m",
+			"Zoranzoki21"
 		]
 	},
 	"massmessage": "Masovno slanje poruke",
 	"createmassmessagelist": "Napravi spisak isporuke masovnih poruka",
+	"massmessage-desc": "Dozvoljava korisnicima da lako šalju poruku na spisak korisnika",
 	"massmessage-form-spamlist": "Stranica ili kategorija sa spiskom stranica gde poslati poruku:",
 	"massmessage-form-subject": "Naslov poruke (koristi se i kao opis izmene):",
 	"massmessage-form-message": "Tekst poruke:",

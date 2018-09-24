@@ -4,11 +4,13 @@
 			"Milicevic01",
 			"Srdjan m",
 			"Obsuser",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"massmessage": "Масовно слање поруке",
 	"createmassmessagelist": "Направи списак испоруке масовних порука",
+	"massmessage-desc": "Дозвоњава корисницима да лако шаљу поруку на списак корисника",
 	"massmessage-form-spamlist": "Страница или категорија са списком страница где послати поруку:",
 	"massmessage-form-subject": "Наслов поруке (користи се и као опис измене):",
 	"massmessage-form-message": "Текст поруке:",
