@@ -7,7 +7,8 @@
 			"Superyetkin",
 			"Vito Genovese",
 			"Rapsar",
-			"Diyapazon"
+			"Diyapazon",
+			"TmY e12"
 		]
 	},
 	"massmessage": "Toplu mesaj gönderin",
@@ -117,5 +118,6 @@
 	"apihelp-editmassmessagelist-param-add": "Listeye eklenecek başlıklar.",
 	"apihelp-editmassmessagelist-param-remove": "Listeden çıkarılacak başlıklar.",
 	"tag-massmessage-delivery": "Toplu mesaj teslimi",
-	"tag-massmessage-delivery-description": "[[:mw:Extension:MassMessage|Extension:MassMessage]] kullanılarak mesaj teslimatı"
+	"tag-massmessage-delivery-description": "[[:mw:Extension:MassMessage|Extension:MassMessage]] kullanılarak mesaj teslimatı",
+	"log-action-filter-massmessage": "Mesaj türü"
 }

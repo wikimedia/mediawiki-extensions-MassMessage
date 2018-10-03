@@ -4,7 +4,32 @@
 			"Dr Lotus Black"
 		]
 	},
+	"massmessage": "အစုလိုက်အပြုံလိုက် မက်ဆေ့ပို့ရန်",
+	"massmessage-form-message": "မက်ဆေ့ကိုယ်ထည်:",
+	"massmessage-form-preview": "ကြိုတင်အစမ်းကြည့်ရှုရန်",
+	"massmessage-form-submit": "ပို့ရန်",
+	"massmessage-fieldset-preview": "ကြိုတင်အစမ်းကြည့်ရှုရန်",
+	"massmessage-fieldset-info": "သတင်းအချက်အလက်",
+	"massmessage-queued-count": "စီတန်းနေသော [[Special:MassMessage|အစုလိုက်အပြုံလိုက် မက်ဆေ့များ]]",
+	"log-name-massmessage": "အစုလိုက်အပြုံလိုက် မက်ဆေ့မှတ်တမ်း",
+	"massmessage-content-pages": "စာရင်းထဲရှိ စာမျက်နှာများ",
+	"massmessage-content-pagesonsite": "$1 ပေါ်ရှိစာမျက်နှာများ:",
 	"massmessage-content-remove": "ဖယ်ရှားရန်",
 	"massmessage-content-removeyes": "ဖယ်ရှားရန်",
-	"massmessage-content-removeno": "မလုပ်တော့ပါ"
+	"massmessage-content-removeno": "မလုပ်တော့ပါ",
+	"massmessage-content-emptylist": "(ဗလာ)",
+	"massmessage-content-addheading": "စာမျက်နှာများ ပေါင်းထည့်ရန်",
+	"massmessage-content-addtitle": "ခေါင်းစဉ်:",
+	"massmessage-content-addsite": "ဆိုဒ်:",
+	"massmessage-content-addsubmit": "စာမျက်နှာ ပေါင်းထည့်ရန်",
+	"massmessage-content-addeditem": "$2 ရှိ $1",
+	"massmessage-create-title": "ခေါင်းစဉ်:",
+	"massmessage-create-description": "ဖော်ပြချက်:",
+	"massmessage-create-content": "အကြောင်းအရာ:",
+	"massmessage-create-source": "ရင်းမြစ် -",
+	"massmessage-edit-pagetitle": "$1 ကို တည်းဖြတ်နေသည်",
+	"massmessage-edit-title": "ခေါင်းစဉ်:",
+	"massmessage-edit-description": "ဖော်ပြချက်:",
+	"massmessage-edit-content": "ဦးတည်စာမျက်နှာများ:",
+	"massmessage-edit-nopermission": "သင့်တွင် စာရင်းကိုပြင်ဆင်ရန် ခွင့်ပြုချက်မရှိပါ။"
 }
