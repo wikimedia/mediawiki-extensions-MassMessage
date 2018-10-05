@@ -40,6 +40,7 @@
 	"right-massmessage": "üzenet küldése egyszerre több felhasználónak",
 	"action-massmessage": "üzenetküldés egyszerre több felhasználónak",
 	"log-name-massmessage": "Tömeges üzenetek naplója",
+	"logentry-massmessage-failure": "A(z) „$4” üzenet kézbesítése a(z) $3 lapra sikertelen volt <code>$5</code> hibakóddal",
 	"massmessage-cannot-rename": "Ez egy rendszerfiók és nem lehet átnevezni.",
 	"massmessage-content-localpages": "Lapok ezen a wikin:",
 	"massmessage-content-remove": "eltávolítás",
