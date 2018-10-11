@@ -46,6 +46,8 @@
 	"logentry-massmessage-skipnouser": "Doručení „$4“ pro $3 bylo přeskočeno, protože uživatelský účet neexistuje",
 	"massmessage-cannot-rename": "Toto je systémový účet, který nemůže být přejmenován.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Poslat další zprávu]] nebo [[Special:Statistics|zobrazit počet zpráv ve frontě]].",
+	"massmessage-content-pages": "Stránky v tomto seznamu",
+	"massmessage-content-remove": "smazat",
 	"massmessage-content-removeyes": "Odstranit",
 	"massmessage-content-removeno": "Storno",
 	"massmessage-content-empty": "V tomto seznamu nejsou žádné stránky.",
