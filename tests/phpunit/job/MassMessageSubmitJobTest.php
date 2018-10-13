@@ -7,7 +7,7 @@ use MediaWikiTestCase;
 class MassMessageSubmitJobTest extends MediaWikiTestCase {
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageSubmitJob::getJobs
+	 * @covers \MediaWiki\MassMessage\MassMessageSubmitJob::getJobs
 	 * @dataProvider provideGetJobs
 	 */
 	public function testGetJobs( $data, $pages ) {

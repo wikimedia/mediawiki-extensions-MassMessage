@@ -50,9 +50,9 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\SpamlistLookup::getTargets
-	 * @covers \Mediawiki\MassMessage\SpamlistLookup::normalizeTargets
-	 * @covers \Mediawiki\MassMessage\ParserFunctionSpamlistLookup::fetchTargets
+	 * @covers \MediaWiki\MassMessage\SpamlistLookup::getTargets
+	 * @covers \MediaWiki\MassMessage\SpamlistLookup::normalizeTargets
+	 * @covers \MediaWiki\MassMessage\ParserFunctionSpamlistLookup::fetchTargets
 	 * @dataProvider provideGetParserFunctionTargets
 	 * @param string $text Text of the page to create
 	 * @param array $check Stuff to check against

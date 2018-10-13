@@ -14,7 +14,7 @@ class DatabaseLookupTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\DatabaseLookup::getDBName
+	 * @covers \MediaWiki\MassMessage\DatabaseLookup::getDBName
 	 * @dataProvider provideGetDBName
 	 * @param string $url
 	 * @param string $expected

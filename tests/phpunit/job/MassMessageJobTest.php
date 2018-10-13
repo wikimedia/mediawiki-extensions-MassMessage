@@ -31,8 +31,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageJob::sendMessage
-	 * @covers \Mediawiki\MassMessage\MassMessageJob::editPage
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::editPage
 	 */
 	public function testMessageSending() {
 		$target = Title::newFromText( 'Project:Testing1234' );
@@ -54,8 +54,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageJob::addLQTThread
-	 * @covers \Mediawiki\MassMessage\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::addLQTThread
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
 	 */
 	public function testLQTMessageSending() {
 		global $wgContLang;
@@ -72,7 +72,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageJob::isOptedOut
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::isOptedOut
 	 */
 	public function testOptOut() {
 		$fakejob = new MassMessageJob( Title::newMainPage(), [] );

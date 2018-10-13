@@ -12,8 +12,8 @@ use WikitextContent;
 class CategorySpamlistLookupTest extends MassMessageTestCase {
 
 	/**
-	 * @covers \Mediawiki\MassMessage\SpamlistLookup::getTargets
-	 * @covers \Mediawiki\MassMessage\CategorySpamlistLookup::fetchTargets
+	 * @covers \MediaWiki\MassMessage\SpamlistLookup::getTargets
+	 * @covers \MediaWiki\MassMessage\CategorySpamlistLookup::fetchTargets
 	 */
 	public static function testGetTargets() {
 		$page = Title::newFromText( 'Talk:Testing1234' );
