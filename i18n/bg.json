@@ -40,5 +40,14 @@
 	"log-name-massmessage": "Дневник на масовите съобщения",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|изпрати съобщение}} до $3",
 	"logentry-massmessage-failure": "Доставката на „$4“ до $3 беше неуспешна, с код на грешката <code>$5</code>",
-	"logentry-massmessage-skipnouser": "Доставянето на „$4“ на $3 беше пропуснато, защото потребителската сметка не съществува"
+	"logentry-massmessage-skipnouser": "Доставянето на „$4“ на $3 беше пропуснато, защото потребителската сметка не съществува",
+	"massmessage-content-removeno": "Отмяна",
+	"massmessage-content-emptylist": "(няма)",
+	"massmessage-content-addtitle": "Заглавие:",
+	"massmessage-content-addsite": "Сайт:",
+	"massmessage-content-addsubmit": "Добавяне на страница",
+	"massmessage-create-content": "Съдържание:",
+	"massmessage-create-new": "Създаване на нов списък за доставка",
+	"massmessage-create-import": "Внасяне на страници от съществуващ списък или категория",
+	"massmessage-edit-summary": "Резюме на редакцията:"
 }
