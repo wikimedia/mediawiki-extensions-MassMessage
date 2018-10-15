@@ -17,7 +17,7 @@ class MassMessageTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessage::getMessengerUser
+	 * @covers \MediaWiki\MassMessage\MassMessage::getMessengerUser
 	 * @dataProvider provideGetMessengerUser
 	 * @param string $name
 	 */

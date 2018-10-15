@@ -20,7 +20,7 @@ class UrlHelperTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\UrlHelper::getBaseUrl
+	 * @covers \MediaWiki\MassMessage\UrlHelper::getBaseUrl
 	 * @dataProvider provideGetBaseUrl
 	 * @param  string $url      raw url to parse
 	 * @param  string $expected expected value
@@ -31,7 +31,7 @@ class UrlHelperTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\UrlHelper::followRedirect
+	 * @covers \MediaWiki\MassMessage\UrlHelper::followRedirect
 	 */
 	public function testFollowRedirect() {
 		$title = Title::newfromtext( 'R1' );

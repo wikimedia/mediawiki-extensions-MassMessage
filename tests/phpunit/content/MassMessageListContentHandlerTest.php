@@ -37,7 +37,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageListContentHandler::edit
+	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::edit
 	 */
 	public function testEdit() {
 		$this->doLogin();
@@ -62,7 +62,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageListContentHandler::edit
+	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::edit
 	 */
 	public function testInvalidEdit() {
 		$this->doLogin();
@@ -78,7 +78,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageListContentHandler::normalizeTargetArray
+	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::normalizeTargetArray
 	 */
 	public function testNormalizeTargetArray() {
 		$input = [
@@ -130,7 +130,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageListContentHandler::compareTargets
+	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::compareTargets
 	 * @dataProvider provideCompareTargets
 	 * @param array $a
 	 * @param array $b
@@ -158,7 +158,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \Mediawiki\MassMessage\MassMessageListContentHandler::extractTarget
+	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::extractTarget
 	 * @dataProvider provideExtractTarget
 	 * @param string $targetString
 	 * @param array $expected Parsed target
