@@ -10,12 +10,13 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use Maintenance;
 use Title;
+use WikiMap;
 
 /**
  * Script to send MassMessages server-side
  *
- * Expects a page list formatted as a .tsv file, with "PageName\tWikiId" on each line
- * Subject line and message body are also stored as files
+ * Expects a page list formatted as a .tsv file, with "PageName<tab>WikiId" on each line.
+ * Subject line and message body are also stored as files.
  */
 class SendMessages extends Maintenance {
 	public function __construct() {
@@ -53,10 +54,18 @@ class SendMessages extends Maintenance {
 		$pages = [];
 		$this->output( "Reading from \"$list\".\n" );
 
+		$lineNum = 0;
 		// @codingStandardsIgnoreStart
 		while ( $line = trim( fgets( $file ) ) ) {
 		// @codingStandardsIgnoreEnd
+			$lineNum++;
 			$exp = explode( "\t", $line );
+			if ( count( $exp ) !== 2 ) {
+				$this->fatalError( "Line $lineNum should have two components: $line" );
+			}
+			if ( !WikiMap::getWiki( $exp[1] ) ) {
+				$this->fatalError( "Invalid wiki name on line $lineNum: " . $exp[1] );
+			}
 			$pages[] = [
 				'title' => $exp[0],
 				'wiki' => $exp[1],
