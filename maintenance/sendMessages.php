@@ -29,26 +29,34 @@ class SendMessages extends Maintenance {
 
 	public function execute() {
 		$info = [];
+
 		foreach ( [ 'pagelist', 'subject', 'message' ] as $arg ) {
 			$option = $this->getOption( $arg );
 			if ( !is_file( $this->getOption( $arg ) ) ) {
-				$this->error( "Error: required argument $arg was passed an invalid filename.\n", 1 );
+				$this->fatalError( "Required argument $arg was passed an invalid filename.\n" );
 			}
 
-			if ( $arg !== 'pagelist' ) {
+			// Also include check if the file size before even reading the file
+			if ( $arg !== 'pagelist' && filesize( $this->getOption( $arg ) ) !== 0 ) {
 				$contents = file_get_contents( $option );
 				if ( $contents !== false ) {
 					$info[$arg] = trim( $contents );
 				} else {
-					$this->error( "Error: Unable to read $option.\n", 1 );
+					$this->fatalError( "Unable to read $option.\n" );
 				}
+			} else {
+				$this->fatalError( "$option is empty, must have some content.\n" );
 			}
 		}
 
 		$list = $this->getOption( 'pagelist' );
-		$file = fopen( $list, 'r' );
-		if ( $file === false ) {
-			$this->error( "Error: could not open pagelist file: \"$list\".\n", 1 );
+		if ( filesize( $this->getOption( $arg ) ) !== 0 ) {
+			$file = fopen( $list, 'r' );
+			if ( $file === false ) {
+				$this->fatalError( "Could not open pagelist file: \"$list\".\n" );
+			}
+		} else {
+			$this->fatalError( "Error: $list is empty.\n" );
 		}
 
 		$pages = [];
