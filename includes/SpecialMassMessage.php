@@ -89,8 +89,10 @@ class SpecialMassMessage extends SpecialPage {
 		$result = $form->tryAuthorizedSubmit();
 		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
 			if ( $this->state === 'submit' ) { // If it's preview, everything is shown already.
-				$msg = $this->msg( 'massmessage-submitted' )->numParams( $this->count )->plain();
-				$output->addWikiText( $msg );
+				$output->addWikiMsg(
+					'massmessage-submitted',
+					[ 'num' => $this->count ]
+				);
 				$output->addWikiMsg( 'massmessage-nextsteps' );
 			}
 		} else {
