@@ -126,5 +126,6 @@
 	"apihelp-query+mmsites-param-term": "Het voorvoegsel om op te zoeken.",
 	"tag-massmessage-delivery": "MassMessage-bezorging",
 	"tag-massmessage-delivery-description": "Bulkbericht verzending met [[:mw:Extension:MassMessage|Uitbreiding:MassMessage]]",
-	"log-action-filter-massmessage": "Soort logboekregel"
+	"log-action-filter-massmessage": "Soort logboekregel",
+	"log-action-filter-massmessage-skipnouser": "Doel overgeslagen omdat de gebruiker niet bestaat"
 }
