@@ -38,7 +38,7 @@ class MassMessageServerSideJob extends MassMessageJob {
 	 * @param bool $stripTildes ignored
 	 * @return string
 	 */
-	function makeText( $stripTildes = false ) {
+	protected function makeText( $stripTildes = false ) {
 		return $this->params['message'];
 	}
 
