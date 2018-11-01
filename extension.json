@@ -206,9 +206,9 @@
 	},
 	"AutoloadClasses": {
 		"MediaWiki\\MassMessage\\MassMessageHooks": "includes/MassMessageHooks.php",
-		"MediaWiki\\MassMessage\\ApiMassMessage": "includes/ApiMassMessage.php",
-		"MediaWiki\\MassMessage\\ApiEditMassMessageList": "includes/ApiEditMassMessageList.php",
-		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/ApiQueryMMSites.php",
+		"MediaWiki\\MassMessage\\ApiMassMessage": "includes/api/ApiMassMessage.php",
+		"MediaWiki\\MassMessage\\ApiEditMassMessageList": "includes/api/ApiEditMassMessageList.php",
+		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/api/ApiQueryMMSites.php",
 		"MediaWiki\\MassMessage\\MassMessage": "includes/MassMessage.php",
 		"MediaWiki\\MassMessage\\SpamlistLookup": "includes/SpamlistLookup.php",
 		"MediaWiki\\MassMessage\\DatabaseLookup": "includes/DatabaseLookup.php",
