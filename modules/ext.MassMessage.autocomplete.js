@@ -3,7 +3,7 @@
  * Mainly from from http://jqueryui.com/autocomplete/
  * and resources/mediawiki/mediawiki.searchSuggest.js
  */
-( function ( mw ) {
+( function () {
 	'use strict';
 	mw.massmessage = mw.massmessage || {};
 
@@ -35,4 +35,4 @@
 			}
 		} );
 	};
-}( mediaWiki, jQuery ) );
+}() );
