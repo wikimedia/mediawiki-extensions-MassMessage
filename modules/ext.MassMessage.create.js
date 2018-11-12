@@ -72,7 +72,7 @@ $( function () {
 		}
 		page = response.query.pages[ 0 ];
 		if ( page.ns === 14 ) {
-			return page.hasOwnProperty( 'categoryinfo' ); // non-empty category
+			return Object.prototype.hasOwnProperty.call( page, 'categoryinfo' ); // non-empty category
 		} else {
 			return !page.missing &&
 				( page.contentmodel === 'wikitext' ||

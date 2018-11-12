@@ -39,13 +39,14 @@ $( function () {
 
 		tags = {};
 		$.each( matches, function ( idx, itm ) {
-			var realTag, tag;
+			var realTag, tag,
+				hasOwn = Object.prototype.hasOwnProperty;
 
 			// Keep just the element names and the starting '/', if exists.
 			tag = itm.replace( /[<>]/g, '' ).split( ' ' )[ 0 ];
 			if ( tag.charAt( 0 ) !== '/' ) { // Start tag
-				if ( !voidElements.hasOwnProperty( tag ) ) { // Ignore void elements
-					if ( tags.hasOwnProperty( tag ) ) {
+				if ( !hasOwn.call( voidElements, tag ) ) { // Ignore void elements
+					if ( hasOwn.call( tags, tag ) ) {
 						tags[ tag ]++;
 					} else {
 						tags[ tag ] = 1;
@@ -53,7 +54,7 @@ $( function () {
 				}
 			} else { // End tag
 				realTag = tag.substr( 1, tag.length );
-				if ( tags.hasOwnProperty( realTag ) ) {
+				if ( hasOwn.call( tags, realTag ) ) {
 					tags[ realTag ]--;
 				} else {
 					tags[ realTag ] = -1;
