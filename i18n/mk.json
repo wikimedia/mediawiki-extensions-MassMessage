@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"massmessage": "Испраќање на масовна порака",
@@ -10,7 +11,7 @@
 	"massmessage-desc": "Овозможува корисниците да испраќаат масовни пораки на списоци од корисници",
 	"massmessage-form-spamlist": "Страница или категорија со список од страници на кои треба да се остави пораката:",
 	"massmessage-form-subject": "Наслов на пораката. Ќе се користи и како опис на уредувањето.",
-	"massmessage-form-message": "Текст на пораката.",
+	"massmessage-form-message": "Текст на пораката:",
 	"massmessage-form-preview": "Преглед",
 	"massmessage-form-submit": "Испрати",
 	"massmessage-fieldset-preview": "Преглед",
