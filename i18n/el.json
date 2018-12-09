@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Geraki",
-			"Protnet"
+			"Protnet",
+			"Nikosgranturismogt"
 		]
 	},
 	"massmessage": "Αποστολή μαζικού μηνύματος",
@@ -37,5 +38,6 @@
 	"logentry-massmessage-skipoptout": "Παράδοση του \"$4\" στην $3 παραλείφθηκε επειδή ο στόχος έχει αποεπιλέξει την παράδοση μηνυμάτων",
 	"logentry-massmessage-skipnouser": "Παράδοση του \"$4\" στη $3 παραλείφθηκε επειδή ο λογαριασμός χρήστη δεν υπάρχει",
 	"massmessage-cannot-rename": "Αυτό είναι ένας λογαριασμός του συστήματος και δεν μπορεί να μετονομαστεί.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Στείλετε άλλο μήνυμα]] ή [[Special:Statistics|προβάλετε τον αριθμό των μηνυμάτων που βρίσκονται στην ουρά]]."
+	"massmessage-nextsteps": "[[Special:MassMessage|Στείλετε άλλο μήνυμα]] ή [[Special:Statistics|προβάλετε τον αριθμό των μηνυμάτων που βρίσκονται στην ουρά]].",
+	"tag-massmessage-delivery": "Παράδοση μαζικού μηνύματος"
 }
