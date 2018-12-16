@@ -171,7 +171,7 @@ class MassMessageHooks {
 	 * @param array &$links
 	 * @return bool
 	 */
-	public static function onSkinTemplateNavigation( &$sktemplate, &$links ) {
+	public static function onSkinTemplateNavigation( \SkinTemplate &$sktemplate, &$links ) {
 		$title = $sktemplate->getTitle();
 		if ( $title->hasContentModel( 'MassMessageListContent' )
 			&& array_key_exists( 'edit', $links['views'] )
