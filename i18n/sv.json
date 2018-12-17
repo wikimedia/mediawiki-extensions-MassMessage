@@ -6,7 +6,8 @@
 			"Lokal Profil",
 			"WikiPhoenix",
 			"Ainali",
-			"Jenniesarina"
+			"Jenniesarina",
+			"Nirmos (Wikimedia)"
 		]
 	},
 	"massmessage": "Skicka massmeddelande",
@@ -83,6 +84,7 @@
 	"massmessage-edit-description": "Beskrivning:",
 	"massmessage-edit-content": "Målsidor:",
 	"massmessage-edit-summary": "Redigeringssammanfattning:",
+	"massmessage-edit-header": "Använd formuläret nedan för att ändra listbeskrivningen eller ändra listan med målsidor. För målsidor, skriv en titel per rad.",
 	"massmessage-edit-invalidtargets": "Följande {{PLURAL:$1|sida|sidor}} är ogiltiga:\n$2",
 	"massmessage-edit-missingsummary": "Du har inte angivit en redigeringssammanfattning. Om du klickar på \"{{int:htmlform-submit}}\" igen kommer din redigering att sparas utan en.",
 	"massmessage-edit-nopermission": "Du har inte behörighet att redigera den listan.",

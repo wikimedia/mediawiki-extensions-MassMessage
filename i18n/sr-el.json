@@ -30,6 +30,8 @@
 	"massmessage-create-title": "Naslov:",
 	"massmessage-create-description": "Opis:",
 	"massmessage-create-content": "Sadržaj:",
+	"massmessage-create-new": "Pravi novu listu za dostavu",
+	"massmessage-create-import": "Uvoz stranica sa postojećeg spiska ili kategorije",
 	"massmessage-create-source": "Izvor:",
 	"massmessage-create-invalidtitle": "Navedeni naslov nije valjan.",
 	"massmessage-edit-title": "Naslov:",
