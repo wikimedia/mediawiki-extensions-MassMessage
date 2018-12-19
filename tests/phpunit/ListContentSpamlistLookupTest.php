@@ -8,12 +8,12 @@ use ContentHandler;
 
 /**
  * Tests for MassMessage List Content related to target processing
+ *
+ * @covers \MediaWiki\MassMessage\ListContentSpamlistLookup
+ * @covers \MediaWiki\MassMessage\SpamlistLookup
  */
 class ListContentSpamlistLookupTest extends MassMessageTestCase {
-	/**
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::getTargets
-	 * @covers \MediaWiki\MassMessage\ListContentSpamlistLookup::fetchTargets
-	 */
+
 	public function testGetTargets() {
 		$text = '{"description":"","targets":['
 			. '{"title":"A"},'
@@ -34,73 +34,54 @@ class ListContentSpamlistLookupTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * Create a test title
-	 * @param string $title Text to be used in creating the title.
+	 * @param int $namespace
+	 * @param string $contentModel
+	 *
 	 * @return Title
 	 */
-	private function createTestTitle( $titleName, $namespace = NS_MAIN ) {
-		return Title::newFromText( $titleName, $namespace );
+	private function createTestTitle( $namespace = NS_MAIN, $contentModel = CONTENT_MODEL_WIKITEXT ) {
+		$title = Title::newFromText( 'MassMessageTestTitle', $namespace );
+		$title->setContentModel( $contentModel );
+		return $title;
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::factory
-	 */
 	public function testFactoryForCategorySpamlistLookup() {
-		$title = $this->createTestTitle( 'Title_NC', NS_CATEGORY );
+		$title = $this->createTestTitle( NS_CATEGORY );
 		$expected = new CategorySpamlistLookup( $title );
+
 		$actual = SpamlistLookup::factory( $title );
 
 		$this->assertEquals( $expected, $actual );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::factory
-	 */
 	public function testFactoryForListContentSpamlistLookup() {
-		$title = $this->createTestTitle( 'Title_MMLC' );
+		$title = $this->createTestTitle( NS_MAIN, 'MassMessageListContent' );
 		$expected = new ListContentSpamlistLookup( $title );
 
-		$title->setContentModel( 'MassMessageListContent' );
 		$actual = SpamlistLookup::factory( $title );
 
 		$this->assertEquals( $expected, $actual );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::factory
-	 */
 	public function testFactoryForParserFunctionSpamlistLookup() {
-		$title = $this->createTestTitle( 'Title_CMW' );
+		$title = $this->createTestTitle();
 		$expected = new ParserFunctionSpamlistLookup( $title );
 
-		$title->setContentModel( CONTENT_MODEL_WIKITEXT );
 		$actual = SpamlistLookup::factory( $title );
 
 		$this->assertEquals( $expected, $actual );
 	}
 
-	/**
-	 * Test an edge case to return null. We need to explicitly set
-	 * content model. As by default, titles are created with content
-	 * model CONTENT_MODEL_WIKITEXT which will fail this test if not
-	 * explicitly changed to something that will return NULL when
-	 * SpamlistLookup::factory is called.
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::factory
-	 */
-	public function testFactoryThatReturnsNull() {
-		// Use NS not accepted in this case. factory() only accepts on NS_CATEGORY
-		$title1 = $this->createTestTitle( 'Title_EC' );
-		// Set a content invalid model not accepted by ::factory()
-		$title1->setContentModel( 'UnacceptableModel' );
+	public function testUnacceptableContentModels() {
+		$title1 = $this->createTestTitle( NS_MAIN, 'NonExistingContentModel' );
 		$actual = SpamlistLookup::factory( $title1 );
 
 		$this->assertNull( $actual );
 
-		$title2 = Title::newMainPage();
-		// Use a valid content model but not accepted by ::factory()
-		$title2->setContentModel( CONTENT_MODEL_CSS );
+		$title2 = $this->createTestTitle( NS_MAIN, CONTENT_MODEL_CSS );
 		$actual = SpamlistLookup::factory( $title2 );
 
 		$this->assertNull( $actual );
 	}
+
 }
