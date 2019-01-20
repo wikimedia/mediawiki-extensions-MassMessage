@@ -102,7 +102,7 @@
 			],
 			"dependencies": [
 				"ext.MassMessage.autocomplete",
-				"jquery.byteLimit",
+				"jquery.lengthLimit",
 				"jquery.throttle-debounce",
 				"mediawiki.jqueryMsg"
 			]
