@@ -19,12 +19,10 @@ class MassMessageHooks {
 	 * Hook to load our parser function.
 	 *
 	 * @param Parser &$parser
-	 * @return bool
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setFunctionHook( 'target',
 			'MediaWiki\\MassMessage\\MassMessageHooks::outputParserFunction' );
-		return true;
 	}
 
 	/**
@@ -86,12 +84,10 @@ class MassMessageHooks {
 	 * Add our username to the list of reserved ones
 	 *
 	 * @param array &$reservedUsernames
-	 * @return bool
 	 */
 	public static function onUserGetReservedNames( &$reservedUsernames ) {
 		global $wgMassMessageAccountUsername;
 		$reservedUsernames[] = $wgMassMessageAccountUsername;
-		return true;
 	}
 
 	/**
@@ -114,22 +110,18 @@ class MassMessageHooks {
 	 * Add a row with the number of queued messages to Special:Statistics.
 	 *
 	 * @param array &$extraStats
-	 * @return bool
 	 */
 	public static function onSpecialStatsAddExtra( &$extraStats ) {
 		$extraStats['massmessage-queued-count'] = MassMessage::getQueuedCount();
-		return true;
 	}
 
 	/**
 	 * Add the number of queued messages to &meta=siteinfo&siprop=statistics.
 	 *
 	 * @param array &$result
-	 * @return bool
 	 */
 	public static function onAPIQuerySiteInfoStatisticsInfo( &$result ) {
 		$result['queued-massmessages'] = MassMessage::getQueuedCount();
-		return true;
 	}
 
 	/**
@@ -139,13 +131,11 @@ class MassMessageHooks {
 	 * @see bug 58237
 	 * @param User $user
 	 * @param array &$rights
-	 * @return bool
 	 */
 	public static function onUserGetRights( User $user, array &$rights ) {
 		if ( $user->getId() === MassMessage::getMessengerUser()->getId() ) {
 			$rights[] = 'ipblock-exempt';
 		}
-		return true;
 	}
 
 	/**
@@ -169,7 +159,6 @@ class MassMessageHooks {
 	 *
 	 * @param \SkinTemplate &$sktemplate
 	 * @param array &$links
-	 * @return bool
 	 */
 	public static function onSkinTemplateNavigation( \SkinTemplate &$sktemplate, &$links ) {
 		$title = $sktemplate->getTitle();
@@ -205,7 +194,6 @@ class MassMessageHooks {
 				'EditMassMessageList', $title
 			)->getFullUrl( $query );
 		}
-		return true;
 	}
 
 	/**
@@ -213,7 +201,6 @@ class MassMessageHooks {
 	 *
 	 * @param OutputPage &$out
 	 * @param Skin &$skin
-	 * @return bool
 	 */
 	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
 		$title = $out->getTitle();
@@ -228,7 +215,6 @@ class MassMessageHooks {
 				$out->addModuleStyles( 'ext.MassMessage.content.noedit' );
 			}
 		}
-		return true;
 	}
 
 	/**
@@ -250,10 +236,8 @@ class MassMessageHooks {
 	 * Register the change tag for MassMessage delivery
 	 *
 	 * @param array &$tags
-	 * @return bool
 	 */
 	public static function onRegisterTags( &$tags ) {
 		$tags[] = 'massmessage-delivery';
-		return true;
 	}
 }
