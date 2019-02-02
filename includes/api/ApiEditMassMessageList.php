@@ -76,19 +76,19 @@ class ApiEditMassMessageList extends ApiBase {
 			$invalidRemove = array_unique( $invalidRemove );
 
 			$newTargets = array_values( array_udiff( $newTargets, $toRemove,
-				'MediaWiki\\MassMessage\\MassMessageListContentHandler::compareTargets' ) );
+				[ MassMessageListContentHandler::class, 'compareTargets' ] ) );
 		}
 
 		if ( isset( $data['add'] ) ) {
 			$added = array_values( array_udiff( $newTargets, $targets,
-				'MediaWiki\\MassMessage\\MassMessageListContentHandler::compareTargets' ) );
+				[ MassMessageListContentHandler::class, 'compareTargets' ] ) );
 		} else {
 			$added = [];
 		}
 
 		if ( isset( $data['remove'] ) ) {
 			$removed = array_values( array_udiff( $targets, $newTargets,
-				'MediaWiki\\MassMessage\\MassMessageListContentHandler::compareTargets' ) );
+				[ MassMessageListContentHandler::class, 'compareTargets' ] ) );
 		} else {
 			$removed = [];
 		}

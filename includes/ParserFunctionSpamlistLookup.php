@@ -34,7 +34,7 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 		// Now overwrite it
 		$parser->setFunctionHook(
 			'target',
-			'MediaWiki\\MassMessage\\MassMessageHooks::storeDataParserFunction'
+			[ MassMessageHooks::class, 'storeDataParserFunction' ]
 		);
 
 		// Parse

@@ -21,8 +21,7 @@ class MassMessageHooks {
 	 * @param Parser &$parser
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
-		$parser->setFunctionHook( 'target',
-			'MediaWiki\\MassMessage\\MassMessageHooks::outputParserFunction' );
+		$parser->setFunctionHook( 'target', [ self::class, 'outputParserFunction' ] );
 	}
 
 	/**

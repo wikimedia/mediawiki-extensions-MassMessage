@@ -297,8 +297,8 @@ class MassMessageJob extends Job {
 
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
-		$wgHooks['UserGetRights'][] = 'MediaWiki\\MassMessage\\MassMessageHooks::onUserGetRights';
-		$wgHooks['EmailConfirmed'][] = 'MediaWiki\\MassMessage\\MassMessageHooks::onEmailConfirmed';
+		$wgHooks['UserGetRights'][] = MassMessageHooks::class . '::onUserGetRights';
+		$wgHooks['EmailConfirmed'][] = MassMessageHooks::class . '::onEmailConfirmed';
 
 		$oldRequest = $wgRequest;
 		$oldUser = $wgUser;
