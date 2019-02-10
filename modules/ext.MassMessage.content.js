@@ -26,7 +26,7 @@ $( function () {
 			targetAttribs = {
 				href: '//' + site + mw.config.get( 'wgScript' ) + '?title=' +
 					encodeURIComponent( title ),
-				'class': 'external'
+				class: 'external'
 			};
 			// Use a message so we have something like "<title> on <site>".
 			targetLink = mw.message(
@@ -48,9 +48,11 @@ $( function () {
 		}
 
 		$list.append(
-			$( '<li></li>' ).append(
-				$( '<span></span>' ).addClass( 'mw-massmessage-targetlink' ).html( targetLink ),
-				$( '<span></span>' ).addClass( 'mw-massmessage-removelink' )
+			// FIXME: Use CSS transition
+			// eslint-disable-next-line jquery/no-fade
+			$( '<li>' ).append(
+				$( '<span>' ).addClass( 'mw-massmessage-targetlink' ).html( targetLink ),
+				$( '<span>' ).addClass( 'mw-massmessage-removelink' )
 					.html( '(' + removeLink + ')' )
 			).hide().fadeIn()
 		);
@@ -91,6 +93,8 @@ $( function () {
 			spamlist: mw.config.get( 'wgPageName' ),
 			remove: param
 		} ).done( function () {
+			// FIXME: Use CSS transition
+			// eslint-disable-next-line jquery/no-fade
 			$link.closest( 'li' ).fadeOut( 400, function () { // 400 is the default duration.
 				var $list = $link.closest( 'ul' );
 
@@ -128,7 +132,9 @@ $( function () {
 			message = mw.message( msgKey, errorCode ).escaped();
 		}
 		$( '#mw-massmessage-addform' ).append(
-			$( '<span></span>' ).addClass( 'error' ).html( message ).hide().fadeIn()
+			// FIXME: Use CSS transition
+			// eslint-disable-next-line jquery/no-fade
+			$( '<span>' ).addClass( 'error' ).html( message ).hide().fadeIn()
 		);
 	};
 
@@ -142,13 +148,13 @@ $( function () {
 	$( '.mw-massmessage-removelink a' ).confirmable( confirmableParams );
 
 	// Handle add pages form.
-	$( '#mw-massmessage-addform' ).submit( function ( e ) {
+	$( '#mw-massmessage-addform' ).on( 'submit', function ( e ) {
 		var title, site, apiResult, page;
 
 		e.preventDefault();
 
-		title = $.trim( $( '#mw-massmessage-addtitle' ).val() );
-		site = $.trim( $( '#mw-massmessage-addsite' ).val() );
+		title = $( '#mw-massmessage-addtitle' ).val().trim();
+		site = $( '#mw-massmessage-addsite' ).val().trim();
 		if ( title === '' && site === '' ) {
 			return; // Do nothing if there is no input
 		}

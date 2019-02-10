@@ -85,11 +85,11 @@ $( function () {
 		$formSourceTr.hide(); // Progressive disclosure
 	}
 
-	$( '#mw-input-wpcontent' ).find( '[value="new"]' ).click( function () {
+	$( '#mw-input-wpcontent' ).find( '[value="new"]' ).on( 'click', function () {
 		$formSourceTr.hide();
 	} );
 
-	$( '#mw-input-wpcontent' ).find( '[value="import"]' ).click( function () {
+	$( '#mw-input-wpcontent' ).find( '[value="import"]' ).on( 'click', function () {
 		$formSourceTr.show();
 	} );
 

@@ -23,7 +23,7 @@ $( function () {
 	$msg.on( 'keyup', $.debounce( 500, function () {
 		var code, matches, tags, results, tag;
 
-		code = $.trim( $msg.val() );
+		code = $msg.val().trim();
 		if ( code === '' ) {
 			$warnings.hide();
 			return;
@@ -38,7 +38,7 @@ $( function () {
 		}
 
 		tags = {};
-		$.each( matches, function ( idx, itm ) {
+		matches.forEach( function ( itm ) {
 			var realTag, tag,
 				hasOwn = Object.prototype.hasOwnProperty;
 

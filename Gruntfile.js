@@ -10,6 +10,9 @@ module.exports = function ( grunt ) {
 
 	grunt.initConfig( {
 		eslint: {
+			options: {
+				reportUnusedDisableDirectives: true
+			},
 			all: '.'
 		},
 		banana: conf.MessagesDirs,
