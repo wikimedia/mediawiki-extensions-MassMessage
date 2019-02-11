@@ -5,7 +5,8 @@
 			"Borislav",
 			"Spiritia",
 			"StanProg",
-			"ShockD"
+			"ShockD",
+			"Vlad5250"
 		]
 	},
 	"massmessage": "Доставяне на масови съобщения",
@@ -35,7 +36,7 @@
 	"massmessage-parse-badurl": "„$1“ не е валиден сайт.",
 	"massmessage-parse-badpage": "„$1“ не е валидно заглавие на страница.",
 	"massmessage-parse-badexternal": "„$1“ не е валидно заглавие на страница. Междууики заглавията трябва да се укажат използвайки параметъра за проекта (<kbd>|site=www.example.org</kbd>).",
-	"massmessage-global-disallowed": "Съобщения могат да се изпращат само до локални страници.",
+	"massmessage-global-disallowed": "Съобщения могат да се изпращат само до местни страници.",
 	"right-massmessage": "Изпращане на съобщение едновременно до много потребители",
 	"log-name-massmessage": "Дневник на масовите съобщения",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|изпрати съобщение}} до $3",
