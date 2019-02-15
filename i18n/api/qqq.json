@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zoranzoki21"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "{{doc-apihelp-description|editmassmessagelist}}",
+	"apihelp-editmassmessagelist-summary": "{{doc-apihelp-summary|editmassmessagelist}}",
+	"apihelp-editmassmessagelist-param-spamlist": "{{doc-apihelp-param|editmassmessagelist|spamlist}}",
+	"apihelp-editmassmessagelist-param-add": "{{doc-apihelp-param|editmassmessagelist|add}}",
+	"apihelp-editmassmessagelist-param-remove": "{{doc-apihelp-param|editmassmessagelist|remove}}",
+	"apihelp-editmassmessagelist-example-1": "{{doc-apihelp-example|editmassmessagelist}}",
+	"apihelp-massmessage-description": "{{doc-apihelp-description|massmessage}}",
+	"apihelp-massmessage-summary": "{{doc-apihelp-summary|massmessage}}",
+	"apihelp-massmessage-param-spamlist": "{{doc-apihelp-param|massmessage|spamlist}}",
+	"apihelp-massmessage-param-subject": "{{doc-apihelp-param|massmessage|subject}}",
+	"apihelp-massmessage-param-message": "{{doc-apihelp-param|massmessage|message}}",
+	"apihelp-massmessage-example-1": "{{doc-apihelp-example|massmessage}}",
+	"apihelp-query+mmsites-description": "{{doc-apihelp-description|query+mmsites}}",
+	"apihelp-query+mmsites-summary": "{{doc-apihelp-summary|query+mmsites}}",
+	"apihelp-query+mmsites-param-term": "Label of an input area. Connected site names will be returned if they match the provided prefix (e.g. entering \"meta\" may return \"metawiki\").\n----\n{{doc-apihelp-param|query+mmsites|term}}",
+	"apihelp-query+mmsites-example-1": "{{doc-apihelp-example|query+mmsites}}",
+	"apierror-massmessage-invalidspamlist": "{{doc-apierror}}"
+}
