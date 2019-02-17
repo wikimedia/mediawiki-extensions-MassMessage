@@ -11,5 +11,6 @@
 	"massmessage-form-submit": "Bırışe",
 	"massmessage-fieldset-preview": "Verqayt",
 	"massmessage-queued-count": "Rêza [[Special:MassMessage|arêbiyayê mesacan]]",
-	"massmessage-content-removeno": "Bıtexelne"
+	"massmessage-content-removeno": "Bıtexelne",
+	"massmessage-content-emptylist": "(çıniyo)"
 }
