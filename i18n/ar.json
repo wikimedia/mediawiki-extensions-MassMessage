@@ -29,7 +29,7 @@
 	"massmessage-spamlist-invalid": "لا تحتوي الصفحة المحددة على قائمة تسليم صالحة.",
 	"massmessage-empty-subject": "حقل الموضوع فارغ.",
 	"massmessage-empty-message": "نص الرسالة فارغ.",
-	"massmessage-unescaped-langlinks": "تحذير: هناك روابط لغة ملغاة في الرسالة الخاصة بك.",
+	"massmessage-unescaped-langlinks": "تحذير: هناك وصلات لغة ملغاة في الرسالة الخاصة بك.",
 	"massmessage-no-timestamp": "تحذير: رسالتك لا تحتوي على توقيع أو طابع زمني.",
 	"massmessage-form-header": "استخدم النموذج أدناه لإرسال رسائل إلى قائمة معينة، جميع الحقول مطلوبة ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage مزيد من المعلومات]).",
 	"massmessage-queued-count": "[[Special:MassMessage|الرسائل الكمية]] في طابور الانتظار",
