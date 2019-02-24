@@ -149,12 +149,17 @@ $( function () {
 
 	// Handle add pages form.
 	$( '#mw-massmessage-addform' ).on( 'submit', function ( e ) {
-		var title, site, apiResult, page;
+		var title, site, apiResult, page,
+			$site = $( '#mw-massmessage-addsite' );
 
 		e.preventDefault();
 
 		title = $( '#mw-massmessage-addtitle' ).val().trim();
-		site = $( '#mw-massmessage-addsite' ).val().trim();
+		if ( $site.length ) {
+			site = $site.val().trim();
+		} else {
+			site = '';
+		}
 		if ( title === '' && site === '' ) {
 			return; // Do nothing if there is no input
 		}
