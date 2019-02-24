@@ -17,12 +17,12 @@ use Title;
  */
 
 class MassMessageSubmitJob extends Job {
-	public function __construct( Title $title, array $params, $id = 0 ) {
+	public function __construct( Title $title, array $params ) {
 		// Back-compat
 		if ( !isset( $params['class'] ) ) {
 			$params['class'] = MassMessageJob::class;
 		}
-		parent::__construct( 'MassMessageSubmitJob', $title, $params, $id );
+		parent::__construct( 'MassMessageSubmitJob', $title, $params );
 	}
 
 	/**

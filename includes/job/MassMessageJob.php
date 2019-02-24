@@ -39,7 +39,7 @@ class MassMessageJob extends Job {
 	 */
 	private $useSenderUser = false;
 
-	public function __construct( Title $title, array $params, $id = 0 ) {
+	public function __construct( Title $title, array $params ) {
 		// Create a fresh Title object so namespaces are evaluated
 		// in the context of the target site. See bug 57464.
 		// Note that jobs created previously might not have a
@@ -48,7 +48,7 @@ class MassMessageJob extends Job {
 			$title = Title::newFromText( $params['title'] );
 		}
 
-		parent::__construct( 'MassMessageJob', $title, $params, $id );
+		parent::__construct( 'MassMessageJob', $title, $params );
 	}
 
 	/**
