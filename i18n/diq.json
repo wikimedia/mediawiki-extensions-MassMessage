@@ -11,6 +11,10 @@
 	"massmessage-form-submit": "Bırışe",
 	"massmessage-fieldset-preview": "Verqayt",
 	"massmessage-queued-count": "Rêza [[Special:MassMessage|arêbiyayê mesacan]]",
+	"massmessage-content-remove": "wedare",
+	"massmessage-content-removeyes": "Wedare",
 	"massmessage-content-removeno": "Bıtexelne",
-	"massmessage-content-emptylist": "(çıniyo)"
+	"massmessage-content-emptylist": "(çıniyo)",
+	"massmessage-summary-add": "[[:$1]] biyo cı",
+	"massmessage-summary-remove": "[[:$1]] dariya we"
 }
