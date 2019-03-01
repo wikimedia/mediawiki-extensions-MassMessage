@@ -77,10 +77,9 @@ class MassMessage {
 			if ( $wgAllowGlobalMessaging ) {
 				// tell them they need to use the |site= parameter
 				return self::parserError( 'massmessage-parse-badexternal', $page );
-			} else {
-				// just tell them global messaging is disabled
-				return self::parserError( 'massmessage-global-disallowed' );
 			}
+			// just tell them global messaging is disabled
+			return self::parserError( 'massmessage-global-disallowed' );
 		}
 		return $data;
 	}
@@ -119,16 +118,15 @@ class MassMessage {
 		$abandoned = $queue->getAbandonedCount();
 		$active = max( $claimed - $abandoned, 0 );
 
-		$queued = $active + $pending;
-		return $queued;
+		return $active + $pending;
 	}
 
 	/**
 	 * Verify and cleanup the main user submitted data
 	 * @param array &$data should have subject, message, and spamlist keys
-	 * @param Status &$status
+	 * @param Status $status
 	 */
-	public static function verifyData( array &$data, Status &$status ) {
+	public static function verifyData( array &$data, Status $status ) {
 		// Trim all the things!
 		foreach ( $data as $k => $v ) {
 			$data[$k] = trim( $v );
@@ -142,7 +140,7 @@ class MassMessage {
 		if ( $spamlist instanceof Title ) {
 			// Prep the HTML comment message
 			if ( $spamlist->inNamespace( NS_CATEGORY ) ) {
-				$url = $spamlist->getFullUrl();
+				$url = $spamlist->getFullURL();
 			} else {
 				$url = $spamlist->getFullURL(
 					[ 'oldid' => $spamlist->getLatestRevID() ],
@@ -186,15 +184,14 @@ class MassMessage {
 
 		if ( $spamlist === null || !$spamlist->exists() ) {
 			return 'massmessage-spamlist-doesnotexist';
-		} else {
-			// Page exists, follow a redirect if possible
-			$target = UrlHelper::followRedirect( $spamlist );
-			if ( $target === null || !$target->exists() ) {
-				return 'massmessage-spamlist-invalid'; // Interwiki redirect or non-existent page.
-			} else {
-				$spamlist = $target;
-			}
 		}
+
+		// Page exists, follow a redirect if possible
+		$target = UrlHelper::followRedirect( $spamlist );
+		if ( $target === null || !$target->exists() ) {
+			return 'massmessage-spamlist-invalid'; // Interwiki redirect or non-existent page.
+		}
+		$spamlist = $target;
 
 		$contentModel = $spamlist->getContentModel();
 

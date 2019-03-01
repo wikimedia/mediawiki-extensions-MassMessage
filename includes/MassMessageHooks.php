@@ -18,9 +18,9 @@ class MassMessageHooks {
 	/**
 	 * Hook to load our parser function.
 	 *
-	 * @param Parser &$parser
+	 * @param Parser $parser
 	 */
-	public static function onParserFirstCallInit( Parser &$parser ) {
+	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setFunctionHook( 'target', [ self::class, 'outputParserFunction' ] );
 	}
 
@@ -145,7 +145,7 @@ class MassMessageHooks {
 	 */
 	public static function onBeforeEchoEventInsert( EchoEvent $event ) {
 		// Don't spam a user with mention notifications if it's a MassMessage
-		if ( ( $event->getType() == 'mention' || $event->getType() == 'flow-mention' ) &&
+		if ( ( $event->getType() === 'mention' || $event->getType() === 'flow-mention' ) &&
 				$event->getAgent() && // getAgent() can return null
 				$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId() ) {
 			return false;
@@ -156,10 +156,10 @@ class MassMessageHooks {
 	/**
 	 * Override the Edit tab for delivery lists.
 	 *
-	 * @param \SkinTemplate &$sktemplate
+	 * @param \SkinTemplate $sktemplate
 	 * @param array &$links
 	 */
-	public static function onSkinTemplateNavigation( \SkinTemplate &$sktemplate, &$links ) {
+	public static function onSkinTemplateNavigation( \SkinTemplate $sktemplate, &$links ) {
 		$title = $sktemplate->getTitle();
 		if ( $title->hasContentModel( 'MassMessageListContent' )
 			&& array_key_exists( 'edit', $links['views'] )
@@ -198,10 +198,10 @@ class MassMessageHooks {
 	/**
 	 * Add scripts and styles.
 	 *
-	 * @param OutputPage &$out
-	 * @param Skin &$skin
+	 * @param OutputPage $out
+	 * @param Skin $skin
 	 */
-	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
+	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		$title = $out->getTitle();
 		if ( $title->exists() && $title->hasContentModel( 'MassMessageListContent' ) ) {
 			$out->addModuleStyles( 'ext.MassMessage.content.nojs' );
