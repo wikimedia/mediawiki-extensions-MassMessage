@@ -9,6 +9,7 @@ use ChangeTags;
 use CentralIdLookup;
 use DeferredUpdates;
 use DerivativeRequest;
+use ExtensionRegistry;
 use Job;
 use LqtDispatch;
 use ManualLogEntry;
@@ -197,7 +198,9 @@ class MassMessageJob extends Job {
 		}
 
 		// If the page is using a different discussion system, handle it specially
-		if ( class_exists( 'LqtDispatch' ) && LqtDispatch::isLqtPage( $title ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' ) &&
+			LqtDispatch::isLqtPage( $title )
+		) {
 			// This is the same check that LQT uses internally
 			$this->addLQTThread();
 		} elseif ( $title->hasContentModel( 'flow-board' )

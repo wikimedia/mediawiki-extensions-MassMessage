@@ -7,6 +7,7 @@ use WikiPage;
 use User;
 use MWCryptRand;
 use Revision;
+use ExtensionRegistry;
 
 class MassMessageJobTest extends MassMessageTestCase {
 
@@ -61,7 +62,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		global $wgContLang;
 		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
-		if ( !class_exists( 'LqtDispatch' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' ) ) {
 			$this->markTestSkipped( "This test requires the LiquidThreads extension" );
 		}
 		$target = Title::newFromText( 'Project:LQT test' );
