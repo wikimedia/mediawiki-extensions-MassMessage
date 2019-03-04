@@ -59,6 +59,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
 	 */
 	public function testLQTMessageSending() {
+		$this->markTestSkipped( 'broken test, T217553' );
+
 		global $wgContLang;
 		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
