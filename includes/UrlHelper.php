@@ -22,9 +22,9 @@ class UrlHelper {
 		$target = $wikipage->followRedirect();
 		if ( $target instanceof Title ) {
 			return $target;
-		} else {
-			return null; // Interwiki redirect
 		}
+
+		return null; // Interwiki redirect
 	}
 
 	/**
