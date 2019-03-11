@@ -171,16 +171,16 @@ class MassMessageHooks {
 			$oldid = $request->getInt( 'oldid' ); // Guaranteed to be an integer, 0 if invalid
 			if ( $direction === 'next' && $oldid > 0 ) {
 				$next = $title->getNextRevisionId( $oldid );
-				$revId = ( $next ) ? $next : $oldid;
+				$revId = $next ?: $oldid;
 			} elseif ( $direction === 'prev' && $oldid > 0 ) {
 				$prev = $title->getPreviousRevisionId( $oldid );
-				$revId = ( $prev ) ? $prev : $oldid;
+				$revId = $prev ?: $oldid;
 			} elseif ( $diff !== null ) {
 				if ( ctype_digit( $diff ) ) {
 					$revId = (int)$diff;
 				} elseif ( $diff === 'next' && $oldid > 0 ) {
 					$next = $title->getNextRevisionId( $oldid );
-					$revId = ( $next ) ? $next : $oldid;
+					$revId = $next ?: $oldid;
 				} else { // diff is 'prev' or gibberish
 					$revId = $oldid;
 				}

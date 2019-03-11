@@ -145,7 +145,7 @@ class MassMessageListContent extends JsonContent {
 		$jsonParse = $this->getData();
 		$data = $jsonParse->isGood() ? $jsonParse->getValue() : null;
 		if ( $data ) {
-			$this->description = isset( $data->description ) ? $data->description : null;
+			$this->description = $data->description ?? null;
 			if ( isset( $data->targets ) && is_array( $data->targets ) ) {
 				$this->targets = [];
 				foreach ( $data->targets as $target ) {
