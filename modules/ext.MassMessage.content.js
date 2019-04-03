@@ -49,7 +49,7 @@ $( function () {
 
 		$list.append(
 			// FIXME: Use CSS transition
-			// eslint-disable-next-line jquery/no-fade
+			// eslint-disable-next-line no-jquery/no-fade
 			$( '<li>' ).append(
 				$( '<span>' ).addClass( 'mw-massmessage-targetlink' ).html( targetLink ),
 				$( '<span>' ).addClass( 'mw-massmessage-removelink' )
@@ -94,7 +94,7 @@ $( function () {
 			remove: param
 		} ).done( function () {
 			// FIXME: Use CSS transition
-			// eslint-disable-next-line jquery/no-fade
+			// eslint-disable-next-line no-jquery/no-fade
 			$link.closest( 'li' ).fadeOut( 400, function () { // 400 is the default duration.
 				var $list = $link.closest( 'ul' );
 
@@ -133,7 +133,7 @@ $( function () {
 		}
 		$( '#mw-massmessage-addform' ).append(
 			// FIXME: Use CSS transition
-			// eslint-disable-next-line jquery/no-fade
+			// eslint-disable-next-line no-jquery/no-fade
 			$( '<span>' ).addClass( 'error' ).html( message ).hide().fadeIn()
 		);
 	};
