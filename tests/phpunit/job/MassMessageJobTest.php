@@ -19,7 +19,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$params = [
 			'subject' => $subject,
 			'message' => 'This is a message.',
-			'title' => $title->getFullText()
 		];
 		$params['comment'] = [
 			User::newFromName( 'Admin' ),
@@ -43,8 +42,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			$wikipage->doDeleteArticleReal( 'reason' );
 		}
 		$subj = $this->simulateJob( $target );
-		$target = Title::newFromText( 'Project:Testing1234' ); // Clear cache?
-		// $this->assertTrue( $target->exists() );
+		$target = Title::newFromText( 'Project:Testing1234' );
 		// Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		$this->assertEquals(
