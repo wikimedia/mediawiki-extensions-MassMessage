@@ -41,15 +41,16 @@ class MassMessageJob extends Job {
 	private $useSenderUser = false;
 
 	public function __construct( Title $title, array $params ) {
+		parent::__construct( 'MassMessageJob', $title, $params );
 		// Create a fresh Title object so namespaces are evaluated
-		// in the context of the target site. See bug 57464.
+		// in the context of the target site. See T59464.
 		// Note that jobs created previously might not have a
 		// title param, so check for that.
 		if ( isset( $params['title'] ) ) {
-			$title = Title::newFromText( $params['title'] );
+			$this->title = Title::newFromText( $params['title'] );
+		} else {
+			$this->title = $title;
 		}
-
-		parent::__construct( 'MassMessageJob', $title, $params );
 	}
 
 	/**
