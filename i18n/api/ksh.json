@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"apihelp-editmassmessagelist-param-add": "Övverschreffte för en di Leß ze donn.",
+	"apihelp-editmassmessagelist-param-remove": "Övverschreffte för uß dä Leß eruß ze nämme.",
+	"apihelp-massmessage-param-subject": "Dä Nohreesch ier Övverschreff.",
+	"apihelp-massmessage-param-message": "Dä Täx en dä Nohreesch",
+	"apihelp-query+mmsites-param-term": "Der Aanfang vun wat jesöhk wähde sull.",
+	"apihelp-query+mmsites-example-1": "Donn „en“ automattesch fähdesch schrihve"
+}

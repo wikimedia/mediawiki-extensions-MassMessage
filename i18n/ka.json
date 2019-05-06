@@ -62,6 +62,5 @@
 	"massmessage-summary-remove": "წაიშალა [[:$1]]",
 	"massmessage-summary-removeonsite": "წაიშალა $1 $2-ზე",
 	"massmessage-summary-removemulti": "წაიშალა $1 {{PLURAL:$1|გვერდი|გვერდი}}",
-	"massmessage-list-category": "მასიური შეტყობინებების დასაგზავნი სიები",
-	"apihelp-editmassmessagelist-description": "მასიური შეტყობინებების სიის რედაქტირება."
+	"massmessage-list-category": "მასიური შეტყობინებების დასაგზავნი სიები"
 }

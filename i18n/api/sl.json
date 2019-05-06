@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Janezdrilc"
+		]
+	},
+	"apihelp-massmessage-param-subject": "Vrstica zadeve sporočila.",
+	"apihelp-massmessage-param-message": "Telo sporočila.",
+	"apihelp-query+mmsites-param-term": "Predpona za iskanje"
+}

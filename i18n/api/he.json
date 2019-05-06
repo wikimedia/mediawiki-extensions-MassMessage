@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80",
+			"Guycn2"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "עריכה רשימת מסירה המונית.",
+	"apihelp-editmassmessagelist-summary": "עריכה של רשימת מסירה המונית.",
+	"apihelp-editmassmessagelist-param-spamlist": "כותרת רשימת המסירה שצריך לעדכן.",
+	"apihelp-editmassmessagelist-param-add": "כותרות שיתווספו לרשימה.",
+	"apihelp-editmassmessagelist-param-remove": "כותרות שיוסרו מהרשימה.",
+	"apihelp-editmassmessagelist-example-1": "הוספת [[User talk:Foo]] ו־[[Talk:Bar]] לרשימת המסירה [[Example]] והסרת [[Talk:Baz]] ממנה",
+	"apihelp-massmessage-description": "שליחת הודעה לרשימת דפים.",
+	"apihelp-massmessage-summary": "שליחת הודעה לרשימת דפים.",
+	"apihelp-massmessage-param-spamlist": "דף שמכיל רשימה של דפים שתושאר בהם הודעה.",
+	"apihelp-massmessage-param-subject": "שורת הנושא של ההודעה.",
+	"apihelp-massmessage-param-message": "טקסט גוף ההודעה.",
+	"apihelp-massmessage-example-1": "שליחת הודעה לרשימה ב־[[Signpost Spamlist]] עם הנושא \"New Signpost\", וגוף ההודעה \"Please read it\"",
+	"apihelp-query+mmsites-description": "שירות בקשות השלמה אוטומטית לשדה אתר בהודעות המוניות.",
+	"apihelp-query+mmsites-summary": "שירות בקשות השלמה אוטומטית לשדה האתר בהודעות המוניות.",
+	"apihelp-query+mmsites-param-term": "איזו תחילית לחפש.",
+	"apihelp-query+mmsites-example-1": "השלמה אוטומטית של \"en\"",
+	"apierror-massmessage-invalidspamlist": "רשימת הספאם שצוינה אינה תקינה."
+}

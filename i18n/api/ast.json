@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Editar una llista d'entrega de mensaxes en masa",
+	"apihelp-editmassmessagelist-summary": "Editar una llista d'entrega de mensaxes en masa.",
+	"apihelp-editmassmessagelist-param-spamlist": "Títulu de la llista d'entrega a actualizar.",
+	"apihelp-editmassmessagelist-param-add": "Títulos a amestar a la llista.",
+	"apihelp-editmassmessagelist-param-remove": "Títulos a desaniciar de la llista.",
+	"apihelp-editmassmessagelist-example-1": "Añadir [[User talk:Foo]] y [[Talk:Bar]] a la llista d'entrega [[Example]], y quitar a [[Talk:Baz]] d'ella",
+	"apihelp-massmessage-description": "Unviar un mensaxe a una llista de páxines.",
+	"apihelp-massmessage-summary": "Unviar un mensaxe a una llista de páxines.",
+	"apihelp-massmessage-param-spamlist": "Páxina que contien la llista de páxines nes que dexar un mensaxe.",
+	"apihelp-massmessage-param-subject": "Llinia d'asuntu del mensaxe.",
+	"apihelp-massmessage-param-message": "Testu del cuerpu del mensaxe.",
+	"apihelp-massmessage-example-1": "Unviar un mensaxe a la llista de [[Signpost Spamlist]] col asuntu \"New Signpost\", y col cuerpu de mensaxe \"Please read it\"",
+	"apihelp-query+mmsites-description": "Sirvir solicitúes d'autocompletáu pal campu de sitiu en MassMessage.",
+	"apihelp-query+mmsites-summary": "Sirvir solicitúes d'autocompletáu pal campu de sitiu en MassMessage.",
+	"apihelp-query+mmsites-param-term": "El prefixu a buscar.",
+	"apihelp-query+mmsites-example-1": "Autocompletar \"ast\"",
+	"apierror-massmessage-invalidspamlist": "La llista de spam especificada nun ye válida."
+}

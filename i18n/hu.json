@@ -92,16 +92,6 @@
 	"massmessage-summary-removemulti": "$1 lap eltávolítva",
 	"massmessage-list-category": "MassMessage kézbesítési listák",
 	"massmessage-list-category-desc": "Ez a lap kézbesítési lista a [[Special:MassMessage|MassMessage]] kiterjesztés számára.",
-	"apihelp-editmassmessagelist-description": "Tömeges üzenetek kézbesítési listájának szerkesztése.",
-	"apihelp-editmassmessagelist-param-spamlist": "A frissítendő kézbesítési lista címe.",
-	"apihelp-editmassmessagelist-param-add": "A listához adandó címek.",
-	"apihelp-editmassmessagelist-param-remove": "A listából eltávolítandó címek.",
-	"apihelp-editmassmessagelist-example-1": "[[User talk:Foo]] és [[Talk:Bar]] hozzáadása az [[Example]] kézbesítési listához és [[Talk:Baz]] eltávolítása onnan",
-	"apihelp-massmessage-description": "Üzenet küldése lapok listájára.",
-	"apihelp-massmessage-param-spamlist": "A címzettlapok listáját tartalmazó lap.",
-	"apihelp-massmessage-param-subject": "Az üzenet tárgysora.",
-	"apihelp-massmessage-param-message": "Az üzenet törzse.",
-	"apihelp-massmessage-example-1": "Üzenet küldése a [[Signpost Spamlist]] lista használatával, „New Signpost” tárggyal és „Please read it” üzenettörzzsel",
 	"tag-massmessage-delivery": "Tömeges üzenetküldés",
 	"log-action-filter-massmessage": "Naplóbejegyzés típusa"
 }

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Suyama"
+		]
+	},
+	"apihelp-massmessage-param-subject": "メッセージの件名。",
+	"apihelp-massmessage-param-message": "メッセージ本文。"
+}

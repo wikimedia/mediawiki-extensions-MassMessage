@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bowleerin",
+			"Kly",
+			"LNDDYL",
+			"Liuxinyu970226"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "編輯大量訊息傳遞清單。",
+	"apihelp-editmassmessagelist-summary": "編輯大量訊息傳遞清單。",
+	"apihelp-editmassmessagelist-param-spamlist": "要更新的傳遞清單標題。",
+	"apihelp-editmassmessagelist-param-add": "要加入至清單的標題。",
+	"apihelp-editmassmessagelist-param-remove": "要從清單裡移除的標題。",
+	"apihelp-editmassmessagelist-example-1": "在傳遞清單 [[Example]] 添加 [[User talk:Foo]] 與 [[Talk:Bar]]，並從當中移除 [[Talk:Baz]]",
+	"apihelp-massmessage-description": "向列出的這些頁面傳送訊息。",
+	"apihelp-massmessage-summary": "向頁面清單傳送訊息。",
+	"apihelp-massmessage-param-spamlist": "頁面包含要留下訊息的頁面清單。",
+	"apihelp-massmessage-param-subject": "訊息主旨。",
+	"apihelp-massmessage-param-message": "訊息內容。",
+	"apihelp-massmessage-example-1": "以標題「New Signpost」以及消息正文為「Please read it」，來發送訊息給位於 [[Signpost Spamlist]] 的清單",
+	"apihelp-query+mmsites-description": "為大量訊息裡的站台欄位提供自動完成請求。",
+	"apihelp-query+mmsites-summary": "為大量訊息裡的站台欄位提供自動完成請求。",
+	"apihelp-query+mmsites-param-term": "要搜尋的字首。",
+	"apihelp-query+mmsites-example-1": "自動完成「en」",
+	"apierror-massmessage-invalidspamlist": "指定的垃圾黑名單無效。"
+}

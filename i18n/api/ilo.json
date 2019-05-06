@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lam-ang"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Agurnos iti listaan ti panagipatulod ti adu a mensahe.",
+	"apihelp-editmassmessagelist-param-spamlist": "Titulo ti pabaruen a listaan ti panagipatulod.",
+	"apihelp-editmassmessagelist-param-add": "Dagiti titulo a mainayon iti listaan.",
+	"apihelp-editmassmessagelist-param-remove": "Dagiti titulo a maikkat manipud iti listaan.",
+	"apihelp-editmassmessagelist-example-1": "Inayon ti [[User talk:Foo]] ken [[Talk:Bar]] ti [[Example]] ti listaan ti panagipatulod ken ikkaten ti [[Talk:Baz]] manipud iti dayta",
+	"apihelp-massmessage-description": "Agipatulod iti mensahe iti listaan ti pampanid.",
+	"apihelp-massmessage-param-spamlist": "Panid nga aglaon ti listaan ti pampanid a pangibatian ti mensahe.",
+	"apihelp-massmessage-param-subject": "Linia ti suheto ti mensahe.",
+	"apihelp-massmessage-param-message": "Teksto ti bagi ti mensahe.",
+	"apihelp-massmessage-example-1": "Agipatulod ti mensahe iti listaan idiay [[Signpost Spamlist]] nga addaan iti suheto ti \"New Signpost\", ken bagi ti mensahe ti \"Pangngaasi a basaem\"",
+	"apihelp-query+mmsites-description": "Agserbi kadagiti automatiko a makompleto a kiddaw para iti sitio a pagikabilan iti MassMessage.",
+	"apihelp-query+mmsites-param-term": "Ti pasakbay a biruken.",
+	"apihelp-query+mmsites-example-1": "Automatiko a makompleto \"ilo\""
+}

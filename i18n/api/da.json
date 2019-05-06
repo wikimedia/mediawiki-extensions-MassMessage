@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sarrus"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Rediger leveringsliste for massebeskeder.",
+	"apihelp-editmassmessagelist-summary": "Rediger leveringsliste for massebeskeder.",
+	"apihelp-editmassmessagelist-param-spamlist": "Titlen på leveringslisten, som skal opdateres.",
+	"apihelp-editmassmessagelist-param-add": "Titler, som skal tilføjes listen.",
+	"apihelp-editmassmessagelist-param-remove": "Titler, som skal fjernes fra listen.",
+	"apihelp-editmassmessagelist-example-1": "Tilføj [[User talk:Foo]] og [[Talk:Bar]] til leveringslisten [[Example]] og fjern [[Talk:Baz]] fra den",
+	"apihelp-massmessage-description": "Send en besked til en liste over sider.",
+	"apihelp-massmessage-summary": "Send en besked til en liste over sider.",
+	"apihelp-massmessage-param-spamlist": "Side, som indeholder listen over sider, der skal leveres beskeder på.",
+	"apihelp-massmessage-param-subject": "Beskedens emnefelt.",
+	"apihelp-massmessage-param-message": "Beskedens indhold.",
+	"apihelp-massmessage-example-1": "Send en besked til listen på [[Signpost Spamlist]] med emnet «New Signpost» og indholdteksten «Please read it»",
+	"apihelp-query+mmsites-param-term": "Præfikset, der skal søges efter.",
+	"apierror-massmessage-invalidspamlist": "Den angivne spamliste er ugyldig."
+}

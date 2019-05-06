@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion",
+			"Ата"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Редагувати список масової доставки повідомлень",
+	"apihelp-editmassmessagelist-summary": "Редагувати список доставки масових повідомлень.",
+	"apihelp-editmassmessagelist-param-spamlist": "Заголовок оновлюваного списку доставки.",
+	"apihelp-editmassmessagelist-param-add": "Рядки для додавання в список.",
+	"apihelp-editmassmessagelist-param-remove": "Рядки для вилучення зі списку.",
+	"apihelp-editmassmessagelist-example-1": "Додати [[User talk:Foo]] та [[Talk:Bar]] до списку розсилки [[Example]] і вилучити з нього [[Talk:Baz]]",
+	"apihelp-massmessage-description": "Надіслати повідомлення списку сторінок.",
+	"apihelp-massmessage-summary": "Надіслати повідомлення на список сторінок.",
+	"apihelp-massmessage-param-spamlist": "Сторінка, яка містить список сторінок, де треба залишити повідомлення.",
+	"apihelp-massmessage-param-subject": "Рядок теми повідомлення.",
+	"apihelp-massmessage-param-message": "Текст повідомлення.",
+	"apihelp-massmessage-example-1": "Надіслати повідомлення списку у [[Signpost Spamlist]] з темою «New Signpost» і текстом повідомлення «Please read it»",
+	"apihelp-query+mmsites-description": "Подавати запити автозаповнення поля сайту у pristine.",
+	"apihelp-query+mmsites-summary": "Подавати запити на автозаповнення поля сайту в MassMessage.",
+	"apihelp-query+mmsites-param-term": "Префікс для пошуку.",
+	"apihelp-query+mmsites-example-1": "Автозаповнення «en»",
+	"apierror-massmessage-invalidspamlist": "Вказаний спам-список недійсний."
+}

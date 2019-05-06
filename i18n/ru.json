@@ -111,12 +111,6 @@
 	"massmessage-summary-removemulti": "Удален{{PLURAL:$1|а|о|ы}} $1 страниц{{PLURAL:$1|а|ы|}}",
 	"massmessage-list-category": "Списки массовой доставки",
 	"massmessage-list-category-desc": "Эта страница — список доставки для расширения [[Special:MassMessage|MassMessage]].",
-	"apihelp-editmassmessagelist-param-add": "Заголовки для добавление в список.",
-	"apihelp-editmassmessagelist-param-remove": "Заголовки для удаления из списка.",
-	"apihelp-editmassmessagelist-example-1": "Добавить [[User talk:Foo]] и [[Talk:Bar]] в список доставки [[Example]], а также удалить [[Talk:Baz]] из него",
-	"apihelp-massmessage-param-subject": "Тема сообщения.",
-	"apihelp-massmessage-param-message": "Текст сообщения.",
-	"apihelp-query+mmsites-param-term": "Префикс для поиска.",
 	"tag-massmessage-delivery": "доставка MassMessage",
 	"tag-massmessage-delivery-description": "Доставка сообщений, используя [[:mw:Extension:MassMessage|расширение MassMessage]]"
 }

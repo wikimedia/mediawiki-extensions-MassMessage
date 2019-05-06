@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Max20091",
+			"Minh Nguyen"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Sửa một danh sách gửi thông báo rộng rãi.",
+	"apihelp-editmassmessagelist-param-add": "Tiêu đề để thêm vào danh sách.",
+	"apihelp-editmassmessagelist-param-remove": "Tiêu đề để loại bỏ khỏi danh sách.",
+	"apihelp-query+mmsites-param-term": "Tiền tố để tìm kiếm.",
+	"apihelp-query+mmsites-example-1": "Tự động điền “vi”"
+}

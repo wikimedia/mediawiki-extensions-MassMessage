@@ -94,7 +94,6 @@
 	"massmessage-summary-removemulti": "$1টি {{PLURAL:$1|পাতা}} সরানো হয়েছে",
 	"massmessage-list-category": "গণবার্তা বিতরণ তালিকা",
 	"massmessage-list-category-desc": "এই পাতাটি [[Special:MassMessage|গণবার্তা]] এক্সটেনশনের বিতরণ তালিকা।",
-	"apihelp-query+mmsites-example-1": "স্বয়ংপূরণ \"bn\"",
 	"tag-massmessage-delivery": "গণবার্তা বিতরণ",
 	"log-action-filter-massmessage": "লগ ভুক্তির ধরন",
 	"log-action-filter-massmessage-send": "গণ বার্তা জমাদান"

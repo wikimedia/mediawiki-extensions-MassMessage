@@ -95,12 +95,5 @@
 	"massmessage-summary-remove": "Tog bort [[:$1]]",
 	"massmessage-summary-removeonsite": "Tog bort $1 på $2",
 	"massmessage-summary-removemulti": "Tog bort $1 {{PLURAL:$1|sida|sidor}}",
-	"apihelp-editmassmessagelist-param-add": "Titlar att lägga till i listan.",
-	"apihelp-editmassmessagelist-param-remove": "Titlar att ta bort från listan.",
-	"apihelp-editmassmessagelist-example-1": "Lägg till [[User talk:Foo]] och [[Talk:Bar]] i leveranslistan [[Example]] och ta bort [[Talk:Baz]] från den",
-	"apihelp-massmessage-description": "Skicka ett meddelande till en lista över sidor.",
-	"apihelp-massmessage-param-subject": "Meddelandets ämnesrad.",
-	"apihelp-massmessage-param-message": "Meddelandets innehållstext.",
-	"apihelp-query+mmsites-param-term": "Prefixet att söka efter.",
 	"log-action-filter-massmessage": "Typ av loggpost"
 }

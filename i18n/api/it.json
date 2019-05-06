@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16",
+			"Gianfranco"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Modifica elenco di consegna per messaggi massivi.",
+	"apihelp-editmassmessagelist-summary": "Modifica elenco di consegna per messaggi massivi.",
+	"apihelp-editmassmessagelist-param-spamlist": "Titolo della lista di consegna da aggiornare.",
+	"apihelp-editmassmessagelist-param-add": "Titoli da aggiungere alla lista.",
+	"apihelp-editmassmessagelist-param-remove": "Titoli da rimuovere dall'elenco.",
+	"apihelp-massmessage-description": "Invia un messaggio a una lista di pagine.",
+	"apihelp-massmessage-param-spamlist": "Pagina contenente l'elenco delle pagine su cui lasciare un messaggio.",
+	"apihelp-massmessage-param-subject": "Oggetto del messaggio.",
+	"apihelp-massmessage-param-message": "Testo del corpo del messaggio.",
+	"apihelp-query+mmsites-description": "Rendi disponibile completamento automatico delle richieste per il campo sito in MassMessage.",
+	"apihelp-query+mmsites-param-term": "Il prefisso da ricercare.",
+	"apihelp-query+mmsites-example-1": "Completamento automatico \"it\""
+}

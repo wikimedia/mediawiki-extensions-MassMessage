@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"0x010C",
+			"Gomoko",
+			"Thibaut120094",
+			"Wladek92"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Modifier une liste de diffusion de messages de masse",
+	"apihelp-editmassmessagelist-summary": "Modifier une liste de diffusion de messages de masse.",
+	"apihelp-editmassmessagelist-param-spamlist": "Le titre de la liste de diffusion à mettre à jour.",
+	"apihelp-editmassmessagelist-param-add": "Titres à ajouter à la liste.",
+	"apihelp-editmassmessagelist-param-remove": "Titres à supprimer de la liste.",
+	"apihelp-editmassmessagelist-example-1": "Ajouter [[User talk:Foo]] et [[Talk:Bar]] à la liste de diffusion [[Example]] et y supprimer [[Talk:Baz]]",
+	"apihelp-massmessage-description": "Envoyer un message à une liste de pages.",
+	"apihelp-massmessage-summary": "Envoyer un message à une liste de pages.",
+	"apihelp-massmessage-param-spamlist": "Page contenant une liste de pages sur lesquelles laisser un message.",
+	"apihelp-massmessage-param-subject": "Ligne donnant l'objet du message.",
+	"apihelp-massmessage-param-message": "Texte du corps du message.",
+	"apihelp-massmessage-example-1": "Envoyer un message à la liste [[Signpost Spamlist]] avec le sujet « Nouvel indicateur », et un corps de message de « Merci de le lire »",
+	"apihelp-query+mmsites-description": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
+	"apihelp-query+mmsites-summary": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
+	"apihelp-query+mmsites-param-term": "Le préfixe à rechercher.",
+	"apihelp-query+mmsites-example-1": "Saisie semi-automatique \"en\"",
+	"apierror-massmessage-invalidspamlist": "La liste spécifiée des pourriels n’est pas valide."
+}

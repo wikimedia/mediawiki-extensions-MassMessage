@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"HakanIST",
+			"Rapsar"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Toplu mesaj teslimat listesini değiştir.",
+	"apihelp-editmassmessagelist-param-spamlist": "Güncellenecek teslimat listesinin başlığı.",
+	"apihelp-editmassmessagelist-param-add": "Listeye eklenecek başlıklar.",
+	"apihelp-editmassmessagelist-param-remove": "Listeden çıkarılacak başlıklar."
+}
