@@ -4,7 +4,8 @@
 			"Christian List",
 			"Sarrus",
 			"Simeondahl",
-			"SimmeD"
+			"SimmeD",
+			"Dipsacus fullonum"
 		]
 	},
 	"massmessage": "Send massebesked",
@@ -92,8 +93,8 @@
 	"massmessage-edit-description": "Beskrivelse:",
 	"massmessage-edit-content": "Målsider:",
 	"massmessage-edit-summary": "Redigeringsbeskrivelse:",
-	"massmessage-edit-header": "Brug formularen nedenfor for at ændre listebeskrivelsen eller redigere listen over målsider. For målsider, skriv en titel per linie.",
-	"massmessage-edit-headermulti": "Brug formularen nedenfor for at ændre listebeskrivelsen eller redigere listen over målsider. For målsider, skriv en titel per linie og brug titel@domæne (f.eks. User_talk:Example@en.wikipedia.org) for at angive en side på en anden wiki.",
+	"massmessage-edit-header": "Brug formularen nedenfor for at ændre listebeskrivelsen eller redigere listen over målsider. For målsider, skriv en titel per linje.",
+	"massmessage-edit-headermulti": "Brug formularen nedenfor for at ændre listebeskrivelsen eller redigere listen over målsider. For målsider, skriv en titel per linje og brug titel@domæne (f.eks. User_talk:Example@en.wikipedia.org) for at angive en side på en anden wiki.",
 	"massmessage-edit-invalidtitle": "Det er ingen gyldige leveringslister for massebeskeder med denne titel.",
 	"massmessage-edit-invalidtargets": "Følgende {{PLURAL:$1|side er ugyldig|sider er ugyldige}}:\n$2",
 	"massmessage-edit-missingsummary": "Du har ikke opgivet et redigeringsbeksrivelse. Hvis du klikker på «{{int:htmlform-submit}}» igen vil ændringen blive gemt uden.",

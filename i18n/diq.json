@@ -3,7 +3,8 @@
 		"authors": [
 			"Gorizon",
 			"Mirzali",
-			"Kumkumuk"
+			"Kumkumuk",
+			"Orbot707"
 		]
 	},
 	"massmessage": "Kommesac bırışe",
@@ -17,5 +18,6 @@
 	"massmessage-content-removeno": "Bıtexelne",
 	"massmessage-content-emptylist": "(çıniyo)",
 	"massmessage-summary-add": "[[:$1]] biyo cı",
-	"massmessage-summary-remove": "[[:$1]] dariya we"
+	"massmessage-summary-remove": "[[:$1]] dariya we",
+	"tag-massmessage-delivery": "Teslimatê MassMessage"
 }
