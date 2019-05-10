@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage;
 
-use Linker;
 use LogFormatter;
 use Message;
 use SpecialPage;
@@ -30,15 +29,16 @@ class MassMessageSendLogFormatter extends LogFormatter {
 		if ( $this->plaintext ) {
 			$this->parsedParameters[2] = '[[' . $title->getPrefixedText() . ']]';
 		} else {
+			$linkRenderer = $this->getLinkRenderer();
 			$target = $this->entry->getTarget();
 			if ( $target->exists() ) {
-				$link = Message::rawParam( Linker::link(
+				$link = Message::rawParam( $linkRenderer->makeLink(
 					$title,
-					htmlspecialchars( $this->entry->getTarget() )
+					$target->getPrefixedText()
 				) );
 			} else {
 				// If the page has been deleted, just show a redlink (bug 57445)
-				$link = Message::rawParam( Linker::link( $target ) );
+				$link = Message::rawParam( $linkRenderer->makeLink( $target ) );
 			}
 			$this->parsedParameters[2] = $link;
 		}
