@@ -158,7 +158,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			'description' => [
 				'type' => 'textarea',
 				'rows' => 5,
-				'default' => ( $description !== null ) ? $description : '',
+				'default' => $description ?? '',
 				'useeditfont' => true,
 				'label-message' => 'massmessage-edit-description',
 			],
