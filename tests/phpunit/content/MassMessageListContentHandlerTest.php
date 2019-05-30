@@ -27,6 +27,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 				)
 			]
 		);
+		$this->overrideMwServices();
 	}
 
 	/**
@@ -41,7 +42,6 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::edit
 	 */
 	public function testEdit() {
-		$this->doLogin();
 		$title = Title::newFromText( self::$spamlist );
 		$targets = [
 			[ 'title' => 'A' ],
