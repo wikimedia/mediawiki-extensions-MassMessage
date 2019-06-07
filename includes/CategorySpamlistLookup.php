@@ -15,6 +15,7 @@ class CategorySpamlistLookup extends SpamlistLookup {
 	public function __construct( Title $spamlist ) {
 		$this->spamlist = $spamlist;
 	}
+
 	/**
 	 * Get an array of targets from a category
 	 * @return array
