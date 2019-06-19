@@ -55,12 +55,12 @@ class MassMessageServerSideJob extends MassMessageJob {
 			if ( $page->exists() ) {
 				$oldContent = $page->getContent( Revision::RAW );
 				$text = $oldContent->getNativeData() . "\n\n" . $text;
-				$flags = $flags | EDIT_UPDATE;
+				$flags |= EDIT_UPDATE;
 			} else {
-				$flags = $flags | EDIT_NEW;
+				$flags |= EDIT_NEW;
 			}
 			if ( $this->title->inNamespace( NS_USER_TALK ) ) {
-				$flags = $flags | EDIT_FORCE_BOT;
+				$flags |= EDIT_FORCE_BOT;
 			}
 			$status = $page->doEditContent(
 				new WikitextContent( $text ),
@@ -71,20 +71,19 @@ class MassMessageServerSideJob extends MassMessageJob {
 			);
 			if ( $status->isOK() ) {
 				break;
-			} else {
-				if ( $status->hasMessage( 'edit-conflict' ) ) {
-					if ( $tries > 5 ) {
-						throw new Exception(
-							"Got 5 edit conflicts when trying to edit $titleText"
-						);
-					} else {
-						$tries++;
-						continue;
-					}
-				} else {
-					throw new Exception( "Error editing $titleText: {$status->getWikiText()}" );
-				}
 			}
+
+			if ( !$status->hasMessage( 'edit-conflict' ) ) {
+				throw new Exception( "Error editing $titleText: {$status->getWikiText()}" );
+			}
+
+			if ( $tries > 5 ) {
+				throw new Exception(
+					"Got 5 edit conflicts when trying to edit $titleText"
+				);
+			}
+
+			$tries++;
 		}
 	}
 }
