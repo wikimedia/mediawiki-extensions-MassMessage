@@ -75,6 +75,47 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 		$this->assertEquals( $expected, $result[0] );
 	}
 
+	public function testAddDescription() {
+		$content = ContentHandler::makeContent(
+			'{"description":"","targets":[{"title":"B"},{"title":"A","site":"en.wikipedia.org"}]}',
+			null,
+			'MassMessageListContent'
+		);
+		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
+		$page->doEditContent( $content, 'summary' );
+		$result = $this->doApiRequestWithToken( [
+			'action' => 'editmassmessagelist',
+			'spamlist' => self::$spamlist,
+			'description' => 'example description 123'
+		] );
+		$expected = [ 'editmassmessagelist' => [
+			'result' => 'Success',
+			'description' => 'example description 123'
+		] ];
+		$this->assertEquals( $expected, $result[0] );
+	}
+
+	public function testChangeDescription() {
+		$content = ContentHandler::makeContent(
+			'{"description":"example description 456",
+                        "targets":[{"title":"B"},{"title":"A","site":"en.wikipedia.org"}]}',
+			null,
+			'MassMessageListContent'
+		);
+		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
+		$page->doEditContent( $content, 'summary' );
+		$result = $this->doApiRequestWithToken( [
+			'action' => 'editmassmessagelist',
+			'spamlist' => self::$spamlist,
+			'description' => 'example description 456'
+		] );
+		$expected = [ 'editmassmessagelist' => [
+			'result' => 'Done',
+			'invaliddescription' => 'example description 456'
+		] ];
+		$this->assertEquals( $expected, $result[0] );
+	}
+
 	public function testMixed() {
 		$sysop = $this->getTestSysop()->getUser();
 		$content = ContentHandler::makeContent(
@@ -88,8 +129,10 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
 			'add' => 'B|C|D',
-			'remove' => 'A@en.wikipedia.org|B|C'
+			'remove' => 'A@en.wikipedia.org|B|C',
+			'description' => 'example description 789'
 		], null, $sysop );
+
 		$expected = [ 'editmassmessagelist' => [
 			'result' => 'Success',
 			'added' => [
@@ -98,7 +141,8 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'removed' => [
 				[ 'title' => 'B' ],
 				[ 'title' => 'A', 'site' => 'en.wikipedia.org' ]
-			]
+			],
+			'description' => 'example description 789'
 		] ];
 		$this->assertEquals( $expected, $result[0] );
 	}

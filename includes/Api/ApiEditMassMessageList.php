@@ -21,8 +21,7 @@ class ApiEditMassMessageList extends ApiBase {
 	public function execute() {
 		$data = $this->extractRequestParams();
 
-		// Must add or remove pages (or both) for a meaningful request
-		$this->requireAtLeastOneParameter( $data, 'add', 'remove' );
+		$this->requireAtLeastOneParameter( $data, 'add', 'remove', 'description' );
 
 		$spamlist = Title::newFromText( $data['spamlist'] );
 		if ( $spamlist === null
@@ -100,9 +99,16 @@ class ApiEditMassMessageList extends ApiBase {
 			$removed = [];
 		}
 
-		// Make an edit only if there are added or removed pages
-		if ( !empty( $added ) || !empty( $removed ) ) {
-			$summary = $this->getEditSummary( $added, $removed );
+		$description = $oldDescription = $content->getDescription();
+		$descriptionChanged = false;
+		if ( isset( $data['description'] ) ) {
+			$description = $data['description'];
+			$descriptionChanged = ( $description !== $oldDescription );
+		}
+
+		// Make an edit only if there are added or removed pages, or the description changed
+		if ( !empty( $added ) || !empty( $removed ) || $descriptionChanged ) {
+			$summary = $this->getEditSummary( $added, $removed, $descriptionChanged );
 			$editResult = MassMessageListContentHandler::edit(
 				$spamlist,
 				$description,
@@ -159,6 +165,15 @@ class ApiEditMassMessageList extends ApiBase {
 			}
 		}
 
+		if ( isset( $data['description'] ) ) {
+			if ( $descriptionChanged ) {
+				$resultArray['description'] = $description;
+			} else {
+				$resultArray['result'] = 'Done';
+				$resultArray['invaliddescription'] = $description;
+			}
+		}
+
 		$result->addValue(
 			null,
 			$this->getModuleName(),
@@ -168,52 +183,71 @@ class ApiEditMassMessageList extends ApiBase {
 
 	/**
 	 * Get the edit summary.
+	 * @todo add the actual new description to the summary, rather than noting that it changed
 	 *
 	 * @param array $added
 	 * @param array $removed
+	 * @param bool $descriptionChanged
 	 * @return string
 	 */
-	protected function getEditSummary( $added, $removed ) {
+	protected function getEditSummary( $added, $removed, $descriptionChanged ) {
+		$msgChange = ( $descriptionChanged ? 'change' : '' );
 		if ( !empty( $added ) && !empty( $removed ) ) {
-			$summaryMsg = $this->msg( 'massmessage-summary-addremove' )
+			// * massmessage-summary-addremove
+			// * massmessage-summary-addremovechange
+			$summaryMsg = $this->msg( 'massmessage-summary-addremove' . $msgChange )
 				->numParams( count( $added ) )
 				->numParams( count( $removed ) );
-		} elseif ( !empty( $added ) ) { // Only added
+		} elseif ( !empty( $added ) && empty( $removed ) ) {
 			if ( count( $added ) === 1 ) {
 				if ( isset( $added[0]['site'] ) ) {
+					// * massmessage-summary-addonsite
+					// * massmessage-summary-addonsitechange
 					$summaryMsg = $this->msg(
-						'massmessage-summary-addonsite',
+						'massmessage-summary-addonsite' . $msgChange,
 						$added[0]['title'],
 						$added[0]['site']
 					);
 				} else {
+					// * massmessage-summary-add
+					// * massmessage-summary-addchange
 					$summaryMsg = $this->msg(
-						'massmessage-summary-add',
+						'massmessage-summary-add' . $msgChange,
 						$added[0]['title']
 					);
 				}
 			} else {
-				$summaryMsg = $this->msg( 'massmessage-summary-addmulti' )
+				// * massmessage-summary-addmulti
+				// * massmessage-summary-addmultichange
+				$summaryMsg = $this->msg( 'massmessage-summary-addmulti' . $msgChange )
 					->numParams( count( $added ) );
 			}
-		} else { // Only removed
+		} elseif ( empty( $added ) && !empty( $removed ) ) {
 			if ( count( $removed ) === 1 ) {
 				if ( isset( $removed[0]['site'] ) ) {
+					// * massmessage-summary-removeonsite
+					// * massmessage-summary-removeonsitechange
 					$summaryMsg = $this->msg(
-						'massmessage-summary-removeonsite',
+						'massmessage-summary-removeonsite' . $msgChange,
 						$removed[0]['title'],
 						$removed[0]['site']
 					);
 				} else {
+					// * massmessage-summary-remove
+					// * massmessage-summary-removechange
 					$summaryMsg = $this->msg(
-						'massmessage-summary-remove',
+						'massmessage-summary-remove' . $msgChange,
 						$removed[0]['title']
 					);
 				}
 			} else {
-				$summaryMsg = $this->msg( 'massmessage-summary-removemulti' )
+				// * massmessage-summary-removemulti
+				// * massmessage-summary-removemultichange
+				$summaryMsg = $this->msg( 'massmessage-summary-removemulti' . $msgChange )
 					->numParams( count( $removed ) );
 			}
+		} else {
+			$summaryMsg = $this->msg( 'massmessage-summary-change' );
 		}
 		return $summaryMsg->inContentLanguage()->text();
 	}
@@ -223,6 +257,9 @@ class ApiEditMassMessageList extends ApiBase {
 			'spamlist' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
+			],
+			'description' => [
+				ApiBase::PARAM_TYPE => 'string'
 			],
 			'add' => [
 				ApiBase::PARAM_TYPE => 'string',
@@ -258,6 +295,9 @@ class ApiEditMassMessageList extends ApiBase {
 			'action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar' .
 			'&remove=Talk%3ABaz&token=TOKEN'
 				=> 'apihelp-editmassmessagelist-example-1',
+			'action=editmassmessagelist&spamlist=Example' .
+			'&description=FooBor%20delivery%20services&token=TOKEN'
+				=> 'apihelp-editmassmessagelist-example-2'
 		];
 	}
 
