@@ -10,7 +10,8 @@
 			"Yfdyh000",
 			"Duolaimi",
 			"Liangent",
-			"NeverBehave"
+			"NeverBehave",
+			"神樂坂秀吉"
 		]
 	},
 	"massmessage": "发送大量信息",
@@ -114,7 +115,7 @@
 	"massmessage-summary-removeonsite": "已于$2移除$1",
 	"massmessage-summary-removemulti": "已移除$1个{{PLURAL:$1|页面}}",
 	"massmessage-list-category": "大量信息递送列表",
-	"massmessage-list-category-desc": "页面被用于[[Special:MassMessage|大量信息]]扩展程序的递送列表。",
+	"massmessage-list-category-desc": "页面用于[[Special:MassMessage|大量信息]]扩展程序的递送列表。",
 	"tag-massmessage-delivery": "群发消息递送",
 	"tag-massmessage-delivery-description": "通过[[:mw:Extension:MassMessage|Extension:MassMessage]]发送",
 	"log-action-filter-massmessage": "日志记录类型",
