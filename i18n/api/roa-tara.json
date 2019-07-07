@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Cange l'elenghe de conzegne pe messàgge de masse.",
+	"apihelp-editmassmessagelist-summary": "Cange l'elenghe de conzegne pe messàgge de masse.",
+	"apihelp-editmassmessagelist-param-spamlist": "Titole de l'elenghe de conzegne da aggiornà.",
+	"apihelp-editmassmessagelist-param-add": "Titole da aggiungere a l'elenghe.",
+	"apihelp-editmassmessagelist-param-remove": "Titole da luà da l'elenghe.",
+	"apihelp-editmassmessagelist-example-1": "Aggiunge [[User talk:Foo]] e [[Talk:Bar]] a l'elenghe de conzegne[[Example]] e live [[Talk:Baz]] da jidde",
+	"apihelp-massmessage-description": "Manne 'nu messàgge a 'n'elenghe de pàggene.",
+	"apihelp-massmessage-summary": "Manne 'nu messàgge a 'n'elenghe de pàggene.",
+	"apihelp-massmessage-param-spamlist": "Pàgene ca tène 'n'elenghe de pàggene pe lassà 'nu messàgge sus a.",
+	"apihelp-massmessage-param-subject": "Oggette d'u messàgge.",
+	"apihelp-massmessage-param-message": "Teste d'u cuèrpe d'u messàgge.",
+	"apihelp-massmessage-example-1": "Manne 'nu messàgge a l'elenghe a [[Signpost Spamlist]] cu l'oggette \"New Signpost\", e 'u cuèrpe d'u messàgge \"Please read it\"",
+	"apihelp-query+mmsites-description": "Fà devendà disponibbele 'u combletamende automateche de le richieste pu cambe ca ste jndr'à MassMessage.",
+	"apihelp-query+mmsites-summary": "Fà devendà disponibbele 'u combletamende automateche de le richieste pu cambe ca ste jndr'à MassMessage.",
+	"apihelp-query+mmsites-param-term": "'U prefisse da cercà.",
+	"apihelp-query+mmsites-example-1": "Combletamende automateche \"roa-tara\"",
+	"apierror-massmessage-invalidspamlist": "L'elenghe d'u rummate specificate non g'è valide."
+}
