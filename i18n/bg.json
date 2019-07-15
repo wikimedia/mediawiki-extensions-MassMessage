@@ -6,7 +6,8 @@
 			"Spiritia",
 			"StanProg",
 			"ShockD",
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
 	"massmessage": "Доставяне на масови съобщения",
@@ -50,5 +51,7 @@
 	"massmessage-create-content": "Съдържание:",
 	"massmessage-create-new": "Създаване на нов списък за доставка",
 	"massmessage-create-import": "Внасяне на страници от съществуващ списък или категория",
-	"massmessage-edit-summary": "Резюме на редакцията:"
+	"massmessage-edit-summary": "Резюме на редакцията:",
+	"massmessage-list-category": "Списъци за доставка на Масови съобщения",
+	"massmessage-list-category-desc": "Страницата е разширение към списъка за доставянето на [[Special:MassMessage|Масови съобщения]]."
 }
