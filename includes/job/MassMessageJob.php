@@ -13,6 +13,7 @@ use ExtensionRegistry;
 use Job;
 use LqtDispatch;
 use ManualLogEntry;
+use MediaWiki\MediaWikiServices;
 use RequestContext;
 use Title;
 use User;
@@ -301,7 +302,10 @@ class MassMessageJob extends Job {
 
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
-		$wgHooks['UserGetRights'][] = MassMessageHooks::class . '::onUserGetRights';
+		$ourUser = $this->getUser();
+		$lock = MediaWikiServices::getInstance()->getPermissionManager()->addTemporaryUserRights(
+			$ourUser, [ 'ipblock-exempt' ]
+		);
 		$wgHooks['EmailConfirmed'][] = MassMessageHooks::class . '::onEmailConfirmed';
 
 		$oldRequest = $wgRequest;
@@ -314,8 +318,7 @@ class MassMessageJob extends Job {
 		);
 		// New user objects will use $wgRequest, so we set that
 		// to our DerivativeRequest, so we don't run into any issues.
-		$wgUser = $this->getUser();
-		$wgUser->clearInstanceCache(); // Force rights reload (for IP block exemption)
+		$wgUser = $ourUser;
 
 		$context = RequestContext::getMain();
 		// All further internal API requests will use the main
