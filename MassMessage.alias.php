@@ -60,6 +60,13 @@ $specialPageAliases['diq'] = [
 	'MassMessage' => [ 'HolaMesacan' ],
 ];
 
+/** Spanish (Español) */
+$specialPageAliases['es'] = [
+	'MassMessage' => [ 'Distribuir_mensaje' ],
+	'CreateMassMessageList' => [ 'Crear_lista_de_distribución' ],
+	'EditMassMessageList' => [ 'Editar_lista_de_distribución' ],
+];
+
 /** Estonian (eesti) */
 $specialPageAliases['et'] = [
 	'MassMessage' => [ 'Hulgasõnum' ],
