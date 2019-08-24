@@ -169,7 +169,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			],
 			'summary' => [
 				'type' => 'text',
-				'maxlength' => 255,
+				'maxlength' => \CommentStore::COMMENT_CHARACTER_LIMIT,
 				'size' => 60,
 				'label-message' => 'massmessage-edit-summary',
 			],
