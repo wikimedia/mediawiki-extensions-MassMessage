@@ -4,11 +4,11 @@ MassMessage is a [MediaWiki](https://www.mediawiki.org/) extension that lets you
 
 ## Configuration
 
-    $wgNamespacesToPostIn = array( NS_PROJECT );
+    $wgNamespacesToPostIn = [ NS_PROJECT ];
 
 This limits the extension to only posting in talk namespaces (by default) and the **Project:** namespace.
 
-    $wgNamespacesToConvert = array( NS_USER => NS_USER_TALK );
+    $wgNamespacesToConvert = [ NS_USER => NS_USER_TALK ];
 
 This allows a user to specify a page in the **User:** namespace, and the extension will automatically convert it to the **User talk:** namespace.
 
@@ -20,7 +20,7 @@ The account name that the extension will post with. If this is an existing accou
 
 Whether to enable sending messages from one wiki to another. Can be disabled on all wikis except one "central wiki" which will keep the log entries in one location.
 
-    $wgMassMessageWikiAliases = array( 'foo-old.example.org' => 'foowiki' );
+    $wgMassMessageWikiAliases = [ 'foo-old.example.org' => 'foowiki' ];
 
 A mapping of domain names to their database name. Useful if you have moved or renamed a wiki and need previous input lists to continue working.
 
@@ -59,7 +59,7 @@ Wikis can choose to add an enforced footer by editing the `massmessage-message-f
 
 ## License
 
-MassMessage is licensed under the GNU General Public License 2.0 or any later version. You may obtain a copy of this license at <http://www.gnu.org/copyleft/gpl.html>.
+MassMessage is licensed under the GNU General Public License 2.0 or any later version. You may obtain a copy of this license at <https://www.gnu.org/copyleft/gpl.html>.
 
 ## Credits
 
