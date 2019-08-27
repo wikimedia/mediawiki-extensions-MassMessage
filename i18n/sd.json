@@ -40,6 +40,7 @@
 	"massmessage-summary-addonsite": "$2 تي $1 وڌو ويو",
 	"massmessage-summary-addmulti": "$1 {{PLURAL:$1|صفحو|صفحا}} وڌا",
 	"massmessage-summary-remove": "ھٽايو [[:$1]]",
+	"massmessage-summary-removeonsite": "$1 کي $2 تي ھٽايو ويو",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|صفحو|صفحا}} ھٽايا",
 	"massmessage-list-category": "جھجھن-نياپن پھچائڻ جي فھرست",
 	"log-action-filter-massmessage-send": "جھجھن نياپن جي اماڻپ",
