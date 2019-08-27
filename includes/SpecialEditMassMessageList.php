@@ -7,7 +7,7 @@ use FormSpecialPage;
 use Html;
 use HTMLForm;
 use LogEventsList;
-use MWNamespace;
+use MediaWiki\MediaWikiServices;
 use Revision;
 use Status;
 use Title;
@@ -125,7 +125,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 			// Protection warnings; modified from EditPage::showHeader()
 			if ( $this->title->isProtected( 'edit' )
-				&& MWNamespace::getRestrictionLevels( $this->title->getNamespace() ) !== [ '' ]
+				&& MediaWikiServices::getInstance()->getPermissionManager()
+					->getNamespaceRestrictionLevels( $this->title->getNamespace() ) !== [ '' ]
 			) {
 				if ( $this->title->isSemiProtected() ) {
 					$noticeMsg = 'semiprotectedpagewarning';
