@@ -30,5 +30,6 @@
 	"massmessage-form-header": "Gunakan formulir di bawah untuk mengirimkan pesan kepada daftar yang telah ditentukan. Semua kotak isian wajib diisi ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage informasi lanjutan]).",
 	"massmessage-queued-count": "[[Special:MassMessage|Pesan massal]] dalam antrian",
 	"massmessage-hidden-comment": "<!-- Pesan dikirim oleh Pengguna:$1@$2 dengan menggunakan daftar di $3 -->",
-	"massmessage-list-category": "Daftar penerima pesan massal"
+	"massmessage-list-category": "Daftar penerima pesan massal",
+	"tag-massmessage-delivery": "Pengirim PesanMasal"
 }
