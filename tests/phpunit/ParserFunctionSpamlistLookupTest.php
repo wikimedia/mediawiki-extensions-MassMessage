@@ -73,8 +73,8 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 			}
 			if ( !isset( $check['wiki'] ) ) {
 				$this->assertEquals( wfWikiID(), $data['wiki'] );
-				// Using wfWikiId() within @dataProviders returns a different result
-				// than when we use wfWikiId() within a test
+				// Using wfWikiID() within @dataProviders returns a different result
+				// than when we use wfWikiID() within a test
 			}
 		}
 	}

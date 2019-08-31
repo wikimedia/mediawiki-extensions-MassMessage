@@ -30,7 +30,7 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 				$target['wiki'] = DatabaseLookup::getDBName( $target['site'] );
 			} else {
 				$target['site'] = UrlHelper::getBaseUrl( $wgCanonicalServer );
-				$target['wiki'] = wfWikiId();
+				$target['wiki'] = wfWikiID();
 			}
 		}
 		return $targets;
