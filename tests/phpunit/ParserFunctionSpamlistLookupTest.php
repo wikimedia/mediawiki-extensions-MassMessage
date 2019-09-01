@@ -2,6 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MediaWikiServices;
 use Title;
 
 /**
@@ -15,8 +16,8 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	 * @return array
 	 */
 	public static function provideGetParserFunctionTargets() {
-		global $wgContLang;
-		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
+		$proj = MediaWikiServices::getInstance()->getContentLanguage()
+			->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
 		return [
 			// project page, no site provided

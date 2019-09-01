@@ -2,6 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MediaWikiServices;
 use Title;
 use WikiPage;
 use User;
@@ -59,8 +60,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	public function testLQTMessageSending() {
 		$this->markTestSkipped( 'broken test, T217553' );
 
-		global $wgContLang;
-		$proj = $wgContLang->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
+		$proj = MediaWikiServices::getInstance()->getContentLanguage()
+			->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
 
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' ) ) {
 			$this->markTestSkipped( "This test requires the LiquidThreads extension" );

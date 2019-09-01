@@ -3,6 +3,7 @@
 namespace MediaWiki\MassMessage;
 
 use ContentHandler;
+use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use SiteConfiguration;
 use Title;
@@ -15,7 +16,7 @@ use WikiPage;
 abstract class MassMessageTestCase extends MediaWikiTestCase {
 
 	protected function setUp() {
-		global $wgLqtPages, $wgContLang;
+		global $wgLqtPages;
 		parent::setUp();
 		$wgConf = new SiteConfiguration;
 		$wgConf->wikis = [ 'enwiki', 'dewiki', 'frwiki' ];
@@ -36,7 +37,8 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 			],
 		];
 		$this->setMwGlobals( 'wgConf', $wgConf );
-		$proj = $wgContLang->getFormattedNsText( NS_PROJECT );
+		$proj = MediaWikiServices::getInstance()->getContentLanguage()
+			->getFormattedNsText( NS_PROJECT );
 		$wgLqtPages[] = $proj . ':LQT test';
 		// Create a redirect
 		$r = Title::newFromText( 'User talk:Redirect target' );
