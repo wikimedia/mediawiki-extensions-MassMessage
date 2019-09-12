@@ -18,7 +18,7 @@
 	"apihelp-massmessage-param-spamlist": "Page contenant une liste de pages sur lesquelles laisser un message.",
 	"apihelp-massmessage-param-subject": "Ligne donnant l'objet du message.",
 	"apihelp-massmessage-param-message": "Texte du corps du message.",
-	"apihelp-massmessage-example-1": "Envoyer un message à la liste [[Signpost Spamlist]] avec le sujet « Nouvel indicateur », et un corps de message de « Merci de le lire »",
+	"apihelp-massmessage-example-1": "Envoyer un message à la liste [[Signpost Spamlist]] avec le sujet « Nouvel indicateur », et un corps de message de « Merci de le lire »",
 	"apihelp-query+mmsites-description": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
 	"apihelp-query+mmsites-summary": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
 	"apihelp-query+mmsites-param-term": "Le préfixe à rechercher.",
