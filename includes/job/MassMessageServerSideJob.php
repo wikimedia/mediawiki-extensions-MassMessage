@@ -21,6 +21,7 @@ use WikitextContent;
 class MassMessageServerSideJob extends MassMessageJob {
 	public function __construct( Title $title, array $params ) {
 		Job::__construct( 'MassMessageServerSideJob', $title, $params );
+		$this->removeDuplicates = true;
 	}
 
 	/**

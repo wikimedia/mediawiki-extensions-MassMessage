@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use Job;
 use JobQueueGroup;
+use MWTimestamp;
 use Title;
 
 /**
@@ -21,6 +22,9 @@ class MassMessageSubmitJob extends Job {
 		// Back-compat
 		if ( !isset( $params['class'] ) ) {
 			$params['class'] = MassMessageJob::class;
+		}
+		if ( !isset( $params['timestamp'] ) ) {
+			$params['timestamp'] = MWTimestamp::now();
 		}
 		parent::__construct( 'MassMessageSubmitJob', $title, $params );
 	}
@@ -54,6 +58,10 @@ class MassMessageSubmitJob extends Job {
 			// Store the title as plain text to avoid namespace/interwiki prefix
 			// collisions, see bug 57464 and 58524
 			$data['title'] = $page['title'];
+			// We want to deduplicate individual messages based on retries of the
+			// batch submit job if they happen
+			$data['rootJobSignature'] = sha1( json_encode( $this->getDeduplicationInfo() ) );
+			$data['rootJobTimestamp'] = $this->params['timestamp'];
 			$jobsByTarget[$page['wiki']][] = new $class( $title, $data );
 		}
 
