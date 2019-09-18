@@ -43,6 +43,7 @@ class MassMessageJob extends Job {
 
 	public function __construct( Title $title, array $params ) {
 		parent::__construct( 'MassMessageJob', $title, $params );
+		$this->removeDuplicates = true;
 		// Create a fresh Title object so namespaces are evaluated
 		// in the context of the target site. See T59464.
 		// Note that jobs created previously might not have a
