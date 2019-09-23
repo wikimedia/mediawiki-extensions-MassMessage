@@ -5,6 +5,8 @@
 		]
 	},
 	"massmessage": "Manne messàgge de masse",
+	"createmassmessagelist": "Ccreje l'elenghe de conzegne pe messàgge de masse",
+	"editmassmessagelist": "Cange l'elenghe de conzegne pe messàgge de masse",
 	"massmessage-desc": "Permette a l'utinde de mannà messàgge de masse facile facile a 'n'elenghe de utinde",
 	"massmessage-form-spamlist": "Pàgene o categorije ca tène 'n'elenghe de pàggene pe lassà 'nu messàgge sus a:",
 	"massmessage-form-subject": "Oggette d'u messàgge (pure ausate cumme riepiloghe d'u cangiamende):",
@@ -20,6 +22,8 @@
 	"massmessage-spamlist-invalid": "'A pàgena specificate non ge tène 'n'elenghe de spediziune valide.",
 	"massmessage-empty-subject": "'A linèe de l'oggette jè vacande.",
 	"massmessage-empty-message": "'U cuèrpe d'u messàgge jè vacande.",
+	"massmessage-unescaped-langlinks": "Attenziò: stonne collegaminde de lènghe senze escape jndr'à 'u messàgge tune.",
+	"massmessage-no-timestamp": "attenziò: 'u messàgge non ge 'ngludone date e ore o 'a firme.",
 	"massmessage-form-header": "Ause 'u module aqquà sotte pe mannà messàgge a 'n'elenghe specifiche. Tutte le cambe sò obbligatorije ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage cchiù 'mbormaziune]).",
 	"massmessage-queued-count": "Accodate [[Special:MassMessage|messàgge de masse]]",
 	"massmessage-hidden-comment": "<!-- Messàgge mannate da l'Utende:$1@$2 ausanne l'elenghe a $3 -->",
