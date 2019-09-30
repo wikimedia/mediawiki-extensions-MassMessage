@@ -5,7 +5,8 @@
 			"Pxos",
 			"Stryn",
 			"Valtlait",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Silvonen"
 		]
 	},
 	"massmessage": "Lähetä joukkoviesti",
@@ -43,6 +44,8 @@
 	"logentry-massmessage-skipnouser": "Viestiä ”$4” ei toimitettu kohteeseen $3, koska käyttäjätunnusta ei ole olemassa",
 	"massmessage-cannot-rename": "Tämä on järjestelmän käyttämä tunnus eikä sitä voi nimetä uudelleen.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Lähetä toinen viesti]] tai [[Special:Statistics|katso kuinka moni viesti on jonossa]].",
+	"massmessage-content-remove": "poista",
+	"massmessage-content-removeyes": "Poista",
 	"massmessage-content-removeno": "Peruuta",
 	"massmessage-content-addheading": "Lisää sivuja",
 	"massmessage-content-addtitle": "Otsikko:",
