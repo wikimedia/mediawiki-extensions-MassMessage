@@ -24,7 +24,7 @@
 	"massmessage-preview-count": "Съобщението ще бъде доставено до {{PLURAL:$1|$1 страница|$1 страници}}.",
 	"massmessage-submitted": "Заявката Ви за доставка на съобщение до $1 {{PLURAL:$1|страница|страници}} е вече в опашката.",
 	"massmessage-just-preview": "Това е само предварителен преглед. Натиснете „{{int:massmessage-form-submit}}“, за да изпратите съобщението.",
-	"massmessage-spamlist-doesnotexist": "Указаната страница или категория от страници с адресати на съобщението не съществува.",
+	"massmessage-spamlist-doesnotexist": "Указаният списък на адресати или категория не съществува.",
 	"massmessage-spamlist-invalid": "Указаната страница не съдържа валиден списък от адресати.",
 	"massmessage-empty-subject": "Липсва резюме на съобщението.",
 	"massmessage-empty-message": "Липсва текст на съобщението.",
@@ -52,6 +52,8 @@
 	"massmessage-create-new": "Създаване на нов списък за доставка",
 	"massmessage-create-import": "Внасяне на страници от съществуващ списък или категория",
 	"massmessage-edit-summary": "Резюме на редакцията:",
-	"massmessage-list-category": "Списъци за доставка на Масови съобщения",
-	"massmessage-list-category-desc": "Страницата е разширение към списъка за доставянето на [[Special:MassMessage|Масови съобщения]]."
+	"massmessage-list-category": "Списъци за доставка на масови съобщения",
+	"massmessage-list-category-desc": "Страницата е списък за доставка към разширението [[Special:MassMessage|масови съобщения]].",
+	"tag-massmessage-delivery": "Доставка на масови съобщения",
+	"tag-massmessage-delivery-description": "Доставка на съобщение чрез [[:mw:Extension:MassMessage|разширението „MassMessage“]]"
 }
