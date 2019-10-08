@@ -65,10 +65,8 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 * Tests that an error is thrown properly for invalid spamlists
 	 */
 	public function testInvalidSpamlist() {
-		$this->setExpectedException(
-			ApiUsageException::class,
-			'The specified delivery list page or category does not exist.'
-		);
+		$this->expectException( ApiUsageException::class );
+		$this->expectExceptionMessage( 'The specified delivery list page or category does not exist.' );
 		$this->doApiRequestWithToken( [
 			'action' => 'massmessage',
 			'spamlist' => '<InvalidPageTitle>',
