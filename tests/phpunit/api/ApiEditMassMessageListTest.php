@@ -17,7 +17,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'ApiEditMMListTest_spamlist';
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$title = Title::newFromText( self::$spamlist );
 		$page = WikiPage::factory( $title );

@@ -20,7 +20,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	protected static $spamlist = 'Help:ApiMassMessageTest_spamlist';
 	protected static $emptyspamlist = 'Help:ApiMassMessageTest_spamlist2';
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$spamlist = Title::newFromText( self::$spamlist );
 		self::updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );

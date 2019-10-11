@@ -10,7 +10,7 @@ use SiteConfiguration;
  */
 abstract class MassMessageApiTestCase extends ApiTestCase {
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$conf = new SiteConfiguration;
 		$conf->wikis = [ 'enwiki', 'dewiki', 'frwiki' ];
