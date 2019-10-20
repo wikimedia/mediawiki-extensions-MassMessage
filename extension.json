@@ -89,7 +89,7 @@
 	"ResourceModules": {
 		"ext.MassMessage.autocomplete": {
 			"scripts": "ext.MassMessage.autocomplete.js",
-			"dependencies": "jquery.ui.autocomplete"
+			"dependencies": "jquery.ui"
 		},
 		"ext.MassMessage.special.js": {
 			"scripts": [
