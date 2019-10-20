@@ -32,7 +32,7 @@ abstract class SpamlistLookup {
 	 *
 	 * @param Title $spamlist
 	 * @param bool $normalize Whether to normalize and deduplicate the targets
-	 * @return array|null
+	 * @return array[]|null
 	 */
 	public static function getTargets( Title $spamlist, $normalize = true ) {
 		if ( !$spamlist->exists() && !$spamlist->inNamespace( NS_CATEGORY ) ) {
@@ -99,8 +99,8 @@ abstract class SpamlistLookup {
 	/**
 	 * Get array of normalized targets with duplicates removed.
 	 *
-	 * @param array $data
-	 * @return array
+	 * @param array[] $data
+	 * @return array[]
 	 */
 	protected static function normalizeTargets( array $data ) {
 		global $wgNamespacesToConvert;

@@ -15,9 +15,10 @@ class MassMessageSkipLogFormatter extends LogFormatter {
 
 	/**
 	 * @return array
+	 * @suppress PhanTypeArraySuspicious,PhanTypeArraySuspiciousNull the parent fills parsedParameters
 	 */
 	protected function getMessageParameters() {
-		if ( isset( $this->parsedParameters ) ) {
+		if ( $this->parsedParameters !== null ) {
 			return $this->parsedParameters;
 		}
 
