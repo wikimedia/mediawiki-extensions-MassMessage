@@ -23,7 +23,7 @@ class MassMessageListContent extends JsonContent {
 	/**
 	 * Array of target pages.
 	 *
-	 * @var array|null
+	 * @var array[]|null
 	 */
 	protected $targets;
 
@@ -80,7 +80,7 @@ class MassMessageListContent extends JsonContent {
 	}
 
 	/**
-	 * @return array
+	 * @return array[]
 	 */
 	public function getTargets() {
 		$this->decode();
