@@ -7,6 +7,7 @@ use JsonContent;
 use Language;
 use LinkBatch;
 use Linker;
+use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ParserOutput;
 use Title;
@@ -174,10 +175,11 @@ class MassMessageListContent extends JsonContent {
 	protected function fillParserOutput( Title $title, $revId, ParserOptions $options,
 		$generateHtml, ParserOutput &$output
 	) {
-		global $wgParser, $wgScript;
+		global $wgScript;
 
 		// Parse the description text.
-		$output = $wgParser->parse( $this->getDescription(), $title, $options, true, true, $revId );
+		$output = MediaWikiServices::getInstance()->getParser()
+			->parse( $this->getDescription(), $title, $options, true, true, $revId );
 		$output->addTrackingCategory( 'massmessage-list-category', $title );
 		$lang = $options->getUserLangObj();
 

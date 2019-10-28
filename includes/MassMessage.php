@@ -7,7 +7,6 @@ use Exception;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
-use Parser;
 use ParserOptions;
 use RequestContext;
 use Revision;
@@ -277,16 +276,14 @@ class MassMessage {
 			$cache->makeKey( 'massmessage', 'timestamp' ),
 			$cache::TTL_WEEK,
 			function () {
-				global $wgParser;
-
 				// Step 1: Get an exemplar timestamp
 				$title = Title::newMainPage();
 				$user = User::newFromName( 'Test' );
 				$options = new ParserOptions;
 
-				/** @var Parser $wgParser */
 				$exemplarTimestamp =
-					$wgParser->preSaveTransform( '~~~~~', $title, $user, $options );
+					MediaWikiServices::getInstance()->getParser()
+						->preSaveTransform( '~~~~~', $title, $user, $options );
 
 				// Step 2: Generalise it
 				// Trim off the timezone to replace at the end
