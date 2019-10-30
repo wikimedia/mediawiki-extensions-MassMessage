@@ -121,5 +121,8 @@
 	"tag-massmessage-delivery-description": "Mensaje distribuido usando [[:mw:Extension:MassMessage|Extensión:MassMessage]]",
 	"log-action-filter-massmessage": "Tipo de entrada del registro",
 	"log-action-filter-massmessage-send": "Envío masivo de mensajes",
-	"log-action-filter-massmessage-failure": "Fallo de envío masivo de mensajes"
+	"log-action-filter-massmessage-failure": "Fallo de envío masivo de mensajes",
+	"log-action-filter-massmessage-skipoptout": "Destinatario omitido por exclusión de entrega de mensajes",
+	"log-action-filter-massmessage-skipnouser": "Destinatario omitido por no existir el usuario",
+	"log-action-filter-massmessage-skipbadns": "Destinatario omitido por ser un espacio de nombres prohibido"
 }
