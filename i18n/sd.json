@@ -8,6 +8,7 @@
 	"massmessage": "جھجھا پيغام موڪليو",
 	"createmassmessagelist": "جھجھا پيغام موڪلڻ جي فھرست سرجيو",
 	"editmassmessagelist": "جھجھا پيغام موڪلڻ جي فھرست سنواريو",
+	"massmessage-desc": "واپرائيندڙن کي واپرائيندڙ جي ڪنھن فھرست ڏانھن آساني سان ڪو پيغام پھچائڻ ڏي ٿو",
 	"massmessage-form-message": "نياپي جو خانو:",
 	"massmessage-form-preview": "پيش-نگاھ",
 	"massmessage-form-submit": "موڪليو",
@@ -43,6 +44,7 @@
 	"massmessage-summary-removeonsite": "$1 کي $2 تي ھٽايو ويو",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|صفحو|صفحا}} ھٽايا",
 	"massmessage-list-category": "جھجھن-نياپن پھچائڻ جي فھرست",
+	"tag-massmessage-delivery": "جھجھونياپو پھچائڻ",
 	"log-action-filter-massmessage-send": "جھجھن نياپن جي اماڻپ",
 	"log-action-filter-massmessage-failure": "جھجھن نياپن موڪلڻ ۾ ناڪامي"
 }
