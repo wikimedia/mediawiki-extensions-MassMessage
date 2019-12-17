@@ -28,6 +28,7 @@ class ApiEditMassMessageList extends ApiBase {
 		) {
 			$this->dieWithError( 'apierror-massmessage-invalidspamlist', 'invalidspamlist' );
 		}
+		'@phan-var Title $spamlist';
 
 		/**
 		 * @var MassMessageListContent $content
