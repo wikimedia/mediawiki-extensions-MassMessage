@@ -10,5 +10,6 @@
 	"massmessage-form-message": "Texto di la mesajo:",
 	"massmessage-form-preview": "Previdado",
 	"massmessage-form-header": "Uzez la formulario adinfre por sendar mesaji por specifika listo. Omna blanki mustas kompleteskar ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage plusa informo]).",
-	"log-name-massmessage": "Titulo di pagino di 'Log'"
+	"log-name-massmessage": "Titulo di pagino di 'Log'",
+	"massmessage-create-content": "Kontenajo:"
 }
