@@ -3,7 +3,8 @@
 		"authors": [
 			"Nullzero",
 			"Aefgh39622",
-			"Horus"
+			"Horus",
+			"Geonuch"
 		]
 	},
 	"massmessage": "ส่งสารหมู่",
@@ -24,5 +25,6 @@
 	"massmessage-queued-count": "[[Special:MassMessage|สารหมู่]]ที่อยู่ในคิว",
 	"massmessage-optout-category": "หน้าที่ไม่รับข้อความ",
 	"right-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน",
-	"action-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน"
+	"action-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน",
+	"log-name-massmessage": "ปูมส่งสารหมู่"
 }
