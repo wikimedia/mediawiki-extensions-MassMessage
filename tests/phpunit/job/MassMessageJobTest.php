@@ -2,13 +2,13 @@
 
 namespace MediaWiki\MassMessage;
 
+use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
-use Title;
-use WikiPage;
-use User;
 use MWCryptRand;
 use Revision;
-use ExtensionRegistry;
+use Title;
+use User;
+use WikiPage;
 
 class MassMessageJobTest extends MassMessageTestCase {
 

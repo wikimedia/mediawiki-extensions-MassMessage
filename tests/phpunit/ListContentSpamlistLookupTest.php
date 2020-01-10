@@ -2,9 +2,9 @@
 
 namespace MediaWiki\MassMessage;
 
+use ContentHandler;
 use Title;
 use WikiPage;
-use ContentHandler;
 
 /**
  * Tests for MassMessage List Content related to target processing
