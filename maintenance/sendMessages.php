@@ -64,6 +64,8 @@ class SendMessages extends Maintenance {
 
 		$lineNum = 0;
 		// @codingStandardsIgnoreStart
+		// @phan-suppress-next-next-line PhanPossiblyUndeclaredVariable T240141
+		// @phan-suppress-next-line PhanTypeMismatchArgumentNullableInternal T240141
 		while ( $line = trim( fgets( $file ) ) ) {
 		// @codingStandardsIgnoreEnd
 			$lineNum++;
@@ -80,6 +82,8 @@ class SendMessages extends Maintenance {
 			];
 		}
 
+		// @phan-suppress-next-next-line PhanPossiblyUndeclaredVariable T240141
+		// @phan-suppress-next-line PhanTypeMismatchArgumentNullableInternal T240141
 		fclose( $file );
 
 		// Submit the jobs
