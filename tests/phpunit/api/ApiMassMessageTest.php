@@ -26,7 +26,6 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 		self::updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );
 		$emptyspamlist = Title::newFromText( self::$emptyspamlist );
 		self::updatePage( $emptyspamlist, 'rawr' );
-		$this->doLogin();
 	}
 
 	/**
@@ -46,12 +45,13 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 * Checks to make sure that the output looks good too
 	 */
 	public function testSending() {
+		$sysop = $this->getTestSysop()->getUser();
 		$apiResult = $this->doApiRequestWithToken( [
 			'action' => 'massmessage',
 			'spamlist' => self::$spamlist,
 			'message' => 'message',
 			'subject' => 'subjectline'
-		] );
+		], null, $sysop );
 
 		$apiResult = $apiResult[0];
 		$this->assertArrayHasKey( 'massmessage', $apiResult );
@@ -65,6 +65,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 * Tests that an error is thrown properly for invalid spamlists
 	 */
 	public function testInvalidSpamlist() {
+		$sysop = $this->getTestSysop()->getUser();
 		$this->expectException( ApiUsageException::class );
 		$this->expectExceptionMessage( 'The specified delivery list page or category does not exist.' );
 		$this->doApiRequestWithToken( [
@@ -72,7 +73,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 			'spamlist' => '<InvalidPageTitle>',
 			'subject' => 'subject',
 			'message' => 'msg'
-		] );
+		], null, $sysop );
 	}
 
 	public static function provideCount() {
@@ -89,12 +90,13 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 * @param int $count integer value of what count should be
 	 */
 	public function testCount( $page, $count ) {
+		$sysop = $this->getTestSysop()->getUser();
 		$apiResult = $this->doApiRequestWithToken( [
 			'action' => 'massmessage',
 			'spamlist' => $page,
 			'message' => 'message',
 			'subject' => 'subjectline'
-		] );
+		], null, $sysop );
 		$this->assertEquals( $count, $apiResult[0]['massmessage']['count'] );
 	}
 

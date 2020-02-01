@@ -66,7 +66,6 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::edit
 	 */
 	public function testInvalidEdit() {
-		$this->doLogin();
 		$title = Title::newFromText( self::$spamlist );
 		$result = MassMessageListContentHandler::edit(
 			$title,

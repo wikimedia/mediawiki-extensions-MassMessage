@@ -23,15 +23,15 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::getForModelID( 'MassMessageListContent' )->makeEmptyContent();
 		$page->doEditContent( $content, 'summary' );
-		$this->doLogin();
 	}
 
 	public function testAdd() {
+		$sysop = $this->getTestSysop()->getUser();
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
 			'add' => 'A|A|A@en.wikipedia.org|_|_|A@invalid.org|_@invalid.org'
-		] );
+		], null, $sysop );
 		$expected = [ 'editmassmessagelist' => [
 			'result' => 'Done',
 			'added' => [
@@ -48,6 +48,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 	}
 
 	public function testRemove() {
+		$sysop = $this->getTestSysop()->getUser();
 		$content = ContentHandler::makeContent(
 			'{"description":"","targets":[{"title":"B"},{"title":"A","site":"en.wikipedia.org"}]}',
 			null,
@@ -59,7 +60,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
 			'remove' => 'A|A|B|B|A@en.wikipedia.org|_'
-		] );
+		], null, $sysop );
 		$expected = [ 'editmassmessagelist' => [
 			'result' => 'Done',
 			'removed' => [
@@ -75,6 +76,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 	}
 
 	public function testMixed() {
+		$sysop = $this->getTestSysop()->getUser();
 		$content = ContentHandler::makeContent(
 			'{"description":"","targets":[{"title":"B"},{"title":"A","site":"en.wikipedia.org"}]}',
 			null,
@@ -87,7 +89,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'spamlist' => self::$spamlist,
 			'add' => 'B|C|D',
 			'remove' => 'A@en.wikipedia.org|B|C'
-		] );
+		], null, $sysop );
 		$expected = [ 'editmassmessagelist' => [
 			'result' => 'Success',
 			'added' => [
