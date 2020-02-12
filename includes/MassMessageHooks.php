@@ -3,6 +3,7 @@
 namespace MediaWiki\MassMessage;
 
 use EchoEvent;
+use MediaWiki\MediaWikiServices;
 use OutputPage;
 use Parser;
 use Skin;
@@ -191,8 +192,9 @@ class MassMessageHooks {
 		$title = $out->getTitle();
 		if ( $title->exists() && $title->hasContentModel( 'MassMessageListContent' ) ) {
 			$out->addModuleStyles( 'ext.MassMessage.content.nojs' );
+			$permManager = MediaWikiServices::getInstance()->getPermissionManager();
 			if ( $out->getRevisionId() === $title->getLatestRevId()
-				&& $title->quickUserCan( 'edit', $out->getUser() )
+				&& $permManager->quickUserCan( 'edit', $out->getUser(), $title )
 			) {
 				$out->addModuleStyles( 'ext.MassMessage.content' );
 				$out->addModules( 'ext.MassMessage.content.js' );
