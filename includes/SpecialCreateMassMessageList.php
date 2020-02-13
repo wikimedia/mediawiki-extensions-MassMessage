@@ -3,6 +3,7 @@
 namespace MediaWiki\MassMessage;
 
 use FormSpecialPage;
+use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
 
@@ -61,12 +62,14 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	 */
 	public function onSubmit( array $data ) {
 		$title = Title::newFromText( $data['title'] );
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( !$title ) {
 			return Status::newFatal( 'massmessage-create-invalidtitle' );
 		} elseif ( $title->exists() ) {
 			return Status::newFatal( 'massmessage-create-exists' );
-		} elseif ( !$title->userCan( 'edit' ) || !$title->userCan( 'create' ) ||
-			!$title->userCan( 'editcontentmodel' )
+		} elseif ( !$pm->userCan( 'edit', $this->getUser(), $title ) ||
+			!$pm->userCan( 'create', $this->getUser(), $title ) ||
+			!$pm->userCan( 'editcontentmodel', $this->getUser(), $title )
 		) {
 			return Status::newFatal( 'massmessage-create-nopermission' );
 		}

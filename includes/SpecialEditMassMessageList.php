@@ -70,7 +70,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			} else {
 				$this->title = $title;
 
-				if ( !$title->userCan( 'edit' ) ) {
+				if ( !MediaWikiServices::getInstance()->getPermissionManager()
+					->userCan( 'edit', $this->getUser(), $title ) ) {
 					$this->errorMsgKey = 'massmessage-edit-nopermission';
 				} else {
 					$revId = $this->getRequest()->getInt( 'oldid' );
