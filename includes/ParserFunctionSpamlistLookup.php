@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
-use Parser;
+use MediaWiki\MediaWikiServices;
 use Revision;
 use Title;
 use WikiPage;
@@ -29,7 +29,7 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 
 		// Prep the parser
 		$parserOptions = $page->makeParserOptions( 'canonical' );
-		$parser = new Parser();
+		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$parser->firstCallInit(); // So our initial parser function is added
 		// Now overwrite it
 		$parser->setFunctionHook(
