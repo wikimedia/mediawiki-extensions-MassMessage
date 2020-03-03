@@ -10,7 +10,6 @@ use Title;
 /**
  * JobQueue class to queue other jobs.
  *
- *
  * @file
  * @ingroup JobQueue
  * @author Kunal Mehta

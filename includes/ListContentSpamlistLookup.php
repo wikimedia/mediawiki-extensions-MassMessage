@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use Revision;
 use Title;
+use WikiMap;
 
 class ListContentSpamlistLookup extends SpamlistLookup {
 
@@ -25,12 +26,13 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 		global $wgCanonicalServer;
 
 		$targets = Revision::newFromTitle( $this->spamlist )->getContent()->getValidTargets();
+		$currentWikiId = WikiMap::getCurrentWikiId();
 		foreach ( $targets as &$target ) {
 			if ( array_key_exists( 'site', $target ) ) {
 				$target['wiki'] = DatabaseLookup::getDBName( $target['site'] );
 			} else {
 				$target['site'] = UrlHelper::getBaseUrl( $wgCanonicalServer );
-				$target['wiki'] = wfWikiID();
+				$target['wiki'] = $currentWikiId;
 			}
 		}
 		return $targets;

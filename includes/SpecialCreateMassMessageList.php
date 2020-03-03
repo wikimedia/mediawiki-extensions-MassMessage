@@ -6,6 +6,7 @@ use FormSpecialPage;
 use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
+use WikiMap;
 
 class SpecialCreateMassMessageList extends FormSpecialPage {
 
@@ -152,10 +153,11 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			return null;
 		}
 
+		$currentWikiId = WikiMap::getCurrentWikiId();
 		$targets = [];
 		foreach ( $pages as $page ) {
 			$target = [ 'title' => $page['title'] ];
-			if ( $page['wiki'] !== wfWikiID() ) {
+			if ( $page['wiki'] !== $currentWikiId ) {
 				$target['site'] = $page['site'];
 			}
 			$targets[] = $target;

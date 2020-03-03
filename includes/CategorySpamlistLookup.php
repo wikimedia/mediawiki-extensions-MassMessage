@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use Category;
 use Title;
+use WikiMap;
 
 class CategorySpamlistLookup extends SpamlistLookup {
 
@@ -25,12 +26,13 @@ class CategorySpamlistLookup extends SpamlistLookup {
 
 		$members = Category::newFromTitle( $this->spamlist )->getMembers();
 		$targets = [];
+		$currentWikiId = WikiMap::getCurrentWikiId();
 
 		/** @var Title $member */
 		foreach ( $members as $member ) {
 			$targets[] = [
 				'title' => $member->getPrefixedText(),
-				'wiki' => wfWikiID(),
+				'wiki' => $currentWikiId,
 				'site' => UrlHelper::getBaseUrl( $wgCanonicalServer ),
 			];
 		}

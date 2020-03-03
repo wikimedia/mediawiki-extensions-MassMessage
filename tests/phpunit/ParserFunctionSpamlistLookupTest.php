@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use MediaWiki\MediaWikiServices;
 use Title;
+use WikiMap;
 
 /**
  * Tests for Parser functions related to target processing
@@ -73,9 +74,7 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 				$this->assertEquals( $value, $data[$key] );
 			}
 			if ( !isset( $check['wiki'] ) ) {
-				$this->assertEquals( wfWikiID(), $data['wiki'] );
-				// Using wfWikiID() within @dataProviders returns a different result
-				// than when we use wfWikiID() within a test
+				$this->assertEquals( WikiMap::getCurrentWikiId(), $data['wiki'] );
 			}
 		}
 	}
