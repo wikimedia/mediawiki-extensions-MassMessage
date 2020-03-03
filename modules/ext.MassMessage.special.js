@@ -50,7 +50,7 @@ $( function () {
 	// Only bind once for 'blur' so that the user can fill it in without errors;
 	// after that, look at every change for immediate feedback.
 	$spamlist.one( 'blur', function () {
-		$spamlist.on( 'input autocompletechange', checkPageTitle );
+		$spamlist.on( 'input autocompletechange', $.debounce( 250, checkPageTitle ) );
 	} );
 
 	// Autocomplete for spamlist titles
