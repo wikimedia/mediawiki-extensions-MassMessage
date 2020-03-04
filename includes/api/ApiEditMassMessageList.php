@@ -4,7 +4,8 @@ namespace MediaWiki\MassMessage;
 
 use ApiBase;
 use LinkBatch;
-use Revision;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use Title;
 
 /**
@@ -33,7 +34,10 @@ class ApiEditMassMessageList extends ApiBase {
 		/**
 		 * @var MassMessageListContent $content
 		 */
-		$content = Revision::newFromTitle( $spamlist )->getContent();
+		$content = MediaWikiServices::getInstance()
+			->getRevisionLookup()
+			->getRevisionByTitle( $spamlist )
+			->getContent( SlotRecord::MAIN );
 		$description = $content->getDescription();
 		$targets = $content->getTargets();
 		$newTargets = $targets; // Create a copy.

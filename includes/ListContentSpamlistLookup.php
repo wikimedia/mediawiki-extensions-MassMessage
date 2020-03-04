@@ -2,7 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use Revision;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use Title;
 use WikiMap;
 
@@ -25,7 +26,11 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 	public function fetchTargets() {
 		global $wgCanonicalServer;
 
-		$targets = Revision::newFromTitle( $this->spamlist )->getContent()->getValidTargets();
+		$targets = MediaWikiServices::getInstance()
+			->getRevisionLookup()
+			->getRevisionByTitle( $this->spamlist )
+			->getContent( SlotRecord::MAIN )
+			->getValidTargets();
 		$currentWikiId = WikiMap::getCurrentWikiId();
 		foreach ( $targets as &$target ) {
 			if ( array_key_exists( 'site', $target ) ) {

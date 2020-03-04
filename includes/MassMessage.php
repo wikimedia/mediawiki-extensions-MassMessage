@@ -7,9 +7,9 @@ use Exception;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
 use RequestContext;
-use Revision;
 use Status;
 use Title;
 use User;
@@ -199,7 +199,11 @@ class MassMessage {
 		if ( $contentModel !== 'MassMessageListContent'
 			&& $contentModel !== CONTENT_MODEL_WIKITEXT
 			|| $contentModel === 'MassMessageListContent'
-			&& !Revision::newFromTitle( $spamlist )->getContent()->isValid()
+			&& !MediaWikiServices::getInstance()
+				->getRevisionLookup()
+				->getRevisionByTitle( $spamlist )
+				->getContent( SlotRecord::MAIN )
+				->isValid()
 		) {
 			return 'massmessage-spamlist-invalid';
 		}

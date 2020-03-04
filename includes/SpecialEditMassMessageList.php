@@ -8,8 +8,8 @@ use Html;
 use HTMLForm;
 use LogEventsList;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionRecord;
-use Revision;
+use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Storage\RevisionRecord;
 use Status;
 use Title;
 
@@ -27,7 +27,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * The revision to edit
 	 * If not null, the user can edit the delivery list.
 	 *
-	 * @var Revision|null
+	 * @var RevisionRecord|null
 	 */
 	protected $rev;
 
@@ -70,14 +70,16 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				$this->errorMsgKey = 'massmessage-edit-invalidtitle';
 			} else {
 				$this->title = $title;
-
-				if ( !MediaWikiServices::getInstance()->getPermissionManager()
-					->userCan( 'edit', $this->getUser(), $title ) ) {
+				$services = MediaWikiServices::getInstance();
+				$revisionLookup = $services->getRevisionLookup();
+				if ( !$services->getPermissionManager()->userCan( 'edit',
+					$this->getUser(), $title )
+				) {
 					$this->errorMsgKey = 'massmessage-edit-nopermission';
 				} else {
 					$revId = $this->getRequest()->getInt( 'oldid' );
 					if ( $revId > 0 ) {
-						$rev = Revision::newFromId( $revId );
+						$rev = $revisionLookup->getRevisionById( $revId );
 						if ( $rev
 							&& $rev->getTitle()->equals( $title )
 							&& $rev->getContentModel() === 'MassMessageListContent'
@@ -89,10 +91,10 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 						) {
 							$this->rev = $rev;
 						} else { // Use the latest revision for the title if $rev is invalid.
-							$this->rev = Revision::newFromTitle( $title );
+							$this->rev = $revisionLookup->getRevisionByTitle( $title );
 						}
 					} else {
-						$this->rev = Revision::newFromTitle( $title );
+						$this->rev = $revisionLookup->getRevisionByTitle( $title );
 					}
 				}
 			}
@@ -157,7 +159,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		/**
 		 * @var MassMessageListContent $content
 		 */
-		$content = $this->rev->getContent( Revision::FOR_THIS_USER, $this->getUser() );
+		$content = $this->rev->getContent(
+			SlotRecord::MAIN,
+			RevisionRecord::FOR_THIS_USER,
+			$this->getUser()
+		);
 		$description = $content->getDescription();
 		$targets = $content->getTargetStrings();
 
@@ -213,7 +219,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$html = Html::rawElement( 'p', [], $this->msg( $headerKey )->parse() );
 
 			// Deleted revision warning
-			if ( $this->rev->isDeleted( Revision::DELETED_TEXT ) ) {
+			if ( $this->rev->isDeleted( RevisionRecord::DELETED_TEXT ) ) {
 				$html .= Html::openElement( 'div', [ 'class' => 'mw-warning plainlinks' ] );
 				$html .= Html::rawElement( 'p', [],
 					$this->msg( 'rev-deleted-text-view' )->parse() );

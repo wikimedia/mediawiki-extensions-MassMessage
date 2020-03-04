@@ -2,7 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use Revision;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use Title;
 
 /**
@@ -55,11 +56,11 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			$this->apiContext
 		);
 		$this->assertTrue( $result->isGood() );
-		$rev = Revision::newFromTitle( $title );
-		$content = $rev->getContent();
+		$rev = MediaWikiServices::getInstance()->getRevisionLookup()->getRevisionByTitle( $title );
+		$content = $rev->getContent( SlotRecord::MAIN );
 		$this->assertEquals( 'description', $content->getDescription() );
 		$this->assertEquals( $targets, $content->getTargets() );
-		$this->assertEquals( 'summary', $rev->getComment() );
+		$this->assertEquals( 'summary', $rev->getComment()->text );
 	}
 
 	/**
