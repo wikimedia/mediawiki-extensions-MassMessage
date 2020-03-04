@@ -19,6 +19,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 
 	protected static $spamlist = 'Help:ApiMassMessageTest_spamlist';
 	protected static $emptyspamlist = 'Help:ApiMassMessageTest_spamlist2';
+	private static $pageMessage = 'Help:Test_Page';
 
 	protected function setUp() : void {
 		parent::setUp();
@@ -26,6 +27,8 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 		self::updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );
 		$emptyspamlist = Title::newFromText( self::$emptyspamlist );
 		self::updatePage( $emptyspamlist, 'rawr' );
+		$pageMessage = Title::newFromText( self::$pageMessage );
+		self::updatePage( $pageMessage, 'Hello World!' );
 	}
 
 	/**
@@ -98,6 +101,36 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 			'subject' => 'subjectline'
 		], null, $sysop );
 		$this->assertEquals( $count, $apiResult[0]['massmessage']['count'] );
+	}
+
+	public function testSendingPage() {
+		$sysop = $this->getTestSysop()->getUser();
+		$apiResult = $this->doApiRequestWithToken( [
+			'action' => 'massmessage',
+			'spamlist' => self::$spamlist,
+			'message' => 'message',
+			'subject' => 'subjectline',
+			'page-message' => self::$pageMessage
+		], null, $sysop );
+
+		$this->assertEquals( 1, $apiResult[0]['massmessage']['count'] );
+	}
+
+	public function testSendingInvalidPage() {
+		$sysop = $this->getTestSysop()->getUser();
+		$page404 = 'Page not found';
+
+		$this->setExpectedApiException( [
+			'massmessage-page-message-not-found', $page404
+		] );
+
+		$this->doApiRequestWithToken( [
+			'action' => 'massmessage',
+			'spamlist' => self::$spamlist,
+			'message' => 'message',
+			'subject' => 'subjectline',
+			'page-message' => $page404
+		], null, $sysop );
 	}
 
 }

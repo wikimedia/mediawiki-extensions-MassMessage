@@ -20,6 +20,9 @@ class ApiMassMessage extends ApiBase {
 
 		$data = $this->extractRequestParams();
 
+		// Must provide message or page-message
+		$this->requireAtLeastOneParameter( $data, 'message', 'page-message' );
+
 		$status = new Status();
 		MassMessage::verifyData( $data, $status );
 		if ( !$status->isOK() ) {
@@ -46,8 +49,10 @@ class ApiMassMessage extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true
 			],
 			'message' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ApiBase::PARAM_TYPE => 'string'
+			],
+			'page-message' => [
+				ApiBase::PARAM_TYPE => 'string'
 			],
 			'token' => null,
 		];
@@ -73,8 +78,14 @@ class ApiMassMessage extends ApiBase {
 	protected function getExamplesMessages() {
 		return [
 			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .
-			'&message=Please%20read%20it&token=TOKEN'
+			'&message=Please%20read%20it&page-message=Help_Page&token=TOKEN'
 				=> 'apihelp-massmessage-example-1',
+			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .
+			'&page-message=Help_Page&token=TOKEN'
+				=> 'apihelp-massmessage-example-2',
+			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .
+			'&message=Please%20read%20it&page-message=Help_Page&token=TOKEN'
+				=> 'apihelp-massmessage-example-3',
 		];
 	}
 
