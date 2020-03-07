@@ -279,7 +279,7 @@ class MassMessage {
 				// Step 1: Get an exemplar timestamp
 				$title = Title::newMainPage();
 				$user = User::newFromName( 'Test' );
-				$options = new ParserOptions;
+				$options = new ParserOptions( $user );
 
 				$exemplarTimestamp =
 					MediaWikiServices::getInstance()->getParser()
