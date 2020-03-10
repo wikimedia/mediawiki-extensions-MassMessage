@@ -2,12 +2,17 @@
 
 namespace MediaWiki\MassMessage;
 
+use ContentHandler;
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use MWCryptRand;
+use RequestContext;
 use Revision;
+use RuntimeException;
+use SpecialPageLanguage;
 use Title;
 use User;
+use WikiMap;
 use WikiPage;
 
 class MassMessageJobTest extends MassMessageTestCase {
@@ -15,12 +20,13 @@ class MassMessageJobTest extends MassMessageTestCase {
 	/**
 	 * Runs a job to edit the given title
 	 */
-	private function simulateJob( $title ) {
+	private function simulateJob( Title $title, array $additionalParams = [] ): string {
 		$subject = md5( MWCryptRand::generateHex( 15 ) );
 		$params = [
 			'subject' => $subject,
 			'message' => 'This is a message.',
 		];
+		$params = array_merge( $params, $additionalParams );
 		$params['comment'] = [
 			User::newFromName( 'Admin' ),
 			'metawiki',
@@ -32,16 +38,50 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::editPage
+	 * Returns title with a given string, while making sure that it does not actually exist.
+	 *
+	 * @param string $titleStr
+	 * @return Title
 	 */
-	public function testMessageSending() {
-		$target = Title::newFromText( 'Project:Testing1234' );
+	private function getTargetTitle( string $titleStr ): Title {
+		$target = Title::newFromText( $titleStr );
 		if ( $target->exists() ) {
 			// Clear it
 			$wikipage = WikiPage::factory( $target );
 			$wikipage->doDeleteArticleReal( 'reason' );
 		}
+
+		return $target;
+	}
+
+	private function createPage( string $titleStr, string $pageContent ): Title {
+		$title = Title::newFromText( $titleStr );
+		$this->createPageByTitle( $title, $pageContent );
+		return $title;
+	}
+
+	private function createPageByTitle( Title $title, string $pageContent ) {
+		$page = WikiPage::factory( $title );
+		$content = ContentHandler::makeContent( $pageContent, $title );
+
+		$status = $page->doEditContent(
+			$content, __METHOD__, 0, false, $this->getTestSysop()->getUser()
+		);
+
+		if ( !$status->isOK() ) {
+			throw new RuntimeException(
+				'There was an error while creating the page message with title - ' .
+				$title->getPrefixedText()
+			);
+		}
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::editPage
+	 */
+	public function testMessageSending() {
+		$target = $this->getTargetTitle( 'Project:Testing1234' );
 		$subj = $this->simulateJob( $target );
 		$target = Title::newFromText( 'Project:Testing1234' );
 		// Message was created
@@ -88,6 +128,74 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
 		// Nothing should be updated.
 		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text );
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
+	 */
+	public function testPageMessageSending() {
+		$pageMessageContent = 'Test page message.';
+		$pageMessageTitleStr = 'PageMessage';
+
+		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
+		$this->simulateJob( $target, [
+			'page-message' => $pageMessageTitleStr,
+			'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
+			'isSourceTranslationPage' => false
+		] );
+
+		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$this->assertNotNull( $content );
+		$this->assertStringContainsString(
+			$pageMessageContent,
+			$content->getNativeData()
+		);
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
+	 */
+	public function testTranslatablePageMessageSending() {
+		$this->setMwGlobals( [
+			'wgPageLanguageUseDB' => true,
+		] );
+
+		$pageMessageContent = 'Test page message - FR.';
+		$pageMessageTitleStr = 'PageMessage';
+
+		// Create target user talk page and change the page language.
+		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$this->createPageByTitle( $target, '' );
+		$requestContext = new RequestContext();
+		$requestContext->setLanguage( 'en' );
+		$requestContext->setUser( $this->getTestSysop()->getUser() );
+		$status = SpecialPageLanguage::changePageLanguage(
+			$requestContext, $target, 'fr', 'testing'
+		);
+
+		if ( !$status->isOK() ) {
+			throw new RuntimeException(
+				"Unable to change page language. Error: " . $status->getMessage()
+			);
+		}
+
+		// Create the message page with /fr suffix
+		$this->createPage( $pageMessageTitleStr . '/fr', $pageMessageContent );
+
+		$this->simulateJob( $target, [
+			'page-message' => 'PageMessage',
+			'pageMessageTitle' => Title::newFromText( $pageMessageTitleStr )->getPrefixedText(),
+			'isSourceTranslationPage' => true,
+			'originWiki' => WikiMap::getCurrentWikiId()
+		] );
+
+		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$this->assertNotNull( $content );
+		$this->assertStringContainsString(
+			$pageMessageContent,
+			$content->getNativeData()
+		);
 	}
 
 }

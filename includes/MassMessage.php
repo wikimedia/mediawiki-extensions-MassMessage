@@ -6,6 +6,7 @@ use CentralIdLookup;
 use ContentHandler;
 use Exception;
 use ExtensionRegistry;
+use IDBAccessObject;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
@@ -229,13 +230,16 @@ class MassMessage {
 	}
 
 	/**
-	 * Helper method to get the page message.
+	 * Helper method to get the page message for a page from the same wiki.
 	 *
 	 * @param string $messageTitle
+	 * @param int $pageNamespace
 	 * @return StatusValue
 	 */
-	public static function getPageMessage( string $messageTitle ): StatusValue {
-		$pageMessageStatus = self::getPageTitle( $messageTitle );
+	public static function getPageMessage(
+		string $messageTitle, int $pageNamespace = NS_MAIN
+	): StatusValue {
+		$pageMessageStatus = self::getPageTitle( $messageTitle, $pageNamespace );
 		if ( $pageMessageStatus->isOK() ) {
 			$pageMessageStatus = self::getPageContent( $pageMessageStatus->getValue() );
 		}
@@ -247,19 +251,22 @@ class MassMessage {
 	 * Fetch the page title given the title string
 	 *
 	 * @param string $title
+	 * @param int $pageNamespace
 	 * @return StatusValue
 	 */
-	public static function getPageTitle( string $title ): StatusValue {
-		$pageTitle = Title::newFromText( $title );
-		$error = '';
-		if ( $pageTitle === null ) {
-			$error = 'massmessage-page-message-invalid';
-		} elseif ( !$pageTitle->exists() ) {
-			$error = 'massmessage-page-message-not-found';
-		}
+	public static function getPageTitle(
+		string $title, int $pageNamespace = NS_MAIN
+	): StatusValue {
+		$pageTitle = Title::makeTitleSafe( $pageNamespace, $title );
 
-		if ( $error ) {
-			return StatusValue::newFatal( $error, $title );
+		if ( $pageTitle === null ) {
+			return StatusValue::newFatal(
+				'massmessage-page-message-invalid', "$pageNamespace::$title"
+			);
+		} elseif ( !$pageTitle->exists() ) {
+			return StatusValue::newFatal(
+				'massmessage-page-message-not-found', $pageTitle->getPrefixedText()
+			);
 		}
 
 		return StatusValue::newGood( $pageTitle );
@@ -292,6 +299,68 @@ class MassMessage {
 		}
 
 		return StatusValue::newGood( $wiki );
+	}
+
+	/**
+	 * Fetch the page content with the given title from the given wiki.
+	 *
+	 * @param Title $pageTitle
+	 * @param string $wikiId
+	 * @return StatusValue
+	 */
+	public static function getPageContentFromWiki(
+		Title $pageTitle, string $wikiId
+	): StatusValue {
+		$dbr = wfGetDB( DB_REPLICA, $wikiId );
+		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
+		$pageContent = null;
+
+		$query = $revStore->getQueryInfo( [ 'page' ] );
+		$whereCond = [
+			'page_namespace' => $pageTitle->getNamespace(),
+			'page_title' => $pageTitle->getDBkey(),
+			'page_latest = rev_id'
+		];
+
+		$row = $dbr->selectRow(
+			$query['tables'],
+			$query['fields'],
+			$whereCond,
+			__METHOD__,
+			[],
+			$query['joins']
+		);
+
+		if ( $row === false ) {
+			return StatusValue::newFatal(
+				'massmessage-page-message-not-found', $pageTitle->getPrefixedText()
+			);
+		}
+
+		$rev = $revStore->newRevisionFromRow( $row, IDBAccessObject::READ_NORMAL );
+
+		if ( $rev ) {
+			/** @var TextContent $content */
+			$content = $rev->getContent( SlotRecord::MAIN );
+			if ( $content ) {
+				$pageContent = $content->getText();
+			} else {
+				return StatusValue::newFatal(
+					'massmessage-page-message-no-revision-content',
+					$pageTitle->getPrefixedText(),
+					$rev->getId()
+				);
+			}
+		} else {
+			return StatusValue::newFatal(
+				'massmessage-page-message-no-revision',
+				$pageTitle->getPrefixedText()
+			);
+		}
+
+		return StatusValue::newGood(
+			$pageContent
+		);
 	}
 
 	/**
@@ -331,10 +400,23 @@ class MassMessage {
 		// Log it.
 		self::logToWiki( $spamlist, $user, $data['subject'] );
 
+		$isSourceTranslationPage = false;
+
+		/**
+		 * @var Title
+		 */
+		$pageTitle = null;
+		if ( $data['page-message'] !== '' ) {
+			$pageTitle = self::getPageTitle( $data['page-message'] )->getValue();
+			$isSourceTranslationPage = self::isSourceTranslationPage( $pageTitle );
+		}
+
 		$data += [
 			'userId' => CentralIdLookup::factory()
 				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
 			'originWiki' => WikiMap::getCurrentWikiId(),
+			'isSourceTranslationPage' => $isSourceTranslationPage,
+			'pageMessageTitle' => $pageTitle ? $pageTitle->getPrefixedText() : null
 		];
 
 		// Insert it into the job queue.
@@ -343,6 +425,7 @@ class MassMessage {
 			'pages' => $pages,
 			'class' => MassMessageJob::class,
 		];
+
 		$job = new MassMessageSubmitJob( $spamlist, $params );
 		JobQueueGroup::singleton()->push( $job );
 
