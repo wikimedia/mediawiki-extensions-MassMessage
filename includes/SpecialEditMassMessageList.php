@@ -8,6 +8,7 @@ use Html;
 use HTMLForm;
 use LogEventsList;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use Revision;
 use Status;
 use Title;
@@ -80,7 +81,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 						if ( $rev
 							&& $rev->getTitle()->equals( $title )
 							&& $rev->getContentModel() === 'MassMessageListContent'
-							&& $rev->userCan( Revision::DELETED_TEXT, $this->getUser() )
+							&& RevisionRecord::userCanBitfield(
+								$rev->getVisibility(),
+								RevisionRecord::DELETED_TEXT,
+								$this->getUser()
+							)
 						) {
 							$this->rev = $rev;
 						} else { // Use the latest revision for the title if $rev is invalid.
