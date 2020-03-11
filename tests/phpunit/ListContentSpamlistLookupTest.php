@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use ContentHandler;
 use Title;
+use WikiMap;
 use WikiPage;
 
 /**
@@ -25,9 +26,10 @@ class ListContentSpamlistLookupTest extends MassMessageTestCase {
 		$page = WikiPage::factory( $title );
 		$page->doEditContent( $content, 'summary' );
 		$targets = SpamlistLookup::getTargets( $title );
+
 		$this->assertEquals( 2, count( $targets ) );
 		$this->assertEquals( 'A', $targets[0]['title'] );
-		$this->assertEquals( wfWikiID(), $targets[0]['wiki'] );
+		$this->assertEquals( WikiMap::getCurrentWikiId(), $targets[0]['wiki'] );
 		$this->assertEquals( 'B', $targets[1]['title'] );
 		$this->assertEquals( 'enwiki', $targets[1]['wiki'] );
 		$this->assertEquals( 'en.wikipedia.org', $targets[1]['site'] );

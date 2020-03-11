@@ -13,6 +13,7 @@ use Revision;
 use Status;
 use Title;
 use User;
+use WikiMap;
 
 /**
  * Some core functions needed by the extension.
@@ -58,20 +59,21 @@ class MassMessage {
 			return self::parserError( 'massmessage-parse-badpage', $page );
 		}
 
+		$currentWikiId = WikiMap::getCurrentWikiId();
 		$data = [ 'title' => $page, 'site' => trim( $site ) ];
 		if ( $data['site'] === '' ) {
 			$data['site'] = UrlHelper::getBaseUrl( $wgCanonicalServer );
-			$data['wiki'] = wfWikiID();
+			$data['wiki'] = $currentWikiId;
 		} else {
 			$data['wiki'] = DatabaseLookup::getDBName( $data['site'] );
 			if ( $data['wiki'] === null ) {
 				return self::parserError( 'massmessage-parse-badurl', $site );
 			}
-			if ( !$wgAllowGlobalMessaging && $data['wiki'] !== wfWikiID() ) {
+			if ( !$wgAllowGlobalMessaging && $data['wiki'] !== $currentWikiId ) {
 				return self::parserError( 'massmessage-global-disallowed' );
 			}
 		}
-		if ( $data['wiki'] === wfWikiID() && $titleObj->isExternal() ) {
+		if ( $data['wiki'] === $currentWikiId && $titleObj->isExternal() ) {
 			// interwiki links don't work
 			if ( $wgAllowGlobalMessaging ) {
 				// tell them they need to use the |site= parameter
@@ -149,7 +151,7 @@ class MassMessage {
 			}
 			$data['comment'] = [
 				RequestContext::getMain()->getUser()->getName(),
-				wfWikiID(),
+				WikiMap::getCurrentWikiId(),
 				$url
 			];
 		} else { // $spamlist contains a message key for an error message
@@ -245,7 +247,7 @@ class MassMessage {
 		$data += [
 			'userId' => CentralIdLookup::factory()
 				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
-			'originWiki' => wfWikiID(),
+			'originWiki' => WikiMap::getCurrentWikiId(),
 		];
 
 		// Insert it into the job queue.

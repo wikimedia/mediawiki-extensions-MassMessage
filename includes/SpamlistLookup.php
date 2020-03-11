@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage;
 use MediaWiki\MediaWikiServices;
 use Title;
 use WANObjectCache;
+use WikiMap;
 
 /**
  * Functions related to target processing
@@ -24,7 +25,7 @@ abstract class SpamlistLookup {
 	 *
 	 * Each target is an associative array with the following keys:
 	 * title: The title of the target
-	 * wiki: The ID of the wiki (wfWikiID() for the local wiki)
+	 * wiki: The ID of the wiki
 	 * site: The hostname and port (if exists) of the wiki
 	 *
 	 * Normalized targets are briefly cached because it can be expensive to parse PF targets on both
@@ -105,8 +106,9 @@ abstract class SpamlistLookup {
 	protected static function normalizeTargets( array $data ) {
 		global $wgNamespacesToConvert;
 
+		$currentWikiId = WikiMap::getCurrentWikiId();
 		foreach ( $data as &$target ) {
-			if ( $target['wiki'] === wfWikiID() ) {
+			if ( $target['wiki'] === $currentWikiId ) {
 				$title = Title::newFromText( $target['title'] );
 				if ( $title === null ) {
 					continue;
