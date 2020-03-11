@@ -9,7 +9,8 @@
 			"Lokal Profil",
 			"Umherirrender",
 			"Amire80",
-			"Raymond"
+			"Raymond",
+			"Nike"
 		]
 	},
 	"massmessage": "{{doc-special|MassMessage}}",
@@ -55,7 +56,7 @@
 	"massmessage-cannot-rename": "Error message a user sees when they try renaming the bot account.",
 	"massmessage-message-footer": "The footer that is by added at the end of every message. It is left blank so individual wikis can customize it.",
 	"massmessage-nextsteps": "Message after {{msg-mw|Massmessage-submitted}} on [[Special:MassMessage]] once the form has been submitted.",
-	"massmessage-content-pages": "Section title for the list of pages when viewing a a delivery list",
+	"massmessage-content-pages": "Section title for the list of pages when viewing a delivery list",
 	"massmessage-content-pagesonsite": "Subheading for the list of pages on a particular wiki\n* $1 is the domain of the wiki",
 	"massmessage-content-localpages": "Subheading for the list of pages on the local wiki",
 	"massmessage-content-remove": "Label for the link to remove a page from a delivery list\n{{Identical|Remove}}",
