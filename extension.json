@@ -52,36 +52,16 @@
 		}
 	},
 	"Hooks": {
-		"ParserFirstCallInit": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onParserFirstCallInit"
-		],
-		"SpecialStatsAddExtra": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onSpecialStatsAddExtra"
-		],
-		"APIQuerySiteInfoStatisticsInfo": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo"
-		],
-		"RenameUserPreRename": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onRenameUserPreRename"
-		],
-		"UserGetReservedNames": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onUserGetReservedNames"
-		],
-		"BeforeEchoEventInsert": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onBeforeEchoEventInsert"
-		],
-		"SkinTemplateNavigation": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation"
-		],
-		"BeforePageDisplay": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onBeforePageDisplay"
-		],
-		"ListDefinedTags": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
-		],
-		"ChangeTagsListActive": [
-			"MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
-		]
+		"ParserFirstCallInit": "MediaWiki\\MassMessage\\MassMessageHooks::onParserFirstCallInit",
+		"SpecialStatsAddExtra": "MediaWiki\\MassMessage\\MassMessageHooks::onSpecialStatsAddExtra",
+		"APIQuerySiteInfoStatisticsInfo": "MediaWiki\\MassMessage\\MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo",
+		"RenameUserPreRename": "MediaWiki\\MassMessage\\MassMessageHooks::onRenameUserPreRename",
+		"UserGetReservedNames": "MediaWiki\\MassMessage\\MassMessageHooks::onUserGetReservedNames",
+		"BeforeEchoEventInsert": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforeEchoEventInsert",
+		"SkinTemplateNavigation": "MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation",
+		"BeforePageDisplay": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforePageDisplay",
+		"ListDefinedTags": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags",
+		"ChangeTagsListActive": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
 	},
 	"ContentHandlers": {
 		"MassMessageListContent": "MediaWiki\\MassMessage\\MassMessageListContentHandler"
