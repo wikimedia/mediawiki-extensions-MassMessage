@@ -19,7 +19,7 @@ class CategorySpamlistLookup extends SpamlistLookup {
 
 	/**
 	 * Get an array of targets from a category
-	 * @return array
+	 * @return array[]
 	 */
 	public function fetchTargets() {
 		global $wgCanonicalServer;
@@ -40,8 +40,7 @@ class CategorySpamlistLookup extends SpamlistLookup {
 	}
 
 	/**
-	 * Returns False
-	 * @return Bool
+	 * @return false
 	 */
 	public function isCachable() {
 		return false;
