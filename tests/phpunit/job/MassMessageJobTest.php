@@ -40,7 +40,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		if ( $target->exists() ) {
 			// Clear it
 			$wikipage = WikiPage::factory( $target );
-			$wikipage->doDeleteArticleReal( 'reason' );
+			$wikipage->doDeleteArticleReal( 'reason', $this->getTestSysop()->getUser() );
 		}
 		$subj = $this->simulateJob( $target );
 		$target = Title::newFromText( 'Project:Testing1234' );
