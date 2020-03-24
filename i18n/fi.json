@@ -25,7 +25,7 @@
 	"massmessage-empty-subject": "Viestin aihetta ei ole annettu.",
 	"massmessage-empty-message": "Viestissä ei ole lainkaan tekstiä.",
 	"massmessage-unescaped-langlinks": "Varoitus: Viestissäsi on sellaisia kielilinkkejä, jotka eivät kelpaa ja joita ei voi käyttää.",
-	"massmessage-form-header": "Käytä alla olevaa lomaketta lähettääksesi viestejä ennalta määriteltyyn luetteloon. Kaikki kentät on täytettävä. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage katso lisätietoja englanniksi])",
+	"massmessage-form-header": "Käytä alla olevaa lomaketta lähettääksesi viestejä ennalta määriteltyyn luetteloon. Kaikki kentät on täytettävä. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage lisätietoja])",
 	"massmessage-queued-count": "Jonossa olevat [[Special:MassMessage|joukkoviestit]]",
 	"massmessage-hidden-comment": "<!-- Viestin on lähettänyt Käyttäjä:$1@$2 käyttämällä luetteloa, joka on sijainnissa $3 -->",
 	"massmessage-optout-category": "Eivät halua joukkoviestejä",
