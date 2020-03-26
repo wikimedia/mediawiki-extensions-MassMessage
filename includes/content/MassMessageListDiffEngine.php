@@ -19,8 +19,8 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 	 * @param Content $old Old content
 	 * @param Content $new New content
 	 *
-	 * @throws Exception If old or new content is not an instance of MassMessageListContent
 	 * @return bool|string
+	 * @throws Exception If old or new content is not an instance of MassMessageListContent
 	 */
 	public function generateContentDiffBody( Content $old, Content $new ) {
 		if ( !( $old instanceof MassMessageListContent )

@@ -272,8 +272,8 @@ class MassMessage {
 	 *
 	 * Modified from the Echo extension
 	 *
-	 * @throws Exception
 	 * @return string regular expression fragment.
+	 * @throws Exception
 	 */
 	public static function getTimestampRegex() {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
