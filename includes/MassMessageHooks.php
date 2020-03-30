@@ -107,15 +107,6 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * Add a row with the number of queued messages to Special:Statistics.
-	 *
-	 * @param array &$extraStats
-	 */
-	public static function onSpecialStatsAddExtra( &$extraStats ) {
-		$extraStats['massmessage-queued-count'] = MassMessage::getQueuedCount();
-	}
-
-	/**
 	 * Add the number of queued messages to &meta=siteinfo&siprop=statistics.
 	 *
 	 * @param array &$result

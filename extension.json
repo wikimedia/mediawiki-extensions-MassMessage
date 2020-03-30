@@ -53,7 +53,6 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "MediaWiki\\MassMessage\\MassMessageHooks::onParserFirstCallInit",
-		"SpecialStatsAddExtra": "MediaWiki\\MassMessage\\MassMessageHooks::onSpecialStatsAddExtra",
 		"APIQuerySiteInfoStatisticsInfo": "MediaWiki\\MassMessage\\MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo",
 		"RenameUserPreRename": "MediaWiki\\MassMessage\\MassMessageHooks::onRenameUserPreRename",
 		"UserGetReservedNames": "MediaWiki\\MassMessage\\MassMessageHooks::onUserGetReservedNames",
