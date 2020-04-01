@@ -56,7 +56,7 @@
 	"massmessage-list-category": "Hulgasõnumi saatmisloendid",
 	"massmessage-list-category-desc": "See lehekülg on [[Special:MassMessage|hulgasõnumi]] tarkvaralisa saatmisloend.",
 	"tag-massmessage-delivery": "Hulgasõnumi väljastus",
-	"tag-massmessage-delivery-description": "Sõnumi saatmine [[:mw:Extension:MassMessage|Lisa:Hulgasõnum]]i abil",
+	"tag-massmessage-delivery-description": "Sõnumi saatmine [[:mw:Extension:MassMessage|tarkvaralisa MassMessage]] abil",
 	"log-action-filter-massmessage": "Logikande tüüp:",
 	"log-action-filter-massmessage-send": "Hulgasõnumi saatmine",
 	"log-action-filter-massmessage-failure": "Hulgasõnumi laialisaatmise nurjumine",
