@@ -3,7 +3,9 @@
 namespace MediaWiki\MassMessage;
 
 use CentralIdLookup;
+use ContentHandler;
 use Exception;
+use ExtensionRegistry;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
@@ -11,6 +13,7 @@ use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
 use RequestContext;
 use Status;
+use StatusValue;
 use Title;
 use User;
 use WikiMap;
@@ -158,7 +161,24 @@ class MassMessage {
 			$status->fatal( $spamlist );
 		}
 
-		if ( $data['message'] === '' ) {
+		$data['page-message'] = $data['page-message'] ?? '';
+		$data['message'] = $data['message'] ?? '';
+
+		// Check and fetch the page message
+		$pageMessage = null;
+		if ( $data['page-message'] !== '' ) {
+			$pageMessageStatus = self::getPageMessage( $data['page-message'] );
+			if ( $pageMessageStatus->isOK() ) {
+				$pageMessage = $pageMessageStatus->getValue();
+				if ( $pageMessage === '' ) {
+					$status->fatal( 'massmessage-page-message-empty', $data['page-message'] );
+				}
+			} else {
+				$status->merge( $pageMessageStatus );
+			}
+		}
+
+		if ( $data['message'] === '' && $pageMessage === null ) {
 			$status->fatal( 'massmessage-empty-message' );
 		}
 
@@ -209,6 +229,72 @@ class MassMessage {
 		}
 
 		return $spamlist;
+	}
+
+	/**
+	 * Helper method to get the page message.
+	 *
+	 * @param string $messageTitle
+	 * @return StatusValue
+	 */
+	public static function getPageMessage( string $messageTitle ): StatusValue {
+		$pageMessageStatus = self::getPageTitle( $messageTitle );
+		if ( $pageMessageStatus->isOK() ) {
+			$pageMessageStatus = self::getPageContent( $pageMessageStatus->getValue() );
+		}
+
+		return $pageMessageStatus;
+	}
+
+	/**
+	 * Fetch the page title given the title string
+	 *
+	 * @param string $title
+	 * @return StatusValue
+	 */
+	public static function getPageTitle( string $title ): StatusValue {
+		$pageTitle = Title::newFromText( $title );
+		$error = '';
+		if ( $pageTitle === null ) {
+			$error = 'massmessage-page-message-invalid';
+		} elseif ( !$pageTitle->exists() ) {
+			$error = 'massmessage-page-message-not-found';
+		}
+
+		if ( $error ) {
+			return StatusValue::newFatal( $error, $title );
+		}
+
+		return StatusValue::newGood( $pageTitle );
+	}
+
+	/**
+	 * Fetch the page content with the given title
+	 *
+	 * @param Title $pageTitle
+	 * @return StatusValue
+	 */
+	public static function getPageContent( Title $pageTitle ): StatusValue {
+		$revision = MediaWikiServices::getInstance()
+			->getRevisionStore()->getRevisionByTitle( $pageTitle );
+
+		if ( $revision === null ) {
+			return StatusValue::newFatal(
+				'massmessage-page-message-no-revision', $pageTitle->getPrefixedText()
+			);
+		}
+
+		$wiki = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
+
+		if ( $wiki === null ) {
+			return StatusValue::newFatal(
+				'massmessage-page-message-no-revision-content',
+				$pageTitle->getPrefixedText(),
+				$revision->getId()
+			);
+		}
+
+		return StatusValue::newGood( $wiki );
 	}
 
 	/**
@@ -312,5 +398,28 @@ class MassMessage {
 				return "/$output/";
 			}
 		);
+	}
+
+	/**
+	 * Checks if a title is a source translation page
+	 *
+	 * @param Title $title
+	 * @return bool
+	 */
+	public static function isSourceTranslationPage( Title $title ): bool {
+		return ExtensionRegistry::getInstance()->isLoaded( 'Translate' ) &&
+			// @phan-suppress-next-line PhanUndeclaredClassMethod
+			\TranslatablePage::isSourcePage( $title );
+	}
+
+	/**
+	 * Used to append the message and content of the page
+	 *
+	 * @param string $message Custom message
+	 * @param string $pageContent Content of the page to be sent as message
+	 * @return string
+	 */
+	public static function appendMessageAndPage( string $message, string $pageContent ): string {
+		return $message . "\n\n----\n\n" . $pageContent;
 	}
 }

@@ -2,7 +2,8 @@
 Styles inline validation warnings
  */
 #mw-massmessage-form-spamlist-status.invalid,
-#mw-input-wptitle-status.invalid {
+#mw-input-wptitle-status.invalid,
+#mw-massmessage-form-page-status.invalid {
 	border: 1px solid #d33;
 	border-bottom-right-radius: 0.8em;
 	border-top-right-radius: 0.8em;
