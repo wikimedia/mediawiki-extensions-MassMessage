@@ -1,5 +1,27 @@
+
+.mw-body-content fieldset {
+	margin: 1em 0 1em 0;
+}
+
+#mw-massmessage-form .mw-htmlform-field-HTMLTextField,
+#mw-massmessage-form .mw-htmlform-field-HTMLTextAreaField {
+	margin-bottom: 0.7em;
+}
+
+#mw-massmessage-form input,
+#mw-massmessage-form textarea {
+	margin: 0.5em 0;
+}
+
+#mw-massmessage-form .htmlform-tip {
+	font-size: 0.95em;
+	font-style: italic;
+	margin-top: -0.7em;
+	margin-bottom: 0.7em;
+}
+
 /*
-Formats the Save/Preview buttons to show up on the same line
+ Formats the Save/Preview buttons to show up on the same line
 */
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField,
 #mw-massmessage-form .mw-htmlform-field-HTMLSubmitField .mw-label,
