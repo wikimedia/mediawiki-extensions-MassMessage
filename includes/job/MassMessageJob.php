@@ -15,8 +15,10 @@ use LqtDispatch;
 use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
+use StatusValue;
 use Title;
 use User;
+use WikiMap;
 use WikiPage;
 
 /**
@@ -200,31 +202,49 @@ class MassMessageJob extends Job {
 			}
 		}
 
+		$stripTildes = self::STRIP_TILDES;
+		$methodToCall = null;
 		// If the page is using a different discussion system, handle it specially
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' ) &&
-			LqtDispatch::isLqtPage( $title )
+		if (
+			ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' )
+			&& LqtDispatch::isLqtPage( $title )
 		) {
 			// This is the same check that LQT uses internally
-			$this->addLQTThread();
-		} elseif ( $title->hasContentModel( 'flow-board' )
+			$methodToCall = [ $this, 'addLQTThread' ];
+		} elseif (
+			$title->hasContentModel( 'flow-board' )
 			// But it can't be a Topic: page, see bug 71196
-			&& defined( 'NS_TOPIC' ) && !$title->inNamespace( NS_TOPIC ) ) {
-			$this->addFlowTopic();
+			&& defined( 'NS_TOPIC' )
+			&& !$title->inNamespace( NS_TOPIC )
+		) {
+			$methodToCall = [ $this, 'addFlowTopic' ];
 		} else {
-			$this->editPage();
+			$stripTildes = !self::STRIP_TILDES;
+			$methodToCall = [ $this, 'editPage' ];
 		}
 
+		$status = $this->makeText( $stripTildes );
+		$text = '';
+		if ( $status->isOK() ) {
+			$text = $status->getValue();
+		} else {
+			$this->logLocalFailure( (string)$status );
+			return true;
+		}
+
+		call_user_func( $methodToCall, $text );
 		return true;
 	}
 
-	protected function editPage() {
+	protected function editPage( string $text ) {
 		$user = $this->getUser();
+
 		$params = [
 			'action' => 'edit',
 			'title' => $this->title->getPrefixedText(),
 			'section' => 'new',
 			'summary' => $this->params['subject'],
-			'text' => $this->makeText(),
+			'text' => $text,
 			'notminor' => true,
 			'token' => $user->getEditToken()
 		];
@@ -245,28 +265,30 @@ class MassMessageJob extends Job {
 		}
 	}
 
-	protected function addLQTThread() {
+	protected function addLQTThread( string $text ) {
 		$user = $this->getUser();
+
 		$params = [
 			'action' => 'threadaction',
 			'threadaction' => 'newthread',
 			'talkpage' => $this->title,
 			'subject' => $this->params['subject'],
-			'text' => $this->makeText( self::STRIP_TILDES ),
+			'text' => $text,
 			'token' => $user->getEditToken()
 		]; // LQT will automatically mark the edit as bot if we're a bot
 
 		$this->makeAPIRequest( $params );
 	}
 
-	protected function addFlowTopic() {
+	protected function addFlowTopic( string $text ) {
 		$user = $this->getUser();
+
 		$params = [
 			'action' => 'flow',
 			'page' => $this->title->getPrefixedText(),
 			'submodule' => 'new-topic',
 			'nttopic' => $this->params['subject'],
-			'ntcontent' => $this->makeText( self::STRIP_TILDES ),
+			'ntcontent' => $text,
 			'token' => $user->getEditToken(),
 		];
 
@@ -274,22 +296,53 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Add some stuff to the end of the message.
+	 * Merge page passed as message and add some stuff to the end of the message.
 	 *
 	 * @param bool $stripTildes Whether to strip trailing '~~~~'
-	 * @return string
+	 * @return StatusValue
 	 */
-	protected function makeText( $stripTildes = false ) {
+	protected function makeText( bool $stripTildes = false ): StatusValue {
 		$text = rtrim( $this->params['message'] );
+		$originWiki = $this->params['originWiki'] ?? WikiMap::getCurrentWikiId();
+		$titleStr = $this->params['pageMessageTitle'] ?? null;
+		$isSourceTranslationPage = $this->params['isSourceTranslationPage'] ?? false;
+		$pageContent = null;
+
+		// Check if page-message has been set, and fetch the page content.
+		if ( $titleStr ) {
+			if ( $isSourceTranslationPage ) {
+				$targetLanguage = $this->title->getPageLanguage();
+				$titleStr = $titleStr . '/' . $targetLanguage->getCode();
+			}
+
+			$pageMessageTitle = Title::newFromText( $titleStr );
+			$pageMessageStatus = MassMessage::getPageContentFromWiki(
+				$pageMessageTitle, $originWiki
+			);
+
+			if ( $pageMessageStatus->isOK() ) {
+				$pageContent = $pageMessageStatus->getValue();
+			} else {
+				return $pageMessageStatus;
+			}
+		}
+
 		if ( $stripTildes === self::STRIP_TILDES
 			&& substr( $text, -4 ) === '~~~~'
 			&& substr( $text, -5 ) !== '~~~~~'
 		) {
 			$text = substr( $text, 0, -4 );
 		}
+
+		if ( $text && $pageContent ) {
+			$text = MassMessage::appendMessageAndPage( $text, $pageContent );
+		} elseif ( $pageContent ) {
+			$text = $pageContent;
+		}
+
 		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )
 				->params( $this->params['comment'] )->text();
-		return $text;
+		return StatusValue::newGood( $text );
 	}
 
 	/**
