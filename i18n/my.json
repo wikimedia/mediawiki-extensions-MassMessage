@@ -18,7 +18,6 @@
 	"massmessage-empty-subject": "အကြောင်းအရာ ဗလာဖြစ်နေသည်။",
 	"massmessage-empty-message": "မက်ဆေ့ကိုယ်ထည် ဗလာဖြစ်နေသည်။",
 	"massmessage-form-header": "သတ်မှတ်ထားသော စာရင်းတစ်ခုသို့မက်ဆေ့ပို့ရန် အောက်ပါဖောင်ပုံစံကို အသုံးပြုပါ။ ကွင်းများအားလုံးလိုအပ်ပါသည်။ ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage အချက်အလက် ပိုမိုသိလိုပါက])",
-	"massmessage-queued-count": "စီတန်းနေသော [[Special:MassMessage|အစုလိုက်အပြုံလိုက် မက်ဆေ့များ]]",
 	"massmessage-parse-badurl": "\"$1\" သည် သင့်လျော်သောဆိုဒ် မဟုတ်ပါ။",
 	"massmessage-parse-badpage": "\"$1\" သည် သင့်လျော်သော စာမျက်နှာခေါင်းစဉ် မဟုတ်ပါ။",
 	"massmessage-global-disallowed": "မက်ဆေ့များကို ဒေသတွင်းစာမျက်နှာများသို့သာ ပို့ပေးနိုင်သည်။",

@@ -30,7 +30,6 @@
 	"massmessage-unescaped-langlinks": "Aviso: Há hiperligações interlínguas na sua mensagem que não começam com dois pontos.",
 	"massmessage-no-timestamp": "Aviso: A sua mensagem não inclui data e hora, nem assinatura.",
 	"massmessage-form-header": "Use o formulário abaixo para mandar mensagens a uma lista especificada de páginas. Todos os campos são obrigatórios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mais informações]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Mensagens em massa]] na fila de espera",
 	"massmessage-hidden-comment": "<!-- Mensagem enviada por User:$1@$2 utilizando a lista em $3 -->",
 	"massmessage-optout-category": "Optou por não receber mensagens",
 	"massmessage-badhtml": "A sua mensagem pode conter {{PLURAL:$2|um elemento HTML|vários elementos HTML}} por fechar: $1.",

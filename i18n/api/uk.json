@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"Movses"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "Редагувати список масової доставки повідомлень",
@@ -16,7 +17,7 @@
 	"apihelp-massmessage-param-spamlist": "Сторінка, яка містить список сторінок, де треба залишити повідомлення.",
 	"apihelp-massmessage-param-subject": "Рядок теми повідомлення.",
 	"apihelp-massmessage-param-message": "Текст повідомлення.",
-	"apihelp-massmessage-example-1": "Надіслати повідомлення списку у [[Signpost Spamlist]] з темою «New Signpost» і текстом повідомлення «Please read it»",
+	"apihelp-massmessage-example-1": "Надіслати повідомлення до списку [[Signpost Spamlist]] з темою «New Signpost» і текстом повідомлення «Please read it».",
 	"apihelp-query+mmsites-description": "Подавати запити автозаповнення поля сайту у pristine.",
 	"apihelp-query+mmsites-summary": "Подавати запити на автозаповнення поля сайту в MassMessage.",
 	"apihelp-query+mmsites-param-term": "Префікс для пошуку.",

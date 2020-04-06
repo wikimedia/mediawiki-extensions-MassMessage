@@ -14,7 +14,7 @@
 	"massmessage-fieldset-info": "Titouroù",
 	"massmessage-submitted": "Lakaet eo bet ho kemennadenn {{PLURAL:$1|d'$1 bajenn|da $1 pajenn}} er roll gortoz.",
 	"massmessage-just-preview": "N'eo nemet ur rakweladenn. Pouezit war \" {{int:massmessage-form-submit}} \" evit kas ar gemennadenn.",
-	"massmessage-empty-message": "Goullo eo korf ar gemennadenn.",
+	"massmessage-empty-message": "Goullo eo korf ar gemennadenn. Lakait korf ar gemennadenn pe diuzit ur bajenn da vezañ kaset evel kemennadenn.",
 	"massmessage-parse-badurl": "\"$1\" n'eo ket ul lec'hienn reizh.",
 	"massmessage-parse-badpage": "N'eo ket \"$1\" un titl reizh evit ar bajenn.",
 	"right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol.",

@@ -25,7 +25,6 @@
 	"massmessage-unescaped-langlinks": "Attenziò: stonne collegaminde de lènghe senze escape jndr'à 'u messàgge tune.",
 	"massmessage-no-timestamp": "attenziò: 'u messàgge non ge 'ngludone date e ore o 'a firme.",
 	"massmessage-form-header": "Ause 'u module aqquà sotte pe mannà messàgge a 'n'elenghe specifiche. Tutte le cambe sò obbligatorije ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage cchiù 'mbormaziune]).",
-	"massmessage-queued-count": "Accodate [[Special:MassMessage|messàgge de masse]]",
 	"massmessage-hidden-comment": "<!-- Messàgge mannate da l'Utende:$1@$2 ausanne l'elenghe a $3 -->",
 	"massmessage-optout-category": "Scartate da l'invie de le messàgge",
 	"massmessage-badhtml": "'U messàgge tune pò tenè {{PLURAL:$2|'nu tag HTML non achiuse|tag HTML non achiuse}}: $1.",

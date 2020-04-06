@@ -29,7 +29,6 @@
 	"massmessage-unescaped-langlinks": "সতর্কতা: আপনার বার্তাতে অপলায়নকৃত ভাষার সংযোগ রয়েছে।",
 	"massmessage-no-timestamp": "সতর্কতা: আপনার বার্তায় কোন সময়তারিখ বা স্বাক্ষর অন্তর্ভুক্ত করা হয় নি।",
 	"massmessage-form-header": "নির্দিষ্ট করা একটি তালিকা থেকে বার্তা পাঠাতে নিচের ফরমটি ব্যবহার করুন। সবগুলি ঘর পূরণ করা প্রয়োজন ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage আরও তথ্য])।",
-	"massmessage-queued-count": "সারিবদ্ধ [[Special:MassMessage|গণ বার্তা]]",
 	"massmessage-hidden-comment": "<!-- $3-এর তালিকা ব্যবহার করে বার্তাটি ব্যবহারকারী:$1@$2 পাঠিয়েছেন -->",
 	"massmessage-optout-category": "গণবার্তা বিতরণ প্রাপ্তি থেকে অব্যাহতি",
 	"massmessage-badhtml": "আপনার বার্তায় {{PLURAL:$2|একটি অ-বন্ধকৃত HTML ট্যাগ|অ-বন্ধকৃত HTML ট্যাগ}} থাকতে পারে: $1।",

@@ -27,7 +27,6 @@
 	"massmessage-unescaped-langlinks": "इशारा:आपल्या संदेशात विसर्गचिन्हाविना भाषा दुवे आहेत.",
 	"massmessage-no-timestamp": "इशारा:आपल्या संदेशात वेळठसा किंवा सही अंतर्भूत नाही.",
 	"massmessage-form-header": "खालील निवेदन एका उल्लेखित यादीस संदेश पाठविण्यास वापरा.सर्व क्षेत्रे आवश्यक आहेत. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage अधिक माहितीसाठी]).",
-	"massmessage-queued-count": "रांगेतील [[Special:MassMessage|एकगठ्ठा संदेश]]",
 	"massmessage-hidden-comment": "<!-- सदस्य:$1@$2 ने $3 वरील यादी वापरुन संदेश पाठविला.  -->",
 	"massmessage-optout-category": "\"संदेश नको\" म्हणले",
 	"massmessage-badhtml": "आपल्या संदेशात {{PLURAL:$2|an unclosed HTML tag|बंद न केलेल्या HTML खूणपताका}} असू शकतात:$1.",

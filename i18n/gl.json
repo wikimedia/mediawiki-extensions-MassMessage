@@ -28,7 +28,6 @@
 	"massmessage-unescaped-langlinks": "Atención: Hai ligazóns de lingua sen formato na súa mensaxe.",
 	"massmessage-no-timestamp": "Aviso: A súa mensaxe non contén unha data e hora ou sinatura.",
 	"massmessage-form-header": "Utilice o formulario inferior para enviar mensaxes a unha lista especificada. Todos os campos son obrigatorios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage máis información]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Mensaxes en masa]] na cola de espera",
 	"massmessage-hidden-comment": "<!-- Mensaxe enviada por User:$1@$2 mediante a lista presente en $3 -->",
 	"massmessage-optout-category": "Excluídos da recepción de mensaxes",
 	"massmessage-badhtml": "A súa mensaxe pode ter {{PLURAL:$2|unha etiqueta HTML|varias etiquetas HTML}} sen pechar: $1.",

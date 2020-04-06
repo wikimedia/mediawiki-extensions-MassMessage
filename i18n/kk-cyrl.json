@@ -25,7 +25,6 @@
 	"massmessage-unescaped-langlinks": "Ескерту: Хабарламаңызда экрандалмаған тіл сілтемелері бар.",
 	"massmessage-no-timestamp": "Ескерту: Хабарламаңызда күн-ай және уақыт немесе қолтаңба енгізілмеген.",
 	"massmessage-form-header": "Төмендегі пішінді көрсетілген тізім бойынша хабарлама жіберу үшін қолданыңыз. Барлық жолақтарды толтыру міндетті ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage толығырақ мәлімет]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Жаппай хабарлама]] жіберу кезекке қойылды",
 	"massmessage-hidden-comment": "<!-- $3 тізімін пайдаланып User:$1@$2 деген хабарлама жіберген -->",
 	"massmessage-optout-category": "Хабарлама жіберу тоқтап қалды",
 	"massmessage-badhtml": "Хабарламаңызда {{PLURAL:$2|жабылмаған HTML тегі|жабылмаған HTML тегі}} болуы мүмкін: $1.",

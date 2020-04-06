@@ -21,7 +21,6 @@
 	"massmessage-empty-message": "Το σώμα του μηνύματος είναι κενό.",
 	"massmessage-unescaped-langlinks": "Προειδοποίηση: Υπάρχουν γλωσσικές συνδέσεις χωρίς διαφυγή στο μήνυμά σας.",
 	"massmessage-form-header": "Χρησιμοποιήστε την παρακάτω φόρμα για να στείλετε μηνύματα σε μια συγκεκριμένη λίστα. Όλα τα πεδία είναι υποχρεωτικά.",
-	"massmessage-queued-count": "[[Special:MassMessage|Μαζικά μηνύματα]] στην ουρά",
 	"massmessage-hidden-comment": "<!-- Το μήνυμα στάλθηκε από τον User:$1@$2 με βάση τη λίστα στην $3 -->",
 	"massmessage-optout-category": "Αποεπιλογή παράδοσης μηνυμάτων",
 	"massmessage-badhtml": "Το μήνυμα σας μπορεί να έχει {{PLURAL:$2|μια ανοικτή HTML ετικέτα|ανοικτές HTML ετικέτες}}: $1.",

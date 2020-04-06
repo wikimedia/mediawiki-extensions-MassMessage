@@ -34,7 +34,6 @@
 	"massmessage-unescaped-langlinks": "경고: 당신의 메시지에 이스케이프되지 않은 언어 링크가 있습니다.",
 	"massmessage-no-timestamp": "경고: 메시지에 타임스탬프나 서명이 없습니다.",
 	"massmessage-form-header": "지정된 목록에서 메시지를 보내려면 아래 양식을 사용하세요. 모든 필드는 필수입니다([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 자세한 정보]).",
-	"massmessage-queued-count": "대기 중인 [[Special:MassMessage|대량 메시지]]",
 	"massmessage-hidden-comment": "<!-- $3의 목록을 사용해 User:$1@$2님이 보낸 메시지 -->",
 	"massmessage-optout-category": "메시지 전달을 받지 않는 사용자",
 	"massmessage-badhtml": "당신의 메시지에 {{PLURAL:$2|닫히지 않은 HTML 태그}}가 포함되었을 수 있습니다: $1.",

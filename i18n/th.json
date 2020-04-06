@@ -22,7 +22,6 @@
 	"massmessage-submitted": "การส่งข้อความของคุณไป {{PLURAL:$1|$1 หน้า}}ถูกจัดคิวแล้ว",
 	"massmessage-just-preview": "นี่เป็นเพียงการแสดงตัวอย่าง กด \"{{int:massmessage-form-submit}}\" เพื่อส่งสาร",
 	"massmessage-spamlist-invalid": "หน้าที่ระบุไม่มีรายการส่งที่ถูกต้อง",
-	"massmessage-queued-count": "[[Special:MassMessage|สารหมู่]]ที่อยู่ในคิว",
 	"massmessage-optout-category": "หน้าที่ไม่รับข้อความ",
 	"right-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน",
 	"action-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน",

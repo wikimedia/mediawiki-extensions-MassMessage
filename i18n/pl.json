@@ -34,7 +34,6 @@
 	"massmessage-unescaped-langlinks": "Ostrzeżenie: W wiadomości nie zabezpieczono odpowiednio linków do innych wersji językowych. Wstaw dwukropek przed kodem języka w linkach.",
 	"massmessage-no-timestamp": "Ostrzeżenie: Twoja wiadomość nie zawiera sygnatury czasowej lub podpisu.",
 	"massmessage-form-header": "Użyj poniższego formularza, aby wysłać wiadomości do określonej listy. Wszystkie pola są wymagane. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage Więcej informacji]).",
-	"massmessage-queued-count": "Zakolejkowane [[Special:MassMessage|masowe wiadomości]]",
 	"massmessage-hidden-comment": "<!-- Wiadomość wysłana przez User:$1@$2 przy użyciu listy na $3 -->",
 	"massmessage-optout-category": "Wypisani z otrzymywania masowych wiadomości",
 	"massmessage-badhtml": "W Twojej wiadomości {{PLURAL:$2|mógł się znaleźć niezamknięty znacznik HTML|mogły się znaleźć niezamknięte znaczniki HTML}}: $1.",

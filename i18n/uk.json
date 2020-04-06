@@ -7,7 +7,8 @@
 			"Olion",
 			"Piramidion",
 			"Максим Підліснюк",
-			"Base"
+			"Base",
+			"Movses"
 		]
 	},
 	"massmessage": "Масове надсилання повідомлень",
@@ -27,11 +28,10 @@
 	"massmessage-spamlist-doesnotexist": "Указаної сторінки чи категорії зі списком розсилки не існує.",
 	"massmessage-spamlist-invalid": "На зазначеній сторінці немає допустимого списку доставки повідомлення.",
 	"massmessage-empty-subject": "Рядок теми порожній.",
-	"massmessage-empty-message": "Тіла повідомлення порожнє.",
+	"massmessage-empty-message": "Тіла повідомлення порожнє. Вкажіть тіло повідомлення або виберіть сторінку яка буде надіслана як повідомлення.",
 	"massmessage-unescaped-langlinks": "Увага: наявні неекрановані мовні посилання в повідомленні.",
 	"massmessage-no-timestamp": "Попередження: Ваше повідомлення не містить мітку часу або підпису.",
 	"massmessage-form-header": "Використовуйте форму нижче для надсилання повідомлення за вказаним списком. Всі поля обов'язкові для заповнення ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage додаткова інформація]).",
-	"massmessage-queued-count": "У черзі [[Special:MassMessage|масових повідомлень]]",
 	"massmessage-hidden-comment": "<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->",
 	"massmessage-optout-category": "Відмова від доставки повідомлень",
 	"massmessage-badhtml": "Ваше повідомлення, можливо, має {{PLURAL:$2|1=незакритий теґ HTML|незакриті теґи HTML}}:  $1 .",
@@ -49,7 +49,7 @@
 	"logentry-massmessage-skipoptout": "Доставка \"$4\" до $3 була пропущена, бо ціль відмовила у доставці повідомлень",
 	"logentry-massmessage-skipnouser": "Доставка „$4“ до  $3  була пропущено, бо обліковий запис користувача відсутній",
 	"massmessage-cannot-rename": "Це - системний обліковий запис і його не можна перейменувати.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Надіслати інше повідомлення]] або [[Special:Statistics|переглянути скільки повідомлень у черзі]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Надіслати інше повідомлення]].",
 	"massmessage-content-pages": "Сторінки у цьому списку",
 	"massmessage-content-pagesonsite": "Сторінки на $1:",
 	"massmessage-content-localpages": "Сторінки на цій вікі:",

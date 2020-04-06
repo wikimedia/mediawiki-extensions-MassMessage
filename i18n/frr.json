@@ -21,7 +21,6 @@
 	"massmessage-unescaped-langlinks": "Paase üüb: Uun din bööd san ei tuläät ferwisangen tu ööder spriaken.",
 	"massmessage-no-timestamp": "Din bööd mast en tidj of en onerskraft.",
 	"massmessage-form-header": "Brük det formulaar diar oner, am en bööd tu en sidjenlist tu schüüren. Arke fial skal ütjfald wees. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage muar diartu]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Streibriaw]] teew üüb a postluuper.",
 	"massmessage-hidden-comment": "<!-- Bööd as faan di brüker:$1@$2 auer det list $3 ferschüürd wurden-->",
 	"massmessage-optout-category": "Det ufleewrin faan bööd as ufsteld wurden",
 	"massmessage-badhtml": "Uun din bööd küd {{PLURAL:$2|en eeben HTML-tag|eeben HTML-tags}} wees: $1.",

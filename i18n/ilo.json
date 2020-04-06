@@ -25,7 +25,6 @@
 	"massmessage-unescaped-langlinks": "Ballaag: Adda dagiti di napatalawan a silpo ti pagsasao iti mensahem.",
 	"massmessage-no-timestamp": "Ballaag: Ti mensahem ket saan a mangiraman ti petsa wenno pirma.",
 	"massmessage-form-header": "Usaren ti porma dita baba tapno makaipatulod kadagiti mensahe iti nainaganan a listaan. Nasken amin dagiti pagikabilan. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage adu pay a pakaammo]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Dagiti adu a mensahe]] a naiyur-uray",
 	"massmessage-hidden-comment": "<!-- Mensahe nga inpatulod babaen ni Agar-aramat:$1@$2 a nagusar iti listaan ti $3 -->",
 	"massmessage-optout-category": "Di nagkayat iti panagipatulod ti mensahe",
 	"massmessage-badhtml": "Ti mensahem ket mabalin nga adda {{PLURAL:$2|maysa a saan a narikepan nga etiketa ti HTML|dagiti saan a narikepan nga etiketa ti HTML}}: $1.",

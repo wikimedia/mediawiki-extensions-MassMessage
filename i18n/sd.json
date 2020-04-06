@@ -18,7 +18,6 @@
 	"massmessage-submitted": "توھان جي پيغامن جي {{PLURAL:$1|$1 صفحي|$1 صفحن}} ڏانھن پھچ قطار ۾ لڳائي وئي آھي.",
 	"massmessage-empty-subject": "موضوع واري سٽ خالي آھي",
 	"massmessage-empty-message": "نياپي جو خانو خالي آھي.",
-	"massmessage-queued-count": "قطاريل [[Special:MassMessage|ججھا پيغام]]",
 	"log-name-massmessage": "جھجھن پيغامن جو لاگ",
 	"massmessage-content-remove": "هٽايو",
 	"massmessage-content-removeyes": "هٽايو",

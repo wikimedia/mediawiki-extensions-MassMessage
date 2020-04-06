@@ -15,7 +15,6 @@
 	"massmessage-preview-count": "ستاسې پيغام به {{PLURAL:$1|$1 مخ|$1 مخونو}} ته ولېږل شي.",
 	"massmessage-submitted": "ستاسو پيغام ولېږل شو!",
 	"massmessage-form-header": "لاندې بڼه وکاروئ ترڅو ستاسو پيغام و مشخص ليسټ ته ورسيږي. لاندې ټولي خاني بايد ډکې شي'''([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage نور ولولئ]).",
-	"massmessage-queued-count": "[[Special:MassMessage|ډله ايز پيغام]] په قطار کې",
 	"log-name-massmessage": "ډله ايز پيغام يادښت",
 	"log-description-massmessage": "دا پېښې د کارنانو لېږل شوي پيغامونه څاري.",
 	"logentry-massmessage-send": "$1، $3 ته، {{GENDER:$2|يو پيغام ولېږه}}",

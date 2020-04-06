@@ -28,7 +28,6 @@
 	"massmessage-unescaped-langlinks": "चेतावनी: आपके सन्देश में बिना कोलन के अंतरविकि कड़ियाँ हैं।",
 	"massmessage-no-timestamp": "चेतावनी: आपके सन्देश में कोई समय अथवा हस्ताक्षर समाहित नहीं हैं।",
 	"massmessage-form-header": "एक निर्दिष्ट सूची को सन्देश देने के लिए निम्न फ़ॉर्म का प्रयोग करें। सभी इनपुट आवश्यक हैं ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage अधिक जानकारी])।",
-	"massmessage-queued-count": "[[Special:MassMessage|सामूहिक सन्देश]] जो कतार में हैं",
 	"massmessage-hidden-comment": "<!-- $3 पर मौजूद सूची का प्रयोग कर के User:$1@$2 द्वारा भेजा गया सन्देश -->",
 	"massmessage-optout-category": "सन्देश ना पाना चयनित",
 	"massmessage-badhtml": "आपके सन्देश में {{PLURAL:$2|एक खुला एच॰टी॰एम॰एल टैग हो सकता है|खुले एच॰टी॰एम॰एल टैग हो सकते हैं}}: $1।",

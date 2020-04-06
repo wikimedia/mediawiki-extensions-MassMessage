@@ -11,7 +11,8 @@
 			"Multichill",
 			"Romaine",
 			"Mainframe98",
-			"Mar(c)"
+			"Mar(c)",
+			"Rots61"
 		]
 	},
 	"massmessage": "Bulkberichten verzenden",
@@ -35,7 +36,6 @@
 	"massmessage-unescaped-langlinks": "Waarschuwing: uw bericht bevat onjuiste taalkoppelingen.",
 	"massmessage-no-timestamp": "Waarschuwing: uw bericht bevat geen tijdstempel of handtekening.",
 	"massmessage-form-header": "Gebruik het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage meer informatie]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Bulkberichten]] in de wachtrij",
 	"massmessage-hidden-comment": "<!-- Bericht verzonden door User:$1@$2 via de lijst op de pagina $3 -->",
 	"massmessage-optout-category": "Wil geen berichten ontvangen",
 	"massmessage-badhtml": "Uw bericht heeft mogelijk {{PLURAL:$2|een ongesloten HTML-label|ongesloten HTML-label}}: $1.",
@@ -53,7 +53,7 @@
 	"logentry-massmessage-skipoptout": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat er op de doelpagina geen berichten geplaatst mogen worden",
 	"logentry-massmessage-skipnouser": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat de gebruiker niet bestaat",
 	"massmessage-cannot-rename": "Dit is een systeemgebruiker die niet hernoemd kan worden.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Nog een bericht verzenden]] of [[Special:Statistics|bekijken hoeveel berichten er in de wachtrij staan]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Nog een bericht verzenden]].",
 	"massmessage-content-pages": "Pagina's in deze lijst",
 	"massmessage-content-pagesonsite": "Pagina's op $1:",
 	"massmessage-content-localpages": "Pagina's op deze wiki:",

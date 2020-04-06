@@ -26,7 +26,6 @@
 	"massmessage-unescaped-langlinks": "Cảnh báo: Thông báo của bạn có liên kết ngôn ngữ không được thoát.",
 	"massmessage-no-timestamp": "Cảnh báo: Thông điệp của bạn không có bao gồm một dấu thời gian hoặc chữ ký.",
 	"massmessage-form-header": "Hãy điền biểu mẫu sau để nhắn tin cho một danh sách được định rõ. Tất cả các trường là bắt buộc ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage tìm hiểu thêm]).",
-	"massmessage-queued-count": "Số [[Special:MassMessage|tin nhắn cho nhiều người]] trong hàng đợi",
 	"massmessage-hidden-comment": "<!-- Tin nhắn của Thành viên:$1@$2 gửi cho mọi người trong danh sách tại $3 -->",
 	"massmessage-optout-category": "Trang từ chối nhận tin nhắn",
 	"massmessage-badhtml": "Tin nhắn của bạn có thể không đóng {{PLURAL:$2|một thẻ HTML|các thẻ HTML}}: $1.",

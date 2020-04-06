@@ -27,7 +27,6 @@
 	"massmessage-unescaped-langlinks": "Advarsel: Der er unescaped sprog hyperlinks i din besked.",
 	"massmessage-no-timestamp": "Advarsel: Din besked mangler et tidsstempel eller en signatur",
 	"massmessage-form-header": "Brug den nedenstående formular for at sende beskeder til en bestemt liste. Alle felter er påkrævede ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mere information]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Massebeskeder]] i kø",
 	"massmessage-hidden-comment": "<!-- Besked sendt af Bruger:$1@$2 via listen på $3 -->",
 	"massmessage-optout-category": "Fravalgt at modtage besked",
 	"massmessage-badhtml": "Din besked kan have {{PLURAL:$2|en uafsluttet HTML tag|uafsluttede HTML tags}}:  $1.",

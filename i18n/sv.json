@@ -31,7 +31,6 @@
 	"massmessage-unescaped-langlinks": "Varning: Det finns \"unescaped\" språklänkar i ditt meddelande.",
 	"massmessage-no-timestamp": "Varning: Ditt meddelande innehåller inte en tidsstämpel eller signatur.",
 	"massmessage-form-header": "Använd formuläret nedan för att skicka meddelanden till en angiven lista. Alla fält är obligatoriska ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage för mer information]).",
-	"massmessage-queued-count": "Köade [[Special:MassMessage|massmeddelanden]]",
 	"massmessage-hidden-comment": "<!-- Meddelande skickades av User:$1@$2 med hjälp av listan på $3 -->",
 	"massmessage-optout-category": "Valde bort meddelandeleverans",
 	"massmessage-badhtml": "Ditt meddelande kan ha {{PLURAL:$2|en oavslutad HTML-tagg|oavslutade HTML-taggar}}: $1.",

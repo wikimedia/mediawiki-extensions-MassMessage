@@ -37,7 +37,6 @@
 	"massmessage-unescaped-langlinks": "警告：在您的信息中有未转义的语言链接。",
 	"massmessage-no-timestamp": "警告：您的信息不包含时间戳或签名。",
 	"massmessage-form-header": "使用下面的表单以将信息发送到指定列表中。所有字段都是必需的（[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 更多信息]）。",
-	"massmessage-queued-count": "队列中的[[Special:MassMessage|大量信息]]",
 	"massmessage-hidden-comment": "<!-- 信息发送者 User:$1@$2，使用的递送列表为 $3 -->",
 	"massmessage-optout-category": "不接受信息递送",
 	"massmessage-badhtml": "您的信息可能含有{{PLURAL:$2|未闭合的HTML标签}}：$1。",

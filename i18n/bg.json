@@ -30,7 +30,6 @@
 	"massmessage-empty-message": "Липсва текст на съобщението.",
 	"massmessage-no-timestamp": "Внимание: Съобщението Ви не съдържа подпис или индикация за дата и час.",
 	"massmessage-form-header": "Използвайте формуляра по-долу, за да изпратите съобщения до указан списък от адресати. Всички полета са задължителни  ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage вижте помощната страница]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Масови съобщения]] в опашката",
 	"massmessage-hidden-comment": "<!-- Съобщението е изпратено от User:$1@$2, използвайки списъка с адресати от $3 -->",
 	"massmessage-optout-category": "Изрично отказана доставка на масови съобщения",
 	"massmessage-badhtml": "Съобщението Ви може да съдържа {{PLURAL:$2|незатворен HTML етикет|незатворени HTML етикети}}: $1.",

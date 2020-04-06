@@ -9,7 +9,6 @@
 	"massmessage": "Poslať hromadnú správu",
 	"createmassmessagelist": "Vytvoriť distribučný zoznam pre hromadné správy",
 	"massmessage-desc": "Umožňuje používateľom ľahko odosielať správy zoznamu používateľov",
-	"massmessage-queued-count": "Počet [[Special:MassMessage|hromadných správ]] v rade",
 	"log-name-massmessage": "Záznam hromadných správ",
 	"log-description-massmessage": "Toto je záznam používateľov, odosielajúcich hromadné správy.",
 	"createmassmessagelist-legend": "Vytvoriť distribučný zoznam pre hromadné správy",

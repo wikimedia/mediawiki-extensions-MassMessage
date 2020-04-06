@@ -25,7 +25,6 @@
 	"massmessage-unescaped-langlinks": "Avisu: Hai enllaces de llingua ensin escapar nel so mensaxe.",
 	"massmessage-no-timestamp": "Avisu: El to mensaxe nun incluye una marca d'hora o firma.",
 	"massmessage-form-header": "Use'l formulariu de más abaxo pa unviar mensaxes a una llista determinada. Tolos campos son obligatorios ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage más información]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Mensaxes en masa]] en cola",
 	"massmessage-hidden-comment": "<!-- Mensaxe unviáu por User:$1@$2 usando la llista de $3 -->",
 	"massmessage-optout-category": "Torgar la entrega de mensaxes",
 	"massmessage-badhtml": "El so mensaxe pue tener {{PLURAL:$2|una etiqueta HTML|etiquetes HTML}} ensin zarrar: $1.",

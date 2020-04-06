@@ -33,7 +33,6 @@
 	"massmessage-unescaped-langlinks": "هشدار: پیوندهای زبان غیررها در پیام شما وجود دارد.",
 	"massmessage-no-timestamp": "هشدار: پیام شما حاوی برچسب زمان یا امضا نیست.",
 	"massmessage-form-header": "از فرم زیر برای ارسال پیام‌ها به یک فهرست مشخص‌شده استفاده کنید. همهٔ موارد الزامی هستند ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage اطلاعات بیشتر]).",
-	"massmessage-queued-count": "[[Special:MassMessage|پیام‌های انبوه]] در صف",
 	"massmessage-hidden-comment": "<!-- پیام توسط کاربر:$1@$2 با استفاده از فهرست در $3 ارسال شده‌است -->",
 	"massmessage-optout-category": "بیرون‌آمدگان از پیام‌رسان",
 	"massmessage-badhtml": "پیام شما {{PLURAL:$2|یک|چند}} برچسپ بسته‌نشده اچ‌تی‌ام‌ال دارد: $1.",

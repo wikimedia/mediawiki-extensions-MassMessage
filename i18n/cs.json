@@ -7,7 +7,8 @@
 			"Vks",
 			"Dvorapa",
 			"Martin Urbanec",
-			"Danny B."
+			"Danny B.",
+			"Matěj Suchánek"
 		]
 	},
 	"massmessage": "Poslat hromadnou zprávu",
@@ -28,7 +29,6 @@
 	"massmessage-unescaped-langlinks": "Upozornění: Vaše zpráva obsahuje neošetřené jazykové odkazy.",
 	"massmessage-no-timestamp": "Upozornění: Vaše zpráva neobsahuje čas ani podpis.",
 	"massmessage-form-header": "Pomocí níže uvedeného formuláře můžete rozeslat zprávy podle zadaného seznamu. Všechna pole jsou povinná ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage více informací]).",
-	"massmessage-queued-count": "Počet [[Special:MassMessage|hromadných zpráv]] ve frontě",
 	"massmessage-hidden-comment": "<!-- Zprávu zaslal Uživatel:$1@$2 pomocí seznamu na $3 -->",
 	"massmessage-optout-category": "Odhlášení z příjmu zpráv",
 	"massmessage-badhtml": "Vaše zpráva možná obsahuje {{PLURAL:$2|neuzavřenou HTML značku|neuzavřené HTML značky}}: $1.",
@@ -45,7 +45,7 @@
 	"logentry-massmessage-skipoptout": "Doručení „$4“ pro $3 bylo přeskočeno, protože cíl se odhlásil z příjmu zpráv",
 	"logentry-massmessage-skipnouser": "Doručení „$4“ pro $3 bylo přeskočeno, protože uživatelský účet neexistuje",
 	"massmessage-cannot-rename": "Toto je systémový účet, který nemůže být přejmenován.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Poslat další zprávu]] nebo [[Special:Statistics|zobrazit počet zpráv ve frontě]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Poslat další zprávu]].",
 	"massmessage-content-pages": "Stránky v tomto seznamu",
 	"massmessage-content-remove": "smazat",
 	"massmessage-content-removeyes": "Odstranit",

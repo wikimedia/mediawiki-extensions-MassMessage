@@ -20,7 +20,6 @@
 	"massmessage-empty-subject": "Baris tajuk kosong.",
 	"massmessage-empty-message": "Ruangan isi pesanan kosong.",
 	"massmessage-form-header": "Gunakan borang yang berikut untuk mengirim pesanan kepada senarai yang tertentu. semua ruangan wajib diisi ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage keterangan lanjut]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Pesanan beramai-ramai]] terbaris gilir",
 	"massmessage-hidden-comment": "<!-- Pesanan dihantar oleh Pengguna:$1@$2 yang menggunakan senarai di $3 -->",
 	"massmessage-optout-category": "Terkecuali dari pengiriman pesanan",
 	"massmessage-badhtml": "Pesanan anda mungkin mengandungi {{PLURAL:$2|suatu teg HTML yang tidak tertutup|teg-teg HTML yang tidak tertutup}}: $1.",

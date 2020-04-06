@@ -21,7 +21,6 @@
 	"massmessage-empty-message": "Lo còs del messatge es void.",
 	"massmessage-unescaped-langlinks": "Atencion : i a de ligams de lenga non escapats dins vòstre messatge.",
 	"massmessage-form-header": "Utilizatz lo formulari çaijós per mandar de messatges a una lista indicada. Totes los camps son obligatòris.",
-	"massmessage-queued-count": "[[Special:MassMessage|Messatges de massa]] en fila d'espèra",
 	"massmessage-hidden-comment": "<!-- Message mandat per User:$1@$2 en utilizant la lista a $3 -->",
 	"massmessage-optout-category": "Desengatjat de la recepcion de messatges",
 	"right-massmessage": "Mandar un messatge a mantun utilizaire a l'encòp",

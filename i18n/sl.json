@@ -19,7 +19,6 @@
 	"massmessage-empty-subject": "Vrstica s predmetom je prazna.",
 	"massmessage-empty-message": "Polje za sporočilo je prazno.",
 	"massmessage-no-timestamp": "Pozor: Tvoje sporočilo ne vsebuje podpisa ali sistemskega datuma.",
-	"massmessage-queued-count": "[[Special:MassMessage|Masovna sporočila]] na čakanju",
 	"massmessage-parse-badurl": "»$1« ni veljavna stran",
 	"massmessage-parse-badpage": "»$1« ni veljaven naslov strani",
 	"right-massmessage": "Pošlji sporočilo več uporabnikom hkrati",

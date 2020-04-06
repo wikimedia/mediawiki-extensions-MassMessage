@@ -19,7 +19,6 @@
 	"massmessage-empty-message": "Meldingsteksten er tom.",
 	"massmessage-unescaped-langlinks": "Åtvaring: Det er språklenkjer utan unnatak i meldinga di.",
 	"massmessage-form-header": "Bruk skjemaet under for å senda meldingar til ei oppgjeven liste. Alle felta er påkravde.",
-	"massmessage-queued-count": "[[Special:MassMessage|Massemeldingar]] i kø",
 	"massmessage-hidden-comment": "<!-- Melding send av Brukar:$1@$2 gjennom lista på $3 -->",
 	"massmessage-optout-category": "Bortvalde frå meldingsmottak",
 	"massmessage-badhtml": "Meldinga di kan ha {{PLURAL:$2|eit ope HTML-merke|opne HTML-merke}}: $1.",

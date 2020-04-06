@@ -29,7 +29,6 @@
 	"massmessage-empty-message": "Az üzenettörzs üres.",
 	"massmessage-no-timestamp": "Figyelmeztetés: Az üzeneted nem tartalmaz időbélyeget vagy aláírást.",
 	"massmessage-form-header": "Az alábbi űrlappal küldhetsz üzenetet egy megadott listára. Minden mező kötelező ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage további információ]).",
-	"massmessage-queued-count": "Várakozó [[Special:MassMessage|tömeges üzenetek]]",
 	"massmessage-hidden-comment": "<!-- Az üzenetet User:$1@$2 küldte a(z) $3 helyen található lista használatával -->",
 	"massmessage-optout-category": "Tömeges üzenetküldésből kijelentkezettek",
 	"massmessage-badhtml": "Az üzeneted tartalmazhat lezáratlan {{PLURAL:$2|HTML-elemet|HTML-elemeket}}: $1",

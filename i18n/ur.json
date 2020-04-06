@@ -26,7 +26,6 @@
 	"massmessage-unescaped-langlinks": "انتباہ: آپ کے پیغام میں لغو شدہ لسانی روابط موجود ہیں۔",
 	"massmessage-no-timestamp": "انتباہ: آپ کے پیغام میں وقت کی مہر یا دستخط موجود نہیں ہے۔",
 	"massmessage-form-header": "متعینہ فہرست کو پیغامات روانہ کرنے کے لیے ذیل میں موجود فارم کو استعمال کریں۔ تمام خانوں کو پر کرنا لازمی ہے ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage مزید تفصیلات])۔",
-	"massmessage-queued-count": "قطار شدہ [[Special:MassMessage|اجتماعی پیغامات]]",
 	"massmessage-hidden-comment": "<!-- صارف:$1@$2 نے $3 پر موجود فہرست کو استعمال کرتے ہوئے یہ پیغام روانہ کیا ہے۔ -->",
 	"massmessage-optout-category": "وصولیٔ پیغام سے خارج",
 	"massmessage-badhtml": "شاید آپ کے پیغام میں {{PLURAL:$2|کوئی ایچ ٹی ایم ایل ٹیگ|ایچ ٹی ایم ایل ٹیگز}} بند نہیں {{PLURAL:$2|ہے|ہیں}}: $1۔",

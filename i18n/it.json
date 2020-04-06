@@ -6,7 +6,8 @@
 			"Ontsed",
 			"Nemo bis",
 			"Nivit",
-			"Gianfranco"
+			"Gianfranco",
+			"MatteoGheza"
 		]
 	},
 	"massmessage": "Invia messaggi massivamente",
@@ -26,11 +27,10 @@
 	"massmessage-spamlist-doesnotexist": "La pagina o categoria con l'elenco di consegna indicata non esiste.",
 	"massmessage-spamlist-invalid": "La pagina indicata non contiene un'elenco di consegna valido.",
 	"massmessage-empty-subject": "La riga dell'oggetto è vuota.",
-	"massmessage-empty-message": "Il corpo del messaggio è vuoto.",
+	"massmessage-empty-message": "Il corpo del messaggio è vuoto. Inserisci il corpo del messaggio o seleziona una pagina da inviare come messaggio.",
 	"massmessage-unescaped-langlinks": "Attenzione: ci sono collegamenti di lingua senza escape nel tuo messaggio.",
 	"massmessage-no-timestamp": "Attenzione: il tuo messaggio non include data e ora o la firma.",
 	"massmessage-form-header": "Utilizza il modulo sottostante per inviare messaggi a un elenco specificato. Tutti i campi sono obbligatori. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage ulteriori informazioni]).",
-	"massmessage-queued-count": "[[Special:MassMessage|Messaggi massivi]] in coda",
 	"massmessage-hidden-comment": "<!-- Messaggio inviato da User:$1@$2 usando l'elenco su $3 -->",
 	"massmessage-optout-category": "Esclusione dalla ricezione di messaggi massivi",
 	"massmessage-badhtml": "Il tuo messaggio potrebbe avere {{PLURAL:$2|un|alcuni}} tag HTML non {{PLURAL:$2|chiuso|chiusi}}: $1.",
@@ -47,7 +47,7 @@
 	"logentry-massmessage-skipoptout": "Consegna di \"$4\" a $3 omessa poiché la destinazione è esclusa dalla ricezione di messaggi massivi",
 	"logentry-massmessage-skipnouser": "Consegna di \"$4\" a $3 omessa poiché l'utenza non esiste",
 	"massmessage-cannot-rename": "Questa è un'utenza di sistema e non può essere rinominata.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Invia un altro messaggio]] o [[Special:Statistics|vedi quanti messaggi sono in coda]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Invia un altro messaggio]] o [[Special:Statistics|vedi quanti messaggi ci sono in coda]].",
 	"massmessage-content-pages": "Pagine in questo elenco",
 	"massmessage-content-pagesonsite": "Pagine su $1:",
 	"massmessage-content-localpages": "Pagine su questo wiki:",
