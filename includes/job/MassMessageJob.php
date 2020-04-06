@@ -15,7 +15,7 @@ use LqtDispatch;
 use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
-use StatusValue;
+use Status;
 use Title;
 use User;
 use WikiMap;
@@ -228,7 +228,8 @@ class MassMessageJob extends Job {
 		if ( $status->isOK() ) {
 			$text = $status->getValue();
 		} else {
-			$this->logLocalFailure( (string)$status );
+			$statusMessage = $status->getMessage()->text();
+			$this->logLocalFailure( $statusMessage );
 			return true;
 		}
 
@@ -299,9 +300,9 @@ class MassMessageJob extends Job {
 	 * Merge page passed as message and add some stuff to the end of the message.
 	 *
 	 * @param bool $stripTildes Whether to strip trailing '~~~~'
-	 * @return StatusValue
+	 * @return Status
 	 */
-	protected function makeText( bool $stripTildes = false ): StatusValue {
+	protected function makeText( bool $stripTildes = false ): Status {
 		$text = rtrim( $this->params['message'] );
 		$originWiki = $this->params['originWiki'] ?? WikiMap::getCurrentWikiId();
 		$titleStr = $this->params['pageMessageTitle'] ?? null;
@@ -342,7 +343,7 @@ class MassMessageJob extends Job {
 
 		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )
 				->params( $this->params['comment'] )->text();
-		return StatusValue::newGood( $text );
+		return Status::newGood( $text );
 	}
 
 	/**
