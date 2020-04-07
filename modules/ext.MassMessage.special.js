@@ -3,56 +3,99 @@ $( function () {
 
 	// Dynamic page title validation
 	var $spamlist = $( '#mw-massmessage-form-spamlist' ),
-		$spamliststatus = $( '<span>' )
-			.attr( 'id', 'mw-massmessage-form-spamlist-status' )
-			.insertAfter( $spamlist );
+		$massmessagepage = $( '#mw-massmessage-form-page' );
 
 	// Limit edit summaries to 240 bytes
 	$( '#mw-massmessage-form-subject' ).byteLimit();
 
-	function checkPageTitle() {
-		var api = new mw.Api(),
-			pagetitle = $spamlist.val();
-		if ( pagetitle ) {
-			api.get( {
-				action: 'query',
-				titles: pagetitle,
-				prop: 'info',
-				formatversion: 2
-			} ).done( function ( data ) {
-				if ( data && data.query &&
-					// If the page exists and has a supported content model
-					( !data.query.pages[ 0 ].missing &&
-						data.query.pages[ 0 ].contentmodel === 'wikitext' ||
-						data.query.pages[ 0 ].contentmodel === 'MassMessageListContent' ) ||
-					// Or if the text refers to a category
-					data.query.pages[ 0 ].ns === 14
-				) {
-					// No error message is displayed
-					$spamliststatus
+	/**
+	 * Fetch pages with a given title.
+	 * @param {string} pagetitle
+	 * @return {Promise}
+	 */
+	function getPagesByTitle( pagetitle ) {
+		var api = new mw.Api();
+
+		return api.get( {
+			action: 'query',
+			titles: pagetitle,
+			prop: 'info',
+			formatversion: 2
+		} ).done( function ( data ) {
+			return data;
+		} );
+	}
+
+	/**
+	 * Adds a status field for the element.
+	 * @param {Object} $elem jQuery element for which the status field has to be added.
+	 * @return {Object} jQuery element
+	 */
+	function addStatusField( $elem ) {
+		var $statusField = $( '<span>' )
+			.prop( 'id', $elem.prop( 'id' ) + '-status' )
+			.insertAfter( $elem );
+
+		return $statusField;
+	}
+
+	/**
+	 * Adds page title validation for a given text field
+	 * @param {Object} $elem jQuery element to
+	 * @param {Function} callback Called when we recieve some pages in response.
+	 */
+	function addPageTitleValidation( $elem, callback ) {
+		var $statusField = addStatusField( $elem );
+		$elem.on( 'input autocompletechange', $.debounce( 250, function () {
+			var pagetitle = $elem.val();
+			if ( !pagetitle ) {
+				$statusField
+					.removeClass( 'invalid' )
+					.text( '' );
+				return;
+			}
+
+			getPagesByTitle( pagetitle ).done( function ( data ) {
+				var result = false;
+				if ( data && data.query && !data.query.pages[ 0 ].missing ) {
+					result = callback( data.query.pages );
+				}
+
+				if ( result ) {
+					$statusField
 						.removeClass( 'invalid' )
 						.text( '' );
 				} else {
-					// Otherwise, display an error notice
-					$spamliststatus
+					$statusField
 						.addClass( 'invalid' )
 						.text( mw.message( 'massmessage-parse-badpage', pagetitle ).text() );
 				}
 			} );
-		} else {
-			// If no text is entered, don't display any warning
-			$spamliststatus
-				.removeClass( 'invalid' )
-				.text( '' );
-		}
+		} ) );
+	}
+
+	function isValidSpamList( pages ) {
+		return pages[ 0 ].contentmodel === 'wikitext' ||
+			pages[ 0 ].contentmodel === 'MassMessageListContent';
+	}
+
+	function isValidPageMessage( pages ) {
+		return pages[ 0 ].contentmodel === 'wikitext';
 	}
 
 	// Only bind once for 'blur' so that the user can fill it in without errors;
 	// after that, look at every change for immediate feedback.
 	$spamlist.one( 'blur', function () {
-		$spamlist.on( 'input autocompletechange', $.debounce( 250, checkPageTitle ) );
+		addPageTitleValidation( $( this ), isValidSpamList );
+	} );
+
+	$massmessagepage.one( 'blur', function () {
+		addPageTitleValidation( $( this ), isValidPageMessage );
 	} );
 
 	// Autocomplete for spamlist titles
 	mw.massmessage.enableTitleComplete( $spamlist );
+
+	// Autocomplete for pages to send as message
+	mw.massmessage.enableTitleComplete( $massmessagepage );
 } );
