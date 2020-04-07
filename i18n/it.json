@@ -2,12 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Rosh",
-			"Ontsed",
+			"Gianfranco",
+			"MatteoGheza",
 			"Nemo bis",
 			"Nivit",
-			"Gianfranco",
-			"MatteoGheza"
+			"Ontsed",
+			"Rosh"
 		]
 	},
 	"massmessage": "Invia messaggi massivamente",
@@ -47,7 +47,7 @@
 	"logentry-massmessage-skipoptout": "Consegna di \"$4\" a $3 omessa poiché la destinazione è esclusa dalla ricezione di messaggi massivi",
 	"logentry-massmessage-skipnouser": "Consegna di \"$4\" a $3 omessa poiché l'utenza non esiste",
 	"massmessage-cannot-rename": "Questa è un'utenza di sistema e non può essere rinominata.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Invia un altro messaggio]] o [[Special:Statistics|vedi quanti messaggi ci sono in coda]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Invia un altro messaggio]].",
 	"massmessage-content-pages": "Pagine in questo elenco",
 	"massmessage-content-pagesonsite": "Pagine su $1:",
 	"massmessage-content-localpages": "Pagine su questo wiki:",

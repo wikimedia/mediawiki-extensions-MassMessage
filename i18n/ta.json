@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ElangoRamanujam",
-			"AntanO"
+			"AntanO",
+			"ElangoRamanujam"
 		]
 	},
 	"logentry-massmessage-send": "$1 $3 இற்கு {{GENDER:$2|செய்தி அனுப்பினார்}}",
