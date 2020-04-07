@@ -162,17 +162,6 @@ class SpecialMassMessage extends SpecialPage {
 			'default' => $request->getText( 'message' )
 		];
 
-		// The page to sent as message
-		$m['page-message'] = [
-			'id' => 'mw-massmessage-form-page',
-			'name' => 'page-message',
-			'type' => 'text',
-			'tabindex' => '4',
-			'label-message' => 'massmessage-form-page',
-			'default' => $request->getText( 'page-message' ),
-			'help' => $this->msg( 'massmessage-form-page-help' )->text()
-		];
-
 		if ( $this->state === 'preview' ) {
 			// Adds it right before the 'Send' button
 			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse' );
@@ -180,7 +169,7 @@ class SpecialMassMessage extends SpecialPage {
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',
 				'type' => 'submit',
-				'tabindex' => '5',
+				'tabindex' => '4',
 				'default' => $this->msg( 'massmessage-form-submit' )->text()
 			];
 		}
@@ -189,7 +178,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-preview-button',
 			'name' => 'preview-button',
 			'type' => 'submit',
-			'tabindex' => '6',
+			'tabindex' => '5',
 			'default' => $this->msg( 'massmessage-form-preview' )->text()
 		];
 
@@ -298,35 +287,18 @@ class SpecialMassMessage extends SpecialPage {
 		// Output the number of recipients
 		$spamlist = MassMessage::getSpamlist( $data['spamlist'] );
 		$targets = SpamlistLookup::getTargets( $spamlist );
-		$infoMessages = [
+		$infoFieldset = Xml::fieldset(
+			$this->msg( 'massmessage-fieldset-info' )->text(),
 			$this->msg( 'massmessage-preview-count' )->numParams( count( $targets ) )->parse()
-		];
-
-		$pageContent = '';
-		if ( $data['page-message'] !== '' ) {
-			$pageTitle = MassMessage::getPageTitle( $data['page-message'] )->getValue();
-			if ( MassMessage::isSourceTranslationPage( $pageTitle ) ) {
-				$infoMessages[] = $this->msg( 'massmessage-translate-page-info' )->parse();
-			}
-
-			$pageContent = MassMessage::getPageContent( $pageTitle )->getValue() ?? '';
-		}
-
-		$this->showPreviewInfo( $infoMessages );
-
-		if ( $pageContent !== '' && $data['message'] !== '' ) {
-			$pageContent = MassMessage::appendMessageAndPage( $data['message'], $pageContent );
-		} elseif ( $data['message'] !== '' ) {
-			// Both cannot be empty, verified earlier.
-			$pageContent = $data['message'];
-		}
+		);
+		$this->getOutput()->addHTML( $infoFieldset );
 
 		// Use a mock target as the context for rendering the preview
 		$mockTarget = Title::newFromText( 'Project:MassMessage:A page that should not exist' );
 		$wikipage = WikiPage::factory( $mockTarget );
 
 		// Convert into a content object
-		$content = ContentHandler::makeContent( $pageContent, $mockTarget );
+		$content = ContentHandler::makeContent( $data['message'], $mockTarget );
 		// Parser stuff. Taken from EditPage::getPreviewText()
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setIsPreview( true );
@@ -365,23 +337,5 @@ class SpecialMassMessage extends SpecialPage {
 		if ( !preg_match( MassMessage::getTimestampRegex(), $content->getNativeData() ) ) {
 			$this->status->fatal( 'massmessage-no-timestamp' );
 		}
-	}
-
-	protected function showPreviewInfo( array $infoMessages ) {
-		$infoListHtml = $infoMessages[0];
-		if ( count( $infoMessages ) > 1 ) {
-			$infoListHtml = '<ul>';
-			foreach ( $infoMessages as $info ) {
-				$infoListHtml .= '<li>' . $info . '</li>';
-			}
-			$infoListHtml .= '</ul>';
-		}
-
-		$infoFieldset = Xml::fieldset(
-			$this->msg( 'massmessage-fieldset-info' )->text(),
-			$infoListHtml
-		);
-
-		$this->getOutput()->addHTML( $infoFieldset );
 	}
 }
