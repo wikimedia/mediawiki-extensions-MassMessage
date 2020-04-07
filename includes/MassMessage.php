@@ -267,7 +267,9 @@ class MassMessage {
 			);
 		} elseif ( !$pageTitle->exists() ) {
 			return Status::newFatal(
-				'massmessage-page-message-not-found', $pageTitle->getPrefixedText()
+				'massmessage-page-message-not-found',
+				$pageTitle->getPrefixedText(),
+				WikiMap::getCurrentWikiId()
 			);
 		}
 
@@ -275,7 +277,7 @@ class MassMessage {
 	}
 
 	/**
-	 * Fetch the page content with the given title
+	 * Fetch the page content with the given title from the same wiki.
 	 *
 	 * @param Title $pageTitle
 	 * @return Status
@@ -286,7 +288,8 @@ class MassMessage {
 
 		if ( $revision === null ) {
 			return Status::newFatal(
-				'massmessage-page-message-no-revision', $pageTitle->getPrefixedText()
+				'massmessage-page-message-no-revision',
+				$pageTitle->getPrefixedText()
 			);
 		}
 
@@ -335,7 +338,9 @@ class MassMessage {
 
 		if ( $row === false ) {
 			return Status::newFatal(
-				'massmessage-page-message-not-found', $pageTitle->getPrefixedText()
+				'massmessage-page-message-not-found-in-wiki',
+				$pageTitle->getPrefixedText(),
+				$wikiId
 			);
 		}
 
@@ -348,15 +353,17 @@ class MassMessage {
 				$pageContent = $content->getText();
 			} else {
 				return Status::newFatal(
-					'massmessage-page-message-no-revision-content',
+					'massmessage-page-message-no-revision-content-in-wiki',
 					$pageTitle->getPrefixedText(),
-					$rev->getId()
+					$rev->getId(),
+					$wikiId
 				);
 			}
 		} else {
 			return Status::newFatal(
-				'massmessage-page-message-no-revision',
-				$pageTitle->getPrefixedText()
+				'massmessage-page-message-no-revision-in-wiki',
+				$pageTitle->getPrefixedText(),
+				$wikiId
 			);
 		}
 
