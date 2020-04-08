@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage;
 use Exception;
 use Job;
 use Revision;
+use StatusValue;
 use Title;
 use WikiPage;
 use WikitextContent;
@@ -38,18 +39,18 @@ class MassMessageServerSideJob extends MassMessageJob {
 	 * Don't add any hidden comments.
 	 *
 	 * @param bool $stripTildes ignored
-	 * @return string
+	 * @return StatusValue
 	 */
-	protected function makeText( $stripTildes = false ) {
-		return $this->params['message'];
+	protected function makeText( bool $stripTildes = false ): StatusValue {
+		return StatusValue::newGood( $this->params['message'] );
 	}
 
-	protected function editPage() {
+	protected function editPage( string $text ) {
 		$tries = 1;
 		$titleText = $this->title->getPrefixedText();
 		$user = MassMessage::getMessengerUser();
 		$subject = $this->params['subject'];
-		$text = "== $subject ==\n\n{$this->makeText()}";
+		$text = "== $subject ==\n\n$text";
 		while ( true ) {
 			$page = WikiPage::factory( $this->title );
 			$flags = 0;
