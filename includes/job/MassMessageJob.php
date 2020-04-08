@@ -171,7 +171,7 @@ class MassMessageJob extends Job {
 		$text .= ' Subject: ' . $this->params['subject'];
 		$text .= ' Reason: ' . $reason;
 		$text .= ' Origin Wiki: ' . ( $this->params['originWiki'] ?? 'N/A' );
-		wfDebugLog( 'massmessage', $text );
+		wfDebugLog( 'MassMessage', $text );
 	}
 
 	/**
