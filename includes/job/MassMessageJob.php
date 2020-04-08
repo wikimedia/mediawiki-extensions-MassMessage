@@ -170,6 +170,7 @@ class MassMessageJob extends Job {
 		$text = 'Target: ' . $this->title->getPrefixedText();
 		$text .= ' Subject: ' . $this->params['subject'];
 		$text .= ' Reason: ' . $reason;
+		$text .= ' Origin Wiki: ' . ( $this->params['originWiki'] ?? 'N/A' );
 		wfDebugLog( 'massmessage', $text );
 	}
 
