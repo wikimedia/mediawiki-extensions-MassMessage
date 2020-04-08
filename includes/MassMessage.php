@@ -14,7 +14,6 @@ use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
 use RequestContext;
 use Status;
-use StatusValue;
 use Title;
 use User;
 use WikiMap;
@@ -237,11 +236,11 @@ class MassMessage {
 	 *
 	 * @param string $messageTitle
 	 * @param int $pageNamespace
-	 * @return StatusValue
+	 * @return Status
 	 */
 	public static function getPageMessage(
 		string $messageTitle, int $pageNamespace = NS_MAIN
-	): StatusValue {
+	): Status {
 		$pageMessageStatus = self::getPageTitle( $messageTitle, $pageNamespace );
 		if ( $pageMessageStatus->isOK() ) {
 			$pageMessageStatus = self::getPageContent( $pageMessageStatus->getValue() );
@@ -255,38 +254,38 @@ class MassMessage {
 	 *
 	 * @param string $title
 	 * @param int $pageNamespace
-	 * @return StatusValue
+	 * @return Status
 	 */
 	public static function getPageTitle(
 		string $title, int $pageNamespace = NS_MAIN
-	): StatusValue {
+	): Status {
 		$pageTitle = Title::makeTitleSafe( $pageNamespace, $title );
 
 		if ( $pageTitle === null ) {
-			return StatusValue::newFatal(
+			return Status::newFatal(
 				'massmessage-page-message-invalid', "$pageNamespace::$title"
 			);
 		} elseif ( !$pageTitle->exists() ) {
-			return StatusValue::newFatal(
+			return Status::newFatal(
 				'massmessage-page-message-not-found', $pageTitle->getPrefixedText()
 			);
 		}
 
-		return StatusValue::newGood( $pageTitle );
+		return Status::newGood( $pageTitle );
 	}
 
 	/**
 	 * Fetch the page content with the given title
 	 *
 	 * @param Title $pageTitle
-	 * @return StatusValue
+	 * @return Status
 	 */
-	public static function getPageContent( Title $pageTitle ): StatusValue {
+	public static function getPageContent( Title $pageTitle ): Status {
 		$revision = MediaWikiServices::getInstance()
 			->getRevisionStore()->getRevisionByTitle( $pageTitle );
 
 		if ( $revision === null ) {
-			return StatusValue::newFatal(
+			return Status::newFatal(
 				'massmessage-page-message-no-revision', $pageTitle->getPrefixedText()
 			);
 		}
@@ -294,14 +293,14 @@ class MassMessage {
 		$wiki = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
 
 		if ( $wiki === null ) {
-			return StatusValue::newFatal(
+			return Status::newFatal(
 				'massmessage-page-message-no-revision-content',
 				$pageTitle->getPrefixedText(),
 				$revision->getId()
 			);
 		}
 
-		return StatusValue::newGood( $wiki );
+		return Status::newGood( $wiki );
 	}
 
 	/**
@@ -309,11 +308,11 @@ class MassMessage {
 	 *
 	 * @param Title $pageTitle
 	 * @param string $wikiId
-	 * @return StatusValue
+	 * @return Status
 	 */
 	public static function getPageContentFromWiki(
 		Title $pageTitle, string $wikiId
-	): StatusValue {
+	): Status {
 		$dbr = wfGetDB( DB_REPLICA, $wikiId );
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$pageContent = null;
@@ -335,7 +334,7 @@ class MassMessage {
 		);
 
 		if ( $row === false ) {
-			return StatusValue::newFatal(
+			return Status::newFatal(
 				'massmessage-page-message-not-found', $pageTitle->getPrefixedText()
 			);
 		}
@@ -348,20 +347,20 @@ class MassMessage {
 			if ( $content ) {
 				$pageContent = $content->getText();
 			} else {
-				return StatusValue::newFatal(
+				return Status::newFatal(
 					'massmessage-page-message-no-revision-content',
 					$pageTitle->getPrefixedText(),
 					$rev->getId()
 				);
 			}
 		} else {
-			return StatusValue::newFatal(
+			return Status::newFatal(
 				'massmessage-page-message-no-revision',
 				$pageTitle->getPrefixedText()
 			);
 		}
 
-		return StatusValue::newGood(
+		return Status::newGood(
 			$pageContent
 		);
 	}
