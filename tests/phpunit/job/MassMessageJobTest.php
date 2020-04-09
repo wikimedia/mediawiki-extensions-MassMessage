@@ -20,7 +20,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	/**
 	 * Runs a job to edit the given title
 	 */
-	private function simulateJob( Title $title, array $additionalParams = [] ): string {
+	private function simulateJob( Title $title, array $additionalParams = [] ): array {
 		$subject = md5( MWCryptRand::generateHex( 15 ) );
 		$params = [
 			'subject' => $subject,
@@ -33,8 +33,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5'
 		];
 		$job = new MassMessageJob( $title, $params );
-		$job->run();
-		return $subject;
+		return [ $subject, $job->run() ];
 	}
 
 	/**
@@ -82,7 +81,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 */
 	public function testMessageSending() {
 		$target = $this->getTargetTitle( 'Project:Testing1234' );
-		$subj = $this->simulateJob( $target );
+		list( $subj, ) = $this->simulateJob( $target );
 		$target = Title::newFromText( 'Project:Testing1234' );
 		// Message was created
 		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
@@ -109,7 +108,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$target = Title::newFromText( 'Project:LQT test' );
 		// $this->assertTrue( LqtDispatch::isLqtPage( $target ) );
 		// Check that it worked
-		$subject = $this->simulateJob( $target );
+		list( $subject, ) = $this->simulateJob( $target );
 		$this->assertTrue( Title::newFromText( 'Thread:' . $proj . ':LQT test/' . $subject )->exists() );
 	}
 
@@ -151,6 +150,26 @@ class MassMessageJobTest extends MassMessageTestCase {
 			$pageMessageContent,
 			$content->getNativeData()
 		);
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\MassMessageJob::makeAPIRequest
+	 */
+	public function testPageMessageSendingFailToEdit() {
+		$pageMessageContent = 'Test page message.';
+		$pageMessageTitleStr = 'PageMessage';
+
+		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
+		// Force read-only mode - this will make page editing fail and test that
+		// job fails without creating exceptions
+		$this->setMwGlobals( 'wgReadOnly', 'testing' );
+		list( , $result ) = $this->simulateJob( $target, [
+			'page-message' => $pageMessageTitleStr,
+			'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
+			'isSourceTranslationPage' => false
+		] );
+		$this->assertFalse( $result );
 	}
 
 	/**

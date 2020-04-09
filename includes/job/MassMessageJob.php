@@ -234,8 +234,7 @@ class MassMessageJob extends Job {
 			return true;
 		}
 
-		call_user_func( $methodToCall, $text );
-		return true;
+		return call_user_func( $methodToCall, $text );
 	}
 
 	protected function editPage( string $text ) {
@@ -256,15 +255,16 @@ class MassMessageJob extends Job {
 		}
 
 		$result = $this->makeAPIRequest( $params );
-
-		// Apply change tag if the edit succeeded
-		$resultData = $result->getResultData();
-		if ( !array_key_exists( 'error', $resultData ) ) {
+		if ( $result ) {
+			// Apply change tag if the edit succeeded
+			$resultData = $result->getResultData();
 			$revId = $resultData['edit']['newrevid'];
 			DeferredUpdates::addCallableUpdate( function () use ( $revId ) {
 				ChangeTags::addTags( 'massmessage-delivery', null, $revId, null );
 			} );
+			return true;
 		}
+		return false;
 	}
 
 	protected function addLQTThread( string $text ) {
@@ -279,7 +279,7 @@ class MassMessageJob extends Job {
 			'token' => $user->getEditToken()
 		]; // LQT will automatically mark the edit as bot if we're a bot
 
-		$this->makeAPIRequest( $params );
+		return (bool)$this->makeAPIRequest( $params );
 	}
 
 	protected function addFlowTopic( string $text ) {
@@ -294,7 +294,7 @@ class MassMessageJob extends Job {
 			'token' => $user->getEditToken(),
 		];
 
-		$this->makeAPIRequest( $params );
+		return (bool)$this->makeAPIRequest( $params );
 	}
 
 	/**
@@ -351,11 +351,10 @@ class MassMessageJob extends Job {
 	 * Construct and make an API request based on the given params and return the results.
 	 *
 	 * @param array $params
-	 * @return \ApiResult
+	 * @return \ApiResult|bool
 	 */
 	protected function makeAPIRequest( array $params ) {
 		global $wgHooks, $wgUser, $wgRequest;
-
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
 		$ourUser = $this->getUser();
@@ -375,7 +374,6 @@ class MassMessageJob extends Job {
 		// New user objects will use $wgRequest, so we set that
 		// to our DerivativeRequest, so we don't run into any issues.
 		$wgUser = $ourUser;
-
 		$context = RequestContext::getMain();
 		// All further internal API requests will use the main
 		// RequestContext, so setting it here will fix it for
@@ -389,40 +387,40 @@ class MassMessageJob extends Job {
 			$wgRequest,
 			true // enable write?
 		);
-
-		$attemptCount = 0;
-		while ( true ) {
-			try {
-				$api->execute();
-				break; // Continue after the while block if the API request succeeds
-			} catch ( ApiUsageException $e ) {
-				$attemptCount++;
-				$isEditConflict = false;
-				foreach ( $e->getStatusValue()->getErrors() as $error ) {
-					if ( ApiMessage::create( $error )->getApiCode() === 'editconflict' ) {
-						$isEditConflict = true;
-						break;
-					}
-				}
-				// If the failure is not caused by an edit conflict or if there
-				// have been too many failures, log the (first) error and continue
-				// execution. Otherwise retry the request.
-				if ( !$isEditConflict || $attemptCount >= 5 ) {
+		try {
+			$attemptCount = 0;
+			while ( true ) {
+				try {
+					$api->execute();
+					break; // Continue after the while block if the API request succeeds
+				} catch ( ApiUsageException $e ) {
+					$attemptCount++;
+					$isEditConflict = false;
 					foreach ( $e->getStatusValue()->getErrors() as $error ) {
-						$this->logLocalFailure( ApiMessage::create( $error )->getApiCode() );
-						break;
+						if ( ApiMessage::create( $error )->getApiCode() === 'editconflict' ) {
+							$isEditConflict = true;
+							break;
+						}
 					}
-					break;
+					// If the failure is not caused by an edit conflict or if there
+					// have been too many failures, log the (first) error and continue
+					// execution. Otherwise retry the request.
+					if ( !$isEditConflict || $attemptCount >= 5 ) {
+						foreach ( $e->getStatusValue()->getErrors() as $error ) {
+							$this->logLocalFailure( ApiMessage::create( $error )->getApiCode() );
+							break;
+						}
+						return false;
+					}
 				}
 			}
+			return $api->getResult();
+		} finally {
+			// Cleanup all the stuff we polluted
+			$context->setUser( $oldCUser );
+			$context->setRequest( $oldCRequest );
+			$wgUser = $oldUser;
+			$wgRequest = $oldRequest;
 		}
-
-		// Cleanup all the stuff we polluted
-		$context->setUser( $oldCUser );
-		$context->setRequest( $oldCRequest );
-		$wgUser = $oldUser;
-		$wgRequest = $oldRequest;
-
-		return $api->getResult();
 	}
 }
