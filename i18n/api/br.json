@@ -4,5 +4,6 @@
 			"Fulup"
 		]
 	},
-	"apihelp-massmessage-example-1": "Kas ur gemennadenn d'ar roll [[Signpost Spamlist]] gant an danvez \"Merker nevez\", ha lakait \"Da vezañ lennet\" e-korf an destenn."
+	"apihelp-massmessage-example-1": "Kas ur gemennadenn d'ar roll [[Signpost Spamlist]] gant an danvez \"Merker nevez\", ha lakait \"Da vezañ lennet\" e-korf an destenn.",
+	"apihelp-massmessage-example-3": "Kas ur gemennadenn d'ar roll e [[Signpost Spamlist]] gant an danvez \"Panell nevez\", ha gant \"Lennit kement-mañ\" da gorf an destenn, ouzhpennit an danvez zo er bajenn \"Pajenn skoazell\"."
 }

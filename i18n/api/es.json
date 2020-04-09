@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
+			"Hasley",
 			"Macofe",
 			"Ryo567"
 		]
@@ -15,7 +16,7 @@
 	"apihelp-massmessage-param-spamlist": "Página que contiene una lista de páginas en que se dejará un mensaje.",
 	"apihelp-massmessage-param-subject": "Línea de asunto del mensaje.",
 	"apihelp-massmessage-param-message": "Texto del cuerpo del mensaje.",
-	"apihelp-massmessage-example-1": "Enviar un mensaje a la lista [[Signpost Spamlist]] con el asunto \"New Signpost\", y en el cuerpo el mensaje \"Please read it\"",
+	"apihelp-massmessage-example-1": "Enviar un mensaje a la lista [[Signpost Spamlist]] con el asunto «New Signpost», y en el cuerpo el mensaje «Please read it».",
 	"apihelp-query+mmsites-description": "Servir solicitudes de autocompletado para el campo de sitio en MassMessage.",
 	"apihelp-query+mmsites-param-term": "El prefijo a buscar.",
 	"apihelp-query+mmsites-example-1": "Autocompletar \"es\""

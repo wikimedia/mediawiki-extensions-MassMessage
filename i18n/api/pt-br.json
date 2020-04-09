@@ -17,6 +17,7 @@
 	"apihelp-massmessage-param-spamlist": "Página que contém uma lista de páginas para deixar uma mensagem.",
 	"apihelp-massmessage-param-subject": "Linha do assunto da mensagem.",
 	"apihelp-massmessage-param-message": "Texto do corpo da mensagem.",
+	"apihelp-massmessage-param-page-message": "Página a ser enviada junto com o corpo da mensagem.",
 	"apihelp-massmessage-example-1": "Enviar uma mensagem para a lista [[Signpost Spamlist]] com o assunto \"Novo Signpost\", e o corpo da mensagem \"Por favor, leia-o\"",
 	"apihelp-query+mmsites-description": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
 	"apihelp-query+mmsites-summary": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
