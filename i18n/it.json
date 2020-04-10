@@ -27,7 +27,7 @@
 	"massmessage-spamlist-doesnotexist": "La pagina o categoria con l'elenco di consegna indicata non esiste.",
 	"massmessage-spamlist-invalid": "La pagina indicata non contiene un'elenco di consegna valido.",
 	"massmessage-empty-subject": "La riga dell'oggetto è vuota.",
-	"massmessage-empty-message": "Il corpo del messaggio è vuoto.",
+	"massmessage-empty-message": "Il corpo del messaggio è vuoto. Inserisci il corpo del messaggio o seleziona una pagina da inviare come messaggio.",
 	"massmessage-unescaped-langlinks": "Attenzione: ci sono collegamenti di lingua senza escape nel tuo messaggio.",
 	"massmessage-no-timestamp": "Attenzione: il tuo messaggio non include data e ora o la firma.",
 	"massmessage-form-header": "Utilizza il modulo sottostante per inviare messaggi a un elenco specificato. Tutti i campi sono obbligatori. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage ulteriori informazioni]).",

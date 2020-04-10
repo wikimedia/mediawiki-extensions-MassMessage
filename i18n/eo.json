@@ -15,7 +15,7 @@
 	"massmessage-fieldset-preview": "Antaŭvidi",
 	"massmessage-spamlist-doesnotexist": "La specifita paĝo kun paĝolisto ne ekzistas.",
 	"massmessage-empty-message": "La mesaĝo ne enhavas tekston.",
-	"massmessage-page-message-no-revision": "La paĝo „$1”, selektita por sendi kiel mesaĝo, ne havas uzeblan revizion.",
+	"massmessage-page-message-no-revision": "La paĝo: \"$1\", elektita por esti sendita kiel mesaĝo, ne havas uzeblan revizion.",
 	"massmessage-form-header": "Uzu la suban formularon por sendi mesaĝon al specifita listo. Ĉiuj kampoj estas postulataj.",
 	"right-massmessage": "Sendi mesaĝon al multaj uzantoj samtempe",
 	"action-massmessage": "sendi mesaĝon al multaj uzantoj samtempe",

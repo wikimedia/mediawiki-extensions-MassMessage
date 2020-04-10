@@ -16,7 +16,7 @@
 	"apihelp-massmessage-param-spamlist": "דף שמכיל רשימה של דפים שתושאר בהם הודעה.",
 	"apihelp-massmessage-param-subject": "שורת הנושא של ההודעה.",
 	"apihelp-massmessage-param-message": "טקסט גוף ההודעה.",
-	"apihelp-massmessage-example-1": "שליחת הודעה לרשימה ב־[[Signpost Spamlist]] עם הנושא \"New Signpost\", וגוף ההודעה \"Please read it\"",
+	"apihelp-massmessage-example-1": "שליחת הודעה לרשימה ב־[[Signpost Spamlist]] עם הנושא \"New Signpost\", וגוף ההודעה \"Please read it\".",
 	"apihelp-query+mmsites-description": "שירות בקשות השלמה אוטומטית לשדה אתר בהודעות המוניות.",
 	"apihelp-query+mmsites-summary": "שירות בקשות השלמה אוטומטית לשדה האתר בהודעות המוניות.",
 	"apihelp-query+mmsites-param-term": "איזו תחילית לחפש.",
