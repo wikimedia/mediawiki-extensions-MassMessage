@@ -17,7 +17,7 @@
 	"massmessage-submitted": "Dostava vašega sporočila na {{PLURAL:$1|$1 stran|$1 strani}} je bila vnesena v čakalno vrsto.",
 	"massmessage-just-preview": "To je samo predogled. Pritisni \"{{int:massmessage-form-submit}}\", da pošlješ sporočilo.",
 	"massmessage-empty-subject": "Vrstica s predmetom je prazna.",
-	"massmessage-empty-message": "Telo sporočila je prazno.",
+	"massmessage-empty-message": "Telo sporočila je prazno. Vnesite telo sporočila ali izberite stran, ki bo poslana kot sporočilo.",
 	"massmessage-no-timestamp": "Pozor: Tvoje sporočilo ne vsebuje podpisa ali sistemskega datuma.",
 	"massmessage-parse-badurl": "»$1« ni veljavna stran",
 	"massmessage-parse-badpage": "»$1« ni veljaven naslov strani",
