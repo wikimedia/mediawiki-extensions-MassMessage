@@ -318,9 +318,16 @@ class MassMessageJob extends Job {
 			}
 
 			$pageMessageTitle = Title::newFromText( $titleStr );
-			$pageMessageStatus = MassMessage::getPageContentFromWiki(
-				$pageMessageTitle, $originWiki
-			);
+
+			if ( $originWiki === WikiMap::getCurrentWikiId() ) {
+				$pageMessageStatus = MassMessage::getPageMessage(
+					$pageMessageTitle, $pageMessageTitle->getNamespace()
+				);
+			} else {
+				$pageMessageStatus = MassMessage::getPageContentFromWiki(
+					$pageMessageTitle, $originWiki
+				);
+			}
 
 			if ( $pageMessageStatus->isOK() ) {
 				$pageContent = $pageMessageStatus->getValue();
