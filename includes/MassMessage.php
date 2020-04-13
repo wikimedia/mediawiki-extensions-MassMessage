@@ -316,7 +316,7 @@ class MassMessage {
 	public static function getPageContentFromWiki(
 		Title $pageTitle, string $wikiId
 	): Status {
-		$dbr = wfGetDB( DB_REPLICA, $wikiId );
+		$dbr = wfGetDB( DB_REPLICA, [], $wikiId );
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$pageContent = null;
 
