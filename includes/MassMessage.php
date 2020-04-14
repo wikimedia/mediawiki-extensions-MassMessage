@@ -6,7 +6,6 @@ use CentralIdLookup;
 use ContentHandler;
 use Exception;
 use ExtensionRegistry;
-use IDBAccessObject;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
@@ -316,60 +315,55 @@ class MassMessage {
 	public static function getPageContentFromWiki(
 		Title $pageTitle, string $wikiId
 	): Status {
-		$dbr = wfGetDB( DB_REPLICA, [], $wikiId );
-		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
-		$pageContent = null;
+		$apiUrl = self::getApiEndpoint( $wikiId );
+		if ( !$apiUrl ) {
+			return Status::newFatal(
+				'massmessage-page-message-wiki-not-found',
+				$wikiId,
+				$pageTitle->getPrefixedURL()
+			);
+		}
 
-		$query = $revStore->getQueryInfo( [ 'page' ] );
-		$whereCond = [
-			'page_namespace' => $pageTitle->getNamespace(),
-			'page_title' => $pageTitle->getDBkey(),
-			'page_latest = rev_id'
+		$queryParams = [
+			'action' => 'parse',
+			'format' => 'json',
+			'prop' => 'wikitext',
+			'page' => $pageTitle->getPrefixedURL(),
+			'formatversion' => 2
 		];
 
-		$row = $dbr->selectRow(
-			$query['tables'],
-			$query['fields'],
-			$whereCond,
-			__METHOD__,
-			[],
-			$query['joins']
-		);
+		$options = [
+			'method' => 'GET',
+			'timeout' => 15
+		];
 
-		if ( $row === false ) {
+		$apiUrl .= '?' . http_build_query( $queryParams );
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
+			->create( $apiUrl, $options, __METHOD__ );
+
+		$status = $req->execute();
+		if ( !$status->isOK() ) {
+			$error = $req->getContent();
 			return Status::newFatal(
-				'massmessage-page-message-not-found-in-wiki',
+				"massmessage-page-message-parse-error-in-wiki",
+				$wikiId,
 				$pageTitle->getPrefixedText(),
-				$wikiId
+				$error
 			);
 		}
 
-		$rev = $revStore->newRevisionFromRow( $row, IDBAccessObject::READ_NORMAL );
-
-		if ( $rev ) {
-			/** @var TextContent $content */
-			$content = $rev->getContent( SlotRecord::MAIN );
-			if ( $content ) {
-				$pageContent = $content->getText();
-			} else {
-				return Status::newFatal(
-					'massmessage-page-message-no-revision-content-in-wiki',
-					$pageTitle->getPrefixedText(),
-					$rev->getId(),
-					$wikiId
-				);
-			}
-		} else {
+		$json = $req->getContent();
+		$response = json_decode( $json, true );
+		if ( !isset( $response['parse'] ) ) {
 			return Status::newFatal(
-				'massmessage-page-message-no-revision-in-wiki',
+				"massmessage-page-message-parse-invalid-in-wiki",
+				$wikiId,
 				$pageTitle->getPrefixedText(),
-				$wikiId
+				$json
 			);
 		}
 
-		return Status::newGood(
-			$pageContent
-		);
+		return Status::newGood( $response['parse']['wikitext'] );
 	}
 
 	/**
@@ -510,5 +504,24 @@ class MassMessage {
 	 */
 	public static function appendMessageAndPage( string $message, string $pageContent ): string {
 		return $message . "\n\n----\n\n" . $pageContent;
+	}
+
+	public static function getApiEndpoint( string $wiki ): ?string {
+		global $wgConf;
+		$wgConf->loadFullData();
+
+		$siteFromDB = $wgConf->siteFromDB( $wiki );
+		[ $major, $minor ] = $siteFromDB;
+
+		if ( $major === null ) {
+			return null;
+		}
+
+		$server = $wgConf->get( 'wgServer', $wiki, [ 'lang' => $minor, 'site' => $major ] );
+		$scriptPath = $wgConf->get( 'wgScriptPath', $wiki, [ 'lang' => $minor, 'site' => $major ] );
+
+		$apiPath = wfExpandUrl( $server . $scriptPath . '/api.php', PROTO_INTERNAL );
+
+		return $apiPath;
 	}
 }
