@@ -25,7 +25,7 @@
 	"massmessage-spamlist-doesnotexist": "Zadaná stránka dodacího listu nebo kategorie neexistuje.",
 	"massmessage-spamlist-invalid": "Uvedená stránka neobsahuje platný distribuční seznam.",
 	"massmessage-empty-subject": "Předmět je prázdný.",
-	"massmessage-empty-message": "Tělo zprávy je prázdné.",
+	"massmessage-empty-message": "Tělo zprávy je prázdné. Doplňte tělo zprávy nebo namísto toho vyberte stránku k odeslání.",
 	"massmessage-unescaped-langlinks": "Upozornění: Vaše zpráva obsahuje neošetřené jazykové odkazy.",
 	"massmessage-no-timestamp": "Upozornění: Vaše zpráva neobsahuje čas ani podpis.",
 	"massmessage-form-header": "Pomocí níže uvedeného formuláře můžete rozeslat zprávy podle zadaného seznamu. Všechna pole jsou povinná ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage více informací]).",
