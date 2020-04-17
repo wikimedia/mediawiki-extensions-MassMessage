@@ -3,6 +3,7 @@
 		"authors": [
 			"Amire80",
 			"Guycn2",
+			"IKhitron",
 			"Rotemliss"
 		]
 	},
@@ -31,9 +32,9 @@
 	"massmessage-page-message-not-found": "הדף \"$1\", שנבחר כדי להישלח בתור הודעה, לא נמצא.",
 	"massmessage-page-message-no-revision": "לדף \"$1\", שנבחר כדי להישלח בתור הודעה, אין גרסה שמישה.",
 	"massmessage-page-message-no-revision-content": "לדף \"$1\", שנבחר כדי להישלח בתור הודעה, אין תוכן גרסה. מזהה גרסה: \"$2\"",
-	"massmessage-page-message-wiki-not-found": "לא ניתן למצוא את הוויקי: \"$1\" כדי לאחזר את הדף: \"$2\", שנבחר להישלח בתור הודעה.",
-	"massmessage-page-message-parse-error-in-wiki": "אירעה שגיאה בעת אחזור הדף: \"$2\", שנבחר להישלח בתור הודעה, מהוויקי \"$1\". שגיאה: $3",
-	"massmessage-page-message-parse-invalid-in-wiki": "תגובה בלתי־תקינה נשלחה בעת אחזור הדף: \"$2\", שנבחר להישלח בתור הודעה, מהוויקי: \"$1\". תגובה: $3",
+	"massmessage-page-message-wiki-not-found": "לא ניתן למצוא את הוויקי \"$1\" כדי לאחזר את הדף \"$2\", שנבחר להישלח בתור הודעה.",
+	"massmessage-page-message-parse-error-in-wiki": "אירעה שגיאה בעת אחזור הדף \"$2\", שנבחר להישלח בתור הודעה, מהוויקי \"$1\". שגיאה: $3",
+	"massmessage-page-message-parse-invalid-in-wiki": "תגובה בלתי־תקינה נשלחה בעת אחזור הדף \"$2\", שנבחר להישלח בתור הודעה, מהוויקי \"$1\". תגובה: $3",
 	"massmessage-page-message-empty": "בדף \"$1\", שנבחר כדי להישלח בתור הודעה, אין תוכן.",
 	"massmessage-unescaped-langlinks": "אזהרה: יש קישורי שפה לא מחולפים בהודעה שלך.",
 	"massmessage-no-timestamp": "אזהרה: ההודעה שלך אינה מכילה חותם־זמן או חתימה.",
