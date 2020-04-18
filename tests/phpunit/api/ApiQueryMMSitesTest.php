@@ -6,7 +6,7 @@ namespace MediaWiki\MassMessage;
  * Tests for the API module to serve autocomplete requests for the site field
  * @group API
  * @group medium
- * @covers \MediaWiki\MassMessage\ApiQueryMMSites
+ * @covers \MediaWiki\MassMessage\Api\ApiQueryMMSites
  */
 class ApiQueryMMSitesTest extends MassMessageApiTestCase {
 

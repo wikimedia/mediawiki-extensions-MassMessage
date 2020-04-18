@@ -2,6 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MassMessage\Content\MassMessageListContent;
+
 class MassMessageListContentTest extends MassMessageTestCase {
 
 	public static function provideIsValid() {
@@ -16,7 +18,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContent::isValid
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::isValid
 	 * @dataProvider provideIsValid
 	 * @param string $text
 	 * @param bool $expected
@@ -36,7 +38,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContent::hasInvalidTargets
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::hasInvalidTargets
 	 * @dataProvider provideHasInvalidTargets
 	 * @param string $text
 	 * @param bool $expected
@@ -47,7 +49,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContent::getDescription
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getDescription
 	 */
 	public function testGetDescription() {
 		$content = new MassMessageListContent( '{"description":"foo","targets":[]}' );
@@ -55,7 +57,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContent::getTargets
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getTargets
 	 */
 	public function testGetTargets() {
 		$text = '{"description":"","targets":['
@@ -71,7 +73,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContent::getValidTargets
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getValidTargets
 	 */
 	public function testGetValidTargets() {
 		$text = '{"description":"","targets":['
@@ -88,7 +90,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContent::getTargetStrings
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getTargetStrings
 	 */
 	public function testGetTargetStrings() {
 		// Temporarily set $wgCanonicalServer for this test so its value is predictable.

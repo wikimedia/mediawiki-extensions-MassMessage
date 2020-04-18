@@ -8,6 +8,8 @@ use Exception;
 use ExtensionRegistry;
 use JobQueueGroup;
 use ManualLogEntry;
+use MediaWiki\MassMessage\Job\MassMessageJob;
+use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use ParserOptions;

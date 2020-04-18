@@ -3,6 +3,8 @@
 namespace MediaWiki\MassMessage;
 
 use Maintenance;
+use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
+use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use Title;
 use WikiMap;
 

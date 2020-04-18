@@ -2,6 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use Title;
@@ -40,7 +41,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::edit
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::edit
 	 */
 	public function testEdit() {
 		$title = Title::newFromText( self::$spamlist );
@@ -64,7 +65,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::edit
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::edit
 	 */
 	public function testInvalidEdit() {
 		$title = Title::newFromText( self::$spamlist );
@@ -79,7 +80,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::normalizeTargetArray
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::normalizeTargetArray
 	 */
 	public function testNormalizeTargetArray() {
 		$input = [
@@ -131,7 +132,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::compareTargets
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::compareTargets
 	 * @dataProvider provideCompareTargets
 	 * @param array $a
 	 * @param array $b
@@ -159,7 +160,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageListContentHandler::extractTarget
+	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::extractTarget
 	 * @dataProvider provideExtractTarget
 	 * @param string $targetString
 	 * @param array $expected Parsed target

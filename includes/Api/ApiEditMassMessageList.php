@@ -1,9 +1,11 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Api;
 
 use ApiBase;
 use LinkBatch;
+use MediaWiki\MassMessage\Content\MassMessageListContent;
+use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use Title;

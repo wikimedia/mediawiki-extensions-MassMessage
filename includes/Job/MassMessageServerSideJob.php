@@ -1,9 +1,10 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Job;
 
 use Exception;
 use Job;
+use MediaWiki\MassMessage\MassMessage;
 use Revision;
 use Status;
 use Title;

@@ -1,12 +1,14 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Content;
 
 use Html;
 use JsonContent;
 use Language;
 use LinkBatch;
 use Linker;
+use MediaWiki\MassMessage\DatabaseLookup;
+use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use ParserOutput;

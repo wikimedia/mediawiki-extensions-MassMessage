@@ -13,7 +13,7 @@ use WikiPage;
  * @group API
  * @group Database
  * @group medium
- * @covers \MediaWiki\MassMessage\ApiMassMessage
+ * @covers \MediaWiki\MassMessage\Api\ApiMassMessage
  */
 class ApiMassMessageTest extends MassMessageApiTestCase {
 

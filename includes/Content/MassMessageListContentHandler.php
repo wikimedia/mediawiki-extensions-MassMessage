@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Content;
 
 use ApiMain;
 use ApiUsageException;
@@ -9,6 +9,8 @@ use DerivativeRequest;
 use FormatJson;
 use IContextSource;
 use JsonContentHandler;
+use MediaWiki\MassMessage\DatabaseLookup;
+use MediaWiki\MassMessage\UrlHelper;
 use Status;
 use Title;
 

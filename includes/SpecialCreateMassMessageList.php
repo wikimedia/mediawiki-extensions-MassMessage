@@ -3,6 +3,7 @@
 namespace MediaWiki\MassMessage;
 
 use FormSpecialPage;
+use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
 use Status;
 use Title;

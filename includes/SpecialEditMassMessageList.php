@@ -7,6 +7,8 @@ use FormSpecialPage;
 use Html;
 use HTMLForm;
 use LogEventsList;
+use MediaWiki\MassMessage\Content\MassMessageListContent;
+use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\RevisionRecord;

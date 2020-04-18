@@ -1,8 +1,9 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Api;
 
 use ApiBase;
+use MediaWiki\MassMessage\MassMessage;
 use Status;
 
 /**

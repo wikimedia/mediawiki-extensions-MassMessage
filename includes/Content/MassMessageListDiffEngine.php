@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Content;
 
 use Content;
 use DifferenceEngine;

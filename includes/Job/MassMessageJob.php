@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Job;
 
 use ApiMain;
 use ApiMessage;
@@ -13,6 +13,9 @@ use ExtensionRegistry;
 use Job;
 use LqtDispatch;
 use ManualLogEntry;
+use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\MassMessageHooks;
+use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
 use Status;

@@ -1,9 +1,9 @@
 <?php
 
-use MediaWiki\MassMessage\MassMessageListDiffEngine;
+use MediaWiki\MassMessage\Content\MassMessageListDiffEngine;
 
 /**
- * @covers \MediaWiki\MassMessage\MassMessageListDiffEngine
+ * @covers \MediaWiki\MassMessage\Content\MassMessageListDiffEngine
  */
 class MassMessageListDiffEngineTest extends MediaWikiTestCase {
 

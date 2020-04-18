@@ -2,12 +2,14 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MassMessage\Job\MassMessageJob;
+use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWikiTestCase;
 
 class MassMessageSubmitJobTest extends MediaWikiTestCase {
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageSubmitJob::getJobs
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageSubmitJob::getJobs
 	 * @dataProvider provideGetJobs
 	 */
 	public function testGetJobs( $data, $pages ) {

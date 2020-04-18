@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use ContentHandler;
 use ExtensionRegistry;
+use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
 use MWCryptRand;
 use RequestContext;
@@ -76,8 +77,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::editPage
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::editPage
 	 */
 	public function testMessageSending() {
 		$target = $this->getTargetTitle( 'Project:Testing1234' );
@@ -93,8 +94,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::addLQTThread
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::addLQTThread
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
 	 */
 	public function testLQTMessageSending() {
 		$this->markTestSkipped( 'broken test, T217553' );
@@ -113,7 +114,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::isOptedOut
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::isOptedOut
 	 */
 	public function testOptOut() {
 		$fakejob = new MassMessageJob( Title::newMainPage(), [] );
@@ -130,7 +131,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
 	 */
 	public function testPageMessageSending() {
 		$pageMessageContent = 'Test page message.';
@@ -153,7 +154,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::makeAPIRequest
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::makeAPIRequest
 	 */
 	public function testPageMessageSendingFailToEdit() {
 		$pageMessageContent = 'Test page message.';
@@ -173,7 +174,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
 	 */
 	public function testTranslatablePageMessageSending() {
 		$this->setMwGlobals( [

@@ -31,14 +31,14 @@
 		"MassMessageMagic": "MassMessage.i18n.magic.php"
 	},
 	"APIModules": {
-		"massmessage": "MediaWiki\\MassMessage\\ApiMassMessage",
-		"editmassmessagelist": "MediaWiki\\MassMessage\\ApiEditMassMessageList"
+		"massmessage": "MediaWiki\\MassMessage\\Api\\ApiMassMessage",
+		"editmassmessagelist": "MediaWiki\\MassMessage\\Api\\ApiEditMassMessageList"
 	},
 	"LogTypes": [
 		"massmessage"
 	],
 	"APIListModules": {
-		"mmsites": "MediaWiki\\MassMessage\\ApiQueryMMSites"
+		"mmsites": "MediaWiki\\MassMessage\\Api\\ApiQueryMMSites"
 	},
 	"MessagesDirs": {
 		"MassMessage": [
@@ -63,7 +63,7 @@
 		"ChangeTagsListActive": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
 	},
 	"ContentHandlers": {
-		"MassMessageListContent": "MediaWiki\\MassMessage\\MassMessageListContentHandler"
+		"MassMessageListContent": "MediaWiki\\MassMessage\\Content\\MassMessageListContentHandler"
 	},
 	"ResourceModules": {
 		"ext.MassMessage.autocomplete": {
@@ -150,9 +150,9 @@
 		"remoteExtPath": "MassMessage/modules"
 	},
 	"JobClasses": {
-		"MassMessageJob": "MediaWiki\\MassMessage\\MassMessageJob",
-		"MassMessageSubmitJob": "MediaWiki\\MassMessage\\MassMessageSubmitJob",
-		"MassMessageServerSideJob": "MediaWiki\\MassMessage\\MassMessageServerSideJob"
+		"MassMessageJob": "MediaWiki\\MassMessage\\Job\\MassMessageJob",
+		"MassMessageSubmitJob": "MediaWiki\\MassMessage\\Job\\MassMessageSubmitJob",
+		"MassMessageServerSideJob": "MediaWiki\\MassMessage\\Job\\MassMessageServerSideJob"
 	},
 	"GroupPermissions": {
 		"sysop": {
@@ -161,11 +161,11 @@
 	},
 	"LogActionsHandlers": {
 		"massmessage/*": "LogFormatter",
-		"massmessage/send": "MediaWiki\\MassMessage\\MassMessageSendLogFormatter",
+		"massmessage/send": "MediaWiki\\MassMessage\\Logging\\MassMessageSendLogFormatter",
 		"massmessage/failure": "WikitextLogFormatter",
-		"massmessage/skipoptout": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter",
-		"massmessage/skipnouser": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter",
-		"massmessage/skipbadns": "MediaWiki\\MassMessage\\MassMessageSkipLogFormatter"
+		"massmessage/skipoptout": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter",
+		"massmessage/skipnouser": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter",
+		"massmessage/skipbadns": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter"
 	},
 	"ActionFilteredLogs": {
 		"massmessage": {
@@ -183,19 +183,6 @@
 		"MassMessage": "MediaWiki\\MassMessage\\SpecialMassMessage",
 		"CreateMassMessageList": "MediaWiki\\MassMessage\\SpecialCreateMassMessageList",
 		"EditMassMessageList": "MediaWiki\\MassMessage\\SpecialEditMassMessageList"
-	},
-	"AutoloadClasses": {
-		"MediaWiki\\MassMessage\\ApiMassMessage": "includes/api/ApiMassMessage.php",
-		"MediaWiki\\MassMessage\\ApiEditMassMessageList": "includes/api/ApiEditMassMessageList.php",
-		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/api/ApiQueryMMSites.php",
-		"MediaWiki\\MassMessage\\MassMessageJob": "includes/job/MassMessageJob.php",
-		"MediaWiki\\MassMessage\\MassMessageServerSideJob": "includes/job/MassMessageServerSideJob.php",
-		"MediaWiki\\MassMessage\\MassMessageSubmitJob": "includes/job/MassMessageSubmitJob.php",
-		"MediaWiki\\MassMessage\\MassMessageSendLogFormatter": "includes/logging/MassMessageSendLogFormatter.php",
-		"MediaWiki\\MassMessage\\MassMessageSkipLogFormatter": "includes/logging/MassMessageSkipLogFormatter.php",
-		"MediaWiki\\MassMessage\\MassMessageListContent": "includes/content/MassMessageListContent.php",
-		"MediaWiki\\MassMessage\\MassMessageListContentHandler": "includes/content/MassMessageListContentHandler.php",
-		"MediaWiki\\MassMessage\\MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\MassMessage\\": "includes/"
