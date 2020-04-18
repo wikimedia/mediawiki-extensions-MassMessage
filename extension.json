@@ -185,20 +185,9 @@
 		"EditMassMessageList": "MediaWiki\\MassMessage\\SpecialEditMassMessageList"
 	},
 	"AutoloadClasses": {
-		"MediaWiki\\MassMessage\\MassMessageHooks": "includes/MassMessageHooks.php",
 		"MediaWiki\\MassMessage\\ApiMassMessage": "includes/api/ApiMassMessage.php",
 		"MediaWiki\\MassMessage\\ApiEditMassMessageList": "includes/api/ApiEditMassMessageList.php",
 		"MediaWiki\\MassMessage\\ApiQueryMMSites": "includes/api/ApiQueryMMSites.php",
-		"MediaWiki\\MassMessage\\MassMessage": "includes/MassMessage.php",
-		"MediaWiki\\MassMessage\\SpamlistLookup": "includes/SpamlistLookup.php",
-		"MediaWiki\\MassMessage\\DatabaseLookup": "includes/DatabaseLookup.php",
-		"MediaWiki\\MassMessage\\UrlHelper": "includes/UrlHelper.php",
-		"MediaWiki\\MassMessage\\CategorySpamlistLookup": "includes/CategorySpamlistLookup.php",
-		"MediaWiki\\MassMessage\\ListContentSpamlistLookup": "includes/ListContentSpamlistLookup.php",
-		"MediaWiki\\MassMessage\\ParserFunctionSpamlistLookup": "includes/ParserFunctionSpamlistLookup.php",
-		"MediaWiki\\MassMessage\\SpecialMassMessage": "includes/SpecialMassMessage.php",
-		"MediaWiki\\MassMessage\\SpecialCreateMassMessageList": "includes/SpecialCreateMassMessageList.php",
-		"MediaWiki\\MassMessage\\SpecialEditMassMessageList": "includes/SpecialEditMassMessageList.php",
 		"MediaWiki\\MassMessage\\MassMessageJob": "includes/job/MassMessageJob.php",
 		"MediaWiki\\MassMessage\\MassMessageServerSideJob": "includes/job/MassMessageServerSideJob.php",
 		"MediaWiki\\MassMessage\\MassMessageSubmitJob": "includes/job/MassMessageSubmitJob.php",
@@ -207,6 +196,9 @@
 		"MediaWiki\\MassMessage\\MassMessageListContent": "includes/content/MassMessageListContent.php",
 		"MediaWiki\\MassMessage\\MassMessageListContentHandler": "includes/content/MassMessageListContentHandler.php",
 		"MediaWiki\\MassMessage\\MassMessageListDiffEngine": "includes/content/MassMessageListDiffEngine.php"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\MassMessage\\": "includes/"
 	},
 	"TestAutoloadClasses": {
 		"MediaWiki\\MassMessage\\MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
