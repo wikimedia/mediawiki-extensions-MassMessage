@@ -81,8 +81,9 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 					if ( $revId > 0 ) {
 						$rev = $revisionLookup->getRevisionById( $revId );
 						if ( $rev
-							&& $rev->getTitle()->equals( $title )
-							&& $rev->getContentModel() === 'MassMessageListContent'
+							&& $title->equals( $rev->getPageAsLinkTarget() )
+							&& $rev->getSlot( SlotRecord::MAIN, RevisionRecord::RAW )
+								->getModel() === 'MassMessageListContent'
 							&& RevisionRecord::userCanBitfield(
 								$rev->getVisibility(),
 								RevisionRecord::DELETED_TEXT,
