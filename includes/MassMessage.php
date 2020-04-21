@@ -7,6 +7,7 @@ use ContentHandler;
 use Exception;
 use ExtensionRegistry;
 use JobQueueGroup;
+use Language;
 use ManualLogEntry;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
@@ -168,7 +169,7 @@ class MassMessage {
 		// Check and fetch the page message
 		$pageMessage = null;
 		if ( $data['page-message'] !== '' ) {
-			$pageMessageStatus = self::getPageMessage( $data['page-message'] );
+			$pageMessageStatus = self::getLocalContentByTitle( $data['page-message'] );
 			if ( $pageMessageStatus->isOK() ) {
 				$pageMessage = $pageMessageStatus->getValue();
 				if ( $pageMessage === '' ) {
@@ -239,12 +240,12 @@ class MassMessage {
 	 * @param int $pageNamespace
 	 * @return Status
 	 */
-	public static function getPageMessage(
+	public static function getLocalContentByTitle(
 		string $messageTitle, int $pageNamespace = NS_MAIN
 	): Status {
-		$pageMessageStatus = self::getPageTitle( $messageTitle, $pageNamespace );
+		$pageMessageStatus = self::getLocalContentTitle( $messageTitle, $pageNamespace );
 		if ( $pageMessageStatus->isOK() ) {
-			$pageMessageStatus = self::getPageContent( $pageMessageStatus->getValue() );
+			$pageMessageStatus = self::getLocalContent( $pageMessageStatus->getValue() );
 		}
 
 		return $pageMessageStatus;
@@ -257,7 +258,7 @@ class MassMessage {
 	 * @param int $pageNamespace
 	 * @return Status
 	 */
-	public static function getPageTitle(
+	public static function getLocalContentTitle(
 		string $title, int $pageNamespace = NS_MAIN
 	): Status {
 		$pageTitle = Title::makeTitleSafe( $pageNamespace, $title );
@@ -283,7 +284,7 @@ class MassMessage {
 	 * @param Title $pageTitle
 	 * @return Status
 	 */
-	public static function getPageContent( Title $pageTitle ): Status {
+	public static function getLocalContent( Title $pageTitle ): Status {
 		$revision = MediaWikiServices::getInstance()
 			->getRevisionStore()->getRevisionByTitle( $pageTitle );
 
@@ -314,7 +315,7 @@ class MassMessage {
 	 * @param string $wikiId
 	 * @return Status
 	 */
-	public static function getPageContentFromWiki(
+	public static function getRemoteContent(
 		Title $pageTitle, string $wikiId
 	): Status {
 		$apiUrl = self::getApiEndpoint( $wikiId );
@@ -330,7 +331,7 @@ class MassMessage {
 			'action' => 'parse',
 			'format' => 'json',
 			'prop' => 'wikitext',
-			'page' => $pageTitle->getPrefixedURL(),
+			'page' => $pageTitle->getPrefixedText(),
 			'formatversion' => 2
 		];
 
@@ -356,9 +357,26 @@ class MassMessage {
 
 		$json = $req->getContent();
 		$response = json_decode( $json, true );
-		if ( !isset( $response['parse'] ) ) {
+
+		if ( ( $response['error']['code'] ?? '' ) === 'missingtitle' ) {
+			// Page was not found
 			return Status::newFatal(
-				"massmessage-page-message-parse-invalid-in-wiki",
+				'massmessage-page-message-not-found-in-wiki',
+				$wikiId,
+				$pageTitle->getPrefixedText()
+			);
+		} elseif ( isset( $response['error']['info'] ) ) {
+			// We got another error from the API.
+			return Status::newFatal(
+				'massmessage-page-message-parse-invalid-in-wiki',
+				$wikiId,
+				$pageTitle->getPrefixedText(),
+				$response['error']['info']
+			);
+		} elseif ( !isset( $response['parse'] ) ) {
+			// Sanity check
+			return Status::newFatal(
+				'massmessage-page-message-parse-invalid-in-wiki',
 				$wikiId,
 				$pageTitle->getPrefixedText(),
 				$json
@@ -366,6 +384,93 @@ class MassMessage {
 		}
 
 		return Status::newGood( $response['parse']['wikitext'] );
+	}
+
+	/**
+	 * Get content for a target language from wiki, using fallbacks if necessary
+	 *
+	 * @param string $titleStr
+	 * @param string $targetLangCode
+	 * @param string $sourceLangCode
+	 * @param string $wikiId
+	 * @return Status
+	 */
+	public static function getContentWithFallback(
+		string $titleStr, string $targetLangCode, string $sourceLangCode, string $wikiId
+	): Status {
+		if ( !Language::isKnownLanguageTag( $targetLangCode ) ) {
+			return Status::newFatal( 'massmessage-invalid-lang', $targetLangCode );
+		}
+
+		// Identify languages to fetch
+		$langFallback = MediaWikiServices::getInstance()->getLanguageFallback();
+		$fallbackChain = array_merge(
+			[ $targetLangCode ],
+			$langFallback->getAll( $targetLangCode )
+		);
+
+		foreach ( $fallbackChain as $langCode ) {
+			$titleStrWithLang = $titleStr . '/' . $langCode;
+			$contentStatus = self::getContent( $titleStrWithLang, $wikiId );
+
+			if ( $contentStatus->isOK() ) {
+				return $contentStatus;
+			}
+
+			// Got an unknown error, let's stop looking for other fallbacks
+			if ( !self::isNotFoundError( $contentStatus ) ) {
+				break;
+			}
+		}
+
+		// No language or fallback found or there was an error, go with source language
+		$langSuffix = '';
+		if ( $sourceLangCode ) {
+			$langSuffix = "/$sourceLangCode";
+		}
+
+		return self::getContent( $titleStr . $langSuffix, $wikiId );
+	}
+
+	/**
+	 * Helper method that uses the database or API to fetch content based on the wiki.
+	 *
+	 * @param string $titleStr
+	 * @param string $wikiId
+	 * @return Status
+	 */
+	public static function getContent( string $titleStr, string $wikiId ): Status {
+		$isCurrentWiki = WikiMap::getCurrentWikiId() === $wikiId;
+		$title = Title::newFromText( $titleStr );
+		if ( $isCurrentWiki ) {
+			$contentStatus = self::getLocalContentByTitle( $title, $title->getNamespace() );
+		} else {
+			$contentStatus = self::getRemoteContent( $title, $wikiId );
+		}
+
+		return $contentStatus;
+	}
+
+	/**
+	 * Checks if a given Status is a not found error.
+	 *
+	 * @param Status $status
+	 * @return bool
+	 */
+	private static function isNotFoundError( Status $status ): bool {
+		$notFoundErrors = [
+			'massmessage-page-message-not-found', 'massmessage-page-message-not-found-in-wiki'
+		];
+		$errors = $status->getErrorsArray();
+		if ( $errors ) {
+			foreach ( $errors as $error ) {
+				if ( in_array( $error[0], $notFoundErrors ) ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	/**
@@ -411,9 +516,13 @@ class MassMessage {
 		 * @var Title
 		 */
 		$pageTitle = null;
+		$sourcePageLanguage = null;
 		if ( $data['page-message'] !== '' ) {
-			$pageTitle = self::getPageTitle( $data['page-message'] )->getValue();
+			$pageTitle = self::getLocalContentTitle( $data['page-message'] )->getValue();
 			$isSourceTranslationPage = self::isSourceTranslationPage( $pageTitle );
+			if ( $isSourceTranslationPage ) {
+				$sourcePageLanguage = $pageTitle->getPageLanguage()->getCode();
+			}
 		}
 
 		$data += [
@@ -421,6 +530,7 @@ class MassMessage {
 				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
 			'originWiki' => WikiMap::getCurrentWikiId(),
 			'isSourceTranslationPage' => $isSourceTranslationPage,
+			'translationPageSourceLanguage' => $sourcePageLanguage,
 			'pageMessageTitle' => $pageTitle ? $pageTitle->getPrefixedText() : null
 		];
 

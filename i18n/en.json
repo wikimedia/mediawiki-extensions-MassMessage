@@ -32,6 +32,8 @@
 	"massmessage-page-message-no-revision-content": "The page \"$1\", selected to be sent as message, has no revision content. Revision ID: \"$2\"",
 	"massmessage-page-message-wiki-not-found": "Unable to find wiki \"$1\" to fetch page \"$2\", selected to be sent as message.",
 	"massmessage-page-message-parse-error-in-wiki": "There was an error while fetching the page \"$2\", selected to be sent as message, from wiki \"$1\". Error: $3",
+	"massmessage-page-message-not-found-in-wiki": "The page \"$2\", from wiki: \"$1\", selected to be sent as message, was not found.",
+	"massmessage-invalid-lang": "Invalid language code: \"$1\"",
 	"massmessage-page-message-parse-invalid-in-wiki": "An invalid response was sent while fetching the page \"$2\", selected to be sent as message, from the wiki \"$1\". Response: $3",
 	"massmessage-page-message-empty": "The page \"$1\", selected to be sent as message, has no content.",
 	"massmessage-unescaped-langlinks": "Warning: There are unescaped language links in your message.",

@@ -315,20 +315,16 @@ class MassMessageJob extends Job {
 
 		// Check if page-message has been set, and fetch the page content.
 		if ( $titleStr ) {
+			$pageMessageStatus = null;
 			if ( $isSourceTranslationPage ) {
+				$sourceLanguage = $this->params['translationPageSourceLanguage'] ?? '';
 				$targetLanguage = $this->title->getPageLanguage();
-				$titleStr = $titleStr . '/' . $targetLanguage->getCode();
-			}
-
-			$pageMessageTitle = Title::newFromText( $titleStr );
-
-			if ( $originWiki === WikiMap::getCurrentWikiId() ) {
-				$pageMessageStatus = MassMessage::getPageMessage(
-					$pageMessageTitle, $pageMessageTitle->getNamespace()
+				$pageMessageStatus = MassMessage::getContentWithFallback(
+					$titleStr, $targetLanguage->getCode(), $sourceLanguage, $originWiki
 				);
 			} else {
-				$pageMessageStatus = MassMessage::getPageContentFromWiki(
-					$pageMessageTitle, $originWiki
+				$pageMessageStatus = MassMessage::getContent(
+					$titleStr, $originWiki
 				);
 			}
 

@@ -60,7 +60,9 @@ class MassMessageJobTest extends MassMessageTestCase {
 		return $title;
 	}
 
-	private function createPageByTitle( Title $title, string $pageContent ) {
+	private function createPageByTitle(
+		Title $title, string $pageContent, string $langCode = null
+	) {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $pageContent, $title );
 
@@ -73,6 +75,21 @@ class MassMessageJobTest extends MassMessageTestCase {
 				'There was an error while creating the page message with title - ' .
 				$title->getPrefixedText()
 			);
+		}
+
+		if ( $langCode ) {
+			$requestContext = new RequestContext();
+			$requestContext->setLanguage( 'en' );
+			$requestContext->setUser( $this->getTestSysop()->getUser() );
+			$status = SpecialPageLanguage::changePageLanguage(
+				$requestContext, $title, $langCode, 'testing'
+			);
+
+			if ( !$status->isOK() ) {
+				throw new RuntimeException(
+					"Unable to change page language. Error: " . $status->getMessage()
+				);
+			}
 		}
 	}
 
@@ -186,19 +203,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 		// Create target user talk page and change the page language.
 		$target = $this->getTargetTitle( 'Project:Testing1234' );
-		$this->createPageByTitle( $target, '' );
-		$requestContext = new RequestContext();
-		$requestContext->setLanguage( 'en' );
-		$requestContext->setUser( $this->getTestSysop()->getUser() );
-		$status = SpecialPageLanguage::changePageLanguage(
-			$requestContext, $target, 'fr', 'testing'
-		);
-
-		if ( !$status->isOK() ) {
-			throw new RuntimeException(
-				"Unable to change page language. Error: " . $status->getMessage()
-			);
-		}
+		$this->createPageByTitle( $target, '', 'fr' );
 
 		// Create the message page with /fr suffix
 		$this->createPage( $pageMessageTitleStr . '/fr', $pageMessageContent );
@@ -207,6 +212,73 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'page-message' => 'PageMessage',
 			'pageMessageTitle' => Title::newFromText( $pageMessageTitleStr )->getPrefixedText(),
 			'isSourceTranslationPage' => true,
+			'originWiki' => WikiMap::getCurrentWikiId()
+		] );
+
+		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$this->assertNotNull( $content );
+		$this->assertStringContainsString(
+			$pageMessageContent,
+			$content->getNativeData()
+		);
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 */
+	public function testTranslatableFallback() {
+		$this->setMwGlobals( [
+			'wgPageLanguageUseDB' => true,
+		] );
+
+		$pageMessageContent = 'Test page message - PT.';
+		$pageMessageTitleStr = 'PageMessage - PT';
+
+		// Create target user talk page and change the page language.
+		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$this->createPageByTitle( $target, '', 'pt-br' );
+
+		// Create the message page with /pt suffix
+		$this->createPage( $pageMessageTitleStr . '/pt', $pageMessageContent );
+
+		$this->simulateJob( $target, [
+			'page-message' => 'PageMessage',
+			'pageMessageTitle' => Title::newFromText( $pageMessageTitleStr )->getPrefixedText(),
+			'isSourceTranslationPage' => true,
+			'originWiki' => WikiMap::getCurrentWikiId()
+		] );
+
+		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$this->assertNotNull( $content );
+		$this->assertStringContainsString(
+			$pageMessageContent,
+			$content->getNativeData()
+		);
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 */
+	public function testTranslatableFallbackSource() {
+		$this->setMwGlobals( [
+			'wgPageLanguageUseDB' => true,
+		] );
+
+		$pageMessageContent = 'Test page message - EN.';
+		$pageMessageTitleStr = 'PageMessage - EN';
+
+		// Create target user talk page and change the page language.
+		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$this->createPageByTitle( $target, '', 'pt-br' );
+
+		// Create the message page with /en suffix
+		$this->createPage( $pageMessageTitleStr . '/en', $pageMessageContent );
+
+		$this->simulateJob( $target, [
+			'page-message' => 'PageMessage',
+			'pageMessageTitle' => Title::newFromText( $pageMessageTitleStr )->getPrefixedText(),
+			'isSourceTranslationPage' => true,
+			'translationPageSourceLanguage' => 'en',
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
 

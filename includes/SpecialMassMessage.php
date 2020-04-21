@@ -304,12 +304,12 @@ class SpecialMassMessage extends SpecialPage {
 
 		$pageContent = '';
 		if ( $data['page-message'] !== '' ) {
-			$pageTitle = MassMessage::getPageTitle( $data['page-message'] )->getValue();
+			$pageTitle = MassMessage::getLocalContentTitle( $data['page-message'] )->getValue();
 			if ( MassMessage::isSourceTranslationPage( $pageTitle ) ) {
 				$infoMessages[] = $this->msg( 'massmessage-translate-page-info' )->parse();
 			}
 
-			$pageContent = MassMessage::getPageContent( $pageTitle )->getValue() ?? '';
+			$pageContent = MassMessage::getLocalContent( $pageTitle )->getValue() ?? '';
 		}
 
 		$this->showPreviewInfo( $infoMessages );
