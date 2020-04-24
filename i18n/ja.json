@@ -47,7 +47,7 @@
 	"logentry-massmessage-skipoptout": "宛先がメッセージ配信を拒否しているため、$3 への「$4」の送信をスキップしました",
 	"logentry-massmessage-skipnouser": "利用者アカウントが存在しないため、$3 への「$4」の送信がスキップされました",
 	"massmessage-cannot-rename": "これはシステム アカウントであるため、名前を変更できません。",
-	"massmessage-nextsteps": "[[Special:MassMessage|別のメッセージを送信できます]]。[[Special:Statistics|待ち行列内のメッセージ数を閲覧することもできます]]。",
+	"massmessage-nextsteps": "[[Special:MassMessage|別のメッセージを送信できます]]。",
 	"massmessage-content-pages": "リスト内のページ",
 	"massmessage-content-pagesonsite": "$1 のページ:",
 	"massmessage-content-localpages": "このウィキのページ:",

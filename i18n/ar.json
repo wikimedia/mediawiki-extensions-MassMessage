@@ -9,6 +9,7 @@
 			"ديفيد",
 			"زكريا",
 			"علاء",
+			"محمد أحمد عبد الفتاح",
 			"مشعل الحربي"
 		]
 	},
@@ -19,6 +20,7 @@
 	"massmessage-form-spamlist": "صفحة تحتوي على قائمة صفحات يمكن ترك رسالة عليها:",
 	"massmessage-form-subject": "موضوع الرسالة (سيكون ملخص التحرير أيضًا):",
 	"massmessage-form-message": "نص الرسالة:",
+	"massmessage-form-page": "الصفحة التي سترسل كرسالة:",
 	"massmessage-form-page-help": "سيتم إلحاق محتوى الصفحة مع الرسائل، إذا تم توفيرها",
 	"massmessage-form-preview": "معاينة",
 	"massmessage-form-submit": "إرسال",
