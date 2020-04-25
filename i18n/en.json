@@ -121,7 +121,7 @@
 	"massmessage-list-category": "MassMessage delivery lists",
 	"massmessage-list-category-desc": "The page is a delivery list for the [[Special:MassMessage|MassMessage]] extension.",
 	"tag-massmessage-delivery": "MassMessage delivery",
-	"tag-massmessage-delivery-description": "Message delivery using [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Message delivery using [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Type of log entry",
 	"log-action-filter-massmessage-send": "Mass message submission",
 	"log-action-filter-massmessage-failure": "Mass message delivery failure",
