@@ -72,6 +72,6 @@
 	"massmessage-summary-addmulti": "{{PLURAL:$1|Eng Säit|$1 Säiten}} dobäigesat",
 	"massmessage-summary-remove": "[[:$1]] ewechgeholl",
 	"massmessage-summary-removeonsite": "$1 op $2 ewechgeholl",
-	"tag-massmessage-delivery-description": "Verdeele vu Message mat Hëllef vun der [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Verdeele vu Message mat Hëllef vun der [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage-send": "Verschécke vu Massemessagen"
 }

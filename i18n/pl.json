@@ -126,7 +126,7 @@
 	"massmessage-list-category": "Listy odbiorców masowych wiadomości",
 	"massmessage-list-category-desc": "Ta strona zawiera listę odbiorców dla rozszerzenia [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "Wiadomość MassMessage",
-	"tag-massmessage-delivery-description": "Dostarczenie masowej wiadomości poprzez [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Dostarczenie masowej wiadomości poprzez [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Rodzaj wpisu rejestru",
 	"log-action-filter-massmessage-send": "Wysłanie masowej wiadomości",
 	"log-action-filter-massmessage-failure": "Nieudane wysłanie masowej wiadomości",

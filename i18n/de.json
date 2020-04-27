@@ -123,7 +123,7 @@
 	"massmessage-list-category": "Massennachrichten-Versandlisten",
 	"massmessage-list-category-desc": "Die Seite ist eine Versandliste für die [[Special:MassMessage|Massennachrichten]]-Erweiterung.",
 	"tag-massmessage-delivery": "Versand von Massennachrichten",
-	"tag-massmessage-delivery-description": "Versand von Nachrichten mithilfe der Erweiterung „[[:mw:Extension:MassMessage|MassMessage]]“",
+	"tag-massmessage-delivery-description": "Versand von Nachrichten mithilfe der Erweiterung „[[:mw:Special:MyLanguage/Extension:MassMessage|MassMessage]]“",
 	"log-action-filter-massmessage": "Typ des Logbucheintrags",
 	"log-action-filter-massmessage-send": "Versand von Massennachrichten",
 	"log-action-filter-massmessage-failure": "Massennachrichten-Versandfehler",

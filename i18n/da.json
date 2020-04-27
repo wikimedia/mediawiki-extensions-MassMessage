@@ -108,5 +108,5 @@
 	"massmessage-list-category": "Leveringslister til massebeskeder",
 	"massmessage-list-category-desc": "Denne side er en leveringsliste for [[Special:MassMessage|MassMessage]]-udvidelsen.",
 	"tag-massmessage-delivery": "Levering af massebesked",
-	"tag-massmessage-delivery-description": "Levering af besked via [[:mw:Extension:MassMessage|Extension:MassMessage]]"
+	"tag-massmessage-delivery-description": "Levering af besked via [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
 }

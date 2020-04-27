@@ -10,7 +10,7 @@
 	"logentry-massmessage-skipbadns": "Дастаўка «$4» для $3 была прапушчана, бо мэтавая старонка знаходзіцца ў недасягальнай прасторы назваў",
 	"logentry-massmessage-skipnouser": "Дастаўка «$4» для $3 была прапушчана, бо ўліковы запіс карыстальніка не існуе",
 	"tag-massmessage-delivery": "дастаўка масавых паведамленняў",
-	"tag-massmessage-delivery-description": "Дастаўка паведамленняў з дапамогай [[:mw:Extension:MassMessage|пашырэння MassMessage]]",
+	"tag-massmessage-delivery-description": "Дастаўка паведамленняў з дапамогай [[:mw:Special:MyLanguage/Extension:MassMessage|пашырэння MassMessage]]",
 	"log-action-filter-massmessage": "Тып журнала",
 	"log-action-filter-massmessage-failure": "Няўдалая дастаўка масавых паведамленняў",
 	"log-action-filter-massmessage-skipoptout": "Мэта прапушчана з-за адмовы ад атрыманняў",

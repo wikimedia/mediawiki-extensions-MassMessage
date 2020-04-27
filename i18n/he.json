@@ -120,7 +120,7 @@
 	"massmessage-list-category": "רשימות משלוח של הודעות המוניות",
 	"massmessage-list-category-desc": "הדף הוא רשימה של משלוח עבור ההרחבה [[Special:MassMessage|הודעה המונית]].",
 	"tag-massmessage-delivery": "משלוח הודעה המונית",
-	"tag-massmessage-delivery-description": "שליחת הודעה באמצעות [[:mw:Extension:MassMessage|הרחבה לשליחת הודעות למשתמשים מרובים]]",
+	"tag-massmessage-delivery-description": "שליחת הודעה באמצעות [[:mw:Special:MyLanguage/Extension:MassMessage|הרחבה לשליחת הודעות למשתמשים מרובים]]",
 	"log-action-filter-massmessage": "סוג רשימת יומן",
 	"log-action-filter-massmessage-send": "שליחה בהודעה המונית",
 	"log-action-filter-massmessage-failure": "כשל בשליחת הודעה המונית",

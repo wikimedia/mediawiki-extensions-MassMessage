@@ -106,7 +106,7 @@
 	"massmessage-list-category": "Llistes d'entrega de MassMessage",
 	"massmessage-list-category-desc": "La páxina ye una llista d'entrega pa la estensión [[Special:MassMessage|MassMessage]]",
 	"tag-massmessage-delivery": "Entrega de mensaxes en masa",
-	"tag-massmessage-delivery-description": "Entrega de mensaxes usando [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Entrega de mensaxes usando [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipu d'entrada de rexistru",
 	"log-action-filter-massmessage-send": "Unviu de mensaxe masivu",
 	"log-action-filter-massmessage-failure": "Fallu na distribución de mensaxe masivu",

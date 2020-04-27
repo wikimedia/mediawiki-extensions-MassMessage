@@ -54,5 +54,5 @@
 	"massmessage-list-category": "Списъци за доставка на масови съобщения",
 	"massmessage-list-category-desc": "Страницата е списък за доставка към разширението [[Special:MassMessage|масови съобщения]].",
 	"tag-massmessage-delivery": "Доставка на масови съобщения",
-	"tag-massmessage-delivery-description": "Доставка на съобщение чрез [[:mw:Extension:MassMessage|разширението „MassMessage“]]"
+	"tag-massmessage-delivery-description": "Доставка на съобщение чрез [[:mw:Special:MyLanguage/Extension:MassMessage|разширението „MassMessage“]]"
 }

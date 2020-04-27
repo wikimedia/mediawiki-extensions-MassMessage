@@ -111,5 +111,5 @@
 	"massmessage-list-category": "Списки массовой доставки",
 	"massmessage-list-category-desc": "Эта страница — список доставки для расширения [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "доставка MassMessage",
-	"tag-massmessage-delivery-description": "Доставка сообщений, используя [[:mw:Extension:MassMessage|расширение MassMessage]]"
+	"tag-massmessage-delivery-description": "Доставка сообщений, используя [[:mw:Special:MyLanguage/Extension:MassMessage|расширение MassMessage]]"
 }

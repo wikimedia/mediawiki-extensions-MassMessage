@@ -118,7 +118,7 @@
 	"massmessage-list-category": "大量信息递送列表",
 	"massmessage-list-category-desc": "页面用于[[Special:MassMessage|大量信息]]扩展程序的递送列表。",
 	"tag-massmessage-delivery": "群发消息递送",
-	"tag-massmessage-delivery-description": "通过[[:mw:Extension:MassMessage|Extension:MassMessage]]发送",
+	"tag-massmessage-delivery-description": "通过[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]发送",
 	"log-action-filter-massmessage": "日志记录类型",
 	"log-action-filter-massmessage-send": "大量信息提交",
 	"log-action-filter-massmessage-failure": "大量信息递送失败",

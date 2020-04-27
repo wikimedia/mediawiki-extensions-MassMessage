@@ -106,7 +106,7 @@
 	"massmessage-list-category": "Elenghe de conzegne MassMessage",
 	"massmessage-list-category-desc": "'A pàgene jè 'n'elenghe de conzegne pe l'estenzione [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "Conzegne MassMessage",
-	"tag-massmessage-delivery-description": "Messàgge conzegnate ausanne [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Messàgge conzegnate ausanne [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Tipe de vôsce de l'archivije",
 	"log-action-filter-massmessage-send": "Conferme de le messàgge massive",
 	"log-action-filter-massmessage-failure": "Conzegne de le messàgge massive fallite",

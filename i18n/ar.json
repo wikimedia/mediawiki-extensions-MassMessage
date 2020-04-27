@@ -117,7 +117,7 @@
 	"massmessage-list-category": "قوائم بعث الرسائل الكمية",
 	"massmessage-list-category-desc": "الصفحة قائمة تسليم للامتداد [[Special:MassMessage|رسالة كمية]].",
 	"tag-massmessage-delivery": "تسليم رسائل كمية",
-	"tag-massmessage-delivery-description": "تسليم رسالة باستخدام [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "تسليم رسالة باستخدام [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "نوع إدخال السجل",
 	"log-action-filter-massmessage-send": "تقديم رسالة جماعية",
 	"log-action-filter-massmessage-failure": "فشل تسليم الرسالة الجماعية",

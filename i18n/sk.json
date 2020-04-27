@@ -17,5 +17,5 @@
 	"massmessage-create-editsummary-catimport": "Vytvoriť distribučný zoznam pre hromadné správy s položkami z [[$1]]",
 	"massmessage-list-category": "Distribučné zoznamy MassMessage",
 	"tag-massmessage-delivery": "doručenie hromadnej správy",
-	"tag-massmessage-delivery-description": "Doručenie správy pomocou rozšírenia [[:mw:Extension:MassMessage|MassMessage]]"
+	"tag-massmessage-delivery-description": "Doručenie správy pomocou rozšírenia [[:mw:Special:MyLanguage/Extension:MassMessage|MassMessage]]"
 }

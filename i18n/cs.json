@@ -72,5 +72,5 @@
 	"massmessage-list-category": "Distribuční seznamy MassMessage",
 	"massmessage-list-category-desc": "Stránka je seznamem příjemců pro rozšíření [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "doručení hromadné zprávy",
-	"tag-massmessage-delivery-description": "Doručení zprávy pomocí [[:mw:Extension:MassMessage|rozšíření MassMessage]]"
+	"tag-massmessage-delivery-description": "Doručení zprávy pomocí [[:mw:Special:MyLanguage/Extension:MassMessage|rozšíření MassMessage]]"
 }

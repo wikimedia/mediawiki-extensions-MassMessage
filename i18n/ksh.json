@@ -82,5 +82,5 @@
 	"massmessage-summary-removeonsite": "Han $1 op $2 fottjeschmeße",
 	"massmessage-summary-removemulti": "{{PLURAL:$1|Ein Sigg|$1 Sigge|Kein Sigge}} fottjeschmeße",
 	"tag-massmessage-delivery": "Nohreeschte ang Maßß verschek",
-	"tag-massmessage-delivery-description": "Nohreeschte ang Maßß verscheke met däm Zohsazprojramm\n[[:mw:Extension:MassMessage|Extension:MassMessage]]\n!!FUZZYY!!"
+	"tag-massmessage-delivery-description": "Nohreeschte ang Maßß verscheke met däm Zohsazprojramm\n[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
 }

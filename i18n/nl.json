@@ -124,7 +124,7 @@
 	"massmessage-list-category": "MassMessage-afleverlijsten",
 	"massmessage-list-category-desc": "De pagina is een afleverlijst voor de uitbreiding [[Special:MassMessage|MassMessage]]",
 	"tag-massmessage-delivery": "MassMessage-bezorging",
-	"tag-massmessage-delivery-description": "Bulkbericht verzending met [[:mw:Extension:MassMessage|Uitbreiding:MassMessage]]",
+	"tag-massmessage-delivery-description": "Bulkbericht verzending met [[:mw:Special:MyLanguage/Extension:MassMessage|Uitbreiding:MassMessage]]",
 	"log-action-filter-massmessage": "Soort logboekregel",
 	"log-action-filter-massmessage-skipnouser": "Doel overgeslagen omdat de gebruiker niet bestaat"
 }

@@ -113,6 +113,6 @@
 	"massmessage-summary-removemulti": "حذف $1 {{PLURAL:$1|صفحه|صفحه}}",
 	"massmessage-list-category": "فهرست‌های تحویل پیام انبوه",
 	"tag-massmessage-delivery": "ارسال پیام انبوه",
-	"tag-massmessage-delivery-description": "ارسال پیام انبوه توسط [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "ارسال پیام انبوه توسط [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "نوع سیاهه"
 }

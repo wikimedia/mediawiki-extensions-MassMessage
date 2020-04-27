@@ -108,7 +108,7 @@
 	"massmessage-list-category": "MassMessage leveringsliste",
 	"massmessage-list-category-desc": "Siden er en leveringsliste for [[Special:MassMessage|MassMessage]]-utvidelsen.",
 	"tag-massmessage-delivery": "massemeldingslevering",
-	"tag-massmessage-delivery-description": "Meldingslevering med [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Meldingslevering med [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Type loggoppføring",
 	"log-action-filter-massmessage-send": "Massemeldingslevering",
 	"log-action-filter-massmessage-failure": "Feil under massemeldingslevering",

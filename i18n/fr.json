@@ -129,7 +129,7 @@
 	"massmessage-list-category": "Listes de diffusion de MassMessage",
 	"massmessage-list-category-desc": "Cette page est une liste de diffusion pour l’extension [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "Distribution par MassMessage",
-	"tag-massmessage-delivery-description": "Message distribué en utilisant [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Message distribué en utilisant [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Type d’entrée du journal",
 	"log-action-filter-massmessage-send": "Envoi d’un message de masse",
 	"log-action-filter-massmessage-failure": "Échec de distribution d’un message de masse",

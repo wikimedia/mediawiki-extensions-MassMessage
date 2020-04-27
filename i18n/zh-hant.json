@@ -124,7 +124,7 @@
 	"massmessage-list-category": "大量訊息傳遞清單",
 	"massmessage-list-category-desc": "此頁面為 [[Special:MassMessage|MassMessage]] 擴充套件的傳遞清單。",
 	"tag-massmessage-delivery": "傳送大量訊息",
-	"tag-massmessage-delivery-description": "使用[[:mw:Extension:MassMessage|Extension:MassMessage]]傳送。",
+	"tag-massmessage-delivery-description": "使用[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]傳送。",
 	"log-action-filter-massmessage": "日誌記錄類型",
 	"log-action-filter-massmessage-send": "大量訊息提交",
 	"log-action-filter-massmessage-failure": "大量訊息提交失敗",

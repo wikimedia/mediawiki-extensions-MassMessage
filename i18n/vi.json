@@ -107,7 +107,7 @@
 	"massmessage-list-category": "Danh sách gửi thông báo rộng rãi",
 	"massmessage-list-category-desc": "Trang này là một danh sách gửi thông báo cho phần mở rộng [[Special:MassMessage|Thông báo rộng rãi]].",
 	"tag-massmessage-delivery": "thông báo gửi rộng rãi",
-	"tag-massmessage-delivery-description": "Thông báo gửi rộng rãi qua [[:mw:Extension:MassMessage|Extension:MassMessage]]",
+	"tag-massmessage-delivery-description": "Thông báo gửi rộng rãi qua [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
 	"log-action-filter-massmessage": "Kiểu mục nhật trình",
 	"log-action-filter-massmessage-send": "Đệ trình thông báo rộng rãi",
 	"log-action-filter-massmessage-failure": "Thất bại khi gửi thông báo rộng rãi",

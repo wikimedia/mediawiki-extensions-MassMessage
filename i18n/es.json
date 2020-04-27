@@ -120,7 +120,7 @@
 	"massmessage-list-category": "Listas de distribución de MassMessage",
 	"massmessage-list-category-desc": "La página es una lista de distribución de la extensión [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "Distribución de MassMessage",
-	"tag-massmessage-delivery-description": "Mensaje distribuido usando [[:mw:Extension:MassMessage|Extensión:MassMessage]]",
+	"tag-massmessage-delivery-description": "Mensaje distribuido usando [[:mw:Special:MyLanguage/Extension:MassMessage|Extensión:MassMessage]]",
 	"log-action-filter-massmessage": "Tipo de entrada del registro",
 	"log-action-filter-massmessage-send": "Envío masivo de mensajes",
 	"log-action-filter-massmessage-failure": "Fallo de envío masivo de mensajes",

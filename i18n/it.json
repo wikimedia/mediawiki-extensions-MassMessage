@@ -111,5 +111,5 @@
 	"massmessage-list-category": "Elenchi di consegna MassMessage",
 	"massmessage-list-category-desc": "Questa pagina è un'elenco di consegna per l'estensione [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "Consegna MassMessage",
-	"tag-massmessage-delivery-description": "Messaggio consegnato utilizzanto [[:mw:Extension:MassMessage|Extension:MassMessage]]"
+	"tag-massmessage-delivery-description": "Messaggio consegnato utilizzanto [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
 }

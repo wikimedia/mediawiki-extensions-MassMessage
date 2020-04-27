@@ -118,7 +118,7 @@
 	"massmessage-list-category": "Списоци за достава на Масовни пораки",
 	"massmessage-list-category-desc": "Страницата е список за достава за додатокот [[Special:MassMessage|Масовни пораки]].",
 	"tag-massmessage-delivery": "Достава на масовни пораки",
-	"tag-massmessage-delivery-description": "Масовна достава на пораки со помош на додатокот „[[:mw:Extension:MassMessage|Масовни пораки]]“",
+	"tag-massmessage-delivery-description": "Масовна достава на пораки со помош на додатокот „[[:mw:Special:MyLanguage/Extension:MassMessage|Масовни пораки]]“",
 	"log-action-filter-massmessage": "Вид дневнички запис",
 	"log-action-filter-massmessage-send": "Поднесување на масовни пораки",
 	"log-action-filter-massmessage-failure": "Неуспех во доставата на масовната порака",
