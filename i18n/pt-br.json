@@ -9,6 +9,7 @@
 			"He7d3r",
 			"Helder.wiki",
 			"Jefersonmoraes",
+			"Jhonnatanricardo",
 			"Luan",
 			"Luckas"
 		]
@@ -40,6 +41,8 @@
 	"massmessage-page-message-no-revision-content": "A página: \"$1\", selecionada para ser enviada como mensagem, não possui conteúdo de revisão. ID da revisão: \"$2\"",
 	"massmessage-page-message-wiki-not-found": "Não foi possível encontrar a wiki: \"$1\" para buscar a página: \"$2\", selecionado para ser enviado como mensagem.",
 	"massmessage-page-message-parse-error-in-wiki": "Ocorreu um erro ao buscar a página: \"$2\", selecionado para ser enviado como mensagem, da wiki: \"$1\". Erro: $3",
+	"massmessage-page-message-not-found-in-wiki": "A página \"$2\", da wiki: \"$1\", selecionada para ser enviada como mensagem, não foi encontrada.",
+	"massmessage-invalid-lang": "Código de linguagem inválido: \"$1\"",
 	"massmessage-page-message-parse-invalid-in-wiki": "Uma resposta inválida foi enviada ao buscar a página: \"$2\", selecionada para ser enviada como mensagem, na wiki: \"$1\". Resposta: $3",
 	"massmessage-page-message-empty": "A página: \"$1\", selecionada para ser enviada como mensagem, não possui conteúdo.",
 	"massmessage-unescaped-langlinks": "Aviso: Há links interlínguas na sua mensagem que não começam com dois pontos.",

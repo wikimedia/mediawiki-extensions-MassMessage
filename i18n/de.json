@@ -37,6 +37,8 @@
 	"massmessage-page-message-no-revision-content": "Die Seite „$1“, die zum Senden als Nachricht ausgewählt wurde, hat in der Version keinen Inhalt. Versions-ID: „$2“",
 	"massmessage-page-message-wiki-not-found": "Das Wiki „$1“ zum Abruf der Seite „$2“ konnte nicht gefunden werden: sie wurde ausgewählt, um als Nachricht gesendet zu werden.",
 	"massmessage-page-message-parse-error-in-wiki": "Beim Abrufen der Seite „$2“ ist ein Fehler aufgetreten: diese wurde ausgewählt, um als Nachricht aus dem Wiki „$1“ gesendet zu werden. Fehler: $3",
+	"massmessage-page-message-not-found-in-wiki": "Die Seite „$2“ im Wiki „$1“, die zum Senden als Nachricht ausgewählt wurde, wurde nicht gefunden.",
+	"massmessage-invalid-lang": "Ungültiger Sprachcode: „$1“",
 	"massmessage-page-message-parse-invalid-in-wiki": "Beim Abrufen der Seite „$2“ wurde eine ungültige Antwort gesendet: diese wurde ausgewählt, um als Nachricht aus dem Wiki „$1“ gesendet zu werden. Antwort: $3",
 	"massmessage-page-message-empty": "Die Seite „$1“, die zum Senden als Nachricht ausgewählt wurde, hat keinen Inhalt.",
 	"massmessage-unescaped-langlinks": "Warnung: Deine Nachricht enthält ungültige Sprachlinks.",

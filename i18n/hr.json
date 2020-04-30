@@ -8,6 +8,7 @@
 	},
 	"massmessage": "Slanje masovnih poruka",
 	"createmassmessagelist": "Stvori popis isporuka masovne poruke",
+	"massmessage-invalid-lang": "Neispravan jezični kôd: »$1«",
 	"log-name-massmessage": "Evidencija isporuka masovne poruke",
 	"logentry-massmessage-failure": "Dostava poruke »$4« na stranicu $3 nije uspjela, s kôdom pogrješke: <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Dostava poruke »$4« na stranicu $3 nije izvršena jer je odredište u imenskom prostoru koji nije predviđen za objavljivanje poruka.",

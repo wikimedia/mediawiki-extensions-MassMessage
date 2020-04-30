@@ -38,6 +38,8 @@
 	"massmessage-page-message-no-revision-content": "頁面「$1」被選為訊息發送，但沒有修訂內容。修訂 ID：「$2」",
 	"massmessage-page-message-wiki-not-found": "無法找到 wiki「$1」來索取頁面「$2」，選擇作為訊息發送。",
 	"massmessage-page-message-parse-error-in-wiki": "在索取頁面「$2」時發生錯誤，請選擇從 wiki「$1」作為訊息發送。錯誤：$3",
+	"massmessage-page-message-not-found-in-wiki": "來自 wiki：「$1」的頁面「$2」被選作為訊息發送，但查無該頁面。",
+	"massmessage-invalid-lang": "無效的語言代碼：「$1」",
 	"massmessage-page-message-parse-invalid-in-wiki": "在索取頁面「$2」時發送了無效回應，請選擇從 wiki「$1」作為訊息發送。回應：$3",
 	"massmessage-page-message-empty": "頁面「$1」被選為訊息發送，但沒有內容。",
 	"massmessage-unescaped-langlinks": "警告：您的訊息中含有未使用跳脫字元的語言連結。",
