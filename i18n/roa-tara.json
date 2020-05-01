@@ -22,6 +22,7 @@
 	"massmessage-spamlist-invalid": "'A pàgena specificate non ge tène 'n'elenghe de spediziune valide.",
 	"massmessage-empty-subject": "'A linèe de l'oggette jè vacande.",
 	"massmessage-empty-message": "'U cuèrpe d'u messàgge jè vacande.",
+	"massmessage-invalid-lang": "Code de lènghe non valide: \"$1\"",
 	"massmessage-unescaped-langlinks": "Attenziò: stonne collegaminde de lènghe senze escape jndr'à 'u messàgge tune.",
 	"massmessage-no-timestamp": "attenziò: 'u messàgge non ge 'ngludone date e ore o 'a firme.",
 	"massmessage-form-header": "Ause 'u module aqquà sotte pe mannà messàgge a 'n'elenghe specifiche. Tutte le cambe sò obbligatorije ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage cchiù 'mbormaziune]).",
