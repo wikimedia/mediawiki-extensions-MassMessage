@@ -40,7 +40,7 @@
 	"massmessage-page-message-no-revision-content": "İleti olarak gönderilmek üzere seçilen \"$1\" sayfasının düzeltme içeriği yok. Revizyon kimliği: \"$2\"",
 	"massmessage-page-message-wiki-not-found": "Mesaj olarak gönderilmek üzere seçilen \"$2\" sayfası getirilecek \"$1\" viki bulunamadı.",
 	"massmessage-page-message-parse-error-in-wiki": "\"$1\" sayfasından mesaj olarak gönderilmek üzere seçilen \"$2\" sayfası getirilirken bir hata oluştu. Hata: $3",
-	"massmessage-page-message-not-found-in-wiki": "Mesaj olarak gönderilmek üzere seçilen viki: \"$1\" sayfasındaki \"$2\" sayfası bulunamadı.",
+	"massmessage-page-message-not-found-in-wiki": "Mesaj olarak gönderilmek üzere seçilen \"$1\" vikisinden \"$2\" sayfası bulunamadı.",
 	"massmessage-invalid-lang": "Geçersiz dil kodu: \"$1\"",
 	"massmessage-page-message-parse-invalid-in-wiki": "Mesaj olarak gönderilmek üzere seçilen \"$2\" sayfası getirilirken \"$1\" vikisinden geçersiz bir yanıt gönderildi. Yanıt: $3",
 	"massmessage-page-message-empty": "Mesaj olarak gönderilmek üzere seçilen \"$1\" sayfasının içeriği yok.",

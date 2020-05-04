@@ -28,6 +28,7 @@
 	"massmessage-spamlist-invalid": "Den angivna sidan innehåller inte en giltig leveranslista.",
 	"massmessage-empty-subject": "Ämnesraden är tom.",
 	"massmessage-empty-message": "Meddelandets innehåll är tomt.",
+	"massmessage-invalid-lang": "Ogiltigt språkkod: \"$1\"",
 	"massmessage-unescaped-langlinks": "Varning: Det finns \"unescaped\" språklänkar i ditt meddelande.",
 	"massmessage-no-timestamp": "Varning: Ditt meddelande innehåller inte en tidsstämpel eller signatur.",
 	"massmessage-form-header": "Använd formuläret nedan för att skicka meddelanden till en angiven lista. Alla fält är obligatoriska ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage för mer information]).",

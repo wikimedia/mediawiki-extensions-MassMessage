@@ -45,7 +45,7 @@
 	"logentry-massmessage-skipoptout": "Испорука поруке „$4” на страницу $3 је прескочена; корисник је одбио сагласност испоруке порука",
 	"logentry-massmessage-skipnouser": "Испорука поруке „$4” на страницу $3 је прескочена; кориснички налог не постоји",
 	"massmessage-cannot-rename": "Ово је системски налог; не може да се преименује.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Пошаљите још једну поруку]] или [[Special:Statistics|погледајте колико порука су стављене у ред за чекање]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Пошаљите још једну поруку]].",
 	"massmessage-content-pages": "Странице у овој листи",
 	"massmessage-content-pagesonsite": "Странице на $1:",
 	"massmessage-content-localpages": "Странице на овом wiki-ју:",
