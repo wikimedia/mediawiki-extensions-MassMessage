@@ -32,6 +32,7 @@
 	"massmessage-spamlist-invalid": "صفحهٔ مورد نظر حاوی فهرستی معتبر از گیرندگان نیست.",
 	"massmessage-empty-subject": "عنوان خالی است.",
 	"massmessage-empty-message": "بدنهٔ پیام خالی است.",
+	"massmessage-invalid-lang": "کد نامعتبر زبان: «$1»",
 	"massmessage-unescaped-langlinks": "هشدار: پیوندهای زبان غیررها در پیام شما وجود دارد.",
 	"massmessage-no-timestamp": "هشدار: پیام شما حاوی برچسب زمان یا امضا نیست.",
 	"massmessage-form-header": "از فرم زیر برای ارسال پیام‌ها به یک فهرست مشخص‌شده استفاده کنید. همهٔ موارد الزامی هستند ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage اطلاعات بیشتر]).",

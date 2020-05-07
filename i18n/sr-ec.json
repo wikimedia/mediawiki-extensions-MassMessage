@@ -26,6 +26,7 @@
 	"massmessage-spamlist-invalid": "Наведена страница не садржи важећу листу испоруке.",
 	"massmessage-empty-subject": "Поље „Тема” је празно.",
 	"massmessage-empty-message": "Поље „Текст” је празно.",
+	"massmessage-invalid-lang": "Неважећи језички кôд: „$1”",
 	"massmessage-no-timestamp": "Упозорење: Ваша порука не укључује ни временску ознаку ни потпис.",
 	"massmessage-form-header": "Користите образац испод да бисте послали поруке наведеним корисницима са листе. Сва поља су обавезна ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage више информација]).",
 	"massmessage-hidden-comment": "<!-- Поруку је послао/ла Корисник:$1@$2 коришћењем листе са URL адресе $3 -->",
