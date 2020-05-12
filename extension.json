@@ -10,15 +10,25 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
 	"config": {
-		"NamespacesToPostIn": [
-			4
-		],
-		"AllowGlobalMessaging": true,
-		"NamespacesToConvert": {
-			"2": 3
+		"NamespacesToPostIn": {
+			"value": [
+				4
+			]
 		},
-		"MassMessageAccountUsername": "MediaWiki message delivery",
-		"MassMessageWikiAliases": {}
+		"AllowGlobalMessaging": {
+			"value": true
+		},
+		"NamespacesToConvert": {
+			"value": {
+				"2": 3
+			}
+		},
+		"MassMessageAccountUsername": {
+			"value": "MediaWiki message delivery"
+		},
+		"MassMessageWikiAliases": {
+			"value": []
+		}
 	},
 	"requires": {
 		"MediaWiki": ">= 1.35.0"
@@ -169,11 +179,21 @@
 	},
 	"ActionFilteredLogs": {
 		"massmessage": {
-			"send": [ "send" ],
-			"failure": [ "failure" ],
-			"skipoptout": [ "skipoptout" ],
-			"skipnouser": [ "skipnouser" ],
-			"skipbadns": [ "skipbadns" ]
+			"send": [
+				"send"
+			],
+			"failure": [
+				"failure"
+			],
+			"skipoptout": [
+				"skipoptout"
+			],
+			"skipnouser": [
+				"skipnouser"
+			],
+			"skipbadns": [
+				"skipbadns"
+			]
 		}
 	},
 	"AvailableRights": [
@@ -191,5 +211,5 @@
 		"MediaWiki\\MassMessage\\MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
 		"MediaWiki\\MassMessage\\MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php"
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
