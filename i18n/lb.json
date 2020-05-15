@@ -19,6 +19,7 @@
 	"massmessage-spamlist-doesnotexist": "Déi spezifizéiert Lëscht vu Säite oder Kategorie gëtt et net.",
 	"massmessage-empty-subject": "D'Linn mam Sujet ass eidel.",
 	"massmessage-empty-message": "Den Inhalt vum Message ass eidel. Gitt den Text vum Message an oder sicht eng Säit eraus déi als Message geschéckt gi soll.",
+	"massmessage-invalid-lang": "Net valabele Sproochecode: \"$1\"",
 	"massmessage-unescaped-langlinks": "Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.",
 	"massmessage-no-timestamp": "Warnung: An Ärem Message ass Keen Zäitstempel oder keng Ënnerschrëft.",
 	"massmessage-form-header": "Benotzt de Formulaire hei drënner fir Messagen un eng spezifesch Lëscht ze schécken. All Felder sinn obligatoresch. ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage méi Informatiounen]).",
