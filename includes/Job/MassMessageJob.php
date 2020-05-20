@@ -38,7 +38,7 @@ use WikiPage;
 
 class MassMessageJob extends Job {
 
-	const STRIP_TILDES = true;
+	private const STRIP_TILDES = true;
 
 	/**
 	 * @var bool Whether to use sender account (if possible)
