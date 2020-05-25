@@ -27,7 +27,7 @@
 	"massmessage-spamlist-doesnotexist": "Указаният списък на адресати или категория не съществува.",
 	"massmessage-spamlist-invalid": "Указаната страница не съдържа валиден списък от адресати.",
 	"massmessage-empty-subject": "Липсва резюме на съобщението.",
-	"massmessage-empty-message": "Липсва текст на съобщението.",
+	"massmessage-empty-message": "Липсва текст на съобщението. Въведете текст на съобщението или изберете страница, която да се изпрати като съобщение.",
 	"massmessage-no-timestamp": "Внимание: Съобщението Ви не съдържа подпис или индикация за дата и час.",
 	"massmessage-form-header": "Използвайте формуляра по-долу, за да изпратите съобщения до указан списък от адресати. Всички полета са задължителни  ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage вижте помощната страница]).",
 	"massmessage-hidden-comment": "<!-- Съобщението е изпратено от User:$1@$2, използвайки списъка с адресати от $3 -->",
