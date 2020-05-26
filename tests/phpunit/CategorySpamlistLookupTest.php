@@ -22,7 +22,7 @@ class CategorySpamlistLookupTest extends MassMessageTestCase {
 
 		$cat = Title::newFromText( 'Category:Spamlist1234' );
 		$targets = SpamlistLookup::getTargets( $cat );
-		self::assertEquals( 1, count( $targets ) );
+		self::assertSame( 1, count( $targets ) );
 		$values = array_values( $targets );
 		self::assertEquals( 'Talk:Testing1234', $values[0]['title'] );
 	}

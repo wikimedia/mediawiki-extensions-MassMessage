@@ -61,7 +61,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 		$this->assertArrayHasKey( 'result', $apiResult['massmessage'] );
 		$this->assertEquals( 'success', $apiResult['massmessage']['result'] );
 		$this->assertArrayHasKey( 'count', $apiResult['massmessage'] );
-		$this->assertEquals( 1, $apiResult['massmessage']['count'] );
+		$this->assertSame( 1, $apiResult['massmessage']['count'] );
 	}
 
 	/**
@@ -113,7 +113,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 			'page-message' => self::$pageMessage
 		], null, $sysop );
 
-		$this->assertEquals( 1, $apiResult[0]['massmessage']['count'] );
+		$this->assertSame( 1, $apiResult[0]['massmessage']['count'] );
 	}
 
 	public function testSendingInvalidPage() {
