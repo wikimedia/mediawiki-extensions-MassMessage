@@ -198,7 +198,7 @@ class MassMessageJob extends Job {
 
 		// If we're sending to a User:/User talk: page, make sure the user exists.
 		// Redirects are automatically followed in getLocalTargets
-		if ( $title->getNamespace() === NS_USER || $title->getNamespace() === NS_USER_TALK ) {
+		if ( $title->inNamespaces( NS_USER, NS_USER_TALK ) ) {
 			$user = User::newFromName( $title->getRootText() );
 			if ( !$user || !$user->getId() ) { // Does not exist
 				$this->logLocalSkip( 'skipnouser' );
@@ -253,7 +253,7 @@ class MassMessageJob extends Job {
 			'token' => $user->getEditToken()
 		];
 
-		if ( $this->title->getNamespace() === NS_USER_TALK ) {
+		if ( $this->title->inNamespace( NS_USER_TALK ) ) {
 			$params['bot'] = true;
 		}
 
