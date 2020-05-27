@@ -169,7 +169,10 @@ class MassMessage {
 		// Check and fetch the page message
 		$pageMessage = null;
 		if ( $data['page-message'] !== '' ) {
-			$pageMessageStatus = self::getLocalContentByTitle( $data['page-message'] );
+			$pageMessageStatus = self::getContent(
+				$data['page-message'],
+				WikiMap::getCurrentWikiId()
+			);
 			if ( $pageMessageStatus->isOK() ) {
 				$pageMessage = $pageMessageStatus->getValue();
 				if ( $pageMessage === '' ) {
@@ -234,38 +237,17 @@ class MassMessage {
 	}
 
 	/**
-	 * Helper method to get the page message for a page from the same wiki.
-	 *
-	 * @param string $messageTitle
-	 * @param int $pageNamespace
-	 * @return Status
-	 */
-	public static function getLocalContentByTitle(
-		string $messageTitle, int $pageNamespace = NS_MAIN
-	): Status {
-		$pageMessageStatus = self::getLocalContentTitle( $messageTitle, $pageNamespace );
-		if ( $pageMessageStatus->isOK() ) {
-			$pageMessageStatus = self::getLocalContent( $pageMessageStatus->getValue() );
-		}
-
-		return $pageMessageStatus;
-	}
-
-	/**
 	 * Fetch the page title given the title string
 	 *
 	 * @param string $title
-	 * @param int $pageNamespace
 	 * @return Status
 	 */
-	public static function getLocalContentTitle(
-		string $title, int $pageNamespace = NS_MAIN
-	): Status {
-		$pageTitle = Title::makeTitleSafe( $pageNamespace, $title );
+	public static function getLocalContentTitle( string $title ): Status {
+		$pageTitle = Title::newFromText( $title );
 
 		if ( $pageTitle === null ) {
 			return Status::newFatal(
-				'massmessage-page-message-invalid', "$pageNamespace::$title"
+				'massmessage-page-message-invalid', $title
 			);
 		} elseif ( !$pageTitle->exists() ) {
 			return Status::newFatal(
@@ -285,6 +267,14 @@ class MassMessage {
 	 * @return Status
 	 */
 	public static function getLocalContent( Title $pageTitle ): Status {
+		if ( !$pageTitle->exists() ) {
+			return Status::newFatal(
+				'massmessage-page-message-not-found',
+				$pageTitle->getPrefixedText(),
+				WikiMap::getCurrentWikiId()
+			);
+		}
+
 		$revision = MediaWikiServices::getInstance()
 			->getRevisionStore()->getRevisionByTitle( $pageTitle );
 
@@ -442,8 +432,13 @@ class MassMessage {
 	public static function getContent( string $titleStr, string $wikiId ): Status {
 		$isCurrentWiki = WikiMap::getCurrentWikiId() === $wikiId;
 		$title = Title::newFromText( $titleStr );
+		if ( $title === null ) {
+			return Status::newFatal(
+				'massmessage-page-message-invalid', $titleStr
+			);
+		}
 		if ( $isCurrentWiki ) {
-			$contentStatus = self::getLocalContentByTitle( $title, $title->getNamespace() );
+			$contentStatus = self::getLocalContent( $title );
 		} else {
 			$contentStatus = self::getRemoteContent( $title, $wikiId );
 		}
