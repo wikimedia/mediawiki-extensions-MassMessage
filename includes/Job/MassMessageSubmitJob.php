@@ -18,10 +18,6 @@ use Title;
 
 class MassMessageSubmitJob extends Job {
 	public function __construct( Title $title, array $params ) {
-		// Back-compat
-		if ( !isset( $params['class'] ) ) {
-			$params['class'] = MassMessageJob::class;
-		}
 		if ( !isset( $params['timestamp'] ) ) {
 			$params['timestamp'] = MWTimestamp::now();
 		}

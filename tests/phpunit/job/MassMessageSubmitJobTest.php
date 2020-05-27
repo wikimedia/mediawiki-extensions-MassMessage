@@ -13,7 +13,11 @@ class MassMessageSubmitJobTest extends MediaWikiTestCase {
 	 * @dataProvider provideGetJobs
 	 */
 	public function testGetJobs( $data, $pages ) {
-		$params = [ 'data' => $data, 'pages' => $pages ];
+		$params = [
+			'class' => MassMessageJob::class,
+			'data' => $data,
+			'pages' => $pages
+		];
 		$job = new MassMessageSubmitJob(
 			$this->createMock( \Title::class ),
 			$params
