@@ -76,14 +76,11 @@
 		"MassMessageListContent": "MediaWiki\\MassMessage\\Content\\MassMessageListContentHandler"
 	},
 	"ResourceModules": {
-		"ext.MassMessage.autocomplete": {
-			"scripts": "ext.MassMessage.autocomplete.js",
-			"dependencies": "jquery.ui"
-		},
 		"ext.MassMessage.special.js": {
 			"scripts": [
 				"ext.MassMessage.special.js",
-				"ext.MassMessage.badhtml.js"
+				"ext.MassMessage.badhtml.js",
+				"ext.MassMessage.autocomplete.js"
 			],
 			"styles": "ext.MassMessage.validation.css",
 			"messages": [
@@ -91,9 +88,9 @@
 				"massmessage-parse-badpage"
 			],
 			"dependencies": [
-				"ext.MassMessage.autocomplete",
 				"jquery.lengthLimit",
 				"jquery.throttle-debounce",
+				"jquery.ui",
 				"mediawiki.jqueryMsg"
 			]
 		},
@@ -107,7 +104,10 @@
 			]
 		},
 		"ext.MassMessage.content.js": {
-			"scripts": "ext.MassMessage.content.js",
+			"scripts": [
+				"ext.MassMessage.content.js",
+				"ext.MassMessage.autocomplete.js"
+			],
 			"messages": [
 				"massmessage-content-remove",
 				"massmessage-content-emptylist",
@@ -123,8 +123,8 @@
 				"massmessage-content-adderror"
 			],
 			"dependencies": [
-				"ext.MassMessage.autocomplete",
 				"jquery.confirmable",
+				"jquery.ui",
 				"mediawiki.api",
 				"mediawiki.util",
 				"mediawiki.jqueryMsg"
@@ -137,7 +137,10 @@
 			]
 		},
 		"ext.MassMessage.create": {
-			"scripts": "ext.MassMessage.create.js",
+			"scripts": [
+				"ext.MassMessage.create.js",
+				"ext.MassMessage.autocomplete.js"
+			],
 			"styles": "ext.MassMessage.validation.css",
 			"messages": [
 				"massmessage-create-exists-short",
@@ -147,7 +150,7 @@
 				"oojs-ui-core",
 				"mediawiki.htmlform.ooui",
 				"mediawiki.jqueryMsg",
-				"ext.MassMessage.autocomplete"
+				"jquery.ui"
 			]
 		},
 		"ext.MassMessage.edit": {

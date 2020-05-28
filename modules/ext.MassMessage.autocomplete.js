@@ -2,6 +2,11 @@
  * Functions for autocomplete of titles and sites
  * Mainly from from http://jqueryui.com/autocomplete/
  * and resources/mediawiki/mediawiki.searchSuggest.js
+ *
+ * Warning: This file may be executed multiple times in the same request, since it is
+ * used by multiple modules.
+ *
+ * TODO convert to packageFiles to avoid multiple executions
  */
 ( function () {
 	'use strict';
