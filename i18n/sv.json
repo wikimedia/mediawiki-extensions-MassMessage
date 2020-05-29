@@ -23,7 +23,7 @@
 	"massmessage-fieldset-info": "Information",
 	"massmessage-preview-count": "Ditt meddelande kommer att skickas till {{PLURAL:$1|$1 sida|$1 sidor}}.",
 	"massmessage-submitted": "Ditt meddelandeleverans till {{PLURAL:$1|$1 sida|$1 sidor}} har placerats i kö.",
-	"massmessage-just-preview": "Detta är bara en förhandsgranskning. Tryck på \"{{int:massmessage-form-skicka}}\" för att skicka meddelandet.",
+	"massmessage-just-preview": "Detta är bara en förhandsgranskning. Tryck på \"{{int:massmessage-form-submit}}\" för att skicka meddelandet.",
 	"massmessage-spamlist-doesnotexist": "Den angivna sidan eller kategorin för leveranslist finns inte.",
 	"massmessage-spamlist-invalid": "Den angivna sidan innehåller inte en giltig leveranslista.",
 	"massmessage-empty-subject": "Ämnesraden är tom.",
