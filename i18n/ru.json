@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diman Russkov",
 			"Kaganer",
 			"Mailman",
 			"NBS",
@@ -29,6 +30,8 @@
 	"massmessage-spamlist-invalid": "Указанная страница не содержит списка адресатов в допустимом формате.",
 	"massmessage-empty-subject": "Отсутствует тема сообщения.",
 	"massmessage-empty-message": "Отсутствует текст сообщения.",
+	"massmessage-page-message-not-found": "Страница \"$1\", выбранная для отправки в качестве сообщения, не найдена.",
+	"massmessage-invalid-lang": "Ошибочный код языка: «$1»",
 	"massmessage-unescaped-langlinks": "Предупреждение: в вашем сообщении есть неэкранированные языковые ссылки.",
 	"massmessage-no-timestamp": "Предупреждение: ваше сообщение не содержит дату и время или подпись.",
 	"massmessage-form-header": "Используйте форму ниже для отправки сообщения по указанному списку. Все поля обязательны для заполнения ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage дополнительная информация]).",
@@ -111,5 +114,7 @@
 	"massmessage-list-category": "Списки массовой доставки",
 	"massmessage-list-category-desc": "Эта страница — список доставки для расширения [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "доставка MassMessage",
-	"tag-massmessage-delivery-description": "Доставка сообщений, используя [[:mw:Special:MyLanguage/Extension:MassMessage|расширение MassMessage]]"
+	"tag-massmessage-delivery-description": "Доставка сообщений, используя [[:mw:Special:MyLanguage/Extension:MassMessage|расширение MassMessage]]",
+	"log-action-filter-massmessage": "Тип записи в журнале",
+	"log-action-filter-massmessage-failure": "Ошибка доставки массового сообщения"
 }
