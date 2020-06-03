@@ -101,7 +101,10 @@
 			"styles": "ext.MassMessage.special.css"
 		},
 		"ext.MassMessage.content": {
-			"styles": "ext.MassMessage.content.css"
+			"styles": [
+				"ext.MassMessage.content.css",
+				"ext.MassMessage.content.nojs.css"
+			]
 		},
 		"ext.MassMessage.content.js": {
 			"scripts": "ext.MassMessage.content.js",
@@ -128,10 +131,10 @@
 			]
 		},
 		"ext.MassMessage.content.noedit": {
-			"styles": "ext.MassMessage.content.noedit.css"
-		},
-		"ext.MassMessage.content.nojs": {
-			"styles": "ext.MassMessage.content.nojs.css"
+			"styles": [
+				"ext.MassMessage.content.noedit.css",
+				"ext.MassMessage.content.nojs.css"
+			]
 		},
 		"ext.MassMessage.create": {
 			"scripts": "ext.MassMessage.create.js",
