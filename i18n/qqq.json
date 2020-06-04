@@ -132,7 +132,7 @@
 	"massmessage-summary-addchange": "Edit summary for adding a target page and changing the description\n* $1 is the title of the page",
 	"massmessage-summary-addonsitechange": "Edit summary for adding a target page on another wiki and changing the description\n* $1 is the title of the page\n* $2 is the domain of the wiki",
 	"massmessage-summary-addmultichange": "Edit summary for adding multiple target pages and changing the description. Parameters:\n* $1 - the number of pages added (2 or more)\nSee also:\n* {{msg-mw|Massmessage-summary-removemultichange}}",
-	"massmessage-summary-removechange": "Edit summary for removing a target page and changing the description\n* $1 is the title of the page\n",
+	"massmessage-summary-removechange": "Edit summary for removing a target page and changing the description\n* $1 is the title of the page",
 	"massmessage-summary-removeonsitechange": "Edit summary for removing a target page on another wiki and changing the description\n* $1 is the title of the page\n* $2 is the domain of the wiki",
 	"massmessage-summary-removemultichange": "Edit summary for removing multiple target pages and changing the description.Parameters:\n* $1 - the number of pages removed (2 or more)\nSee also:\n* {{msg-mw|Massmessage-summary-addmultichange}}",
 	"massmessage-summary-change": "Edit summary for changing the description",

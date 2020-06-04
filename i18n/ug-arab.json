@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"AlimOmar"
+		]
+	},
+	"massmessage-summary-addremovechange": "$1{{PLURAL:$1|بەت|بەتلەر}}قوشۇلدى، $2{{PLURAL:$2|بەت|بەتلەر}} نى چىقىرىپ ، چۈشەندۈرۈشنى ئۆزگەرتتى",
+	"massmessage-summary-addchange": "[[:$1]]قوشۇلدى ۋە چۈشەندۈرۈشنى ئۆزگەرتتى",
+	"massmessage-summary-removechange": "[[:$1]]چىقىرىلدى ۋە چۈشەندۈرۈشنى ئۆزگەرتتى",
+	"massmessage-summary-removeonsitechange": "$2 دىكى $1 نى چىقىرىپ ، چۈشەندۈرۈشنى ئۆزگەرتتى",
+	"massmessage-summary-removemultichange": "$1{{PLURAL:$1|بەت|بەتلەر}} چىقىرىۋېتىلدى ۋە چۈشەندۈرۈشنى ئۆزگەرتتى"
+}
