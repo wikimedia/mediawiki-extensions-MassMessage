@@ -3,6 +3,7 @@
 		"authors": [
 			"Geraki",
 			"Nikosgranturismogt",
+			"Norhorn",
 			"Protnet"
 		]
 	},
@@ -38,5 +39,10 @@
 	"logentry-massmessage-skipnouser": "Παράδοση του \"$4\" στη $3 παραλείφθηκε επειδή ο λογαριασμός χρήστη δεν υπάρχει",
 	"massmessage-cannot-rename": "Αυτό είναι ένας λογαριασμός του συστήματος και δεν μπορεί να μετονομαστεί.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Στείλετε άλλο μήνυμα]] ή [[Special:Statistics|προβάλετε τον αριθμό των μηνυμάτων που βρίσκονται στην ουρά]].",
+	"massmessage-summary-addremovechange": "Προστέθηκε $1{{PLURAL:$1|σελίδα|σελίδες}}, αφαιρέθηκε $2{{PLURAL:$2|σελίδα|σελίδες}} και άλλαξε η περιγραφή",
+	"massmessage-summary-addchange": "Προστέθηκε [[:$1]] και άλλαξε η περιγραφή",
+	"massmessage-summary-addmultichange": "Προστέθηκε $1 {{PLURAL:$1|σελίδα|σελίδες}} και άλλαξε η περιγραφή",
+	"massmessage-summary-removechange": "Αφαιρέθηκε [[:$1]] και άλλαξε η περιγραφή",
+	"massmessage-summary-removemultichange": "Αφαιρέθηκε $1 {{PLURAL:$1|σελίδα|σελίδες}} και άλλαξε η περιγραφή",
 	"tag-massmessage-delivery": "Παράδοση μαζικού μηνύματος"
 }
