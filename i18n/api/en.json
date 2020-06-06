@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DannyS712",
 			"Zoranzoki21"
 		]
 	},
@@ -25,5 +26,7 @@
 	"apihelp-query+mmsites-summary": "Serve autocomplete requests for the site field in MassMessage.",
 	"apihelp-query+mmsites-param-term": "The prefix to search for.",
 	"apihelp-query+mmsites-example-1": "Autocomplete \"en\"",
+	"apihelp-query+mmcontent-summary": "Get the description and targets of a spamlist",
+	"apihelp-query+mmcontent-example-1": "Get page and spamlist information of [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "The specified spamlist is invalid."
 }

@@ -50,6 +50,9 @@
 	"APIListModules": {
 		"mmsites": "MediaWiki\\MassMessage\\Api\\ApiQueryMMSites"
 	},
+	"APIPropModules": {
+		"mmcontent": "MediaWiki\\MassMessage\\Api\\ApiQueryMMContent"
+	},
 	"MessagesDirs": {
 		"MassMessage": [
 			"i18n",
