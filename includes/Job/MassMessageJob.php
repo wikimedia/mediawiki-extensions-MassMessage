@@ -360,7 +360,9 @@ class MassMessageJob extends Job {
 	 * @return \ApiResult|bool
 	 */
 	protected function makeAPIRequest( array $params ) {
+		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
 		global $wgHooks, $wgUser, $wgRequest;
+
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
 		$ourUser = $this->getUser();
