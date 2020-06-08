@@ -16,5 +16,8 @@
 	"log-name-massmessage": "Titulo di pagino di 'Log'",
 	"massmessage-content-removeno": "Anular",
 	"massmessage-create-content": "Kontenajo:",
-	"massmessage-edit-summary": "Rezumo pri redakto:"
+	"massmessage-edit-summary": "Rezumo pri redakto:",
+	"massmessage-summary-addmultichange": "Adjuntita $1 {{PLURAL:$1|pagino|pagini}} e modifikita la deskripto",
+	"massmessage-summary-removechange": "[[:$1]] efacesis, e la deskripto modifikesis",
+	"massmessage-summary-change": "La deskripto modifikesis"
 }

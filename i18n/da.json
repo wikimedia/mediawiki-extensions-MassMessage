@@ -3,6 +3,7 @@
 		"authors": [
 			"Christian List",
 			"Dipsacus fullonum",
+			"Saederup92",
 			"Sarrus",
 			"Simeondahl",
 			"SimmeD"
@@ -105,6 +106,7 @@
 	"massmessage-summary-remove": "Fjernede [[:$1]]",
 	"massmessage-summary-removeonsite": "Fjernede $1 på $2",
 	"massmessage-summary-removemulti": "Fjernede $1 {{PLURAL:$1|side|sider}}",
+	"massmessage-summary-change": "Ændrede beskrivelsen",
 	"massmessage-list-category": "Leveringslister til massebeskeder",
 	"massmessage-list-category-desc": "Denne side er en leveringsliste for [[Special:MassMessage|MassMessage]]-udvidelsen.",
 	"tag-massmessage-delivery": "Levering af massebesked",
