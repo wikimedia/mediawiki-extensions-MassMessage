@@ -91,6 +91,7 @@
 	"massmessage-summary-remove": "[[:$1]]  সরানো হয়েছে",
 	"massmessage-summary-removeonsite": "$2 থেকে $1 সরানো হয়েছে",
 	"massmessage-summary-removemulti": "$1টি {{PLURAL:$1|পাতা}} সরানো হয়েছে",
+	"massmessage-summary-change": "বিবরণ পরিবর্তিত হয়েছে",
 	"massmessage-list-category": "গণবার্তা বিতরণ তালিকা",
 	"massmessage-list-category-desc": "এই পাতাটি [[Special:MassMessage|গণবার্তা]] এক্সটেনশনের বিতরণ তালিকা।",
 	"tag-massmessage-delivery": "গণবার্তা বিতরণ",
