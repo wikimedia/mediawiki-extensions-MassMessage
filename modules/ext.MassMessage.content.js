@@ -101,7 +101,7 @@ $( function () {
 				// Replace empty lists with a message indicating the list is empty.
 				if ( $list.children( ':visible' ).length === 0 ) {
 					$list.before(
-						$( '<p></p>' ).addClass( 'mw-massmessage-emptylist' ).html(
+						$( '<p>' ).addClass( 'mw-massmessage-emptylist' ).html(
 							mw.message( 'massmessage-content-emptylist' ).escaped()
 						)
 					);

@@ -10,6 +10,7 @@ $( function () {
 
 	/**
 	 * Fetch pages with a given title.
+	 *
 	 * @param {string} pagetitle
 	 * @return {Promise}
 	 */
@@ -28,6 +29,7 @@ $( function () {
 
 	/**
 	 * Adds a status field for the element.
+	 *
 	 * @param {Object} $elem jQuery element for which the status field has to be added.
 	 * @return {Object} jQuery element
 	 */
@@ -41,6 +43,7 @@ $( function () {
 
 	/**
 	 * Adds page title validation for a given text field
+	 *
 	 * @param {Object} $elem jQuery element to
 	 * @param {Function} callback Called when we recieve some pages in response.
 	 */
