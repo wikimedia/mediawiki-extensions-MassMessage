@@ -4,5 +4,6 @@
 			"Fierodelveneto"
 		]
 	},
-	"massmessage": "Manda mesaji masivamente"
+	"massmessage": "Manda mesaji masivamente",
+	"massmessage-edit-pagetitle": "Modìfega de \"$1\"."
 }

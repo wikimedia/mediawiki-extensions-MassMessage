@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jim-by",
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"massmessage": "Адправіць масавае паведамленьне",
@@ -13,5 +14,6 @@
 	"log-name-massmessage": "Журнал масавых паведамленьняў",
 	"massmessage-create-exists-short": "Ужо выкарыстоўваецца",
 	"massmessage-create-invalidsource-short": "Няслушны сьпіс",
-	"massmessage-list-category-desc": "Гэтая старонка зьяўляецца сьпісам дастаўкі для пашырэньня [[Special:MassMessage|MassMessage]]."
+	"massmessage-list-category-desc": "Гэтая старонка зьяўляецца сьпісам дастаўкі для пашырэньня [[Special:MassMessage|MassMessage]].",
+	"tag-massmessage-delivery-description": "Дастаўка паведамленьняў з дапамогай [[:mw:Special:MyLanguage/Extension:MassMessage|пашырэньня MassMessage]]"
 }
