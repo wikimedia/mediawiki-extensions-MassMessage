@@ -5,8 +5,9 @@
 		"wikimedia/jquery"
 	],
 	"globals": {
-		"OO": false,
-		"mw": false
+		"OO": "readonly",
+		"mw": "readonly",
+		"Promise": "readonly"
 	},
 	"rules": {
 		"no-jquery/no-global-selector": "off",
