@@ -122,6 +122,8 @@
 	"massmessage-summary-remove": "[[:$1]] verwijderd",
 	"massmessage-summary-removeonsite": "$1 op $2 verwijderd",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|pagina|pagina's}} verwijderd",
+	"massmessage-summary-addmultichange": "$1 {{PLURAL:$1|pagina|pagina's}} toegevoegd en de beschrijving gewijzigd",
+	"massmessage-summary-change": "Beschrijving gewijzigd",
 	"massmessage-list-category": "MassMessage-afleverlijsten",
 	"massmessage-list-category-desc": "De pagina is een afleverlijst voor de uitbreiding [[Special:MassMessage|MassMessage]]",
 	"tag-massmessage-delivery": "MassMessage-bezorging",
