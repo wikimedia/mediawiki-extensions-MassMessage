@@ -1,0 +1,39 @@
+/*
+ * These styles are loaded as part of ext.MassMessage.styles, and are added to all MassMessage list
+ * pages, even those that aren't editable, as well as to Special:MassMessage. Limit the scope
+ * to editable pages
+ */
+
+.mw-massmessage-editable {
+	.mw-massmessage-targetlink {
+		display: inline-block;
+		vertical-align: top;
+		width: 300px;
+	}
+
+	.mw-massmessage-removelink {
+		margin-left: 20px;
+	}
+
+	.mw-massmessage-emptylist {
+		font-style: italic;
+	}
+
+	#mw-massmessage-addform {
+		label {
+			margin-right: 2px;
+		}
+
+		input {
+			margin-right: 10px;
+		}
+
+		.error {
+			font-size: 100%;
+		}
+	}
+
+	#mw-massmessage-addedlist {
+		display: none;
+	}
+}

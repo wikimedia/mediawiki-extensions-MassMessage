@@ -1,0 +1,40 @@
+/*
+ * These styles are loaded as part of ext.MassMessage.styles, and are added to MassMessage list
+ * pages, where they shouldn't do anything. Limit the scope to the special page
+ */
+
+.mw-special-MassMessage {
+	.mw-body-content fieldset {
+		margin: 1em 0 1em 0;
+	}
+
+	#mw-massmessage-form {
+		.mw-htmlform-field-HTMLTextField,
+		.mw-htmlform-field-HTMLTextAreaField {
+			margin-bottom: 0.7em;
+		}
+
+		input,
+		textarea {
+			margin: 0.5em 0;
+		}
+
+		.htmlform-tip {
+			font-size: 0.95em;
+			font-style: italic;
+			margin-top: -0.7em;
+			margin-bottom: 0.7em;
+		}
+
+		/*
+		 Formats the Save/Preview buttons to show up on the same line
+		*/
+		.mw-htmlform-field-HTMLSubmitField {
+			&,
+			.mw-label,
+			.mw-input {
+				display: inline;
+			}
+		}
+	}
+}

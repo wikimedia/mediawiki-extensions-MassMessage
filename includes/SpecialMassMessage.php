@@ -56,7 +56,7 @@ class SpecialMassMessage extends SpecialPage {
 		$output = $this->getOutput();
 
 		$output->addModules( 'ext.MassMessage.special.js' );
-		$output->addModuleStyles( 'ext.MassMessage.special' );
+		$output->addModuleStyles( 'ext.MassMessage.styles' );
 		$this->addHelpLink( 'Help:Extension:MassMessage' );
 		$this->setHeaders();
 		$this->outputHeader();
