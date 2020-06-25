@@ -132,8 +132,7 @@
 		},
 		"ext.MassMessage.content.noedit": {
 			"styles": [
-				"ext.MassMessage.content.noedit.css",
-				"ext.MassMessage.content.nojs.css"
+				"ext.MassMessage.content.noedit.css"
 			]
 		},
 		"ext.MassMessage.create": {
