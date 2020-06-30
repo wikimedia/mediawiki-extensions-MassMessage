@@ -1,7 +1,8 @@
 $( function () {
 	'use strict';
 
-	var checkTitle, checkSource, pageIsValidSource,
+	var autocomplete = require( './ext.MassMessage.autocomplete.js' ),
+		checkTitle, checkSource, pageIsValidSource,
 		checkSourceTimeout = -1,
 		queryTitleApiRequest,
 		$titleStatus = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
@@ -108,5 +109,5 @@ $( function () {
 		checkSourceTimeout = setTimeout( checkSource, 300 );
 	} );
 
-	mw.massmessage.enableTitleComplete( $formSource.$input );
+	autocomplete.enableTitleComplete( $formSource.$input );
 } );

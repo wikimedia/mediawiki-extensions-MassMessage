@@ -1,7 +1,8 @@
 $( function () {
 	'use strict';
 
-	var listShown = false,
+	var autocomplete = require( './ext.MassMessage.autocomplete.js' ),
+		listShown = false,
 		appendAdded, getApiParam, removeHandler, confirmableParams, showAddError;
 
 	// Append an added page to the displayed list.
@@ -129,9 +130,16 @@ $( function () {
 	showAddError = function ( msgKey, errorCode ) {
 		var message;
 		if ( errorCode === undefined ) {
-			// eslint-disable-next-line mediawiki/msg-doc
+			// The following messages are used here:
+			// * massmessage-content-alreadyinlist
+			// * massmessage-content-invalidtitlesite
+			// * massmessage-content-invalidtitle
+			// * massmessage-content-invalidsite
 			message = mw.message( msgKey ).escaped();
 		} else {
+			// The following messages are used here:
+			// * massmessage-content-adderror
+			// Since only 1 key is used, the lint rule fails
 			// eslint-disable-next-line mediawiki/msg-doc
 			message = mw.message( msgKey, errorCode ).escaped();
 		}
@@ -143,10 +151,10 @@ $( function () {
 	};
 
 	// Autocomplete for page titles
-	mw.massmessage.enableTitleComplete( $( '#mw-massmessage-addtitle' ) );
+	autocomplete.enableTitleComplete( $( '#mw-massmessage-addtitle' ) );
 
 	// Autocomplete for sites
-	mw.massmessage.enableSiteComplete( $( '#mw-massmessage-addsite' ) );
+	autocomplete.enableSiteComplete( $( '#mw-massmessage-addsite' ) );
 
 	// Register handler for remove links.
 	$( '.mw-massmessage-removelink a' ).confirmable( confirmableParams );

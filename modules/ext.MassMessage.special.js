@@ -2,11 +2,15 @@ $( function () {
 	'use strict';
 
 	// Dynamic page title validation
-	var $spamlist = $( '#mw-massmessage-form-spamlist' ),
+	var autocomplete = require( './ext.MassMessage.autocomplete.js' ),
+		badHtml = require( './ext.MassMessage.badhtml.js' ),
+		$spamlist = $( '#mw-massmessage-form-spamlist' ),
 		$massmessagepage = $( '#mw-massmessage-form-page' );
 
 	// Limit edit summaries to 240 bytes
 	$( '#mw-massmessage-form-subject' ).byteLimit();
+
+	badHtml( $( '#mw-massmessage-form-message' ) );
 
 	/**
 	 * Fetch pages with a given title.
@@ -97,8 +101,8 @@ $( function () {
 	} );
 
 	// Autocomplete for spamlist titles
-	mw.massmessage.enableTitleComplete( $spamlist );
+	autocomplete.enableTitleComplete( $spamlist );
 
 	// Autocomplete for pages to send as message
-	mw.massmessage.enableTitleComplete( $massmessagepage );
+	autocomplete.enableTitleComplete( $massmessagepage );
 } );
