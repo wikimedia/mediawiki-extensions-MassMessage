@@ -76,6 +76,14 @@
 		"MassMessageListContent": "MediaWiki\\MassMessage\\Content\\MassMessageListContentHandler"
 	},
 	"ResourceModules": {
+		"ext.MassMessage.styles": {
+			"styles": [
+				"ext.MassMessage.content.less",
+				"ext.MassMessage.content.nojs.css",
+				"ext.MassMessage.content.noedit.less",
+				"ext.MassMessage.special.less"
+			]
+		},
 		"ext.MassMessage.special.js": {
 			"scripts": [
 				"ext.MassMessage.special.js",
@@ -92,15 +100,6 @@
 				"jquery.throttle-debounce",
 				"jquery.ui",
 				"mediawiki.jqueryMsg"
-			]
-		},
-		"ext.MassMessage.special": {
-			"styles": "ext.MassMessage.special.css"
-		},
-		"ext.MassMessage.content": {
-			"styles": [
-				"ext.MassMessage.content.css",
-				"ext.MassMessage.content.nojs.css"
 			]
 		},
 		"ext.MassMessage.content.js": {
@@ -128,11 +127,6 @@
 				"mediawiki.api",
 				"mediawiki.util",
 				"mediawiki.jqueryMsg"
-			]
-		},
-		"ext.MassMessage.content.noedit": {
-			"styles": [
-				"ext.MassMessage.content.noedit.css"
 			]
 		},
 		"ext.MassMessage.create": {

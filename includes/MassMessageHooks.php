@@ -182,14 +182,14 @@ class MassMessageHooks {
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		$title = $out->getTitle();
 		if ( $title->exists() && $title->hasContentModel( 'MassMessageListContent' ) ) {
+			$out->addModuleStyles( 'ext.MassMessage.styles' );
+
 			$permManager = MediaWikiServices::getInstance()->getPermissionManager();
 			if ( $out->getRevisionId() === $title->getLatestRevId()
 				&& $permManager->quickUserCan( 'edit', $out->getUser(), $title )
 			) {
-				$out->addModuleStyles( 'ext.MassMessage.content' );
 				$out->addModules( 'ext.MassMessage.content.js' );
-			} else {
-				$out->addModuleStyles( 'ext.MassMessage.content.noedit' );
+				$out->addBodyClasses( 'mw-massmessage-editable' );
 			}
 		}
 	}

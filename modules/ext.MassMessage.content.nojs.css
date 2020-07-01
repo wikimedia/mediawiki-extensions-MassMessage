@@ -1,3 +1,8 @@
+/*
+ * These styles are loaded as part of ext.MassMessage.styles, and are added to all MassMessage list
+ * pages, as well as to Special:MassMessage. But, it should only affect the rendering of
+ * MassMessage lists
+ */
 .client-nojs .mw-massmessage-removelink {
 	display: none;
 }
