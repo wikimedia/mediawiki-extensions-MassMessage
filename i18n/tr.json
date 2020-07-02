@@ -53,7 +53,7 @@
 	"massmessage-parse-badurl": "\"$1\" geçerli bir site değil.",
 	"massmessage-parse-badpage": "\"$1\" geçerli bir sayfa başlığı değil.",
 	"massmessage-parse-badexternal": "\"$1\" geçerli bir sayfa başlığı değil. Vikilerarası bağlantılar site parametresi kullanılarak yapılmalı. (<kbd>|site=www.example.org</kbd>).",
-	"massmessage-global-disallowed": "Mesajlar sadece yerel sayfalara gönderilebilir.",
+	"massmessage-global-disallowed": "Mesajlar yalnızca yerel sayfalara gönderilebilir.",
 	"right-massmessage": "Aynı anda birden fazla kullanıcıya ileti gönder",
 	"action-massmessage": "aynı anda birden fazla kullanıcıya ileti gönder",
 	"log-name-massmessage": "Toplu mesaj günlüğü",
