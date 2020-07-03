@@ -5,7 +5,7 @@ namespace MediaWiki\MassMessage\Job;
 use Exception;
 use Job;
 use MediaWiki\MassMessage\MassMessage;
-use Revision;
+use MediaWiki\Revision\RevisionRecord;
 use Status;
 use Title;
 use WikiPage;
@@ -56,7 +56,7 @@ class MassMessageServerSideJob extends MassMessageJob {
 			$page = WikiPage::factory( $this->title );
 			$flags = 0;
 			if ( $page->exists() ) {
-				$oldContent = $page->getContent( Revision::RAW );
+				$oldContent = $page->getContent( RevisionRecord::RAW );
 				$text = $oldContent->getNativeData() . "\n\n" . $text;
 				$flags |= EDIT_UPDATE;
 			} else {

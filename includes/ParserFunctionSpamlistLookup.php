@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage;
 
 use MediaWiki\MediaWikiServices;
-use Revision;
+use MediaWiki\Revision\RevisionRecord;
 use Title;
 use WikiPage;
 
@@ -25,7 +25,7 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 	 */
 	public function fetchTargets() {
 		$page = WikiPage::factory( $this->spamlist );
-		$text = $page->getContent( Revision::RAW )->getNativeData();
+		$text = $page->getContent( RevisionRecord::RAW )->getNativeData();
 
 		// Prep the parser
 		$parserOptions = $page->makeParserOptions( 'canonical' );

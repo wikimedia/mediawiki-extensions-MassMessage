@@ -6,9 +6,9 @@ use ContentHandler;
 use ExtensionRegistry;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use MWCryptRand;
 use RequestContext;
-use Revision;
 use RuntimeException;
 use SpecialPageLanguage;
 use Title;
@@ -102,7 +102,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		list( $subj, ) = $this->simulateJob( $target );
 		$target = Title::newFromText( 'Project:Testing1234' );
 		// Message was created
-		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
+		$text = WikiPage::factory( $target )->getContent( RevisionRecord::RAW )->getNativeData();
 		$this->assertEquals(
 			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
 			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
@@ -142,7 +142,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			Title::newFromText( 'Project:Some random page' )
 		) );
 		$this->simulateJob( $target ); // Try posting a message to this page
-		$text = WikiPage::factory( $target )->getContent( Revision::RAW )->getNativeData();
+		$text = WikiPage::factory( $target )->getContent( RevisionRecord::RAW )->getNativeData();
 		// Nothing should be updated.
 		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text );
 	}
@@ -162,7 +162,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'isSourceTranslationPage' => false
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,
@@ -215,7 +215,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,
@@ -248,7 +248,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,
@@ -282,7 +282,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( Revision::RAW );
+		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,
