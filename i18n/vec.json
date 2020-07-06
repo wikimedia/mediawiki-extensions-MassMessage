@@ -5,5 +5,12 @@
 		]
 	},
 	"massmessage": "Manda mesaji masivamente",
+	"createmassmessagelist": "Crea lista de consegna par mesaji masivi",
+	"editmassmessagelist": "Cànbia lista de consegna par mesaji masivi",
+	"createmassmessagelist-legend": "Creo lista de consegna par mesaji masivi",
+	"massmessage-create-editsummary": "Crea lista de consegna par mesaji masivi",
+	"massmessage-create-editsummary-import": "Creo lista de consegna par mesaji masivi co destinasion da [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Creo lista de consegna par mesaji masivi co destinasion da [[$1]]",
+	"editmassmessagelist-legend": "Cànbia lista de consegna par mesaji masivi",
 	"massmessage-edit-pagetitle": "Modìfega de \"$1\"."
 }

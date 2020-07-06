@@ -15,6 +15,7 @@
 	"massmessage-form-header": "Uzez la formulario adinfre por sendar mesaji por specifika listo. Omna blanki mustas kompleteskar ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage plusa informo]).",
 	"log-name-massmessage": "Titulo di pagino di 'Log'",
 	"massmessage-content-removeno": "Anular",
+	"massmessage-content-emptylist": "(nula)",
 	"massmessage-create-content": "Kontenajo:",
 	"massmessage-edit-summary": "Rezumo pri redakto:",
 	"massmessage-summary-addmultichange": "Adjuntita $1 {{PLURAL:$1|pagino|pagini}} e modifikita la deskripto",
