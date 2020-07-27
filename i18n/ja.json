@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"129femtoseconds",
 			"Darklanlan",
 			"Fryed-peach",
 			"Los688",
@@ -39,7 +40,7 @@
 	"massmessage-parse-badurl": "「$1」は有効なサイトではありません。",
 	"massmessage-parse-badpage": "「$1」は有効なページ名ではありません。",
 	"massmessage-global-disallowed": "メッセージを送信できるのはローカル ページのみです。",
-	"right-massmessage": "複数の利用者に一度にメッセージを送信",
+	"right-massmessage": "複数の利用者にメッセージを一括送信",
 	"action-massmessage": "複数の利用者へのメッセージの一斉送信",
 	"log-name-massmessage": "一斉メッセージ記録",
 	"log-description-massmessage": "これらのイベントは、利用者によるメッセージの送信を追跡します。",
