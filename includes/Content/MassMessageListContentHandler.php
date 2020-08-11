@@ -4,6 +4,8 @@ namespace MediaWiki\MassMessage\Content;
 
 use ApiMain;
 use ApiUsageException;
+use Content;
+use ContentHandler;
 use DerivativeContext;
 use DerivativeRequest;
 use FormatJson;
@@ -11,6 +13,7 @@ use IContextSource;
 use JsonContentHandler;
 use MediaWiki\MassMessage\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
+use RequestContext;
 use Status;
 use Title;
 
@@ -169,5 +172,16 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		}
 
 		return $result;
+	}
+
+	public function getPageLanguage( Title $title, Content $content = null ) {
+		// This class inherits from JsonContentHandler, which hardcodes English.
+		// Use the default method from ContentHandler instead to get the page/site language.
+		return ContentHandler::getPageLanguage( $title, $content );
+	}
+
+	public function getPageViewLanguage( Title $title, Content $content = null ) {
+		// Most of the interface is rendered in user language
+		return RequestContext::getMain()->getLanguage();
 	}
 }
