@@ -194,7 +194,14 @@ class MassMessageListContent extends JsonContent {
 			} else {
 				$warning = '';
 			}
-			$output->setText( $warning . $output->getRawText() . self::getAddForm( $lang )
+
+			// Mark the description language (may be different from user language used to render the rest of the page)
+			$description = $output->getRawText();
+			$pageLang = $title->getPageLanguage();
+			$attribs = [ 'lang' => $pageLang->getHtmlCode(), 'dir' => $pageLang->getDir(),
+				'class' => 'mw-content-' . $pageLang->getDir() ];
+
+			$output->setText( $warning . Html::rawElement( 'div', $attribs, $description ) . self::getAddForm( $lang )
 				. $this->getTargetsHtml( $lang ) );
 		} else {
 			$output->setText( '' );
