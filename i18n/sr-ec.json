@@ -96,7 +96,7 @@
 	"massmessage-summary-addmulti": "Додато страница: {{PLURAL:$1|$1}}",
 	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}",
 	"tag-massmessage-delivery": "испорука масовне поруке",
-	"log-action-filter-massmessage": "Тип ставке у дневнику",
+	"log-action-filter-massmessage": "Врста ставке у дневнику",
 	"log-action-filter-massmessage-send": "Прослеђивање масовних порука",
 	"log-action-filter-massmessage-failure": "Неуспешна испорука масовне поруке",
 	"log-action-filter-massmessage-skipoptout": "Прескакање одредишта због одбијања сагласности",
