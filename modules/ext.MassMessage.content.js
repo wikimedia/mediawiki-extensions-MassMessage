@@ -43,6 +43,7 @@ $( function () {
 		}, mw.message( 'massmessage-content-remove' ).text() );
 
 		// If the list was empty, remove the message saying so.
+		// eslint-disable-next-line no-jquery/no-sizzle
 		if ( $list.children( ':visible' ).length === 0 ) {
 			$list.prev( '.mw-massmessage-emptylist' ).remove();
 		}
@@ -99,6 +100,7 @@ $( function () {
 				var $list = $link.closest( 'ul' );
 
 				// Replace empty lists with a message indicating the list is empty.
+				// eslint-disable-next-line no-jquery/no-sizzle
 				if ( $list.children( ':visible' ).length === 0 ) {
 					$list.before(
 						$( '<p>' ).addClass( 'mw-massmessage-emptylist' ).html(
@@ -127,8 +129,10 @@ $( function () {
 	showAddError = function ( msgKey, errorCode ) {
 		var message;
 		if ( errorCode === undefined ) {
+			// eslint-disable-next-line mediawiki/msg-doc
 			message = mw.message( msgKey ).escaped();
 		} else {
+			// eslint-disable-next-line mediawiki/msg-doc
 			message = mw.message( msgKey, errorCode ).escaped();
 		}
 		$( '#mw-massmessage-addform' ).append(

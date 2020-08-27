@@ -21,7 +21,7 @@ $( function () {
 	$warnings.hide();
 
 	$msg.on( 'keyup', $.debounce( 500, function () {
-		var code, matches, tags, results, tag;
+		var code, matches, tags, results, tagName;
 
 		code = $msg.val().trim();
 		if ( code === '' ) {
@@ -63,11 +63,11 @@ $( function () {
 		} );
 
 		results = [];
-		for ( tag in tags ) {
-			if ( tags[ tag ] > 0 ) {
-				results.push( '<' + tag + '>' );
-			} else if ( tags[ tag ] < 0 ) {
-				results.push( '</' + tag + '>' );
+		for ( tagName in tags ) {
+			if ( tags[ tagName ] > 0 ) {
+				results.push( '<' + tagName + '>' );
+			} else if ( tags[ tagName ] < 0 ) {
+				results.push( '</' + tagName + '>' );
 			}
 		}
 		if ( results.length > 0 ) {
