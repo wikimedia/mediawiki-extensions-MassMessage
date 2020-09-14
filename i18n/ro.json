@@ -1,8 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minisarm"
+			"Minisarm",
+			"NGC 54"
 		]
 	},
-	"massmessage-cannot-rename": "Acesta este un cont de sistem și nu poate fi redenumit."
+	"massmessage": "Trimite mesaj în masă",
+	"createmassmessagelist": "Crează o listă de livrare în masă a unui mesaj",
+	"log-name-massmessage": "Jurnal mesaje în masă",
+	"massmessage-cannot-rename": "Acesta este un cont de sistem și nu poate fi redenumit.",
+	"createmassmessagelist-legend": "Crează o listă de livrare în masă a unui mesaj",
+	"massmessage-create-new": "Crează o listă de livrare nouă",
+	"massmessage-create-import": "Importă pagini dintr-o listă existentă sau categorie",
+	"massmessage-create-editsummary": "Crează o listă de livrare în masă a unui mesaj",
+	"massmessage-create-editsummary-catimport": "Crează o listă de livrare în masă a unui mesaj cu țintele din [[$1]]",
+	"log-action-filter-massmessage-send": "Trimitere mesaj în masă"
 }
