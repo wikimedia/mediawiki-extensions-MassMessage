@@ -13,6 +13,7 @@
 	"apihelp-editmassmessagelist-param-remove": "Títulos para remover da lista.",
 	"apihelp-editmassmessagelist-param-description": "Nova descrição para a lista de entrega.",
 	"apihelp-editmassmessagelist-example-1": "Adicionar [[User talk:Foo]] e [[Talk:Bar]] à lista de entrega [[Example]] e remover [[Talk:Baz]] dela",
+	"apihelp-editmassmessagelist-example-2": "Defina a descrição da lista de entrega [[Exemplo]] como \"Serviços de entrega FooBar\"",
 	"apihelp-massmessage-description": "Enviar uma mensagem para uma lista de páginas.",
 	"apihelp-massmessage-summary": "Enviar uma mensagem para uma lista de páginas.",
 	"apihelp-massmessage-param-spamlist": "Página que contém uma lista de páginas para deixar uma mensagem.",

@@ -14,5 +14,6 @@
 	"massmessage-create-import": "Importă pagini dintr-o listă existentă sau categorie",
 	"massmessage-create-editsummary": "Crează o listă de livrare în masă a unui mesaj",
 	"massmessage-create-editsummary-catimport": "Crează o listă de livrare în masă a unui mesaj cu țintele din [[$1]]",
+	"tag-massmessage-delivery": "Livrare de mesaj în masă",
 	"log-action-filter-massmessage-send": "Trimitere mesaj în masă"
 }
