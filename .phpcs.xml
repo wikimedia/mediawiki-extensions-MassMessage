@@ -9,6 +9,6 @@
 		<exclude-pattern>MassMessage\.alias\.php</exclude-pattern>
 	</rule>
 	<file>.</file>
-	<arg name="extensions" value="php,php5,inc" />
+	<arg name="extensions" value="php,inc" />
 	<arg name="encoding" value="UTF-8" />
 </ruleset>
