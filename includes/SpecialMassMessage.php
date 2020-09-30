@@ -152,25 +152,25 @@ class SpecialMassMessage extends SpecialPage {
 			'maxlength' => 240
 		];
 
-		// The message to send
-		$m['message'] = [
-			'id' => 'mw-massmessage-form-message',
-			'name' => 'message',
-			'type' => 'textarea',
-			'tabindex' => '3',
-			'label-message' => 'massmessage-form-message',
-			'default' => $request->getText( 'message' )
-		];
-
 		// The page to sent as message
 		$m['page-message'] = [
 			'id' => 'mw-massmessage-form-page',
 			'name' => 'page-message',
 			'type' => 'text',
-			'tabindex' => '4',
+			'tabindex' => '3',
 			'label-message' => 'massmessage-form-page',
 			'default' => $request->getText( 'page-message' ),
 			'help' => $this->msg( 'massmessage-form-page-help' )->text()
+		];
+
+		// The message to send
+		$m['message'] = [
+			'id' => 'mw-massmessage-form-message',
+			'name' => 'message',
+			'type' => 'textarea',
+			'tabindex' => '4',
+			'label-message' => 'massmessage-form-message',
+			'default' => $request->getText( 'message' )
 		];
 
 		if ( $this->state === 'preview' ) {
