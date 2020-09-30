@@ -164,6 +164,7 @@ class MassMessage {
 		}
 
 		$data['page-message'] = $data['page-message'] ?? '';
+		$data['page-section'] = $data['page-section'] ?? '';
 		$data['message'] = $data['message'] ?? '';
 
 		// Check and fetch the page message
@@ -171,7 +172,8 @@ class MassMessage {
 		if ( $data['page-message'] !== '' ) {
 			$pageMessageStatus = self::getContent(
 				$data['page-message'],
-				WikiMap::getCurrentWikiId()
+				WikiMap::getCurrentWikiId(),
+				$data['page-section']
 			);
 			if ( $pageMessageStatus->isOK() ) {
 				$pageMessage = $pageMessageStatus->getValue();
@@ -383,10 +385,15 @@ class MassMessage {
 	 * @param string $targetLangCode
 	 * @param string $sourceLangCode
 	 * @param string $wikiId
+	 * @param ?string $pageSection
 	 * @return Status
 	 */
 	public static function getContentWithFallback(
-		string $titleStr, string $targetLangCode, string $sourceLangCode, string $wikiId
+		string $titleStr,
+		string $targetLangCode,
+		string $sourceLangCode,
+		string $wikiId,
+		?string $pageSection
 	): Status {
 		if ( !Language::isKnownLanguageTag( $targetLangCode ) ) {
 			return Status::newFatal( 'massmessage-invalid-lang', $targetLangCode );
@@ -401,7 +408,7 @@ class MassMessage {
 
 		foreach ( $fallbackChain as $langCode ) {
 			$titleStrWithLang = $titleStr . '/' . $langCode;
-			$contentStatus = self::getContent( $titleStrWithLang, $wikiId );
+			$contentStatus = self::getContent( $titleStrWithLang, $wikiId, $pageSection );
 
 			if ( $contentStatus->isOK() ) {
 				return $contentStatus;
@@ -419,7 +426,7 @@ class MassMessage {
 			$langSuffix = "/$sourceLangCode";
 		}
 
-		return self::getContent( $titleStr . $langSuffix, $wikiId );
+		return self::getContent( $titleStr . $langSuffix, $wikiId, $pageSection );
 	}
 
 	/**
@@ -427,9 +434,11 @@ class MassMessage {
 	 *
 	 * @param string $titleStr
 	 * @param string $wikiId
+	 * @param string|null $section
 	 * @return Status
 	 */
-	public static function getContent( string $titleStr, string $wikiId ): Status {
+	public static function getContent( string $titleStr, string $wikiId, ?string $section = null )
+	: Status {
 		$isCurrentWiki = WikiMap::getCurrentWikiId() === $wikiId;
 		$title = Title::newFromText( $titleStr );
 		if ( $title === null ) {
@@ -443,7 +452,39 @@ class MassMessage {
 			$contentStatus = self::getRemoteContent( $title, $wikiId );
 		}
 
+		if ( $contentStatus->isOK() && $section !== null && $section !== '' ) {
+			return self::getLabeledSectionContent( $contentStatus->getValue(), $section );
+		}
+
 		return $contentStatus;
+	}
+
+	public static function getLabeledSectionContent( string $pagetext, string $label ): Status {
+		// I looked into LabeledSectionTransclusion and it is not reusable here without a lot of
+		// rework -NL
+		$matches = [];
+		$label = preg_quote( $label, '~' );
+		$ok = preg_match_all(
+			"~<section[^>]+begin\s*=\s*{$label}[^>]+>(.*?)<section[^>]+end\s*=\s*{$label}~s",
+			$pagetext,
+			$matches
+		);
+
+		if ( $ok < 1 ) {
+			return Status::newFatal( 'massmessage-page-section-invalid' );
+		}
+
+		$content = trim( implode( "", $matches[1] ) );
+		return Status::newGood( $content );
+	}
+
+	public static function getLabeledSections( string $pagetext ): array {
+		preg_match_all(
+			'~<section[^>]+begin\s*=\s*([^ /]+)[^>]+>(.*?)<section[^>]+end\s*=\s*\\1~s',
+			$pagetext,
+			$matches
+		);
+		return array_unique( $matches[1] );
 	}
 
 	/**
