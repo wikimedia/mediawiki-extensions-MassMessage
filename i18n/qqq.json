@@ -10,7 +10,8 @@
 			"Raymond",
 			"Robby",
 			"Shirayuki",
-			"Umherirrender"
+			"Umherirrender",
+			"আফতাবুজ্জামান"
 		]
 	},
 	"massmessage": "{{doc-special|MassMessage}}",
@@ -21,7 +22,7 @@
 	"massmessage-form-subject": "Label for an inputbox on [[Special:MassMessage]].",
 	"massmessage-form-message": "Used as label for a textarea on [[Special:MassMessage]].",
 	"massmessage-form-page": "Label for an inputbox on [[Special:MassMessage]].",
-	"massmessage-form-page-help": "Help text shown under the inputbox on [[Special:MassMessage]].\nSee also:\n* {{msg-mw|massmessage-form-page}",
+	"massmessage-form-page-help": "Help text shown under the inputbox on [[Special:MassMessage]].\nSee also:\n* {{msg-mw|massmessage-form-page}}",
 	"massmessage-form-preview": "Label for the preview button on [[Special:MassMessage]].\n{{Identical|Preview}}",
 	"massmessage-form-submit": "Label for the submit button on [[Special:MassMessage]].\n\nUsed in {{msg-mw|Massmessage-just-preview}}.\n{{Identical|Send}}",
 	"massmessage-fieldset-preview": "Label for the fieldset box around the page preview.\n{{Identical|Preview}}",
