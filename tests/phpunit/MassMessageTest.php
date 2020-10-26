@@ -8,7 +8,6 @@ namespace MediaWiki\MassMessage;
  * @group Database
  */
 class MassMessageTest extends MassMessageTestCase {
-
 	public static function provideGetMessengerUser() {
 		return [
 			[ 'MessengerBot' ],
@@ -28,5 +27,4 @@ class MassMessageTest extends MassMessageTestCase {
 		$this->assertEquals( $name, $user->getName() );
 		$this->assertTrue( in_array( 'bot', $user->getGroups() ) );
 	}
-
 }

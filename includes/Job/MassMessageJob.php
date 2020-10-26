@@ -311,6 +311,7 @@ class MassMessageJob extends Job {
 		$originWiki = $this->params['originWiki'] ?? WikiMap::getCurrentWikiId();
 		$titleStr = $this->params['pageMessageTitle'] ?? null;
 		$isSourceTranslationPage = $this->params['isSourceTranslationPage'] ?? false;
+		$pageSection = $this->params['page-section'] ?? null;
 		$pageContent = null;
 
 		// Check if page-message has been set, and fetch the page content.
@@ -320,11 +321,11 @@ class MassMessageJob extends Job {
 				$sourceLanguage = $this->params['translationPageSourceLanguage'] ?? '';
 				$targetLanguage = $this->title->getPageLanguage();
 				$pageMessageStatus = MassMessage::getContentWithFallback(
-					$titleStr, $targetLanguage->getCode(), $sourceLanguage, $originWiki
+					$titleStr, $targetLanguage->getCode(), $sourceLanguage, $originWiki, $pageSection
 				);
 			} else {
 				$pageMessageStatus = MassMessage::getContent(
-					$titleStr, $originWiki
+					$titleStr, $originWiki, $pageSection
 				);
 			}
 

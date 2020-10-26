@@ -8,6 +8,7 @@ use HTMLForm;
 use SpecialPage;
 use Status;
 use Title;
+use WikiMap;
 use WikiPage;
 use Xml;
 
@@ -131,6 +132,9 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected function createForm() {
 		$request = $this->getRequest();
+
+		$isPreview = $this->state === 'preview';
+
 		$m = [];
 		// Who to send to
 		$m['spamlist'] = [
@@ -163,24 +167,43 @@ class SpecialMassMessage extends SpecialPage {
 			'help' => $this->msg( 'massmessage-form-page-help' )->text()
 		];
 
+		$options = [ '----' => '' ];
+		$pagename = $request->getText( 'page-message' );
+		if ( trim( $pagename ) !== '' ) {
+			$sections = $this->getLabeledSections( $pagename );
+			$options += array_combine( $sections, $sections );
+		}
+
+		$m['page-section'] = [
+			'id' => 'mw-massmessage-form-page-section',
+			'name' => 'page-section',
+			'type' => 'select',
+			'options' => $options,
+			'tabindex' => '4',
+			'disabled' => !$isPreview,
+			'label-message' => 'massmessage-form-page-section',
+			'default' => $request->getText( 'page-section' ),
+			'help-message' => 'massmessage-form-page-section-help',
+		];
+
 		// The message to send
 		$m['message'] = [
 			'id' => 'mw-massmessage-form-message',
 			'name' => 'message',
 			'type' => 'textarea',
-			'tabindex' => '4',
+			'tabindex' => '5',
 			'label-message' => 'massmessage-form-message',
 			'default' => $request->getText( 'message' )
 		];
 
-		if ( $this->state === 'preview' ) {
+		if ( $isPreview ) {
 			// Adds it right before the 'Send' button
 			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse' );
 			$m['submit-button'] = [
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',
 				'type' => 'submit',
-				'tabindex' => '5',
+				'tabindex' => '6',
 				'default' => $this->msg( 'massmessage-form-submit' )->text()
 			];
 		}
@@ -189,7 +212,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-preview-button',
 			'name' => 'preview-button',
 			'type' => 'submit',
-			'tabindex' => '6',
+			'tabindex' => '7',
 			'default' => $this->msg( 'massmessage-form-preview' )->text()
 		];
 
@@ -309,7 +332,9 @@ class SpecialMassMessage extends SpecialPage {
 				$infoMessages[] = $this->msg( 'massmessage-translate-page-info' )->parse();
 			}
 
-			$pageContent = MassMessage::getLocalContent( $pageTitle )->getValue() ?? '';
+			$pageContent = MassMessage::getContent(
+				$pageTitle, WikiMap::getCurrentWikiId(), $data['page-section']
+			)->getValue() ?? '';
 		}
 
 		$this->showPreviewInfo( $infoMessages );
@@ -383,5 +408,20 @@ class SpecialMassMessage extends SpecialPage {
 		);
 
 		$this->getOutput()->addHTML( $infoFieldset );
+	}
+
+	/**
+	 * Get sections given a page name.
+	 *
+	 * @param string $pagename
+	 * @return string[]
+	 */
+	private function getLabeledSections( string $pagename ): array {
+		$status = MassMessage::getContent( $pagename, WikiMap::getCurrentWikiId() );
+		if ( !$status->isOK() ) {
+			return [];
+		}
+
+		return MassMessage::getLabeledSections( $status->getValue() );
 	}
 }

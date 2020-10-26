@@ -14,6 +14,8 @@
 	"massmessage-form-message": "Body of the message:",
 	"massmessage-form-page": "Page to be sent as a message:",
 	"massmessage-form-page-help": "Content from the selected page will be appended along with the message, if provided.",
+	"massmessage-form-page-section": "Section of the page:",
+	"massmessage-form-page-section-help": "Select a page and preview the form to see a list of available sections.",
 	"massmessage-form-preview": "Preview",
 	"massmessage-form-submit": "Send",
 	"massmessage-fieldset-preview": "Preview",
