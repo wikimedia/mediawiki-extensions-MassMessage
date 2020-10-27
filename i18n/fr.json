@@ -26,6 +26,8 @@
 	"massmessage-form-message": "Corps du message :",
 	"massmessage-form-page": "Page à envoyer en tant que message :",
 	"massmessage-form-page-help": "Le contenu de la page sélectionnée sera ajouté à la suite du message, s’il est fourni.",
+	"massmessage-form-page-section": "Section de la page :",
+	"massmessage-form-page-section-help": "Sélectionnez une page et prévisualisez le formulaire pour voir une liste des sections disponibles.",
 	"massmessage-form-preview": "Aperçu",
 	"massmessage-form-submit": "Envoyer",
 	"massmessage-fieldset-preview": "Aperçu",

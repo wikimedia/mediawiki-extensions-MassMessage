@@ -24,6 +24,6 @@
 	"apihelp-query+mmsites-description": "Опслужувај барања за самодополнување на полето за мреж. место во Масовна порака.",
 	"apihelp-query+mmsites-summary": "Опслужувај барања за самодополнување на полето за мреж. место во Масовна порака.",
 	"apihelp-query+mmsites-param-term": "Претставката што треба да се побара.",
-	"apihelp-query+mmsites-example-1": "Автодополни го „mk“",
+	"apihelp-query+mmsites-example-1": "Самодополни го „mk“",
 	"apierror-massmessage-invalidspamlist": "Укажаниот список на спам е неважечки."
 }

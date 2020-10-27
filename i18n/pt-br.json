@@ -23,6 +23,8 @@
 	"massmessage-form-message": "Corpo da mensagem:",
 	"massmessage-form-page": "Página a ser enviada como uma mensagem:",
 	"massmessage-form-page-help": "O conteúdo da página selecionada será anexado juntamente com a mensagem, se fornecida.",
+	"massmessage-form-page-section": "Seção da página:",
+	"massmessage-form-page-section-help": "Selecione uma página e visualize o formulário para ver uma lista das seções disponíveis.",
 	"massmessage-form-preview": "Visualizar",
 	"massmessage-form-submit": "Enviar",
 	"massmessage-fieldset-preview": "Visualizar",
