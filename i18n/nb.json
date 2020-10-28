@@ -15,6 +15,8 @@
 	"massmessage-form-message": "Meldingsinnhold:",
 	"massmessage-form-page": "Side som skal sendes som melding:",
 	"massmessage-form-page-help": "Innhold fra den valgte siden blir lagt til sammen med meldingen, hvis angitt.",
+	"massmessage-form-page-section": "Seksjon av siden:",
+	"massmessage-form-page-section-help": "Velg en side og forhåndsvis skjemaet for å se en liste over tilgjengelige seksjoner.",
 	"massmessage-form-preview": "Forhåndsvis",
 	"massmessage-form-submit": "Send",
 	"massmessage-fieldset-preview": "Forhåndsvis",
