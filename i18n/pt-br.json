@@ -128,6 +128,7 @@
 	"massmessage-summary-remove": "Removida [[:$1]]",
 	"massmessage-summary-removeonsite": "Removida $1 em $2",
 	"massmessage-summary-removemulti": "{{PLURAL:$1|Removida $1 página|Removidas $1 páginas}}",
+	"massmessage-summary-addremovechange": "Adicionado $1 {{PLURAL:$1|página|páginas}}, removido $2 {{PLURAL:$2|página|páginas}}, e mudou a descrição",
 	"massmessage-summary-addchange": "Adicionado [[:$1]] e alterou a descrição",
 	"massmessage-summary-addonsitechange": "Adicionou $1 em $2 e alterou a descrição",
 	"massmessage-summary-addmultichange": "Adicionado $1 {{PLURAL:$1|página|páginas}} e mudou a descrição",
