@@ -352,7 +352,7 @@ class MassMessageListContent extends JsonContent {
 			] );
 		}
 		$html .= Html::input( 'submit',
-			wfMessage( 'massmessage-content-addsubmit' )->inLanguage( $lang )->escaped(),
+			wfMessage( 'massmessage-content-addsubmit' )->inLanguage( $lang )->text(),
 			'submit', [ 'id' => 'mw-massmessage-addsubmit' ] );
 		$html .= Html::closeElement( 'form' );
 
