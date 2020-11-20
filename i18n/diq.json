@@ -18,5 +18,6 @@
 	"massmessage-content-emptylist": "(çıniyo)",
 	"massmessage-summary-add": "[[:$1]] biyo cı",
 	"massmessage-summary-remove": "[[:$1]] dariya we",
-	"tag-massmessage-delivery": "Teslimatê MassMessage"
+	"tag-massmessage-delivery": "Teslimatê MassMessage",
+	"tag-massmessage-delivery-description": "Be gurenayışê [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]] ra teslimatê mesaci"
 }
