@@ -19,6 +19,8 @@
 	"apihelp-massmessage-param-message": "Teste d'u cuèrpe d'u messàgge.",
 	"apihelp-massmessage-param-page-message": "Pàgene ca adda essere mannate cu 'u cuèrpe d'u messàgge.",
 	"apihelp-massmessage-example-1": "Manne 'nu messàgge a l'elenghe a [[Signpost Spamlist]] cu l'oggette \"New Signpost\", e 'u cuèrpe d'u messàgge \"Please read it\".",
+	"apihelp-massmessage-example-2": "Manne 'nu messàgge a l'elenghe a [[Signpost Spamlist]] cu l'oggette \"New Signpost\", e 'u messàgge cumme condenute d'a pàgene \"Help Page\".",
+	"apihelp-massmessage-example-3": "Manne 'nu messàgge a l'elenghe a [[Signpost Spamlist]] cu l'oggette \"New Signpost\", e 'u cuèrpe d'u messàgge \"Please read it\" appese cu 'u condenute da 'a pàgene \"Help Page\".",
 	"apihelp-query+mmsites-description": "Fà devendà disponibbele 'u combletamende automateche de le richieste pu cambe ca ste jndr'à MassMessage.",
 	"apihelp-query+mmsites-summary": "Fà devendà disponibbele 'u combletamende automateche de le richieste pu cambe ca ste jndr'à MassMessage.",
 	"apihelp-query+mmsites-param-term": "'U prefisse da cercà.",
