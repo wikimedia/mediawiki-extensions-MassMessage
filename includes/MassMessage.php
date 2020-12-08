@@ -665,8 +665,8 @@ class MassMessage {
 			return null;
 		}
 
-		$server = $wgConf->get( 'wgServer', $wiki, [ 'lang' => $minor, 'site' => $major ] );
-		$scriptPath = $wgConf->get( 'wgScriptPath', $wiki, [ 'lang' => $minor, 'site' => $major ] );
+		$server = $wgConf->get( 'wgServer', $wiki, null, [ 'lang' => $minor, 'site' => $major ] );
+		$scriptPath = $wgConf->get( 'wgScriptPath', $wiki, null, [ 'lang' => $minor, 'site' => $major ] );
 
 		$apiPath = wfExpandUrl( $server . $scriptPath . '/api.php', PROTO_INTERNAL );
 

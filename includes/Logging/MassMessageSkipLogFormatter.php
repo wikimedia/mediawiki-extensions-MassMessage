@@ -26,7 +26,7 @@ class MassMessageSkipLogFormatter extends LogFormatter {
 		// Format the edit summary using Linker::formatComment so that wikilinks
 		// and other simple things get parsed, but no HTML
 		$this->parsedParameters[3] = Message::rawParam( Linker::formatComment(
-			// @phan-suppress-next-line PhanTypeMismatchArgument
+			// @phan-suppress-next-line PhanTypeMismatchArgumentProbablyReal
 			$this->parsedParameters[3],
 			$this->entry->getTarget()
 		) );

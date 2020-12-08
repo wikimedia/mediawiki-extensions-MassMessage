@@ -357,11 +357,12 @@ class MassMessageListContent extends JsonContent {
 		$html .= Html::closeElement( 'form' );
 
 		// List of added pages
-		$html .= Html::openElement( 'div', [ 'id' => 'mw-massmessage-addedlist' ] );
-		$html .= Html::element( 'p', [],
-			wfMessage( 'massmessage-content-addedlistheading' )->inLanguage( $lang )->text() );
-		$html .= Html::element( 'ul', [], '' );
-		$html .= Html::closeElement( 'div' );
+		$html .= Html::rawElement(
+			'div',
+			[ 'id' => 'mw-massmessage-addedlist' ],
+			Html::element( 'p', [], wfMessage( 'massmessage-content-addedlistheading' )->inLanguage( $lang )->text() ) .
+				Html::element( 'ul', [], '' )
+		);
 
 		$html .= Html::closeElement( 'div' );
 		return $html;
