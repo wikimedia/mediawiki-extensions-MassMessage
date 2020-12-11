@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BrennodAloisi",
 			"Cedric31"
 		]
 	},
@@ -10,9 +11,9 @@
 	"massmessage-form-spamlist": "Pagina o categoria que conten la lista de las paginas sus las qualas cal daissar un messatge :",
 	"massmessage-form-subject": "Subjècte del messatge (utilizat tanben dins lo resumit de la modificacion) :",
 	"massmessage-form-message": "Còs del messatge :",
-	"massmessage-form-preview": "Apercebut",
+	"massmessage-form-preview": "Previsualizacion",
 	"massmessage-form-submit": "Mandar",
-	"massmessage-fieldset-preview": "Apercebut",
+	"massmessage-fieldset-preview": "Previsualizacion",
 	"massmessage-fieldset-info": "Informacion",
 	"massmessage-submitted": "Lo mandadís de vòstre messatge a {{PLURAL:$1|$1 pagina|$1 paginas}} es estat mes en fila d’espèra.",
 	"massmessage-just-preview": "Aquò's simplament un apercebut. Quichatz sus « {{int:massmessage-form-submit}} » per mandar lo messatge.",
