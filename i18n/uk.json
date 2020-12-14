@@ -20,6 +20,8 @@
 	"massmessage-form-message": "Текст повідомлення:",
 	"massmessage-form-page": "Сторінка, що надсилається як повідомлення:",
 	"massmessage-form-page-help": "Вміст вибраної сторінки буде додано до повідомлення, якщо вказано.",
+	"massmessage-form-page-section": "Розділ сторінки:",
+	"massmessage-form-page-section-help": "Оберіть сторінку та перегляньте попередній перегляд форми, щоб побачити доступні розділи.",
 	"massmessage-form-preview": "Попередній перегляд",
 	"massmessage-form-submit": "Надіслати",
 	"massmessage-fieldset-preview": "Попередній перегляд",
