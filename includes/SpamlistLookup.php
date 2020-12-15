@@ -74,7 +74,7 @@ abstract class SpamlistLookup {
 	 * Returns null if invalid.
 	 *
 	 * @param Title $title
-	 * @return object|null
+	 * @return SpamlistLookup|null
 	 */
 	public static function factory( Title $title ) {
 		if ( $title->inNamespace( NS_CATEGORY ) ) {

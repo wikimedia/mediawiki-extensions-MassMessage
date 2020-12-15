@@ -18,10 +18,10 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 	protected function setUp() : void {
 		global $wgLqtPages;
 		parent::setUp();
-		$wgConf = new SiteConfiguration;
-		$wgConf->wikis = [ 'enwiki', 'dewiki', 'frwiki' ];
-		$wgConf->suffixes = [ 'wiki' ];
-		$wgConf->settings = [
+		$conf = new SiteConfiguration();
+		$conf->wikis = [ 'enwiki', 'dewiki', 'frwiki' ];
+		$conf->suffixes = [ 'wiki' ];
+		$conf->settings = [
 			'wgServer' => [
 				'enwiki' => '//en.wikipedia.org',
 				'dewiki' => '//de.wikipedia.org',
@@ -36,7 +36,7 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 				'default' => '/wiki/$1',
 			],
 		];
-		$this->setMwGlobals( 'wgConf', $wgConf );
+		$this->setMwGlobals( 'wgConf', $conf );
 		$proj = MediaWikiServices::getInstance()->getContentLanguage()
 			->getFormattedNsText( NS_PROJECT );
 		$wgLqtPages[] = $proj . ':LQT test';

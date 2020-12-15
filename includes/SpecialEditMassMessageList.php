@@ -210,11 +210,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @return string
 	 */
 	protected function preText() {
-		global $wgAllowGlobalMessaging;
+		$allowGlobalMessaging = $this->getConfig()->get( 'AllowGlobalMessaging' );
 
 		if ( $this->rev ) {
 			// Instructions
-			if ( $wgAllowGlobalMessaging && count( DatabaseLookup::getDatabases() ) > 1 ) {
+			if ( $allowGlobalMessaging && count( DatabaseLookup::getDatabases() ) > 1 ) {
 				$headerKey = 'massmessage-edit-headermulti';
 			} else {
 				$headerKey = 'massmessage-edit-header';
