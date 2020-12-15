@@ -48,12 +48,6 @@ class DatabaseLookup {
 	public static function getDBName( $host ) {
 		global $wgMassMessageWikiAliases;
 		$mapping = self::getDatabases();
-		if ( isset( $mapping[$host] ) ) {
-			return $mapping[$host];
-		}
-		if ( isset( $wgMassMessageWikiAliases[$host] ) ) {
-			return $wgMassMessageWikiAliases[$host];
-		}
-		return null; // Couldn't find anything
+		return $mapping[$host] ?? $wgMassMessageWikiAliases[$host] ?? null;
 	}
 }

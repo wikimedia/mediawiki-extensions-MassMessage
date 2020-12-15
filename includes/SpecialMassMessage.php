@@ -6,6 +6,7 @@ use ContentHandler;
 use EditPage;
 use Html;
 use HTMLForm;
+use Message;
 use SpecialPage;
 use Status;
 use Title;
@@ -68,9 +69,9 @@ class SpecialMassMessage extends SpecialPage {
 		$this->status = new Status();
 
 		// Figure out what state we're in.
-		if ( $request->getVal( 'submit-button' ) !== null ) {
+		if ( $request->getCheck( 'submit-button' ) ) {
 			$this->state = 'submit';
-		} elseif ( $request->getVal( 'preview-button' ) !== null ) {
+		} elseif ( $request->getCheck( 'preview-button' ) ) {
 			$this->state = 'preview';
 		} else {
 			$this->state = 'form';
@@ -93,7 +94,7 @@ class SpecialMassMessage extends SpecialPage {
 			if ( $this->state === 'submit' ) { // If it's preview, everything is shown already.
 				$output->addWikiMsg(
 					'massmessage-submitted',
-					[ 'num' => $this->count ]
+					Message::numParam( $this->count )
 				);
 				$output->addWikiMsg( 'massmessage-nextsteps' );
 			}
@@ -255,21 +256,16 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return array
 	 */
 	protected function getUnclosedTags( $message ) {
-		$startTags = [];
-		$endTags = [];
-
 		// For start tags, ignore ones that contain '/' (assume those are self-closing).
-		preg_match_all( '|\<([\w]+)[^/]*?>|', $message, $startTags );
-		preg_match_all( '|\</([\w]+)|', $message, $endTags );
+		if ( !preg_match_all( '|\<([\w]+)[^/]*?>|', $message, $startTags ) &&
+			!preg_match_all( '|\</([\w]+)|', $message, $endTags )
+		) {
+			return [];
+		}
 
 		// Keep just the element names from the matched patterns.
 		$startTags = $startTags[1];
 		$endTags = $endTags[1];
-
-		// Stop and return an empty array if there are no HTML tags.
-		if ( empty( $startTags ) && empty( $endTags ) ) {
-			return [];
-		}
 
 		// Construct a set containing elements that do not need an end tag.
 		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements

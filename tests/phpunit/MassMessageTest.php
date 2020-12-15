@@ -3,8 +3,6 @@
 namespace MediaWiki\MassMessage;
 
 /**
- * Tests for the MassMessage extension...
- *
  * @group Database
  */
 class MassMessageTest extends MassMessageTestCase {

@@ -49,7 +49,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * @param string $par
+	 * @param string|null $par
 	 */
 	public function execute( $par ) {
 		$this->getOutput()->addModules( 'ext.MassMessage.edit' );
@@ -276,7 +276,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		// Blank edit summary warning
 		if ( $data['summary'] === ''
 			&& $this->getUser()->getOption( 'forceeditsummary' )
-			&& $this->getRequest()->getVal( 'summarywarned' ) === null
+			&& !$this->getRequest()->getCheck( 'summarywarned' )
 		) {
 			$form->addHiddenField( 'summarywarned', 'true' );
 			return Status::newFatal( $this->msg( 'massmessage-edit-missingsummary' ) );

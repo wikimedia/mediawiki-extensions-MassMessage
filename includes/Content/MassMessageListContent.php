@@ -338,7 +338,6 @@ class MassMessageListContent extends JsonContent {
 		$html .= Html::element( 'h2', [],
 			wfMessage( 'massmessage-content-addheading' )->inLanguage( $lang )->text() );
 
-		// Form
 		$html .= Html::openElement( 'form', [ 'id' => 'mw-massmessage-addform' ] );
 		$html .= Html::element( 'label', [ 'for' => 'mw-massmessage-addtitle' ],
 			wfMessage( 'massmessage-content-addtitle' )->inLanguage( $lang )->text() );

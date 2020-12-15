@@ -100,12 +100,12 @@ class MassMessageListContentHandler extends JsonContentHandler {
 
 	/**
 	 * Deduplicate and sort a target array
-	 * @param array $targets
-	 * @return array
+	 * @param array[] $targets
+	 * @return array[]
 	 */
 	public static function normalizeTargetArray( $targets ) {
 		$targets = array_unique( $targets, SORT_REGULAR );
-		usort( $targets, 'self::compareTargets' );
+		usort( $targets, [ __CLASS__, 'compareTargets' ] );
 		return $targets;
 	}
 

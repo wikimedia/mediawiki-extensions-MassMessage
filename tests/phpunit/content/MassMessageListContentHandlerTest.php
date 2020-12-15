@@ -19,7 +19,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	/** @var string */
 	protected static $spamlist = 'MassMessageListCHTest_spamlist';
 
-	public function setUp() : void {
+	protected function setUp() : void {
 		global $wgGroupPermissions;
 		parent::setUp();
 		$this->mergeMwGlobalArrayValue(

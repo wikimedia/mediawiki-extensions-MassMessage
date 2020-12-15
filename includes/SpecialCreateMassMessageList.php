@@ -22,7 +22,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	/**
 	 * Add ResourceLoader module and call parent implementation.
 	 *
-	 * @param string $par
+	 * @param string|null $par
 	 */
 	public function execute( $par ) {
 		$this->getOutput()->addModules( 'ext.MassMessage.create' );

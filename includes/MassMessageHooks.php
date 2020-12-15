@@ -22,7 +22,7 @@ class MassMessageHooks {
 	 * @param Parser $parser
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setFunctionHook( 'target', [ self::class, 'outputParserFunction' ] );
+		$parser->setFunctionHook( 'target', [ __CLASS__, 'outputParserFunction' ] );
 	}
 
 	/**

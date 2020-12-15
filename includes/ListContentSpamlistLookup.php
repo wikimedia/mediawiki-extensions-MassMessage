@@ -21,7 +21,7 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 	/**
 	 * Get an array of targets from a page with the MassMessageListContent model.
 	 *
-	 * @return array
+	 * @return array[]
 	 */
 	public function fetchTargets() {
 		global $wgCanonicalServer;

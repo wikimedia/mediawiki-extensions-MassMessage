@@ -21,7 +21,7 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 	/**
 	 * Get an array of targets via the #target parser function.
 	 *
-	 * @return array
+	 * @return array[]
 	 */
 	public function fetchTargets() {
 		$page = WikiPage::factory( $this->spamlist );

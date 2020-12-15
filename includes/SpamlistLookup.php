@@ -16,7 +16,7 @@ abstract class SpamlistLookup {
 	/**
 	 * Get an array of targets via the getTarget function.
 	 *
-	 * @return array
+	 * @return array[]
 	 */
 	abstract public function fetchTargets();
 
@@ -103,7 +103,7 @@ abstract class SpamlistLookup {
 	 * @param array[] $data
 	 * @return array[]
 	 */
-	protected static function normalizeTargets( array $data ) {
+	private static function normalizeTargets( array $data ) {
 		global $wgNamespacesToConvert;
 
 		$currentWikiId = WikiMap::getCurrentWikiId();
