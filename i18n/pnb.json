@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abbas dhothar",
 			"Taimoor"
 		]
 	},
-	"massmessage-invalid-lang": "غلط بولی ناں: \"$1\""
+	"massmessage-invalid-lang": "غلط بولی ناں: \"$1\"",
+	"massmessage-content-removeno": "رد کرو",
+	"massmessage-content-emptylist": "(کوئی وی نئیں)"
 }
