@@ -15,7 +15,7 @@
 	"massmessage-fieldset-info": "Informacije",
 	"massmessage-preview-count": "Tvoje sporočilo bo poslano {{PLURAL:$1|$1 strani|$1 stranema|$1 stranem}}.",
 	"massmessage-submitted": "Dostava vašega sporočila na {{PLURAL:$1|$1 stran|$1 strani}} je bila vnesena v čakalno vrsto.",
-	"massmessage-just-preview": "To je samo predogled. Pritisni \"{{int:massmessage-form-submit}}\", da pošlješ sporočilo.",
+	"massmessage-just-preview": "To je samo predogled. Da sporočilo pošljete, pritisnite na »{{int:massmessage-form-submit}}«.",
 	"massmessage-empty-subject": "Vrstica s predmetom je prazna.",
 	"massmessage-empty-message": "Telo sporočila je prazno. Vnesite telo sporočila ali izberite stran, ki bo poslana kot sporočilo.",
 	"massmessage-no-timestamp": "Pozor: Tvoje sporočilo ne vsebuje podpisa ali sistemskega datuma.",
