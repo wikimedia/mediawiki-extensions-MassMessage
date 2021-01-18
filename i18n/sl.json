@@ -7,7 +7,7 @@
 		]
 	},
 	"massmessage": "Pošlji masovno sporočilo",
-	"massmessage-form-subject": "Zadeva sporočila (uporabljena tudi za povzetek urejanja)",
+	"massmessage-form-subject": "Zadeva sporočila (uporabi se tudi za povzetek urejanja):",
 	"massmessage-form-message": "Sporočilo:",
 	"massmessage-form-preview": "Predogled",
 	"massmessage-form-submit": "Pošlji",
@@ -17,7 +17,7 @@
 	"massmessage-submitted": "Dostava vašega sporočila na {{PLURAL:$1|$1 stran|$1 strani}} je bila vnesena v čakalno vrsto.",
 	"massmessage-just-preview": "To je samo predogled. Da sporočilo pošljete, pritisnite na »{{int:massmessage-form-submit}}«.",
 	"massmessage-empty-subject": "Vrstica s predmetom je prazna.",
-	"massmessage-empty-message": "Telo sporočila je prazno. Vnesite telo sporočila ali izberite stran, ki bo poslana kot sporočilo.",
+	"massmessage-empty-message": "V sporočilu ni vsebine. Vnesite vsebino sporočila ali izberite stran, ki bo poslana kot sporočilo.",
 	"massmessage-no-timestamp": "Pozor: Tvoje sporočilo ne vsebuje podpisa ali sistemskega datuma.",
 	"massmessage-parse-badurl": "»$1« ni veljavna stran",
 	"massmessage-parse-badpage": "»$1« ni veljaven naslov strani",
