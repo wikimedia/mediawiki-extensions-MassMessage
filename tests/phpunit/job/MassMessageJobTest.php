@@ -20,6 +20,9 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 	/**
 	 * Runs a job to edit the given title
+	 * @param Title $title
+	 * @param array $additionalParams
+	 * @return array
 	 */
 	private function simulateJob( Title $title, array $additionalParams = [] ): array {
 		$subject = md5( MWCryptRand::generateHex( 15 ) );

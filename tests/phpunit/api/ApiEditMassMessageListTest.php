@@ -15,6 +15,7 @@ use WikiPage;
  */
 class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 
+	/** @var string */
 	protected static $spamlist = 'ApiEditMMListTest_spamlist';
 
 	protected function setUp() : void {

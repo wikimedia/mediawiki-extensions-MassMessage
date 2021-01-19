@@ -16,6 +16,7 @@ use Title;
  */
 class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 
+	/** @var string */
 	protected static $spamlist = 'MassMessageListCHTest_spamlist';
 
 	public function setUp() : void {
@@ -35,6 +36,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	/**
 	 * Return the sign of $par.
 	 * @param int $par
+	 * @return int
 	 */
 	protected static function getSign( $par ) {
 		return ( $par > 0 ) - ( $par < 0 );
@@ -136,6 +138,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 * @dataProvider provideCompareTargets
 	 * @param array $a
 	 * @param array $b
+	 * @param int $expected
 	 */
 	public function testCompareTargets( $a, $b, $expected ) {
 		$this->assertEquals(

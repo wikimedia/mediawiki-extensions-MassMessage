@@ -17,8 +17,11 @@ use WikiPage;
  */
 class ApiMassMessageTest extends MassMessageApiTestCase {
 
+	/** @var string */
 	protected static $spamlist = 'Help:ApiMassMessageTest_spamlist';
+	/** @var string */
 	protected static $emptyspamlist = 'Help:ApiMassMessageTest_spamlist2';
+	/** @var string */
 	private static $pageMessage = 'Help:Test_Page';
 
 	protected function setUp() : void {
@@ -33,7 +36,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 
 	/**
 	 * Updates $title with the provided $text
-	 * @param Title title
+	 * @param Title $title
 	 * @param string $text
 	 */
 	public static function updatePage( $title, $text ) {

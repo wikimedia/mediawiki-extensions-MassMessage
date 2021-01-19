@@ -22,8 +22,8 @@ class UrlHelperTest extends MassMessageTestCase {
 	/**
 	 * @covers \MediaWiki\MassMessage\UrlHelper::getBaseUrl
 	 * @dataProvider provideGetBaseUrl
-	 * @param  string $url      raw url to parse
-	 * @param  string $expected expected value
+	 * @param string $url raw url to parse
+	 * @param string $expected expected value
 	 */
 	public function testGetBaseUrl( $url, $expected ) {
 		$output = UrlHelper::getBaseUrl( $url );
