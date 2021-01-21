@@ -50,7 +50,7 @@
 	"massmessage-page-message-empty": "Mesaj olarak gönderilmek üzere seçilen \"$1\" sayfasının içeriği yok.",
 	"massmessage-unescaped-langlinks": "Uyarı: İletinizde kapatılmamış dil bağlantıları mevcut.",
 	"massmessage-no-timestamp": "Uyarı: İletiniz zaman damgası veya imza içermiyor.",
-	"massmessage-form-header": "Belirtilen listeye ileti göndermek için aşağıdaki formu kullanın. Bütün alanlar gereklidir ([https://www.mediawiki.org/wiki/Help:Extension:MassMessage daha fazla bilgi]).",
+	"massmessage-form-header": "Belirtilen listeye ileti göndermek için aşağıdaki formu kullanın. Bütün alanlar gereklidir ([https://www.mediawiki.org/wiki/Help:Extension:MassMessage/tr daha fazla bilgi]).",
 	"massmessage-hidden-comment": "<!-- Mesajı gönderen kullanıcı: $3 listesini kullanan $1@$2  -->",
 	"massmessage-optout-category": "Mesaj teslimatından ayrıldınız",
 	"massmessage-badhtml": "İletinizde {{PLURAL:$2|kapatılmamış HTML etiketi olabilir|kapatılmamış HTML etiketleri olabilir}}: $1.",
