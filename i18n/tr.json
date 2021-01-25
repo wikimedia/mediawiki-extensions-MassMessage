@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Cobija",
 			"Diyapazon",
 			"Emperyan",
 			"HakanIST",
@@ -33,7 +34,7 @@
 	"massmessage-preview-count": "Mesajınız {{PLURAL:$1|$1 sayfası|$1 sayfası}}na gönderilecektir.",
 	"massmessage-translate-page-info": "İleti olarak gönderilecek çevrilmiş bir sayfa seçtiniz. Aboneler, sayfanın içeriğini tercih ettikleri dilde veya çeviri yoksa bir yedek dilde alacaktır.",
 	"massmessage-submitted": "İletiniz {{PLURAL:$1|$1 sayfaya|$1 sayfaya}} teslimat için sıraya eklendi.",
-	"massmessage-just-preview": "Bu yalnızca bir ön izlemedir. İletiyi göndermek için \"{{int:massmessage-form-submit}}\" düğmesine basınız.",
+	"massmessage-just-preview": "Bu yalnızca bir önizlemedir. İletiyi göndermek için \"{{int:massmessage-form-submit}}\" düğmesine basınız.",
 	"massmessage-spamlist-doesnotexist": "Belirtilen teslimat listesi sayfası veya kategorisi yok.",
 	"massmessage-spamlist-invalid": "Belirtilen sayfa geçerli bir gönderim listesi içermiyor.",
 	"massmessage-empty-subject": "Konu satırı boş.",

@@ -56,8 +56,8 @@
 	"massmessage-edit-title": "Naslov:",
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-summary": "Povzetek urejanja:",
-	"tag-massmessage-delivery": "Dostava MassMessage",
-	"tag-massmessage-delivery-description": "Dostava sporočil z uporabo [[:mw:Special:MyLanguage/Extension:MassMessage|Razširitev:MassMessage]]",
+	"tag-massmessage-delivery": "dostava MassMessage",
+	"tag-massmessage-delivery-description": "Dostava sporočil z razširitvijo [[:mw:Special:MyLanguage/Extension:MassMessage|MassMessage]]",
 	"log-action-filter-massmessage": "Vrsta dnevniškega vnosa",
 	"log-action-filter-massmessage-failure": "Spodletelo poslanje masovnega sporočila"
 }

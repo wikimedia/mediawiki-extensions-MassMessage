@@ -7,5 +7,7 @@
 	},
 	"massmessage-invalid-lang": "غلط بولی ناں: \"$1\"",
 	"massmessage-content-removeno": "رد کرو",
-	"massmessage-content-emptylist": "(کوئی وی نئیں)"
+	"massmessage-content-emptylist": "(کوئی وی نئیں)",
+	"massmessage-create-description": "تفصیل:",
+	"massmessage-edit-description": "تفصیل:"
 }
