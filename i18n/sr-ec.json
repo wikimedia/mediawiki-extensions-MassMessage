@@ -96,6 +96,7 @@
 	"massmessage-edit-summary": "Резиме измене:",
 	"massmessage-summary-addmulti": "Додато страница: {{PLURAL:$1|$1}}",
 	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}",
+	"massmessage-list-category": "Спискови испоруке масовних порука",
 	"tag-massmessage-delivery": "испорука масовне поруке",
 	"log-action-filter-massmessage": "Тип ставке у дневнику",
 	"log-action-filter-massmessage-send": "Прослеђивање масовних порука",
