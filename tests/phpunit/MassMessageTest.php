@@ -25,6 +25,6 @@ class MassMessageTest extends MassMessageTestCase {
 		$this->setMwGlobals( 'wgMassMessageAccountUsername', $name );
 		$user = MassMessage::getMessengerUser();
 		$this->assertEquals( $name, $user->getName() );
-		$this->assertTrue( in_array( 'bot', $user->getGroups() ) );
+		$this->assertContains( 'bot', $user->getGroups() );
 	}
 }

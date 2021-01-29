@@ -27,7 +27,7 @@ class ListContentSpamlistLookupTest extends MassMessageTestCase {
 		$page->doEditContent( $content, 'summary' );
 		$targets = SpamlistLookup::getTargets( $title );
 
-		$this->assertEquals( 2, count( $targets ) );
+		$this->assertCount( 2, $targets );
 		$this->assertEquals( 'A', $targets[0]['title'] );
 		$this->assertEquals( WikiMap::getCurrentWikiId(), $targets[0]['wiki'] );
 		$this->assertEquals( 'B', $targets[1]['title'] );
