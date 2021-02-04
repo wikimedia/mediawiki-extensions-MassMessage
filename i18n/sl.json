@@ -56,6 +56,8 @@
 	"massmessage-edit-title": "Naslov:",
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-summary": "Povzetek urejanja:",
+	"massmessage-summary-add": "Dodano: [[:$1]]",
+	"massmessage-summary-remove": "Odstranjeno: [[:$1]]",
 	"tag-massmessage-delivery": "dostava MassMessage",
 	"tag-massmessage-delivery-description": "Dostava sporočil z razširitvijo [[:mw:Special:MyLanguage/Extension:MassMessage|MassMessage]]",
 	"log-action-filter-massmessage": "Vrsta dnevniškega vnosa",
