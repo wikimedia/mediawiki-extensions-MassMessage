@@ -17,6 +17,7 @@
 	"massmessage-content-removeno": "Anular",
 	"massmessage-content-emptylist": "(nula)",
 	"massmessage-create-content": "Kontenajo:",
+	"massmessage-edit-pagetitle": "Redaktanta $1",
 	"massmessage-edit-summary": "Rezumo pri redakto:",
 	"massmessage-summary-addmultichange": "Adjuntita $1 {{PLURAL:$1|pagino|pagini}} e modifikita la deskripto",
 	"massmessage-summary-removechange": "[[:$1]] efacesis, e la deskripto modifikesis",

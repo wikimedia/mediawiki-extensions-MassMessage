@@ -10,6 +10,7 @@
 			"Shirayuki",
 			"Sujiniku",
 			"Suyama",
+			"Whym",
 			"おはぐろ蜻蛉"
 		]
 	},
@@ -30,7 +31,7 @@
 	"massmessage-spamlist-doesnotexist": "配信先一覧として指定したページまたはカテゴリが存在しません。",
 	"massmessage-spamlist-invalid": "指定したページは有効な一斉送信リストを含んでいません。",
 	"massmessage-empty-subject": "件名を入力していません。",
-	"massmessage-empty-message": "メッセージの本文を入力していません。",
+	"massmessage-empty-message": "メッセージ本文が空です。メッセージ本文を提供するか、メッセージとして送るべきページを選択してください。",
 	"massmessage-invalid-lang": "言語コードが無効です：\"$1\"",
 	"massmessage-unescaped-langlinks": "警告: メッセージ内にエスケープされていない言語リンクがあります。",
 	"massmessage-no-timestamp": "警告:あなたのメッセージはタイムスタンプまたは署名を含んでいません。",
