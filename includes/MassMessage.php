@@ -651,7 +651,7 @@ class MassMessage {
 	 * @return string
 	 */
 	public static function appendMessageAndPage( string $message, string $pageContent ): string {
-		return $pageContent . "\n\n----\n\n" . $message;
+		return $pageContent . "\n\n" . $message;
 	}
 
 	public static function getApiEndpoint( string $wiki ): ?string {
