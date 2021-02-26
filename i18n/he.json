@@ -15,7 +15,7 @@
 	"massmessage-form-subject": "כותרת ההודעה (משמשת גם כתקציר עריכה):",
 	"massmessage-form-message": "גוף ההודעה:",
 	"massmessage-form-page": "איזה דף לשלוח בתור הודעה:",
-	"massmessage-form-page-help": "תוכן מהדף שנבחר יתווסף להודעה, אם יינתן.",
+	"massmessage-form-page-help": "גם ההודעה, אם הוא מסופק, יתווסף לסוף התוכן בדף הנבחר.",
 	"massmessage-form-page-section": "הפרק בדף",
 	"massmessage-form-page-section-help": "נא לבחרו דף ולעשות תצוגה מקדימה של הטופס כדי לראות רשימה של פרקים זמינים.",
 	"massmessage-form-preview": "תצוגה מקדימה",

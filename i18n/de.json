@@ -18,7 +18,7 @@
 	"massmessage-form-subject": "Betreff der Nachricht (wird auch für die Bearbeitungszusammenfassung verwendet):",
 	"massmessage-form-message": "Nachrichtentext:",
 	"massmessage-form-page": "Seite, die als Nachricht gesendet werden soll:",
-	"massmessage-form-page-help": "Der Inhalt der ausgewählten Seite wird, falls vorhanden, zusammen mit der Nachricht angehängt.",
+	"massmessage-form-page-help": "Der Nachrichtentext, falls vorhanden, wird an das Ende des Inhalts der ausgewählten Seite angehängt.",
 	"massmessage-form-page-section": "Abschnitt der Seite:",
 	"massmessage-form-page-section-help": "Wähle eine Seite und eine Vorschau des Formulars, um eine Liste der verfügbaren Abschnitte anzuzeigen.",
 	"massmessage-form-preview": "Vorschau",

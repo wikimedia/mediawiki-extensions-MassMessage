@@ -25,7 +25,7 @@
 	"massmessage-form-subject": "Sujet du message (utilisé également dans le résumé de la modification) :",
 	"massmessage-form-message": "Corps du message :",
 	"massmessage-form-page": "Page à envoyer en tant que message :",
-	"massmessage-form-page-help": "Le contenu de la page sélectionnée sera ajouté à la suite du message, s’il est fourni.",
+	"massmessage-form-page-help": "Le corps du message, s’il est fourni, sera ajouté à la fin du contenu de la page sélectionnée.",
 	"massmessage-form-page-section": "Section de la page :",
 	"massmessage-form-page-section-help": "Sélectionnez une page et prévisualisez le formulaire pour voir une liste des sections disponibles.",
 	"massmessage-form-preview": "Aperçu",
