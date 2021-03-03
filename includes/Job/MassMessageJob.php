@@ -261,10 +261,20 @@ class MassMessageJob extends Job {
 		if ( $result ) {
 			// Apply change tag if the edit succeeded
 			$resultData = $result->getResultData();
-			$revId = $resultData['edit']['newrevid'];
-			DeferredUpdates::addCallableUpdate( static function () use ( $revId ) {
-				ChangeTags::addTags( 'massmessage-delivery', null, $revId, null );
-			} );
+			if ( !isset( $resultData['edit']['result'] )
+				|| $resultData['edit']['result'] !== 'Success'
+			) {
+				// job should retry the edit
+				return false;
+			}
+			if ( !isset( $resultData['edit']['nochange'] )
+				&& $resultData['edit']['newrevid']
+			) {
+				$revId = $resultData['edit']['newrevid'];
+				DeferredUpdates::addCallableUpdate( static function () use ( $revId ) {
+					ChangeTags::addTags( 'massmessage-delivery', null, $revId, null );
+				} );
+			}
 			return true;
 		}
 		return false;
