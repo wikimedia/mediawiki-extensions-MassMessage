@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Arystanbek"
+			"Arystanbek",
+			"Hedeyohu22"
 		]
 	},
 	"massmessage": "Жаппай хабарлама жіберу",
@@ -11,6 +12,7 @@
 	"massmessage-form-spamlist": "Беттер немесе санаттардан тұратын беттер тізіміне хабарлама қалдыру:",
 	"massmessage-form-subject": "Хабарлама тақырыбы (сондай-ақ өңдеу түйіндемесі ретінде қолданылады)",
 	"massmessage-form-message": "Хабарлама мәтіні",
+	"massmessage-form-page-help": "Хабарламаның негізгі бөлігі, егер ұсынылған болса, таңдалған беттен алынған мазмұнның соңына қосылады.",
 	"massmessage-form-preview": "Қарап шығу",
 	"massmessage-form-submit": "Жіберу",
 	"massmessage-fieldset-preview": "Қарап шығу",
