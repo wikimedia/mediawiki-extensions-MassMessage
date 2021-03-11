@@ -465,7 +465,7 @@ class MassMessage {
 		$matches = [];
 		$label = preg_quote( $label, '~' );
 		$ok = preg_match_all(
-			"~<section[^>]+begin\s*=\s*{$label}[^>]+>(.*?)<section[^>]+end\s*=\s*{$label}~s",
+			"~<section[^>]+begin\s*=\s*{$label}[^>]+>.*?<section[^>]+end\s*=\s*{$label}[^>]+>~s",
 			$pagetext,
 			$matches
 		);
@@ -474,7 +474,12 @@ class MassMessage {
 			return Status::newFatal( 'massmessage-page-section-invalid' );
 		}
 
-		$content = trim( implode( "", $matches[1] ) );
+		// Include section tags for backwards compatibility.
+		// https://phabricator.wikimedia.org/T254481#6865334
+		// In case there are multiple sections with same label, there will be multiple wrappers too.
+		// Because LabelsedSectionTransclusion supports that natively, I see no reason to try to
+		// simplify it to include only one wrapper.
+		$content = trim( implode( "", $matches[0] ) );
 		return Status::newGood( $content );
 	}
 

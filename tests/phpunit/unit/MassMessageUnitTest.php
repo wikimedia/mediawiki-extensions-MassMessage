@@ -23,24 +23,24 @@ class MassMessageUnitTest extends MediaWikiUnitTestCase {
 	}
 
 	public static function provideGetLabeledSectionContent() {
-		yield [
+		yield "basic syntax" => [
 			'a <section begin=x />b<section end=x /> c',
 			'x',
-			'b',
+			'<section begin=x />b<section end=x />',
 			null
 		];
 
-		yield [
+		yield "non-existings section" => [
 			'a <section begin=x />b<section end=x /> c',
 			'y',
 			null,
 			true
 		];
 
-		yield [
+		yield "multiple section tags" => [
 			"a <section begin=x />\nb\n<section end=x /> c\n<section begin = x/>d\ne<section end = x/> f",
 			'x',
-			"b\nd\ne",
+			"<section begin=x />\nb\n<section end=x /><section begin = x/>d\ne<section end = x/>",
 			null
 		];
 	}
