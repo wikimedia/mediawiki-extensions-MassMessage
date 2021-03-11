@@ -10,11 +10,12 @@ class MassMessageUnitTest extends MediaWikiUnitTestCase {
 	 * @dataProvider provideGetLabeledSectionContent
 	 */
 	public function testGetLabeledSectionContent( $text, $label, $expectedGood, $expectedBad ) {
-		$status = MassMessage::getLabeledSectionContent( $text, $label );
+		$content = new LanguageAwareText( $text, 'en', 'ltr' );
+		$status = MassMessage::getLabeledSectionContent( $content, $label );
 
 		if ( $expectedGood !== null ) {
 			$this->assertTrue( $status->isOK() );
-			$this->assertEquals( $expectedGood, $status->getValue() );
+			$this->assertEquals( $expectedGood, $status->getValue()->getWikitext() );
 		}
 
 		if ( $expectedBad !== null ) {
