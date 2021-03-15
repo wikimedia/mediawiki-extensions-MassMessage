@@ -19,6 +19,7 @@
 	"massmessage-form-preview": "Preview",
 	"massmessage-form-submit": "Send",
 	"massmessage-fieldset-preview": "Preview",
+	"massmessage-fieldset-wikitext-preview": "Wikitext preview",
 	"massmessage-fieldset-info": "Information",
 	"massmessage-preview-count": "Your message will be sent to {{PLURAL:$1|$1 page|$1 pages}}.",
 	"massmessage-translate-page-info": "You have selected a translated page to be sent as message. Subscribers will receive the contents of the page in their preferred language, or in a fallback language if translation is not available.",

@@ -6,6 +6,7 @@ use CentralIdLookup;
 use ContentHandler;
 use Exception;
 use ExtensionRegistry;
+use Html;
 use JobQueueGroup;
 use Language;
 use ManualLogEntry;
@@ -266,7 +267,7 @@ class MassMessage {
 	 * Fetch the page content with the given title from the same wiki.
 	 *
 	 * @param Title $pageTitle
-	 * @return Status
+	 * @return Status Values is LanguageAwareText or null on failure
 	 */
 	public static function getLocalContent( Title $pageTitle ): Status {
 		if ( !$pageTitle->exists() ) {
@@ -287,9 +288,9 @@ class MassMessage {
 			);
 		}
 
-		$wiki = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
+		$wikitext = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
 
-		if ( $wiki === null ) {
+		if ( $wikitext === null ) {
 			return Status::newFatal(
 				'massmessage-page-message-no-revision-content',
 				$pageTitle->getPrefixedText(),
@@ -297,7 +298,13 @@ class MassMessage {
 			);
 		}
 
-		return Status::newGood( $wiki );
+		$content = new LanguageAwareText(
+			$wikitext,
+			$pageTitle->getPageLanguage()->getCode(),
+			$pageTitle->getPageLanguage()->getDir()
+		);
+
+		return Status::newGood( $content );
 	}
 
 	/**
@@ -305,7 +312,7 @@ class MassMessage {
 	 *
 	 * @param Title $pageTitle
 	 * @param string $wikiId
-	 * @return Status
+	 * @return Status Values is LanguageAwareText or null on failure
 	 */
 	public static function getRemoteContent(
 		Title $pageTitle, string $wikiId
@@ -320,10 +327,12 @@ class MassMessage {
 		}
 
 		$queryParams = [
-			'action' => 'parse',
+			'action' => 'query',
 			'format' => 'json',
-			'prop' => 'wikitext',
-			'page' => $pageTitle->getPrefixedText(),
+			'prop' => 'info|revisions',
+			'rvprop' => 'content',
+			'rvslots' => 'main',
+			'titles' => $pageTitle->getPrefixedText(),
 			'formatversion' => 2
 		];
 
@@ -350,32 +359,32 @@ class MassMessage {
 		$json = $req->getContent();
 		$response = json_decode( $json, true );
 
-		if ( ( $response['error']['code'] ?? '' ) === 'missingtitle' ) {
+		$pageInfo = $response['query']['pages'] ?? [];
+		if ( isset( $response['error']['info'] ) || count( $pageInfo ) !== 1 ) {
+			return Status::newFatal(
+				'massmessage-page-message-parse-invalid-in-wiki',
+				$wikiId,
+				$pageTitle->getPrefixedText(),
+				$response['error']['info'] ?? $json
+			);
+		}
+
+		if ( isset( $pageInfo['missing'] ) ) {
 			// Page was not found
 			return Status::newFatal(
 				'massmessage-page-message-not-found-in-wiki',
 				$wikiId,
 				$pageTitle->getPrefixedText()
 			);
-		} elseif ( isset( $response['error']['info'] ) ) {
-			// We got another error from the API.
-			return Status::newFatal(
-				'massmessage-page-message-parse-invalid-in-wiki',
-				$wikiId,
-				$pageTitle->getPrefixedText(),
-				$response['error']['info']
-			);
-		} elseif ( !isset( $response['parse'] ) ) {
-			// Sanity check
-			return Status::newFatal(
-				'massmessage-page-message-parse-invalid-in-wiki',
-				$wikiId,
-				$pageTitle->getPrefixedText(),
-				$json
-			);
 		}
 
-		return Status::newGood( $response['parse']['wikitext'] );
+		$content = new LanguageAwareText(
+			$pageInfo['revisions'][0]['slots']['main']['*'],
+			$pageInfo['pagelanguage'],
+			$pageInfo['pagelanguagedir']
+		);
+
+		return Status::newGood( $content );
 	}
 
 	/**
@@ -386,7 +395,7 @@ class MassMessage {
 	 * @param string $sourceLangCode
 	 * @param string $wikiId
 	 * @param ?string $pageSection
-	 * @return Status
+	 * @return Status Values is LanguageAwareText or null on failure
 	 */
 	public static function getContentWithFallback(
 		string $titleStr,
@@ -435,7 +444,7 @@ class MassMessage {
 	 * @param string $titleStr
 	 * @param string $wikiId
 	 * @param string|null $section
-	 * @return Status
+	 * @return Status Values is LanguageAwareText or null on failure
 	 */
 	public static function getContent( string $titleStr, string $wikiId, ?string $section = null )
 	: Status {
@@ -459,14 +468,19 @@ class MassMessage {
 		return $contentStatus;
 	}
 
-	public static function getLabeledSectionContent( string $pagetext, string $label ): Status {
+	public static function getLabeledSectionContent(
+		LanguageAwareText $content,
+		string $label
+	): Status {
+		$wikitext = $content->getWikitext();
+
 		// I looked into LabeledSectionTransclusion and it is not reusable here without a lot of
 		// rework -NL
 		$matches = [];
 		$label = preg_quote( $label, '~' );
 		$ok = preg_match_all(
 			"~<section[^>]+begin\s*=\s*{$label}[^>]+>.*?<section[^>]+end\s*=\s*{$label}[^>]+>~s",
-			$pagetext,
+			$wikitext,
 			$matches
 		);
 
@@ -479,8 +493,12 @@ class MassMessage {
 		// In case there are multiple sections with same label, there will be multiple wrappers too.
 		// Because LabelsedSectionTransclusion supports that natively, I see no reason to try to
 		// simplify it to include only one wrapper.
-		$content = trim( implode( "", $matches[0] ) );
-		return Status::newGood( $content );
+		$sectionContent = new LanguageAwareText(
+			trim( implode( "", $matches[0] ) ),
+			$content->getLanguageCode(),
+			$content->getLanguageDirection()
+		);
+		return Status::newGood( $sectionContent );
 	}
 
 	public static function getLabeledSections( string $pagetext ): array {
@@ -649,14 +667,56 @@ class MassMessage {
 	}
 
 	/**
-	 * Used to append the message and content of the page
+	 * Compose the full text from a custom message and from a page content.
 	 *
-	 * @param string $message Custom message
-	 * @param string $pageContent Content of the page to be sent as message
+	 * Adds language tagging if necessary. Includes a comment about who is the sender.
+	 *
+	 * @param string $customMessageText
+	 * @param LanguageAwareText|null $pageContent
+	 * @param Language|null $targetPageLanguage Suppress language wrapping if source and target
+	 *   language match
+	 * @param array $commentParams
 	 * @return string
 	 */
-	public static function appendMessageAndPage( string $message, string $pageContent ): string {
-		return $pageContent . "\n\n" . $message;
+	public static function composeFullMessage(
+		string $customMessageText,
+		?LanguageAwareText $pageContent,
+		?Language $targetPageLanguage,
+		array $commentParams
+	): string {
+		$fullMessageText = '';
+
+		if ( $pageContent ) {
+			if ( !$targetPageLanguage
+				|| $targetPageLanguage->getCode() !== $pageContent->getLanguageCode()
+			) {
+				// Wrap page contents if it differs from target page's language. Ideally the
+				// message contents would be wrapped too, but we do not know its language.
+				$fullMessageText .= Html::rawElement(
+					'div',
+					[
+						'lang' => $pageContent->getLanguageCode(),
+						'dir' => $pageContent->getLanguageDirection(),
+						// This class is needed for proper rendering of list items (and maybe more)
+						'class' => 'mw-content-' . $pageContent->getLanguageDirection()
+					],
+					"\n" . $pageContent->getWikitext() . "\n"
+				);
+			} else {
+				$fullMessageText = $pageContent->getWikitext();
+			}
+		}
+
+		// If either is empty, the extra new lines will be trimmed
+		$fullMessageText = trim( $fullMessageText . "\n\n" . $customMessageText );
+
+		$commentMessage = wfMessage( 'massmessage-hidden-comment' )->params( $commentParams );
+		if ( $targetPageLanguage ) {
+			$commentMessage = $commentMessage->inLanguage( $targetPageLanguage );
+		}
+		$fullMessageText .= "\n" . $commentMessage->text();
+
+		return $fullMessageText;
 	}
 
 	public static function getApiEndpoint( string $wiki ): ?string {

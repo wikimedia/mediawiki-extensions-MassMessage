@@ -313,13 +313,13 @@ class MassMessageJob extends Job {
 		$isSourceTranslationPage = $this->params['isSourceTranslationPage'] ?? false;
 		$pageSection = $this->params['page-section'] ?? null;
 		$pageContent = null;
+		$targetLanguage = $this->title->getPageLanguage();
 
 		// Check if page-message has been set, and fetch the page content.
 		if ( $titleStr ) {
 			$pageMessageStatus = null;
 			if ( $isSourceTranslationPage ) {
 				$sourceLanguage = $this->params['translationPageSourceLanguage'] ?? '';
-				$targetLanguage = $this->title->getPageLanguage();
 				$pageMessageStatus = MassMessage::getContentWithFallback(
 					$titleStr, $targetLanguage->getCode(), $sourceLanguage, $originWiki, $pageSection
 				);
@@ -343,14 +343,13 @@ class MassMessageJob extends Job {
 			$text = substr( $text, 0, -4 );
 		}
 
-		if ( $text && $pageContent ) {
-			$text = MassMessage::appendMessageAndPage( $text, $pageContent );
-		} elseif ( $pageContent ) {
-			$text = $pageContent;
-		}
+		$text = MassMessage::composeFullMessage(
+			$text,
+			$pageContent,
+			$targetLanguage,
+			$this->params['comment']
+		);
 
-		$text .= "\n" . wfMessage( 'massmessage-hidden-comment' )
-				->params( $this->params['comment'] )->text();
 		return Status::newGood( $text );
 	}
 

@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use ContentHandler;
 use EditPage;
+use Html;
 use HTMLForm;
 use SpecialPage;
 use Status;
@@ -325,33 +326,38 @@ class SpecialMassMessage extends SpecialPage {
 			$this->msg( 'massmessage-preview-count' )->numParams( count( $targets ) )->parse()
 		];
 
-		$pageContent = '';
+		$pageContent = null;
 		if ( $data['page-message'] !== '' ) {
 			$pageTitle = MassMessage::getLocalContentTitle( $data['page-message'] )->getValue();
 			if ( MassMessage::isSourceTranslationPage( $pageTitle ) ) {
 				$infoMessages[] = $this->msg( 'massmessage-translate-page-info' )->parse();
 			}
 
-			$pageContent = MassMessage::getContent(
+			$pageContentStatus = MassMessage::getContent(
 				$pageTitle, WikiMap::getCurrentWikiId(), $data['page-section']
-			)->getValue() ?? '';
+			);
+
+			if ( $pageContentStatus->isOK() ) {
+				$pageContent = $pageContentStatus->getValue();
+			}
 		}
 
 		$this->showPreviewInfo( $infoMessages );
 
-		if ( $pageContent !== '' && $data['message'] !== '' ) {
-			$pageContent = MassMessage::appendMessageAndPage( $data['message'], $pageContent );
-		} elseif ( $data['message'] !== '' ) {
-			// Both cannot be empty, verified earlier.
-			$pageContent = $data['message'];
-		}
+		$messageText = MassMessage::composeFullMessage(
+			$data['message'],
+			$pageContent,
+			// This forces language wrapping always. Good for clarity
+			null,
+			$data['comment']
+		);
 
 		// Use a mock target as the context for rendering the preview
 		$mockTarget = Title::newFromText( 'Project:MassMessage:A page that should not exist' );
 		$wikipage = WikiPage::factory( $mockTarget );
 
 		// Convert into a content object
-		$content = ContentHandler::makeContent( $pageContent, $mockTarget );
+		$content = ContentHandler::makeContent( $messageText, $mockTarget );
 		// Parser stuff. Taken from EditPage::getPreviewText()
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setIsPreview( true );
@@ -368,6 +374,13 @@ class SpecialMassMessage extends SpecialPage {
 			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] )
 		);
 		$this->getOutput()->addHTML( $previewFieldset );
+
+		$wikitextPreviewFieldset = Xml::fieldset(
+			$this->msg( 'massmessage-fieldset-wikitext-preview' )->text(),
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped false positive or bug
+			Html::element( 'pre', [], "== {$data['subject']} ==\n\n$messageText" )
+		);
+		$this->getOutput()->addHTML( $wikitextPreviewFieldset );
 
 		// Check if we have unescaped langlinks (Bug 54846)
 		if ( $parserOutput->getLanguageLinks() ) {
@@ -422,6 +435,6 @@ class SpecialMassMessage extends SpecialPage {
 			return [];
 		}
 
-		return MassMessage::getLabeledSections( $status->getValue() );
+		return MassMessage::getLabeledSections( $status->getValue()->getWikitext() );
 	}
 }
