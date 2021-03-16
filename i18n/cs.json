@@ -21,7 +21,7 @@
 	"massmessage-form-subject": "Předmět zprávy (použit také jako shrnutí editace):",
 	"massmessage-form-message": "Tělo zprávy:",
 	"massmessage-form-page": "Stránka, která má být zaslaná jako zpráva:",
-	"massmessage-form-page-help": "Obsah z této stránky (pokud je vyplněna) bude připojena k vaší zprávě",
+	"massmessage-form-page-help": "Tělo zprávy (pokud je vyplněno) bude připojeno na konec obsahu vybrané stránky.",
 	"massmessage-form-page-section": "Sekce stránky",
 	"massmessage-form-preview": "Náhled",
 	"massmessage-form-submit": "Odeslat",

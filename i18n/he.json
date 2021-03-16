@@ -21,6 +21,7 @@
 	"massmessage-form-preview": "תצוגה מקדימה",
 	"massmessage-form-submit": "שליחה",
 	"massmessage-fieldset-preview": "תצוגה מקדימה",
+	"massmessage-fieldset-wikitext-preview": "תצוגה מקדימה של קוד ויקי",
 	"massmessage-fieldset-info": "מידע",
 	"massmessage-preview-count": "ההודעה שלך תישלח {{PLURAL:$1|לדך אחד|ל־$1 דפים}}.",
 	"massmessage-translate-page-info": "בחרת לשלוח דף מתורגם בתור הודעה. מנויים יקבלו את תוכן הדף בשפה המועדפת עליהם, או בשפת גיבוי אם התרגום אינו זמין.",

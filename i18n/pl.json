@@ -9,6 +9,7 @@
 			"Rail",
 			"Rzuwig",
 			"Sp5uhe",
+			"The Polish",
 			"WTM",
 			"Wiochman",
 			"Woytecr"
@@ -59,7 +60,7 @@
 	"massmessage-global-disallowed": "Można rozsyłać wiadomości tylko na lokalne strony.",
 	"right-massmessage": "Wysyłanie wiadomości do wielu użytkowników jednocześnie",
 	"action-massmessage": "wyślij wiadomość do wielu użytkowników jednocześnie",
-	"log-name-massmessage": "Masowe wiadomości",
+	"log-name-massmessage": "Rejestr masowych wiadomości",
 	"log-description-massmessage": "To jest lista zdarzeń służąca do śledzenia wysyłanych wiadomości.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3",
 	"logentry-massmessage-failure": "Dostarczenie „$4” do $3 nie powiodło się. Kod błędu: <code>$5</code>",

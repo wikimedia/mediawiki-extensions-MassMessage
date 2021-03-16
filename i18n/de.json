@@ -24,6 +24,7 @@
 	"massmessage-form-preview": "Vorschau",
 	"massmessage-form-submit": "Senden",
 	"massmessage-fieldset-preview": "Vorschau",
+	"massmessage-fieldset-wikitext-preview": "Wikitext-Vorschau",
 	"massmessage-fieldset-info": "Informationen",
 	"massmessage-preview-count": "Deine Nachricht wird an {{PLURAL:$1|eine Seite|$1 Seiten}} versandt.",
 	"massmessage-translate-page-info": "Du hast eine übersetzte Seite ausgewählt, die als Nachricht gesendet werden soll. Die Abonnenten erhalten den Inhalt der Seite in ihrer bevorzugten Sprache oder in einer Ausweichsprache, falls keine Übersetzung verfügbar ist.",
