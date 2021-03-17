@@ -20,6 +20,7 @@
 	"massmessage-form-preview": "Anteprima",
 	"massmessage-form-submit": "Invia",
 	"massmessage-fieldset-preview": "Anteprima",
+	"massmessage-fieldset-wikitext-preview": "Anteprima wikitesto",
 	"massmessage-fieldset-info": "Informazioni",
 	"massmessage-preview-count": "Il tuo messaggio verrà inviato a {{PLURAL:$1|$1 pagina|$1 pagine}}.",
 	"massmessage-submitted": "L'invio del tuo messaggio su {{PLURAL:$1|$1 pagina|$1 pagine}} è stato accodato.",

@@ -29,6 +29,7 @@
 	"massmessage-form-preview": "Visualizar",
 	"massmessage-form-submit": "Enviar",
 	"massmessage-fieldset-preview": "Visualizar",
+	"massmessage-fieldset-wikitext-preview": "Pré-visualização de wikitexto",
 	"massmessage-fieldset-info": "Informação",
 	"massmessage-preview-count": "A sua mensagem será enviada para {{PLURAL:$1|$1 página|$1 páginas}}.",
 	"massmessage-translate-page-info": "Você selecionou uma página traduzida para ser enviada como mensagem. Os assinantes receberão o conteúdo da página em seu idioma preferido ou em um idioma substituto se a tradução não estiver disponível.",

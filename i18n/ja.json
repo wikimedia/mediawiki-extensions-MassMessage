@@ -10,6 +10,7 @@
 			"Shirayuki",
 			"Sujiniku",
 			"Suyama",
+			"Tamaki Wakita",
 			"Whym",
 			"おはぐろ蜻蛉"
 		]
@@ -24,6 +25,7 @@
 	"massmessage-form-preview": "プレビュー",
 	"massmessage-form-submit": "送信",
 	"massmessage-fieldset-preview": "プレビュー",
+	"massmessage-fieldset-wikitext-preview": "ウィキテキストの内覧",
 	"massmessage-fieldset-info": "情報",
 	"massmessage-preview-count": "メッセージは {{PLURAL:$1|$1 件のページ}}に送信されます。",
 	"massmessage-submitted": "{{PLURAL:$1|$1 件のページ}}へのメッセージ送信を待ち行列に登録しました。",

@@ -26,6 +26,7 @@
 	"massmessage-form-preview": "Náhled",
 	"massmessage-form-submit": "Odeslat",
 	"massmessage-fieldset-preview": "Náhled",
+	"massmessage-fieldset-wikitext-preview": "Náhled wikitextu",
 	"massmessage-fieldset-info": "Informace",
 	"massmessage-preview-count": "Vaše zpráva bude odeslána na {{PLURAL:$1|$1 stránku|$1 stránky|$1 stránek}}.",
 	"massmessage-submitted": "Požadované doručení zprávy na {{PLURAL:$1|$1 stránku|$1 stránky|$1 stránek}} bylo zařazeno do fronty.",
