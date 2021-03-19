@@ -12,6 +12,7 @@
 			"Matiia",
 			"Mcervera",
 			"Ovruni",
+			"Rossnyev",
 			"Ryo567",
 			"Vivaelcelta"
 		]
@@ -27,6 +28,7 @@
 	"massmessage-form-preview": "Previsualizar",
 	"massmessage-form-submit": "Enviar",
 	"massmessage-fieldset-preview": "Previsualización",
+	"massmessage-fieldset-wikitext-preview": "anticipo del texto Wiki",
 	"massmessage-fieldset-info": "Información",
 	"massmessage-preview-count": "Se enviará tu mensaje a {{PLURAL:$1|$1 página|$1 páginas}}.",
 	"massmessage-submitted": "Tu entrega de mensaje a {{PLURAL:$1|$1 página|$1 páginas}} ha sido puesta en cola para la entrega.",
