@@ -40,13 +40,14 @@ class MassMessage {
 	 */
 	public static function getMessengerUser() {
 		global $wgMassMessageAccountUsername;
+		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
 
 		$user = User::newSystemUser(
 			$wgMassMessageAccountUsername, [ 'steal' => true ]
 		);
 		// Make the user a bot so it doesn't look weird
-		if ( !in_array( 'bot', $user->getGroups() ) ) {
-			$user->addGroup( 'bot' );
+		if ( !in_array( 'bot', $userGroupManager->getUserGroups( $user ) ) ) {
+			$userGroupManager->addUserToGroup( $user, 'bot' );
 		}
 
 		return $user;
