@@ -347,12 +347,12 @@ class MassMessage {
 
 		$status = $req->execute();
 		if ( !$status->isOK() ) {
-			$error = $req->getContent();
+			// FIXME: Formatting is broken here, needs to be improved.
 			return Status::newFatal(
 				"massmessage-page-message-parse-error-in-wiki",
 				$wikiId,
 				$pageTitle->getPrefixedText(),
-				$error
+				$status->getMessage()->text()
 			);
 		}
 
