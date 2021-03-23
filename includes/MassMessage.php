@@ -359,8 +359,52 @@ class MassMessage {
 		$json = $req->getContent();
 		$response = json_decode( $json, true );
 
-		$pageInfo = $response['query']['pages'] ?? [];
-		if ( isset( $response['error']['info'] ) || count( $pageInfo ) !== 1 ) {
+		return self::parseQueryApiResponse( $response, $wikiId, $pageTitle, $json );
+	}
+
+	/**
+	 * @param array $response
+	 * @param string $wikiId
+	 * @param Title $pageTitle
+	 * @param string $json
+	 * @return Status
+	 */
+	private static function parseQueryApiResponse(
+		array $response,
+		string $wikiId,
+		Title $pageTitle,
+		string $json
+	): Status {
+		// Example response:
+		// {
+		//   "batchcomplete": true,
+		//   "query": {
+		//     "pages": [ {
+		//       "pageid": 11285354,
+		//       "ns": 0,
+		//       "title": "Tech/News/2021/12",
+		//       "contentmodel": "wikitext",
+		//       "pagelanguage": "en",
+		//       "pagelanguagehtmlcode": "en",
+		//       "pagelanguagedir": "ltr",
+		//       "touched": "2021-03-23T06:05:06Z",
+		//       "lastrevid": 21247464,
+		//       "length": 4585,
+		//       "revisions": [ {
+		//         "slots": {
+		//           "main": {
+		//             "contentmodel": "wikitext",
+		//             "contentformat": "text/x-wiki",
+		//             "content": "[...]"
+		//           }
+		//         }
+		//       } ]
+		//     } ]
+		//   }
+		// }
+
+		$pages = $response['query']['pages'] ?? [];
+		if ( isset( $response['error']['info'] ) || count( $pages ) !== 1 ) {
 			return Status::newFatal(
 				'massmessage-page-message-parse-invalid-in-wiki',
 				$wikiId,
@@ -369,7 +413,10 @@ class MassMessage {
 			);
 		}
 
-		if ( isset( $pageInfo['missing'] ) ) {
+		// Take first and only one out of the list
+		$page = current( $pages );
+
+		if ( isset( $page['missing'] ) ) {
 			// Page was not found
 			return Status::newFatal(
 				'massmessage-page-message-not-found-in-wiki',
@@ -379,9 +426,9 @@ class MassMessage {
 		}
 
 		$content = new LanguageAwareText(
-			$pageInfo['revisions'][0]['slots']['main']['*'],
-			$pageInfo['pagelanguage'],
-			$pageInfo['pagelanguagedir']
+			$page['revisions'][0]['slots']['main']['content'],
+			$page['pagelanguage'],
+			$page['pagelanguagedir']
 		);
 
 		return Status::newGood( $content );
