@@ -349,7 +349,7 @@ class MassMessage {
 		if ( !$status->isOK() ) {
 			// FIXME: Formatting is broken here, needs to be improved.
 			return Status::newFatal(
-				"massmessage-page-message-parse-error-in-wiki",
+				"massmessage-page-message-fetch-error-in-wiki",
 				$wikiId,
 				$pageTitle->getPrefixedText(),
 				$status->getMessage()->text()
@@ -358,6 +358,14 @@ class MassMessage {
 
 		$json = $req->getContent();
 		$response = json_decode( $json, true );
+		if ( $response === null ) {
+			return Status::newFatal(
+				"massmessage-page-message-parsing-error-in-wiki",
+				$wikiId,
+				$pageTitle->getPrefixedText(),
+				json_last_error_msg()
+			);
+		}
 
 		return self::parseQueryApiResponse( $response, $wikiId, $pageTitle, $json );
 	}
