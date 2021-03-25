@@ -33,7 +33,7 @@
 	"massmessage-page-message-no-revision": "'A pàgene \"$1\", scacchiate pe essere mannate cumme messàgge, non ge tène 'na revisione usabbele.",
 	"massmessage-page-message-no-revision-content": "'A pàgene \"$1\", scacchiate pe essere mannate cumme messàgge, non ge tène 'na revisione cu 'u condenute. ID d'a revisione: \"$2\"",
 	"massmessage-page-message-wiki-not-found": "Non ge pozze acchià 'a uicchi \"$1\" jndr'à èàgene \"$2\", scacchiate pe essere mannate cumme messàgge.",
-	"massmessage-page-message-parse-error-in-wiki": "Ha assute 'n'errore mendre ca ste analizzave 'a pàgene \"$2\", scacchiate pe essere mannate cumme messàgge, da 'a uicchi \"$1\". Errore: $3",
+	"massmessage-page-message-fetch-error-in-wiki": "Ha assute 'n'errore mendre ca ste analizzave 'a pàgene \"$2\", scacchiate pe essere mannate cumme messàgge, da 'a uicchi \"$1\". Errore: $3",
 	"massmessage-page-message-not-found-in-wiki": "'A pàgene \"$2\", da 'a uicchi \"$1\", scacchiate pe essere mannate cumme messàgge, non g'ha state acchiate.",
 	"massmessage-invalid-lang": "Code de lènghe non valide: \"$1\"",
 	"massmessage-page-message-parse-invalid-in-wiki": "'Na resposte invalide ha state mannate mendre ca analizzave 'a pàgene \"$2\", scacchiate pe essere mannate cumme messàgge, da 'a uicchi \"$1\". Resposte: $3",

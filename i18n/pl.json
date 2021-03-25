@@ -43,7 +43,7 @@
 	"massmessage-page-message-no-revision": "Strona „$1”, wybrana do wysłania jako wiadomość, nie ma użytecznej wersji.",
 	"massmessage-page-message-no-revision-content": "Strona „$1”, wybrana do wysłania jako wiadomość, nie ma wersji zawartości. Numer wersji: „$2”",
 	"massmessage-page-message-wiki-not-found": "Nie można znaleźć wiki „$1”, aby pobrać stronę „$2”, wybraną do wysłania jako wiadomość.",
-	"massmessage-page-message-parse-error-in-wiki": "Wystąpił błąd podczas pobierania strony „$2”, wybranej do wysłania jako wiadomość, z wiki „$1”. Błąd: $3",
+	"massmessage-page-message-fetch-error-in-wiki": "Wystąpił błąd podczas pobierania strony „$2”, wybranej do wysłania jako wiadomość, z wiki „$1”. Błąd: $3",
 	"massmessage-page-message-not-found-in-wiki": "Strona „$2” z wiki „$1”, wybrana do wysłania jako wiadomość, nie została znaleziona.",
 	"massmessage-invalid-lang": "Nieprawidłowy kod języka: „$1”",
 	"massmessage-page-message-parse-invalid-in-wiki": "Nieprawidłowa odpowiedź została wysłana podczas pobierania strony „$2”, wybranej do wysłania jako wiadomość, z wiki „$1”. Odpowiedź: $3",

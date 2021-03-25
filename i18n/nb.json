@@ -34,7 +34,7 @@
 	"massmessage-page-message-no-revision": "Siden «$1», som ble valgt til å sende som melding, har ingen brukbar revisjon.",
 	"massmessage-page-message-no-revision-content": "Siden «$1», som ble valgt til å sende som melding, har ikke noe revisjonsinnhold. Revisjons-ID: «$2»",
 	"massmessage-page-message-wiki-not-found": "Kunne ikke finne wikien «$1» til å hente siden «$2» fra.",
-	"massmessage-page-message-parse-error-in-wiki": "En feil oppsto under henting av siden «$2», som ble valgt til å sende som melding, fra wikien «$1». Feil: $3",
+	"massmessage-page-message-fetch-error-in-wiki": "En feil oppsto under henting av siden «$2», som ble valgt til å sende som melding, fra wikien «$1». Feil: $3",
 	"massmessage-page-message-not-found-in-wiki": "Siden «$2» fra wikien «$1», valgt til å sendes som melding, ble ikke funnet.",
 	"massmessage-invalid-lang": "Ugyldig språkkode: «$1»",
 	"massmessage-page-message-parse-invalid-in-wiki": "En ugyldig respons ble sendt under henting av siden «$2», som ble valgt til å sendes som melding, fra wikien «$1». Respons: $3",

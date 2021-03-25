@@ -23,7 +23,7 @@
 	"massmessage-page-message-no-revision": "Ar bajenn \"$1\", diuzet evit bezañ kaset da gemennadenn, n'he deus tamm adweladenn implijadus ebet.",
 	"massmessage-page-message-no-revision-content": "Ar bajenn \"$1\", diuzet evit bezañ kaset evel kemennadenn n'eus enni tamm danvez adwel ebet. Anaouder an adstumm : \"$2\"",
 	"massmessage-page-message-wiki-not-found": "Ne c'haller ket kavout ar wiki \"$1\" evit klask ar bajenn \"$2\", diuzet evit bezañ kaset evel kemennadenn.",
-	"massmessage-page-message-parse-error-in-wiki": "Ur fazi zo bet en ur glask adtapout ar bajenn \"$2\", diuzet evit bezañ kaset evel kemennadenn adalek ar wiki \"$1\". Fazi : $3",
+	"massmessage-page-message-fetch-error-in-wiki": "Ur fazi zo bet en ur glask adtapout ar bajenn \"$2\", diuzet evit bezañ kaset evel kemennadenn adalek ar wiki \"$1\". Fazi : $3",
 	"massmessage-page-message-not-found-in-wiki": "Ar bajenn \"$2\", eus ar wiki \"$1\", bet diuzet evit bezañ kaset evel kemennadenn, n'eo ket bet kavet.",
 	"massmessage-invalid-lang": "Kod yezh direizh : \"$1\"",
 	"massmessage-page-message-parse-invalid-in-wiki": "Ur respont direizh a oa bet kaset goude klask ar bajenn \"$2\", diuzet evit bezañ kaset evel kemennadenn, adalek ar wiki \"$1\". Respont : $3",

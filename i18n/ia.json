@@ -9,7 +9,7 @@
 	"massmessage-page-message-no-revision": "Le pagina \"$1\", seligite pro esser inviate como message, non ha un version usabile.",
 	"massmessage-page-message-no-revision-content": "Le pagina \"$1\", seligite pro esser inviate como message, non ha contento in le version. ID del version: \"$2\"",
 	"massmessage-page-message-wiki-not-found": "Impossibile trovar le wiki \"$1\" pro obtener le pagina \"$2\", seligite pro esser inviate como message.",
-	"massmessage-page-message-parse-error-in-wiki": "Un error ha occurrite durante le obtention del pagina \"$2\", seligite pro esser inviate como message, ab le wiki \"$1\". Error: $3",
+	"massmessage-page-message-fetch-error-in-wiki": "Un error ha occurrite durante le obtention del pagina \"$2\", seligite pro esser inviate como message, ab le wiki \"$1\". Error: $3",
 	"massmessage-page-message-parse-invalid-in-wiki": "Un responsa invalide ha essite inviate durante le obtention del pagina \"$2\", seligite pro esser inviate como message, ab le wiki \"$1\". Responsa: $3",
 	"massmessage-page-message-empty": "Le pagina \"$1\", seligite pro esser inviate como message, non ha contento.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Inviar un altere message]].",
