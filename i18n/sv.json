@@ -7,6 +7,7 @@
 			"Jopparn",
 			"Lokal Profil",
 			"Nirmos (Wikimedia)",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -20,6 +21,7 @@
 	"massmessage-form-preview": "Förhandsgranska",
 	"massmessage-form-submit": "Skicka",
 	"massmessage-fieldset-preview": "Förhandsgranska",
+	"massmessage-fieldset-wikitext-preview": "Wikitext-förhandsvisning",
 	"massmessage-fieldset-info": "Information",
 	"massmessage-preview-count": "Ditt meddelande kommer att skickas till {{PLURAL:$1|$1 sida|$1 sidor}}.",
 	"massmessage-submitted": "Ditt meddelandeleverans till {{PLURAL:$1|$1 sida|$1 sidor}} har placerats i kö.",
