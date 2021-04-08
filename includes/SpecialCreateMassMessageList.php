@@ -25,7 +25,6 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	 * @param string|null $par
 	 */
 	public function execute( $par ) {
-		$this->getOutput()->addModules( 'ext.MassMessage.create' );
 		$this->addHelpLink( 'Help:Extension:MassMessage' );
 		parent::execute( $par );
 	}
@@ -34,6 +33,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
+		$this->getOutput()->addModules( 'ext.MassMessage.create' );
 		return [
 			'title' => [
 				'type' => 'text',

@@ -49,14 +49,6 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	}
 
 	/**
-	 * @param string|null $par
-	 */
-	public function execute( $par ) {
-		$this->getOutput()->addModules( 'ext.MassMessage.edit' );
-		parent::execute( $par );
-	}
-
-	/**
 	 * @param string $par
 	 */
 	protected function setParameter( $par ) {
@@ -158,6 +150,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		if ( !$this->rev ) {
 			return [];
 		}
+
+		$this->getOutput()->addModules( 'ext.MassMessage.edit' );
 
 		/**
 		 * @var MassMessageListContent $content
