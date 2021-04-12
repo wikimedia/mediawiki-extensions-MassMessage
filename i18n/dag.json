@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Munkaila Sulemana",
 			"Sir Amugi"
 		]
 	},
-	"massmessage-fieldset-wikitext-preview": "Wikitexti labi yuli"
+	"massmessage-fieldset-wikitext-preview": "Wikitexti labi yuli",
+	"massmessage-page-message-parsing-error-in-wiki": "Chirimbu di niŋya a ni di niŋdi"
 }
