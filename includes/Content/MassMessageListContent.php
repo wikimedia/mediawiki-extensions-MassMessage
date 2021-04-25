@@ -253,7 +253,7 @@ class MassMessageListContent extends JsonContent {
 		// Determine whether there are targets on external wikis.
 		$printSites = ( count( $sites ) === 1 && array_key_exists( 'local', $sites ) ) ?
 			false : true;
-
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		foreach ( $sites as $site => $targets ) {
 			if ( $printSites ) {
 				if ( $site === 'local' ) {
@@ -274,7 +274,7 @@ class MassMessageListContent extends JsonContent {
 
 				// Generate the HTML for the link to the target.
 				if ( $site === 'local' ) {
-					$targetLink = Linker::link( $title );
+					$targetLink = $linkRenderer->makeKnownLink( $title );
 				} else {
 					$targetLink = Linker::makeExternalLink(
 						"//$site$wgScript?title=" . $title->getPrefixedURL(),
