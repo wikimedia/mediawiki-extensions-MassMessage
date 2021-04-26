@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Renan"
+		]
+	},
+	"log-name-massmessage": "Diarium de missage in masse",
+	"tag-massmessage-delivery": "Transdar missages in masse",
+	"tag-massmessage-delivery-description": "Transdar missage usant [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
+}
