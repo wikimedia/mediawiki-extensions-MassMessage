@@ -49,7 +49,7 @@
 	"massmessage-unescaped-langlinks": "警告：您的訊息中含有未使用跳脫字元的語言連結。",
 	"massmessage-no-timestamp": "警告：您的訊息未使用時間戳記或簽名。",
 	"massmessage-form-header": "使用以下表單傳送訊息給指定的清單。所有欄位均為必填（[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 更多資訊]）。",
-	"massmessage-hidden-comment": "<!-- 訊息由 User:$1@$2 傳送，使用清單於 $3 -->",
+	"massmessage-hidden-comment": "<!-- 訊息由 User:$1@$2 傳送，使用的清單為 $3 -->",
 	"massmessage-optout-category": "排除的訊息傳遞對象",
 	"massmessage-badhtml": "您的訊息可能包含{{PLURAL:$2|未結束的 HTML 標籤|未結束的 HTML 標籤}}：$1。",
 	"massmessage-parse-badurl": "\"$1\" 不是有效的網站。",
