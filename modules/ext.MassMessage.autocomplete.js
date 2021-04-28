@@ -18,8 +18,7 @@
 				var api = new mw.Api();
 				api.get( {
 					action: 'opensearch',
-					search: request.term,
-					suggest: ''
+					search: request.term
 				} ).done( function ( data ) {
 					response( data[ 1 ] );
 				} );
