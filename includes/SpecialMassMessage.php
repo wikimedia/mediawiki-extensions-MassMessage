@@ -350,7 +350,7 @@ class SpecialMassMessage extends SpecialPage {
 		);
 
 		// Use a mock target as the context for rendering the preview
-		$mockTarget = Title::newFromText( 'Project:MassMessage:A page that should not exist' );
+		$mockTarget = Title::makeTitle( NS_PROJECT, 'MassMessage:A page that should not exist' );
 		$wikipage = WikiPage::factory( $mockTarget );
 
 		// Convert into a content object

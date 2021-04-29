@@ -16,11 +16,11 @@ class CategorySpamlistLookupTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\CategorySpamlistLookup::fetchTargets
 	 */
 	public static function testGetTargets() {
-		$page = Title::newFromText( 'Talk:Testing1234' );
+		$page = Title::makeTitle( NS_TALK, 'Testing1234' );
 		$wikipage = WikiPage::factory( $page );
 		$wikipage->doEditContent( new WikitextContent( '[[Category:Spamlist1234]]' ), 'edit summary' );
 
-		$cat = Title::newFromText( 'Category:Spamlist1234' );
+		$cat = Title::makeTitle( NS_CATEGORY, 'Spamlist1234' );
 		$targets = SpamlistLookup::getTargets( $cat );
 		self::assertCount( 1, $targets );
 		$values = array_values( $targets );
