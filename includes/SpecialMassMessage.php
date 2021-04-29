@@ -254,7 +254,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * TODO: Use an HTML parser instead of regular expressions
 	 *
 	 * @param string $message
-	 * @return array
+	 * @return string[]
 	 */
 	protected function getUnclosedTags( $message ) {
 		// For start tags, ignore ones that contain '/' (assume those are self-closing).
@@ -266,16 +266,12 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Keep just the element names from the matched patterns.
 		$startTags = $startTags[1];
-		$endTags = $endTags[1];
+		$endTags = $endTags[1] ?? [];
 
 		// Construct a set containing elements that do not need an end tag.
 		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
-		$voidElements = [];
-		$voidElementNames = [ 'area', 'base', 'br', 'col', 'command', 'embed','hr', 'img',
-			'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr' ];
-		foreach ( $voidElementNames as $name ) {
-			$voidElements[$name] = 1;
-		}
+		$voidElements = array_flip( [ 'area', 'base', 'br', 'col', 'command', 'embed','hr', 'img',
+			'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr' ] );
 
 		// Count start / end tags for each element, ignoring start tags of void elements.
 		$tags = [];
