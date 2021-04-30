@@ -41,9 +41,9 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 			->getFormattedNsText( NS_PROJECT );
 		$wgLqtPages[] = $proj . ':LQT test';
 		// Create a redirect
-		$r = Title::newFromText( 'User talk:Redirect target' );
+		$r = Title::makeTitle( NS_USER_TALK, 'Redirect target' );
 		self::updatePage( $r, 'blank' );
-		$r2 = Title::newFromText( 'User talk:Is a redirect' );
+		$r2 = Title::makeTitle( NS_USER_TALK, 'Is a redirect' );
 		self::updatePage( $r2, '#REDIRECT [[User talk:Redirect target]]' );
 	}
 

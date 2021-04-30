@@ -103,7 +103,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	public function testMessageSending() {
 		$target = $this->getTargetTitle( 'Project:Testing1234' );
 		list( $subj, ) = $this->simulateJob( $target );
-		$target = Title::newFromText( 'Project:Testing1234' );
+		$target = Title::makeTitle( NS_PROJECT, 'Testing1234' );
 		// Message was created
 		$text = WikiPage::factory( $target )->getContent( RevisionRecord::RAW )->getNativeData();
 		$this->assertEquals(
@@ -126,11 +126,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' ) ) {
 			$this->markTestSkipped( "This test requires the LiquidThreads extension" );
 		}
-		$target = Title::newFromText( 'Project:LQT test' );
+		$target = Title::makeTitle( NS_PROJECT, 'LQT test' );
 		// $this->assertTrue( LqtDispatch::isLqtPage( $target ) );
 		// Check that it worked
 		list( $subject, ) = $this->simulateJob( $target );
-		$this->assertTrue( Title::newFromText( 'Thread:' . $proj . ':LQT test/' . $subject )->exists() );
+		$this->assertTrue( Title::makeTitle( NS_LQT_THREAD, $proj . ':LQT test/' . $subject )->exists() );
 	}
 
 	/**
@@ -138,11 +138,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 */
 	public function testOptOut() {
 		$fakejob = new MassMessageJob( Title::newMainPage(), [] );
-		$target = Title::newFromText( 'Project:Opt out test page' );
+		$target = Title::makeTitle( NS_PROJECT, 'Opt out test page' );
 		self::updatePage( $target, '[[Category:Opted-out of message delivery]]' );
 		$this->assertTrue( $fakejob->isOptedOut( $target ) );
 		$this->assertFalse( $fakejob->isOptedOut(
-			Title::newFromText( 'Project:Some random page' )
+			Title::makeTitle( NS_PROJECT, 'Some random page' )
 		) );
 		$this->simulateJob( $target ); // Try posting a message to this page
 		$text = WikiPage::factory( $target )->getContent( RevisionRecord::RAW )->getNativeData();
