@@ -29,6 +29,13 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 			throw new Exception( 'Cannot diff content types other than MassMessageListContent' );
 		}
 
+		if ( !$old->isValid() || !$new->isValid() ) {
+			return $this->generateTextDiffBody(
+				$old->getNativeData(),
+				$new->getNativeData()
+			);
+		}
+
 		$output = '';
 
 		$descDiff = $this->generateTextDiffBody(
