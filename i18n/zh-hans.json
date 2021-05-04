@@ -16,6 +16,7 @@
 			"Xiplus",
 			"Yfdyh000",
 			"予弦",
+			"坑触可",
 			"神樂坂秀吉"
 		]
 	},
@@ -62,7 +63,7 @@
 	"logentry-massmessage-skipoptout": "“$4”至$3的递送已跳过，因为目标已经拒绝信息递送",
 	"logentry-massmessage-skipnouser": "“$4”至$3的递送已跳过，因为用户账户不存在",
 	"massmessage-cannot-rename": "这是一个系统账户，不能被重命名。",
-	"massmessage-nextsteps": "[[Special:MassMessage|发送其他信息]]或[[Special:Statistics|查看队列中的信息的数量]]。",
+	"massmessage-nextsteps": "[[Special:MassMessage|发送其他信息]]。",
 	"massmessage-content-pages": "此列表中的页面",
 	"massmessage-content-pagesonsite": "$1上的页面：",
 	"massmessage-content-localpages": "此wiki的页面：",
