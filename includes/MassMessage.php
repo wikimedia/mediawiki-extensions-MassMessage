@@ -677,7 +677,7 @@ class MassMessage {
 		return $cache->getWithSetCallback(
 			$cache->makeKey( 'massmessage', 'timestamp' ),
 			$cache::TTL_WEEK,
-			function () {
+			static function () {
 				// Step 1: Get an exemplar timestamp
 				$title = Title::newMainPage();
 				$user = User::newFromName( 'Test' );

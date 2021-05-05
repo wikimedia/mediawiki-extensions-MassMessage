@@ -262,7 +262,7 @@ class MassMessageJob extends Job {
 			// Apply change tag if the edit succeeded
 			$resultData = $result->getResultData();
 			$revId = $resultData['edit']['newrevid'];
-			DeferredUpdates::addCallableUpdate( function () use ( $revId ) {
+			DeferredUpdates::addCallableUpdate( static function () use ( $revId ) {
 				ChangeTags::addTags( 'massmessage-delivery', null, $revId, null );
 			} );
 			return true;

@@ -22,7 +22,7 @@ class DatabaseLookup {
 			$mapping = $cache->getWithSetCallback(
 				$cache->makeGlobalKey( 'massmessage', 'urltodb' ),
 				$cache::TTL_HOUR,
-				function () {
+				static function () {
 					global $wgConf;
 
 					$dbs = $wgConf->getLocalDatabases();
