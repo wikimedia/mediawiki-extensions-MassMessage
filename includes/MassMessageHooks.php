@@ -147,18 +147,20 @@ class MassMessageHooks {
 			$direction = $request->getVal( 'direction' );
 			$diff = $request->getVal( 'diff' );
 			$oldid = $request->getInt( 'oldid' ); // Guaranteed to be an integer, 0 if invalid
-			if ( $direction === 'next' && $oldid > 0 ) {
-				$next = $title->getNextRevisionId( $oldid );
-				$revId = $next ?: $oldid;
-			} elseif ( $direction === 'prev' && $oldid > 0 ) {
-				$prev = $title->getPreviousRevisionId( $oldid );
-				$revId = $prev ?: $oldid;
+			$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+			$oldRev = $revisionLookup->getRevisionById( $oldid );
+			if ( $direction === 'next' && $oldRev ) {
+				$next = $revisionLookup->getNextRevision( $oldRev );
+				$revId = $next ? $next->getId() : $oldid;
+			} elseif ( $direction === 'prev' && $oldRev ) {
+				$prev = $revisionLookup->getPreviousRevision( $oldRev );
+				$revId = $prev ? $prev->getId() : $oldid;
 			} elseif ( $diff !== null ) {
 				if ( ctype_digit( $diff ) ) {
 					$revId = (int)$diff;
-				} elseif ( $diff === 'next' && $oldid > 0 ) {
-					$next = $title->getNextRevisionId( $oldid );
-					$revId = $next ?: $oldid;
+				} elseif ( $diff === 'next' && $oldRev ) {
+					$next = $revisionLookup->getNextRevision( $oldRev );
+					$revId = $next ? $next->getId() : $oldid;
 				} else { // diff is 'prev' or gibberish
 					$revId = $oldid;
 				}
