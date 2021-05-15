@@ -159,6 +159,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 		$target = $this->getTargetTitle( 'Project:Testing1234' );
 		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
+
 		$this->simulateJob( $target, [
 			'page-message' => $pageMessageTitleStr,
 			'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
@@ -182,9 +183,13 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 		$target = $this->getTargetTitle( 'Project:Testing1234' );
 		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
-		// Force read-only mode - this will make page editing fail and test that
+		// Set a hook handler to make page editing fail and test that
 		// job fails without creating exceptions
-		$this->setMwGlobals( 'wgReadOnly', 'testing' );
+		$this->setTemporaryHook( 'EditFilter', static function ( $editor, $text, $section, &$error ) : bool {
+			$error = 'Failing for testPageMessageSendingFailToEdit';
+
+			return false;
+		} );
 		list( , $result ) = $this->simulateJob( $target, [
 			'page-message' => $pageMessageTitleStr,
 			'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
