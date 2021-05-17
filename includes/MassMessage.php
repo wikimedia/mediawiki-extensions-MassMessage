@@ -3,7 +3,6 @@
 namespace MediaWiki\MassMessage;
 
 use CentralIdLookup;
-use ContentHandler;
 use Exception;
 use ExtensionRegistry;
 use Html;
@@ -19,6 +18,7 @@ use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
 use RequestContext;
 use Status;
+use TextContent;
 use Title;
 use User;
 use WikiMap;
@@ -291,7 +291,8 @@ class MassMessage {
 			);
 		}
 
-		$wikitext = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
+		$cont = $revision->getContent( SlotRecord::MAIN );
+		$wikitext = ( $cont instanceof TextContent ) ? $cont->getText() : null;
 
 		if ( $wikitext === null ) {
 			return Status::newFatal(
