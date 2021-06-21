@@ -594,14 +594,21 @@ class MassMessage {
 	 * @param Title $spamlist
 	 * @param User $user
 	 * @param string $subject
+	 * @param string $pageMessage
 	 */
-	public static function logToWiki( Title $spamlist, User $user, $subject ) {
+	public static function logToWiki(
+		Title $spamlist,
+		User $user,
+		string $subject,
+		string $pageMessage
+	): void {
 		$logEntry = new ManualLogEntry( 'massmessage', 'send' );
 		$logEntry->setPerformer( $user );
 		$logEntry->setTarget( $spamlist );
 		$logEntry->setComment( $subject );
 		$logEntry->setParameters( [
 			'4::revid' => $spamlist->getLatestRevID(),
+			'5::pageMessage' => $pageMessage
 		] );
 
 		$logid = $logEntry->insert();
@@ -623,7 +630,7 @@ class MassMessage {
 		$pages = SpamlistLookup::getTargets( $spamlist );
 
 		// Log it.
-		self::logToWiki( $spamlist, $user, $data['subject'] );
+		self::logToWiki( $spamlist, $user, $data['subject'], $data['page-message'] );
 
 		$isSourceTranslationPage = false;
 

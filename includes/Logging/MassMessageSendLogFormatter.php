@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage\Logging;
 use LogFormatter;
 use Message;
 use SpecialPage;
+use Title;
 
 /**
  * Log formatter for 'send' entries on Special:Log/massmessage.
@@ -43,7 +44,24 @@ class MassMessageSendLogFormatter extends LogFormatter {
 			$this->parsedParameters[2] = $link;
 		}
 
+		if ( isset( $params[4] ) && $params[4] !== '' ) {
+			$pageMessageTitle = Title::newFromText( $params[4] );
+			if ( $pageMessageTitle ) {
+				$this->parsedParameters[4] = Message::rawParam( $this->makePageLink( $pageMessageTitle ) );
+			}
+		}
+
 		ksort( $this->parsedParameters );
 		return $this->parsedParameters;
+	}
+
+	protected function getMessageKey(): string {
+		$params = $this->getMessageParameters();
+		$key = parent::getMessageKey();
+		if ( isset( $params[4] ) && $params[4] !== '' ) {
+			return $key . '-page-message';
+		}
+
+		return $key;
 	}
 }

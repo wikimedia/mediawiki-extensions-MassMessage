@@ -57,6 +57,7 @@
 	"log-name-massmessage": "Mass message log",
 	"log-description-massmessage": "These events track users sending messages.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|sent a message}} to $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|sent page $5 as message}} to $3",
 	"logentry-massmessage-failure": "Delivery of \"$4\" to $3 failed with an error code of <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Delivery of \"$4\" to $3 was skipped because target was in a namespace that cannot be posted in",
 	"logentry-massmessage-skipoptout": "Delivery of \"$4\" to $3 was skipped because the target has opted-out of message delivery",
