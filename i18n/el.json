@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Geraki",
+			"Giannaras99",
 			"NikosLikomitros",
 			"Nikosgranturismogt",
 			"Norhorn",
@@ -10,7 +11,7 @@
 	},
 	"massmessage": "Αποστολή μαζικού μηνύματος",
 	"massmessage-desc": "Επιτρέπει στους χρήστες να στείλουν εύκολα ένα μήνυμα σε μια λίστα των χρηστών",
-	"massmessage-form-spamlist": "Σελίδα που περιέχει κατάλογο των σελίδων στις οποίες θα αφήσετε ένα μήνυμα:",
+	"massmessage-form-spamlist": "Σελίδα η Κατηγορία που περιέχει κατάλογο των σελίδων στις οποίες θα αφήσετε ένα μήνυμα:",
 	"massmessage-form-subject": "Θέμα του μηνύματος (χρησιμοποιείται επίσης ως σύνοψη της επεξεργασίας):",
 	"massmessage-form-message": "Σώμα του μηνύματος:",
 	"massmessage-form-preview": "Προεπισκόπηση",
@@ -18,9 +19,9 @@
 	"massmessage-fieldset-preview": "Προεπισκόπηση",
 	"massmessage-submitted": "Η παράδοση του μηνύματός σας σε {{PLURAL:$1|$1  σελίδα|$1 σελίδες}} έχει τοποθετηθεί σε ουρά.",
 	"massmessage-just-preview": "Αυτό είναι μόνο μια προεπισκόπηση. Πατήστε το πλήκτρο {{int:massmessage-form-submit}}\"  για να στείλετε το μήνυμα.",
-	"massmessage-spamlist-doesnotexist": "Η καθορισμένη σελίδα καταλόγου-σελίδων δεν υπάρχει.",
+	"massmessage-spamlist-doesnotexist": "Η καθορισμένη σελίδα ή κατηγορία λίστας παράδοσης δεν υπάρχει.",
 	"massmessage-empty-subject": "Η γραμμή θέματος είναι κενή.",
-	"massmessage-empty-message": "Το σώμα του μηνύματος είναι κενό.",
+	"massmessage-empty-message": "Το σώμα του μηνύματος είναι κενό. Δώστε το σώμα του μηνύματος ή επιλέξτε μια σελίδα για αποστολή ως μήνυμα.",
 	"massmessage-unescaped-langlinks": "Προειδοποίηση: Υπάρχουν γλωσσικές συνδέσεις χωρίς διαφυγή στο μήνυμά σας.",
 	"massmessage-form-header": "Χρησιμοποιήστε την παρακάτω φόρμα για να στείλετε μηνύματα σε μια συγκεκριμένη λίστα. Όλα τα πεδία είναι υποχρεωτικά.",
 	"massmessage-hidden-comment": "<!-- Το μήνυμα στάλθηκε από τον User:$1@$2 με βάση τη λίστα στην $3 -->",
