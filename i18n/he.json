@@ -57,6 +57,7 @@
 	"log-name-massmessage": "יומן הודעות המוניות",
 	"log-description-massmessage": "האירועים האלה עוקבים אחרי שליחת הודעות.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|שלח|שלחה}} את הדף $5 בתור הודעה לדף $3",
 	"logentry-massmessage-failure": "המסירה של \"$4\" אל $3 נכשלה עם הודעת השגיאה <code>$5</code>",
 	"logentry-massmessage-skipbadns": "מסירה של \"$4\" אל $3 לא התבצעה כי היעד נמצא במרחב שם שלא ניתן לשלוח אליו",
 	"logentry-massmessage-skipoptout": "מסירה של \"$4\" ל{{GRAMMAR:תחילית|$3}} לא התבצעה כי היעד ביקש שלא ימסרו לו הודעות",

@@ -55,6 +55,7 @@
 	"log-name-massmessage": "Дневник на масовни пораки",
 	"log-description-massmessage": "Овие настани следат корисници што испраќаат пораки.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|испрати порака}} до $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|ја испрати страницата $5 како порака}} до $3",
 	"logentry-massmessage-failure": "Испраќањето на „$4“ на $3 не успеа, со грешка бр. <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Испраќањето на „$4“ на $3 е изоставено бидејќи целта беше во именски простор што не прима пораки",
 	"logentry-massmessage-skipoptout": "Испраќањето на „$4“ на $3 е изоставено бидејќи целната личност одлучила да не прима пораки",

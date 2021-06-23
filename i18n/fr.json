@@ -67,6 +67,7 @@
 	"log-name-massmessage": "Journal des messages de masse",
 	"log-description-massmessage": "Ces événements tracent les utilisateurs ayant envoyé des messages.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|a envoyé un message}} à $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|a envoyé la page $5 comme message}} à $3",
 	"logentry-massmessage-failure": "La livraison de « $4 » sur $3 a échoué avec le code d’erreur « <code>$5</code> »",
 	"logentry-massmessage-skipbadns": "L’envoi de « $4 » à $3 a été sauté parce que la cible était dans un espace de noms qui ne peut pas recevoir de message",
 	"logentry-massmessage-skipoptout": "L’envoi de « $4 » à $3 a été sauté parce que la cible a choisi de ne pas recevoir de messages",

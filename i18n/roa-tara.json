@@ -54,6 +54,7 @@
 	"log-name-massmessage": "Archivije de le messàgge de masse",
 	"log-description-massmessage": "Ste avvenemìnde tracciane l'utinde ca mannane messàgge.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|mannate 'nu messàgge}} a $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|mannate 'a pàgene $5 cumme messàgge}} a $3",
 	"logentry-massmessage-failure": "Invìe de \"$4\" a $3 fallite cu 'nu codece de errore <code>$5</code>",
 	"logentry-massmessage-skipbadns": "'A spedizione de \"$4\" a $3 ha state zumbate purcé 'a destinazione stè jndr'à 'nu namespace ca non ge pozze mannà",
 	"logentry-massmessage-skipoptout": "'A spedizione de \"$4\" a $3 ha state zumbate purcé 'a destinazione non ge vole le messàgge de masse",
