@@ -56,6 +56,6 @@ abstract class MassMessageTestCase extends MediaWikiTestCase {
 		$user = new User();
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
-		$page->doEditContent( $content, "summary", 0, false, $user );
+		$page->doUserEditContent( $content, $user, "summary" );
 	}
 }

@@ -24,7 +24,11 @@ class ListContentSpamlistLookupTest extends MassMessageTestCase {
 		$content = ContentHandler::makeContent( $text, null, 'MassMessageListContent' );
 		$title = Title::newFromText( 'MassMessageListContent_spamlist' );
 		$page = WikiPage::factory( $title );
-		$page->doEditContent( $content, 'summary' );
+		$page->doUserEditContent(
+			$content,
+			$this->getTestUser()->getUser(),
+			'summary'
+		);
 		$targets = SpamlistLookup::getTargets( $title );
 
 		$this->assertCount( 2, $targets );

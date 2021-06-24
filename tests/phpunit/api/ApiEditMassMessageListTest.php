@@ -23,7 +23,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 		$title = Title::newFromText( self::$spamlist );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::getForModelID( 'MassMessageListContent' )->makeEmptyContent();
-		$page->doEditContent( $content, 'summary' );
+		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 	}
 
 	public function testAdd() {
@@ -56,7 +56,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
-		$page->doEditContent( $content, 'summary' );
+		$page->doUserEditContent( $content, $sysop, 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
@@ -83,7 +83,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
-		$page->doEditContent( $content, 'summary' );
+		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
@@ -104,7 +104,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
-		$page->doEditContent( $content, 'summary' );
+		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
@@ -125,7 +125,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
-		$page->doEditContent( $content, 'summary' );
+		$page->doUserEditContent( $content, $sysop, 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
 			'spamlist' => self::$spamlist,
