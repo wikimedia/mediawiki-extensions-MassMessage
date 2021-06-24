@@ -70,7 +70,6 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		} elseif ( $title->exists() ) {
 			return Status::newFatal( 'massmessage-create-exists' );
 		} elseif ( !$pm->userCan( 'edit', $this->getUser(), $title ) ||
-			!$pm->userCan( 'create', $this->getUser(), $title ) ||
 			!$pm->userCan( 'editcontentmodel', $this->getUser(), $title )
 		) {
 			return Status::newFatal( 'massmessage-create-nopermission' );
