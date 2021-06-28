@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hunpatinjob"
+		]
+	},
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|sent page $5 as message}}to $3"
+}

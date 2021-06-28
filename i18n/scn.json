@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Sarvaturi"
 		]
 	},
 	"massmessage": "Manna missaggi massivamenti",
 	"createmassmessagelist": "Crea n'elencu di cunzigna pi missaggi massivi",
+	"massmessage-fieldset-info": "Nfurmazzioni",
+	"massmessage-content-addtitle": "Tìtulu:",
 	"createmassmessagelist-legend": "Crea n'elencu di cunzigna pi missaggi massivi",
 	"massmessage-create-editsummary": "Crea n'elencu di cunzigna pi missaggi massivi"
 }
