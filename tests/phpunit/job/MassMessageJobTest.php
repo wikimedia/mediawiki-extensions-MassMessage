@@ -69,8 +69,10 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $pageContent, $title );
 
-		$status = $page->doEditContent(
-			$content, __METHOD__, 0, false, $this->getTestSysop()->getUser()
+		$status = $page->doUserEditContent(
+			$content,
+			$this->getTestSysop()->getUser(),
+			__METHOD__
 		);
 
 		if ( !$status->isOK() ) {

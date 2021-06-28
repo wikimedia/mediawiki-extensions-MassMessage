@@ -65,12 +65,11 @@ class MassMessageServerSideJob extends MassMessageJob {
 			if ( $this->title->inNamespace( NS_USER_TALK ) ) {
 				$flags |= EDIT_FORCE_BOT;
 			}
-			$status = $page->doEditContent(
+			$status = $page->doUserEditContent(
 				new WikitextContent( $text ),
+				$user,
 				$subject,
-				$flags,
-				false,
-				$user
+				$flags
 			);
 			if ( $status->isOK() ) {
 				break;
