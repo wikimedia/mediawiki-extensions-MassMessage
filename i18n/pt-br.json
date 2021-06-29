@@ -64,6 +64,7 @@
 	"log-name-massmessage": "Registro de mensagens em massa",
 	"log-description-massmessage": "Estes eventos rastreiam usuários que enviam mensagens.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|enviou uma mensagem}} para $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|enviou a página $5 como mensagem}} para $3",
 	"logentry-massmessage-failure": "A entrega de \"$4\" em $3 falhou com o seguinte código de erro: <code>$5</code>",
 	"logentry-massmessage-skipbadns": "A entrega de \"$4\" em $3 foi ignorada porque o destinatário trata-se de um domínio em que não é permitida a recepção de mensagens",
 	"logentry-massmessage-skipoptout": "A entrega de \"$4\" para $3 foi ignorada porque o destinatário optou por não receber mensagens",
