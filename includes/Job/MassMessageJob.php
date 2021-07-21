@@ -80,13 +80,15 @@ class MassMessageJob extends Job {
 	 */
 	protected function getUser() {
 		if ( $this->useSenderUser && isset( $this->params['userId'] ) ) {
-			$centralIdLookup = CentralIdLookup::factory();
-			$user = $centralIdLookup->localUserFromCentralId(
-				$this->params['userId'],
-				CentralIdLookup::AUDIENCE_RAW
-			);
+			$services = MediaWikiServices::getInstance();
+			$user = $services
+				->getCentralIdLookup()
+				->localUserFromCentralId(
+					$this->params['userId'],
+					CentralIdLookup::AUDIENCE_RAW
+				);
 			if ( $user ) {
-				return $user;
+				return $services->getUserFactory()->newFromUserIdentity( $user );
 			}
 		}
 
