@@ -187,7 +187,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
 		// Set a hook handler to make page editing fail and test that
 		// job fails without creating exceptions
-		$this->setTemporaryHook( 'EditFilter', static function ( $editor, $text, $section, &$error ) : bool {
+		$this->setTemporaryHook( 'EditFilter', static function ( $editor, $text, $section, &$error ): bool {
 			$error = 'Failing for testPageMessageSendingFailToEdit';
 
 			return false;

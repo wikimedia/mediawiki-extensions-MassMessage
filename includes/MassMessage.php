@@ -502,8 +502,7 @@ class MassMessage {
 	 * @param string|null $section
 	 * @return Status Values is LanguageAwareText or null on failure
 	 */
-	public static function getContent( string $titleStr, string $wikiId, ?string $section = null )
-	: Status {
+	public static function getContent( string $titleStr, string $wikiId, ?string $section = null ): Status {
 		$isCurrentWiki = WikiMap::getCurrentWikiId() === $wikiId;
 		$title = Title::newFromText( $titleStr );
 		if ( $title === null ) {

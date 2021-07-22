@@ -24,7 +24,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	/** @var string */
 	private static $pageMessage = 'Help:Test_Page';
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$spamlist = Title::newFromText( self::$spamlist );
 		self::updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );

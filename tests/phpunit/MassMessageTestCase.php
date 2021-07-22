@@ -15,7 +15,7 @@ use WikiPage;
  */
 abstract class MassMessageTestCase extends MediaWikiTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		global $wgLqtPages;
 		parent::setUp();
 		$conf = new SiteConfiguration();
