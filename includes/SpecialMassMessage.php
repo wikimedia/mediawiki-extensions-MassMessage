@@ -6,6 +6,7 @@ use ContentHandler;
 use EditPage;
 use Html;
 use HTMLForm;
+use MediaWiki\MediaWikiServices;
 use Message;
 use SpecialPage;
 use Status;
@@ -358,9 +359,13 @@ class SpecialMassMessage extends SpecialPage {
 		$content = $content->addSectionHeader( $data['subject'] );
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
-
-		$content = $content->preSaveTransform( $mockTarget, MassMessage::getMessengerUser(),
-			$parserOptions );
+		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$content = $contentTransformer->preSaveTransform(
+			$content,
+			$mockTarget,
+			MassMessage::getMessengerUser(),
+			$parserOptions
+		);
 		$parserOutput = $content->getParserOutput( $mockTarget, null, $parserOptions );
 		$previewFieldset = Xml::fieldset(
 			$this->msg( 'massmessage-fieldset-preview' )->text(),
