@@ -7,8 +7,11 @@
 	},
 	"massmessage": "Manna missaggi massivamenti",
 	"createmassmessagelist": "Crea n'elencu di cunzigna pi missaggi massivi",
+	"massmessage-form-preview": "Antiprima",
+	"massmessage-fieldset-preview": "Antiprima",
 	"massmessage-fieldset-info": "Nfurmazzioni",
 	"massmessage-content-removeno": "Annulla",
+	"massmessage-content-emptylist": "(nudda)",
 	"massmessage-content-addtitle": "Tìtulu:",
 	"createmassmessagelist-legend": "Crea n'elencu di cunzigna pi missaggi massivi",
 	"massmessage-create-editsummary": "Crea n'elencu di cunzigna pi missaggi massivi"
