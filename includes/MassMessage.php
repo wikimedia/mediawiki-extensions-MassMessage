@@ -647,7 +647,7 @@ class MassMessage {
 		}
 
 		$data += [
-			'userId' => CentralIdLookup::factory()
+			'userId' => MediaWikiServices::getInstance()->getCentralIdLookup()
 				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
 			'originWiki' => WikiMap::getCurrentWikiId(),
 			'isSourceTranslationPage' => $isSourceTranslationPage,
