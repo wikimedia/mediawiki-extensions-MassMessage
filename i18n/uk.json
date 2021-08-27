@@ -62,7 +62,7 @@
 	"log-name-massmessage": "Журнал масових повідомлень",
 	"log-description-massmessage": "Ці події відстежують надсилання повідомлень користувачами.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3",
-	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|надіслати сторінку $5 як повідомлення}} до $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|надіслав|надіслала|надсилає}} сторінку $5 як повідомлення до $3",
 	"logentry-massmessage-failure": "Доставка \"$4\" на $3 провалилася з кодом помилки<code>$5</code>",
 	"logentry-massmessage-skipbadns": "Доставка \"$4\" до $3 була пропущена, бо ціль була в просторі імен, які не можуть бути розміщені в",
 	"logentry-massmessage-skipoptout": "Доставка \"$4\" до $3 була пропущена, бо ціль відмовила у доставці повідомлень",
