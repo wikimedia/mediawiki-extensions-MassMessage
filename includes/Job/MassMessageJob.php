@@ -259,7 +259,7 @@ class MassMessageJob extends Job {
 			$params['bot'] = true;
 		}
 
-		$result = $this->makeAPIRequest( $params );
+		$result = $this->makeAPIRequest( $params, $user );
 		if ( $result ) {
 			// Apply change tag if the edit succeeded
 			$resultData = $result->getResultData();
@@ -294,7 +294,7 @@ class MassMessageJob extends Job {
 			'token' => $user->getEditToken()
 		]; // LQT will automatically mark the edit as bot if we're a bot
 
-		return (bool)$this->makeAPIRequest( $params );
+		return (bool)$this->makeAPIRequest( $params, $user );
 	}
 
 	protected function addFlowTopic( string $text ) {
@@ -309,7 +309,7 @@ class MassMessageJob extends Job {
 			'token' => $user->getEditToken(),
 		];
 
-		return (bool)$this->makeAPIRequest( $params );
+		return (bool)$this->makeAPIRequest( $params, $user );
 	}
 
 	/**
@@ -369,15 +369,15 @@ class MassMessageJob extends Job {
 	 * Construct and make an API request based on the given params and return the results.
 	 *
 	 * @param array $params
+	 * @param User $ourUser
 	 * @return \ApiResult|bool
 	 */
-	protected function makeAPIRequest( array $params ) {
+	protected function makeAPIRequest( array $params, User $ourUser ) {
 		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
 		global $wgHooks, $wgUser, $wgRequest;
 
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
-		$ourUser = $this->getUser();
 		$lock = MediaWikiServices::getInstance()->getPermissionManager()->addTemporaryUserRights(
 			$ourUser, [ 'ipblock-exempt' ]
 		);
