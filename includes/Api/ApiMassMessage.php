@@ -79,7 +79,7 @@ class ApiMassMessage extends ApiBase {
 	protected function getExamplesMessages() {
 		return [
 			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .
-			'&message=Please%20read%20it&page-message=Help_Page&token=TOKEN'
+			'&message=Please%20read%20it&token=TOKEN'
 				=> 'apihelp-massmessage-example-1',
 			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .
 			'&page-message=Help_Page&token=TOKEN'

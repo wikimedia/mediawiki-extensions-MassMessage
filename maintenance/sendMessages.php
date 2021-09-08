@@ -65,7 +65,6 @@ class SendMessages extends Maintenance {
 		$this->output( "Reading from \"$list\".\n" );
 
 		$lineNum = 0;
-		// @phan-suppress-next-next-line PhanPossiblyUndeclaredVariable,PhanTypeMismatchArgumentNullableInternal T240141
 		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 		while ( $line = trim( fgets( $file ) ) ) {
 			$lineNum++;
@@ -82,8 +81,6 @@ class SendMessages extends Maintenance {
 			];
 		}
 
-		// @phan-suppress-next-next-line PhanPossiblyUndeclaredVariable T240141
-		// @phan-suppress-next-line PhanTypeMismatchArgumentNullableInternal T240141
 		fclose( $file );
 
 		// Submit the jobs
