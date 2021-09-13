@@ -199,9 +199,9 @@
 		"massmessage"
 	],
 	"SpecialPages": {
-		"MassMessage": "MediaWiki\\MassMessage\\SpecialMassMessage",
-		"CreateMassMessageList": "MediaWiki\\MassMessage\\SpecialCreateMassMessageList",
-		"EditMassMessageList": "MediaWiki\\MassMessage\\SpecialEditMassMessageList"
+		"MassMessage": "MediaWiki\\MassMessage\\Specials\\SpecialMassMessage",
+		"CreateMassMessageList": "MediaWiki\\MassMessage\\Specials\\SpecialCreateMassMessageList",
+		"EditMassMessageList": "MediaWiki\\MassMessage\\Specials\\SpecialEditMassMessageList"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\MassMessage\\": "includes/"
