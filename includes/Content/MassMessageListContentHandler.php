@@ -16,7 +16,7 @@ use Language;
 use LinkBatch;
 use Linker;
 use MediaWiki\Content\Renderer\ContentParseParams;
-use MediaWiki\MassMessage\DatabaseLookup;
+use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use ParserOutput;

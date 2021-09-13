@@ -1,8 +1,9 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Lookup;
 
 use Category;
+use MediaWiki\MassMessage\UrlHelper;
 use Title;
 use WikiMap;
 

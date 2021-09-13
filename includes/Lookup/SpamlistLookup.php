@@ -1,7 +1,8 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use Title;
 use WANObjectCache;

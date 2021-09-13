@@ -1,8 +1,9 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Lookup;
 
 use ContentHandler;
+use MediaWiki\MassMessage\MassMessageTestCase;
 use Title;
 use WikiMap;
 use WikiPage;
@@ -10,8 +11,8 @@ use WikiPage;
 /**
  * Tests for MassMessage List Content related to target processing
  *
- * @covers \MediaWiki\MassMessage\ListContentSpamlistLookup
- * @covers \MediaWiki\MassMessage\SpamlistLookup
+ * @covers \MediaWiki\MassMessage\Lookup\ListContentSpamlistLookup
+ * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup
  */
 class ListContentSpamlistLookupTest extends MassMessageTestCase {
 

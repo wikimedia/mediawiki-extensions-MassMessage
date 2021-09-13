@@ -1,7 +1,8 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\MassMessage\MassMessageTestCase;
 use Title;
 use Wikipage;
 use WikitextContent;
@@ -12,8 +13,8 @@ use WikitextContent;
 class CategorySpamlistLookupTest extends MassMessageTestCase {
 
 	/**
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::getTargets
-	 * @covers \MediaWiki\MassMessage\CategorySpamlistLookup::fetchTargets
+	 * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup::getTargets
+	 * @covers \MediaWiki\MassMessage\Lookup\CategorySpamlistLookup::fetchTargets
 	 */
 	public function testGetTargets() {
 		$page = Title::makeTitle( NS_TALK, 'Testing1234' );
