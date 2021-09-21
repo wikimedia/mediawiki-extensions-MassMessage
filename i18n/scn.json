@@ -14,5 +14,7 @@
 	"massmessage-content-emptylist": "(nudda)",
 	"massmessage-content-addtitle": "Tìtulu:",
 	"createmassmessagelist-legend": "Crea n'elencu di cunzigna pi missaggi massivi",
-	"massmessage-create-editsummary": "Crea n'elencu di cunzigna pi missaggi massivi"
+	"massmessage-create-editsummary": "Crea n'elencu di cunzigna pi missaggi massivi",
+	"massmessage-summary-add": "Junciutu [[:$1]]",
+	"massmessage-summary-remove": "Livatu [[:$1]]"
 }
