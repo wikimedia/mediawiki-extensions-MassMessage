@@ -77,11 +77,13 @@
 	},
 	"ResourceModules": {
 		"ext.MassMessage.styles": {
+			"localBasePath": "modules/ext.MassMessage.styles",
+			"remoteExtPath": "MassMessage/modules/ext.MassMessage.styles",
 			"styles": [
-				"ext.MassMessage.content.less",
-				"ext.MassMessage.content.nojs.css",
-				"ext.MassMessage.content.noedit.less",
-				"ext.MassMessage.special.less"
+				"content.less",
+				"content.nojs.css",
+				"content.noedit.less",
+				"special.less"
 			]
 		},
 		"ext.MassMessage.special.js": {
