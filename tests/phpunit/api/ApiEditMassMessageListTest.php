@@ -24,6 +24,12 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::getForModelID( 'MassMessageListContent' )->makeEmptyContent();
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
+
+		$this->mergeMwGlobalArrayValue(
+			'wgMassMessageWikiAliases', [
+				'en.wikipedia.org' => 'enwiki'
+			]
+		);
 	}
 
 	public function testAdd() {

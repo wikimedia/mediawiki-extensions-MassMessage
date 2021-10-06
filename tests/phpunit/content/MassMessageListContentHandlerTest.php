@@ -30,6 +30,12 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 				)
 			]
 		);
+		$this->mergeMwGlobalArrayValue(
+			'wgMassMessageWikiAliases', [
+				'en.wikipedia.org' => 'enwiki',
+				'de.wikipedia.org' => 'dewiki'
+			]
+		);
 		$this->overrideMwServices();
 	}
 
