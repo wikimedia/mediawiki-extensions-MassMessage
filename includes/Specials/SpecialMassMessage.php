@@ -1,11 +1,13 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Specials;
 
 use ContentHandler;
 use EditPage;
 use Html;
 use HTMLForm;
+use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\SpamlistLookup;
 use MediaWiki\MediaWikiServices;
 use Message;
 use SpecialPage;

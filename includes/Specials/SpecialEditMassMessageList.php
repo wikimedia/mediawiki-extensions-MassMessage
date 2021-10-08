@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Specials;
 
 use EditPage;
 use FormSpecialPage;
@@ -9,6 +9,7 @@ use HTMLForm;
 use LogEventsList;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
+use MediaWiki\MassMessage\DatabaseLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\RevisionRecord;

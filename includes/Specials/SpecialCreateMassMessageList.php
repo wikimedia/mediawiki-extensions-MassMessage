@@ -1,9 +1,10 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Specials;
 
 use FormSpecialPage;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
+use MediaWiki\MassMessage\SpamlistLookup;
 use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
