@@ -5,7 +5,7 @@ use MediaWiki\MassMessage\Content\MassMessageListDiffEngine;
 /**
  * @covers \MediaWiki\MassMessage\Content\MassMessageListDiffEngine
  */
-class MassMessageListDiffEngineTest extends MediaWikiTestCase {
+class MassMessageListDiffEngineTest extends MediaWikiIntegrationTestCase {
 
 	public function testGenerateContentDiffBodyWithWrongContentType() {
 		$listDiff = new MassMessageListDiffEngine();

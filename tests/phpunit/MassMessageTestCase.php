@@ -4,7 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use ContentHandler;
 use MediaWiki\MediaWikiServices;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use SiteConfiguration;
 use Title;
 use User;
@@ -13,7 +13,7 @@ use WikiPage;
 /**
  * Abstract test case containing setup code and common functions
  */
-abstract class MassMessageTestCase extends MediaWikiTestCase {
+abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		global $wgLqtPages;

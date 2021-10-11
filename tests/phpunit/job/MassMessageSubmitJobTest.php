@@ -4,9 +4,9 @@ namespace MediaWiki\MassMessage;
 
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 
-class MassMessageSubmitJobTest extends MediaWikiTestCase {
+class MassMessageSubmitJobTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageSubmitJob::getJobs
