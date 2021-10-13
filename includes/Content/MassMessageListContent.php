@@ -180,9 +180,10 @@ class MassMessageListContent extends JsonContent {
 		global $wgScript;
 
 		// Parse the description text.
-		$output = MediaWikiServices::getInstance()->getParser()
+		$parser = MediaWikiServices::getInstance()->getParser();
+		$output = $parser
 			->parse( $this->getDescription(), $title, $options, true, true, $revId );
-		$output->addTrackingCategory( 'massmessage-list-category', $title );
+		$parser->addTrackingCategory( 'massmessage-list-category' );
 		$lang = $options->getUserLangObj();
 
 		// Generate output HTML, if needed.
