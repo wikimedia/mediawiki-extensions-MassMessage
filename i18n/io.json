@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier"
 		]
 	},
@@ -17,6 +18,7 @@
 	"log-name-massmessage": "Titulo di pagino di 'Log'",
 	"massmessage-content-removeno": "Anular",
 	"massmessage-content-emptylist": "(nula)",
+	"massmessage-content-addtitle": "Tituloː",
 	"massmessage-create-content": "Kontenajo:",
 	"massmessage-edit-pagetitle": "Redaktanta $1",
 	"massmessage-edit-summary": "Rezumo pri redakto:",

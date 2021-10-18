@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"0x010C",
+			"DreZhsh",
 			"Gomoko",
 			"Thibaut120094",
 			"Wladek92"
@@ -28,5 +29,7 @@
 	"apihelp-query+mmsites-summary": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
 	"apihelp-query+mmsites-param-term": "Le préfixe à rechercher.",
 	"apihelp-query+mmsites-example-1": "Saisie semi-automatique \"en\"",
+	"apihelp-query+mmcontent-summary": "Obtenir la description et les cibles d'une liste de spam",
+	"apihelp-query+mmcontent-example-1": "Obtenir les informations sur les pages et les listes de spam de la [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "La liste spécifiée des pourriels n’est pas valide."
 }

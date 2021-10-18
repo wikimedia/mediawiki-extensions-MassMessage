@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Movses",
 			"Piramidion",
 			"Ата"
@@ -27,5 +28,7 @@
 	"apihelp-query+mmsites-summary": "Подавати запити на автозаповнення поля сайту в MassMessage.",
 	"apihelp-query+mmsites-param-term": "Префікс для пошуку.",
 	"apihelp-query+mmsites-example-1": "Автозаповнення «en»",
+	"apihelp-query+mmcontent-summary": "Отримати опис і цілі спам-листа",
+	"apihelp-query+mmcontent-example-1": "Отримати інформацію про сторінку та список спаму [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "Вказаний спам-список недійсний."
 }

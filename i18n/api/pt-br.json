@@ -28,5 +28,6 @@
 	"apihelp-query+mmsites-summary": "Atender as solicitações de preenchimento automático para o campo do site em MassMessage.",
 	"apihelp-query+mmsites-param-term": "O prefixo para buscar.",
 	"apihelp-query+mmsites-example-1": "Autocompletar \"en\"",
+	"apihelp-query+mmcontent-summary": "Obtenha a descrição e os alvos de uma lista de spam",
 	"apierror-massmessage-invalidspamlist": "A lista de spam especificada é inválida."
 }

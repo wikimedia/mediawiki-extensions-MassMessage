@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"JSantos"
+		]
+	},
+	"apihelp-query+mmcontent-summary": "Obtenez la deskripto ed emi de ula ''spam''-listo",
+	"apihelp-query+mmcontent-example-1": "Obtenez pagino e listo di informi pri ''spam'' de [[Spam list]]"
+}

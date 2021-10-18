@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Huji"
+			"Huji",
+			"Jeeputer"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "ویرایش فهرست گیرندگان پیام انبوه.",
+	"apihelp-editmassmessagelist-summary": "ویرایش فهرست گیرندگان پیام انبوه.",
 	"apihelp-editmassmessagelist-param-spamlist": "عنوان فهرست گیرندگان که به روز می‌کنید.",
 	"apihelp-editmassmessagelist-param-add": "عناوینی که به فهرست می‌افزایید.",
 	"apihelp-editmassmessagelist-param-remove": "عناوینی که از فهرست حذف می‌کنید.",

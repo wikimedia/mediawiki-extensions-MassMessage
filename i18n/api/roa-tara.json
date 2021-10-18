@@ -25,5 +25,7 @@
 	"apihelp-query+mmsites-summary": "Fà devendà disponibbele 'u combletamende automateche de le richieste pu cambe ca ste jndr'à MassMessage.",
 	"apihelp-query+mmsites-param-term": "'U prefisse da cercà.",
 	"apihelp-query+mmsites-example-1": "Combletamende automateche \"roa-tara\"",
+	"apihelp-query+mmcontent-summary": "Pigghie 'a descrizione e le obiettive de 'n'elenghe de rummate",
+	"apihelp-query+mmcontent-example-1": "Pigghie 'a pàgene e le 'mbormaziune de 'n'elenghe de rummate de [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "L'elenghe d'u rummate specificate non g'è valide."
 }
