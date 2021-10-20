@@ -31,7 +31,7 @@
 		}
 	},
 	"requires": {
-		"MediaWiki": ">= 1.37"
+		"MediaWiki": ">= 1.38"
 	},
 	"TrackingCategories": [
 		"massmessage-list-category"

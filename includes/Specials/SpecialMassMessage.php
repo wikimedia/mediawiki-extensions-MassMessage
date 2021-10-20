@@ -351,6 +351,7 @@ class SpecialMassMessage extends SpecialPage {
 		// Use a mock target as the context for rendering the preview
 		$mockTarget = Title::makeTitle( NS_PROJECT, 'MassMessage:A page that should not exist' );
 		$wikipage = WikiPage::factory( $mockTarget );
+		$services = MediaWikiServices::getInstance();
 
 		// Convert into a content object
 		$content = ContentHandler::makeContent( $messageText, $mockTarget );
@@ -361,14 +362,15 @@ class SpecialMassMessage extends SpecialPage {
 		$content = $content->addSectionHeader( $data['subject'] );
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
-		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$contentTransformer = $services->getContentTransformer();
 		$content = $contentTransformer->preSaveTransform(
 			$content,
 			$mockTarget,
 			MassMessage::getMessengerUser(),
 			$parserOptions
 		);
-		$parserOutput = $content->getParserOutput( $mockTarget, null, $parserOptions );
+		$contentRenderer = $services->getContentRenderer();
+		$parserOutput = $contentRenderer->getParserOutput( $content, $mockTarget, null, $parserOptions );
 		$previewFieldset = Xml::fieldset(
 			$this->msg( 'massmessage-fieldset-preview' )->text(),
 			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] )
