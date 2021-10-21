@@ -4,7 +4,7 @@ namespace MediaWiki\MassMessage\Specials;
 
 use FormSpecialPage;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
-use MediaWiki\MassMessage\SpamlistLookup;
+use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MediaWikiServices;
 use Status;
 use Title;

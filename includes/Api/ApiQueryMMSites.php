@@ -4,7 +4,7 @@ namespace MediaWiki\MassMessage\Api;
 
 use ApiBase;
 use ApiQueryBase;
-use MediaWiki\MassMessage\DatabaseLookup;
+use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 
 /**
  * API module to serve autocomplete requests for the site field in MassMessage.

@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage\Content;
 
 use JsonContent;
-use MediaWiki\MassMessage\DatabaseLookup;
+use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
 use Title;
 

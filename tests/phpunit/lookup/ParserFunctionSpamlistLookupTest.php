@@ -1,7 +1,9 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\MassMessage\MassMessageTest;
+use MediaWiki\MassMessage\MassMessageTestCase;
 use MediaWiki\MediaWikiServices;
 use Title;
 use WikiMap;
@@ -52,9 +54,9 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::getTargets
-	 * @covers \MediaWiki\MassMessage\SpamlistLookup::normalizeTargets
-	 * @covers \MediaWiki\MassMessage\ParserFunctionSpamlistLookup::fetchTargets
+	 * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup::getTargets
+	 * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup::normalizeTargets
+	 * @covers \MediaWiki\MassMessage\Lookup\ParserFunctionSpamlistLookup::fetchTargets
 	 * @dataProvider provideGetParserFunctionTargets
 	 * @param string $text Text of the page to create
 	 * @param array $check Stuff to check against

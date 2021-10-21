@@ -1,6 +1,8 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\Lookup;
+
+use MediaWiki\MassMessage\MassMessageTestCase;
 
 class DatabaseLookupTest extends MassMessageTestCase {
 
@@ -14,7 +16,7 @@ class DatabaseLookupTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\DatabaseLookup::getDBName
+	 * @covers \MediaWiki\MassMessage\Lookup\DatabaseLookup::getDBName
 	 * @dataProvider provideGetDBName
 	 * @param string $url
 	 * @param string $expected

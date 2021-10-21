@@ -12,6 +12,8 @@ use Language;
 use ManualLogEntry;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
+use MediaWiki\MassMessage\Lookup\DatabaseLookup;
+use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
