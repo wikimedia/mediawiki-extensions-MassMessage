@@ -3,7 +3,8 @@
 		"authors": [
 			"Bugoslav",
 			"Ex13",
-			"MaGa"
+			"MaGa",
+			"Ponor"
 		]
 	},
 	"massmessage": "Slanje masovnih poruka",
@@ -25,7 +26,7 @@
 	"massmessage-invalid-lang": "Neispravan jezični kôd: »$1«",
 	"log-name-massmessage": "Evidencija isporuka masovne poruke",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|poslao je poruku|poslala je poruku|poslala/poslao je poruku}} na $3",
-	"logentry-massmessage-failure": "Dostava poruke »$4« na stranicu $3 nije uspjela, s kôdom pogrješke: <code>$5</code>",
+	"logentry-massmessage-failure": "Dostava poruke »$4« na stranicu $3 nije uspjela. Kôd pogreške: <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Dostava poruke »$4« na stranicu $3 nije izvršena jer je odredište u imenskom prostoru koji nije predviđen za objavljivanje poruka.",
 	"logentry-massmessage-skipnouser": "Isporuka poruke \"$4\" na $3 preskočena je jer suradnički račun ne postoji",
 	"massmessage-content-remove": "ukloni",
