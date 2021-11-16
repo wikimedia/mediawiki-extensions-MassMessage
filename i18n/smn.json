@@ -5,5 +5,5 @@
 		]
 	},
 	"massmessage-form-submit": "Vuolgât",
-	"massmessage-summary-add": "[[$1]] lasettum"
+	"massmessage-summary-add": "Lasettum [[:$1]]"
 }

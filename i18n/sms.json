@@ -4,6 +4,7 @@
 			"Yupik"
 		]
 	},
-	"massmessage-form-submit": "Vuõlttâd",
-	"massmessage-content-adderror": "API-vââʹjj: $1"
+	"massmessage-form-submit": "Vuõlttâd saaǥǥ",
+	"massmessage-content-adderror": "API-vââʹjj: $1",
+	"massmessage-summary-add": "Lââʹzztum [[:$1]]"
 }
