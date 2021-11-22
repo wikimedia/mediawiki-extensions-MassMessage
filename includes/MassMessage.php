@@ -313,19 +313,19 @@ class MassMessage {
 	/**
 	 * Fetch the page content with the given title from the given wiki.
 	 *
-	 * @param Title $pageTitle
+	 * @param string $pageTitle
 	 * @param string $wikiId
 	 * @return Status Values is LanguageAwareText or null on failure
 	 */
 	public static function getRemoteContent(
-		Title $pageTitle, string $wikiId
+		string $pageTitle, string $wikiId
 	): Status {
 		$apiUrl = self::getApiEndpoint( $wikiId );
 		if ( !$apiUrl ) {
 			return Status::newFatal(
 				'massmessage-page-message-wiki-not-found',
 				$wikiId,
-				$pageTitle->getPrefixedURL()
+				$pageTitle
 			);
 		}
 
@@ -335,7 +335,7 @@ class MassMessage {
 			'prop' => 'info|revisions',
 			'rvprop' => 'content',
 			'rvslots' => 'main',
-			'titles' => $pageTitle->getPrefixedText(),
+			'titles' => $pageTitle,
 			'formatversion' => 2
 		];
 
@@ -354,7 +354,7 @@ class MassMessage {
 			return Status::newFatal(
 				"massmessage-page-message-fetch-error-in-wiki",
 				$wikiId,
-				$pageTitle->getPrefixedText(),
+				$pageTitle,
 				$status->getMessage()->text()
 			);
 		}
@@ -365,7 +365,7 @@ class MassMessage {
 			return Status::newFatal(
 				"massmessage-page-message-parsing-error-in-wiki",
 				$wikiId,
-				$pageTitle->getPrefixedText(),
+				$pageTitle,
 				json_last_error_msg()
 			);
 		}
@@ -376,14 +376,14 @@ class MassMessage {
 	/**
 	 * @param array $response
 	 * @param string $wikiId
-	 * @param Title $pageTitle
+	 * @param string $pageTitle
 	 * @param string $json
 	 * @return Status
 	 */
 	private static function parseQueryApiResponse(
 		array $response,
 		string $wikiId,
-		Title $pageTitle,
+		string $pageTitle,
 		string $json
 	): Status {
 		// Example response:
@@ -419,7 +419,7 @@ class MassMessage {
 			return Status::newFatal(
 				'massmessage-page-message-parse-invalid-in-wiki',
 				$wikiId,
-				$pageTitle->getPrefixedText(),
+				$pageTitle,
 				$response['error']['info'] ?? $json
 			);
 		}
@@ -432,7 +432,7 @@ class MassMessage {
 			return Status::newFatal(
 				'massmessage-page-message-not-found-in-wiki',
 				$wikiId,
-				$pageTitle->getPrefixedText()
+				$pageTitle
 			);
 		}
 
@@ -515,7 +515,7 @@ class MassMessage {
 		if ( $isCurrentWiki ) {
 			$contentStatus = self::getLocalContent( $title );
 		} else {
-			$contentStatus = self::getRemoteContent( $title, $wikiId );
+			$contentStatus = self::getRemoteContent( $titleStr, $wikiId );
 		}
 
 		if ( $contentStatus->isOK() && $section !== null && $section !== '' ) {
