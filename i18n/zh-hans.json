@@ -75,7 +75,7 @@
 	"logentry-massmessage-send": "$1{{GENDER:$2|发送信息}}至$3的项目",
 	"logentry-massmessage-send-page-message": "$1{{GENDER:$2|将页面$5作为消息发送}}至$3",
 	"logentry-massmessage-failure": "“$4”至$3的递送失败，错误代码为<code>$5</code>",
-	"logentry-massmessage-skipbadns": "“$4”至$3的递送已跳过，因为目标处于无法张贴的名字空间",
+	"logentry-massmessage-skipbadns": "“$4”至$3的递送已跳过，因为目标处于无法张贴的命名空间",
 	"logentry-massmessage-skipoptout": "“$4”至$3的递送已跳过，因为目标已经拒绝信息递送",
 	"logentry-massmessage-skipnouser": "“$4”至$3的递送已跳过，因为用户账户不存在",
 	"massmessage-cannot-rename": "这是一个系统账户，不能被重命名。",
@@ -157,5 +157,5 @@
 	"log-action-filter-massmessage-failure": "大量信息递送失败",
 	"log-action-filter-massmessage-skipoptout": "因不接受订阅而跳过目标",
 	"log-action-filter-massmessage-skipnouser": "因目标用户不存在而跳过目标",
-	"log-action-filter-massmessage-skipbadns": "因名字空间被禁止而跳过目标"
+	"log-action-filter-massmessage-skipbadns": "因命名空间被禁止而跳过目标"
 }
