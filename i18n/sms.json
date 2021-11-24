@@ -5,6 +5,10 @@
 		]
 	},
 	"massmessage-form-submit": "Vuõlttâd saaǥǥ",
+	"massmessage-content-remove": "jaukkâd",
+	"massmessage-content-removeyes": "Jaukkâd",
+	"massmessage-content-addheading": "Lââʹzzet seeidaid",
 	"massmessage-content-adderror": "API-vââʹjj: $1",
-	"massmessage-summary-add": "Lââʹzztum [[:$1]]"
+	"massmessage-summary-add": "Lââʹzztum [[:$1]]",
+	"massmessage-summary-remove": "[[:$1]] jaukkuum"
 }
