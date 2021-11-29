@@ -13,6 +13,7 @@ use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\RevisionRecord;
+use MediaWiki\User\UserOptionsLookup;
 use Status;
 use Title;
 
@@ -41,8 +42,20 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 */
 	protected $errorMsgKey;
 
-	public function __construct() {
+	/**
+	 * Provides access to user options
+	 *
+	 * @var UserOptionsLookup
+	 */
+	private $userOptionsLookup;
+
+	/**
+	 * @param UserOptionsLookup $userOptionsLookup
+	 */
+	public function __construct( UserOptionsLookup $userOptionsLookup ) {
 		parent::__construct( 'EditMassMessageList' );
+
+		$this->userOptionsLookup = $userOptionsLookup;
 	}
 
 	public function doesWrites() {
@@ -270,7 +283,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 		// Blank edit summary warning
 		if ( $data['summary'] === ''
-			&& $this->getUser()->getOption( 'forceeditsummary' )
+			&& $this->userOptionsLookup->getOption( $this->getUser(), 'forceeditsummary' )
 			&& !$this->getRequest()->getCheck( 'summarywarned' )
 		) {
 			$form->addHiddenField( 'summarywarned', 'true' );

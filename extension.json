@@ -206,7 +206,12 @@
 	"SpecialPages": {
 		"MassMessage": "MediaWiki\\MassMessage\\Specials\\SpecialMassMessage",
 		"CreateMassMessageList": "MediaWiki\\MassMessage\\Specials\\SpecialCreateMassMessageList",
-		"EditMassMessageList": "MediaWiki\\MassMessage\\Specials\\SpecialEditMassMessageList"
+		"EditMassMessageList": {
+			"class": "MediaWiki\\MassMessage\\Specials\\SpecialEditMassMessageList",
+			"services": [
+				"UserOptionsLookup"
+			]
+		}
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\MassMessage\\": "includes/"
