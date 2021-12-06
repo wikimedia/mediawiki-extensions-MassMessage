@@ -3,6 +3,7 @@
 		"authors": [
 			"DannyS712",
 			"Nemo bis",
+			"Umherirrender",
 			"Zoranzoki21"
 		]
 	},
@@ -27,7 +28,7 @@
 	"apihelp-query+mmsites-summary": "{{doc-apihelp-summary|query+mmsites}}",
 	"apihelp-query+mmsites-param-term": "Label of an input area. Connected site names will be returned if they match the provided prefix (e.g. entering \"meta\" may return \"metawiki\").\n----\n{{doc-apihelp-param|query+mmsites|term}}",
 	"apihelp-query+mmsites-example-1": "{{doc-apihelp-example|query+mmsites}}",
-	"apihelp-query+mmcontent-summary": "{{doc-apihelp-summary|query+mmsites}}",
+	"apihelp-query+mmcontent-summary": "{{doc-apihelp-summary|query+mmcontent}}",
 	"apihelp-query+mmcontent-example-1": "{{doc-apihelp-example|query+mmcontent}}",
 	"apierror-massmessage-invalidspamlist": "{{doc-apierror}}"
 }
