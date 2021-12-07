@@ -105,7 +105,7 @@
 	"massmessage-edit-headermulti": "Используйте форму ниже, чтобы изменить описание списка или править список целевых страниц. Для целевых страниц расположите по одному заголовку на каждой строке и используйте заголовок@домен (например,User_talk:Example@en.wikipedia.org), чтобы указать страницу из другой вики.",
 	"massmessage-edit-invalidtitle": "Нет допустимого списка массовой рассылки в заголовке.",
 	"massmessage-edit-invalidtargets": "Следующие {{PLURAL:$1|страница|страницы}} неверны: $2",
-	"massmessage-edit-missingsummary": "Вы не заполнили поле с кратким комментарием к правке. Если вы снова нажмёте «{{int:htmlform-submit}}», ваша правка будет сохранена без него.",
+	"massmessage-edit-missingsummary": "Вы не заполнили описания правки. Если вы снова нажмёте «{{int:htmlform-submit}}», ваша правка будет записана без него.",
 	"massmessage-edit-nopermission": "У вас нет прав для редактирования списка.",
 	"massmessage-summary-addremove": "Добавлен{{PLURAL:$1|а|ы|о}} $1 страниц{{PLURAL:$1|а|ы|}} и удален{{PLURAL:$2|а|ы|о}} $2 страниц{{PLURAL:$2|а|ы|}}",
 	"massmessage-summary-add": "Добавлено [[:$1]]",

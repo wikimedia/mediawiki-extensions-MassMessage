@@ -6,7 +6,8 @@
 			"Pyscowicz",
 			"Silvonen",
 			"Stryn",
-			"Valtlait"
+			"Valtlait",
+			"Nwme"
 		]
 	},
 	"massmessage": "Lähetä joukkoviesti",
@@ -42,7 +43,7 @@
 	"logentry-massmessage-skipoptout": "Viestiä ”$4” ei toimitettu kohteeseen $3, koska kohde ei halua vastaanottaa viestejä",
 	"logentry-massmessage-skipnouser": "Viestiä ”$4” ei toimitettu kohteeseen $3, koska käyttäjätunnusta ei ole olemassa",
 	"massmessage-cannot-rename": "Tämä on järjestelmän käyttämä tunnus eikä sitä voi nimetä uudelleen.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Lähetä toinen viesti]] tai [[Special:Statistics|katso kuinka moni viesti on jonossa]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Lähetä toinen viesti]].",
 	"massmessage-content-remove": "poista",
 	"massmessage-content-removeyes": "Poista",
 	"massmessage-content-removeno": "Peruuta",

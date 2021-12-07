@@ -14,7 +14,9 @@
 			"TmY e12",
 			"ToprakM",
 			"Violetanka",
-			"Vito Genovese"
+			"Vito Genovese",
+			"Hedda",
+			"Uncitoyen"
 		]
 	},
 	"massmessage": "Toplu mesaj gönder",
@@ -74,8 +76,8 @@
 	"massmessage-cannot-rename": "Bu bir sistem hesabıdır ve yeniden adlandırılamaz.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Başka bir ileti gönder]].",
 	"massmessage-content-pages": "Bu listedeki sayfalar",
-	"massmessage-content-pagesonsite": "$1 vikide ki sayfalar:",
-	"massmessage-content-localpages": "Bu vikide ki sayfalar:",
+	"massmessage-content-pagesonsite": "$1 'daki sayfalar:",
+	"massmessage-content-localpages": "Bu vikideki sayfalar:",
 	"massmessage-content-remove": "kaldır",
 	"massmessage-content-removeerror": "Sayfayı kaldırma $1 hatasıyla başarısız oldu.",
 	"massmessage-content-removeconf": "Bu sayfayı listeden çıkarmak ister misiniz?",

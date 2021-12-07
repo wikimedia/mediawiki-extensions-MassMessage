@@ -19,6 +19,7 @@
 	"massmessage-spamlist-doesnotexist": "Halaman senarai halaman yang dinyatakan tidak wujud.",
 	"massmessage-empty-subject": "Baris tajuk kosong.",
 	"massmessage-empty-message": "Ruangan isi pesanan kosong.",
+	"massmessage-invalid-lang": "Kod bahasa tidak sah: \"$1\"",
 	"massmessage-form-header": "Gunakan borang yang berikut untuk mengirim pesanan kepada senarai yang tertentu. semua ruangan wajib diisi ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage keterangan lanjut]).",
 	"massmessage-hidden-comment": "<!-- Pesanan dihantar oleh Pengguna:$1@$2 yang menggunakan senarai di $3 -->",
 	"massmessage-optout-category": "Terkecuali dari pengiriman pesanan",

@@ -4,10 +4,11 @@
 			"Joanmp17"
 		]
 	},
-	"massmessage-form-preview": "ኣቐደሚ ትርኢት",
+	"massmessage-form-preview": "ቅድመ ትርኢት",
 	"massmessage-form-submit": "ለኣኽ",
-	"massmessage-fieldset-preview": "ኣቐደሚ ትርኢት",
+	"massmessage-fieldset-preview": "ቅድመ ትርኢት",
 	"massmessage-content-remove": "ኣልግስ",
 	"massmessage-content-removeyes": "ኣልግስ",
-	"massmessage-content-removeno": "ኣትርፍ"
+	"massmessage-content-removeno": "ኣትርፍ",
+	"massmessage-edit-pagetitle": "ኣርትዖት/መኣረምታ «$1»"
 }

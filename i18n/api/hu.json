@@ -13,5 +13,5 @@
 	"apihelp-massmessage-param-spamlist": "A címzettlapok listáját tartalmazó lap.",
 	"apihelp-massmessage-param-subject": "Az üzenet tárgysora.",
 	"apihelp-massmessage-param-message": "Az üzenet törzse.",
-	"apihelp-massmessage-example-1": "Üzenet küldése a [[Signpost Spamlist]] lista használatával, „New Signpost” tárggyal és „Please read it” üzenettörzzsel"
+	"apihelp-massmessage-example-1": "Üzenet küldése a [[Signpost Spamlist]] lista használatával, „New Signpost” tárggyal és „Please read it” üzenettörzzsel."
 }
