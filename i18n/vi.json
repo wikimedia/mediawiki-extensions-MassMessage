@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Max20091",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"NguoiDungKhongDinhDanh"
 		]
 	},
 	"massmessage": "Gửi thông báo rộng rãi",
@@ -43,7 +44,7 @@
 	"logentry-massmessage-skipoptout": "Không thể gửi “$4” cho $3 vì người dùng đã chọn không nhận tin nhắn",
 	"logentry-massmessage-skipnouser": "Không thể gửi “$4” cho $3 vì tài khoản người dùng này không tồn tại",
 	"massmessage-cannot-rename": "Không thể đổi tên của tài khoản hệ thống này.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Nhắn tin khác]] hoặc [[Special:Statistics|xem hàng đợi có bao nhiêu tin nhắn]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Nhắn tin khác]].",
 	"massmessage-content-pages": "Các trang trong danh sách này",
 	"massmessage-content-pagesonsite": "Các trang trên $1:",
 	"massmessage-content-localpages": "Các trang trên wiki này:",
