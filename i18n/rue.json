@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tkalyn"
+		]
+	},
+	"tag-massmessage-delivery": "Доручіня масовых повідомлїнь",
+	"tag-massmessage-delivery-description": "Доручіня повідомлїнь з помочов [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
+}

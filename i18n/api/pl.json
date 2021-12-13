@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Woytecr"
+			"Woytecr",
+			"Openbk"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "Edytowanie listy odbiorców masowych wiadomości.",
@@ -10,13 +11,18 @@
 	"apihelp-editmassmessagelist-param-spamlist": "Tytuł strony z odbiorcami, którą edytować.",
 	"apihelp-editmassmessagelist-param-add": "Tytuły stron dodawanych do listy.",
 	"apihelp-editmassmessagelist-param-remove": "Tytuły stron usuwanych z listy.",
+	"apihelp-editmassmessagelist-param-description": "Nowy opis dla listy odbiorców.",
 	"apihelp-editmassmessagelist-example-1": "Dodaj strony [[User talk:Foo]] i [[Talk:Bar]] na listę odbiorców [[Example]] i usuń z niej stronę [[Talk:Baz]]",
+	"apihelp-editmassmessagelist-example-2": "Ustaw opis „FooBar delivery services” dla listy odbiorców [[Example]]",
 	"apihelp-massmessage-description": "Wysyła wiadomość na strony z listy.",
 	"apihelp-massmessage-summary": "Wyślij wiadomość na strony z listy.",
 	"apihelp-massmessage-param-spamlist": "Strona zawierająca listę stron, na których zostawić wiadomość.",
 	"apihelp-massmessage-param-subject": "Tytuł (temat) wiadomości.",
 	"apihelp-massmessage-param-message": "Treść wiadomości.",
-	"apihelp-massmessage-example-1": "Wyślij wiadomość na strony z listy [[Signpost Spamlist]] z tematem \"New Signpost\" i treścią \"Please read it\"",
+	"apihelp-massmessage-param-page-message": "Strona do wysłania wraz z treścią wiadomości.",
+	"apihelp-massmessage-example-1": "Wyślij wiadomość na strony z listy [[Signpost Spamlist]] z tematem \"New Signpost\" i treścią \"Please read it\".",
+	"apihelp-massmessage-example-2": "Wyślij wiadomość na strony z listy [[Signpost Spamlist]] z tematem \"New Signpost\" i zawartością strony \"Help Page\" jako treścią wiadomości.",
+	"apihelp-massmessage-example-3": "Wyślij wiadomość na strony z listy [[Signpost Spamlist]] z tematem \"New Signpost\" i treścią \"Please read it\" z dołączoną zawartością strony \"Help Page\".",
 	"apihelp-query+mmsites-description": "Dostarcza podpowiedzi dla pola do wpisywania nazwy witryny dla MassMessage.",
 	"apihelp-query+mmsites-summary": "Dostarcza podpowiedzi dla pola do wpisywania nazwy witryny dla MassMessage.",
 	"apihelp-query+mmsites-param-term": "Początek nazwy do wyszukania.",

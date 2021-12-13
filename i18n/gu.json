@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"CptViraj"
+		]
+	},
+	"massmessage-form-submit": "મોકલો",
+	"massmessage-content-removeyes": "હટાવો",
+	"massmessage-content-addtitle": "શીર્ષક:",
+	"massmessage-create-title": "શીર્ષક:",
+	"massmessage-create-source": "સ્રોત:",
+	"massmessage-edit-title": "શીર્ષક:"
+}

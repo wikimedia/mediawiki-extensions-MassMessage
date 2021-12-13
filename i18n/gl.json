@@ -4,7 +4,8 @@
 			"Banjo",
 			"Breogan2008",
 			"Elisardojm",
-			"Toliño"
+			"Toliño",
+			"ArenaL5"
 		]
 	},
 	"massmessage": "Enviar unha mensaxe en masa",
@@ -45,7 +46,7 @@
 	"logentry-massmessage-skipoptout": "A entrega de \"$4\" a $3 saltouse porque o destino retirouse da entrega de mensaxes",
 	"logentry-massmessage-skipnouser": "A entrega de \"$4\" a $3 saltouse porque a conta de usuario non existe",
 	"massmessage-cannot-rename": "Esta é unha conta do sistema e non se lle pode mudar o nome.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Envíe outra mensaxe]] ou [[Special:Statistics|consulte a cantidade de mensaxes que están á cola]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Envíe outra mensaxe]].",
 	"massmessage-content-pages": "Páxinas nesta lista",
 	"massmessage-content-pagesonsite": "Páxinas en $1:",
 	"massmessage-content-localpages": "Páxinas neste wiki:",

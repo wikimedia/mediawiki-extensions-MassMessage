@@ -8,7 +8,8 @@
 			"Olion",
 			"Piramidion",
 			"Ата",
-			"Максим Підліснюк"
+			"Максим Підліснюк",
+			"DDPAT"
 		]
 	},
 	"massmessage": "Масове надсилання повідомлень",
@@ -47,7 +48,7 @@
 	"massmessage-form-header": "Використовуйте форму нижче для надсилання повідомлення за вказаним списком. Всі поля обов'язкові для заповнення ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage додаткова інформація]).",
 	"massmessage-hidden-comment": "<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->",
 	"massmessage-optout-category": "Відмова від доставки повідомлень",
-	"massmessage-badhtml": "Ваше повідомлення, можливо, має {{PLURAL:$2|1=незакритий теґ HTML|незакриті теґи HTML}}:  $1 .",
+	"massmessage-badhtml": "Ваше повідомлення, можливо, має {{PLURAL:$2|1=незакритий тег HTML|незакриті теги HTML}}:  $1 .",
 	"massmessage-parse-badurl": "«$1» не є коректним сайтом.",
 	"massmessage-parse-badpage": "\"$1\" не є коректною назвою сторінки",
 	"massmessage-parse-badexternal": "\"$1\" не є допустимим заголовком сторінки. Цільові параметри інтервікі повинні бути зазначені через параметр site (<kbd>|site=www.example.org</kbd>).",
@@ -57,7 +58,7 @@
 	"log-name-massmessage": "Журнал масових повідомлень",
 	"log-description-massmessage": "Ці події відстежують надсилання повідомлень користувачами.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|надіслав повідомлення|надіслала повідомлення}} до $3",
-	"logentry-massmessage-failure": "Доставка „$4“ на $3 провалилася з кодом помилки<code>$5</code>",
+	"logentry-massmessage-failure": "Доставка \"$4\" на $3 провалилася з кодом помилки<code>$5</code>",
 	"logentry-massmessage-skipbadns": "Доставка \"$4\" до $3 була пропущена, бо ціль була в просторі імен, які не можуть бути розміщені в",
 	"logentry-massmessage-skipoptout": "Доставка \"$4\" до $3 була пропущена, бо ціль відмовила у доставці повідомлень",
 	"logentry-massmessage-skipnouser": "Доставка „$4“ до  $3  була пропущено, бо обліковий запис користувача відсутній",

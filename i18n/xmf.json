@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"massmessage": "მასობური გინაფეფიშ ჯღონუა",
+	"createmassmessagelist": "მასობური გინაფეფიშ ერკებულიშ გოჭყაფა",
+	"editmassmessagelist": "მასობური გინაფეფიშ ერკებულიშ რედაქტირაფა",
+	"massmessage-desc": "ნებას არძენს მახვარებუეფს ლექინას უჯღონანი ნაჭარეფი ერკებულშა მიშმალი მახვარებუეფს",
+	"massmessage-form-subject": "გინაფაშ თემა (გჷმირინუაფუ თაშნეშე თირუეფიშ ეიოჭარალო):",
+	"massmessage-form-message": "გინაფაშ ტექსტი:",
+	"massmessage-form-page": "ხასჷლა ტექსტიშ სახეთ ოჯღონალო:",
+	"massmessage-form-preview": "გიწოთოლორაფა",
+	"massmessage-form-submit": "ჯღონუა",
+	"massmessage-fieldset-preview": "გიწოთოლორაფა",
+	"massmessage-fieldset-info": "ინფორმაცია",
+	"massmessage-preview-count": "თქვანი გინაფა მიდეჯღონუ {{PLURAL:$1|$1 ხასჷლაშა}}.",
+	"massmessage-just-preview": "თენა რე გიწოთოლორაფა. გინაფაშ ოჯღონალო ქეგუნჭირით კონჭის \"{{int:massmessage-form-submit}}\".",
+	"massmessage-empty-subject": "თემაშ ღოზი ცაიორი რე.",
+	"massmessage-diff-descheader": "ეჭარუაშ თირუეფი:",
+	"massmessage-diff-targetsheader": "ხასჷლეფიშ თირუეფი:",
+	"createmassmessagelist-legend": "მასობური გინაფეფიშ ერკებულიშ გოჭყაფა",
+	"massmessage-create-title": "დუდჯოხო:",
+	"massmessage-create-description": "ეჭარუა:",
+	"massmessage-create-content": "დინორე:",
+	"massmessage-create-new": "ახალი დაჯღონალი ერკებულიშ გოჭყაფა",
+	"massmessage-create-import": "ხასჷლეფიშ იმპორტირაფა გეჸვენჯი ერკებულშე ვარ-და კატეგორიაშე",
+	"massmessage-create-source": "წყუ:",
+	"massmessage-create-editsummary": "მასობური გინაფეფიშ ერკებულიშ გოჭყაფა"
+}

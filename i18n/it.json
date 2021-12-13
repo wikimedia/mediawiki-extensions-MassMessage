@@ -7,7 +7,8 @@
 			"Nemo bis",
 			"Nivit",
 			"Ontsed",
-			"Rosh"
+			"Rosh",
+			"Ajeje Brazorf"
 		]
 	},
 	"massmessage": "Invia messaggi massivamente",
@@ -36,7 +37,7 @@
 	"massmessage-optout-category": "Esclusione dalla ricezione di messaggi massivi",
 	"massmessage-badhtml": "Il tuo messaggio potrebbe avere {{PLURAL:$2|un|alcuni}} tag HTML non {{PLURAL:$2|chiuso|chiusi}}: $1.",
 	"massmessage-parse-badurl": "\"$1\" non è un sito valido",
-	"massmessage-parse-badpage": "\"$1\" non è un titolo di pagina valido",
+	"massmessage-parse-badpage": "\"$1\" non è un titolo di pagina valido.",
 	"massmessage-global-disallowed": "I messaggi possono essere inviati solo alle pagine locali.",
 	"right-massmessage": "Invia un messaggio a più utenti contemporaneamente",
 	"action-massmessage": "inviare un messaggio a più utenti contemporaneamente",

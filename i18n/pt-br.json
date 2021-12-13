@@ -11,7 +11,8 @@
 			"Jefersonmoraes",
 			"Jhonnatanricardo",
 			"Luan",
-			"Luckas"
+			"Luckas",
+			"Eduardoaddad"
 		]
 	},
 	"massmessage": "Enviar mensagem em massa",
@@ -126,10 +127,13 @@
 	"massmessage-summary-remove": "Removida [[:$1]]",
 	"massmessage-summary-removeonsite": "Removida $1 em $2",
 	"massmessage-summary-removemulti": "{{PLURAL:$1|Removida $1 página|Removidas $1 páginas}}",
+	"massmessage-summary-addremovechange": "Adicionado $1 {{PLURAL:$1|página|páginas}}, removido $2 {{PLURAL:$2|página|páginas}}, e mudou a descrição",
 	"massmessage-summary-addchange": "Adicionado [[:$1]] e alterou a descrição",
 	"massmessage-summary-addonsitechange": "Adicionou $1 em $2 e alterou a descrição",
+	"massmessage-summary-addmultichange": "Adicionado $1 {{PLURAL:$1|página|páginas}} e mudou a descrição",
 	"massmessage-summary-removechange": "Removido [[:$1]] e alterou a descrição",
 	"massmessage-summary-removeonsitechange": "Removido $1 em $2 e alterou a descrição",
+	"massmessage-summary-removemultichange": "Removido $1 {{PLURAL:$1|página|páginas}} e mudou a descrição",
 	"massmessage-summary-change": "Alterou a descrição",
 	"massmessage-list-category": "Listas de entrega de mensagens em massa",
 	"massmessage-list-category-desc": "A página é uma lista de entrega para a extensão [[Special:MassMessage|MassMessage]].",

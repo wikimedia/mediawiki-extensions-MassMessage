@@ -3,16 +3,17 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"HakanIST",
-			"Rapsar"
+			"Rapsar",
+			"MuratTheTurkish"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Toplu mesaj teslimat listesini değiştir.",
-	"apihelp-editmassmessagelist-summary": "Toplu mesaj teslim listesini düzenleyin.",
+	"apihelp-editmassmessagelist-description": "Toplu mesaj teslimat listesini düzenleyin.",
+	"apihelp-editmassmessagelist-summary": "Toplu mesaj teslimat listesini düzenleyin.",
 	"apihelp-editmassmessagelist-param-spamlist": "Güncellenecek teslimat listesinin başlığı.",
 	"apihelp-editmassmessagelist-param-add": "Listeye eklenecek başlıklar.",
 	"apihelp-editmassmessagelist-param-remove": "Listeden çıkarılacak başlıklar.",
 	"apihelp-editmassmessagelist-param-description": "Teslimat liste yeni açıklaması.",
-	"apihelp-editmassmessagelist-example-1": "Teslimat listesine [[User talk:Foo]] ve [[Talk:Bar]] ekleyin [[Example]] ve [[Talk:Baz]] listeden çıkarın",
+	"apihelp-editmassmessagelist-example-1": "[[User talk:Foo]] ve [[Talk:Bar]] ile teslim listesine [[Example]] ekleyin ve [[Talk:Baz]] ile kaldırın",
 	"apihelp-editmassmessagelist-example-2": "Dağıtım listesinin açıklamasını [[Example]] \"FooBar delivery services\" olarak ayarlayın",
 	"apihelp-massmessage-description": "Bir sayfa listesine mesaj gönderin.",
 	"apihelp-massmessage-summary": "Bir sayfa listesine mesaj gönderin.",
@@ -20,11 +21,11 @@
 	"apihelp-massmessage-param-subject": "Mesajın konu satırı.",
 	"apihelp-massmessage-param-message": "Mesaj gövdesi metni.",
 	"apihelp-massmessage-param-page-message": "İleti gövdesi ile birlikte gönderilecek sayfa.",
-	"apihelp-massmessage-example-1": "[[Signpost Spamlist]]'deki listeye \"Yeni Tabela\" konulu ve \"Lütfen okuyunuz\" mesaj grubunu içeren bir mesaj gönderin.",
-	"apihelp-massmessage-example-2": "[[Signpost Spamlist]] içindeki listeye \"Yeni Signpost\" konulu bir mesaj ve \"Yardım Sayfası\" sayfasının içeriği olarak mesaj gönderin.",
-	"apihelp-massmessage-example-3": "[[Signpost Spamlist]] içindeki listeye \"New Signpost\" konusunu içeren bir mesaj ve \"Yardım Sayfası\" sayfasındaki içerikle birlikte eklenen \"Lütfen okuyun\" mesaj gövdesini gönderin.",
-	"apihelp-query+mmsites-description": "MassMessage’daki site alanı için otomatik tamamlama istekleri gönderin.",
-	"apihelp-query+mmsites-summary": "MassMessage’daki site alanı için otomatik tamamlama istekleri gönderin.",
+	"apihelp-massmessage-example-1": "[[Signpost Spamlist]] sayfasında listeye \"New Signpost\" konulu ve \"Please read it\" mesaj grubunu içeren bir mesaj gönderin.",
+	"apihelp-massmessage-example-2": "[[Signpost Spamlist]] içindeki listeye \"New Signpost\" konulu bir mesaj ve \"Help Page\" sayfasının içeriği olarak mesaj gönderin.",
+	"apihelp-massmessage-example-3": "[[Signpost Spamlist]] içindeki listeye \"New Signpost\" konusunu içeren bir mesaj ve \"Help Page\" sayfasındaki içerikle birlikte eklenen \"Please read it\" mesaj gövdesini gönderin.",
+	"apihelp-query+mmsites-description": "MassMessage'daki site alanı için otomatik tamamlama istekleri gönderin.",
+	"apihelp-query+mmsites-summary": "MassMessage'daki site alanı için otomatik tamamlama istekleri gönderin.",
 	"apihelp-query+mmsites-param-term": "Aranacak önek.",
 	"apihelp-query+mmsites-example-1": "Otomatik tamamla \"en\"",
 	"apierror-massmessage-invalidspamlist": "Belirtilen spam listesi geçersiz."

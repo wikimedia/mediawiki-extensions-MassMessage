@@ -2,9 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"George Animal",
-			"Ghybu"
+			"Ghybu",
+			"Balyozxane"
 		]
 	},
 	"massmessage-content-removeno": "Betal bike",
-	"massmessage-content-addtitle": "Sernav:"
+	"massmessage-content-addtitle": "Sernav:",
+	"massmessage-create-description": "Danasîn:",
+	"massmessage-edit-description": "Danasîn:",
+	"massmessage-summary-add": "[[:$1]] lê zêde kir"
 }

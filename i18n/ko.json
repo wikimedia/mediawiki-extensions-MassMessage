@@ -20,6 +20,7 @@
 	"massmessage-form-spamlist": "메시지를 남길 문서 또는 분류의 목록이 있는 문서:",
 	"massmessage-form-subject": "메시지의 제목 (편집 요약에도 쓰임):",
 	"massmessage-form-message": "메시지 본문:",
+	"massmessage-form-page": "메시지로 보낼 문서:",
 	"massmessage-form-preview": "미리 보기",
 	"massmessage-form-submit": "보내기",
 	"massmessage-fieldset-preview": "미리 보기",

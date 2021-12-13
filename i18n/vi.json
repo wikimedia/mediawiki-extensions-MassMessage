@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Max20091",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"NguoiDungKhongDinhDanh"
 		]
 	},
 	"massmessage": "Gửi thông báo rộng rãi",
@@ -17,7 +18,7 @@
 	"massmessage-fieldset-preview": "Xem trước",
 	"massmessage-fieldset-info": "Thông tin",
 	"massmessage-preview-count": "Thông báo của bạn sẽ được gửi cho $1 trang.",
-	"massmessage-submitted": "Tin nhắn của bạn cho $1 trang đã được xếp hàng đợi.",
+	"massmessage-submitted": "Đã đặt tin nhắn cho $1 trang của bạn vào hàng đợi.",
 	"massmessage-just-preview": "Đây chỉ là một bản xem trước. Hãy bấm “{{int:massmessage-form-submit}}” để gửi tin nhắn.",
 	"massmessage-spamlist-doesnotexist": "Trang hoặc thể loại gửi thông báo được chỉ định không tồn tại.",
 	"massmessage-spamlist-invalid": "Trang không có danh sách phân phát hợp lệ.",
@@ -43,7 +44,7 @@
 	"logentry-massmessage-skipoptout": "Không thể gửi “$4” cho $3 vì người dùng đã chọn không nhận tin nhắn",
 	"logentry-massmessage-skipnouser": "Không thể gửi “$4” cho $3 vì tài khoản người dùng này không tồn tại",
 	"massmessage-cannot-rename": "Không thể đổi tên của tài khoản hệ thống này.",
-	"massmessage-nextsteps": "[[Special:MassMessage|Nhắn tin khác]] hoặc [[Special:Statistics|xem hàng đợi có bao nhiêu tin nhắn]].",
+	"massmessage-nextsteps": "[[Special:MassMessage|Nhắn tin khác]].",
 	"massmessage-content-pages": "Các trang trong danh sách này",
 	"massmessage-content-pagesonsite": "Các trang trên $1:",
 	"massmessage-content-localpages": "Các trang trên wiki này:",

@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Martin Urbanec"
+		]
+	},
+	"apierror-massmessage-invalidspamlist": "Zvolený spamlist je neplatný."
+}

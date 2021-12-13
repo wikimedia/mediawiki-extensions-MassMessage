@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"ArenaL5"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "Editar unha lista de entrega de mensaxes en masa.",
@@ -16,7 +17,7 @@
 	"apihelp-massmessage-param-spamlist": "Páxina que contén a lista de páxinas nas que deixar unha mensaxe.",
 	"apihelp-massmessage-param-subject": "Liña de asunto da mensaxe.",
 	"apihelp-massmessage-param-message": "Texto da mensaxe.",
-	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"Signpost Novo\", e corpo da mensaxe \"Por favor léao\"",
+	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"Signpost Novo\", e corpo da mensaxe \"Por favor léao\".",
 	"apihelp-query+mmsites-description": "Serve peticións autocompletas para o campo de sitio en MensaxesMasivas.",
 	"apihelp-query+mmsites-summary": "Serve peticións autocompletas para o campo de sitio en MensaxesMasivas.",
 	"apihelp-query+mmsites-param-term": "Prefixo polo cal procurar.",

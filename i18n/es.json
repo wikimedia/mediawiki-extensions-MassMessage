@@ -13,7 +13,10 @@
 			"Mcervera",
 			"Ovruni",
 			"Ryo567",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Jackiezelaya",
+			"Jakeukalane",
+			"Rossnyev"
 		]
 	},
 	"massmessage": "Enviar mensaje masivo",
@@ -37,7 +40,7 @@
 	"massmessage-empty-message": "El cuerpo del mensaje está vacío. Bien escríbelo o bien selecciona una página que enviar como mensaje.",
 	"massmessage-page-message-not-found": "No se encontró la página «$1», seleccionada para su envío como mensaje.",
 	"massmessage-page-message-no-revision": "La página «$1», seleccionada para su envío como mensaje, no cuenta con alguna revisión utilizable.",
-	"massmessage-page-message-not-found-in-wiki": "No se encontró la página \"$2\", del wiki \"$1\", seleccionada para ser enviada como mensaje.",
+	"massmessage-page-message-not-found-in-wiki": "No se encontró la página \"$2\", de la wiki \"$1\", seleccionada para ser enviada como mensaje.",
 	"massmessage-invalid-lang": "El código de idioma «$1» no es válido",
 	"massmessage-unescaped-langlinks": "Aviso: en el mensaje hay enlaces lingüísticos sin formato.",
 	"massmessage-no-timestamp": "Aviso: tu mensaje no incluye la fecha y la hora ni la firma.",
@@ -62,7 +65,7 @@
 	"massmessage-nextsteps": "[[Special:MassMessage|Envía otro mensaje]].",
 	"massmessage-content-pages": "Páginas en esta lista",
 	"massmessage-content-pagesonsite": "Páginas en $1:",
-	"massmessage-content-localpages": "Páginas en este wiki:",
+	"massmessage-content-localpages": "Páginas en esta wiki:",
 	"massmessage-content-remove": "quitar",
 	"massmessage-content-removeerror": "La eliminación de la página falló con el código de error $1.",
 	"massmessage-content-removeconf": "¿Eliminar esta página de la lista?",
@@ -108,7 +111,7 @@
 	"massmessage-edit-content": "Páginas de destino:",
 	"massmessage-edit-summary": "Resumen de edición:",
 	"massmessage-edit-header": "Usa el siguiente formulario para modificar la descripción  de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea.",
-	"massmessage-edit-headermulti": "Usa el siguiente formulario para modificar la descripción de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea y usa título@dominio (p. ej. Usuario_discusión:Ejemplo@es.wikipedia.org) para especificar una página en un wiki distinto.",
+	"massmessage-edit-headermulti": "Usa el siguiente formulario para modificar la descripción de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea y usa título@dominio (p. ej. Usuario_discusión:Ejemplo@es.wikipedia.org) para especificar una página en una wiki distinta.",
 	"massmessage-edit-invalidtitle": "No existe una lista de distribución de mensajes masivos válida con este título.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|La siguiente página no es válida|Las siguientes páginas no son válidas}}:\n$2",
 	"massmessage-edit-missingsummary": "No has proporcionado un resumen de edición. Si pulsas en «{{int:htmlform-submit}}» de nuevo, la edición se guardará sin uno.",
