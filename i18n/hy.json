@@ -4,5 +4,7 @@
 			"Kareyac"
 		]
 	},
-	"massmessage-content-removeno": "Չեղարկել"
+	"massmessage-content-removeno": "Չեղարկել",
+	"massmessage-content-addsubmit": "Ավելացնել էջ",
+	"massmessage-summary-add": "Ավելացվել է [[:$1]]"
 }
