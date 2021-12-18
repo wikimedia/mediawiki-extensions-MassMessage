@@ -14,6 +14,7 @@ use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
+use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
@@ -133,15 +134,16 @@ class MassMessage {
 
 	/**
 	 * Verify and cleanup the main user submitted data
-	 * @param array &$data should have subject, message, and spamlist keys
-	 * @param Status $status
+	 * @param array $data should have subject, message, and spamlist keys
+	 * @return Status
 	 */
-	public static function verifyData( array &$data, Status $status ) {
+	public static function verifyData( array $data ): Status {
 		// Trim all the things!
 		foreach ( $data as $k => $v ) {
 			$data[$k] = trim( $v );
 		}
 
+		$status = new Status();
 		if ( $data['subject'] === '' ) {
 			$status->fatal( 'massmessage-empty-subject' );
 		}
@@ -158,6 +160,7 @@ class MassMessage {
 					PROTO_CANONICAL
 				);
 			}
+
 			$data['comment'] = [
 				RequestContext::getMain()->getUser()->getName(),
 				WikiMap::getCurrentWikiId(),
@@ -179,6 +182,7 @@ class MassMessage {
 				WikiMap::getCurrentWikiId(),
 				$data['page-section']
 			);
+
 			if ( $pageMessageStatus->isOK() ) {
 				$pageMessage = $pageMessageStatus->getValue();
 				if ( $pageMessage === '' ) {
@@ -198,6 +202,22 @@ class MassMessage {
 			// Only add the footer if it is not just whitespace
 			$data['message'] .= "\n" . $footer;
 		}
+
+		if ( $status->isOK() ) {
+			$status->setResult(
+				true,
+				new MassMessageRequest(
+					$spamlist,
+					$data['subject'],
+					$data['page-message'],
+					$data['page-section'],
+					$data['message'],
+					$data['comment']
+				)
+			);
+		}
+
+		return $status;
 	}
 
 	/**
@@ -621,33 +641,28 @@ class MassMessage {
 	 * Note that this function does not perform validation on $data
 	 *
 	 * @param User $user who the message was from (for logging)
-	 * @param array $data
+	 * @param MassMessageRequest $request
 	 * @return int number of pages delivered to
 	 */
-	public static function submit( User $user, array $data ) {
-		$spamlist = self::getSpamlist( $data['spamlist'] );
-
+	public static function submit( User $user, MassMessageRequest $request ): int {
 		// Get the array of pages to deliver to.
-		$pages = SpamlistLookup::getTargets( $spamlist );
+		$pages = SpamlistLookup::getTargets( $request->getSpamList() );
 
 		// Log it.
-		self::logToWiki( $spamlist, $user, $data['subject'], $data['page-message'] );
+		self::logToWiki( $request->getSpamList(), $user, $request->getSubject(), $request->getPageMessage() );
 
-		$isSourceTranslationPage = false;
-
-		/**
-		 * @var Title
-		 */
 		$pageTitle = null;
 		$sourcePageLanguage = null;
-		if ( $data['page-message'] !== '' ) {
-			$pageTitle = self::getLocalContentTitle( $data['page-message'] )->getValue();
+		$isSourceTranslationPage = false;
+		if ( $request->hasPageMessage() ) {
+			$pageTitle = self::getLocalContentTitle( $request->getPageMessage() )->getValue();
 			$isSourceTranslationPage = self::isSourceTranslationPage( $pageTitle );
 			if ( $isSourceTranslationPage ) {
 				$sourcePageLanguage = $pageTitle->getPageLanguage()->getCode();
 			}
 		}
 
+		$data = $request->getSerializedData();
 		$data += [
 			'userId' => MediaWikiServices::getInstance()->getCentralIdLookup()
 				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
@@ -664,7 +679,7 @@ class MassMessage {
 			'class' => MassMessageJob::class,
 		];
 
-		$job = new MassMessageSubmitJob( $spamlist, $params );
+		$job = new MassMessageSubmitJob( $request->getSpamList(), $params );
 		JobQueueGroup::singleton()->push( $job );
 
 		return count( $pages );

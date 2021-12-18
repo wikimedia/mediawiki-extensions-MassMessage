@@ -8,6 +8,7 @@ use Html;
 use HTMLForm;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MediaWikiServices;
 use Message;
 use SpecialPage;
@@ -235,7 +236,7 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status|bool
 	 */
 	public function callback( array $data ) {
-		MassMessage::verifyData( $data, $this->status );
+		$this->status = MassMessage::verifyData( $data );
 
 		// Die on errors.
 		if ( !$this->status->isOK() ) {
@@ -244,10 +245,10 @@ class SpecialMassMessage extends SpecialPage {
 		}
 
 		if ( $this->state === 'submit' ) {
-			$this->count = MassMessage::submit( $this->getUser(), $data );
+			$this->count = MassMessage::submit( $this->getUser(), $this->status->getValue() );
 			return $this->status;
 		} else { // $this->state can only be 'preview' here
-			$this->preview( $data );
+			$this->preview( $this->status->getValue() );
 			return false; // No submission attempted
 		}
 	}
@@ -310,28 +311,26 @@ class SpecialMassMessage extends SpecialPage {
 	/**
 	 * A preview/confirmation screen.
 	 * The preview generation code was hacked up from EditPage.php.
-	 *
-	 * @param array $data
+	 * @param MassMessageRequest $request
 	 */
-	protected function preview( array $data ) {
+	protected function preview( MassMessageRequest $request ) {
 		$this->getOutput()->addWikiMsg( 'massmessage-just-preview' );
 
 		// Output the number of recipients
-		$spamlist = MassMessage::getSpamlist( $data['spamlist'] );
-		$targets = SpamlistLookup::getTargets( $spamlist );
+		$targets = SpamlistLookup::getTargets( $request->getSpamList() );
 		$infoMessages = [
 			$this->msg( 'massmessage-preview-count' )->numParams( count( $targets ) )->parse()
 		];
 
 		$pageContent = null;
-		if ( $data['page-message'] !== '' ) {
-			$pageTitle = MassMessage::getLocalContentTitle( $data['page-message'] )->getValue();
+		if ( $request->hasPageMessage() ) {
+			$pageTitle = MassMessage::getLocalContentTitle( $request->getPageMessage() )->getValue();
 			if ( MassMessage::isSourceTranslationPage( $pageTitle ) ) {
 				$infoMessages[] = $this->msg( 'massmessage-translate-page-info' )->parse();
 			}
 
 			$pageContentStatus = MassMessage::getContent(
-				$pageTitle, WikiMap::getCurrentWikiId(), $data['page-section']
+				$pageTitle, WikiMap::getCurrentWikiId(), $request->getPageMessageSection()
 			);
 
 			if ( $pageContentStatus->isOK() ) {
@@ -342,11 +341,11 @@ class SpecialMassMessage extends SpecialPage {
 		$this->showPreviewInfo( $infoMessages );
 
 		$messageText = MassMessage::composeFullMessage(
-			$data['message'],
+			$request->getMessage(),
 			$pageContent,
 			// This forces language wrapping always. Good for clarity
 			null,
-			$data['comment']
+			$request->getComment()
 		);
 
 		// Use a mock target as the context for rendering the preview
@@ -360,7 +359,7 @@ class SpecialMassMessage extends SpecialPage {
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setIsPreview( true );
 		$parserOptions->setIsSectionPreview( false );
-		$content = $content->addSectionHeader( $data['subject'] );
+		$content = $content->addSectionHeader( $request->getSubject() );
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
 		$contentTransformer = $services->getContentTransformer();
@@ -381,7 +380,7 @@ class SpecialMassMessage extends SpecialPage {
 		$wikitextPreviewFieldset = Xml::fieldset(
 			$this->msg( 'massmessage-fieldset-wikitext-preview' )->text(),
 			// @phan-suppress-next-line SecurityCheck-DoubleEscaped false positive or bug
-			Html::element( 'pre', [], "== {$data['subject']} ==\n\n$messageText" )
+			Html::element( 'pre', [], "== {$request->getSubject()} ==\n\n$messageText" )
 		);
 		$this->getOutput()->addHTML( $wikitextPreviewFieldset );
 
@@ -391,7 +390,7 @@ class SpecialMassMessage extends SpecialPage {
 		}
 
 		// Check for unclosed HTML tags (Bug 54909)
-		$unclosedTags = $this->getUnclosedTags( $data['message'] );
+		$unclosedTags = $this->getUnclosedTags( $request->getMessage() );
 		if ( !empty( $unclosedTags ) ) {
 			$this->status->fatal(
 				$this->msg( 'massmessage-badhtml' )

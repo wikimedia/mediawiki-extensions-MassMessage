@@ -4,7 +4,6 @@ namespace MediaWiki\MassMessage\Api;
 
 use ApiBase;
 use MediaWiki\MassMessage\MassMessage;
-use Status;
 
 /**
  * API module to send MassMessages.
@@ -24,13 +23,12 @@ class ApiMassMessage extends ApiBase {
 		// Must provide message or page-message
 		$this->requireAtLeastOneParameter( $data, 'message', 'page-message' );
 
-		$status = new Status();
-		MassMessage::verifyData( $data, $status );
+		$status = MassMessage::verifyData( $data );
 		if ( !$status->isOK() ) {
 			$this->dieStatus( $status );
 		}
 
-		$count = MassMessage::submit( $this->getUser(), $data );
+		$count = MassMessage::submit( $this->getUser(), $status->getValue() );
 
 		$this->getResult()->addValue(
 			null,
