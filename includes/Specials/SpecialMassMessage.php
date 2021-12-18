@@ -138,6 +138,7 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected function createForm() {
 		$request = $this->getRequest();
+		$controlTabIndex = 1;
 
 		$isPreview = $this->state === 'preview';
 
@@ -147,7 +148,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-spamlist',
 			'name' => 'spamlist',
 			'type' => 'text',
-			'tabindex' => '1',
+			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-spamlist',
 			'default' => $request->getText( 'spamlist' )
 		];
@@ -156,7 +157,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-subject',
 			'name' => 'subject',
 			'type' => 'text',
-			'tabindex' => '2',
+			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-subject',
 			'default' => $request->getText( 'subject' ),
 			'maxlength' => 240
@@ -167,7 +168,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-page',
 			'name' => 'page-message',
 			'type' => 'text',
-			'tabindex' => '3',
+			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-page',
 			'default' => $request->getText( 'page-message' ),
 			'help' => $this->msg( 'massmessage-form-page-help' )->text()
@@ -185,7 +186,7 @@ class SpecialMassMessage extends SpecialPage {
 			'name' => 'page-section',
 			'type' => 'select',
 			'options' => $options,
-			'tabindex' => '4',
+			'tabindex' => $controlTabIndex++,
 			'disabled' => !$isPreview,
 			'label-message' => 'massmessage-form-page-section',
 			'default' => $request->getText( 'page-section' ),
@@ -197,7 +198,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-message',
 			'name' => 'message',
 			'type' => 'textarea',
-			'tabindex' => '5',
+			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-message',
 			'default' => $request->getText( 'message' )
 		];
@@ -209,7 +210,7 @@ class SpecialMassMessage extends SpecialPage {
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',
 				'type' => 'submit',
-				'tabindex' => '6',
+				'tabindex' => $controlTabIndex++,
 				'default' => $this->msg( 'massmessage-form-submit' )->text()
 			];
 		}
@@ -218,7 +219,7 @@ class SpecialMassMessage extends SpecialPage {
 			'id' => 'mw-massmessage-form-preview-button',
 			'name' => 'preview-button',
 			'type' => 'submit',
-			'tabindex' => '7',
+			'tabindex' => $controlTabIndex++,
 			'default' => $this->msg( 'massmessage-form-preview' )->text()
 		];
 
