@@ -33,6 +33,9 @@
 	"requires": {
 		"MediaWiki": ">= 1.38"
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"TrackingCategories": [
 		"massmessage-list-category"
 	],
