@@ -15,7 +15,6 @@ use SpecialPage;
 use Status;
 use Title;
 use WikiMap;
-use WikiPage;
 use Xml;
 
 /**
@@ -350,8 +349,8 @@ class SpecialMassMessage extends SpecialPage {
 
 		// Use a mock target as the context for rendering the preview
 		$mockTarget = Title::makeTitle( NS_PROJECT, 'MassMessage:A page that should not exist' );
-		$wikipage = WikiPage::factory( $mockTarget );
 		$services = MediaWikiServices::getInstance();
+		$wikipage = $services->getWikiPageFactory()->newFromTitle( $mockTarget );
 
 		// Convert into a content object
 		$content = ContentHandler::makeContent( $messageText, $mockTarget );
