@@ -207,7 +207,12 @@
 		"massmessage"
 	],
 	"SpecialPages": {
-		"MassMessage": "MediaWiki\\MassMessage\\Specials\\SpecialMassMessage",
+		"MassMessage": {
+			"class": "MediaWiki\\MassMessage\\Specials\\SpecialMassMessage",
+			"services": [
+				"MassMessage:LocalMessageContentFetcher"
+			]
+		},
 		"CreateMassMessageList": "MediaWiki\\MassMessage\\Specials\\SpecialCreateMassMessageList",
 		"EditMassMessageList": {
 			"class": "MediaWiki\\MassMessage\\Specials\\SpecialEditMassMessageList",
@@ -221,7 +226,9 @@
 	},
 	"TestAutoloadClasses": {
 		"MediaWiki\\MassMessage\\MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
-		"MediaWiki\\MassMessage\\MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php"
+		"MediaWiki\\MassMessage\\MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php",
+		"MediaWiki\\MassMessage\\Stub\\RevisionStoreStubFactory": "tests/phpunit/stub/RevisionStoreStubFactory.php",
+		"MediaWiki\\MassMessage\\Stub\\TitleStubFactory": "tests/phpunit/stub/TitleStubFactory.php"
 	},
 	"manifest_version": 2
 }

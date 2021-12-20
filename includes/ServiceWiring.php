@@ -10,11 +10,18 @@
 
 declare( strict_types = 1 );
 
+use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
 use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
+	'MassMessage:LocalMessageContentFetcher' => static function (
+		MediaWikiServices $services
+	): LocalMessageContentFetcher {
+		return new LocalMessageContentFetcher( $services->getRevisionStore() );
+	},
+
 	'MassMessage:RemoteMessageContentFetcher' => static function (
 		MediaWikiServices $services
 	): RemoteMessageContentFetcher {

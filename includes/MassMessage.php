@@ -15,10 +15,8 @@ use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\SlotRecord;
 use ParserOptions;
 use Status;
-use TextContent;
 use Title;
 use User;
 use WikiMap;
@@ -132,75 +130,6 @@ class MassMessage {
 	}
 
 	/**
-	 * Fetch the page title given the title string
-	 *
-	 * @param string $title
-	 * @return Status
-	 */
-	public static function getLocalContentTitle( string $title ): Status {
-		$pageTitle = Title::newFromText( $title );
-
-		if ( $pageTitle === null ) {
-			return Status::newFatal(
-				'massmessage-page-message-invalid', $title
-			);
-		} elseif ( !$pageTitle->exists() ) {
-			return Status::newFatal(
-				'massmessage-page-message-not-found',
-				$pageTitle->getPrefixedText(),
-				WikiMap::getCurrentWikiId()
-			);
-		}
-
-		return Status::newGood( $pageTitle );
-	}
-
-	/**
-	 * Fetch the page content with the given title from the same wiki.
-	 *
-	 * @param Title $pageTitle
-	 * @return Status Values is LanguageAwareText or null on failure
-	 */
-	public static function getLocalContent( Title $pageTitle ): Status {
-		if ( !$pageTitle->exists() ) {
-			return Status::newFatal(
-				'massmessage-page-message-not-found',
-				$pageTitle->getPrefixedText(),
-				WikiMap::getCurrentWikiId()
-			);
-		}
-
-		$revision = MediaWikiServices::getInstance()
-			->getRevisionStore()->getRevisionByTitle( $pageTitle );
-
-		if ( $revision === null ) {
-			return Status::newFatal(
-				'massmessage-page-message-no-revision',
-				$pageTitle->getPrefixedText()
-			);
-		}
-
-		$cont = $revision->getContent( SlotRecord::MAIN );
-		$wikitext = ( $cont instanceof TextContent ) ? $cont->getText() : null;
-
-		if ( $wikitext === null ) {
-			return Status::newFatal(
-				'massmessage-page-message-no-revision-content',
-				$pageTitle->getPrefixedText(),
-				$revision->getId()
-			);
-		}
-
-		$content = new LanguageAwareText(
-			$wikitext,
-			$pageTitle->getPageLanguage()->getCode(),
-			$pageTitle->getPageLanguage()->getDir()
-		);
-
-		return Status::newGood( $content );
-	}
-
-	/**
 	 * Get content for a target language from wiki, using fallbacks if necessary
 	 *
 	 * @param string $titleStr
@@ -268,7 +197,7 @@ class MassMessage {
 			);
 		}
 		if ( $isCurrentWiki ) {
-			$contentStatus = self::getLocalContent( $title );
+			$contentStatus = Services::getInstance()->getLocalMessageContentFetcher()->getContent( $title );
 		} else {
 			$contentStatus = Services::getInstance()
 				->getRemoteMessageContentFetcher()
@@ -392,7 +321,10 @@ class MassMessage {
 		$sourcePageLanguage = null;
 		$isSourceTranslationPage = false;
 		if ( $request->hasPageMessage() ) {
-			$pageTitle = self::getLocalContentTitle( $request->getPageMessage() )->getValue();
+			$pageTitle = Services::getInstance()
+				->getLocalMessageContentFetcher()
+				->getTitle( $request->getPageMessage() )
+				->getValue();
 			$isSourceTranslationPage = self::isSourceTranslationPage( $pageTitle );
 			if ( $isSourceTranslationPage ) {
 				$sourcePageLanguage = $pageTitle->getPageLanguage()->getCode();
