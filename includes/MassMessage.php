@@ -146,12 +146,15 @@ class MassMessage {
 		string $wikiId,
 		?string $pageSection
 	): Status {
-		if ( !Language::isKnownLanguageTag( $targetLangCode ) ) {
+		$mwService = MediaWikiServices::getInstance();
+		$languageNameUtils = $mwService->getLanguageNameUtils();
+
+		if ( !$languageNameUtils->isKnownLanguageTag( $targetLangCode ) ) {
 			return Status::newFatal( 'massmessage-invalid-lang', $targetLangCode );
 		}
 
 		// Identify languages to fetch
-		$langFallback = MediaWikiServices::getInstance()->getLanguageFallback();
+		$langFallback = $mwService->getLanguageFallback();
 		$fallbackChain = array_merge(
 			[ $targetLangCode ],
 			$langFallback->getAll( $targetLangCode )
