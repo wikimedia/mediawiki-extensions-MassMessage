@@ -3,9 +3,13 @@
  * Based on http://www.raymondcamden.com/index.cfm/2012/1/23/Detecting-invalid-HTML-with-JavaScript
  * Similar PHP method that checks on preview in SpecialMassMessage.php
  */
-$( function () {
-	'use strict';
-	var voidElements, $msg, $warnings;
+'use strict';
+
+/**
+ * @param {jQuery} $msg
+ */
+function badHtml( $msg ) {
+	var voidElements, $warnings;
 
 	// Construct a set containing HTML singleton elements (do not need an end tag).
 	// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
@@ -13,7 +17,6 @@ $( function () {
 		embed: 1, hr: 1, img: 1, input: 1, keygen: 1, link: 1,
 		meta: 1, param: 1, source: 1, track: 1, wbr: 1 };
 
-	$msg = $( '#mw-massmessage-form-message' );
 	$warnings = $( '<div>' )
 		.attr( 'id', 'mw-massmessage-form-warnings' )
 		.addClass( 'warningbox' );
@@ -77,4 +80,6 @@ $( function () {
 			$warnings.hide();
 		}
 	} ) );
-} );
+}
+
+module.exports = badHtml;

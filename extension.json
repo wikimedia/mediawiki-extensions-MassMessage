@@ -90,7 +90,7 @@
 			]
 		},
 		"ext.MassMessage.special.js": {
-			"scripts": [
+			"packageFiles": [
 				"ext.MassMessage.special.js",
 				"ext.MassMessage.badhtml.js",
 				"ext.MassMessage.autocomplete.js"
@@ -108,7 +108,7 @@
 			]
 		},
 		"ext.MassMessage.content.js": {
-			"scripts": [
+			"packageFiles": [
 				"ext.MassMessage.content.js",
 				"ext.MassMessage.autocomplete.js"
 			],
@@ -135,7 +135,7 @@
 			]
 		},
 		"ext.MassMessage.create": {
-			"scripts": [
+			"packageFiles": [
 				"ext.MassMessage.create.js",
 				"ext.MassMessage.autocomplete.js"
 			],
