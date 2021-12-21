@@ -13,6 +13,7 @@ declare( strict_types = 1 );
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
+use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
 use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
@@ -25,6 +26,17 @@ return [
 		MediaWikiServices $services
 	): LocalMessageContentFetcher {
 		return new LocalMessageContentFetcher( $services->getRevisionStore() );
+	},
+
+	'MassMessage:PageMessageBuilder' => static function ( MediaWikiServices $services ): PageMessageBuilder {
+		return new PageMessageBuilder(
+			$services->get( 'MassMessage:LocalMessageContentFetcher' ),
+			$services->get( 'MassMessage:LabeledSectionContentFetcher' ),
+			$services->get( 'MassMessage:RemoteMessageContentFetcher' ),
+			$services->getLanguageNameUtils(),
+			$services->getLanguageFallback(),
+			WikiMap::getCurrentWikiId()
+		);
 	},
 
 	'MassMessage:RemoteMessageContentFetcher' => static function (

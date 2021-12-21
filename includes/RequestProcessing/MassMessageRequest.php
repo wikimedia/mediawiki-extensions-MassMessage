@@ -70,6 +70,10 @@ class MassMessageRequest {
 		return $this->pageMessage !== '';
 	}
 
+	public function hasMessage(): bool {
+		return $this->message !== '';
+	}
+
 	public function getSerializedData(): array {
 		return [
 			'spamList' => $this->getSpamList()->getPrefixedText(),

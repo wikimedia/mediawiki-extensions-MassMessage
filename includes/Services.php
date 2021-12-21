@@ -6,6 +6,7 @@ namespace MediaWiki\MassMessage;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
+use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
 
@@ -54,6 +55,14 @@ class Services implements ContainerInterface {
 	 */
 	public function getLocalMessageContentFetcher(): LocalMessageContentFetcher {
 		return $this->container->getService( 'MassMessage:LocalMessageContentFetcher' );
+	}
+
+	/**
+	 * @since 2022.01
+	 * @return PageMessageBuilder
+	 */
+	public function getPageMessageBuilder(): PageMessageBuilder {
+		return $this->container->getService( 'MassMessage:PageMessageBuilder' );
 	}
 
 	/**

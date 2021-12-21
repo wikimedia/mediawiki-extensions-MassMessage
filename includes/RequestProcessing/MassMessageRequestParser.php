@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\RequestProcessing;
 
-use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
@@ -29,6 +29,7 @@ class MassMessageRequestParser {
 		}
 
 		$status = new Status();
+		$currentWikiId = WikiMap::getCurrentWikiId();
 		if ( $data['subject'] === '' ) {
 			$status->fatal( 'massmessage-empty-subject' );
 		}
@@ -46,37 +47,18 @@ class MassMessageRequestParser {
 				);
 			}
 
-			$data['comment'] = [ $user->getName(), WikiMap::getCurrentWikiId(), $url ];
-		} else { // $spamlist contains a message key for an error message
+			$data['comment'] = [ $user->getName(), $currentWikiId, $url ];
+		} else {
+			// $spamlist contains a message key for an error message
 			$status->fatal( $spamlist );
+			// Set dummy values in order to continue validation
+			$spamlist = Title::newMainPage();
+			$data['comment'] = [];
 		}
 
 		$data['page-message'] = $data['page-message'] ?? '';
 		$data['page-section'] = $data['page-section'] ?? '';
 		$data['message'] = $data['message'] ?? '';
-
-		// Check and fetch the page message
-		$pageMessage = null;
-		if ( $data['page-message'] !== '' ) {
-			$pageMessageStatus = MassMessage::getContent(
-				$data['page-message'],
-				WikiMap::getCurrentWikiId(),
-				$data['page-section']
-			);
-
-			if ( $pageMessageStatus->isOK() ) {
-				$pageMessage = $pageMessageStatus->getValue();
-				if ( $pageMessage === '' ) {
-					$status->fatal( 'massmessage-page-message-empty', $data['page-message'] );
-				}
-			} else {
-				$status->merge( $pageMessageStatus );
-			}
-		}
-
-		if ( $data['message'] === '' && $pageMessage === null ) {
-			$status->fatal( 'massmessage-empty-message' );
-		}
 
 		$footer = wfMessage( 'massmessage-message-footer' )->inContentLanguage()->plain();
 		if ( trim( $footer ) ) {
@@ -84,18 +66,35 @@ class MassMessageRequestParser {
 			$data['message'] .= "\n" . $footer;
 		}
 
-		if ( $status->isOK() ) {
-			$status->setResult(
-				true,
-				new MassMessageRequest(
-					$spamlist,
-					$data['subject'],
-					$data['page-message'],
-					$data['page-section'],
-					$data['message'],
-					$data['comment']
-				)
+		$request = new MassMessageRequest(
+			$spamlist,
+			$data['subject'],
+			$data['page-message'],
+			$data['page-section'],
+			$data['message'],
+			$data['comment']
+		);
+
+		$pageMessageBuilderResult = null;
+		if ( $request->hasPageMessage() ) {
+			$pageMessageBuilder = Services::getInstance()->getPageMessageBuilder();
+			$pageMessageBuilderResult = $pageMessageBuilder->getContent(
+				$request->getPageMessage(),
+				$request->getPageMessageSection(),
+				$currentWikiId
 			);
+
+			if ( !$pageMessageBuilderResult->isOK() ) {
+				$status->merge( $pageMessageBuilderResult->getStatus() );
+			}
+		}
+
+		if ( !$request->hasMessage() && !$pageMessageBuilderResult ) {
+			$status->fatal( 'massmessage-empty-message' );
+		}
+
+		if ( $status->isOK() ) {
+			$status->setResult( true, $request );
 		}
 
 		return $status;

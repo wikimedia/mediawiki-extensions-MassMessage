@@ -10,6 +10,7 @@ use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
+use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
@@ -52,14 +53,18 @@ class SpecialMassMessage extends SpecialPage {
 	private $localMessageContentFetcher;
 	/** @var LabeledSectionContentFetcher */
 	private $labeledSectionContentFetcher;
+	/** @var PageMessageBuilder */
+	private $pageMessageBuilder;
 
 	public function __construct(
 		LabeledSectionContentFetcher $labeledSectionContentFetcher,
-		LocalMessageContentFetcher $localMessageContentFetcher
+		LocalMessageContentFetcher $localMessageContentFetcher,
+		PageMessageBuilder $pageMessageBuilder
 	) {
 		parent::__construct( 'MassMessage', 'massmessage' );
 		$this->labeledSectionContentFetcher = $labeledSectionContentFetcher;
 		$this->localMessageContentFetcher = $localMessageContentFetcher;
+		$this->pageMessageBuilder = $pageMessageBuilder;
 	}
 
 	public function doesWrites() {
@@ -335,7 +340,7 @@ class SpecialMassMessage extends SpecialPage {
 			$this->msg( 'massmessage-preview-count' )->numParams( count( $targets ) )->parse()
 		];
 
-		$pageContent = null;
+		$pageMessage = null;
 		if ( $request->hasPageMessage() ) {
 			$pageTitle = $this->localMessageContentFetcher
 				->getTitle( $request->getPageMessage() )
@@ -345,12 +350,12 @@ class SpecialMassMessage extends SpecialPage {
 				$infoMessages[] = $this->msg( 'massmessage-translate-page-info' )->parse();
 			}
 
-			$pageContentStatus = MassMessage::getContent(
-				$pageTitle, WikiMap::getCurrentWikiId(), $request->getPageMessageSection()
+			$pageMessageBuilderResult = $this->pageMessageBuilder->getContent(
+				$pageTitle, $request->getPageMessageSection(), WikiMap::getCurrentWikiId()
 			);
 
-			if ( $pageContentStatus->isOK() ) {
-				$pageContent = $pageContentStatus->getValue();
+			if ( $pageMessageBuilderResult->isOK() ) {
+				$pageMessage = $pageMessageBuilderResult->getPageMessage();
 			}
 		}
 
@@ -358,7 +363,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		$messageText = MassMessage::composeFullMessage(
 			$request->getMessage(),
-			$pageContent,
+			$pageMessage,
 			// This forces language wrapping always. Good for clarity
 			null,
 			$request->getComment()
