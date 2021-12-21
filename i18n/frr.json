@@ -29,7 +29,7 @@
 	"massmessage-global-disallowed": "Bööd koon bluas to lokaal sidjen ferschüürd wurd.",
 	"right-massmessage": "En bööd tu en hiale rä faan brükern schüür",
 	"action-massmessage": "en bööd tu en hiale rä faan brükern tu schüüren",
-	"log-name-massmessage": "Streibriaf-logbuk",
+	"log-name-massmessage": "Streibriaf-Logbuk",
 	"log-description-massmessage": "Detdiar logbuk skraft en protokol auer brükern, diar bööd ferschüür.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|hää bööd schüürd}} tu $3",
 	"logentry-massmessage-failure": "Det ufleewrin faan \"$4\" tu $3 as skiaf gingen. Di feelercode as <code>$5</code>",
