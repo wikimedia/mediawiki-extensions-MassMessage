@@ -207,9 +207,7 @@ class MassMessage {
 	 * @param string $wikiId
 	 * @return Status Values is LanguageAwareText or null on failure
 	 */
-	public static function getRemoteContent(
-		string $pageTitle, string $wikiId
-	): Status {
+	private static function getRemoteContent( string $pageTitle, string $wikiId ): Status {
 		$apiUrl = self::getApiEndpoint( $wikiId );
 		if ( !$apiUrl ) {
 			return Status::newFatal(
@@ -668,7 +666,11 @@ class MassMessage {
 		return $fullMessageText;
 	}
 
-	public static function getApiEndpoint( string $wiki ): ?string {
+	/**
+	 * @param string $wiki
+	 * @return string|null
+	 */
+	private static function getApiEndpoint( string $wiki ): ?string {
 		global $wgConf;
 		$wgConf->loadFullData();
 
