@@ -201,139 +201,6 @@ class MassMessage {
 	}
 
 	/**
-	 * Fetch the page content with the given title from the given wiki.
-	 *
-	 * @param string $pageTitle
-	 * @param string $wikiId
-	 * @return Status Values is LanguageAwareText or null on failure
-	 */
-	private static function getRemoteContent( string $pageTitle, string $wikiId ): Status {
-		$apiUrl = self::getApiEndpoint( $wikiId );
-		if ( !$apiUrl ) {
-			return Status::newFatal(
-				'massmessage-page-message-wiki-not-found',
-				$wikiId,
-				$pageTitle
-			);
-		}
-
-		$queryParams = [
-			'action' => 'query',
-			'format' => 'json',
-			'prop' => 'info|revisions',
-			'rvprop' => 'content',
-			'rvslots' => 'main',
-			'titles' => $pageTitle,
-			'formatversion' => 2
-		];
-
-		$options = [
-			'method' => 'GET',
-			'timeout' => 15
-		];
-
-		$apiUrl .= '?' . http_build_query( $queryParams );
-		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
-			->create( $apiUrl, $options, __METHOD__ );
-
-		$status = $req->execute();
-		if ( !$status->isOK() ) {
-			// FIXME: Formatting is broken here, needs to be improved.
-			return Status::newFatal(
-				"massmessage-page-message-fetch-error-in-wiki",
-				$wikiId,
-				$pageTitle,
-				$status->getMessage()->text()
-			);
-		}
-
-		$json = $req->getContent();
-		$response = json_decode( $json, true );
-		if ( $response === null ) {
-			return Status::newFatal(
-				"massmessage-page-message-parsing-error-in-wiki",
-				$wikiId,
-				$pageTitle,
-				json_last_error_msg()
-			);
-		}
-
-		return self::parseQueryApiResponse( $response, $wikiId, $pageTitle, $json );
-	}
-
-	/**
-	 * @param array $response
-	 * @param string $wikiId
-	 * @param string $pageTitle
-	 * @param string $json
-	 * @return Status
-	 */
-	private static function parseQueryApiResponse(
-		array $response,
-		string $wikiId,
-		string $pageTitle,
-		string $json
-	): Status {
-		// Example response:
-		// {
-		//   "batchcomplete": true,
-		//   "query": {
-		//     "pages": [ {
-		//       "pageid": 11285354,
-		//       "ns": 0,
-		//       "title": "Tech/News/2021/12",
-		//       "contentmodel": "wikitext",
-		//       "pagelanguage": "en",
-		//       "pagelanguagehtmlcode": "en",
-		//       "pagelanguagedir": "ltr",
-		//       "touched": "2021-03-23T06:05:06Z",
-		//       "lastrevid": 21247464,
-		//       "length": 4585,
-		//       "revisions": [ {
-		//         "slots": {
-		//           "main": {
-		//             "contentmodel": "wikitext",
-		//             "contentformat": "text/x-wiki",
-		//             "content": "[...]"
-		//           }
-		//         }
-		//       } ]
-		//     } ]
-		//   }
-		// }
-
-		$pages = $response['query']['pages'] ?? [];
-		if ( isset( $response['error']['info'] ) || count( $pages ) !== 1 ) {
-			return Status::newFatal(
-				'massmessage-page-message-parse-invalid-in-wiki',
-				$wikiId,
-				$pageTitle,
-				$response['error']['info'] ?? $json
-			);
-		}
-
-		// Take first and only one out of the list
-		$page = current( $pages );
-
-		if ( isset( $page['missing'] ) ) {
-			// Page was not found
-			return Status::newFatal(
-				'massmessage-page-message-not-found-in-wiki',
-				$wikiId,
-				$pageTitle
-			);
-		}
-
-		$content = new LanguageAwareText(
-			$page['revisions'][0]['slots']['main']['content'],
-			$page['pagelanguage'],
-			$page['pagelanguagedir']
-		);
-
-		return Status::newGood( $content );
-	}
-
-	/**
 	 * Get content for a target language from wiki, using fallbacks if necessary
 	 *
 	 * @param string $titleStr
@@ -664,6 +531,139 @@ class MassMessage {
 		$fullMessageText .= "\n" . $commentMessage->text();
 
 		return $fullMessageText;
+	}
+
+	/**
+	 * Fetch the page content with the given title from the given wiki.
+	 *
+	 * @param string $pageTitle
+	 * @param string $wikiId
+	 * @return Status Values is LanguageAwareText or null on failure
+	 */
+	private static function getRemoteContent( string $pageTitle, string $wikiId ): Status {
+		$apiUrl = self::getApiEndpoint( $wikiId );
+		if ( !$apiUrl ) {
+			return Status::newFatal(
+				'massmessage-page-message-wiki-not-found',
+				$wikiId,
+				$pageTitle
+			);
+		}
+
+		$queryParams = [
+			'action' => 'query',
+			'format' => 'json',
+			'prop' => 'info|revisions',
+			'rvprop' => 'content',
+			'rvslots' => 'main',
+			'titles' => $pageTitle,
+			'formatversion' => 2
+		];
+
+		$options = [
+			'method' => 'GET',
+			'timeout' => 15
+		];
+
+		$apiUrl .= '?' . http_build_query( $queryParams );
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
+			->create( $apiUrl, $options, __METHOD__ );
+
+		$status = $req->execute();
+		if ( !$status->isOK() ) {
+			// FIXME: Formatting is broken here, needs to be improved.
+			return Status::newFatal(
+				"massmessage-page-message-fetch-error-in-wiki",
+				$wikiId,
+				$pageTitle,
+				$status->getMessage()->text()
+			);
+		}
+
+		$json = $req->getContent();
+		$response = json_decode( $json, true );
+		if ( $response === null ) {
+			return Status::newFatal(
+				"massmessage-page-message-parsing-error-in-wiki",
+				$wikiId,
+				$pageTitle,
+				json_last_error_msg()
+			);
+		}
+
+		return self::parseQueryApiResponse( $response, $wikiId, $pageTitle, $json );
+	}
+
+	/**
+	 * @param array $response
+	 * @param string $wikiId
+	 * @param string $pageTitle
+	 * @param string $json
+	 * @return Status
+	 */
+	private static function parseQueryApiResponse(
+		array $response,
+		string $wikiId,
+		string $pageTitle,
+		string $json
+	): Status {
+		// Example response:
+		// {
+		//   "batchcomplete": true,
+		//   "query": {
+		//     "pages": [ {
+		//       "pageid": 11285354,
+		//       "ns": 0,
+		//       "title": "Tech/News/2021/12",
+		//       "contentmodel": "wikitext",
+		//       "pagelanguage": "en",
+		//       "pagelanguagehtmlcode": "en",
+		//       "pagelanguagedir": "ltr",
+		//       "touched": "2021-03-23T06:05:06Z",
+		//       "lastrevid": 21247464,
+		//       "length": 4585,
+		//       "revisions": [ {
+		//         "slots": {
+		//           "main": {
+		//             "contentmodel": "wikitext",
+		//             "contentformat": "text/x-wiki",
+		//             "content": "[...]"
+		//           }
+		//         }
+		//       } ]
+		//     } ]
+		//   }
+		// }
+
+		$pages = $response['query']['pages'] ?? [];
+		if ( isset( $response['error']['info'] ) || count( $pages ) !== 1 ) {
+			return Status::newFatal(
+				'massmessage-page-message-parse-invalid-in-wiki',
+				$wikiId,
+				$pageTitle,
+				$response['error']['info'] ?? $json
+			);
+		}
+
+		// Take first and only one out of the list
+		$page = current( $pages );
+
+		if ( isset( $page['missing'] ) ) {
+			// Page was not found
+			return Status::newFatal(
+				'massmessage-page-message-not-found-in-wiki',
+				$wikiId,
+				$pageTitle
+			);
+		}
+
+		$content = new LanguageAwareText(
+			$page['revisions'][0]['slots']['main']['content'],
+			$page['pagelanguage'],
+			$page['pagelanguagedir']
+		);
+
+		return Status::newGood( $content );
 	}
 
 	/**
