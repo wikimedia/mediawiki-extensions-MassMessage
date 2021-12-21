@@ -9,6 +9,7 @@ use HTMLForm;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
+use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
 use Message;
 use SpecialPage;
@@ -235,7 +236,8 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return Status|bool
 	 */
 	public function callback( array $data ) {
-		$this->status = MassMessage::verifyData( $data );
+		$requestParser = new MassMessageRequestParser();
+		$this->status = $requestParser->parseRequest( $data, $this->getUser() );
 
 		// Die on errors.
 		if ( !$this->status->isOK() ) {

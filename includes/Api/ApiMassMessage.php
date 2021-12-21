@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage\Api;
 
 use ApiBase;
 use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 
 /**
  * API module to send MassMessages.
@@ -23,7 +24,9 @@ class ApiMassMessage extends ApiBase {
 		// Must provide message or page-message
 		$this->requireAtLeastOneParameter( $data, 'message', 'page-message' );
 
-		$status = MassMessage::verifyData( $data );
+		$requestParser = new MassMessageRequestParser();
+		$status = $requestParser->parseRequest( $data, $this->getUser() );
+
 		if ( !$status->isOK() ) {
 			$this->dieStatus( $status );
 		}
