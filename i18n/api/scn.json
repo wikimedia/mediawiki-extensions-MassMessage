@@ -7,5 +7,6 @@
 	},
 	"apihelp-editmassmessagelist-description": "Crea n'elencu di cunzigna pi missaggi massivi.",
 	"apihelp-editmassmessagelist-summary": "Cancia n'elencu di cunzigna pi missaggi massivi.",
-	"apihelp-editmassmessagelist-param-add": "Tìtuli d'agghiunciri a l'elencu."
+	"apihelp-editmassmessagelist-param-add": "Tìtuli d'agghiunciri a l'elencu.",
+	"apihelp-massmessage-param-message": "Testu dû corpu dû missaggiu."
 }
