@@ -178,6 +178,7 @@ class SpecialMassMessage extends SpecialPage {
 			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-subject',
 			'default' => $request->getText( 'subject' ),
+			'help-message' => 'massmessage-form-subject-help',
 			'maxlength' => 240
 		];
 
@@ -199,16 +200,28 @@ class SpecialMassMessage extends SpecialPage {
 			$options += array_combine( $sections, $sections );
 		}
 
-		$m['page-section'] = [
-			'id' => 'mw-massmessage-form-page-section',
-			'name' => 'page-section',
+		$m['page-subject-section'] = [
+			'id' => 'mw-massmessage-form-page-subject-section',
+			'name' => 'page-subject-section',
 			'type' => 'select',
 			'options' => $options,
 			'tabindex' => $controlTabIndex++,
 			'disabled' => !$isPreview,
-			'label-message' => 'massmessage-form-page-section',
-			'default' => $request->getText( 'page-section' ),
-			'help-message' => 'massmessage-form-page-section-help',
+			'label-message' => 'massmessage-form-page-subject-section',
+			'default' => $request->getText( 'page-subject-section' ),
+			'help-message' => 'massmessage-form-page-subject-section-help',
+		];
+
+		$m['page-message-section'] = [
+			'id' => 'mw-massmessage-form-page-section',
+			'name' => 'page-message-section',
+			'type' => 'select',
+			'options' => $options,
+			'tabindex' => $controlTabIndex++,
+			'disabled' => !$isPreview,
+			'label-message' => 'massmessage-form-page-message-section',
+			'default' => $request->getText( 'page-message-section' ),
+			'help-message' => 'massmessage-form-page-message-section-help',
 		];
 
 		// The message to send
@@ -351,7 +364,10 @@ class SpecialMassMessage extends SpecialPage {
 			}
 
 			$pageMessageBuilderResult = $this->pageMessageBuilder->getContent(
-				$pageTitle, $request->getPageMessageSection(), WikiMap::getCurrentWikiId()
+				$pageTitle,
+				$request->getPageMessageSection(),
+				$request->getPageSubjectSection(),
+				WikiMap::getCurrentWikiId()
 			);
 
 			if ( $pageMessageBuilderResult->isOK() ) {

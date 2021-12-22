@@ -21,6 +21,8 @@ class MassMessageRequest {
 	/** @var string */
 	private $pageMessageSection;
 	/** @var string */
+	private $pageSubjectSection;
+	/** @var string */
 	private $message;
 	/** @var string[] */
 	private $comment;
@@ -30,6 +32,7 @@ class MassMessageRequest {
 		string $subject,
 		string $pageMessage,
 		string $pageMessageSection,
+		string $pageSubjectSection,
 		string $message,
 		array $comment
 	) {
@@ -37,6 +40,7 @@ class MassMessageRequest {
 		$this->subject = $subject;
 		$this->pageMessage = $pageMessage;
 		$this->pageMessageSection = $pageMessageSection;
+		$this->pageSubjectSection = $pageSubjectSection;
 		$this->message = $message;
 		$this->comment = $comment;
 	}
@@ -55,6 +59,10 @@ class MassMessageRequest {
 
 	public function getPageMessageSection(): string {
 		return $this->pageMessageSection;
+	}
+
+	public function getPageSubjectSection(): string {
+		return $this->pageSubjectSection;
 	}
 
 	public function getMessage(): string {
@@ -79,7 +87,8 @@ class MassMessageRequest {
 			'spamList' => $this->getSpamList()->getPrefixedText(),
 			'subject' => $this->getSubject(),
 			'page-message' => $this->getPageMessage(),
-			'page-section' => $this->getPageMessageSection(),
+			'page-message-section' => $this->getPageMessageSection(),
+			'page-subject-section' => $this->getPageSubjectSection(),
 			'message' => $this->getMessage(),
 			'comment' => $this->getComment()
 		];
