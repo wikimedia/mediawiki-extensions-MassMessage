@@ -1,0 +1,48 @@
+<?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\MassMessage;
+
+use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
+use MediaWiki\MediaWikiServices;
+use Psr\Container\ContainerInterface;
+
+/**
+ * Minimal service container.
+ *
+ * Main purpose is to give type-hinted getters for services defined in this extensions.
+ * @author Abijeet Patro
+ * @since 2022.01
+ * @license GPL-2.0-or-later
+ */
+class Services implements ContainerInterface {
+	/** @var MediaWikiServices */
+	private $container;
+
+	/** @param MediaWikiServices $container */
+	private function __construct( MediaWikiServices $container ) {
+		$this->container = $container;
+	}
+
+	public static function getInstance(): Services {
+		return new self( MediaWikiServices::getInstance() );
+	}
+
+	/** @inheritDoc */
+	public function get( $id ) {
+		return $this->container->get( $id );
+	}
+
+	/** @inheritDoc */
+	public function has( $id ) {
+		return $this->container->has( $id );
+	}
+
+	/**
+	 * @since 2022.01
+	 * @return RemoteMessageContentFetcher
+	 */
+	public function getRemoteMessageContentFetcher(): RemoteMessageContentFetcher {
+		return $this->container->getService( 'MassMessage:RemoteMessageContentFetcher' );
+	}
+}
