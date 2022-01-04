@@ -23,33 +23,19 @@ use WikiMap;
 use Xml;
 
 /**
- * Form to allow users to send messages
- * to a lot of users at once.
- * Based on code from TranslationNotifications
- * https://mediawiki.org/wiki/Extension:TranslationNotifications
+ * Form to allow users to send messages to a lot of users at once.
  *
- * @file
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
 
 class SpecialMassMessage extends SpecialPage {
-
-	/**
-	 * @var Status
-	 */
+	/** @var Status */
 	protected $status;
-
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $state;
-
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $count;
-
 	/** @var LocalMessageContentFetcher */
 	private $localMessageContentFetcher;
 	/** @var LabeledSectionContentFetcher */
@@ -75,9 +61,7 @@ class SpecialMassMessage extends SpecialPage {
 		return true;
 	}
 
-	/**
-	 * @param null|string $par
-	 */
+	/** @param string|null $par */
 	public function execute( $par ) {
 		$request = $this->getRequest();
 		$context = $this->getContext();
@@ -132,16 +116,12 @@ class SpecialMassMessage extends SpecialPage {
 		}
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getState() {
 		return $this->state;
 	}
 
-	/**
-	 * @return Status
-	 */
+	/** @return Status */
 	public function getStatus() {
 		return $this->status;
 	}
@@ -155,9 +135,7 @@ class SpecialMassMessage extends SpecialPage {
 		return $this->count;
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	protected function createForm() {
 		$request = $this->getRequest();
 		$controlTabIndex = 1;
@@ -346,6 +324,7 @@ class SpecialMassMessage extends SpecialPage {
 	/**
 	 * A preview/confirmation screen.
 	 * The preview generation code was hacked up from EditPage.php.
+	 *
 	 * @param MassMessageRequest $request
 	 */
 	protected function preview( MassMessageRequest $request ) {
