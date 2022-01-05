@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
 use MediaWiki\MediaWikiServices;
@@ -37,6 +38,14 @@ class Services implements ContainerInterface {
 	/** @inheritDoc */
 	public function has( $id ) {
 		return $this->container->has( $id );
+	}
+
+	/**
+	 * @since 2022.01
+	 * @return LabeledSectionContentFetcher
+	 */
+	public function getLabeledSectionContentFetcher(): LabeledSectionContentFetcher {
+		return $this->container->getService( 'MassMessage:LabeledSectionContentFetcher' );
 	}
 
 	/**

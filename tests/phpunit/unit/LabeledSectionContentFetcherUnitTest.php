@@ -1,17 +1,20 @@
 <?php
 
-namespace MediaWiki\MassMessage;
+namespace MediaWiki\MassMessage\MessageContentFetcher;
 
+use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWikiUnitTestCase;
 
-class MassMessageUnitTest extends MediaWikiUnitTestCase {
+class LabeledSectionContentFetcherUnitTest extends MediaWikiUnitTestCase {
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessage::getLabeledSectionContent
+	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher::getContent
 	 * @dataProvider provideGetLabeledSectionContent
 	 */
 	public function testGetLabeledSectionContent( $text, $label, $expectedGood, $expectedBad ) {
 		$content = new LanguageAwareText( $text, 'en', 'ltr' );
-		$status = MassMessage::getLabeledSectionContent( $content, $label );
+		$labeledSectionContentFetcher = new LabeledSectionContentFetcher();
+
+		$status = $labeledSectionContentFetcher->getContent( $content, $label );
 
 		if ( $expectedGood !== null ) {
 			$this->assertTrue( $status->isOK() );
@@ -47,11 +50,12 @@ class MassMessageUnitTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessage::getLabeledSections
+	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher::getSections
 	 * @dataProvider provideGetLabeledSections
 	 */
 	public function testGetLabeledSections( $text, $expected ) {
-		$actual = MassMessage::getLabeledSections( $text );
+		$labeledSectionContentFetcher = new LabeledSectionContentFetcher();
+		$actual = $labeledSectionContentFetcher->getSections( $text );
 		$this->assertArrayEquals( $expected, $actual );
 	}
 

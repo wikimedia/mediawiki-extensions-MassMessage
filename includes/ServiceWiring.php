@@ -10,12 +10,17 @@
 
 declare( strict_types = 1 );
 
+use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
 use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
+	'MassMessage:LabeledSectionContentFetcher' => static function (): LabeledSectionContentFetcher {
+		return new LabeledSectionContentFetcher();
+	},
+
 	'MassMessage:LocalMessageContentFetcher' => static function (
 		MediaWikiServices $services
 	): LocalMessageContentFetcher {

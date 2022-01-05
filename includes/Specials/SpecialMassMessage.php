@@ -8,6 +8,7 @@ use Html;
 use HTMLForm;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
@@ -49,9 +50,15 @@ class SpecialMassMessage extends SpecialPage {
 
 	/** @var LocalMessageContentFetcher */
 	private $localMessageContentFetcher;
+	/** @var LabeledSectionContentFetcher */
+	private $labeledSectionContentFetcher;
 
-	public function __construct( LocalMessageContentFetcher $localMessageContentFetcher ) {
+	public function __construct(
+		LabeledSectionContentFetcher $labeledSectionContentFetcher,
+		LocalMessageContentFetcher $localMessageContentFetcher
+	) {
 		parent::__construct( 'MassMessage', 'massmessage' );
+		$this->labeledSectionContentFetcher = $labeledSectionContentFetcher;
 		$this->localMessageContentFetcher = $localMessageContentFetcher;
 	}
 
@@ -441,11 +448,16 @@ class SpecialMassMessage extends SpecialPage {
 	 * @return string[]
 	 */
 	private function getLabeledSections( string $pagename ): array {
-		$status = MassMessage::getContent( $pagename, WikiMap::getCurrentWikiId() );
-		if ( !$status->isOK() ) {
-			return [];
+		$pageTitle = Title::newFromText( $pagename );
+		if ( $pageTitle ) {
+			$status = $this->localMessageContentFetcher->getContent( $pageTitle );
+			if ( $status->isOK() ) {
+				return $this->labeledSectionContentFetcher->getSections(
+					$status->getValue()->getWikitext()
+				);
+			}
 		}
 
-		return MassMessage::getLabeledSections( $status->getValue()->getWikitext() );
+		return [];
 	}
 }
