@@ -5,8 +5,6 @@ namespace MediaWiki\MassMessage;
 use CentralIdLookup;
 use Exception;
 use ExtensionRegistry;
-use Html;
-use Language;
 use ManualLogEntry;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
@@ -267,63 +265,5 @@ class MassMessage {
 		return ExtensionRegistry::getInstance()->isLoaded( 'Translate' ) &&
 			// @phan-suppress-next-line PhanUndeclaredClassMethod
 			\TranslatablePage::isSourcePage( $title );
-	}
-
-	/**
-	 * Compose the full text from a custom message and from a page content.
-	 *
-	 * Adds language tagging if necessary. Includes a comment about who is the sender.
-	 *
-	 * @param string $customMessageText
-	 * @param LanguageAwareText|null $pageContent
-	 * @param Language|null $targetPageLanguage Suppress language wrapping if source and target
-	 *   language match
-	 * @param array $commentParams
-	 * @return string
-	 */
-	public static function composeFullMessage(
-		string $customMessageText,
-		?LanguageAwareText $pageContent,
-		?Language $targetPageLanguage,
-		array $commentParams
-	): string {
-		$fullMessageText = '';
-
-		if ( $pageContent ) {
-			$fullMessageText = self::wrapBasedOnLanguage( $pageContent, $targetPageLanguage );
-		}
-
-		// If either is empty, the extra new lines will be trimmed
-		$fullMessageText = trim( $fullMessageText . "\n\n" . $customMessageText );
-
-		$commentMessage = wfMessage( 'massmessage-hidden-comment' )->params( $commentParams );
-		if ( $targetPageLanguage ) {
-			$commentMessage = $commentMessage->inLanguage( $targetPageLanguage );
-		}
-		$fullMessageText .= "\n" . $commentMessage->text();
-
-		return $fullMessageText;
-	}
-
-	public static function wrapBasedOnLanguage( LanguageAwareText $pageContent, ?Language $targetLanguage ): string {
-		$fullMessageText = '';
-		if ( !$targetLanguage || $targetLanguage->getCode() !== $pageContent->getLanguageCode() ) {
-			// Wrap page contents if it differs from target page's language. Ideally the
-			// message contents would be wrapped too, but we do not know its language.
-			$fullMessageText .= Html::rawElement(
-				'div',
-				[
-					'lang' => $pageContent->getLanguageCode(),
-					'dir' => $pageContent->getLanguageDirection(),
-					// This class is needed for proper rendering of list items (and maybe more)
-					'class' => 'mw-content-' . $pageContent->getLanguageDirection()
-				],
-				"\n" . $pageContent->getWikitext() . "\n"
-			);
-		} else {
-			$fullMessageText = $pageContent->getWikitext();
-		}
-
-		return $fullMessageText;
 	}
 }

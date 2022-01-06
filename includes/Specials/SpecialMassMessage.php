@@ -8,6 +8,7 @@ use Html;
 use HTMLForm;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\MessageBuilder;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
@@ -53,6 +54,8 @@ class SpecialMassMessage extends SpecialPage {
 	private $localMessageContentFetcher;
 	/** @var LabeledSectionContentFetcher */
 	private $labeledSectionContentFetcher;
+	/** @var MessageBuilder */
+	private $messageBuilder;
 	/** @var PageMessageBuilder */
 	private $pageMessageBuilder;
 
@@ -64,6 +67,7 @@ class SpecialMassMessage extends SpecialPage {
 		parent::__construct( 'MassMessage', 'massmessage' );
 		$this->labeledSectionContentFetcher = $labeledSectionContentFetcher;
 		$this->localMessageContentFetcher = $localMessageContentFetcher;
+		$this->messageBuilder = new MessageBuilder();
 		$this->pageMessageBuilder = $pageMessageBuilder;
 	}
 
@@ -354,6 +358,7 @@ class SpecialMassMessage extends SpecialPage {
 		];
 
 		$pageMessage = null;
+		$pageSubject = null;
 		if ( $request->hasPageMessage() ) {
 			$pageTitle = $this->localMessageContentFetcher
 				->getTitle( $request->getPageMessage() )
@@ -372,17 +377,25 @@ class SpecialMassMessage extends SpecialPage {
 
 			if ( $pageMessageBuilderResult->isOK() ) {
 				$pageMessage = $pageMessageBuilderResult->getPageMessage();
+				$pageSubject = $pageMessageBuilderResult->getPageSubject();
 			}
 		}
 
 		$this->showPreviewInfo( $infoMessages );
 
-		$messageText = MassMessage::composeFullMessage(
+		$messageText = $this->messageBuilder->buildMessage(
 			$request->getMessage(),
 			$pageMessage,
 			// This forces language wrapping always. Good for clarity
 			null,
 			$request->getComment()
+		);
+
+		$subjectText = $this->messageBuilder->buildSubject(
+			$request->getSubject(),
+			$pageSubject,
+			// This forces language wrapping always. Good for clarity
+			null
 		);
 
 		// Use a mock target as the context for rendering the preview
@@ -396,7 +409,7 @@ class SpecialMassMessage extends SpecialPage {
 		$parserOptions = $wikipage->makeParserOptions( $this->getContext() );
 		$parserOptions->setIsPreview( true );
 		$parserOptions->setIsSectionPreview( false );
-		$content = $content->addSectionHeader( $request->getSubject() );
+		$content = $content->addSectionHeader( $subjectText );
 
 		// Hooks not being run: EditPageGetPreviewContent, EditPageGetPreviewText
 		$contentTransformer = $services->getContentTransformer();
@@ -417,7 +430,7 @@ class SpecialMassMessage extends SpecialPage {
 		$wikitextPreviewFieldset = Xml::fieldset(
 			$this->msg( 'massmessage-fieldset-wikitext-preview' )->text(),
 			// @phan-suppress-next-line SecurityCheck-DoubleEscaped false positive or bug
-			Html::element( 'pre', [], "== {$request->getSubject()} ==\n\n$messageText" )
+			Html::element( 'pre', [], "== {$subjectText} ==\n\n$messageText" )
 		);
 		$this->getOutput()->addHTML( $wikitextPreviewFieldset );
 
