@@ -6,7 +6,6 @@ use CentralIdLookup;
 use Exception;
 use ExtensionRegistry;
 use Html;
-use JobQueueGroup;
 use Language;
 use ManualLogEntry;
 use MediaWiki\MassMessage\Job\MassMessageJob;
@@ -119,7 +118,7 @@ class MassMessage {
 	 * @return int
 	 */
 	public static function getQueuedCount() {
-		$group = JobQueueGroup::singleton();
+		$group = MediaWikiServices::getInstance()->getJobQueueGroupFactory()->makeJobQueueGroup();
 		$queue = $group->get( 'MassMessageJob' );
 		$pending = $queue->getSize();
 		$claimed = $queue->getAcquiredCount();
@@ -312,11 +311,14 @@ class MassMessage {
 			}
 		}
 
+		$services = MediaWikiServices::getInstance();
+		$originWiki = WikiMap::getCurrentWikiId();
+
 		$data = $request->getSerializedData();
 		$data += [
-			'userId' => MediaWikiServices::getInstance()->getCentralIdLookup()
+			'userId' => $services->getCentralIdLookup()
 				->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW ),
-			'originWiki' => WikiMap::getCurrentWikiId(),
+			'originWiki' => $originWiki,
 			'isSourceTranslationPage' => $isSourceTranslationPage,
 			'translationPageSourceLanguage' => $sourcePageLanguage,
 			'pageMessageTitle' => $pageTitle ? $pageTitle->getPrefixedText() : null
@@ -330,7 +332,7 @@ class MassMessage {
 		];
 
 		$job = new MassMessageSubmitJob( $request->getSpamList(), $params );
-		JobQueueGroup::singleton()->push( $job );
+		$services->getJobQueueGroupFactory()->makeJobQueueGroup( $originWiki )->push( $job );
 
 		return count( $pages );
 	}

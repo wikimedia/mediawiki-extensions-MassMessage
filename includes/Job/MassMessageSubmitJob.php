@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage\Job;
 
 use Job;
-use JobQueueGroup;
+use MediaWiki\MediaWikiServices;
 use MWTimestamp;
 use Title;
 
@@ -32,8 +32,9 @@ class MassMessageSubmitJob extends Job {
 	public function run() {
 		$jobsByTarget = $this->getJobs();
 
+		$jobQueueGroupFactory = MediaWikiServices::getInstance()->getJobQueueGroupFactory();
 		foreach ( $jobsByTarget as $wiki => $jobs ) {
-			JobQueueGroup::singleton( $wiki )->push( $jobs );
+			$jobQueueGroupFactory->makeJobQueueGroup( $wiki )->push( $jobs );
 		}
 
 		return true;
