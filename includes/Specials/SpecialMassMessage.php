@@ -8,6 +8,7 @@ use Html;
 use HTMLForm;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
@@ -46,8 +47,12 @@ class SpecialMassMessage extends SpecialPage {
 	 */
 	protected $count;
 
-	public function __construct() {
+	/** @var LocalMessageContentFetcher */
+	private $localMessageContentFetcher;
+
+	public function __construct( LocalMessageContentFetcher $localMessageContentFetcher ) {
 		parent::__construct( 'MassMessage', 'massmessage' );
+		$this->localMessageContentFetcher = $localMessageContentFetcher;
 	}
 
 	public function doesWrites() {
@@ -325,7 +330,10 @@ class SpecialMassMessage extends SpecialPage {
 
 		$pageContent = null;
 		if ( $request->hasPageMessage() ) {
-			$pageTitle = MassMessage::getLocalContentTitle( $request->getPageMessage() )->getValue();
+			$pageTitle = $this->localMessageContentFetcher
+				->getTitle( $request->getPageMessage() )
+				->getValue();
+
 			if ( MassMessage::isSourceTranslationPage( $pageTitle ) ) {
 				$infoMessages[] = $this->msg( 'massmessage-translate-page-info' )->parse();
 			}

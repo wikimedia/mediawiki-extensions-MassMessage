@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
@@ -36,6 +37,14 @@ class Services implements ContainerInterface {
 	/** @inheritDoc */
 	public function has( $id ) {
 		return $this->container->has( $id );
+	}
+
+	/**
+	 * @since 2022.01
+	 * @return LocalMessageContentFetcher
+	 */
+	public function getLocalMessageContentFetcher(): LocalMessageContentFetcher {
+		return $this->container->getService( 'MassMessage:LocalMessageContentFetcher' );
 	}
 
 	/**
