@@ -254,28 +254,6 @@ class MassMessage {
 	}
 
 	/**
-	 * Checks if a given Status is a not found error.
-	 *
-	 * @param Status $status
-	 * @return bool
-	 */
-	private static function isNotFoundError( Status $status ): bool {
-		$notFoundErrors = [
-			'massmessage-page-message-not-found', 'massmessage-page-message-not-found-in-wiki'
-		];
-		$errors = $status->getErrorsArray();
-		if ( $errors ) {
-			foreach ( $errors as $error ) {
-				if ( in_array( $error[0], $notFoundErrors ) ) {
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
-	/**
 	 * Log the spamming to Special:Log/massmessage
 	 *
 	 * @param Title $spamlist
@@ -465,5 +443,27 @@ class MassMessage {
 		$fullMessageText .= "\n" . $commentMessage->text();
 
 		return $fullMessageText;
+	}
+
+	/**
+	 * Checks if a given Status is a not found error.
+	 *
+	 * @param Status $status
+	 * @return bool
+	 */
+	private static function isNotFoundError( Status $status ): bool {
+		$notFoundErrors = [
+			'massmessage-page-message-not-found', 'massmessage-page-message-not-found-in-wiki'
+		];
+		$errors = $status->getErrorsArray();
+		if ( $errors ) {
+			foreach ( $errors as $error ) {
+				if ( in_array( $error[0], $notFoundErrors ) ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 }
