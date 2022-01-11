@@ -6,9 +6,9 @@ namespace MediaWiki\MassMessage\MessageContentFetcher;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\Stub\RevisionStoreStubFactory;
 use MediaWiki\MassMessage\Stub\TitleStubFactory;
-use MediaWikiUnitTestCase;
+use MediaWikiIntegrationTestCase;
 
-class LocalMessageContentFetcherTest extends MediaWikiUnitTestCase {
+class LocalMessageContentFetcherTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher::getContent
 	 */
