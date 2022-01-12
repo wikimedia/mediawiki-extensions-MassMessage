@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Teashae"
+			"Teashae",
+			"Rishabhbhat"
 		]
 	},
 	"massmessage-form-preview": "نُمٲئش",
 	"massmessage-fieldset-preview": "نُمٲئش",
 	"massmessage-create-title": "عَنوان:",
 	"massmessage-create-description": "تَفصیٖل:",
-	"massmessage-create-content": "مَوآد:",
+	"massmessage-create-content": "مَواد:",
 	"massmessage-create-source": "آگُر:"
 }
