@@ -85,6 +85,8 @@ class PageMessageBuilder {
 		$finalStatus = $pageContentStatus;
 
 		if ( $pageMessageSection ) {
+			// Include section tags for backwards compatibility.
+			// https://phabricator.wikimedia.org/T254481#6865334
 			$messageSectionStatus = $this->labeledSectionContentFetcher
 				->getContent( $pageContent, $pageMessageSection );
 			$pageMessage = $this->parseGetSectionResponse(
@@ -96,7 +98,7 @@ class PageMessageBuilder {
 
 		if ( $pageSubjectSection ) {
 			$subjectSectionStatus = $this->labeledSectionContentFetcher
-				->getContent( $pageContent, $pageSubjectSection );
+				->getContentWithoutTags( $pageContent, $pageSubjectSection );
 			$pageSubject = $this->parseGetSectionResponse(
 				$subjectSectionStatus,
 				$finalStatus,

@@ -13,6 +13,7 @@ use ExtensionRegistry;
 use Job;
 use LqtDispatch;
 use ManualLogEntry;
+use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MassMessageHooks;
 use MediaWiki\MassMessage\MessageBuilder;
@@ -39,9 +40,6 @@ use WikiPage;
  */
 
 class MassMessageJob extends Job {
-
-	private const STRIP_TILDES = true;
-
 	/**
 	 * @var bool Whether to use sender account (if possible)
 	 * TODO: Expose this as a configurable option (T71954)
@@ -69,8 +67,8 @@ class MassMessageJob extends Job {
 	 */
 	public function run() {
 		$status = $this->sendMessage();
-		if ( $status !== true ) {
-			$this->setLastError( $status );
+		if ( !$status ) {
+			$this->setLastError( 'There was an error while sending the message.' );
 			return false;
 		}
 
@@ -187,7 +185,7 @@ class MassMessageJob extends Job {
 	 *
 	 * @return bool
 	 */
-	protected function sendMessage() {
+	protected function sendMessage(): bool {
 		$title = $this->normalizeTitle( $this->title );
 		if ( $title === null ) {
 			return true; // Skip it
@@ -195,40 +193,8 @@ class MassMessageJob extends Job {
 
 		$this->title = $title;
 
-		if ( $this->isOptedOut( $this->title ) ) {
-			$this->logLocalSkip( 'skipoptout' );
-			return true; // Oh well.
-		}
-
-		// If we're sending to a User:/User talk: page, make sure the user exists.
-		// Redirects are automatically followed in getLocalTargets
-		if ( $title->inNamespaces( NS_USER, NS_USER_TALK ) ) {
-			$user = User::newFromName( $title->getRootText() );
-			if ( !$user || !$user->getId() ) { // Does not exist
-				$this->logLocalSkip( 'skipnouser' );
-				return true;
-			}
-		}
-
-		$stripTildes = self::STRIP_TILDES;
-		$methodToCall = null;
-		// If the page is using a different discussion system, handle it specially
-		if (
-			ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' )
-			&& LqtDispatch::isLqtPage( $title )
-		) {
-			// This is the same check that LQT uses internally
-			$methodToCall = [ $this, 'addLQTThread' ];
-		} elseif (
-			$title->hasContentModel( 'flow-board' )
-			// But it can't be a Topic: page, see bug 71196
-			&& defined( 'NS_TOPIC' )
-			&& !$title->inNamespace( NS_TOPIC )
-		) {
-			$methodToCall = [ $this, 'addFlowTopic' ];
-		} else {
-			$stripTildes = !self::STRIP_TILDES;
-			$methodToCall = [ $this, 'editPage' ];
+		if ( !$this->canDeliverMessage( $title ) ) {
+			return true;
 		}
 
 		$pageMessageBuilderResult = $this->getPageMessageDetails();
@@ -239,30 +205,17 @@ class MassMessageJob extends Job {
 			return true;
 		}
 
-		$messageBuilder = new MessageBuilder();
-
-		$customMessage = $this->params['message'] ?? '';
-		if ( $stripTildes === self::STRIP_TILDES ) {
-			$customMessage = $messageBuilder->stripTildes( $customMessage );
-		}
-
-		$message = $messageBuilder->buildMessage(
-			$customMessage,
+		return $this->deliverMessage(
+			$title,
+			$this->params['subject'] ?? '',
+			$this->params['message'] ?? '',
+			$pageMessageBuilderResult ? $pageMessageBuilderResult->getPageSubject() : null,
 			$pageMessageBuilderResult ? $pageMessageBuilderResult->getPageMessage() : null,
-			$this->title->getPageLanguage(),
 			$this->params['comment']
 		);
-
-		$subject = $messageBuilder->buildSubject(
-			$this->params['subject'] ?? '',
-			$pageMessageBuilderResult ? $pageMessageBuilderResult->getPageSubject() : null,
-			$this->title->getPageLanguage()
-		);
-
-		return $methodToCall( $message, $subject );
 	}
 
-	protected function editPage( string $text, string $subject ) {
+	protected function editPage( string $text, string $subject ): bool {
 		$user = $this->getUser();
 
 		$params = [
@@ -302,7 +255,7 @@ class MassMessageJob extends Job {
 		return false;
 	}
 
-	protected function addLQTThread( string $text, string $subject ) {
+	protected function addLQTThread( string $text, string $subject ): bool {
 		$user = $this->getUser();
 
 		$params = [
@@ -317,7 +270,7 @@ class MassMessageJob extends Job {
 		return (bool)$this->makeAPIRequest( $params, $user );
 	}
 
-	protected function addFlowTopic( string $text, string $subject ) {
+	protected function addFlowTopic( string $text, string $subject ): bool {
 		$user = $this->getUser();
 
 		$params = [
@@ -444,5 +397,80 @@ class MassMessageJob extends Job {
 		}
 
 		return $pageMessageBuilderResult;
+	}
+
+	/**
+	 * Check if it's OK to deliver the message to the client
+	 * @param Title $title
+	 * @return bool
+	 */
+	private function canDeliverMessage( Title $title ): bool {
+		if ( $this->isOptedOut( $this->title ) ) {
+			$this->logLocalSkip( 'skipoptout' );
+			return false; // Oh well.
+		}
+
+		// If we're sending to a User:/User talk: page, make sure the user exists.
+		// Redirects are automatically followed in getLocalTargets
+		if ( $title->inNamespaces( NS_USER, NS_USER_TALK ) ) {
+			$user = User::newFromName( $title->getRootText() );
+			if ( !$user || !$user->getId() ) { // Does not exist
+				$this->logLocalSkip( 'skipnouser' );
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Deliver the message to the target page after making tweaks to the message based on
+	 * the discussion system of target page.
+	 * @param Title $targetPage
+	 * @param string $subject
+	 * @param string $message
+	 * @param LanguageAwareText|null $pageSubject
+	 * @param LanguageAwareText|null $pageMessage
+	 * @param array $comment
+	 * @return bool
+	 */
+	private function deliverMessage(
+		Title $targetPage,
+		string $subject,
+		string $message,
+		?LanguageAwareText $pageSubject,
+		?LanguageAwareText $pageMessage,
+		array $comment
+	): bool {
+		$targetLanguage = $targetPage->getPageLanguage();
+		$messageBuilder = new MessageBuilder();
+
+		$isLqtThreads = ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' )
+			&& LqtDispatch::isLqtPage( $targetPage );
+		$isStructuredDiscussion = $targetPage->hasContentModel( 'flow-board' )
+			// But it can't be a Topic: page, see bug 71196
+			&& defined( 'NS_TOPIC' )
+			&& !$targetPage->inNamespace( NS_TOPIC );
+
+		// If the page is using a different discussion system, handle it specially
+		if ( $isLqtThreads || $isStructuredDiscussion ) {
+			$subject = $messageBuilder->buildPlaintextSubject( $subject, $pageSubject );
+			$message = $messageBuilder->buildMessage(
+				$messageBuilder->stripTildes( $message ),
+				$pageMessage,
+				$targetLanguage,
+				$comment
+			);
+
+			if ( $isLqtThreads ) {
+				return $this->addLQTThread( $message, $subject );
+			} else {
+				return $this->addFlowTopic( $message, $subject );
+			}
+		}
+
+		$subject = $messageBuilder->buildSubject( $subject, $pageSubject, $targetLanguage );
+		$message = $messageBuilder->buildMessage( $message, $pageMessage, $targetLanguage, $comment );
+		return $this->editPage( $message, $subject );
 	}
 }

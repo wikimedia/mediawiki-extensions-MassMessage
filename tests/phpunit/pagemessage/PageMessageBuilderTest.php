@@ -69,7 +69,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 			'<section begin="message" />This is the message<section end="message" /> Some more text',
 			'"sub"',
 			'"message"',
-			'<section begin="sub" />Hello World<section end="sub" />',
+			'Hello World',
 			'<section begin="message" />This is the message<section end="message" />'
 		];
 
@@ -88,7 +88,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 			'<section begin="message" />This is the message<section end="message" /> Some more text',
 			'"sub"',
 			'"message123"',
-			'<section begin="sub" />Hello World<section end="sub" />',
+			'Hello World',
 			null,
 			'"massmessage-page-section-invalid"'
 		];

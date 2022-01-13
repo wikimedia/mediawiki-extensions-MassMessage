@@ -37,19 +37,12 @@ class LabeledSectionContentFetcher {
 	 * @return Status
 	 */
 	public function getContent( LanguageAwareText $content, string $label ): Status {
-		$wikitext = $content->getWikitext();
-		// I looked into LabeledSectionTransclusion and it is not reusable here without a lot of
-		// rework -NL
-		$matches = [];
-		$label = preg_quote( $label, '~' );
-		$ok = preg_match_all(
-			"~<section[^>]+begin\s*=\s*{$label}[^>]+>.*?<section[^>]+end\s*=\s*{$label}[^>]+>~s",
-			$wikitext,
-			$matches
-		);
-		if ( $ok < 1 ) {
+		$matches = $this->getMatches( $content->getWikitext(), $label );
+
+		if ( $matches === null ) {
 			return Status::newFatal( 'massmessage-page-section-invalid' );
 		}
+
 		// Include section tags for backwards compatibility.
 		// https://phabricator.wikimedia.org/T254481#6865334
 		// In case there are multiple sections with same label, there will be multiple wrappers too.
@@ -60,6 +53,54 @@ class LabeledSectionContentFetcher {
 			$content->getLanguageCode(),
 			$content->getLanguageDirection()
 		);
+
 		return Status::newGood( $sectionContent );
+	}
+
+	/**
+	 * Get content from a labeled section without the section tags
+	 *
+	 * @param LanguageAwareText $content
+	 * @param string $label
+	 * @return Status
+	 */
+	public function getContentWithoutTags( LanguageAwareText $content, string $label ): Status {
+		$matches = $this->getMatches( $content->getWikitext(), $label );
+
+		if ( $matches === null ) {
+			return Status::newFatal( 'massmessage-page-section-invalid' );
+		}
+
+		$sectionContent = new LanguageAwareText(
+			implode( "", $matches[1] ),
+			$content->getLanguageCode(),
+			$content->getLanguageDirection()
+		);
+
+		return Status::newGood( $sectionContent );
+	}
+
+	/**
+	 * Find and return section contents with or without tags
+	 *
+	 * @param string $content
+	 * @param string $label
+	 * @return ?array
+	 */
+	private function getMatches( string $content, string $label ): ?array {
+		$matches = [];
+		$label = preg_quote( $label, '~' );
+
+		// I looked into LabeledSectionTransclusion and it is not reusable here without a lot of
+		// rework -NL
+
+		$pattern = "~<section[^>]+begin\s*=\s*{$label}[^>]+>(.*?)<section[^>]+end\s*=\s*{$label}[^>]+>~s";
+		$ok = preg_match_all( $pattern, $content, $matches );
+
+		if ( $ok < 1 ) {
+			return null;
+		}
+
+		return $matches;
 	}
 }
