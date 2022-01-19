@@ -9,7 +9,8 @@
 			"LNDDYL",
 			"Liuxinyu970226",
 			"Pseudo Classes",
-			"Xiplus"
+			"Xiplus",
+			"Tranve"
 		]
 	},
 	"massmessage": "發送大量訊息",
@@ -26,7 +27,7 @@
 	"massmessage-form-preview": "預覽",
 	"massmessage-form-submit": "傳送",
 	"massmessage-fieldset-preview": "預覽",
-	"massmessage-fieldset-wikitext-preview": "Wiki 語法預覽",
+	"massmessage-fieldset-wikitext-preview": "Wikitext 預覽",
 	"massmessage-fieldset-info": "資訊",
 	"massmessage-preview-count": "您的訊息將會被傳送至 {{PLURAL:$1|$1 個頁面|$1 個頁面}}。",
 	"massmessage-translate-page-info": "您已選擇一個已翻譯頁面作為訊息發送。訂閱者將會在他們的偏好語言裡收到頁面內容，若翻譯為不可用，則會在備用的語言裡。",
