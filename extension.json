@@ -211,7 +211,8 @@
 			"class": "MediaWiki\\MassMessage\\Specials\\SpecialMassMessage",
 			"services": [
 				"MassMessage:LabeledSectionContentFetcher",
-				"MassMessage:LocalMessageContentFetcher"
+				"MassMessage:LocalMessageContentFetcher",
+				"MassMessage:PageMessageBuilder"
 			]
 		},
 		"CreateMassMessageList": "MediaWiki\\MassMessage\\Specials\\SpecialCreateMassMessageList",

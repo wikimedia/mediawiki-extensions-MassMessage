@@ -15,6 +15,7 @@ use LqtDispatch;
 use ManualLogEntry;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MassMessageHooks;
+use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
@@ -326,25 +327,23 @@ class MassMessageJob extends Job {
 		$pageSection = $this->params['page-section'] ?? null;
 		$pageContent = null;
 		$targetLanguage = $this->title->getPageLanguage();
+		$pageMessageBuilder = Services::getInstance()->getPageMessageBuilder();
 
 		// Check if page-message has been set, and fetch the page content.
 		if ( $titleStr ) {
-			$pageMessageStatus = null;
 			if ( $isSourceTranslationPage ) {
 				$sourceLanguage = $this->params['translationPageSourceLanguage'] ?? '';
-				$pageMessageStatus = MassMessage::getContentWithFallback(
-					$titleStr, $targetLanguage->getCode(), $sourceLanguage, $originWiki, $pageSection
+				$pageMessageBuilderResult = $pageMessageBuilder->getContentWithFallback(
+					$titleStr, $targetLanguage->getCode(), $sourceLanguage, $pageSection, $originWiki
 				);
 			} else {
-				$pageMessageStatus = MassMessage::getContent(
-					$titleStr, $originWiki, $pageSection
-				);
+				$pageMessageBuilderResult = $pageMessageBuilder->getContent( $titleStr, $pageSection, $originWiki );
 			}
 
-			if ( $pageMessageStatus->isOK() ) {
-				$pageContent = $pageMessageStatus->getValue();
+			if ( $pageMessageBuilderResult->isOK() ) {
+				$pageContent = $pageMessageBuilderResult->getPageMessage();
 			} else {
-				return $pageMessageStatus;
+				return $pageMessageBuilderResult->getStatus();
 			}
 		}
 

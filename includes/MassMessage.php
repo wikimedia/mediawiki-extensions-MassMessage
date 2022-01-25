@@ -15,7 +15,6 @@ use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
-use Status;
 use Title;
 use User;
 use WikiMap;
@@ -126,93 +125,6 @@ class MassMessage {
 		$active = max( $claimed - $abandoned, 0 );
 
 		return $active + $pending;
-	}
-
-	/**
-	 * Get content for a target language from wiki, using fallbacks if necessary
-	 *
-	 * @param string $titleStr
-	 * @param string $targetLangCode
-	 * @param string $sourceLangCode
-	 * @param string $wikiId
-	 * @param ?string $pageSection
-	 * @return Status Values is LanguageAwareText or null on failure
-	 */
-	public static function getContentWithFallback(
-		string $titleStr,
-		string $targetLangCode,
-		string $sourceLangCode,
-		string $wikiId,
-		?string $pageSection
-	): Status {
-		$mwService = MediaWikiServices::getInstance();
-		$languageNameUtils = $mwService->getLanguageNameUtils();
-
-		if ( !$languageNameUtils->isKnownLanguageTag( $targetLangCode ) ) {
-			return Status::newFatal( 'massmessage-invalid-lang', $targetLangCode );
-		}
-
-		// Identify languages to fetch
-		$langFallback = $mwService->getLanguageFallback();
-		$fallbackChain = array_merge(
-			[ $targetLangCode ],
-			$langFallback->getAll( $targetLangCode )
-		);
-
-		foreach ( $fallbackChain as $langCode ) {
-			$titleStrWithLang = $titleStr . '/' . $langCode;
-			$contentStatus = self::getContent( $titleStrWithLang, $wikiId, $pageSection );
-
-			if ( $contentStatus->isOK() ) {
-				return $contentStatus;
-			}
-
-			// Got an unknown error, let's stop looking for other fallbacks
-			if ( !self::isNotFoundError( $contentStatus ) ) {
-				break;
-			}
-		}
-
-		// No language or fallback found or there was an error, go with source language
-		$langSuffix = '';
-		if ( $sourceLangCode ) {
-			$langSuffix = "/$sourceLangCode";
-		}
-
-		return self::getContent( $titleStr . $langSuffix, $wikiId, $pageSection );
-	}
-
-	/**
-	 * Helper method that uses the database or API to fetch content based on the wiki.
-	 *
-	 * @param string $titleStr
-	 * @param string $wikiId
-	 * @param string|null $section
-	 * @return Status Values is LanguageAwareText or null on failure
-	 */
-	public static function getContent( string $titleStr, string $wikiId, ?string $section = null ): Status {
-		$isCurrentWiki = WikiMap::getCurrentWikiId() === $wikiId;
-		$title = Title::newFromText( $titleStr );
-		if ( $title === null ) {
-			return Status::newFatal(
-				'massmessage-page-message-invalid', $titleStr
-			);
-		}
-		if ( $isCurrentWiki ) {
-			$contentStatus = Services::getInstance()->getLocalMessageContentFetcher()->getContent( $title );
-		} else {
-			$contentStatus = Services::getInstance()
-				->getRemoteMessageContentFetcher()
-				->getContent( $titleStr, $wikiId );
-		}
-
-		if ( $contentStatus->isOK() && $section !== null && $section !== '' ) {
-			return Services::getInstance()
-				->getLabeledSectionContentFetcher()
-				->getContent( $contentStatus->getValue(), $section );
-		}
-
-		return $contentStatus;
 	}
 
 	/**
@@ -408,27 +320,5 @@ class MassMessage {
 		$fullMessageText .= "\n" . $commentMessage->text();
 
 		return $fullMessageText;
-	}
-
-	/**
-	 * Checks if a given Status is a not found error.
-	 *
-	 * @param Status $status
-	 * @return bool
-	 */
-	private static function isNotFoundError( Status $status ): bool {
-		$notFoundErrors = [
-			'massmessage-page-message-not-found', 'massmessage-page-message-not-found-in-wiki'
-		];
-		$errors = $status->getErrorsArray();
-		if ( $errors ) {
-			foreach ( $errors as $error ) {
-				if ( in_array( $error[0], $notFoundErrors ) ) {
-					return true;
-				}
-			}
-		}
-
-		return false;
 	}
 }
