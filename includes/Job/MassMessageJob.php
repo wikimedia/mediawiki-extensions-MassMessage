@@ -15,6 +15,7 @@ use LqtDispatch;
 use ManualLogEntry;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MassMessageHooks;
+use MediaWiki\MassMessage\MessageBuilder;
 use MediaWiki\MassMessage\PageMessage\PageMessageBuilderResult;
 use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
@@ -238,8 +239,26 @@ class MassMessageJob extends Job {
 			return true;
 		}
 
-		$message = $this->buildMessageText( $pageMessageBuilderResult, $stripTildes );
-		$subject = $this->buildSubjectText( $pageMessageBuilderResult );
+		$messageBuilder = new MessageBuilder();
+
+		$customMessage = $this->params['message'] ?? '';
+		if ( $stripTildes === self::STRIP_TILDES ) {
+			$customMessage = $messageBuilder->stripTildes( $customMessage );
+		}
+
+		$message = $messageBuilder->buildMessage(
+			$customMessage,
+			$pageMessageBuilderResult ? $pageMessageBuilderResult->getPageMessage() : null,
+			$this->title->getPageLanguage(),
+			$this->params['comment']
+		);
+
+		$subject = $messageBuilder->buildSubject(
+			$this->params['subject'] ?? '',
+			$pageMessageBuilderResult ? $pageMessageBuilderResult->getPageSubject() : null,
+			$this->title->getPageLanguage()
+		);
+
 		return $methodToCall( $message, $subject );
 	}
 
@@ -311,60 +330,6 @@ class MassMessageJob extends Job {
 		];
 
 		return (bool)$this->makeAPIRequest( $params, $user );
-	}
-
-	/**
-	 * Merge page message passed as message, wrap it in necessary HTML tags / attributes and
-	 * add some stuff to the end of the message.
-	 *
-	 * @param PageMessageBuilderResult|null $pageDetails Details of the page being sent as a message
-	 * @param bool $stripTildes Whether to strip trailing '~~~~'
-	 * @return string
-	 */
-	private function buildMessageText( ?PageMessageBuilderResult $pageDetails, bool $stripTildes = false ): string {
-		$text = rtrim( $this->params['message'] );
-
-		if ( $stripTildes === self::STRIP_TILDES
-			&& substr( $text, -4 ) === '~~~~'
-			&& substr( $text, -5 ) !== '~~~~~'
-		) {
-			$text = substr( $text, 0, -4 );
-		}
-
-		$pageMessage = $pageDetails ? $pageDetails->getPageMessage() : null;
-		$targetLanguage = $this->title->getPageLanguage();
-
-		$text = MassMessage::composeFullMessage(
-			$text,
-			$pageMessage,
-			$targetLanguage,
-			$this->params['comment']
-		);
-
-		return $text;
-	}
-
-	/**
-	 * Identify which subject to use - one passed via page message or the subject directly.
-	 * Also wrap the subject in appropriate HTML tags / attributes
-	 *
-	 * @param PageMessageBuilderResult|null $pageDetails
-	 * @return string
-	 */
-	private function buildSubjectText( ?PageMessageBuilderResult $pageDetails ): string {
-		$subject = rtrim( $this->params['subject'] ?? null );
-		$pageSubject = $pageDetails ? $pageDetails->getPageSubject() : null;
-
-		if ( $pageSubject ) {
-			$finalSubject = MassMessage::wrapBasedOnLanguage(
-				$pageSubject,
-				$this->title->getPageLanguage()
-			);
-
-			return $finalSubject;
-		}
-
-		return $subject ?? '';
 	}
 
 	/**

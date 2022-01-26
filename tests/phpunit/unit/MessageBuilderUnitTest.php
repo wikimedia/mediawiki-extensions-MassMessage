@@ -1,0 +1,182 @@
+<?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\MassMessage;
+
+use Language;
+use MediaWikiUnitTestCase;
+
+class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
+	/**
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::stripTildes
+	 * @dataProvider provideStripTildes
+	 */
+	public function testStripTildes(
+		string $message,
+		string $expected
+	) {
+		$messageBuilder = new MessageBuilder();
+		$strippedMessage = $messageBuilder->stripTildes( $message );
+
+		$this->assertEquals( $expected, $strippedMessage );
+	}
+
+	public function provideStripTildes() {
+		yield 'removes tildes if message has 4 tildes at end' => [
+			'hello ~~~~',
+			'hello '
+		];
+
+		yield 'does not remove tildes if message has more than 4 tildes at end' => [
+			'hello ~~~~~',
+			'hello ~~~~~'
+		];
+
+		yield 'does not remove tildes if message has less than 4 tildes at end' => [
+			'hello ~~~',
+			'hello ~~~'
+		];
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::buildMessage
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::wrapBasedOnLanguage
+	 * @dataProvider provideBuildMessage
+	 */
+	public function testBuildMessage(
+		string $customMessageText,
+		?LanguageAwareText $pageContent,
+		?Language $targetLanguage,
+		?string $expectedMessage,
+		?array $expectedMessageContents
+	) {
+		$messageBuilder = new MessageBuilder();
+		$message = $messageBuilder->buildMessage(
+			$customMessageText,
+			$pageContent,
+			$targetLanguage,
+			// Forced to use commentParams as [] as it uses the MessageCache that requires MediaWikiServices
+			[]
+		);
+
+		if ( $expectedMessage ) {
+			$this->assertEquals( $expectedMessage, $message );
+		}
+
+		// Check if all the strings are present in the message
+		if ( $expectedMessageContents ) {
+			foreach ( $expectedMessageContents as $needle ) {
+				$this->assertStringContainsString( $needle, $message );
+			}
+		}
+	}
+
+	public function provideBuildMessage() {
+		yield 'message and page content are both present' => [
+			'hello world',
+			new LanguageAwareText( 'how are you', 'en', 'ltr' ),
+			$this->getLanguageStub( 'en', 'ltr' ),
+			null,
+			[ 'hello world', 'how are you' ]
+		];
+
+		yield 'no language wrapping if message and target page language are same' => [
+			'',
+			new LanguageAwareText( 'how are you', 'fr', 'ltr' ),
+			$this->getLanguageStub( 'fr', 'ltr' ),
+			'how are you',
+			null
+		];
+
+		yield 'language wrapping if message and target page language are same' => [
+			'',
+			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
+			$this->getLanguageStub( 'fr', 'ltr' ),
+			null,
+			[ 'dir="rtl"', 'lang="he"' ]
+		];
+
+		yield 'language wrapping is applied if target language is null' => [
+			'',
+			new LanguageAwareText( 'how are you', 'en', 'ltr' ),
+			null,
+			null,
+			[ 'dir="ltr"', 'lang="en"' ]
+		];
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::buildSubject
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::wrapBasedOnLanguage
+	 * @dataProvider provideBuildSubject
+	 */
+	public function testBuildSubject(
+		string $customSubject,
+		?LanguageAwareText $pageSubject,
+		?Language $targetPageLanguage,
+		?string $expected,
+		?array $expectedContents
+	) {
+		$messageBuilder = new MessageBuilder();
+		$subject = $messageBuilder->buildSubject(
+			$customSubject,
+			$pageSubject,
+			$targetPageLanguage
+		);
+
+		if ( $expected ) {
+			$this->assertEquals( $expected, $subject );
+		}
+
+		if ( $expectedContents ) {
+			foreach ( $expectedContents as $needle ) {
+				$this->assertStringContainsString( $needle, $subject );
+			}
+		}
+	}
+
+	public function provideBuildSubject() {
+		yield 'custom subject is used if page subject is absent' => [
+			'hello world',
+			null,
+			$this->getLanguageStub( 'en', 'ltr' ),
+			'hello world',
+			null
+		];
+
+		yield 'custom subject is ignored if page subject is present' => [
+			'hello world',
+			new LanguageAwareText( 'how are you', 'en', 'ltr' ),
+			$this->getLanguageStub( 'en', 'ltr' ),
+			'how are you',
+			null
+		];
+
+		yield 'no language wrapping if target and page language are same' => [
+			'',
+			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
+			$this->getLanguageStub( 'he', 'rtl' ),
+			'how are you',
+			null
+		];
+
+		yield 'language wrapping if message and target page language are same' => [
+			'',
+			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
+			$this->getLanguageStub( 'fr', 'ltr' ),
+			null,
+			[ 'dir="rtl"', 'lang="he"' ]
+		];
+	}
+
+	private function getLanguageStub( string $languageCode, string $languageDir ) {
+		$languageStub = $this->createStub( Language::class );
+		$languageStub->method( 'getCode' )
+			->willReturn( $languageCode );
+
+		$languageStub->method( 'getDir' )
+			->willReturn( $languageDir );
+
+		return $languageStub;
+	}
+}
