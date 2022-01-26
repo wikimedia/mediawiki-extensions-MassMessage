@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\MassMessage\PageMessage;
 
 use MediaWiki\MassMessage\LanguageAwareText;
+use Message;
 use Status;
 
 /**
@@ -18,13 +19,17 @@ class PageMessageBuilderResult {
 	private $status;
 	/** @var LanguageAwareText|null */
 	private $pageMessage;
+	/** @var LanguageAwareText|null */
+	private $pageSubject;
 
 	public function __construct(
 		Status $status,
-		?LanguageAwareText $pageMessage = null
+		?LanguageAwareText $pageMessage = null,
+		?LanguageAwareText $pageSubject = null
 	) {
 		$this->status = $status;
 		$this->pageMessage = $pageMessage;
+		$this->pageSubject = $pageSubject;
 	}
 
 	public function getStatus(): Status {
@@ -35,7 +40,15 @@ class PageMessageBuilderResult {
 		return $this->pageMessage;
 	}
 
+	public function getPageSubject(): ?LanguageAwareText {
+		return $this->pageSubject;
+	}
+
 	public function isOK(): bool {
 		return $this->status->isOK();
+	}
+
+	public function getResultMessage(): Message {
+		return $this->status->getMessage();
 	}
 }

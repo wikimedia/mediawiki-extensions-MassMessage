@@ -50,23 +50,26 @@ class PageMessageBuilder {
 	}
 
 	/**
-	 * Fetch content from a page or section of a page in a wiki.
+	 * Fetch content from a page or section of a page in a wiki to be used as the subject or
+	 * in the message body for a MassMessage
 	 *
-	 * @param string $pageMessage
-	 * @param string|null $pageSection
+	 * @param string $pageName
+	 * @param string|null $pageMessageSection
+	 * @param string|null $pageSubjectSection
 	 * @param string $sourceWikiId
 	 * @return PageMessageBuilderResult
 	 */
 	public function getContent(
-		string $pageMessage,
-		?string $pageSection,
+		string $pageName,
+		?string $pageMessageSection,
+		?string $pageSubjectSection,
 		string $sourceWikiId
 	): PageMessageBuilderResult {
-		if ( $pageMessage === '' ) {
+		if ( $pageName === '' ) {
 			throw new InvalidArgumentException( 'Empty page name passed' );
 		}
 
-		$pageContentStatus = $this->getPageContent( $pageMessage, $sourceWikiId );
+		$pageContentStatus = $this->getPageContent( $pageName, $sourceWikiId );
 		if ( !$pageContentStatus->isOK() ) {
 			return new PageMessageBuilderResult( $pageContentStatus );
 		}
@@ -74,28 +77,34 @@ class PageMessageBuilder {
 		/** @var LanguageAwareText */
 		$pageContent = $pageContentStatus->getValue();
 		if ( $pageContent->getWikitext() === '' ) {
-			return new PageMessageBuilderResult( Status::newFatal( 'massmessage-page-message-empty', $pageMessage ) );
+			return new PageMessageBuilderResult( Status::newFatal( 'massmessage-page-message-empty', $pageName ) );
 		}
 
-		if ( $pageSection ) {
-			$sectionContentStatus = $this->labeledSectionContentFetcher
-				->getContent( $pageContent, $pageSection );
-			if ( !$sectionContentStatus->isOK() ) {
-				return new PageMessageBuilderResult( $sectionContentStatus );
-			}
+		$pageMessage = $pageContent;
+		$pageSubject = null;
+		$finalStatus = $pageContentStatus;
 
-			/** @var LanguageAwareText */
-			$sectionContent = $sectionContentStatus->getValue();
-			if ( $sectionContent->getWikitext() === '' ) {
-				return new PageMessageBuilderResult(
-					Status::newFatal( 'massmessage-page-message-empty', $pageMessage )
-				);
-			}
-
-			return new PageMessageBuilderResult( $sectionContentStatus, $sectionContent );
+		if ( $pageMessageSection ) {
+			$messageSectionStatus = $this->labeledSectionContentFetcher
+				->getContent( $pageContent, $pageMessageSection );
+			$pageMessage = $this->parseGetSectionResponse(
+				$messageSectionStatus,
+				$finalStatus,
+				Status::newFatal( 'massmessage-page-message-empty', $pageName )
+			);
 		}
 
-		return new PageMessageBuilderResult( $pageContentStatus, $pageContent );
+		if ( $pageSubjectSection ) {
+			$subjectSectionStatus = $this->labeledSectionContentFetcher
+				->getContent( $pageContent, $pageSubjectSection );
+			$pageSubject = $this->parseGetSectionResponse(
+				$subjectSectionStatus,
+				$finalStatus,
+				Status::newFatal( 'massmessage-page-subject-empty', $pageSubjectSection, $pageName )
+			);
+		}
+
+		return new PageMessageBuilderResult( $finalStatus, $pageMessage, $pageSubject );
 	}
 
 	/**
@@ -104,7 +113,8 @@ class PageMessageBuilder {
 	 * @param string $titleStr
 	 * @param string $targetLangCode
 	 * @param string $sourceLangCode
-	 * @param string|null $pageSection
+	 * @param string|null $pageMessageSection
+	 * @param string|null $pageSubjectSection
 	 * @param string $sourceWikiId
 	 * @return PageMessageBuilderResult Values is LanguageAwareText or null on failure
 	 */
@@ -112,7 +122,8 @@ class PageMessageBuilder {
 		string $titleStr,
 		string $targetLangCode,
 		string $sourceLangCode,
-		?string $pageSection,
+		?string $pageMessageSection,
+		?string $pageSubjectSection,
 		string $sourceWikiId
 	): PageMessageBuilderResult {
 		if ( !$this->languageNameUtils->isKnownLanguageTag( $targetLangCode ) ) {
@@ -127,7 +138,9 @@ class PageMessageBuilder {
 
 		foreach ( $fallbackChain as $langCode ) {
 			$titleStrWithLang = $titleStr . '/' . $langCode;
-			$pageMessageBuilderResult = $this->getContent( $titleStrWithLang, $pageSection, $sourceWikiId );
+			$pageMessageBuilderResult = $this->getContent(
+				$titleStrWithLang, $pageMessageSection, $pageSubjectSection, $sourceWikiId
+			);
 
 			if ( $pageMessageBuilderResult->isOK() ) {
 				return $pageMessageBuilderResult;
@@ -145,7 +158,34 @@ class PageMessageBuilder {
 			$langSuffix = "/$sourceLangCode";
 		}
 
-		return $this->getContent( $titleStr . $langSuffix, $pageSection, $sourceWikiId );
+		return $this->getContent( $titleStr . $langSuffix, $pageMessageSection, $pageSubjectSection, $sourceWikiId );
+	}
+
+	/**
+	 * Helper method to parse response from get labeled section method and updates the passed status
+	 *
+	 * @param Status $sectionStatus Status from get labeled section
+	 * @param Status $statusToUpdate Status to update
+	 * @param Status $emptySectionErrorStatus Fatal status to use if section content is empty
+	 * @return LanguageAwareText|null
+	 */
+	private function parseGetSectionResponse(
+		Status $sectionStatus,
+		Status $statusToUpdate,
+		Status $emptySectionErrorStatus
+	): ?LanguageAwareText {
+		if ( !$sectionStatus->isOK() ) {
+			$statusToUpdate = $statusToUpdate->merge( $sectionStatus );
+		} else {
+			/** @var LanguageAwareText */
+			$sectionContent = $sectionStatus->getValue();
+			if ( $sectionContent->getWikitext() === '' ) {
+				$statusToUpdate->merge( $emptySectionErrorStatus );
+			} else {
+				return $sectionContent;
+			}
+		}
+		return null;
 	}
 
 	/**

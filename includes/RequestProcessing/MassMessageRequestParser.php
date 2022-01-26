@@ -57,7 +57,8 @@ class MassMessageRequestParser {
 		}
 
 		$data['page-message'] = $data['page-message'] ?? '';
-		$data['page-section'] = $data['page-section'] ?? '';
+		$data['page-message-section'] = $data['page-message-section'] ?? '';
+		$data['page-subject-section'] = $data['page-subject-section'] ?? '';
 		$data['message'] = $data['message'] ?? '';
 
 		$footer = wfMessage( 'massmessage-message-footer' )->inContentLanguage()->plain();
@@ -70,7 +71,8 @@ class MassMessageRequestParser {
 			$spamlist,
 			$data['subject'],
 			$data['page-message'],
-			$data['page-section'],
+			$data['page-message-section'],
+			$data['page-subject-section'],
 			$data['message'],
 			$data['comment']
 		);
@@ -81,6 +83,7 @@ class MassMessageRequestParser {
 			$pageMessageBuilderResult = $pageMessageBuilder->getContent(
 				$request->getPageMessage(),
 				$request->getPageMessageSection(),
+				$request->getPageSubjectSection(),
 				$currentWikiId
 			);
 

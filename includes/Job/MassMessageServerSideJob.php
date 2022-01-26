@@ -46,11 +46,10 @@ class MassMessageServerSideJob extends MassMessageJob {
 		return Status::newGood( $this->params['message'] );
 	}
 
-	protected function editPage( string $text ) {
+	protected function editPage( string $text, string $subject ) {
 		$tries = 1;
 		$titleText = $this->title->getPrefixedText();
 		$user = MassMessage::getMessengerUser();
-		$subject = $this->params['subject'];
 		$text = "== $subject ==\n\n$text";
 		while ( true ) {
 			$page = WikiPage::factory( $this->title );

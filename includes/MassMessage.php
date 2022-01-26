@@ -290,24 +290,7 @@ class MassMessage {
 		$fullMessageText = '';
 
 		if ( $pageContent ) {
-			if ( !$targetPageLanguage
-				|| $targetPageLanguage->getCode() !== $pageContent->getLanguageCode()
-			) {
-				// Wrap page contents if it differs from target page's language. Ideally the
-				// message contents would be wrapped too, but we do not know its language.
-				$fullMessageText .= Html::rawElement(
-					'div',
-					[
-						'lang' => $pageContent->getLanguageCode(),
-						'dir' => $pageContent->getLanguageDirection(),
-						// This class is needed for proper rendering of list items (and maybe more)
-						'class' => 'mw-content-' . $pageContent->getLanguageDirection()
-					],
-					"\n" . $pageContent->getWikitext() . "\n"
-				);
-			} else {
-				$fullMessageText = $pageContent->getWikitext();
-			}
+			$fullMessageText = self::wrapBasedOnLanguage( $pageContent, $targetPageLanguage );
 		}
 
 		// If either is empty, the extra new lines will be trimmed
@@ -318,6 +301,28 @@ class MassMessage {
 			$commentMessage = $commentMessage->inLanguage( $targetPageLanguage );
 		}
 		$fullMessageText .= "\n" . $commentMessage->text();
+
+		return $fullMessageText;
+	}
+
+	public static function wrapBasedOnLanguage( LanguageAwareText $pageContent, ?Language $targetLanguage ): string {
+		$fullMessageText = '';
+		if ( !$targetLanguage || $targetLanguage->getCode() !== $pageContent->getLanguageCode() ) {
+			// Wrap page contents if it differs from target page's language. Ideally the
+			// message contents would be wrapped too, but we do not know its language.
+			$fullMessageText .= Html::rawElement(
+				'div',
+				[
+					'lang' => $pageContent->getLanguageCode(),
+					'dir' => $pageContent->getLanguageDirection(),
+					// This class is needed for proper rendering of list items (and maybe more)
+					'class' => 'mw-content-' . $pageContent->getLanguageDirection()
+				],
+				"\n" . $pageContent->getWikitext() . "\n"
+			);
+		} else {
+			$fullMessageText = $pageContent->getWikitext();
+		}
 
 		return $fullMessageText;
 	}

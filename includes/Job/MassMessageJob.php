@@ -15,11 +15,11 @@ use LqtDispatch;
 use ManualLogEntry;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MassMessageHooks;
+use MediaWiki\MassMessage\PageMessage\PageMessageBuilderResult;
 use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
-use Status;
 use Title;
 use User;
 use WikiMap;
@@ -230,27 +230,27 @@ class MassMessageJob extends Job {
 			$methodToCall = [ $this, 'editPage' ];
 		}
 
-		$status = $this->makeText( $stripTildes );
-		$text = '';
-		if ( $status->isOK() ) {
-			$text = $status->getValue();
-		} else {
-			$statusMessage = $status->getMessage()->text();
-			$this->logLocalFailure( $statusMessage );
+		$pageMessageBuilderResult = $this->getPageMessageDetails();
+		if ( $pageMessageBuilderResult && !$pageMessageBuilderResult->isOK() ) {
+			$this->logLocalFailure(
+				$pageMessageBuilderResult->getResultMessage()->text()
+			);
 			return true;
 		}
 
-		return call_user_func( $methodToCall, $text );
+		$message = $this->buildMessageText( $pageMessageBuilderResult, $stripTildes );
+		$subject = $this->buildSubjectText( $pageMessageBuilderResult );
+		return $methodToCall( $message, $subject );
 	}
 
-	protected function editPage( string $text ) {
+	protected function editPage( string $text, string $subject ) {
 		$user = $this->getUser();
 
 		$params = [
 			'action' => 'edit',
 			'title' => $this->title->getPrefixedText(),
 			'section' => 'new',
-			'summary' => $this->params['subject'],
+			'summary' => $subject,
 			'text' => $text,
 			'notminor' => true,
 			'token' => $user->getEditToken()
@@ -283,14 +283,14 @@ class MassMessageJob extends Job {
 		return false;
 	}
 
-	protected function addLQTThread( string $text ) {
+	protected function addLQTThread( string $text, string $subject ) {
 		$user = $this->getUser();
 
 		$params = [
 			'action' => 'threadaction',
 			'threadaction' => 'newthread',
 			'talkpage' => $this->title,
-			'subject' => $this->params['subject'],
+			'subject' => $subject,
 			'text' => $text,
 			'token' => $user->getEditToken()
 		]; // LQT will automatically mark the edit as bot if we're a bot
@@ -298,14 +298,14 @@ class MassMessageJob extends Job {
 		return (bool)$this->makeAPIRequest( $params, $user );
 	}
 
-	protected function addFlowTopic( string $text ) {
+	protected function addFlowTopic( string $text, string $subject ) {
 		$user = $this->getUser();
 
 		$params = [
 			'action' => 'flow',
 			'page' => $this->title->getPrefixedText(),
 			'submodule' => 'new-topic',
-			'nttopic' => $this->params['subject'],
+			'nttopic' => $subject,
 			'ntcontent' => $text,
 			'token' => $user->getEditToken(),
 		];
@@ -314,38 +314,15 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Merge page passed as message and add some stuff to the end of the message.
+	 * Merge page message passed as message, wrap it in necessary HTML tags / attributes and
+	 * add some stuff to the end of the message.
 	 *
+	 * @param PageMessageBuilderResult|null $pageDetails Details of the page being sent as a message
 	 * @param bool $stripTildes Whether to strip trailing '~~~~'
-	 * @return Status
+	 * @return string
 	 */
-	protected function makeText( bool $stripTildes = false ): Status {
+	private function buildMessageText( ?PageMessageBuilderResult $pageDetails, bool $stripTildes = false ): string {
 		$text = rtrim( $this->params['message'] );
-		$originWiki = $this->params['originWiki'] ?? WikiMap::getCurrentWikiId();
-		$titleStr = $this->params['pageMessageTitle'] ?? null;
-		$isSourceTranslationPage = $this->params['isSourceTranslationPage'] ?? false;
-		$pageSection = $this->params['page-section'] ?? null;
-		$pageContent = null;
-		$targetLanguage = $this->title->getPageLanguage();
-		$pageMessageBuilder = Services::getInstance()->getPageMessageBuilder();
-
-		// Check if page-message has been set, and fetch the page content.
-		if ( $titleStr ) {
-			if ( $isSourceTranslationPage ) {
-				$sourceLanguage = $this->params['translationPageSourceLanguage'] ?? '';
-				$pageMessageBuilderResult = $pageMessageBuilder->getContentWithFallback(
-					$titleStr, $targetLanguage->getCode(), $sourceLanguage, $pageSection, $originWiki
-				);
-			} else {
-				$pageMessageBuilderResult = $pageMessageBuilder->getContent( $titleStr, $pageSection, $originWiki );
-			}
-
-			if ( $pageMessageBuilderResult->isOK() ) {
-				$pageContent = $pageMessageBuilderResult->getPageMessage();
-			} else {
-				return $pageMessageBuilderResult->getStatus();
-			}
-		}
 
 		if ( $stripTildes === self::STRIP_TILDES
 			&& substr( $text, -4 ) === '~~~~'
@@ -354,14 +331,40 @@ class MassMessageJob extends Job {
 			$text = substr( $text, 0, -4 );
 		}
 
+		$pageMessage = $pageDetails ? $pageDetails->getPageMessage() : null;
+		$targetLanguage = $this->title->getPageLanguage();
+
 		$text = MassMessage::composeFullMessage(
 			$text,
-			$pageContent,
+			$pageMessage,
 			$targetLanguage,
 			$this->params['comment']
 		);
 
-		return Status::newGood( $text );
+		return $text;
+	}
+
+	/**
+	 * Identify which subject to use - one passed via page message or the subject directly.
+	 * Also wrap the subject in appropriate HTML tags / attributes
+	 *
+	 * @param PageMessageBuilderResult|null $pageDetails
+	 * @return string
+	 */
+	private function buildSubjectText( ?PageMessageBuilderResult $pageDetails ): string {
+		$subject = rtrim( $this->params['subject'] ?? null );
+		$pageSubject = $pageDetails ? $pageDetails->getPageSubject() : null;
+
+		if ( $pageSubject ) {
+			$finalSubject = MassMessage::wrapBasedOnLanguage(
+				$pageSubject,
+				$this->title->getPageLanguage()
+			);
+
+			return $finalSubject;
+		}
+
+		return $subject ?? '';
 	}
 
 	/**
@@ -441,5 +444,40 @@ class MassMessageJob extends Job {
 			$wgUser = $oldUser;
 			$wgRequest = $oldRequest;
 		}
+	}
+
+	/**
+	 * Fetch content from the page and the necessary sections
+	 *
+	 * @return PageMessageBuilderResult|null
+	 */
+	private function getPageMessageDetails(): ?PageMessageBuilderResult {
+		$titleStr = $this->params['pageMessageTitle'] ?? null;
+		$isSourceTranslationPage = $this->params['isSourceTranslationPage'] ?? false;
+		$pageMessageSection = $this->params['page-message-section'] ?? null;
+		$pageSubjectSection = $this->params['page-subject-section'] ?? null;
+
+		if ( !$titleStr ) {
+			return null;
+		}
+
+		$originWiki = $this->params['originWiki'] ?? WikiMap::getCurrentWikiId();
+		$pageMessageBuilder = Services::getInstance()->getPageMessageBuilder();
+		if ( $isSourceTranslationPage ) {
+			$pageMessageBuilderResult = $pageMessageBuilder->getContentWithFallback(
+				$titleStr,
+				$this->title->getPageLanguage()->getCode(),
+				$this->params['translationPageSourceLanguage'] ?? '',
+				$pageMessageSection,
+				$pageSubjectSection,
+				$originWiki
+			);
+		} else {
+			$pageMessageBuilderResult = $pageMessageBuilder->getContent(
+				$titleStr, $pageMessageSection, $pageSubjectSection, $originWiki
+			);
+		}
+
+		return $pageMessageBuilderResult;
 	}
 }
