@@ -32,8 +32,6 @@
 	"massmessage-form-message": "信息正文：",
 	"massmessage-form-page": "作为信息发送的页面：",
 	"massmessage-form-page-help": "若提供了信息文本，则其将附加在所选页面内容的末尾。",
-	"massmessage-form-page-section": "页面章节：",
-	"massmessage-form-page-section-help": "选择页面并预览表单来查看可用的章节列表。",
 	"massmessage-form-preview": "预览",
 	"massmessage-form-submit": "发送",
 	"massmessage-fieldset-preview": "预览",

@@ -14,8 +14,6 @@
 	"massmessage-form-message": "Текст на пораката:",
 	"massmessage-form-page": "Страница што ќе се прати како порака:",
 	"massmessage-form-page-help": "Текстот на пораката, ако е укажан, ќе биде придодаден кон крајот на содржината од избраната страница.",
-	"massmessage-form-page-section": "Поднаслов на страницата:",
-	"massmessage-form-page-section-help": "Изберете страница и прегледајте го образецот за да видите список на расположиви поднаслови.",
 	"massmessage-form-preview": "Преглед",
 	"massmessage-form-submit": "Испрати",
 	"massmessage-fieldset-preview": "Преглед",

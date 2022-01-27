@@ -22,8 +22,6 @@
 	"massmessage-form-message": "訊息內容：",
 	"massmessage-form-page": "作為訊息發送的頁面：",
 	"massmessage-form-page-help": "若有提供訊息本文的話，會套用在來自所選頁面的內容末端。",
-	"massmessage-form-page-section": "頁面段落：",
-	"massmessage-form-page-section-help": "選擇頁面並預覽表單來查看可用的段落清單。",
 	"massmessage-form-preview": "預覽",
 	"massmessage-form-submit": "傳送",
 	"massmessage-fieldset-preview": "預覽",

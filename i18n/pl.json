@@ -24,8 +24,6 @@
 	"massmessage-form-message": "Treść wiadomości:",
 	"massmessage-form-page": "Strona do wysłania jako wiadomość:",
 	"massmessage-form-page-help": "Treść z wybranej strony zostanie dołączona wraz z wiadomością, jeśli została podana.",
-	"massmessage-form-page-section": "Sekcja na stronie:",
-	"massmessage-form-page-section-help": "Wybierz stronę i zobacz podgląd wiadomości, aby zobaczyć listę dostępnych sekcji.",
 	"massmessage-form-preview": "Podgląd",
 	"massmessage-form-submit": "Wyślij",
 	"massmessage-fieldset-preview": "Podgląd",

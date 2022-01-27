@@ -21,8 +21,6 @@
 	"massmessage-form-message": "Meddelandetexten.",
 	"massmessage-form-page": "Sida som ska skickas som ett meddelande:",
 	"massmessage-form-page-help": "Meddelandetexten, om den tillhandahålls, kommer att läggas till i slutet av innehållet på den valda sidan.",
-	"massmessage-form-page-section": "Val av sida:",
-	"massmessage-form-page-section-help": "Välj en sida och förhandsgranska formatet för att se en lista över tillgängliga sektioner.",
 	"massmessage-form-preview": "Förhandsgranska",
 	"massmessage-form-submit": "Skicka",
 	"massmessage-fieldset-preview": "Förhandsgranska",
