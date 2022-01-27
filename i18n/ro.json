@@ -14,8 +14,6 @@
 	"massmessage-form-message": "Corpul mesajului:",
 	"massmessage-form-page": "Pagina care să fie trimisă ca un mesaj:",
 	"massmessage-form-page-help": "Conținutul din pagina selectată va fi anexat alături de mesaj, dacă este furnizat.",
-	"massmessage-form-page-section": "Secțiunea paginii:",
-	"massmessage-form-page-section-help": "Selectați o pagină și previzualizați formularul pentru a vedea o listă de secțiuni disponibile.",
 	"massmessage-form-preview": "Previzualizare",
 	"massmessage-form-submit": "Trimitere",
 	"massmessage-fieldset-preview": "Previzualizare",

@@ -10,8 +10,6 @@
 	"massmessage-form-message": "Mesaj:",
 	"massmessage-form-page": "Mesaj olaraq göndəriləcək səhifə:",
 	"massmessage-form-page-help": "Əgər varsa mesaj. Seçilmiş səhifədəki məzmunun sonuna əlavə ediləcək.",
-	"massmessage-form-page-section": "Səhifənin bölməsi:",
-	"massmessage-form-page-section-help": "Mövcud bölmələrin siyahısını görmək üçün bir səhifə seçin və sınaq göstərişinə baxın.",
 	"massmessage-form-submit": "Göndər",
 	"massmessage-fieldset-info": "Məlumat",
 	"massmessage-spamlist-doesnotexist": "Göndəriləcək səhifələrin siyahısı müəyyən edilməyib.",

@@ -28,8 +28,6 @@
 	"massmessage-form-message": "Mesajın gövdesi:",
 	"massmessage-form-page": "Mesaj olarak gönderilecek sayfa:",
 	"massmessage-form-page-help": "Mesaj gövdesi, sağlanmışsa, seçilen sayfadaki içeriğin sonuna eklenecektir.",
-	"massmessage-form-page-section": "Sayfanın bölümü:",
-	"massmessage-form-page-section-help": "Bir sayfa seçin ve mevcut bölümlerin bir listesini görmek için formu önizleyin.",
 	"massmessage-form-preview": "Önizleme",
 	"massmessage-form-submit": "Gönder",
 	"massmessage-fieldset-preview": "Önizleme",
