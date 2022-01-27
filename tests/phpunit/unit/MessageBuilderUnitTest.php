@@ -88,7 +88,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 			null
 		];
 
-		yield 'language wrapping if message and target page language are same' => [
+		yield 'language wrapping if message and target page language are different' => [
 			'',
 			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
 			$this->getLanguageStub( 'fr', 'ltr' ),
@@ -108,6 +108,8 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers \MediaWiki\MassMessage\MessageBuilder::buildSubject
 	 * @covers \MediaWiki\MassMessage\MessageBuilder::wrapBasedOnLanguage
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::needsWrapping
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::wrapContentWithLanguageAttributes
 	 * @dataProvider provideBuildSubject
 	 */
 	public function testBuildSubject(
@@ -165,7 +167,65 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
 			$this->getLanguageStub( 'fr', 'ltr' ),
 			null,
-			[ 'dir="rtl"', 'lang="he"' ]
+			[ 'dir="rtl"', 'lang="he"', '</span>' ]
+		];
+
+		yield 'html tags are removed' => [
+			'',
+			new LanguageAwareText( 'hello <span>world</span>', 'en', 'ltr' ),
+			$this->getLanguageStub( 'en', 'rtl' ),
+			'hello world',
+			null
+		];
+
+		yield 'language tags are still used if message has html tags' => [
+			'',
+			new LanguageAwareText( 'hello <span>world</span>', 'en', 'ltr' ),
+			$this->getLanguageStub( 'he', 'rtl' ),
+			null,
+			[ 'dir="ltr"', 'lang="en"', '</span>' ]
+		];
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::buildPlaintextSubject
+	 * @covers \MediaWiki\MassMessage\MessageBuilder::sanitizeSubject
+	 * @dataProvider provideBuildPlaintextSubject
+	 */
+	public function testBuildPlaintextSubject(
+		string $customSubject,
+		?LanguageAwareText $pageSubject,
+		string $expected
+	) {
+		$messageBuilder = new MessageBuilder();
+		$subject = $messageBuilder->buildPlaintextSubject( $customSubject, $pageSubject );
+
+		$this->assertEquals( $expected, $subject );
+	}
+
+	public function provideBuildPlaintextSubject() {
+		yield 'remove newlines and tags from page subject' => [
+			'',
+			new LanguageAwareText( "Hello World\n <br><hr>How are you? ", 'en', 'ltr' ),
+			"Hello World How are you?"
+		];
+
+		yield 'remove only trailing white spaces' => [
+			'',
+			new LanguageAwareText( " Hello World \n", 'en', 'ltr' ),
+			" Hello World"
+		];
+
+		yield 'remove newlines and tags from custom message' => [
+			"Hello World\n <br><hr>How are you? ",
+			null,
+			"Hello World How are you?"
+		];
+
+		yield 'strips html for language wrapping' => [
+			"<div lang='en' dir='ltr'>Hello World</div> ",
+			null,
+			"Hello World"
 		];
 	}
 

@@ -13,6 +13,8 @@ use Language;
  * @license GPL-2.0-or-later
  */
 class MessageBuilder {
+	private const USE_INLINE = true;
+
 	/**
 	 * Strip tildes at the end of the message
 	 *
@@ -52,7 +54,7 @@ class MessageBuilder {
 		$fullMessageText = '';
 
 		if ( $pageContent ) {
-			$fullMessageText = $this->wrapBasedOnLanguage( $pageContent, $targetLanguage );
+			$fullMessageText = $this->wrapBasedOnLanguage( $pageContent, $targetLanguage, !self::USE_INLINE );
 		}
 
 		// If either is empty, the extra new lines will be trimmed
@@ -84,10 +86,41 @@ class MessageBuilder {
 		?Language $targetPageLanguage
 	): string {
 		if ( $pageSubject ) {
-			return $this->wrapBasedOnLanguage( $pageSubject, $targetPageLanguage );
+			$strippedPageSubject = new LanguageAwareText(
+				$this->sanitizeSubject( $pageSubject->getWikitext() ),
+				$pageSubject->getLanguageCode(),
+				$pageSubject->getLanguageDirection()
+			);
+
+			return $this->wrapBasedOnLanguage( $strippedPageSubject, $targetPageLanguage, self::USE_INLINE );
 		}
 
-		return rtrim( $customSubject );
+		return $this->sanitizeSubject( $customSubject );
+	}
+
+	/**
+	 * Compose the page subject without any HTML wrapping
+	 *
+	 * @param string $customSubject
+	 * @param LanguageAwareText|null $pageSubject
+	 * @return string
+	 */
+	public function buildPlaintextSubject( string $customSubject, ?LanguageAwareText $pageSubject ): string {
+		if ( $pageSubject ) {
+			return $this->sanitizeSubject( $pageSubject->getWikitext() );
+		}
+
+		return $this->sanitizeSubject( $customSubject );
+	}
+
+	/**
+	 * Remove all newlines in-between content and remove tags
+	 *
+	 * @param string $subject
+	 * @return string
+	 */
+	private function sanitizeSubject( string $subject ): string {
+		return rtrim( strip_tags( str_replace( "\n", '', $subject ) ) );
 	}
 
 	/**
@@ -95,27 +128,57 @@ class MessageBuilder {
 	 *
 	 * @param LanguageAwareText $pageContent
 	 * @param Language|null $targetLanguage
+	 * @param bool $useInline
 	 * @return string
 	 */
-	private function wrapBasedOnLanguage( LanguageAwareText $pageContent, ?Language $targetLanguage ): string {
-		$fullMessageText = '';
-		if ( !$targetLanguage || $targetLanguage->getCode() !== $pageContent->getLanguageCode() ) {
+	private function wrapBasedOnLanguage(
+		LanguageAwareText $pageContent,
+		?Language $targetLanguage,
+		bool $useInline
+	): string {
+		if ( $this->needsWrapping( $targetLanguage, $pageContent ) ) {
 			// Wrap page contents if it differs from target page's language. Ideally the
 			// message contents would be wrapped too, but we do not know its language.
-			$fullMessageText .= Html::rawElement(
-				'div',
-				[
-					'lang' => $pageContent->getLanguageCode(),
-					'dir' => $pageContent->getLanguageDirection(),
-					// This class is needed for proper rendering of list items (and maybe more)
-					'class' => 'mw-content-' . $pageContent->getLanguageDirection()
-				],
-				"\n" . $pageContent->getWikitext() . "\n"
-			);
+			return $this->wrapContentWithLanguageAttributes( $pageContent, $useInline );
 		} else {
-			$fullMessageText = $pageContent->getWikitext();
+			return $pageContent->getWikitext();
+		}
+	}
+
+	/**
+	 * Check if the page contents need to be wrapped
+	 * @param Language|null $targetLanguage
+	 * @param LanguageAwareText $pageContent
+	 * @return bool
+	 */
+	private function needsWrapping( ?Language $targetLanguage, LanguageAwareText $pageContent ): bool {
+		return !$targetLanguage || $targetLanguage->getCode() !== $pageContent->getLanguageCode();
+	}
+
+	/**
+	 * Wrap contents with language attributes using inline or block elements
+	 * @param LanguageAwareText $pageContent
+	 * @param bool $useInline
+	 * @return string
+	 */
+	private function wrapContentWithLanguageAttributes( LanguageAwareText $pageContent, bool $useInline ): string {
+		$elementToUse = 'div';
+		$content = "\n" . $pageContent->getWikitext() . "\n";
+
+		if ( $useInline == self::USE_INLINE ) {
+			$elementToUse = 'span';
+			$content = $pageContent->getWikitext();
 		}
 
-		return $fullMessageText;
+		return Html::rawElement(
+			$elementToUse,
+			[
+				'lang' => $pageContent->getLanguageCode(),
+				'dir' => $pageContent->getLanguageDirection(),
+				// This class is needed for proper rendering of list items (and maybe more)
+				'class' => 'mw-content-' . $pageContent->getLanguageDirection()
+			],
+			$content
+		);
 	}
 }

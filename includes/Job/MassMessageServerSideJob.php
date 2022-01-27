@@ -46,7 +46,7 @@ class MassMessageServerSideJob extends MassMessageJob {
 		return Status::newGood( $this->params['message'] );
 	}
 
-	protected function editPage( string $text, string $subject ) {
+	protected function editPage( string $text, string $subject ): bool {
 		$tries = 1;
 		$titleText = $this->title->getPrefixedText();
 		$user = MassMessage::getMessengerUser();
@@ -86,5 +86,7 @@ class MassMessageServerSideJob extends MassMessageJob {
 
 			$tries++;
 		}
+
+		return true;
 	}
 }

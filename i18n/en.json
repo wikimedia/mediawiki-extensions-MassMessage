@@ -18,7 +18,7 @@
 	"massmessage-form-page-message-section": "Section of the page to be sent as message:",
 	"massmessage-form-page-message-section-help": "Select a page and preview the form to see a list of available sections. If a section is selected only that will be sent as message.",
 	"massmessage-form-page-subject-section": "Section of the page to be sent as subject:",
-	"massmessage-form-page-subject-section-help": "Select a page and preview the form to see a list of available sections. If a section is selected only that will be sent as subject.",
+	"massmessage-form-page-subject-section-help": "Select a page and preview the form to see a list of available sections. If a section is selected only that will be sent as subject. Newlines and tags are stripped.",
 	"massmessage-form-preview": "Preview",
 	"massmessage-form-submit": "Send",
 	"massmessage-fieldset-preview": "Preview",
