@@ -23,7 +23,7 @@
 	"massmessage-form-page-message-section": "Abschnitt der Seite, der als Nachricht gesendet werden soll:",
 	"massmessage-form-page-message-section-help": "Wähle eine Seite aus und zeige das Formular in der Vorschau an, um eine Liste der verfügbaren Abschnitte anzuzeigen. Wenn ein Abschnitt ausgewählt ist, wird nur dieser als Nachricht gesendet.",
 	"massmessage-form-page-subject-section": "Abschnitt der Seite, der als Betreff gesendet werden soll:",
-	"massmessage-form-page-subject-section-help": "Wähle eine Seite aus und zeige das Formular in der Vorschau an, um eine Liste der verfügbaren Abschnitte anzuzeigen. Wenn ein Abschnitt ausgewählt ist, wird nur dieser als Betreff gesendet.",
+	"massmessage-form-page-subject-section-help": "Wähle eine Seite aus und zeige das Formular in der Vorschau an, um eine Liste der verfügbaren Abschnitte anzuzeigen. Wenn ein Abschnitt ausgewählt ist, wird nur dieser als Betreff gesendet. Zeilenumbrüche und Tags werden entfernt.",
 	"massmessage-form-preview": "Vorschau",
 	"massmessage-form-submit": "Senden",
 	"massmessage-fieldset-preview": "Vorschau",
