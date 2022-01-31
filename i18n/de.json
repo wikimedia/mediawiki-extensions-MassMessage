@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"FF11",
 			"Filzstift",
 			"Inkowik",
@@ -16,7 +17,7 @@
 	"massmessage-desc": "Ermöglicht Benutzern das einfache Versenden von Nachrichten an eine Benutzerliste",
 	"massmessage-form-spamlist": "Seite oder Kategorie mit der Liste der Seiten, auf denen eine Nachricht hinterlassen werden soll:",
 	"massmessage-form-subject": "Betreff der Nachricht (wird auch für die Bearbeitungszusammenfassung verwendet):",
-	"massmessage-form-subject-help": "Dies wird ignoriert, wenn ein Abschnitt der Seite ausgewählt wurde, der als Betreff gesendet werden soll",
+	"massmessage-form-subject-help": "Dies wird ignoriert, wenn ein Abschnitt der Seite ausgewählt wurde, der als Betreff gesendet werden soll.",
 	"massmessage-form-message": "Nachrichtentext:",
 	"massmessage-form-page": "Seite, die als Nachricht gesendet werden soll:",
 	"massmessage-form-page-help": "Der Nachrichtentext, falls vorhanden, wird an das Ende des Inhalts der ausgewählten Seite angehängt.",
