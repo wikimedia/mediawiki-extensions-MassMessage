@@ -19,7 +19,7 @@
 	"editmassmessagelist": "{{doc-special|EditMassMessageList}}",
 	"massmessage-desc": "{{desc|name=Mass Message|url=https://www.mediawiki.org/wiki/Extension:MassMessage}}",
 	"massmessage-form-spamlist": "Label for an inputbox on [[Special:MassMessage]].",
-	"massmessage-form-subject": "Label for an inputbox on [[Special:MassMessage]].",
+	"massmessage-form-subject": "Label for an inputbox on [[Special:MassMessage]]}}",
 	"massmessage-form-message": "Used as label for a textarea on [[Special:MassMessage]].",
 	"massmessage-form-page": "Label for an inputbox on [[Special:MassMessage]].",
 	"massmessage-form-page-help": "Help text shown under the inputbox on [[Special:MassMessage]].\nSee also:\n* {{msg-mw|massmessage-form-page}}",
