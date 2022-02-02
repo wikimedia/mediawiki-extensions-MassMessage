@@ -30,7 +30,14 @@ class MassMessageRequestParser {
 
 		$status = new Status();
 		$currentWikiId = WikiMap::getCurrentWikiId();
-		if ( $data['subject'] === '' ) {
+
+		$data['page-message'] = $data['page-message'] ?? '';
+		$data['page-message-section'] = $data['page-message-section'] ?? '';
+		$data['page-subject-section'] = $data['page-subject-section'] ?? '';
+		$data['message'] = $data['message'] ?? '';
+		$data['subject'] = $data['subject'] ?? '';
+
+		if ( $data['subject'] === '' && $data['page-subject-section'] === '' ) {
 			$status->fatal( 'massmessage-empty-subject' );
 		}
 
@@ -55,11 +62,6 @@ class MassMessageRequestParser {
 			$spamlist = Title::newMainPage();
 			$data['comment'] = [];
 		}
-
-		$data['page-message'] = $data['page-message'] ?? '';
-		$data['page-message-section'] = $data['page-message-section'] ?? '';
-		$data['page-subject-section'] = $data['page-subject-section'] ?? '';
-		$data['message'] = $data['message'] ?? '';
 
 		$footer = wfMessage( 'massmessage-message-footer' )->inContentLanguage()->plain();
 		if ( trim( $footer ) ) {

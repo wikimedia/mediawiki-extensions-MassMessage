@@ -39,7 +39,7 @@
 	"massmessage-just-preview": "Warning to user that what they are seeing is just a preview, and they should hit the send button to actually submit it.\n\nRefers to {{msg-mw|Massmessage-form-submit}}.",
 	"massmessage-spamlist-doesnotexist": "Error message the user sees if the delivery list page or category they entered does not exist.",
 	"massmessage-spamlist-invalid": "Error message the user sees if the delivery list page they entered is invalid.",
-	"massmessage-empty-subject": "Error message the user sees if the \"subject\" field is empty.",
+	"massmessage-empty-subject": "Error message the user sees if the no subject has been provided, that is \"subject\" and \"section of the page to be sent as subject\" are both empty.",
 	"massmessage-empty-message": "Error message the user sees if the \"message\" and the \"page to be sent as message\" fields, both are empty.",
 	"massmessage-page-message-invalid": "Error message shown to the user if an invalid page has been selected to be sent as message.\n\nParameters:\n* $1 - the title of the page message",
 	"massmessage-page-message-not-found": "Error message shown to the user if the \"page selected to sent as message\" was not found.\n\nParameters:\n* $1 - the title of the page message",
