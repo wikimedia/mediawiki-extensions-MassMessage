@@ -8,6 +8,7 @@
 			"NBS",
 			"Okras",
 			"Ole Yves",
+			"Pacha Tchernof",
 			"Stjn",
 			"Striking Blue",
 			"Vlad5250"
@@ -52,7 +53,8 @@
 	"action-massmessage": "массовую отправку сообщений",
 	"log-name-massmessage": "Журнал массовых сообщений",
 	"log-description-massmessage": "Это журнал, отслеживающий массовые рассылки сообщений.",
-	"logentry-massmessage-send": "$1 {{GENDER:$2|отправил|отправила}} сообщение на $3",
+	"logentry-massmessage-send": "$1 {{GENDER:$2|разослал|разослала}} сообщение адресатам из $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|разослал|разослала}} страницу $5 в виде сообщения адресатам из $3",
 	"logentry-massmessage-failure": "Доставка «$4» для $3 потерпела неудачу по следующей причине: <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Доставка «$4» для $3 была пропущена, поскольку целевая страница находится в недоступном пространстве имён",
 	"logentry-massmessage-skipoptout": "Доставка «$4» для $3 была пропущена, поскольку целевой страницей отказано в доставке сообщения",
@@ -91,7 +93,9 @@
 	"massmessage-create-new": "Создать новый список доставки",
 	"massmessage-create-import": "Импортировать страницы из существующего списка или категории",
 	"massmessage-create-source": "Источник:",
-	"massmessage-create-editsummary": "Создать список массовой доставки",
+	"massmessage-create-editsummary": "Создать список массовой доставки сообщения",
+	"massmessage-create-editsummary-import": "Создать список массовой доставки сообщения для адресатов из [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Создать список массовой доставки сообщения для получателей из [[$1]]",
 	"massmessage-create-invalidtitle": "Указан некорректный заголовок.",
 	"massmessage-create-exists": "Страница с указанным заголовком уже существует.",
 	"massmessage-create-nopermission": "У вас нет прав на создание списка под этим заголовком.",
@@ -124,5 +128,8 @@
 	"tag-massmessage-delivery-description": "Доставка сообщений, используя [[:mw:Special:MyLanguage/Extension:MassMessage|расширение MassMessage]]",
 	"log-action-filter-massmessage": "Тип записи в журнале",
 	"log-action-filter-massmessage-send": "Отправка массового сообщения",
-	"log-action-filter-massmessage-failure": "Ошибка доставки массового сообщения"
+	"log-action-filter-massmessage-failure": "Ошибка доставки массового сообщения",
+	"log-action-filter-massmessage-skipoptout": "Адресат пропущен из-за отписки",
+	"log-action-filter-massmessage-skipnouser": "Адресат пропущен, так как участника-адресата не существует",
+	"log-action-filter-massmessage-skipbadns": "Адресат пропущен из-за запрещённого пространства имён"
 }
