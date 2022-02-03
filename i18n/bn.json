@@ -6,7 +6,8 @@
 			"Bellayet",
 			"Bodhisattwa",
 			"Tauhid16",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"খাত্তাব হাসান"
 		]
 	},
 	"massmessage": "গণবার্তা পাঠান",
@@ -26,7 +27,7 @@
 	"massmessage-submitted": "{{PLURAL:$1|$1টি পাতায়}} পাঠানোর জন্য আপনার বার্তাটি তালিকাবদ্ধ করা হয়েছে।",
 	"massmessage-just-preview": "এটি শুধুমাত্র একটি প্রাকদর্শন। বার্তা পাঠাতে \"{{int:massmessage-form-submit}}\" চাপুন।",
 	"massmessage-spamlist-doesnotexist": "প্রদত্ত বিতরণের তালিকা পাতা বা বিষয়শ্রেণীর কোন অস্তিত্ব নেই।",
-	"massmessage-empty-subject": "বিষয় লাইনটি খালি।",
+	"massmessage-empty-subject": "বার্তার জন্য কোন বিষয় প্রদান করা হয়নি।",
 	"massmessage-empty-message": "বার্তার মূল অংশ খালি। বার্তার মূল অংশ দিন, বা বার্তা হিসেবে প্রেরণ করতে একটি পাতা নির্বাচন করুন।",
 	"massmessage-invalid-lang": "অবৈধ ভাষা কোড: \"$1\"",
 	"massmessage-unescaped-langlinks": "সতর্কতা: আপনার বার্তাতে অ-পলায়নকৃত ভাষার সংযোগ রয়েছে।",

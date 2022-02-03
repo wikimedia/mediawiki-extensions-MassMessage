@@ -33,7 +33,7 @@
 	"massmessage-just-preview": "זוהי רק תצוגה מקדימה. יש ללחות \"{{int:massmessage-form-submit}}\" כדי לשלוח את ההודעה.",
 	"massmessage-spamlist-doesnotexist": "רשימת הדפים או הקטגוריה שצוינה אינה קיימת.",
 	"massmessage-spamlist-invalid": "הדף שצוין אינו מכיל רשימת מסירה תקינה.",
-	"massmessage-empty-subject": "שורת הנושא ריקה.",
+	"massmessage-empty-subject": "לא סופקה שורת נושא להודעה הזאת.",
 	"massmessage-empty-message": "גוף ההודעה ריק. נא לספק את תוכן ההודעה או לבחור דף שיישלח בתור הודעה.",
 	"massmessage-page-message-invalid": "הדף \"$1\", שנבחר כדי להישלח בתור הודעה, אינו תקין.",
 	"massmessage-page-message-not-found": "הדף \"$1\", שנבחר כדי להישלח בתור הודעה, לא נמצא.",

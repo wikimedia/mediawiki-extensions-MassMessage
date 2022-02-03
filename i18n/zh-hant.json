@@ -10,6 +10,7 @@
 			"Liuxinyu970226",
 			"Pseudo Classes",
 			"Tranve",
+			"Winston Sung",
 			"Xiplus"
 		]
 	},
@@ -110,7 +111,7 @@
 	"massmessage-create-exists-short": "已經在使用",
 	"massmessage-create-invalidsource-short": "非有效清單",
 	"editmassmessagelist-legend": "編輯大量訊息傳遞清單",
-	"massmessage-edit-pagetitle": "正在編輯 $1",
+	"massmessage-edit-pagetitle": "正在編輯「$1」",
 	"massmessage-edit-title": "標題：",
 	"massmessage-edit-description": "描述：",
 	"massmessage-edit-content": "目標頁面：",

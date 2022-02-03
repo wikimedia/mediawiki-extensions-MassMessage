@@ -17,7 +17,7 @@
 	"massmessage-fieldset-info": "معلومات",
 	"massmessage-preview-count": "توھان جو پيغام {{PLURAL:$1|$1 صفحي|$1 صفحن}} ڏانھن موڪلبو.",
 	"massmessage-submitted": "توھان جي نياپن جي {{PLURAL:$1|$1 صفحي|$1 صفحن}} ڏانھن پھچ قطار ۾ لڳائي وئي آھي.",
-	"massmessage-empty-subject": "موضوع واري سٽ خالي آھي.",
+	"massmessage-empty-subject": "پيغام لاءِ ڪوبہ موضوع ناھي ڏنل.",
 	"massmessage-empty-message": "نياپي جو خانو خالي آھي.",
 	"log-name-massmessage": "جهجهن نياپن جو لاگ",
 	"massmessage-content-remove": "هٽايو",

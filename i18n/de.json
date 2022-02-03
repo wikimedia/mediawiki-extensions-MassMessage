@@ -36,7 +36,7 @@
 	"massmessage-just-preview": "Dies ist nur eine Vorschau. Klicke auf „{{int:massmessage-form-submit}}“, um die Nachricht abzusenden.",
 	"massmessage-spamlist-doesnotexist": "Die angegebene Versandlistenseite oder -kategorie ist nicht vorhanden.",
 	"massmessage-spamlist-invalid": "Die angegebene Seite enthält keine gültige Versandliste.",
-	"massmessage-empty-subject": "Die Betreffszeile ist leer.",
+	"massmessage-empty-subject": "Es wurde kein Betreff für die Nachricht angegeben.",
 	"massmessage-empty-message": "Der Nachrichtenkörper ist leer. Gib den Nachrichtentext an oder wähle eine Seite aus, die als Nachricht gesendet werden soll.",
 	"massmessage-page-message-invalid": "Die Seite „$1“, die zum Senden als Nachricht ausgewählt wurde, ist ungültig.",
 	"massmessage-page-message-not-found": "Die Seite „$1“, die zum Senden als Nachricht ausgewählt wurde, wurde nicht gefunden.",

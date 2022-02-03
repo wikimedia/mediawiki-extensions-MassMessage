@@ -43,7 +43,7 @@
 	"massmessage-just-preview": "Ceci est simplement un aperçu. Appuyez sur « {{int:massmessage-form-submit}} » pour envoyer le message.",
 	"massmessage-spamlist-doesnotexist": "La page spécifiée de la liste des livraisons ou la catégorie n'existe pas.",
 	"massmessage-spamlist-invalid": "La page indiquée ne contient pas de liste de diffusion valide.",
-	"massmessage-empty-subject": "La ligne du sujet est vide.",
+	"massmessage-empty-subject": "Aucun sujet n’a été fourni pour le message.",
 	"massmessage-empty-message": "Le corps du message est vide. Fournir le corps du message, ou sélectionner une page à envoyer comme message.",
 	"massmessage-page-message-invalid": "La page « $1 », sélectionnée à envoyer comme message, n’est pas valide.",
 	"massmessage-page-message-not-found": "La page « $1 », sélectionnée à envoyer comme message, n’a pas été trouvée.",
