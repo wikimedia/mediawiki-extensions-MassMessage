@@ -43,7 +43,7 @@
 	"massmessage-just-preview": "这只是预览。点击“{{int:massmessage-form-submit}}”发出此信息。",
 	"massmessage-spamlist-doesnotexist": "指定的递送列表页面或分类不存在。",
 	"massmessage-spamlist-invalid": "指定的页面不包含有效的递送列表。",
-	"massmessage-empty-subject": "主题为空。",
+	"massmessage-empty-subject": "没有为消息提供主题。",
 	"massmessage-empty-message": "信息正文为空。请提供信息正文，或选择一个作为信息发送的页面。",
 	"massmessage-page-message-invalid": "选择作为消息发送的页面“$1”无效。",
 	"massmessage-page-message-not-found": "未找到选择作为消息发送的页面“$1”。",

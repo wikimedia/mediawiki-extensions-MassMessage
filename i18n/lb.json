@@ -18,7 +18,7 @@
 	"massmessage-fieldset-info": "Informatioun",
 	"massmessage-just-preview": "De Message gëtt just gewisen. Klickt \"{{int:massmessage-form-submit}}\" fir de Message ze schécken.",
 	"massmessage-spamlist-doesnotexist": "Déi spezifizéiert Lëscht vu Säite oder Kategorie gëtt et net.",
-	"massmessage-empty-subject": "D'Linn mam Sujet ass eidel.",
+	"massmessage-empty-subject": "Et gouf kee Sujet fir de Message uginn.",
 	"massmessage-empty-message": "Den Inhalt vum Message ass eidel. Gitt den Text vum Message an oder sicht eng Säit eraus déi als Message geschéckt gi soll.",
 	"massmessage-invalid-lang": "Net valabele Sproochecode: \"$1\"",
 	"massmessage-unescaped-langlinks": "Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.",

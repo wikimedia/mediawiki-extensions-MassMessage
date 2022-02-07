@@ -28,7 +28,7 @@
 	"massmessage-just-preview": "Questa è solo un anteprima. Premi \"{{int:massmessage-form-submit}}\" per inviare il messaggio.",
 	"massmessage-spamlist-doesnotexist": "La pagina o categoria con l'elenco di consegna indicata non esiste.",
 	"massmessage-spamlist-invalid": "La pagina indicata non contiene un'elenco di consegna valido.",
-	"massmessage-empty-subject": "La riga dell'oggetto è vuota.",
+	"massmessage-empty-subject": "Non è stato fornito alcun oggetto per questo messaggio.",
 	"massmessage-empty-message": "Il corpo del messaggio è vuoto. Inserisci il corpo del messaggio o seleziona una pagina da inviare come messaggio.",
 	"massmessage-invalid-lang": "Codice lingua non valido: \"$1\"",
 	"massmessage-unescaped-langlinks": "Attenzione: ci sono collegamenti di lingua senza escape nel tuo messaggio.",

@@ -8,6 +8,7 @@
 	"massmessage-form-subject-help": "Yè ma nọ na ehe ayidonugo eyin adà de to weda ehe mẹ yin dide nado yin sisẹ́do di hosọ",
 	"massmessage-form-page-message-section": "Adà Wenda lọ tọn he na yin didohlan di wekanhlanmẹ:",
 	"massmessage-form-page-subject-section": "Adà weda lọ tọn he na yin sisẹ́do di hosọ:",
+	"massmessage-empty-subject": "Hosọ de ma ko yin awuwlena na wekanhlanmẹ lọ",
 	"massmessage-page-subject-empty": "Adà he yin \"$1\" dide to weda lọ mẹ \"$2\" he na yin sisẹ́do lọ ma bẹ nude hẹn.",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|sent page $5 as message}}to $3"
 }
