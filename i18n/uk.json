@@ -37,7 +37,7 @@
 	"massmessage-just-preview": "Це тільки попередній перегляд. Натисніть \"{{int:massmessage-form-submit}}\", щоб відправити повідомлення.",
 	"massmessage-spamlist-doesnotexist": "Указаної сторінки чи категорії зі списком розсилки не існує.",
 	"massmessage-spamlist-invalid": "На зазначеній сторінці немає допустимого списку доставки повідомлення.",
-	"massmessage-empty-subject": "Рядок теми порожній.",
+	"massmessage-empty-subject": "У цього повідомлення не було теми.",
 	"massmessage-empty-message": "Тіло повідомлення порожнє. Вкажіть його або виберіть сторінку, яка буде надіслана як повідомлення.",
 	"massmessage-page-message-invalid": "Сторінка «$1», вибрана для надсилання у формі повідомлення, є недійсною.",
 	"massmessage-page-message-not-found": "Не знайдено сторінки «$1» вибраної для надсилання у формі повідомлення.",
