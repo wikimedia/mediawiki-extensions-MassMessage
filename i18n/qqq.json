@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Jon Harald Søby",
 			"Kunal Mehta",
 			"Liuxinyu970226",
 			"Lokal Profil",
@@ -146,7 +147,7 @@
 	"massmessage-summary-removeonsitechange": "Edit summary for removing a target page on another wiki and changing the description\n* $1 is the title of the page\n* $2 is the domain of the wiki",
 	"massmessage-summary-removemultichange": "Edit summary for removing multiple target pages and changing the description.Parameters:\n* $1 - the number of pages removed (2 or more)\nSee also:\n* {{msg-mw|Massmessage-summary-addmultichange}}",
 	"massmessage-summary-change": "Edit summary for changing the description",
-	"massmessage-list-category": "Name for the tracking category containing all MassMessage delivery lists",
+	"massmessage-list-category": "{{tracking category name}}\nName for the tracking category containing all MassMessage delivery lists",
 	"massmessage-list-category-desc": "Description for the tracking category containing delivery lists",
 	"tag-massmessage-delivery": "Change tag for MassMessage delivery edits",
 	"tag-massmessage-delivery-description": "Description for MassMessage delivery change tag",
