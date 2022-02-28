@@ -218,7 +218,7 @@ class SpecialMassMessage extends SpecialPage {
 
 		if ( $isPreview ) {
 			// Adds it right before the 'Send' button
-			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse' );
+			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse', $this );
 			$m['submit-button'] = [
 				'id' => 'mw-massmessage-form-submit-button',
 				'name' => 'submit-button',

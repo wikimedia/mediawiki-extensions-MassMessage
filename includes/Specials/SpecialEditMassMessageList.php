@@ -255,7 +255,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 */
 	protected function postText() {
 		if ( $this->rev ) {
-			return EditPage::getCopyrightWarning( $this->title, 'parse' );
+			return EditPage::getCopyrightWarning( $this->title, 'parse', $this );
 		} else {
 			return '';
 		}
