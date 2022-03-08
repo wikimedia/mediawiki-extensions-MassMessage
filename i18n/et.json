@@ -19,6 +19,7 @@
 	"massmessage-form-preview": "Eelvaade",
 	"massmessage-form-submit": "Saada",
 	"massmessage-fieldset-preview": "Eelvaade",
+	"massmessage-fieldset-wikitext-preview": "Vikiteksti eelvaade",
 	"massmessage-fieldset-info": "Teave",
 	"massmessage-preview-count": "Sinu sõnum saadetakse {{PLURAL:$1|ühele|$1}} leheküljele.",
 	"massmessage-submitted": "Sinu sõnumi saatmine {{PLURAL:$1|ühele|$1}} leheküljele on tööjärjes ootel.",
