@@ -10,7 +10,8 @@
 			"Revi",
 			"SeoJeongHo",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"MemphisA5"
 		]
 	},
 	"massmessage": "메시지 대량 보내기",
@@ -31,7 +32,7 @@
 	"massmessage-spamlist-doesnotexist": "지정한 문서 목록의 문서나 분류가 존재하지 않습니다.",
 	"massmessage-spamlist-invalid": "지정한 문서는 유효한 배달 목록이 아닙니다.",
 	"massmessage-empty-subject": "제목 줄이 비어 있습니다.",
-	"massmessage-empty-message": "메시지 본문이 비어 있습니다.",
+	"massmessage-empty-message": "메시지 본문이 비어 있습니다. 메시지 본문을 제공하거나 메시지로 보낼 문서를 선택하십시오.",
 	"massmessage-invalid-lang": "유효하지 않은 언어 코드: \"$1\"",
 	"massmessage-unescaped-langlinks": "경고: 당신의 메시지에 이스케이프되지 않은 언어 링크가 있습니다.",
 	"massmessage-no-timestamp": "경고: 메시지에 타임스탬프나 서명이 없습니다.",
@@ -52,7 +53,7 @@
 	"logentry-massmessage-skipoptout": "\"$4\"에서 $3까지의 전달은 대싱이 알림 전달을 받지 않도록 설정하였기 때문에 건너뛰었습니다",
 	"logentry-massmessage-skipnouser": "\"$4\"에서 $3까지의 전달은 사용자 계정이 존재하지 않기 때문에 건너뛰었습니다",
 	"massmessage-cannot-rename": "이 계정은 시스템 계정이고 이름을 바꿀 수 없습니다.",
-	"massmessage-nextsteps": "[[Special:MassMessage|다른 메시지 보내기]] 혹은 [[Special:Statistics|얼마나 많은 메시지들이 대기 중인지 보기]]",
+	"massmessage-nextsteps": "[[Special:MassMessage|다른 메시지 보내기]].",
 	"massmessage-content-pages": "이 목록의 문서",
 	"massmessage-content-pagesonsite": "$1의 문서:",
 	"massmessage-content-localpages": "이 위키의 문서:",
