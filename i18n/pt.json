@@ -16,6 +16,7 @@
 	"massmessage-form-spamlist": "Página ou categoria que contém a lista de páginas onde será deixada uma mensagem:",
 	"massmessage-form-subject": "Assunto da mensagem (também usado como resumo da edição):",
 	"massmessage-form-message": "Corpo da mensagem:",
+	"massmessage-form-page": "Página a ser enviada como mensagem:",
 	"massmessage-form-preview": "Antever",
 	"massmessage-form-submit": "Enviar",
 	"massmessage-fieldset-preview": "Antevisão",

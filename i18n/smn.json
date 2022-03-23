@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Seipinne"
 		]
 	},
 	"massmessage-form-submit": "Vuolgât",
+	"massmessage-create-source": "Käldee:",
 	"massmessage-summary-add": "Lasettum [[:$1]]"
 }
