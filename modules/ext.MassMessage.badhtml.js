@@ -19,7 +19,7 @@ function badHtml( $msg ) {
 
 	$warnings = $( '<div>' )
 		.attr( 'id', 'mw-massmessage-form-warnings' )
-		.addClass( 'warningbox' );
+		.addClass( 'mw-message-box-warning mw-message-box' );
 	$msg.after( $warnings );
 	$warnings.hide();
 
