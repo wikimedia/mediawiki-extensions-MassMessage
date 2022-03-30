@@ -11,7 +11,8 @@
 			"Ladsgroup",
 			"Mjbmr",
 			"Reza1615",
-			"Jeeputer"
+			"Jeeputer",
+			"Beginneruser"
 		]
 	},
 	"massmessage": "ارسال انبوه پیام",
@@ -69,7 +70,7 @@
 	"logentry-massmessage-skipbadns": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که صفحهٔ هدف در فضای نامی بود که پیام نمی‌توانست در آن ارسال شود",
 	"logentry-massmessage-skipoptout": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که هدف از رسیدن پیام بیرون آمده‌است",
 	"logentry-massmessage-skipnouser": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که حساب کاربری موجود نیست",
-	"massmessage-cannot-rename": "این یک حساب سامانه‌ای است و نمی‌تواند تغییر نام یابد",
+	"massmessage-cannot-rename": "این یک حساب سامانه است و نمی‌تواند تغییر نام یابد",
 	"massmessage-nextsteps": "[[Special:MassMessage|یک پیام دیگر ارسال کنید]].",
 	"massmessage-content-pages": "صفحه‌های داخل این فهرست",
 	"massmessage-content-pagesonsite": "صفحه‌های داخل $1:",
@@ -117,7 +118,7 @@
 	"massmessage-edit-title": "عنوان:",
 	"massmessage-edit-description": "توضیحات:",
 	"massmessage-edit-content": "صفحه‌های هدف:",
-	"massmessage-edit-summary": "خلاصه ویرایش:",
+	"massmessage-edit-summary": "خلاصهٔ ویرایش:",
 	"massmessage-edit-invalidtitle": "فهرست معتبری از گیرندگان با این عنوان وجود ندارد.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|صفحهٔ|صفحه‌های}} مقابل نامعتبر {{PLURAL:$1|است|هستند}}:\n$2",
 	"massmessage-edit-missingsummary": "شما خلاصه ویرایشی وارد نکردید. اگر روی «{{int:htmlform-submit}}» دوباره کلیک کنید، ویرایش‌تان بدون خلاصه ویرایش ذخیره خواهد شد.",
