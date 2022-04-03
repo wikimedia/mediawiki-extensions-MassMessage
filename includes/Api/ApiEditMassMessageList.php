@@ -9,6 +9,7 @@ use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use Title;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module to edit a MassMessage delivery list.
@@ -255,19 +256,19 @@ class ApiEditMassMessageList extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'spamlist' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'description' => [
-				ApiBase::PARAM_TYPE => 'string'
+				ParamValidator::PARAM_TYPE => 'string'
 			],
 			'add' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_ISMULTI => true
 			],
 			'remove' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_ISMULTI => true
 			],
 			'token' => null,
 		];

@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage\Api;
 use ApiBase;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module to send MassMessages.
@@ -43,18 +44,18 @@ class ApiMassMessage extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'spamlist' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'subject' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'message' => [
-				ApiBase::PARAM_TYPE => 'string'
+				ParamValidator::PARAM_TYPE => 'string'
 			],
 			'page-message' => [
-				ApiBase::PARAM_TYPE => 'string'
+				ParamValidator::PARAM_TYPE => 'string'
 			],
 			'token' => null,
 		];

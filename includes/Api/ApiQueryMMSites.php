@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage\Api;
 use ApiBase;
 use ApiQueryBase;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module to serve autocomplete requests for the site field in MassMessage.
@@ -46,8 +47,8 @@ class ApiQueryMMSites extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'term' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			]
 		];
 	}
