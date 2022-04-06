@@ -102,7 +102,7 @@
 	"massmessage-create-description": "توضیحات:",
 	"massmessage-create-content": "محتوا:",
 	"massmessage-create-new": "ایجاد فهرستی تازه برای رساندن پیام",
-	"massmessage-create-import": "وارد کردن صفحه‌ها از فهرست موجود یا رده",
+	"massmessage-create-import": "درون‌ریزی صفحه‌ها از یک فهرست یا رده موجود",
 	"massmessage-create-source": "مبدأ:",
 	"massmessage-create-editsummary": "ایجاد فهرست رساندن پیام انبوه",
 	"massmessage-create-editsummary-import": "ایجاد فهرست گیرندگان پیام انبوه بر اساس اهداف موجود در [[Special:Permalink/$2|$1]]",
