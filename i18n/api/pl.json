@@ -27,5 +27,7 @@
 	"apihelp-query+mmsites-summary": "Dostarcza podpowiedzi dla pola do wpisywania nazwy witryny dla MassMessage.",
 	"apihelp-query+mmsites-param-term": "Początek nazwy do wyszukania.",
 	"apihelp-query+mmsites-example-1": "Uzupełnij po wpisaniu \"en\"",
+	"apihelp-query+mmcontent-summary": "Uzyskaj opis i cele listy antyspamowej",
+	"apihelp-query+mmcontent-example-1": "Uzyskaj informacje z listy antyspamowej",
 	"apierror-massmessage-invalidspamlist": "Lista określająca spam jest nieprawidłowa."
 }
