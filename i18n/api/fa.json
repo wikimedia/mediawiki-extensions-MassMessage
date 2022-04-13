@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Huji",
-			"Jeeputer"
+			"Jeeputer",
+			"Beginneruser"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "ویرایش فهرست گیرندگان پیام انبوه.",
 	"apihelp-editmassmessagelist-summary": "ویرایش فهرست گیرندگان پیام انبوه.",
-	"apihelp-editmassmessagelist-param-spamlist": "عنوان فهرست گیرندگان که به روز می‌کنید.",
+	"apihelp-editmassmessagelist-param-spamlist": "عنوان فهرست گیرندگان که به‌روزرسانی می‌کنید.",
 	"apihelp-editmassmessagelist-param-add": "عناوینی که به فهرست می‌افزایید.",
 	"apihelp-editmassmessagelist-param-remove": "عناوینی که از فهرست حذف می‌کنید.",
 	"apihelp-editmassmessagelist-example-1": " [[User talk:Foo]] و [[Talk:Bar]] را به فهرست گیرندگان که در [[Example]] قرار دارد اضافه کن و [[Talk:Baz]] را از فهرست حذف کن",
