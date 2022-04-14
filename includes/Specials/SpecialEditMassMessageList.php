@@ -11,6 +11,7 @@ use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\RestrictionStore;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserOptionsLookup;
@@ -49,13 +50,21 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 */
 	private $userOptionsLookup;
 
+	/** @var RestrictionStore */
+	private $restrictionStore;
+
 	/**
 	 * @param UserOptionsLookup $userOptionsLookup
+	 * @param RestrictionStore $restrictionStore
 	 */
-	public function __construct( UserOptionsLookup $userOptionsLookup ) {
+	public function __construct(
+		UserOptionsLookup $userOptionsLookup,
+		RestrictionStore $restrictionStore
+	) {
 		parent::__construct( 'EditMassMessageList' );
 
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->restrictionStore = $restrictionStore;
 	}
 
 	public function doesWrites() {
@@ -141,11 +150,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			}
 
 			// Protection warnings; modified from EditPage::showHeader()
-			if ( $this->title->isProtected( 'edit' )
+			if ( $this->restrictionStore->isProtected( $this->title, 'edit' )
 				&& MediaWikiServices::getInstance()->getPermissionManager()
 					->getNamespaceRestrictionLevels( $this->title->getNamespace() ) !== [ '' ]
 			) {
-				if ( $this->title->isSemiProtected() ) {
+				if ( $this->restrictionStore->isSemiProtected( $this->title ) ) {
 					$noticeMsg = 'semiprotectedpagewarning';
 				} else { // Full protection
 					$noticeMsg = 'protectedpagewarning';

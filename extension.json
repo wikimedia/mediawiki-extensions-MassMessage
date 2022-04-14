@@ -219,7 +219,8 @@
 		"EditMassMessageList": {
 			"class": "MediaWiki\\MassMessage\\Specials\\SpecialEditMassMessageList",
 			"services": [
-				"UserOptionsLookup"
+				"UserOptionsLookup",
+				"RestrictionStore"
 			]
 		}
 	},
