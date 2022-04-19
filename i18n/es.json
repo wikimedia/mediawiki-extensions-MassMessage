@@ -3,6 +3,7 @@
 		"authors": [
 			"Ciencia Al Poder",
 			"Csbotero",
+			"DiegoAmbrocio",
 			"Eurodyne",
 			"Fitoschido",
 			"Geryescalier",
@@ -124,6 +125,7 @@
 	"massmessage-summary-remove": "Se ha eliminado [[:$1]]",
 	"massmessage-summary-removeonsite": "Se ha eliminado $1 en $2",
 	"massmessage-summary-removemulti": "Se {{PLURAL:$1|borra $1 página|borran $1 páginas}}",
+	"massmessage-summary-change": "Cambió la descripción",
 	"massmessage-list-category": "Listas de distribución de MassMessage",
 	"massmessage-list-category-desc": "La página es una lista de distribución de la extensión [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "Distribución de MassMessage",
