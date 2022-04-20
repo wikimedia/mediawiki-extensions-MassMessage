@@ -208,35 +208,29 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$page = $cpoParams->getPage();
 		$revId = $cpoParams->getRevId();
 		$parserOptions = $cpoParams->getParserOptions();
-		$generateHtml = $cpoParams->getGenerateHtml();
 		// Parse the description text.
 		$output = $services->getParser()
 			->parse( $content->getDescription(), $page, $parserOptions, true, true, $revId );
 		$services->getTrackingCategories()->addTrackingCategory( $output, 'massmessage-list-category', $page );
 		$lang = $parserOptions->getUserLangObj();
 
-		// Generate output HTML, if needed.
-		if ( $generateHtml ) {
-			if ( $content->hasInvalidTargets() ) {
-				$warning = Html::element( 'p', [ 'class' => 'error' ],
-					wfMessage( 'massmessage-content-invalidtargets' )->inLanguage( $lang )->text()
-				);
-			} else {
-				$warning = '';
-			}
-
-			// Mark the description language (may be different from user language used to render the rest of the page)
-			$description = $output->getRawText();
-			$title = Title::castFromPageReference( $page );
-			$pageLang = $title->getPageLanguage();
-			$attribs = [ 'lang' => $pageLang->getHtmlCode(), 'dir' => $pageLang->getDir(),
-				'class' => 'mw-content-' . $pageLang->getDir() ];
-
-			$output->setText( $warning . Html::rawElement( 'div', $attribs, $description ) . self::getAddForm( $lang )
-				. $this->getTargetsHtml( $content, $lang ) );
+		if ( $content->hasInvalidTargets() ) {
+			$warning = Html::element( 'p', [ 'class' => 'error' ],
+				wfMessage( 'massmessage-content-invalidtargets' )->inLanguage( $lang )->text()
+			);
 		} else {
-			$output->setText( '' );
+			$warning = '';
 		}
+
+		// Mark the description language (may be different from user language used to render the rest of the page)
+		$description = $output->getRawText();
+		$title = Title::castFromPageReference( $page );
+		$pageLang = $title->getPageLanguage();
+		$attribs = [ 'lang' => $pageLang->getHtmlCode(), 'dir' => $pageLang->getDir(),
+			'class' => 'mw-content-' . $pageLang->getDir() ];
+
+		$output->setText( $warning . Html::rawElement( 'div', $attribs, $description ) . self::getAddForm( $lang )
+			. $this->getTargetsHtml( $content, $lang ) );
 
 		// Update the links table.
 		$targets = $content->getTargets();
