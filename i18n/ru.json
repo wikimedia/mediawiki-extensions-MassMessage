@@ -27,7 +27,7 @@
 	"massmessage-form-preview": "Предпросмотр",
 	"massmessage-form-submit": "Отправить",
 	"massmessage-fieldset-preview": "Предпросмотр",
-	"massmessage-fieldset-wikitext-preview": "Предпросмотр викитекста",
+	"massmessage-fieldset-wikitext-preview": "Предпросмотр вики-текста",
 	"massmessage-fieldset-info": "Информация",
 	"massmessage-preview-count": "Ваше сообщение будет отправлено на $1 {{PLURAL:$1|страницу|страницы|страниц}}.",
 	"massmessage-translate-page-info": "Вы выбрали переведённую страницу для отправки в качестве сообщения. Подписчики получат содержимое страницы на предпочитаемом ими языке, а если перевод недоступен — на запасном языке.",
