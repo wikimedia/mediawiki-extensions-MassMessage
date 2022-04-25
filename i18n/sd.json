@@ -33,7 +33,7 @@
 	"createmassmessagelist-legend": "جهجها نياپا حاصل ڪرڻ وارن جي فھرست سرجيو",
 	"massmessage-create-editsummary": "جهجها نياپا حاصل ڪرڻ وارن جي فھرست سرجيو",
 	"editmassmessagelist-legend": "جهجها نياپا حاصل ڪرڻ وارن جي فھرست سنواريو",
-	"massmessage-edit-pagetitle": "$1 سنواريندي",
+	"massmessage-edit-pagetitle": "'$1' سنواريندي",
 	"massmessage-edit-title": "عنوان:",
 	"massmessage-edit-description": "تشريح:",
 	"massmessage-edit-summary": "سنوار جو تَتُ:",
@@ -44,7 +44,8 @@
 	"massmessage-summary-removeonsite": "$1 کي $2 تي ھٽايو ويو",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|صفحو|صفحا}} ھٽايا",
 	"massmessage-list-category": "جهجهن-نياپن حاصل ڪرڻ وارن جون فھرستون",
-	"tag-massmessage-delivery": "جھجھونياپو پھچائڻ",
+	"tag-massmessage-delivery": "جهجهونياپو پھچائڻ",
+	"tag-massmessage-delivery-description": "[[:mw:Special:MyLanguage/Extension:MassMessage|وڌاء: جهجهونياپو]] استعمال ڪندي نياپي جي پھچ",
 	"log-action-filter-massmessage-send": "جهجهن نياپن جي اماڻپ",
 	"log-action-filter-massmessage-failure": "جهجهن نياپن موڪلڻ ۾ ناڪامي"
 }
