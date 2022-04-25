@@ -4,13 +4,16 @@
 			"Fitoschido",
 			"Hasley",
 			"Macofe",
-			"Ryo567"
+			"Ryo567",
+			"DiegoAmbrocio"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "Editar una lista de entrega de mensajes en masa.",
+	"apihelp-editmassmessagelist-summary": "Editar una lista de envío de mensajes masivos.",
 	"apihelp-editmassmessagelist-param-spamlist": "Título de la lista de entrega que se actualizará.",
 	"apihelp-editmassmessagelist-param-add": "Títulos que añadir a la lista.",
 	"apihelp-editmassmessagelist-param-remove": "Títulos que quitar de la lista.",
+	"apihelp-editmassmessagelist-param-description": "Nueva descripción de la lista de entregas.",
 	"apihelp-editmassmessagelist-example-1": "Añadir [[User talk:Foo]] y [[Talk:Bar]] a la lista de entrega [[Example]], y a eliminar a [[Talk:Baz]] de ella",
 	"apihelp-massmessage-description": "Enviar un mensaje a una lista de páginas.",
 	"apihelp-massmessage-param-spamlist": "Página que contiene una lista de páginas en que se dejará un mensaje.",
