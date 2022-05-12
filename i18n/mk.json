@@ -30,7 +30,7 @@
 	"massmessage-just-preview": "Ова е само преглед. Стиснете на „{{int:massmessage-form-submit}}“ за да ја испратите пораката.",
 	"massmessage-spamlist-doesnotexist": "Укажаната страница или категорија со список за достава не постои.",
 	"massmessage-spamlist-invalid": "Укажаната страница не содржи важечки список за достава.",
-	"massmessage-empty-subject": "Насловот е празен.",
+	"massmessage-empty-subject": "Нема укажано наслов на пораката.",
 	"massmessage-empty-message": "Пораката нема текст. Внесете текст или изберете страница за испраќање како порака.",
 	"massmessage-page-message-invalid": "Страницата „$1“ избрана да се испрати како порака е неважечка.",
 	"massmessage-page-message-not-found": "Страницата „$1“ избрана да се испрати како порака не е пронајдена.",
