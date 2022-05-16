@@ -95,6 +95,7 @@
 	"massmessage-edit-description": "Popis:",
 	"massmessage-edit-content": "Cílové stránky:",
 	"massmessage-edit-summary": "Shrnutí editace:",
+	"massmessage-edit-header": "Pomocí níže uvedeného formuláře můžete upravit popis nebo upravit seznam cílových stránek. U cílových stránek uveďte na každém řádku vždy jen jeden název.",
 	"massmessage-summary-add": "přidána stránka [[:$1]]",
 	"massmessage-summary-addonsite": "přidána stránka $1 na $2",
 	"massmessage-summary-addmulti": "{{PLURAL:$1|přidána $1 stránka|přidány $1 stránky|přidáno $1 stránek}}",
