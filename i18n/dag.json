@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alhassan Mohammed Awal",
 			"Munkaila Sulemana",
 			"Sir Amugi"
 		]
 	},
 	"massmessage-fieldset-wikitext-preview": "Wikitexti labi yuli",
-	"massmessage-page-message-parsing-error-in-wiki": "Chirimbu di niŋya a ni di niŋdi"
+	"massmessage-page-message-parsing-error-in-wiki": "Chirimbu di niŋya di ni di yɛn zaŋ labisibu n-dolisi JSON Wiki zuɣu la: \"$1\", yaɣili li ŋɔ yihibu na saha la: \"$2\" nyɛla di ni pii shɛli ni di zaŋ tahi kamani lahabali. Chiriŋ: $3"
 }
