@@ -90,7 +90,7 @@
 	"massmessage-create-description": "תיאור:",
 	"massmessage-create-content": "תוכן:",
 	"massmessage-create-new": "יצירת רשימת מסירה חדשה",
-	"massmessage-create-import": "ייבוא דפים מתוך רשימה או קטגוריה קיימת",
+	"massmessage-create-import": "יבוא דפים מתוך רשימה או קטגוריה קיימת",
 	"massmessage-create-source": "מקור:",
 	"massmessage-create-editsummary": "יצירת רשימה למסירת הודעה המונית",
 	"massmessage-create-editsummary-import": "יצירת רשימת תפוצה המונית עם יעדים מתוך [[Special:Permalink/$2|$1]]",
