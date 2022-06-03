@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MediaWikiServices;
 use Title;
-use WikiPage;
 
 class UrlHelper {
 
@@ -17,7 +17,7 @@ class UrlHelper {
 		if ( !$title->isRedirect() ) {
 			return $title;
 		}
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 
 		$target = $wikipage->followRedirect();
 		if ( $target instanceof Title ) {

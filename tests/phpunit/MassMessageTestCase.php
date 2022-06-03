@@ -8,7 +8,6 @@ use MediaWikiIntegrationTestCase;
 use SiteConfiguration;
 use Title;
 use User;
-use WikiPage;
 
 /**
  * Abstract test case containing setup code and common functions
@@ -54,7 +53,7 @@ abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 	 */
 	public static function updatePage( $title, $text ) {
 		$user = new User();
-		$page = WikiPage::factory( $title );
+		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
 		$page->doUserEditContent( $content, $user, "summary" );
 	}

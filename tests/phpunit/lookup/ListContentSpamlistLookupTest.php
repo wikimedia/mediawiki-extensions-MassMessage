@@ -6,7 +6,6 @@ use ContentHandler;
 use MediaWiki\MassMessage\MassMessageTestCase;
 use Title;
 use WikiMap;
-use WikiPage;
 
 /**
  * Tests for MassMessage List Content related to target processing
@@ -24,7 +23,7 @@ class ListContentSpamlistLookupTest extends MassMessageTestCase {
 			. ']}';
 		$content = ContentHandler::makeContent( $text, null, 'MassMessageListContent' );
 		$title = Title::newFromText( 'MassMessageListContent_spamlist' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$page->doUserEditContent(
 			$content,
 			$this->getTestUser()->getUser(),

@@ -4,9 +4,9 @@ namespace MediaWiki\MassMessage;
 
 use ApiUsageException;
 use ContentHandler;
+use MediaWiki\MediaWikiServices;
 use Title;
 use User;
-use WikiPage;
 
 /**
  * Tests for the API module to send messages.
@@ -41,7 +41,7 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 */
 	public static function updatePage( $title, $text ) {
 		$user = new User();
-		$page = WikiPage::factory( $title );
+		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
 		$page->doUserEditContent( $content, $user, "summary" );
 	}

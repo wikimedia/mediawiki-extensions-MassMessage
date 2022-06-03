@@ -3,8 +3,8 @@
 namespace MediaWiki\MassMessage;
 
 use ContentHandler;
+use MediaWiki\MediaWikiServices;
 use Title;
-use WikiPage;
 
 /**
  * Tests for the API module to edit a MassMessage delivery list.
@@ -21,7 +21,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$title = Title::newFromText( self::$spamlist );
-		$page = WikiPage::factory( $title );
+		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::getForModelID( 'MassMessageListContent' )->makeEmptyContent();
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 
@@ -61,7 +61,8 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			null,
 			'MassMessageListContent'
 		);
-		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
+		$page = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( Title::newFromText( self::$spamlist ) );
 		$page->doUserEditContent( $content, $sysop, 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
@@ -88,7 +89,8 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			null,
 			'MassMessageListContent'
 		);
-		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
+		$page = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( Title::newFromText( self::$spamlist ) );
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
@@ -109,7 +111,8 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			null,
 			'MassMessageListContent'
 		);
-		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
+		$page = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( Title::newFromText( self::$spamlist ) );
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
@@ -130,7 +133,8 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			null,
 			'MassMessageListContent'
 		);
-		$page = WikiPage::factory( Title::newFromText( self::$spamlist ) );
+		$page = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( Title::newFromText( self::$spamlist ) );
 		$page->doUserEditContent( $content, $sysop, 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',

@@ -5,10 +5,10 @@ namespace MediaWiki\MassMessage\Job;
 use Exception;
 use Job;
 use MediaWiki\MassMessage\MassMessage;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use Status;
 use Title;
-use WikiPage;
 use WikitextContent;
 
 /**
@@ -50,9 +50,10 @@ class MassMessageServerSideJob extends MassMessageJob {
 		$tries = 1;
 		$titleText = $this->title->getPrefixedText();
 		$user = MassMessage::getMessengerUser();
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		$text = "== $subject ==\n\n$text";
 		while ( true ) {
-			$page = WikiPage::factory( $this->title );
+			$page = $wikiPageFactory->newFromTitle( $this->title );
 			$flags = 0;
 			if ( $page->exists() ) {
 				$oldContent = $page->getContent( RevisionRecord::RAW );

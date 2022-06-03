@@ -14,7 +14,6 @@ use SpecialPageLanguage;
 use Title;
 use User;
 use WikiMap;
-use WikiPage;
 
 class MassMessageJobTest extends MassMessageTestCase {
 
@@ -50,7 +49,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$target = Title::newFromText( $titleStr );
 		if ( $target->exists() ) {
 			// Clear it
-			$wikipage = WikiPage::factory( $target );
+			$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $target );
 			$wikipage->doDeleteArticleReal( 'reason', $this->getTestSysop()->getUser() );
 		}
 
@@ -66,7 +65,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	private function createPageByTitle(
 		Title $title, string $pageContent, string $langCode = null
 	) {
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $pageContent, $title );
 
 		$status = $page->doUserEditContent(
@@ -107,7 +106,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 		list( $subj, ) = $this->simulateJob( $target );
 		$target = Title::makeTitle( NS_PROJECT, 'Testing1234' );
 		// Message was created
-		$text = WikiPage::factory( $target )->getContent( RevisionRecord::RAW )->getNativeData();
+		$text = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW )->getNativeData();
 		$this->assertEquals(
 			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
 			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
@@ -147,7 +147,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 			Title::makeTitle( NS_PROJECT, 'Some random page' )
 		) );
 		$this->simulateJob( $target ); // Try posting a message to this page
-		$text = WikiPage::factory( $target )->getContent( RevisionRecord::RAW )->getNativeData();
+		$text = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW )->getNativeData();
 		// Nothing should be updated.
 		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text );
 	}
@@ -168,7 +169,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'isSourceTranslationPage' => false
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,
@@ -225,7 +227,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,
@@ -258,7 +261,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,
@@ -292,7 +296,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
 
-		$content = WikiPage::factory( $target )->getContent( RevisionRecord::RAW );
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
 		$this->assertStringContainsString(
 			$pageMessageContent,

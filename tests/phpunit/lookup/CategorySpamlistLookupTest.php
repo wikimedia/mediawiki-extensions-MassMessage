@@ -4,7 +4,6 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\MassMessage\MassMessageTestCase;
 use Title;
-use Wikipage;
 use WikitextContent;
 
 /**
@@ -18,7 +17,7 @@ class CategorySpamlistLookupTest extends MassMessageTestCase {
 	 */
 	public function testGetTargets() {
 		$page = Title::makeTitle( NS_TALK, 'Testing1234' );
-		$wikipage = WikiPage::factory( $page );
+		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $page );
 		$wikipage->doUserEditContent(
 			new WikitextContent( '[[Category:Spamlist1234]]' ),
 			$this->getTestUser()->getUser(),

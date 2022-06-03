@@ -25,7 +25,6 @@ use RequestContext;
 use Title;
 use User;
 use WikiMap;
-use WikiPage;
 
 /**
  * Job Queue class to send a message to a user.
@@ -102,7 +101,7 @@ class MassMessageJob extends Job {
 	 * @return bool
 	 */
 	public function isOptedOut( Title $title ) {
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$categories = $wikipage->getCategories();
 		$category = Title::makeTitle(
 			NS_CATEGORY,
