@@ -319,7 +319,7 @@ class MassMessageJob extends Job {
 		// all other internal uses, like how LQT does
 		$oldCUser = $context->getUser();
 		$oldCRequest = $context->getRequest();
-		$context->setUser( $wgUser );
+		$context->setUser( $ourUser );
 		$context->setRequest( $wgRequest );
 
 		$api = new ApiMain(
