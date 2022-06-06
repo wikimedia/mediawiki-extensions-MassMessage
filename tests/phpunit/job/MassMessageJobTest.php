@@ -11,6 +11,7 @@ use MWCryptRand;
 use RequestContext;
 use RuntimeException;
 use SpecialPageLanguage;
+use TextContent;
 use Title;
 use User;
 use WikiMap;
@@ -106,8 +107,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 		list( $subj, ) = $this->simulateJob( $target );
 		$target = Title::makeTitle( NS_PROJECT, 'Testing1234' );
 		// Message was created
-		$text = $this->getServiceContainer()->getWikiPageFactory()
-			->newFromTitle( $target )->getContent( RevisionRecord::RAW )->getNativeData();
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
+		$text = $content->getText();
 		$this->assertEquals(
 			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
 			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
@@ -149,8 +153,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 			Title::makeTitle( NS_PROJECT, 'Some random page' )
 		) );
 		$this->simulateJob( $target ); // Try posting a message to this page
-		$text = $this->getServiceContainer()->getWikiPageFactory()
-			->newFromTitle( $target )->getContent( RevisionRecord::RAW )->getNativeData();
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
+		$text = $content->getText();
 		// Nothing should be updated.
 		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text );
 	}
@@ -175,9 +182,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$content = $this->getServiceContainer()->getWikiPageFactory()
 			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
 		$this->assertStringContainsString(
 			$pageMessageContent,
-			$content->getNativeData()
+			$content->getText()
 		);
 	}
 
@@ -235,9 +244,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$content = $this->getServiceContainer()->getWikiPageFactory()
 			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
 		$this->assertStringContainsString(
 			$pageMessageContent,
-			$content->getNativeData()
+			$content->getText()
 		);
 	}
 
@@ -270,9 +281,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$content = $this->getServiceContainer()->getWikiPageFactory()
 			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
 		$this->assertStringContainsString(
 			$pageMessageContent,
-			$content->getNativeData()
+			$content->getText()
 		);
 	}
 
@@ -306,9 +319,11 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$content = $this->getServiceContainer()->getWikiPageFactory()
 			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$this->assertNotNull( $content );
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
 		$this->assertStringContainsString(
 			$pageMessageContent,
-			$content->getNativeData()
+			$content->getText()
 		);
 	}
 
