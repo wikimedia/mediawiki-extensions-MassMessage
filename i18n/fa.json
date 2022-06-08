@@ -35,7 +35,7 @@
 	"massmessage-just-preview": "این فقط یک پیش‌نمایش است. «{{int:massmessage-form-submit}}» را برای ارسال پیام بفشارید.",
 	"massmessage-spamlist-doesnotexist": "رده یا صفحهٔ فهرست گیرندگان مورد نظر وجود ندارد.",
 	"massmessage-spamlist-invalid": "صفحهٔ مورد نظر حاوی فهرستی معتبر از گیرندگان نیست.",
-	"massmessage-empty-subject": "عنوان خالی است.",
+	"massmessage-empty-subject": "موضوعی برای پیام ارائه نشده‌است.",
 	"massmessage-empty-message": "بدنهٔ پیام خالی است. متن پیام را ارائه کنید یا صفحه‌ای را برای ارسال به‌عنوان پیام انتخاب کنید.",
 	"massmessage-page-message-invalid": "صفحهٔ «$1» که برای ارسال به‌عنوان پیام انتخاب شده‌است، نامعتبر است.",
 	"massmessage-page-message-not-found": "صفحهٔ «$1» که برای ارسال به‌عنوان پیام انتخاب شده‌است، یافت نشد.",
