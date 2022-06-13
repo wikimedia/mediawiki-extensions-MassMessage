@@ -30,7 +30,7 @@
 	"massmessage-form-preview": "Aperçu",
 	"massmessage-form-submit": "Envoyer",
 	"massmessage-fieldset-preview": "Aperçu",
-	"massmessage-fieldset-info": "Information",
+	"massmessage-fieldset-info": "Informations",
 	"massmessage-preview-count": "Votre message sera envoyé à {{PLURAL:$1|$1 page|$1 pages}}.",
 	"massmessage-translate-page-info": "Vous avez sélectionné une page traduite à envoyer comme message. Les abonnés recevront le contenu de la page dans leur langue préférée, ou dans la langue par défaut si la traduction n’est pas disponible.",
 	"massmessage-submitted": "L’envoi de votre message à {{PLURAL:$1|$1 page|$1 pages}} a été mis en file d’attente.",
