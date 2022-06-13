@@ -47,17 +47,18 @@ class MassMessageSubmitJob extends Job {
 		$data = $this->params['data'];
 		$pages = $this->params['pages'];
 		$class = $this->params['class'];
-		$jobsByTarget = [];
 
+		// We want to deduplicate individual messages based on retries of the
+		// batch submit job if they happen
+		$data['rootJobSignature'] = sha1( json_encode( $this->getDeduplicationInfo() ) );
+		$data['rootJobTimestamp'] = $this->params['timestamp'];
+
+		$jobsByTarget = [];
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page['title'] );
 			// Store the title as plain text to avoid namespace/interwiki prefix
 			// collisions, see tasks T59464 and T60524
 			$data['title'] = $page['title'];
-			// We want to deduplicate individual messages based on retries of the
-			// batch submit job if they happen
-			$data['rootJobSignature'] = sha1( json_encode( $this->getDeduplicationInfo() ) );
-			$data['rootJobTimestamp'] = $this->params['timestamp'];
 			$jobsByTarget[$page['wiki']][] = new $class( $title, $data );
 		}
 
