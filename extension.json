@@ -73,7 +73,7 @@
 		"RenameUserPreRename": "MediaWiki\\MassMessage\\MassMessageHooks::onRenameUserPreRename",
 		"UserGetReservedNames": "MediaWiki\\MassMessage\\MassMessageHooks::onUserGetReservedNames",
 		"BeforeEchoEventInsert": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforeEchoEventInsert",
-		"SkinTemplateNavigation": "MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation",
+		"SkinTemplateNavigation::Universal": "MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation",
 		"BeforePageDisplay": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforePageDisplay",
 		"ListDefinedTags": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags",
 		"ChangeTagsListActive": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
