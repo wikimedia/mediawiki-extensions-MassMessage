@@ -60,7 +60,7 @@
 	"massmessage-parse-badpage": "«$1» عنوان معتبری برای صفحه نیست.",
 	"massmessage-parse-badexternal": "«$1» عنوان معتبری برای صفحه نیست. هدف‌های میان‌ویکی باید با استفاده از پارامتر site مشخص شوند (نظیر <kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "پیام‌های فقط می‌تواند به صفحه‌های محلی ارسال شود.",
-	"right-massmessage": "ارسال یکجای یک پیام به چندین کاربر",
+	"right-massmessage": "ارسال یک دفعه پیامی به چندین کاربر",
 	"action-massmessage": "ارسال یکجای یک پیام به چندین کاربر",
 	"log-name-massmessage": "سیاههٔ ارسال انبوه",
 	"log-description-massmessage": "این رویدادها ارسال پیام کاربران را دنبال می‌کند.",
