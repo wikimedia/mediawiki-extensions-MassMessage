@@ -35,7 +35,7 @@
 	"massmessage-fieldset-preview": "Önizleme",
 	"massmessage-fieldset-wikitext-preview": "Vikimetin önizlemesi",
 	"massmessage-fieldset-info": "Bilgi",
-	"massmessage-preview-count": "Mesajınız $1 sayfaya gönderilecektir.",
+	"massmessage-preview-count": "Mesajınız {{PLURAL:$1|$1 sayfaya}} gönderilecektir.",
 	"massmessage-translate-page-info": "İleti olarak gönderilecek çevrilmiş bir sayfa seçtiniz. Aboneler, sayfanın içeriğini tercih ettikleri dilde veya çeviri yoksa bir yedek dilde alacaktır.",
 	"massmessage-submitted": "İletiniz {{PLURAL:$1|$1 sayfaya|$1 sayfaya}} teslimat için sıraya eklendi.",
 	"massmessage-just-preview": "Bu yalnızca bir önizlemedir. İletiyi göndermek için \"{{int:massmessage-form-submit}}\" düğmesine basın.",
