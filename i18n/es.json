@@ -17,7 +17,8 @@
 			"Rossnyev",
 			"Ryo567",
 			"Vivaelcelta",
-			"DiegoAmbrocio"
+			"DiegoAmbrocio",
+			"Francodiaz7"
 		]
 	},
 	"massmessage": "Enviar mensaje masivo",
@@ -38,7 +39,7 @@
 	"massmessage-just-preview": "Esto solo es una previsualización. Pulsa en «{{int:massmessage-form-submit}}» para enviar el mensaje.",
 	"massmessage-spamlist-doesnotexist": "La lista de páginas o categoría especificada no existe.",
 	"massmessage-spamlist-invalid": "La página especificada no contiene una lista de distribución válida.",
-	"massmessage-empty-subject": "El asunto está vacío.",
+	"massmessage-empty-subject": "No se ha proporcionado ningún asunto para el mensaje.",
 	"massmessage-empty-message": "El cuerpo del mensaje está vacío. Bien escríbelo o bien selecciona una página que enviar como mensaje.",
 	"massmessage-page-message-not-found": "No se encontró la página «$1», seleccionada para su envío como mensaje.",
 	"massmessage-page-message-no-revision": "La página «$1», seleccionada para su envío como mensaje, no cuenta con alguna revisión utilizable.",
