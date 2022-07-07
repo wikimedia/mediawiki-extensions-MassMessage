@@ -226,7 +226,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 *
 	 * @return string
 	 */
-	protected function preText() {
+	protected function preHtml() {
 		$allowGlobalMessaging = $this->getConfig()->get( 'AllowGlobalMessaging' );
 
 		if ( $this->rev ) {
@@ -262,7 +262,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 *
 	 * @return string
 	 */
-	protected function postText() {
+	protected function postHtml() {
 		if ( $this->rev ) {
 			return EditPage::getCopyrightWarning( $this->title, 'parse', $this );
 		} else {
