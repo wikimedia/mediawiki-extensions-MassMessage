@@ -11,9 +11,11 @@
 	"massmessage-content-remove": "jaukkâd",
 	"massmessage-content-removeyes": "Jaukkâd",
 	"massmessage-content-addheading": "Lââʹzzet seeidaid",
+	"massmessage-content-addsite": "Seiddõs:",
 	"massmessage-content-addsubmit": "Lââʹzzet seeid",
 	"massmessage-content-invalidsite": "Neʹttseiddõs lij vââǥǥlaž.",
 	"massmessage-content-adderror": "API-vââʹjj: $1",
+	"massmessage-edit-nopermission": "Tuʹst ij leäkku vuõiggâdvuõtt liist muʹtted.",
 	"massmessage-summary-add": "Lââʹzztum [[:$1]]",
 	"massmessage-summary-remove": "[[:$1]] jaukkuum"
 }
