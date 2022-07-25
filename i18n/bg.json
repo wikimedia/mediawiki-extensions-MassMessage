@@ -38,6 +38,7 @@
 	"massmessage-parse-badexternal": "„$1“ не е валидно заглавие на страница. Междууики заглавията трябва да се укажат използвайки параметъра за проекта (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Съобщения могат да се изпращат само до локални страници.",
 	"right-massmessage": "Изпращане на съобщение едновременно до много потребители",
+	"action-massmessage": "изпращане на съобщение едновременно до много потребители",
 	"log-name-massmessage": "Дневник на масовите съобщения",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|изпрати съобщение}} до $3",
 	"logentry-massmessage-failure": "Доставката на „$4“ до $3 беше неуспешна, с код на грешката <code>$5</code>",
