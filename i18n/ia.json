@@ -23,6 +23,8 @@
 	"massmessage-fieldset-preview": "Previsualisation",
 	"massmessage-fieldset-wikitext-preview": "Previsualisation del wikitexto",
 	"massmessage-fieldset-info": "Information",
+	"massmessage-preview-count": "Tu message essera inviate a $1 pagina{{PLURAL:$1||s}}.",
+	"massmessage-translate-page-info": "Tu ha seligite un pagina traducite a inviar como message. Le abonatos recipera le contento del pagina in lor lingua preferite, o in un lingua de reserva si un traduction non es disponibile.",
 	"massmessage-page-message-invalid": "Le pagina \"$1\", seligite pro esser inviate como message, non es valide.",
 	"massmessage-page-message-not-found": "Le pagina \"$1\", seligite pro esser inviate como message, non ha essite trovate.",
 	"massmessage-page-message-no-revision": "Le pagina \"$1\", seligite pro esser inviate como message, non ha un version usabile.",
