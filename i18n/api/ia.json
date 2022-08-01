@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Modificar un lista de livration de messages in massa.",
+	"apihelp-editmassmessagelist-summary": "Modificar un lista de livration de messages in massa.",
+	"apihelp-editmassmessagelist-param-spamlist": "Titulo del lista de livration a actualisar.",
+	"apihelp-editmassmessagelist-param-add": "Titulos a adder al lista.",
+	"apihelp-editmassmessagelist-param-remove": "Titulos a remover del lista.",
+	"apihelp-editmassmessagelist-param-description": "Nove description pro le lista de livration.",
+	"apihelp-editmassmessagelist-example-1": "Adder [[User talk:Foo]] e [[Talk:Bar]] al lista de livration [[Example]] e remover [[Talk:Baz]] de illo",
+	"apihelp-editmassmessagelist-example-2": "Definir le description del lista de livration [[Example]] como \"FooBar delivery services\"",
+	"apihelp-massmessage-description": "Inviar un message a un lista de paginas.",
+	"apihelp-massmessage-summary": "Inviar un message a un lista de paginas.",
+	"apihelp-massmessage-param-spamlist": "Pagina que contine un lista de paginas sur le quales lassar un message.",
+	"apihelp-massmessage-param-subject": "Linea de subjecto del message.",
+	"apihelp-massmessage-param-message": "Texto de corpore del message.",
+	"apihelp-massmessage-param-page-message": "Pagina a inviar con le corpore del message.",
+	"apihelp-massmessage-example-1": "Inviar un message al lista a [[Signpost Spamlist]] con le subjecto \"New Signpost\" e con le corpore \"Please read it\".",
+	"apihelp-massmessage-example-2": "Inviar un message al lista a [[Signpost Spamlist]] con le subjecto \"New Signpost\", e le message como le contento del pagina \"Help Page\".",
+	"apihelp-massmessage-example-3": "Inviar un message al lista a [[Signpost Spamlist]] con le subjecto \"New Signpost\", e un corpore de message \"Please read it\" al qual es adjungite le contento del pagina \"Help Page\".",
+	"apihelp-query+mmsites-description": "Executa requestas de completamento automatic del campo 'site' in MassMessage.",
+	"apihelp-query+mmsites-summary": "Executa requestas de completamento automatic del campo 'site' in MassMessage.",
+	"apihelp-query+mmsites-param-term": "Le prefixo a cercar.",
+	"apihelp-query+mmsites-example-1": "Completamento automatic de \"en\"",
+	"apihelp-query+mmcontent-summary": "Obtener le description e le destinationes de un lista de spam",
+	"apihelp-query+mmcontent-example-1": "Obtener information sur paginas e listas de spam de [[Spam list]]",
+	"apierror-massmessage-invalidspamlist": "Le lista de spam specificate non es valide."
+}
