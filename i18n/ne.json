@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"NehalDaveND",
-			"बिप्लब आनन्द"
+			"बिप्लब आनन्द",
+			"Bada Kaji"
 		]
 	},
 	"massmessage": "सामूहिक सन्देश पठाउनुहोस्",
@@ -13,7 +14,7 @@
 	"massmessage-fieldset-info": "जानकारी",
 	"massmessage-content-remove": "हटाउने",
 	"massmessage-content-removeyes": "हटाउने",
-	"massmessage-content-removeno": "रद्द गर्ने",
+	"massmessage-content-removeno": "रद्द गर्नुहोस्",
 	"massmessage-content-emptylist": "(कुनै पनि होइन)",
 	"massmessage-content-addheading": "सबै पृष्ठहरू",
 	"massmessage-content-addtitle": "शीर्षक:",
