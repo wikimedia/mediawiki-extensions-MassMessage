@@ -7,6 +7,7 @@
 	"massmessage-form-preview": "Ǩičč õõudǩiõʹtte",
 	"massmessage-form-submit": "Vuõlttâd saaǥǥ",
 	"massmessage-fieldset-preview": "Ouddǩiõččmõš",
+	"massmessage-fieldset-info": "Teâđ",
 	"massmessage-content-pages": "Tän liist seeid",
 	"massmessage-content-remove": "jaukkâd",
 	"massmessage-content-removeyes": "Jaukkâd",
@@ -16,6 +17,7 @@
 	"massmessage-content-invalidsite": "Neʹttseiddõs lij vââǥǥlaž.",
 	"massmessage-content-adderror": "API-vââʹjj: $1",
 	"massmessage-create-source": "Käivv:",
+	"massmessage-edit-summary": "Õʹhtteǩeässmõš:",
 	"massmessage-edit-nopermission": "Tuʹst ij leäkku vuõiggâdvuõtt liist muʹtted.",
 	"massmessage-summary-add": "Lââʹzztum [[:$1]]",
 	"massmessage-summary-remove": "[[:$1]] jaukkuum"
