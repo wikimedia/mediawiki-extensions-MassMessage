@@ -118,6 +118,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	/**
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::addLQTThread
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MessageSender::addLQTThread
+	 * @covers \MediaWiki\MassMessage\MessageSender::makeAPIRequest
 	 */
 	public function testLQTMessageSending() {
 		$this->markTestSkipped( 'broken test, T217553' );
@@ -155,6 +157,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 	/**
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testPageMessageSending() {
 		$pageMessageContent = 'Test page message.';
@@ -179,7 +182,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::makeAPIRequest
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testPageMessageSendingFailToEdit() {
 		$pageMessageContent = 'Test page message.';
@@ -204,6 +208,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 	/**
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testTranslatablePageMessageSending() {
 		$this->setMwGlobals( [
@@ -238,6 +243,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 	/**
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testTranslatableFallback() {
 		$this->setMwGlobals( [
@@ -272,6 +278,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 	/**
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testTranslatableFallbackSource() {
 		$this->setMwGlobals( [
