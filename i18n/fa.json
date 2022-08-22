@@ -53,6 +53,7 @@
 	"massmessage-invalid-lang": "کد نامعتبر زبان: «$1»",
 	"massmessage-page-message-parse-invalid-in-wiki": "هنگام واکشی صفحهٔ «$2»، که برای ارسال به‌عنوان پیام انتخاب شده‌است، از ویکی «$1» پاسخ نامعتبر ارسال شد. پاسخ: $3",
 	"massmessage-page-message-empty": "صفحهٔ «$1»، که برای ارسال به‌عنوان پیام انتخاب شده‌است، محتوایی ندارد.",
+	"massmessage-page-subject-empty": "بخش «$1» مورد انتخاب در صفحهٔ «$2» به‌منظور ارسال به‌عنوان موضوع، فاقد محتوا است.",
 	"massmessage-unescaped-langlinks": "هشدار: پیوندهای زبان غیررها در پیام شما وجود دارد.",
 	"massmessage-no-timestamp": "هشدار: پیام شما حاوی برچسب زمان یا امضا نیست.",
 	"massmessage-form-header": "از فرم زیر برای ارسال پیام‌ها به یک فهرست مشخص‌شده استفاده کنید. همهٔ موارد الزامی هستند ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage اطلاعات بیشتر]).",
