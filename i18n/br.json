@@ -3,6 +3,7 @@
 		"authors": [
 			"Fohanno",
 			"Fulup",
+			"Huñvreüs",
 			"Y-M D"
 		]
 	},
@@ -53,5 +54,8 @@
 	"massmessage-create-source": "Mammenn :",
 	"massmessage-edit-pagetitle": "Oc'h aozañ $1",
 	"massmessage-edit-title": "Titl :",
-	"massmessage-edit-summary": "Kemmañ an diverradenn :"
+	"massmessage-edit-summary": "Kemmañ an diverradenn :",
+	"massmessage-list-category": "Rolloù kasidigezh MassMessage",
+	"massmessage-list-category-desc": "Ur roll kasidigezh evit an astenn [[Special:MassMessage|MassMessage]] eo ar bajenn.",
+	"tag-massmessage-delivery": "Kasidigezh MassMessage"
 }
