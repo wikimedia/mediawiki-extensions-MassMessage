@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Huñvreüs"
 		]
 	},
 	"apihelp-massmessage-param-page-message": "Pajenn da vezañ kaset a-gevret gant korf ar gemennadenn.",
 	"apihelp-massmessage-example-1": "Kas ur gemennadenn d'ar roll [[Signpost Spamlist]] gant an danvez \"Merker nevez\", ha lakait \"Da vezañ lennet\" e-korf an destenn.",
 	"apihelp-massmessage-example-2": "Kas ur gemennadenn d'ar roll [[Signpost Spamlist]] gant an danvez \"Panell nevez\", hag ar gemennadenn evel danvez ar bajenn \"Pajenn skoazell\".",
-	"apihelp-massmessage-example-3": "Kas ur gemennadenn d'ar roll [[Signpost Spamlist]] gant an danvez \"Panell nevez\", ha gant \"Lennit kement-mañ\" da gorf an destenn, ouzhpennit an danvez zo er bajenn \"Pajenn skoazell\"."
+	"apihelp-massmessage-example-3": "Kas ur gemennadenn d'ar roll [[Signpost Spamlist]] gant an danvez \"Panell nevez\", ha gant \"Lennit kement-mañ\" da gorf an destenn, ouzhpennit an danvez zo er bajenn \"Pajenn skoazell\".",
+	"apihelp-query+mmsites-description": "Servijout a ra rekedoù emglokaat evit ar veazien lec’hienn e MassMessage.",
+	"apihelp-query+mmsites-summary": "Servijout a ra rekedoù emglokaat evit ar veazien lec’hienn e MassMessage."
 }
