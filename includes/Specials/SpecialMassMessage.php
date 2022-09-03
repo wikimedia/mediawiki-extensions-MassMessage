@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage\Specials;
 
 use ContentHandler;
 use EditPage;
+use FormSpecialPage;
 use Html;
 use HTMLForm;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
@@ -16,11 +17,13 @@ use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
 use Message;
-use SpecialPage;
+use OOUI\FieldsetLayout;
+use OOUI\HtmlSnippet;
+use OOUI\PanelLayout;
+use OOUI\Widget;
 use Status;
 use Title;
 use WikiMap;
-use Xml;
 
 /**
  * Form to allow users to send messages to a lot of users at once.
@@ -29,7 +32,7 @@ use Xml;
  * @license GPL-2.0-or-later
  */
 
-class SpecialMassMessage extends SpecialPage {
+class SpecialMassMessage extends FormSpecialPage {
 	/** @var Status */
 	protected $status;
 	/** @var string */
@@ -61,16 +64,13 @@ class SpecialMassMessage extends SpecialPage {
 		return true;
 	}
 
-	/** @param string|null $par */
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$request = $this->getRequest();
-		$context = $this->getContext();
 		$output = $this->getOutput();
 
 		$this->addHelpLink( 'Help:Extension:MassMessage' );
-		$this->setHeaders();
 		$this->outputHeader();
-		$this->checkPermissions();
 
 		$output->addModules( 'ext.MassMessage.special.js' );
 		$output->addModuleStyles( 'ext.MassMessage.styles' );
@@ -87,32 +87,35 @@ class SpecialMassMessage extends SpecialPage {
 			$this->state = 'form';
 		}
 
-		$form = new HTMLForm( $this->createForm(), $context );
-		$form->setId( 'mw-massmessage-form' );
-		$form->setDisplayFormat( 'div' );
-		if ( $this->state === 'form' ) {
-			$form->addPreText( $this->msg( 'massmessage-form-header' )->parse() );
-		}
-		$form->setWrapperLegendMsg( 'massmessage' );
-		$form->suppressDefaultSubmit(); // We use our own buttons.
-		$form->setSubmitCallback( [ $this, 'callback' ] );
-		$form->setMethod( 'post' );
+		parent::execute( $par );
+	}
 
-		$form->prepareForm();
-		$result = $form->tryAuthorizedSubmit();
-		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
-			if ( $this->state === 'submit' ) { // If it's preview, everything is shown already.
-				$output->addWikiMsg(
-					'massmessage-submitted',
-					Message::numParam( $this->count )
-				);
-				$output->addWikiMsg( 'massmessage-nextsteps' );
-			}
-		} else {
-			if ( $this->state === 'preview' ) {
-				$result = $this->status;
-			}
-			$form->displayForm( $result );
+	/** @inheritDoc */
+	protected function alterForm( HTMLForm $form ) {
+		if ( $this->state === 'form' ) {
+			$form->addPreHtml( $this->msg( 'massmessage-form-header' )->parse() );
+		}
+		return $form
+			->setId( 'mw-massmessage-form' )
+			->setWrapperLegendMsg( 'massmessage' )
+			->suppressDefaultSubmit() // We use our own buttons.
+			->setMethod( 'post' );
+	}
+
+	/** @inheritDoc */
+	protected function getDisplayFormat() {
+		return 'ooui';
+	}
+
+	/** @inheritDoc */
+	public function onSuccess() {
+		if ( $this->state === 'submit' ) {
+			$output = $this->getOutput();
+			$output->addWikiMsg(
+				'massmessage-submitted',
+				Message::numParam( $this->count )
+			);
+			$output->addWikiMsg( 'massmessage-nextsteps' );
 		}
 	}
 
@@ -135,8 +138,8 @@ class SpecialMassMessage extends SpecialPage {
 		return $this->count;
 	}
 
-	/** @return array */
-	protected function createForm() {
+	/** @inheritDoc */
+	protected function getFormFields() {
 		$request = $this->getRequest();
 		$controlTabIndex = 1;
 
@@ -147,7 +150,7 @@ class SpecialMassMessage extends SpecialPage {
 		$m['spamlist'] = [
 			'id' => 'mw-massmessage-form-spamlist',
 			'name' => 'spamlist',
-			'type' => 'text',
+			'type' => 'title',
 			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-spamlist',
 			'default' => $request->getText( 'spamlist' )
@@ -168,11 +171,12 @@ class SpecialMassMessage extends SpecialPage {
 		$m['page-message'] = [
 			'id' => 'mw-massmessage-form-page',
 			'name' => 'page-message',
-			'type' => 'text',
+			'type' => 'title',
 			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-page',
 			'default' => $request->getText( 'page-message' ),
-			'help' => $this->msg( 'massmessage-form-page-help' )->text()
+			'help' => $this->msg( 'massmessage-form-page-help' )->text(),
+			'required' => false
 		];
 
 		$options = [ '----' => '' ];
@@ -244,10 +248,10 @@ class SpecialMassMessage extends SpecialPage {
 	 * Does some basic verification of data.
 	 * Decides whether to show the preview screen or the submitted message.
 	 *
-	 * @param array $data
+	 * @inheritDoc
 	 * @return Status|bool
 	 */
-	public function callback( array $data ) {
+	public function onSubmit( array $data ) {
 		$requestParser = new MassMessageRequestParser();
 		$this->status = $requestParser->parseRequest( $data, $this->getUser() );
 
@@ -400,18 +404,42 @@ class SpecialMassMessage extends SpecialPage {
 		);
 		$contentRenderer = $services->getContentRenderer();
 		$parserOutput = $contentRenderer->getParserOutput( $content, $mockTarget, null, $parserOptions );
-		$previewFieldset = Xml::fieldset(
-			$this->msg( 'massmessage-fieldset-preview' )->text(),
-			$parserOutput->getText( [ 'enableSectionEditLinks' => false ] )
-		);
-		$this->getOutput()->addHTML( $previewFieldset );
+		$previewLayout = new PanelLayout( [
+			'content' => new FieldsetLayout( [
+				'label' => $this->msg( 'massmessage-fieldset-preview' )->text(),
+				'items' => [
+					new Widget( [
+						'content' => new HtmlSnippet(
+							$parserOutput->getText( [ 'enableSectionEditLinks' => false ] )
+						),
+					] ),
+				],
+			] ),
+			'expanded' => false,
+			'framed' => true,
+			'padded' => true,
+		] );
+		$this->getOutput()->addHTML( $previewLayout );
 
-		$wikitextPreviewFieldset = Xml::fieldset(
-			$this->msg( 'massmessage-fieldset-wikitext-preview' )->text(),
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped false positive or bug
-			Html::element( 'pre', [], "== {$subjectText} ==\n\n$messageText" )
-		);
-		$this->getOutput()->addHTML( $wikitextPreviewFieldset );
+		$wikitextPreviewLayout = new PanelLayout( [
+			'content' => [
+				new FieldsetLayout( [
+					'label' => $this->msg( 'massmessage-fieldset-wikitext-preview' )->text(),
+					'items' => [
+						new Widget( [
+							'content' => new HtmlSnippet(
+							// @phan-suppress-next-line SecurityCheck-DoubleEscaped false positive or bug
+								Html::element( 'pre', [], "== {$subjectText} ==\n\n$messageText" )
+							),
+						] ),
+					],
+				] ),
+			],
+			'expanded' => false,
+			'framed' => true,
+			'padded' => true,
+		] );
+		$this->getOutput()->addHTML( $wikitextPreviewLayout );
 
 		// Check if we have unescaped langlinks (Bug 54846)
 		if ( $parserOutput->getLanguageLinks() ) {
@@ -446,12 +474,21 @@ class SpecialMassMessage extends SpecialPage {
 			$infoListHtml .= '</ul>';
 		}
 
-		$infoFieldset = Xml::fieldset(
-			$this->msg( 'massmessage-fieldset-info' )->text(),
-			$infoListHtml
-		);
+		$infoLayout = new PanelLayout( [
+			'content' => new FieldsetLayout( [
+				'label' => $this->msg( 'massmessage-fieldset-info' )->text(),
+				'items' => [
+					new Widget( [
+						'content' => new HtmlSnippet( $infoListHtml )
+					] ),
+				],
+			] ),
+			'expanded' => false,
+			'framed' => true,
+			'padded' => true,
+		] );
 
-		$this->getOutput()->addHTML( $infoFieldset );
+		$this->getOutput()->addHTML( $infoLayout );
 	}
 
 	/**

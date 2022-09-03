@@ -23,7 +23,7 @@ function badHtml( $msg ) {
 	$msg.after( $warnings );
 	$warnings.hide();
 
-	$msg.on( 'keyup', $.debounce( 500, function () {
+	$msg.on( 'keyup', OO.ui.debounce( function () {
 		var code, matches, tags, results, tagName;
 
 		code = $msg.val().trim();
@@ -79,7 +79,7 @@ function badHtml( $msg ) {
 		} else {
 			$warnings.hide();
 		}
-	} ) );
+	}, 500 ) );
 }
 
 module.exports = badHtml;

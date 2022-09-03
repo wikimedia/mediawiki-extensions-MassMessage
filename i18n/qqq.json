@@ -64,6 +64,7 @@
 	"massmessage-badhtml": "Shown in a JavaScript popup if we detect unclosed HTML tags\n\n* $1 - comma separated list of unclosed HTML tags\n* $2 - number of unclosed HTML tags",
 	"massmessage-parse-badurl": "Error message shown when the url that the user provides is invalid.\n* $1 is the url the user provided",
 	"massmessage-parse-badpage": "Error message shown when the page name that the user provides is invalid.\n* $1 is the page title the user provided",
+	"massmessage-parse-badspamlist": "Error message shown when the page name that the user provides is not a valid list of pages to sent the message to.\n* $1 - the page title the user provided.",
 	"massmessage-parse-badexternal": "{{doc-important|Don't translate the word \"site\"!}}\nError message shown when the page name the user provides is an interwiki link.\n* $1 is the page title the user provided",
 	"massmessage-global-disallowed": "Error message shown if the target wiki is not the current wiki and cross-wiki messaging has been disabled (via $wgAllowGlobalMessaging).",
 	"right-massmessage": "{{doc-right|massmessage}}\nSee also:\n* {{msg-mw|Right-massmessage-global}}",
