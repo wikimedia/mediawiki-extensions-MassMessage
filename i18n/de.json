@@ -58,6 +58,7 @@
 	"massmessage-badhtml": "Deine Nachricht enthält möglicherweise {{PLURAL:$2|ein nicht geschlossenes HTML-Tag|nicht geschlossene HTML-Tags}}: $1.",
 	"massmessage-parse-badurl": "„$1“ ist keine gültige Website",
 	"massmessage-parse-badpage": "„$1“ ist kein gültiger Seitentitel",
+	"massmessage-parse-badspamlist": "„$1“ ist keine gültige Seitenliste.",
 	"massmessage-parse-badexternal": "„$1“ ist kein gültiger Seitentitel. Interwiki-Ziele sollten mithilfe des Site-Parameters angegeben werden (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Nachrichten können nur an lokale Seiten versandt werden.",
 	"right-massmessage": "Gleichzeitig Nachrichten an mehrere Benutzer senden",
