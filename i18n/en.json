@@ -54,6 +54,7 @@
 	"massmessage-badhtml": "Your message may have {{PLURAL:$2|an unclosed HTML tag|unclosed HTML tags}}: $1.",
 	"massmessage-parse-badurl": "\"$1\" is not a valid site.",
 	"massmessage-parse-badpage": "\"$1\" is not a valid page title.",
+	"massmessage-parse-badspamlist": "\"$1\" is not a valid list of pages.",
 	"massmessage-parse-badexternal": "\"$1\" is not a valid page title. Interwiki targets should be specified using the site parameter (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Messages can only be sent to local pages.",
 	"right-massmessage": "Send a message to multiple users at once",

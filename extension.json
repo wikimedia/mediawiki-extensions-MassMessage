@@ -101,7 +101,8 @@
 			"styles": "ext.MassMessage.validation.css",
 			"messages": [
 				"massmessage-badhtml",
-				"massmessage-parse-badpage"
+				"massmessage-parse-badpage",
+				"massmessage-parse-badspamlist"
 			],
 			"dependencies": [
 				"jquery.lengthLimit",

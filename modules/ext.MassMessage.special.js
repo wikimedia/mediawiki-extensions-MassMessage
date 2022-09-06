@@ -1,16 +1,12 @@
 $( function () {
 	'use strict';
 
-	// Dynamic page title validation
-	var autocomplete = require( './ext.MassMessage.autocomplete.js' ),
-		badHtml = require( './ext.MassMessage.badhtml.js' ),
-		$spamlist = $( '#mw-massmessage-form-spamlist' ),
-		$massmessagepage = $( '#mw-massmessage-form-page' );
+	var badHtml = require( './ext.MassMessage.badhtml.js' );
 
 	// Limit edit summaries to 240 bytes
 	$( '#mw-massmessage-form-subject' ).byteLimit();
 
-	badHtml( $( '#mw-massmessage-form-message' ) );
+	badHtml( $( '#mw-massmessage-form-message textarea' ) );
 
 	/**
 	 * Fetch pages with a given title.
@@ -35,50 +31,87 @@ $( function () {
 	 * Adds a status field for the element.
 	 *
 	 * @param {Object} $elem jQuery element for which the status field has to be added.
-	 * @return {Object} jQuery element
+	 * @return {Object[]} Array of the jQuery element for the OOUI error message widget
+	 *  and of the OOUI label inside the widget.
 	 */
 	function addStatusField( $elem ) {
-		var $statusField = $( '<span>' )
-			.prop( 'id', $elem.prop( 'id' ) + '-status' )
-			.insertAfter( $elem );
+		var message = new OO.ui.MessageWidget( {
+			icon: 'error',
+			type: 'error',
+			inline: true,
+			classes: [ 'mw-massmessage-form-error' ]
+		} );
+		message.$element.hide();
+		$( $elem ).closest( '.mw-htmlform-field-HTMLTitleTextField' ).append( message.$element );
+		return [ message.$element, message.$label ];
+	}
 
-		return $statusField;
+	/**
+	 * Validate the title in the form input field given
+	 * in $elem. If the field is not valid, the function
+	 * will show an appropriate error message under the
+	 * input.
+	 *
+	 * @param $elem The jQuery element for the OOUI title field to be validated
+	 * @param callback A callback function which is provided the list of pages by the title
+	 *  and which returns a boolean value of whether the title is valid (true for valid).
+	 * @param $statusField The OOUI error message for the field which may or may not be hidden
+	 * @param $statusFieldLabel The label for the OOUI error message in $statusField
+	 */
+	function validateTitle( $elem, callback, $statusField, $statusFieldLabel ) {
+		var pagetitle = $( 'input', $elem ).val();
+
+		if ( !pagetitle ) {
+			$statusField.hide();
+			return;
+		}
+
+		getPagesByTitle( pagetitle ).done( function ( data ) {
+			var result = false;
+			if ( data && data.query && !data.query.pages[ 0 ].missing ) {
+				result = callback( data.query.pages );
+			}
+
+			if ( result ) {
+				$( $elem ).removeClass( 'oo-ui-flaggedElement-invalid' );
+				$statusField.hide();
+			} else {
+				$( $elem ).addClass( 'oo-ui-flaggedElement-invalid' );
+				if ( $elem.prop( 'id' ) === 'mw-massmessage-form-spamlist' ) {
+					$( $statusFieldLabel ).text(
+						mw.message( 'massmessage-parse-badspamlist', pagetitle ).text()
+					);
+				} else {
+					$( $statusFieldLabel ).text(
+						mw.message( 'massmessage-parse-badpage', pagetitle ).text()
+					);
+				}
+				$statusField.show();
+			}
+		} );
 	}
 
 	/**
 	 * Adds page title validation for a given text field
 	 *
 	 * @param {Object} $elem jQuery element to
-	 * @param {Function} callback Called when we recieve some pages in response.
+	 * @param {Function} callback Called when we receive some pages in response.
 	 */
 	function addPageTitleValidation( $elem, callback ) {
-		var $statusField = addStatusField( $elem );
-		$elem.on( 'input autocompletechange', $.debounce( 250, function () {
-			var pagetitle = $elem.val();
-			if ( !pagetitle ) {
-				$statusField
-					.removeClass( 'invalid' )
-					.text( '' );
-				return;
-			}
-
-			getPagesByTitle( pagetitle ).done( function ( data ) {
-				var result = false;
-				if ( data && data.query && !data.query.pages[ 0 ].missing ) {
-					result = callback( data.query.pages );
-				}
-
-				if ( result ) {
-					$statusField
-						.removeClass( 'invalid' )
-						.text( '' );
-				} else {
-					$statusField
-						.addClass( 'invalid' )
-						.text( mw.message( 'massmessage-parse-badpage', pagetitle ).text() );
-				}
-			} );
-		} ) );
+		var $result = addStatusField( $elem );
+		var $statusField = $result[ 0 ];
+		var $statusFieldLabel = $result[ 1 ];
+		validateTitle( $elem, callback, $statusField, $statusFieldLabel );
+		var widget = OO.ui.infuse( $( $elem ) );
+		widget.on(
+			'change',
+			OO.ui.debounce(
+				function () {
+					validateTitle( $elem, callback, $statusField, $statusFieldLabel );
+				},
+				250
+			)
+		);
 	}
 
 	function isValidSpamList( pages ) {
@@ -92,17 +125,11 @@ $( function () {
 
 	// Only bind once for 'blur' so that the user can fill it in without errors;
 	// after that, look at every change for immediate feedback.
-	$spamlist.one( 'blur', function () {
-		addPageTitleValidation( $( this ), isValidSpamList );
+	$( $( '#mw-massmessage-form-spamlist input' ) ).one( 'blur', function () {
+		addPageTitleValidation( $( '#mw-massmessage-form-spamlist' ), isValidSpamList );
 	} );
 
-	$massmessagepage.one( 'blur', function () {
-		addPageTitleValidation( $( this ), isValidPageMessage );
+	$( $( '#mw-massmessage-form-page input' ) ).one( 'blur', function () {
+		addPageTitleValidation( $( '#mw-massmessage-form-page' ), isValidPageMessage );
 	} );
-
-	// Autocomplete for spamlist titles
-	autocomplete.enableTitleComplete( $spamlist );
-
-	// Autocomplete for pages to send as message
-	autocomplete.enableTitleComplete( $massmessagepage );
 } );
