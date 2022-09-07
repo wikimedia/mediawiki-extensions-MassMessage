@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Calak",
+			"Halbast",
 			"Muhammed taha",
 			"Sarchia",
 			"Épine"
@@ -30,6 +31,7 @@
 	"massmessage-hidden-comment": "<!-- پەیامەکە لەلایەن بەکارھێنەر:$1@$2 نێردراوە بە بەکارھێنانی ئەم پێڕستە: $3 -->",
 	"massmessage-parse-badurl": "«$1» پێگەیەکی دروست نییە.",
 	"massmessage-parse-badpage": "«$1» ناوێکی دروستی پەڕە نییە.",
+	"massmessage-parse-badspamlist": "«$1» پێڕستێکی تەواوی پەڕەکان نییە.",
 	"right-massmessage": "ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر",
 	"action-massmessage": "ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر",
 	"log-name-massmessage": "لۆگی پەیامی بەکۆمەڵ",

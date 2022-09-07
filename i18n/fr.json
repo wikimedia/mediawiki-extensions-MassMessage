@@ -65,6 +65,7 @@
 	"massmessage-badhtml": "Votre message semble contenir {{PLURAL:$2|une balise HTML mal fermée|des balises HTML mal fermées}} :  $1.",
 	"massmessage-parse-badurl": "« $1 » n’est pas un site valide",
 	"massmessage-parse-badpage": "« $1 » n’est pas un titre de page valide",
+	"massmessage-parse-badspamlist": "« $1 » n’est pas une liste de pages valide.",
 	"massmessage-parse-badexternal": "\"$1\" n'est pas un titre de page valide. Les cibles Interwiki doivent être spécifiés à l'aide du paramètre de site (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Les messages ne peuvent être envoyés qu’aux pages locales.",
 	"right-massmessage": "Envoyer un message à plusieurs utilisateurs à la fois",

@@ -3,6 +3,7 @@
 		"authors": [
 			"NehalDaveND",
 			"Phoenix303",
+			"Saurmandal",
 			"Siddhartha Ghai",
 			"संजीव कुमार"
 		]
@@ -33,6 +34,7 @@
 	"massmessage-badhtml": "आपके सन्देश में {{PLURAL:$2|एक खुला एच॰टी॰एम॰एल टैग हो सकता है|खुले एच॰टी॰एम॰एल टैग हो सकते हैं}}: $1।",
 	"massmessage-parse-badurl": "\"$1\" मान्य साइट नहीं है।",
 	"massmessage-parse-badpage": "\"$1\" मान्य पृष्ठ शीर्षक नहीं है।",
+	"massmessage-parse-badspamlist": "\"$1\" पृष्ठों की मान्य सूची नहीं है।",
 	"massmessage-parse-badexternal": "\"$1\" एक वैध पृष्ठ शीर्षक नहीं है। अन्तर्विकि लक्ष्यों को साइट-प्राचलों से इंगित करना चाहिए। (<kbd>|site=www.example.org</kbd>)",
 	"massmessage-global-disallowed": "सन्देश केवल स्थानीय पृष्ठों को भेजे जा सकते हैं।",
 	"right-massmessage": "अनेक सदस्यों को इकट्ठे सन्देश भेजें",
