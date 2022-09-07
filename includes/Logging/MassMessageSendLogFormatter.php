@@ -14,7 +14,8 @@ use Title;
 
 class MassMessageSendLogFormatter extends LogFormatter {
 
-	protected function getMessageParameters() {
+	/** @inheritDoc */
+	protected function getMessageParameters(): array {
 		// First call the main function to load the other values
 		parent::getMessageParameters();
 
@@ -55,6 +56,7 @@ class MassMessageSendLogFormatter extends LogFormatter {
 		return $this->parsedParameters;
 	}
 
+	/** @inheritDoc */
 	protected function getMessageKey(): string {
 		$params = $this->getMessageParameters();
 		$key = parent::getMessageKey();

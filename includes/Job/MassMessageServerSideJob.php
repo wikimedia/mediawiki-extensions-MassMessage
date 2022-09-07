@@ -22,6 +22,10 @@ use WikitextContent;
  */
 
 class MassMessageServerSideJob extends MassMessageJob {
+	/**
+	 * @param Title $title
+	 * @param array $params
+	 */
 	public function __construct( Title $title, array $params ) {
 		Job::__construct( 'MassMessageServerSideJob', $title, $params );
 		$this->removeDuplicates = true;
@@ -47,6 +51,11 @@ class MassMessageServerSideJob extends MassMessageJob {
 		return Status::newGood( $this->params['message'] );
 	}
 
+	/**
+	 * @param string $text
+	 * @param string $subject
+	 * @return bool
+	 */
 	protected function editPage( string $text, string $subject ): bool {
 		$tries = 1;
 		$titleText = $this->title->getPrefixedText();

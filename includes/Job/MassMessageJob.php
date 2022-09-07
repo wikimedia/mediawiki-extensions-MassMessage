@@ -216,14 +216,29 @@ class MassMessageJob extends Job {
 		);
 	}
 
+	/**
+	 * @param string $text
+	 * @param string $subject
+	 * @return bool
+	 */
 	protected function editPage( string $text, string $subject ): bool {
 		return $this->messageSender->editPage( $this->title, $text, $subject, $this->getUser() );
 	}
 
+	/**
+	 * @param string $text
+	 * @param string $subject
+	 * @return bool
+	 */
 	protected function addLQTThread( string $text, string $subject ): bool {
 		return $this->messageSender->addLQTThread( $this->title, $text, $subject, $this->getUser() );
 	}
 
+	/**
+	 * @param string $text
+	 * @param string $subject
+	 * @return bool
+	 */
 	protected function addFlowTopic( string $text, string $subject ): bool {
 		return $this->messageSender->addFlowTopic( $this->title, $text, $subject, $this->getUser() );
 	}
