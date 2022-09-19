@@ -51,6 +51,7 @@
 	"massmessage-badhtml": "Tu message pote haber {{PLURAL:$2|un etiquetta|etiquettas}} HTML non claudite: $1.",
 	"massmessage-parse-badurl": "\"$1\" non es un sito valide.",
 	"massmessage-parse-badpage": "\"$1\" non es un titulo de pagina valide.",
+	"massmessage-parse-badspamlist": "\"$1\" non es un lista valide de paginas.",
 	"massmessage-parse-badexternal": "\"$1\" non es un titulo de pagina valide. Destinationes interwiki debe esser specificate con le parametro 'site' (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Messages pote solmente esser inviate a paginas local.",
 	"right-massmessage": "Inviar un message a plure usatores al mesme tempore",

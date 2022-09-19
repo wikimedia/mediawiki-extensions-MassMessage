@@ -52,7 +52,7 @@
 	"massmessage-badhtml": "Ваше сообщение может содержать {{PLURAL:$2|1=незакрытый HTML-тег|незакрытые HTML-теги}}: $1.",
 	"massmessage-parse-badurl": "«$1» — некорректный адрес сайта.",
 	"massmessage-parse-badpage": "«$1» — некорректный заголовок страницы.",
-	"massmessage-parse-badspamlist": "\" $1 \" не является допустимым списком страниц.",
+	"massmessage-parse-badspamlist": "«$1» не является допустимым списком страниц.",
 	"massmessage-parse-badexternal": "«$1» — некорректный заголовок страницы. Интервики-цели необходимо указывать, используя параметр сайта (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Сообщения могут быть отправлены только на локальные страницы.",
 	"right-massmessage": "Отправка сообщений нескольким участникам одновременно",
