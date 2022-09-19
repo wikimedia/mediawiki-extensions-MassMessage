@@ -7,7 +7,7 @@
 	},
 	"apihelp-editmassmessagelist-description": "Editar uma lista de entrega de mensagens em massa.",
 	"apihelp-editmassmessagelist-summary": "Editar uma lista de entrega de mensagens em massa.",
-	"apihelp-editmassmessagelist-param-spamlist": "Titulo da lista de entregas a ser atualizada.",
+	"apihelp-editmassmessagelist-param-spamlist": "Título da lista de entregas a ser atualizada.",
 	"apihelp-editmassmessagelist-param-add": "Títulos a adicionar à lista.",
 	"apihelp-editmassmessagelist-param-remove": "Títulos a remover da lista.",
 	"apihelp-editmassmessagelist-param-description": "Descrição nova para a lista de entrega.",
