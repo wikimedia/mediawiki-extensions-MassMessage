@@ -2,12 +2,23 @@
 	"@metadata": {
 		"authors": [
 			"Conquistador",
-			"Kolega2357"
+			"Kolega2357",
+			"Vlad5250"
 		]
 	},
+	"massmessage": "Slanje masovnih poruka",
+	"createmassmessagelist": "Pravljenje spiska isporuke masovnih poruka",
+	"editmassmessagelist": "Uređivanje spiska isporuke masovnih poruka",
+	"massmessage-desc": "Dozvoljava korisnicima da lako šalju poruku na spisak korisnika",
+	"massmessage-form-spamlist": "Stranica ili kategorija sa spiskom stranica na kojima treba ostaviti poruku:",
+	"massmessage-form-subject": "Naslov poruke. Koristi se i u sažetku izmjene.",
+	"massmessage-form-subject-help": "Ovo se zanemaruje ako je odeljak stranice odabran za slanje kao naslov",
+	"massmessage-form-message": "Tekst poruke:",
+	"massmessage-form-page": "Stranica koja će biti poslana kao poruka:",
 	"massmessage-form-preview": "Pregled",
 	"massmessage-form-submit": "Pošalji",
 	"massmessage-fieldset-preview": "Pregled",
+	"massmessage-fieldset-info": "Informacije",
 	"log-name-massmessage": "Evidencija masovnih poruka",
 	"log-description-massmessage": "Ovi događaji prate slanje poruka korisnicima.",
 	"massmessage-content-removeno": "Otkaži"
