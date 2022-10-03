@@ -3,11 +3,13 @@
 		"authors": [
 			"NehalDaveND",
 			"बिप्लब आनन्द",
-			"Bada Kaji"
+			"Bada Kaji",
+			"बडा काजी"
 		]
 	},
 	"massmessage": "सामूहिक सन्देश पठाउनुहोस्",
 	"createmassmessagelist": "सामूहिक सन्देश पठाउन सूची तयार गर्नुहोस्",
+	"editmassmessagelist": "सामूहिक सन्देश वितरण सूची सम्पादन गर्नुहोस्",
 	"massmessage-form-preview": "पूर्वावलोकन",
 	"massmessage-form-submit": "पठाउनुहोस्",
 	"massmessage-fieldset-preview": "पूर्वावलोकन",
@@ -21,5 +23,6 @@
 	"massmessage-create-title": "शीर्षक:",
 	"massmessage-create-source": "स्रोत:",
 	"massmessage-edit-title": "शीर्षक:",
-	"massmessage-edit-description": "विवरण:"
+	"massmessage-edit-description": "विवरण:",
+	"massmessage-edit-summary": "सम्पादन सारांश:"
 }
