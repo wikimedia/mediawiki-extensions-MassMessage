@@ -56,6 +56,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 				'type' => 'title',
 				'creatable' => true,
 				'label-message' => 'massmessage-create-source',
+				'hide-if' => [ '!==', 'content', 'import' ],
 			],
 		];
 	}

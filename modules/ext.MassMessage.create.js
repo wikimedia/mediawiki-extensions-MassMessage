@@ -7,8 +7,7 @@ $( function () {
 		$titleStatus = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
 		$sourceStatus = OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
 		$formTitle = $titleStatus.getField(),
-		$formSource = $sourceStatus.getField(),
-		$formSourceTr = $formSource.$element.parent().parent();
+		$formSource = $sourceStatus.getField();
 
 	checkTitle = function () {
 		var title = $formTitle.getValue();
@@ -79,19 +78,6 @@ $( function () {
 				page.contentmodel === 'MassMessageListContent' );
 		}
 	};
-
-	// Set the correct field state on load.
-	if ( !$( '[value="import"][type="radio"]' ).is( ':checked' ) ) {
-		$formSourceTr.hide(); // Progressive disclosure
-	}
-
-	$( '#mw-input-wpcontent' ).find( '[value="new"]' ).on( 'click', function () {
-		$formSourceTr.hide();
-	} );
-
-	$( '#mw-input-wpcontent' ).find( '[value="import"]' ).on( 'click', function () {
-		$formSourceTr.show();
-	} );
 
 	// Warn if page title is already in use
 	$formTitle.$input.one( 'blur', function () {
