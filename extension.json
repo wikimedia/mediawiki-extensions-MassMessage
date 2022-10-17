@@ -95,8 +95,7 @@
 		"ext.MassMessage.special.js": {
 			"packageFiles": [
 				"ext.MassMessage.special.js",
-				"ext.MassMessage.badhtml.js",
-				"ext.MassMessage.autocomplete.js"
+				"ext.MassMessage.badhtml.js"
 			],
 			"styles": "ext.MassMessage.validation.css",
 			"messages": [
@@ -106,7 +105,6 @@
 			],
 			"dependencies": [
 				"jquery.lengthLimit",
-				"jquery.ui",
 				"mediawiki.jqueryMsg"
 			]
 		},
