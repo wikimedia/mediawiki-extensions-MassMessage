@@ -139,8 +139,7 @@
 		},
 		"ext.MassMessage.create": {
 			"packageFiles": [
-				"ext.MassMessage.create.js",
-				"ext.MassMessage.autocomplete.js"
+				"ext.MassMessage.create.js"
 			],
 			"styles": "ext.MassMessage.validation.css",
 			"messages": [
@@ -151,7 +150,7 @@
 				"oojs-ui-core",
 				"mediawiki.htmlform.ooui",
 				"mediawiki.jqueryMsg",
-				"jquery.ui"
+				"mediawiki.widgets"
 			]
 		},
 		"ext.MassMessage.edit": {

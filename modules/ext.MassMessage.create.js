@@ -1,8 +1,7 @@
 $( function () {
 	'use strict';
 
-	var autocomplete = require( './ext.MassMessage.autocomplete.js' ),
-		checkTitle, checkSource, pageIsValidSource,
+	var checkTitle, checkSource, pageIsValidSource,
 		checkSourceTimeout = -1,
 		queryTitleApiRequest,
 		$titleStatus = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
@@ -101,13 +100,11 @@ $( function () {
 	} );
 
 	// Warn if delivery list source is invalid
-	$formSource.$input.on( 'input autocompleteselect', function () {
+	$formSource.on( 'change', function () {
 		// Debouncing - don't want to make an API call per request, nor give an error
 		// when the user starts typing
 		$sourceStatus.setErrors( [] );
 		clearTimeout( checkSourceTimeout );
 		checkSourceTimeout = setTimeout( checkSource, 300 );
 	} );
-
-	autocomplete.enableTitleComplete( $formSource.$input );
 } );

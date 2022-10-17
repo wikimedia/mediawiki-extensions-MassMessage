@@ -53,7 +53,8 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 				'label-message' => 'massmessage-create-content',
 			],
 			'source' => [
-				'type' => 'text',
+				'type' => 'title',
+				'creatable' => true,
 				'label-message' => 'massmessage-create-source',
 			],
 		];
