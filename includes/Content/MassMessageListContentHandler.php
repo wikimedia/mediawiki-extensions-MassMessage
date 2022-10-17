@@ -299,7 +299,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 
 				// Generate the HTML for the link to the target.
 				if ( $site === 'local' ) {
-					$targetLink = $linkRenderer->makeKnownLink( $title );
+					$targetLink = $linkRenderer->makeLink( $title );
 				} else {
 					$targetLink = Linker::makeExternalLink(
 						"//$site$wgScript?title=" . $title->getPrefixedURL(),
