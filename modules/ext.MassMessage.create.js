@@ -4,13 +4,13 @@ $( function () {
 	var checkTitle, checkSource, pageIsValidSource,
 		checkSourceTimeout = -1,
 		queryTitleApiRequest,
-		$titleStatus = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
-		$sourceStatus = OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
-		$formTitle = $titleStatus.getField(),
-		$formSource = $sourceStatus.getField();
+		titleWidget = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
+		sourceWidget = OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
+		titleField = titleWidget.getField(),
+		sourceField = sourceWidget.getField();
 
 	checkTitle = function () {
-		var title = $formTitle.getValue();
+		var title = titleField.getValue();
 		if ( title ) {
 			if ( queryTitleApiRequest ) {
 				queryTitleApiRequest.abort();
@@ -28,20 +28,20 @@ $( function () {
 					!data.query.pages[ 0 ].missing
 				) {
 					// Page with title already exists
-					$titleStatus.setErrors( [ mw.message( 'massmessage-create-exists-short' ).text() ] );
+					titleWidget.setErrors( [ mw.message( 'massmessage-create-exists-short' ).text() ] );
 				} else {
 					// Clear validation error
-					$titleStatus.setErrors( [] );
+					titleWidget.setErrors( [] );
 				}
 			} );
 		} else {
 			// Don't display an error if there is no input
-			$titleStatus.setErrors( [] );
+			titleWidget.setErrors( [] );
 		}
 	};
 
 	checkSource = function () {
-		var source = $formSource.getValue();
+		var source = sourceField.getValue();
 		if ( source ) {
 			( new mw.Api() ).get( {
 				action: 'query',
@@ -51,13 +51,13 @@ $( function () {
 			} ).done( function ( data ) {
 				if ( pageIsValidSource( data ) ) {
 					// Clear validation error
-					$sourceStatus.setErrors( [] );
+					sourceWidget.setErrors( [] );
 				} else {
-					$sourceStatus.setErrors( [ mw.message( 'massmessage-create-invalidsource-short' ).text() ] );
+					sourceWidget.setErrors( [ mw.message( 'massmessage-create-invalidsource-short' ).text() ] );
 				}
 			} );
 		} else {
-			$sourceStatus.setErrors( [] );
+			sourceWidget.setErrors( [] );
 		}
 	};
 
@@ -80,16 +80,16 @@ $( function () {
 	};
 
 	// Warn if page title is already in use
-	$formTitle.$input.one( 'blur', function () {
+	titleField.$input.one( 'blur', function () {
 		checkTitle();
-		$formTitle.on( 'change', checkTitle );
+		titleField.on( 'change', checkTitle );
 	} );
 
 	// Warn if delivery list source is invalid
-	$formSource.on( 'change', function () {
+	sourceField.on( 'change', function () {
 		// Debouncing - don't want to make an API call per request, nor give an error
 		// when the user starts typing
-		$sourceStatus.setErrors( [] );
+		sourceWidget.setErrors( [] );
 		clearTimeout( checkSourceTimeout );
 		checkSourceTimeout = setTimeout( checkSource, 300 );
 	} );
