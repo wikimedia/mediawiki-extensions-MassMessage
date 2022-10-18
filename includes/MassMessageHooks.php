@@ -6,9 +6,12 @@ use EchoEvent;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use Parser;
+use ParserOptions;
+use ParserOutput;
 use Skin;
 use SpecialPage;
 use User;
+use WikiPage;
 
 /**
  * Hooks!
@@ -184,16 +187,36 @@ class MassMessageHooks {
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		$title = $out->getTitle();
 		if ( $title->exists() && $title->hasContentModel( 'MassMessageListContent' ) ) {
-			$out->addModuleStyles( 'ext.MassMessage.styles' );
-
 			$permManager = MediaWikiServices::getInstance()->getPermissionManager();
 			if ( $out->getRevisionId() === $title->getLatestRevId()
 				&& $permManager->quickUserCan( 'edit', $out->getUser(), $title )
 			) {
-				$out->addModules( 'ext.MassMessage.content.js' );
 				$out->addBodyClasses( 'mw-massmessage-editable' );
 			}
 		}
+	}
+
+	/**
+	 * Hook: RejectParserCacheValue
+	 *
+	 * Reject old cache entries that don't contain our "ext.MassMessage.content"
+	 * module.
+	 *
+	 * @param ParserOutput $parserOutput
+	 * @param WikiPage $wikiPage
+	 * @param ParserOptions $parserOptions
+	 * @return bool
+	 */
+	public static function onRejectParserCacheValue( ParserOutput $parserOutput, WikiPage $wikiPage,
+		ParserOptions $parserOptions
+	): bool {
+		if ( $wikiPage->getTitle()->hasContentModel( 'MassMessageListContent' ) &&
+			!in_array( 'ext.MassMessage.content', $parserOutput->getModules() )
+		) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**

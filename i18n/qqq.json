@@ -98,7 +98,6 @@
 	"massmessage-content-addedlistheading": "Subheading for the list of pages just added",
 	"massmessage-content-addeditem": "A target on another wiki in the list of pages just added\n* $1 is a link to the target\n* $2 is the domain of the wiki\n{{Identical|On}}",
 	"massmessage-content-alreadyinlist": "Error message shown next to form for adding pages when the page is already in the list",
-	"massmessage-content-invalidtitlesite": "Error message shown next to the form for adding pages when the title and site are both invalid",
 	"massmessage-content-invalidtitle": "Error message shown next to the form for adding pages when the title is invalid",
 	"massmessage-content-invalidsite": "Error message shown next to the form for adding pages when the site is invalid",
 	"massmessage-content-adderror": "Error message shown next to the form for adding pages when the API request failed\n* $1 is the error code",

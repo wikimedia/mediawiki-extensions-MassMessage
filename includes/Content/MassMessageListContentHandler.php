@@ -18,6 +18,13 @@ use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Widget\TitleInputWidget;
+use OOUI\ActionFieldLayout;
+use OOUI\ButtonInputWidget;
+use OOUI\ComboBoxInputWidget;
+use OOUI\FieldLayout;
+use OOUI\FormLayout;
+use OutputPage;
 use ParserOutput;
 use RequestContext;
 use Status;
@@ -238,6 +245,8 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$attribs = [ 'lang' => $pageLang->getHtmlCode(), 'dir' => $pageLang->getDir(),
 			'class' => 'mw-content-' . $pageLang->getDir() ];
 
+		$output->setEnableOOUI( true );
+		OutputPage::setupOOUI();
 		$output->setText( $warning . Html::rawElement( 'div', $attribs, $description ) . self::getAddForm( $lang )
 			. $this->getTargetsHtml( $content, $lang ) );
 
@@ -251,6 +260,9 @@ class MassMessageListContentHandler extends JsonContentHandler {
 					. Title::newFromText( $target['title'] )->getPrefixedURL() );
 			}
 		}
+
+		$output->addModuleStyles( [ 'ext.MassMessage.styles' ] );
+		$output->addModules( [ 'ext.MassMessage.content' ] );
 	}
 
 	/**
@@ -373,22 +385,63 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$html .= Html::element( 'h2', [],
 			wfMessage( 'massmessage-content-addheading' )->inLanguage( $lang )->text() );
 
-		$html .= Html::openElement( 'form', [ 'id' => 'mw-massmessage-addform' ] );
-		$html .= Html::element( 'label', [ 'for' => 'mw-massmessage-addtitle' ],
-			wfMessage( 'massmessage-content-addtitle' )->inLanguage( $lang )->text() );
-		$html .= Html::input( 'title', '', 'text', [ 'id' => 'mw-massmessage-addtitle' ] );
-		if ( $wgAllowGlobalMessaging && count( DatabaseLookup::getDatabases() ) > 1 ) {
-			$html .= Html::element( 'label', [ 'for' => 'mw-massmessage-addsite' ],
-				wfMessage( 'massmessage-content-addsite' )->inLanguage( $lang )->text() );
-			$html .= Html::input( 'site', '', 'text', [
-				'id' => 'mw-massmessage-addsite',
-				'placeholder' => UrlHelper::getBaseUrl( $wgCanonicalServer )
-			] );
+		$titleWidget = new TitleInputWidget( [] );
+		$titleLabel = wfMessage( 'massmessage-content-addtitle' )->inLanguage( $lang )->text();
+		$submitWidget = new ButtonInputWidget( [
+			'type' => 'submit',
+			'label' => wfMessage( 'massmessage-content-addsubmit' )->inLanguage( $lang )->text(),
+		] );
+		$sites = DatabaseLookup::getDatabases();
+		if ( $wgAllowGlobalMessaging && count( $sites ) > 1 ) {
+			// Treat all 3 widgets as distinct items in the layout
+			$items = [
+				new FieldLayout(
+					$titleWidget,
+					[
+						'id' => 'mw-massmessage-addtitle',
+						'label' => $titleLabel,
+						'align' => 'top',
+					],
+				),
+				new FieldLayout(
+					new ComboBoxInputWidget( [
+						'name' => 'site',
+						'placeholder' => UrlHelper::getBaseUrl( $wgCanonicalServer ),
+						'autocomplete' => true,
+						'options' => array_map(
+							static function ( $domain ) {
+								return [ 'data' => $domain, 'label' => $domain ];
+							},
+							array_keys( $sites )
+						),
+					] ),
+					[
+						'id' => 'mw-massmessage-addsite',
+						'label' => wfMessage( 'massmessage-content-addsite' )->inLanguage( $lang )->text(),
+						'align' => 'top',
+					]
+				),
+				new FieldLayout( $submitWidget )
+			];
+		} else {
+			// Use a joined layout
+			$items = [
+				new ActionFieldLayout(
+					$titleWidget,
+					$submitWidget,
+					[
+						'id' => 'mw-massmessage-addtitle',
+						'label' => $titleLabel,
+						'align' => 'top',
+					]
+				)
+			];
 		}
-		$html .= Html::input( 'submit',
-			wfMessage( 'massmessage-content-addsubmit' )->inLanguage( $lang )->text(),
-			'submit', [ 'id' => 'mw-massmessage-addsubmit' ] );
-		$html .= Html::closeElement( 'form' );
+		$html .= new FormLayout( [
+			'id' => 'mw-massmessage-addform',
+			'items' => $items,
+			'infusable' => true,
+		] );
 
 		// List of added pages
 		$html .= Html::rawElement(

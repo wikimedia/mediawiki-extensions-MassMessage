@@ -76,7 +76,8 @@
 		"SkinTemplateNavigation::Universal": "MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation",
 		"BeforePageDisplay": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforePageDisplay",
 		"ListDefinedTags": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags",
-		"ChangeTagsListActive": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags"
+		"ChangeTagsListActive": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags",
+		"RejectParserCacheValue": "MediaWiki\\MassMessage\\MassMessageHooks::onRejectParserCacheValue"
 	},
 	"ContentHandlers": {
 		"MassMessageListContent": "MediaWiki\\MassMessage\\Content\\MassMessageListContentHandler"
@@ -108,10 +109,9 @@
 				"mediawiki.jqueryMsg"
 			]
 		},
-		"ext.MassMessage.content.js": {
+		"ext.MassMessage.content": {
 			"packageFiles": [
-				"ext.MassMessage.content.js",
-				"ext.MassMessage.autocomplete.js"
+				"ext.MassMessage.content.js"
 			],
 			"messages": [
 				"massmessage-content-remove",
@@ -122,17 +122,17 @@
 				"massmessage-content-removeyes",
 				"massmessage-content-removeno",
 				"massmessage-content-alreadyinlist",
-				"massmessage-content-invalidtitlesite",
 				"massmessage-content-invalidtitle",
 				"massmessage-content-invalidsite",
 				"massmessage-content-adderror"
 			],
 			"dependencies": [
 				"jquery.confirmable",
-				"jquery.ui",
 				"mediawiki.api",
 				"mediawiki.util",
-				"mediawiki.jqueryMsg"
+				"mediawiki.jqueryMsg",
+				"mediawiki.widgets",
+				"oojs-ui"
 			]
 		},
 		"ext.MassMessage.create": {

@@ -1,9 +1,17 @@
 $( function () {
 	'use strict';
 
-	var autocomplete = require( './ext.MassMessage.autocomplete.js' ),
-		listShown = false,
-		appendAdded, getApiParam, removeHandler, confirmableParams, showAddError;
+	var listShown = false,
+		formLayout = OO.ui.infuse( $( '#mw-massmessage-addform' ) ),
+		titleWidget = OO.ui.infuse( $( '#mw-massmessage-addtitle' ) ),
+		titleField = titleWidget.getField(),
+		$site = $( '#mw-massmessage-addsite' ),
+		appendAdded, getApiParam, removeHandler, confirmableParams,
+		siteWidget, siteField;
+	if ( $site.length ) {
+		siteWidget = OO.ui.infuse( $site );
+		siteField = siteWidget.getField();
+	}
 
 	// Append an added page to the displayed list.
 	appendAdded = function ( title, site, missing ) {
@@ -111,8 +119,7 @@ $( function () {
 				}
 			} );
 		} ).fail( function ( errorCode ) {
-			// eslint-disable-next-line no-alert
-			alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );
+			OO.ui.alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );
 		} );
 	};
 
@@ -126,49 +133,16 @@ $( function () {
 		}
 	};
 
-	// Show an error next to the add pages form.
-	showAddError = function ( msgKey, errorCode ) {
-		var message;
-		if ( errorCode === undefined ) {
-			// The following messages are used here:
-			// * massmessage-content-alreadyinlist
-			// * massmessage-content-invalidtitlesite
-			// * massmessage-content-invalidtitle
-			// * massmessage-content-invalidsite
-			message = mw.message( msgKey ).escaped();
-		} else {
-			// The following messages are used here:
-			// * massmessage-content-adderror
-			// Since only 1 key is used, the lint rule fails
-			// eslint-disable-next-line mediawiki/msg-doc
-			message = mw.message( msgKey, errorCode ).escaped();
-		}
-		$( '#mw-massmessage-addform' ).append(
-			// FIXME: Use CSS transition
-			// eslint-disable-next-line no-jquery/no-fade
-			$( '<span>' ).addClass( 'error' ).html( message ).hide().fadeIn()
-		);
-	};
-
-	// Autocomplete for page titles
-	autocomplete.enableTitleComplete( $( '#mw-massmessage-addtitle' ) );
-
-	// Autocomplete for sites
-	autocomplete.enableSiteComplete( $( '#mw-massmessage-addsite' ) );
-
 	// Register handler for remove links.
 	$( '.mw-massmessage-removelink a' ).confirmable( confirmableParams );
 
 	// Handle add pages form.
-	$( '#mw-massmessage-addform' ).on( 'submit', function ( e ) {
-		var title, site, apiResult, page,
-			$site = $( '#mw-massmessage-addsite' );
+	formLayout.on( 'submit', function () {
+		var title, site, apiResult, page;
 
-		e.preventDefault();
-
-		title = $( '#mw-massmessage-addtitle' ).val().trim();
-		if ( $site.length ) {
-			site = $site.val().trim();
+		title = titleField.getValue().trim();
+		if ( siteField ) {
+			site = siteField.getValue().trim();
 		} else {
 			site = '';
 		}
@@ -177,7 +151,10 @@ $( function () {
 		}
 
 		// Clear previous error messages.
-		$( '#mw-massmessage-addform .error' ).remove();
+		titleWidget.setErrors( [] );
+		if ( siteWidget ) {
+			siteWidget.setErrors( [] );
+		}
 
 		( new mw.Api() ).postWithToken( 'csrf', {
 			action: 'editmassmessagelist',
@@ -195,23 +172,24 @@ $( function () {
 						'missing' in page
 					);
 					// Clear the input fields
-					$( '#mw-massmessage-addtitle' ).val( '' );
-					$( '#mw-massmessage-addsite' ).val( '' );
+					titleField.setValue( '' );
+					if ( siteField ) {
+						siteField.setValue( '' );
+					}
 				} else { // None added, i.e. it's already in the list
-					showAddError( 'massmessage-content-alreadyinlist' );
+					titleWidget.setErrors( [ mw.msg( 'massmessage-content-alreadyinlist' ) ] );
 				}
 			} else { // The input was invalid.
 				page = apiResult.invalidadd[ 0 ];
-				if ( 'invalidtitle' in page && 'invalidsite' in page ) {
-					showAddError( 'massmessage-content-invalidtitlesite' );
-				} else if ( 'invalidtitle' in page ) {
-					showAddError( 'massmessage-content-invalidtitle' );
-				} else {
-					showAddError( 'massmessage-content-invalidsite' );
+				if ( 'invalidtitle' in page ) {
+					titleWidget.setErrors( [ mw.msg( 'massmessage-content-invalidtitle' ) ] );
+				}
+				if ( 'invalidsite' in page && siteWidget ) {
+					siteWidget.setErrors( [ mw.msg( 'massmessage-content-invalidsite' ) ] );
 				}
 			}
 		} ).fail( function ( errorCode ) {
-			showAddError( 'massmessage-content-adderror', errorCode );
+			titleWidget.setErrors( [ mw.msg( 'massmessage-content-adderror', errorCode ) ] );
 		} );
 	} );
 } );
