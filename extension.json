@@ -50,9 +50,6 @@
 	"LogTypes": [
 		"massmessage"
 	],
-	"APIListModules": {
-		"mmsites": "MediaWiki\\MassMessage\\Api\\ApiQueryMMSites"
-	},
 	"APIPropModules": {
 		"mmcontent": "MediaWiki\\MassMessage\\Api\\ApiQueryMMContent"
 	},

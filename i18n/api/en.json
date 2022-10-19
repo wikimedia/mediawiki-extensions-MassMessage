@@ -22,10 +22,6 @@
 	"apihelp-massmessage-example-1": "Send a message to the list at [[Signpost Spamlist]] with the subject \"New Signpost\", and message body of \"Please read it\".",
 	"apihelp-massmessage-example-2": "Send a message to the list at [[Signpost Spamlist]] with the subject \"New Signpost\", and the message as the content of the page \"Help Page\".",
 	"apihelp-massmessage-example-3": "Send a message to the list at [[Signpost Spamlist]] with the subject \"New Signpost\", and message body of \"Please read it\" appended with the content from page \"Help Page\".",
-	"apihelp-query+mmsites-description": "Serve autocomplete requests for the site field in MassMessage.",
-	"apihelp-query+mmsites-summary": "Serve autocomplete requests for the site field in MassMessage.",
-	"apihelp-query+mmsites-param-term": "The prefix to search for.",
-	"apihelp-query+mmsites-example-1": "Autocomplete \"en\"",
 	"apihelp-query+mmcontent-summary": "Get the description and targets of a spamlist",
 	"apihelp-query+mmcontent-example-1": "Get page and spamlist information of [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "The specified spamlist is invalid."
