@@ -8,6 +8,7 @@ use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use Status;
+use TextContent;
 use Title;
 use WikitextContent;
 
@@ -57,7 +58,9 @@ class MassMessageServerSideJob extends MassMessageJob {
 			$flags = 0;
 			if ( $page->exists() ) {
 				$oldContent = $page->getContent( RevisionRecord::RAW );
-				$text = $oldContent->getNativeData() . "\n\n" . $text;
+				/** @var TextContent $oldContent */
+				'@phan-var TextContent $oldContent';
+				$text = $oldContent->getText() . "\n\n" . $text;
 				$flags |= EDIT_UPDATE;
 			} else {
 				$flags |= EDIT_NEW;

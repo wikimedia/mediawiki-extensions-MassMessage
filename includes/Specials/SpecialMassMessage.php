@@ -22,6 +22,7 @@ use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
 use OOUI\Widget;
 use Status;
+use TextContent;
 use Title;
 use WikiMap;
 
@@ -458,8 +459,10 @@ class SpecialMassMessage extends FormSpecialPage {
 			);
 		}
 
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
 		// Check for no timestamp (Bug 54848)
-		if ( !preg_match( MassMessage::getTimestampRegex(), $content->getNativeData() ) ) {
+		if ( !preg_match( MassMessage::getTimestampRegex(), $content->getText() ) ) {
 			$this->status->fatal( 'massmessage-no-timestamp' );
 		}
 	}

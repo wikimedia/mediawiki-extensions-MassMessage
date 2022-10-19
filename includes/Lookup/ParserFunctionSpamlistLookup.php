@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage\Lookup;
 use MediaWiki\MassMessage\MassMessageHooks;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use TextContent;
 use Title;
 
 class ParserFunctionSpamlistLookup extends SpamlistLookup {
@@ -25,7 +26,10 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 	 */
 	public function fetchTargets() {
 		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->spamlist );
-		$text = $page->getContent( RevisionRecord::RAW )->getNativeData();
+		$content = $page->getContent( RevisionRecord::RAW );
+		/** @var TextContent $content */
+		'@phan-var TextContent $content';
+		$text = $content->getText();
 
 		// Prep the parser
 		$parserOptions = $page->makeParserOptions( 'canonical' );

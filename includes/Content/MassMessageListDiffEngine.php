@@ -31,8 +31,8 @@ class MassMessageListDiffEngine extends DifferenceEngine {
 
 		if ( !$old->isValid() || !$new->isValid() ) {
 			return $this->generateTextDiffBody(
-				$old->getNativeData(),
-				$new->getNativeData()
+				$old->getText(),
+				$new->getText()
 			);
 		}
 
