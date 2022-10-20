@@ -15,6 +15,11 @@ class LanguageAwareText {
 	/** @var string */
 	private $languageDirection;
 
+	/**
+	 * @param string $wikitext
+	 * @param string $languageCode
+	 * @param string $languageDirection
+	 */
 	public function __construct(
 		string $wikitext,
 		string $languageCode,
@@ -25,14 +30,17 @@ class LanguageAwareText {
 		$this->languageDirection = $languageDirection;
 	}
 
+	/** @return string */
 	public function getWikitext(): string {
 		return $this->wikitext;
 	}
 
+	/** @return string */
 	public function getLanguageCode(): string {
 		return $this->languageCode;
 	}
 
+	/** @return string */
 	public function getLanguageDirection(): string {
 		return $this->languageDirection;
 	}

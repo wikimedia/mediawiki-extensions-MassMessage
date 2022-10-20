@@ -15,7 +15,11 @@ use TextContent;
  * @license GPL-2.0-or-later
  */
 class RevisionStoreStubFactory extends TestCase {
-	public function getWithText( string $textContent ) {
+	/**
+	 * @param string $textContent
+	 * @return RevisionStore
+	 */
+	public function getWithText( string $textContent ): RevisionStore {
 		$revisionRecordStub = $this->createStub( RevisionRecord::class );
 		$revisionRecordStub->method( 'getContent' )
 			->willReturn( new TextContent( $textContent ) );
@@ -27,7 +31,10 @@ class RevisionStoreStubFactory extends TestCase {
 		return $revisionStoreStub;
 	}
 
-	public function getWithoutRevisionRecord() {
+	/**
+	 * @return RevisionStore
+	 */
+	public function getWithoutRevisionRecord(): RevisionStore {
 		$revisionRecordStub = $this->createStub( RevisionStore::class );
 		$revisionRecordStub->method( 'getRevisionByTitle' )
 			->willReturn( null );

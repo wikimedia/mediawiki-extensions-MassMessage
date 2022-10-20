@@ -253,6 +253,11 @@ class ApiEditMassMessageList extends ApiBase {
 		return $summaryMsg->inContentLanguage()->text();
 	}
 
+	/**
+	 * @see ApiBase::getAllowedParams()
+	 *
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return [
 			'spamlist' => [
@@ -302,6 +307,11 @@ class ApiEditMassMessageList extends ApiBase {
 		];
 	}
 
+	/**
+	 * @see ApiBase::getHelpUrls()
+	 *
+	 * @return array
+	 */
 	public function getHelpUrls() {
 		return [ 'https://www.mediawiki.org/wiki/Extension:MassMessage/API' ];
 	}

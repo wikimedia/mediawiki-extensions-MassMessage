@@ -17,6 +17,10 @@ use Title;
  */
 
 class MassMessageSubmitJob extends Job {
+	/**
+	 * @param Title $title
+	 * @param array $params
+	 */
 	public function __construct( Title $title, array $params ) {
 		if ( !isset( $params['timestamp'] ) ) {
 			$params['timestamp'] = MWTimestamp::now();

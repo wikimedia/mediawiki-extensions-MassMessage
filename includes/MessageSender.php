@@ -27,6 +27,10 @@ class MessageSender {
 	/** @var callable|null */
 	private $failureCallback;
 
+	/**
+	 * @param PermissionManager $permissionManager
+	 * @param callable|null $failureCallback
+	 */
 	public function __construct(
 		PermissionManager $permissionManager,
 		?callable $failureCallback
@@ -35,6 +39,13 @@ class MessageSender {
 		$this->failureCallback = $failureCallback;
 	}
 
+	/**
+	 * @param Title $target
+	 * @param string $message
+	 * @param string $subject
+	 * @param User $user
+	 * @return bool
+	 */
 	public function editPage(
 		Title $target,
 		string $message,
@@ -78,6 +89,13 @@ class MessageSender {
 		return false;
 	}
 
+	/**
+	 * @param Title $target
+	 * @param string $message
+	 * @param string $subject
+	 * @param User $user
+	 * @return bool
+	 */
 	public function addLQTThread(
 		Title $target,
 		string $message,
@@ -96,6 +114,13 @@ class MessageSender {
 		return (bool)$this->makeAPIRequest( $params, $user );
 	}
 
+	/**
+	 * @param Title $target
+	 * @param string $message
+	 * @param string $subject
+	 * @param User $user
+	 * @return bool
+	 */
 	public function addFlowTopic(
 		Title $target,
 		string $message,

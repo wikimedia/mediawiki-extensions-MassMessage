@@ -41,6 +41,11 @@ class ApiMassMessage extends ApiBase {
 		);
 	}
 
+	/**
+	 * @see ApiBase::getAllowedParams()
+	 *
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return [
 			'spamlist' => [

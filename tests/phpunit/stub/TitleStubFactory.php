@@ -14,11 +14,23 @@ use Title;
  * @license GPL-2.0-or-later
  */
 class TitleStubFactory extends TestCase {
-	public function getExistingTitle( string $titleStr, string $languageCode, string $languageDir ) {
+	/**
+	 * @param string $titleStr
+	 * @param string $languageCode
+	 * @param string $languageDir
+	 * @return Title
+	 */
+	public function getExistingTitle( string $titleStr, string $languageCode, string $languageDir ): Title {
 		return $this->getStub( $titleStr, true, $languageCode, $languageDir );
 	}
 
-	public function getNonExistingTitle( string $titleStr, string $languageCode, string $languageDir ) {
+	/**
+	 * @param string $titleStr
+	 * @param string $languageCode
+	 * @param string $languageDir
+	 * @return Title
+	 */
+	public function getNonExistingTitle( string $titleStr, string $languageCode, string $languageDir ): Title {
 		return $this->getStub( $titleStr, false, $languageCode, $languageDir );
 	}
 
@@ -27,9 +39,9 @@ class TitleStubFactory extends TestCase {
 	 * @param bool $exists
 	 * @param string $languageCode
 	 * @param string $languageDir
-	 * @return void
+	 * @return Title
 	 */
-	private function getStub( string $titleStr, bool $exists, string $languageCode, string $languageDir ) {
+	private function getStub( string $titleStr, bool $exists, string $languageCode, string $languageDir ): Title {
 		$titleStub = $this->createStub( Title::class );
 		$titleStub->method( 'exists' )
 			->willReturn( $exists );

@@ -66,6 +66,10 @@ class ApiQueryMMContent extends ApiQueryBase {
 		return 'public';
 	}
 
+	/**
+	 * @see ApiBase::getAllowedParams()
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return [];
 	}

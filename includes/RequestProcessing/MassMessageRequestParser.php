@@ -20,6 +20,11 @@ use function wfMessage;
  * @license GPL-2.0-or-later
  */
 class MassMessageRequestParser {
+	/**
+	 * @param array $data
+	 * @param UserIdentity $user
+	 * @return Status
+	 */
 	public function parseRequest( array $data, UserIdentity $user ): Status {
 		// Trim all the things!
 		foreach ( $data as $k => $v ) {

@@ -15,6 +15,9 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 	 */
 	protected $spamlist;
 
+	/**
+	 * @param Title $spamlist
+	 */
 	public function __construct( Title $spamlist ) {
 		$this->spamlist = $spamlist;
 	}

@@ -20,6 +20,10 @@ class RemoteMessageContentFetcher {
 	/** @var SiteConfiguration */
 	private $siteConfiguration;
 
+	/**
+	 * @param HttpRequestFactory $requestFactory
+	 * @param SiteConfiguration $siteConfiguration
+	 */
 	public function __construct( HttpRequestFactory $requestFactory, SiteConfiguration $siteConfiguration ) {
 		$this->httpRequestFactory = $requestFactory;
 		$this->siteConfiguration = $siteConfiguration;

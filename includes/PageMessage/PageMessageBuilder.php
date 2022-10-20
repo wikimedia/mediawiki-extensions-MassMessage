@@ -33,6 +33,14 @@ class PageMessageBuilder {
 	/** @var LanguageFallback */
 	private $languageFallback;
 
+	/**
+	 * @param LocalMessageContentFetcher $localMessageContentFetcher
+	 * @param LabeledSectionContentFetcher $labeledSectionContentFetcher
+	 * @param RemoteMessageContentFetcher $remoteMessageContentFetcher
+	 * @param LanguageNameUtils $languageNameUtils
+	 * @param LanguageFallback $languageFallback
+	 * @param string $currentWikiId
+	 */
 	public function __construct(
 		LocalMessageContentFetcher $localMessageContentFetcher,
 		LabeledSectionContentFetcher $labeledSectionContentFetcher,

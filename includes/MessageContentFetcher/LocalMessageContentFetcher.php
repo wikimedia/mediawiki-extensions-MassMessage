@@ -23,6 +23,9 @@ class LocalMessageContentFetcher {
 	/** @var string */
 	private $currentWikiId;
 
+	/**
+	 * @param RevisionStore $revisionStore
+	 */
 	public function __construct( RevisionStore $revisionStore ) {
 		$this->revisionStore = $revisionStore;
 		$this->currentWikiId = WikiMap::getCurrentWikiId();

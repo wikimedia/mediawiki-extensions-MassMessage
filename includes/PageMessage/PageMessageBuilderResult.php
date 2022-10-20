@@ -22,6 +22,11 @@ class PageMessageBuilderResult {
 	/** @var LanguageAwareText|null */
 	private $pageSubject;
 
+	/**
+	 * @param Status $status
+	 * @param LanguageAwareText|null $pageMessage
+	 * @param LanguageAwareText|null $pageSubject
+	 */
 	public function __construct(
 		Status $status,
 		?LanguageAwareText $pageMessage = null,
@@ -32,22 +37,37 @@ class PageMessageBuilderResult {
 		$this->pageSubject = $pageSubject;
 	}
 
+	/**
+	 * @return Status
+	 */
 	public function getStatus(): Status {
 		return $this->status;
 	}
 
+	/**
+	 * @return LanguageAwareText|null
+	 */
 	public function getPageMessage(): ?LanguageAwareText {
 		return $this->pageMessage;
 	}
 
+	/**
+	 * @return LanguageAwareText|null
+	 */
 	public function getPageSubject(): ?LanguageAwareText {
 		return $this->pageSubject;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function isOK(): bool {
 		return $this->status->isOK();
 	}
 
+	/**
+	 * @return Message
+	 */
 	public function getResultMessage(): Message {
 		return $this->status->getMessage();
 	}

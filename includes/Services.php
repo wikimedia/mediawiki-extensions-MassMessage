@@ -27,6 +27,7 @@ class Services implements ContainerInterface {
 		$this->container = $container;
 	}
 
+	/** @return Services */
 	public static function getInstance(): Services {
 		return new self( MediaWikiServices::getInstance() );
 	}

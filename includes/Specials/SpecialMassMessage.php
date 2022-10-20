@@ -49,6 +49,11 @@ class SpecialMassMessage extends FormSpecialPage {
 	/** @var PageMessageBuilder */
 	private $pageMessageBuilder;
 
+	/**
+	 * @param LabeledSectionContentFetcher $labeledSectionContentFetcher
+	 * @param LocalMessageContentFetcher $localMessageContentFetcher
+	 * @param PageMessageBuilder $pageMessageBuilder
+	 */
 	public function __construct(
 		LabeledSectionContentFetcher $labeledSectionContentFetcher,
 		LocalMessageContentFetcher $localMessageContentFetcher,

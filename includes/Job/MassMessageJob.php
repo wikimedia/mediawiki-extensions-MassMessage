@@ -40,6 +40,10 @@ class MassMessageJob extends Job {
 	/** @var MessageSender|null */
 	private $messageSender;
 
+	/**
+	 * @param Title $title
+	 * @param array $params
+	 */
 	public function __construct( Title $title, array $params ) {
 		parent::__construct( 'MassMessageJob', $title, $params );
 		$this->removeDuplicates = true;

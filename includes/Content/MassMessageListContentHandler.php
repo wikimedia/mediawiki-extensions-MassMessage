@@ -181,12 +181,22 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		return $result;
 	}
 
+	/**
+	 * @param Title $title
+	 * @param Content|null $content
+	 * @return Language
+	 */
 	public function getPageLanguage( Title $title, Content $content = null ) {
 		// This class inherits from JsonContentHandler, which hardcodes English.
 		// Use the default method from ContentHandler instead to get the page/site language.
 		return ContentHandler::getPageLanguage( $title, $content );
 	}
 
+	/**
+	 * @param Title $title
+	 * @param Content|null $content
+	 * @return Language
+	 */
 	public function getPageViewLanguage( Title $title, Content $content = null ) {
 		// Most of the interface is rendered in user language
 		return RequestContext::getMain()->getLanguage();
