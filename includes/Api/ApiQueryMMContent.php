@@ -66,18 +66,12 @@ class ApiQueryMMContent extends ApiQueryBase {
 		return 'public';
 	}
 
-	/**
-	 * @see ApiBase::getAllowedParams()
-	 * @return array
-	 */
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [];
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 * @return array
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&prop=info|mmcontent&titles=Spam%20list'
