@@ -41,11 +41,7 @@ class ApiMassMessage extends ApiBase {
 		);
 	}
 
-	/**
-	 * @see ApiBase::getAllowedParams()
-	 *
-	 * @return array
-	 */
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'spamlist' => [
@@ -78,11 +74,7 @@ class ApiMassMessage extends ApiBase {
 		return true;
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 *
-	 * @return array
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=massmessage&spamlist=Signpost%20Spamlist&subject=New%20Signpost' .

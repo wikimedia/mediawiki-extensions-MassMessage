@@ -253,11 +253,7 @@ class ApiEditMassMessageList extends ApiBase {
 		return $summaryMsg->inContentLanguage()->text();
 	}
 
-	/**
-	 * @see ApiBase::getAllowedParams()
-	 *
-	 * @return array
-	 */
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'spamlist' => [
@@ -291,11 +287,7 @@ class ApiEditMassMessageList extends ApiBase {
 		return true;
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 *
-	 * @return array
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=editmassmessagelist&spamlist=Example&add=User%20talk%3AFoo%7CTalk%3ABar' .
@@ -307,11 +299,7 @@ class ApiEditMassMessageList extends ApiBase {
 		];
 	}
 
-	/**
-	 * @see ApiBase::getHelpUrls()
-	 *
-	 * @return array
-	 */
+	/** @inheritDoc */
 	public function getHelpUrls() {
 		return [ 'https://www.mediawiki.org/wiki/Extension:MassMessage/API' ];
 	}

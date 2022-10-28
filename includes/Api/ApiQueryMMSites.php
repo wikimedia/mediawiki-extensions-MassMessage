@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage\Api;
 
-use ApiBase;
 use ApiQueryBase;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -44,10 +43,7 @@ class ApiQueryMMSites extends ApiQueryBase {
 		return 'public';
 	}
 
-	/**
-	 * @see ApiBase::getAllowedParams()
-	 * @return array
-	 */
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'term' => [
@@ -61,10 +57,7 @@ class ApiQueryMMSites extends ApiQueryBase {
 		return true;
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 * @return array
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&list=mmsites&term=en'
