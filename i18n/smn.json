@@ -6,6 +6,8 @@
 		]
 	},
 	"massmessage-form-submit": "Vuolgât",
+	"massmessage-content-remove": "siho",
+	"massmessage-content-removeyes": "Siho",
 	"massmessage-content-removeno": "Jooskâ",
 	"massmessage-create-source": "Käldee:",
 	"massmessage-summary-add": "Lasettum [[:$1]]"
