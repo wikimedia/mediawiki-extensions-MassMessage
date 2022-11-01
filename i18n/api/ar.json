@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Meno25",
 			"ديفيد",
 			"محمد أحمد عبد الفتاح"
 		]
@@ -10,17 +11,23 @@
 	"apihelp-editmassmessagelist-param-spamlist": "عنوان قائمة التسليم للتحديث.",
 	"apihelp-editmassmessagelist-param-add": "عناوين لإضافتها إلى القائمة.",
 	"apihelp-editmassmessagelist-param-remove": "عناوين لإزالتها من القائمة.",
+	"apihelp-editmassmessagelist-param-description": "وصف جديد لقائمة التسليم.",
 	"apihelp-editmassmessagelist-example-1": "Addأضف [[User talk:Foo]] و[[Talk:Bar]] إلى قائمة التسليم [[Example]] وأزل  [[Talk:Baz]] منها",
+	"apihelp-editmassmessagelist-example-2": "عيّن وصف قائمة التسليم [[Example]] ليكون \"خدمات توصيل FooBar\"",
 	"apihelp-massmessage-description": "إرسال رسالة إلى قائمة صفحات.",
 	"apihelp-massmessage-summary": "إرسال رسالة إلى قائمة صفحات.",
 	"apihelp-massmessage-param-spamlist": "صفحة تحتوي على قائمة الصفحات لترك رسالة فيها.",
 	"apihelp-massmessage-param-subject": "سطر موضوع الرسالة.",
 	"apihelp-massmessage-param-message": "نص الرسالة.",
 	"apihelp-massmessage-param-page-message": "الصفحة التي سترسل مع متن الرسالة.",
-	"apihelp-massmessage-example-1": "أرسل رسالة إلى القائمة في [[Signpost Spamlist]] بالموضوع \"New Signpost\"، ونص الرسالة \"Please read it\"",
+	"apihelp-massmessage-example-1": "أرسل رسالة إلى القائمة على [[Signpost Spamlist]] بالموضوع \"New Signpost\" ، ونص الرسالة \"Please read it\".",
+	"apihelp-massmessage-example-2": "أرسل رسالة إلى القائمة في [[Signpost Spamlist]] بالموضوع \"New Signpost\" ، والرسالة كمحتوى الصفحة \"Help Page\".",
+	"apihelp-massmessage-example-3": "أرسل رسالة إلى القائمة الموجودة على [[Signpost Spamlist]] بالموضوع \"New Signpost\" ، ونص الرسالة \"Please read it\" مرفق بالمحتوى من صفحة \"Help Page\".",
 	"apihelp-query+mmsites-description": "تقديم طلبات الإكمال التلقائي لحقل الموقع في MassMessage.",
 	"apihelp-query+mmsites-summary": "تقديم طلبات الإكمال التلقائي لحقل الموقع في MassMessage.",
 	"apihelp-query+mmsites-param-term": "البادئة للبحث عنها.",
 	"apihelp-query+mmsites-example-1": "الإكمال التلقائي \"ar\"",
+	"apihelp-query+mmcontent-summary": "احصل على وصف وأهداف قائمة البريد العشوائي",
+	"apihelp-query+mmcontent-example-1": "الحصول على معلومات الصفحة وقائمة البريد العشوائي لـ [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "قائمة السخام المحددة غير صالحة."
 }
