@@ -236,23 +236,22 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			} else {
 				$headerKey = 'massmessage-edit-header';
 			}
-			$html = Html::rawElement( 'p', [], $this->msg( $headerKey )->parse() );
+			$html = $this->msg( $headerKey )->parseAsBlock();
 
 			// Deleted revision warning
 			if ( $this->rev->isDeleted( RevisionRecord::DELETED_TEXT ) ) {
 				$html .= Html::openElement( 'div', [ 'class' => 'mw-warning plainlinks' ] );
-				$html .= Html::rawElement( 'p', [],
-					$this->msg( 'rev-deleted-text-view' )->parse() );
+				$html .= $this->msg( 'rev-deleted-text-view' )->parseAsBlock();
 				$html .= Html::closeElement( 'div' );
 			}
 
 			// Old revision warning
 			if ( $this->rev->getId() !== $this->title->getLatestRevID() ) {
-				$html .= Html::rawElement( 'p', [], $this->msg( 'editingold' )->parse() );
+				$html .= $this->msg( 'editingold' )->parseAsBlock();
 			}
 		} else {
 			// Error determined in setParameter()
-			$html = Html::rawElement( 'p', [], $this->msg( $this->errorMsgKey )->parse() );
+			$html = $this->msg( $this->errorMsgKey )->parseAsBlock();
 		}
 		return $html;
 	}
