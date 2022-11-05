@@ -10,6 +10,7 @@ use ApiUsageException;
 use ChangeTags;
 use DeferredUpdates;
 use DerivativeRequest;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use RequestContext;
 use Title;
@@ -148,12 +149,15 @@ class MessageSender {
 	 */
 	private function makeAPIRequest( array $params, User $ourUser ): ?ApiResult {
 		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
-		global $wgHooks, $wgUser, $wgRequest;
+		global $wgUser, $wgRequest;
 
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
 		$lock = $this->permissionManager->addTemporaryUserRights( $ourUser, [ 'ipblock-exempt' ] );
-		$wgHooks['EmailConfirmed'][] = MassMessageHooks::class . '::onEmailConfirmed';
+		MediaWikiServices::getInstance()->getHookContainer()->register(
+			'EmailConfirmed',
+			MassMessageHooks::class . '::onEmailConfirmed'
+		);
 
 		$oldRequest = $wgRequest;
 		$oldUser = $wgUser;
