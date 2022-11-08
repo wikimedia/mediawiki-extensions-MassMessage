@@ -84,7 +84,7 @@
 	"massmessage-content-invalidsite": "Neveljavna stran.",
 	"massmessage-content-adderror": "Napaka API: $1",
 	"massmessage-diff-descheader": "Spremembe v opisu:",
-	"massmessage-diff-targetsheader": "Spremembe na straneh:",
+	"massmessage-diff-targetsheader": "Spremembe strani:",
 	"massmessage-ch-tojsonerror": "Seznama ni bilo mogoče zakodirati za shranjevanje.",
 	"createmassmessagelist-legend": "Ustvari seznam za pošiljanje množičnega sporočila",
 	"massmessage-create-title": "Naslov:",
