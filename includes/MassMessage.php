@@ -6,6 +6,7 @@ use CentralIdLookup;
 use Exception;
 use ExtensionRegistry;
 use ManualLogEntry;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
@@ -264,6 +265,6 @@ class MassMessage {
 	public static function isSourceTranslationPage( Title $title ): bool {
 		return ExtensionRegistry::getInstance()->isLoaded( 'Translate' ) &&
 			// @phan-suppress-next-line PhanUndeclaredClassMethod
-			\TranslatablePage::isSourcePage( $title );
+			TranslatablePage::isSourcePage( $title );
 	}
 }
