@@ -25,7 +25,7 @@
 	"massmessage-just-preview": "Ово је само преглед поруке. Притисните „{{int:massmessage-form-submit}}” да бисте је послали.",
 	"massmessage-spamlist-doesnotexist": "Наведена страница или категорија не постоји.",
 	"massmessage-spamlist-invalid": "Наведена страница не садржи важећу листу испоруке.",
-	"massmessage-empty-subject": "Поље „Тема” је празно.",
+	"massmessage-empty-subject": "За ову поруку није наведена тема.",
 	"massmessage-empty-message": "Тело поруке је празно. Наведите тело поруке, или изаберите страницу која ће бити послата као порука.",
 	"massmessage-invalid-lang": "Неважећи језички код: „$1”",
 	"massmessage-no-timestamp": "Упозорење: Ваша порука не укључује ни временску ознаку ни потпис.",
