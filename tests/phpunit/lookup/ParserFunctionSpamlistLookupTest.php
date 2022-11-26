@@ -66,9 +66,9 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 		MassMessageTest::updatePage( $title, $text );
 		$data = SpamlistLookup::getTargets( $title );
 
-		if ( empty( $check ) ) {
+		if ( $check === [] ) {
 			// Check that the spamlist is empty
-			$this->assertTrue( empty( $data ) );
+			$this->assertSame( [], $data );
 		} else {
 			$data = array_values( $data );
 			$data = $data[0]; // We're just testing the first value
