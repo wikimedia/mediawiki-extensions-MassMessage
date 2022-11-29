@@ -151,8 +151,8 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 
 		/** @var LanguageAwareText */
 		$pageMessage = $result->getPageMessage();
-		$this->assertEquals( $pageMessage->getWikitext(), $expectedContent );
-		$this->assertEquals( $pageMessage->getLanguageCode(), $expectedLanguageCode );
+		$this->assertEquals( $expectedContent, $pageMessage->getWikitext() );
+		$this->assertEquals( $expectedLanguageCode, $pageMessage->getLanguageCode() );
 	}
 
 	public function provideGetContentWithFallback() {
