@@ -12,6 +12,10 @@ This limits the extension to only posting in talk namespaces (by default) and th
 
 This allows a user to specify a page in the **User:** namespace, and the extension will automatically convert it to the **User talk:** namespace.
 
+    $wgAllowlistedMassMessageTargets = [];
+
+This is used to specify page IDs for pages that if targeted by a MassMessage will have all but the 'MassMessage exclude category' check bypassed. For example, adding the Main Page (with ID 1) to this list allows MassMessage to post there even if messages can't be posted to the mainspace.
+
     $wgMassMessageAccountUsername = 'MediaWiki message delivery';
 
 The account name that the extension will post with. If this is an existing account, the extension will automatically take it over.

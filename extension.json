@@ -15,6 +15,9 @@
 				4
 			]
 		},
+		"AllowlistedMassMessageTargets": {
+			"value": []
+		},
 		"AllowGlobalMessaging": {
 			"value": true
 		},
