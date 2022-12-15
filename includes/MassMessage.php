@@ -38,12 +38,19 @@ class MassMessage {
 	public static function getMessengerUser() {
 		global $wgMassMessageAccountUsername;
 		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+
+		// Only assign the bot flag if newSystemUser would either create
+		//  or steal the account with the username specified.
+		$user = $userFactory->newFromName( $wgMassMessageAccountUsername );
+		$shouldAssignBotFlag = !$user->isRegistered() || !$user->isSystemUser();
 
 		$user = User::newSystemUser(
 			$wgMassMessageAccountUsername, [ 'steal' => true ]
 		);
-		// Make the user a bot so it doesn't look weird
-		if ( !in_array( 'bot', $userGroupManager->getUserGroups( $user ) ) ) {
+		// Make the user a bot so it doesn't look weird when the account was stolen
+		//  or created.
+		if ( $shouldAssignBotFlag && !in_array( 'bot', $userGroupManager->getUserGroups( $user ) ) ) {
 			$userGroupManager->addUserToGroup( $user, 'bot' );
 		}
 
