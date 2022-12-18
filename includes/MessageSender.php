@@ -15,6 +15,7 @@ use MediaWiki\Request\DerivativeRequest;
 use RequestContext;
 use Title;
 use User;
+use Wikimedia\ScopedCallback;
 
 /**
  * Post messages on target pages
@@ -154,7 +155,7 @@ class MessageSender {
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
 		$lock = $this->permissionManager->addTemporaryUserRights( $ourUser, [ 'ipblock-exempt' ] );
-		MediaWikiServices::getInstance()->getHookContainer()->register(
+		$hookScope = MediaWikiServices::getInstance()->getHookContainer()->scopedRegister(
 			'EmailConfirmed',
 			MassMessageHooks::class . '::onEmailConfirmed'
 		);
@@ -215,6 +216,7 @@ class MessageSender {
 			return $api->getResult();
 		} finally {
 			// Cleanup all the stuff we polluted
+			ScopedCallback::consume( $hookScope );
 			$context->setUser( $oldCUser );
 			$context->setRequest( $oldCRequest );
 			$wgUser = $oldUser;
