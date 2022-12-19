@@ -13,7 +13,6 @@ use Html;
 use IContextSource;
 use JsonContentHandler;
 use Language;
-use LinkBatch;
 use Linker;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
@@ -279,7 +278,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 
 		// Use LinkBatch to cache existence for all local targets for later use by Linker.
 		if ( array_key_exists( 'local', $sites ) ) {
-			$lb = new LinkBatch();
+			$lb = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
 			foreach ( $sites['local'] as $target ) {
 				$lb->addObj( Title::newFromText( $target ) );
 			}

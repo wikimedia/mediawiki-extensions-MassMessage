@@ -3,7 +3,6 @@
 namespace MediaWiki\MassMessage\Api;
 
 use ApiBase;
-use LinkBatch;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
@@ -129,7 +128,7 @@ class ApiEditMassMessageList extends ApiBase {
 			$resultArray['added'] = $added;
 
 			// Use a LinkBatch to look up and cache existence for all local targets
-			$lb = new LinkBatch;
+			$lb = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
 			foreach ( $resultArray['added'] as $target ) {
 				if ( !isset( $target['site'] ) ) {
 					$lb->addObj( Title::newFromText( $target['title'] ) );
