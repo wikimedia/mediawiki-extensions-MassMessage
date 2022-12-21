@@ -10,5 +10,6 @@
 	"massmessage-content-removeyes": "Siho",
 	"massmessage-content-removeno": "Jooskâ",
 	"massmessage-create-source": "Käldee:",
-	"massmessage-summary-add": "Lasettum [[:$1]]"
+	"massmessage-summary-add": "Lasettum [[:$1]]",
+	"massmessage-summary-remove": "[[:$1]] sikkum"
 }
