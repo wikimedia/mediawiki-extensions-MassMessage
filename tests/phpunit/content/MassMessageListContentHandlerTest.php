@@ -62,6 +62,8 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			'description',
 			$targets,
 			'summary',
+			false,
+			'preferences',
 			$this->apiContext
 		);
 		$this->assertTrue( $result->isGood() );
@@ -82,6 +84,8 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			'description',
 			'not a target array',
 			'summary',
+			false,
+			'preferences',
 			$this->apiContext
 		);
 		$this->assertFalse( $result->isGood() );

@@ -3,6 +3,7 @@
 namespace MediaWiki\MassMessage\Specials;
 
 use FormSpecialPage;
+use HTMLForm;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MediaWikiServices;
@@ -62,6 +63,15 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	}
 
 	/**
+	 * Add an ID to the form for targeting with JS code.
+	 *
+	 * @param HTMLForm $form
+	 */
+	protected function alterForm( HTMLForm $form ) {
+		$form->setId( 'mw-massmessage-create-form' );
+	}
+
+	/**
 	 * @param array $data
 	 * @return Status
 	 */
@@ -110,6 +120,8 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			$data['description'],
 			$targets,
 			$editSummaryMsg->inContentLanguage()->plain(),
+			false,
+			'preferences',
 			$this->getContext()
 		);
 

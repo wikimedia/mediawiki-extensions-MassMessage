@@ -125,7 +125,6 @@
 	"massmessage-edit-title": "Label for an inputbox on [[Special:EditMassMessageList]]\n{{Identical|Title}}",
 	"massmessage-edit-description": "Label for a textarea on [[Special:EditMassMessageList]]\n{{Identical|Description}}",
 	"massmessage-edit-content": "Label for a textarea on [[Special:EditMassMessageList]]\n{{Identical|Target page}}",
-	"massmessage-edit-summary": "Label for an inputbox on [[Special:EditMassMessageList]]\n{{Identical|Edit summary}}",
 	"massmessage-edit-header": "Instructions for [[Special:EditMassMessageList]]",
 	"massmessage-edit-headermulti": "Instructions for [[Special:EditMassMessageList]] if cross-wiki delivery is enabled",
 	"massmessage-edit-invalidtitle": "Error message shown on [[Special:EditMassMessageList]] when the title is invalid",

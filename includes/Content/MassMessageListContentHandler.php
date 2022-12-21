@@ -73,11 +73,13 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	 * @param string $description
 	 * @param array $targets
 	 * @param string $summary Message key for edit summary
+	 * @param bool $isMinor Is this a minor edit
+	 * @param string $watchlist Value to pass to the edit API for the watchlist parameter.
 	 * @param IContextSource $context The calling context
 	 * @return Status
 	 */
-	public static function edit( Title $title, $description, $targets, $summary,
-		IContextSource $context
+	public static function edit(
+		Title $title, $description, $targets, $summary, $isMinor, $watchlist, IContextSource $context
 	) {
 		$jsonText = FormatJson::encode(
 			[ 'description' => $description, 'targets' => $targets ]
@@ -88,16 +90,21 @@ class MassMessageListContentHandler extends JsonContentHandler {
 
 		// Ensure that a valid context is provided to the API in unit tests
 		$der = new DerivativeContext( $context );
+		$requestParameters = [
+			'action' => 'edit',
+			'title' => $title->getFullText(),
+			'contentmodel' => 'MassMessageListContent',
+			'text' => $jsonText,
+			'watchlist' => $watchlist,
+			'summary' => $summary,
+			'token' => $context->getUser()->getEditToken(),
+		];
+		if ( $isMinor ) {
+			$requestParameters['minor'] = $isMinor;
+		}
 		$request = new DerivativeRequest(
 			$context->getRequest(),
-			[
-				'action' => 'edit',
-				'title' => $title->getFullText(),
-				'contentmodel' => 'MassMessageListContent',
-				'text' => $jsonText,
-				'summary' => $summary,
-				'token' => $context->getUser()->getEditToken(),
-			],
+			$requestParameters,
 			true // Treat data as POSTed
 		);
 		$der->setRequest( $request );
