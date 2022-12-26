@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"massmessage-content-remove": "sihko",
+	"massmessage-content-removeyes": "Sihko",
+	"massmessage-summary-remove": "[[:$1]] sihkkojuvvon"
+}
