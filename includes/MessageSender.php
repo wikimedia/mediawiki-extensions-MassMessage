@@ -157,7 +157,7 @@ class MessageSender {
 		$lock = $this->permissionManager->addTemporaryUserRights( $ourUser, [ 'ipblock-exempt' ] );
 		$hookScope = MediaWikiServices::getInstance()->getHookContainer()->scopedRegister(
 			'EmailConfirmed',
-			MassMessageHooks::class . '::onEmailConfirmed'
+			[ MassMessageHooks::class, 'onEmailConfirmed' ]
 		);
 
 		$oldRequest = $wgRequest;
