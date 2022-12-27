@@ -123,18 +123,24 @@ class MassMessageJob extends Job {
 	}
 
 	/**
-	 * Normalizes the title according to $wgNamespacesToConvert and $wgNamespacesToPostIn.
+	 * Normalizes the title according to $wgNamespacesToConvert, $wgNamespacesToPostIn
+	 * and $wgAllowlistedMassMessageTargets.
 	 *
 	 * @param Title $title
 	 * @return Title|null null if we shouldn't post on that title
 	 */
 	protected function normalizeTitle( Title $title ) {
-		global $wgNamespacesToPostIn, $wgNamespacesToConvert;
-		if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
-			$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()], $title->getText() );
+		$mainConfig = MediaWikiServices::getInstance()->getMainConfig();
+		$namespacesToConvert = $mainConfig->get( 'NamespacesToConvert' );
+		if ( isset( $namespacesToConvert[$title->getNamespace()] ) ) {
+			$title = Title::makeTitle( $namespacesToConvert[$title->getNamespace()], $title->getText() );
 		}
 		$title = UrlHelper::followRedirect( $title ) ?: $title; // Try to follow redirects
-		if ( !$title->isTalkPage() && !in_array( $title->getNamespace(), $wgNamespacesToPostIn ) ) {
+		if (
+			!$title->isTalkPage() &&
+			!in_array( $title->getNamespace(), $mainConfig->get( 'NamespacesToPostIn' ) ) &&
+			!in_array( $title->getId(), $mainConfig->get( 'AllowlistedMassMessageTargets' ) )
+		) {
 			$this->logLocalSkip( 'skipbadns' );
 			$title = null;
 		}
@@ -295,7 +301,13 @@ class MassMessageJob extends Job {
 
 		// If we're sending to a User:/User talk: page, make sure the user exists.
 		// Redirects are automatically followed in getLocalTargets
-		if ( $title->inNamespaces( NS_USER, NS_USER_TALK ) ) {
+		if (
+			$title->inNamespaces( NS_USER, NS_USER_TALK ) &&
+			!in_array(
+				$title->getId(),
+				MediaWikiServices::getInstance()->getMainConfig()->get( 'AllowlistedMassMessageTargets' )
+			)
+		) {
 			$user = User::newFromName( $title->getRootText() );
 			if ( !$user || !$user->getId() ) { // Does not exist
 				$this->logLocalSkip( 'skipnouser' );
