@@ -226,16 +226,33 @@ class SpecialMassMessage extends FormSpecialPage {
 			'default' => $request->getText( 'message' )
 		];
 
+		// If we're previewing a message and there are no errors, show the copyright warning and
+		// the submit button.
 		if ( $isPreview ) {
-			// Adds it right before the 'Send' button
-			$m['message']['help'] = EditPage::getCopyrightWarning( $this->getPageTitle( false ), 'parse', $this );
-			$m['submit-button'] = [
-				'id' => 'mw-massmessage-form-submit-button',
-				'name' => 'submit-button',
-				'type' => 'submit',
-				'tabindex' => $controlTabIndex++,
-				'default' => $this->msg( 'massmessage-form-submit' )->text()
+			$requestParser = new MassMessageRequestParser();
+			$data = [
+				'spamlist' => $request->getText( 'spamlist' ),
+				'subject' => $request->getText( 'subject' ),
+				'page-message' => $request->getText( 'page-message' ),
+				'page-message-section' => $request->getText( 'page-message-section' ),
+				'page-subject-section' => $request->getText( 'page-subject-section' ),
+				'message' => $request->getText( 'message' )
 			];
+			$status = $requestParser->parseRequest( $data, $this->getUser() );
+			if ( $status->isOK() ) {
+				$m['message']['help'] = EditPage::getCopyrightWarning(
+					$this->getPageTitle( false ),
+					'parse',
+					$this
+				);
+				$m['submit-button'] = [
+					'id' => 'mw-massmessage-form-submit-button',
+					'name' => 'submit-button',
+					'type' => 'submit',
+					'tabindex' => $controlTabIndex++,
+					'default' => $this->msg( 'massmessage-form-submit' )->text()
+				];
+			}
 		}
 
 		$m['preview-button'] = [
