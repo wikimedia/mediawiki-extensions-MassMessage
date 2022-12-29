@@ -28,7 +28,6 @@
 	"massmessage-content-addsubmit": "Agghiunci pàggina",
 	"massmessage-content-addedlistheading": "Pàggini agghiunciuti:",
 	"massmessage-content-addeditem": "$1 supra $2",
-	"massmessage-content-invalidtitlesite": "Lu tìtulu e lu situ nun sugnu vàliddi.",
 	"massmessage-content-invalidtitle": "Lu tìtulu nun è vàliddu.",
 	"massmessage-content-invalidsite": "Lu situ nun è vàliddu.",
 	"massmessage-content-adderror": "Erruri API: $1",

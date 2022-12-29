@@ -21,9 +21,5 @@
 	"apihelp-massmessage-example-1": "Send en melding til lista på [[Signpost Spamlist]] med emnet «New Signpost» og innholdsteksten «Please read it».",
 	"apihelp-massmessage-example-2": "Send en melding til lista på [[Signpost Spamlist]] med emne «New Signpost», og innholdet på siden «Help Page» som meldingens innhold.",
 	"apihelp-massmessage-example-3": "Send en melding til lista på [[Signpost Spamlist]] med emnet «New Signpost», meldingsteksten «Please read it» samt innholdet til siden «Help Page».",
-	"apihelp-query+mmsites-description": "Gi autofullføringer for nettstedsfeltet i MassMessage.",
-	"apihelp-query+mmsites-summary": "Gi autofullføringer for nettstedsfeltet i MassMessage.",
-	"apihelp-query+mmsites-param-term": "Prefikset det skal søkes etter.",
-	"apihelp-query+mmsites-example-1": "Autofullfør «en»",
 	"apierror-massmessage-invalidspamlist": "Den angitte spamlista er ugyldig."
 }

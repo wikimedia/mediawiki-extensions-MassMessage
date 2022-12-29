@@ -23,9 +23,5 @@
 	"apihelp-massmessage-example-1": "Skicka ett meddelande till listan på [[Signpost Spamlist]] med subjektet \"Ny Signpost\" och meddelandetexten \"Vänligen läs\".",
 	"apihelp-massmessage-example-2": "Skicka ett meddelande till listan på [[Signpost Spamlist]] med subjektet \"Ny Signpost\" och meddelandet som innehållet på sidan \"Hjälpsida\".",
 	"apihelp-massmessage-example-3": "Skicka ett meddelande till listan på [[Signpost Spamlist]] med subjektet \"Ny Signpost\" och meddelandetexten \"Vänligen läs\" bifogas med innehållet från sidan \"Hjälpsida\"",
-	"apihelp-query+mmsites-description": "Ge autofullständiga förfrågningar för webbplatsfältet i MassMessage.",
-	"apihelp-query+mmsites-summary": "Ge autofullständiga förfrågningar för webbplatsfältet i MassMessage.",
-	"apihelp-query+mmsites-param-term": "Prefixet att söka efter.",
-	"apihelp-query+mmsites-example-1": "Autocomplete \"sv\"",
 	"apierror-massmessage-invalidspamlist": "Den angivna spamlistan är inte giltig."
 }

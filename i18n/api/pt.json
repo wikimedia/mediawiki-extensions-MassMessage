@@ -22,10 +22,6 @@
 	"apihelp-massmessage-example-1": "Enviar uma mensagem à lista [[Signpost Spamlist]] com o assunto \"New Signpost\" e o corpo de mensagem \"Please read it\".",
 	"apihelp-massmessage-example-2": "Enviar uma mensagem à lista [[Signpost Spamlist]] com o assunto \"New Signpost\", e como mensagem o conteúdo da página \"Help Page\".",
 	"apihelp-massmessage-example-3": "Enviar uma mensagem à lista [[Signpost Spamlist]] com o assunto \"New Signpost\" e o corpo de mensagem \"Please read it\" seguido do conteúdo da página \"Help Page\".",
-	"apihelp-query+mmsites-description": "Atender os pedidos de preenchimento automático para o campo do sítio em MassMessage.",
-	"apihelp-query+mmsites-summary": "Atender os pedidos de preenchimento automático para o campo do sítio em MassMessage.",
-	"apihelp-query+mmsites-param-term": "O prefixo a pesquisar.",
-	"apihelp-query+mmsites-example-1": "Preencher automaticamente \"en\"",
 	"apihelp-query+mmcontent-summary": "Obter a descrição e os alvos de uma lista de spam",
 	"apihelp-query+mmcontent-example-1": "Obter a informação das páginas e da lista de spam de [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "A lista de spam especificada é inválida."

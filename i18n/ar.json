@@ -81,7 +81,6 @@
 	"massmessage-content-addedlistheading": "الصفحات المضافة:",
 	"massmessage-content-addeditem": "$1 على $2",
 	"massmessage-content-alreadyinlist": "الصفحة موجودة بالفعل في القائمة.",
-	"massmessage-content-invalidtitlesite": "العنوان والموقع غير صالحين.",
 	"massmessage-content-invalidtitle": "العنوان غير صالح.",
 	"massmessage-content-invalidsite": "الموقع غير صالح.",
 	"massmessage-content-adderror": "خطأ في API: $1",

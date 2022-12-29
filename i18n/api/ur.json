@@ -11,8 +11,5 @@
 	"apihelp-massmessage-description": "صفحات کی فہرست کو پیغام روانہ کریں۔",
 	"apihelp-massmessage-param-spamlist": "پیغام روانہ کرنے کے لیے فہرست صفحات پر مشتمل صفحہ۔",
 	"apihelp-massmessage-param-subject": "پیغام کے عنوان کی سطر۔",
-	"apihelp-massmessage-param-message": "پیغام کا متن۔",
-	"apihelp-query+mmsites-description": "اجتماعی پیغام میں موجود سائٹ کے خانہ کے لیے خودمکمل درخواستوں کو سامنے لائیں۔",
-	"apihelp-query+mmsites-param-term": "تلاش کرنے کے لیے سابقہ۔",
-	"apihelp-query+mmsites-example-1": "خودمکمل \"ur\""
+	"apihelp-massmessage-param-message": "پیغام کا متن۔"
 }

@@ -91,7 +91,6 @@
 	"massmessage-content-addedlistheading": "Hinzugefügte Seiten:",
 	"massmessage-content-addeditem": "$1 auf $2",
 	"massmessage-content-alreadyinlist": "Die Seite ist bereits auf der Liste.",
-	"massmessage-content-invalidtitlesite": "Der Titel und die Website sind ungültig.",
 	"massmessage-content-invalidtitle": "Der Titel ist ungültig.",
 	"massmessage-content-invalidsite": "Die Website ist ungültig.",
 	"massmessage-content-adderror": "API-Fehler: $1",

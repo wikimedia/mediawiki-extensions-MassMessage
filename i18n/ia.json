@@ -84,7 +84,6 @@
 	"massmessage-content-addedlistheading": "Paginas addite:",
 	"massmessage-content-addeditem": "$1 sur $2",
 	"massmessage-content-alreadyinlist": "Le pagina es ja in le lista.",
-	"massmessage-content-invalidtitlesite": "Le titulo e le sito es invalide.",
 	"massmessage-content-invalidtitle": "Le titulo es invalide.",
 	"massmessage-content-invalidsite": "Le sito es invalide.",
 	"massmessage-content-adderror": "Error de API: $1",

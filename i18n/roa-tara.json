@@ -77,7 +77,6 @@
 	"massmessage-content-addedlistheading": "Pàggene aggiunde:",
 	"massmessage-content-addeditem": "$1 sus a $2",
 	"massmessage-content-alreadyinlist": "'A pàgene ste ggià jndr'à l'elenghe.",
-	"massmessage-content-invalidtitlesite": "'U titole e 'u site non ge sò valide.",
 	"massmessage-content-invalidtitle": "'U titole non g'è valide.",
 	"massmessage-content-invalidsite": "'U site non g'è valide.",
 	"massmessage-content-adderror": "Errore de l'API: $1",

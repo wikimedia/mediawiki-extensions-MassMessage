@@ -98,7 +98,6 @@
 	"massmessage-content-addedlistheading": "Pages ajoutées :",
 	"massmessage-content-addeditem": "$1 sur $2",
 	"massmessage-content-alreadyinlist": "Cette page est déjà dans la liste.",
-	"massmessage-content-invalidtitlesite": "Le titre et le site ne sont pas valides.",
 	"massmessage-content-invalidtitle": "Le titre n’est pas valide.",
 	"massmessage-content-invalidsite": "Ce site n’est pas valide.",
 	"massmessage-content-adderror": "Erreur de l’API : $1",

@@ -58,7 +58,6 @@
 	"massmessage-content-addedlistheading": "Беттер қосылды:",
 	"massmessage-content-addeditem": "$2 дегендегі $1",
 	"massmessage-content-alreadyinlist": "Бет әлдеқашан тізімде.",
-	"massmessage-content-invalidtitlesite": "Атауы және сайт дұрыс емес.",
 	"massmessage-content-invalidtitle": "Атауы жарамды емес.",
 	"massmessage-content-invalidsite": "Сайт жарамды емес.",
 	"massmessage-content-adderror": "API қате: $1",

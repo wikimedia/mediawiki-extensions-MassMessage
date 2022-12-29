@@ -96,7 +96,6 @@
 	"massmessage-content-addedlistheading": "Pagina's toegevoegd:",
 	"massmessage-content-addeditem": "$1 op $2",
 	"massmessage-content-alreadyinlist": "De pagina staat al in de lijst.",
-	"massmessage-content-invalidtitlesite": "De paginanaam en de site zijn ongeldig.",
 	"massmessage-content-invalidtitle": "Deze paginanaam is ongeldig.",
 	"massmessage-content-invalidsite": "Deze site is ongeldig.",
 	"massmessage-content-adderror": "API-fout: $1",

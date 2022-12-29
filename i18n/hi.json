@@ -66,7 +66,6 @@
 	"massmessage-content-addedlistheading": "पृष्ठ जोड़े गये",
 	"massmessage-content-addeditem": "$2 पर $1",
 	"massmessage-content-alreadyinlist": "पृष्ठ पहले से ही सूची में है।",
-	"massmessage-content-invalidtitlesite": "शीर्षक और साइट अवैध हैं।",
 	"massmessage-content-invalidtitle": "शीर्षक अवैध है।",
 	"massmessage-content-invalidsite": "साइट अवैध है।",
 	"massmessage-content-adderror": "एपीआई त्रुटि: $1",

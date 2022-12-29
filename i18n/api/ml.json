@@ -12,6 +12,5 @@
 	"apihelp-massmessage-description": "ഒരു കൂട്ടം താളുകളിലേക്ക് ഒരു സന്ദേശം അയയ്ക്കുക.",
 	"apihelp-massmessage-param-spamlist": "സന്ദേശം ഇടേണ്ട താളുകളുടെ പട്ടികയാണ് താൾ ഉൾക്കൊള്ളുന്നത്.",
 	"apihelp-massmessage-param-subject": "സന്ദേശത്തിന്റെ വിഷയം.",
-	"apihelp-massmessage-param-message": "സന്ദേശത്തിന്റെ ഉള്ളടക്ക എഴുത്ത്.",
-	"apihelp-query+mmsites-param-term": "തിരയാനുള്ള പൂർവ്വാക്ഷരം."
+	"apihelp-massmessage-param-message": "സന്ദേശത്തിന്റെ ഉള്ളടക്ക എഴുത്ത്."
 }

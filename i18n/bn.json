@@ -67,7 +67,6 @@
 	"massmessage-content-addedlistheading": "পাতা যোগ করা হয়েছে:",
 	"massmessage-content-addeditem": "$2-এ $1",
 	"massmessage-content-alreadyinlist": "তালিকায় পাতাটি ইতিমধ্যেই রয়েছে।",
-	"massmessage-content-invalidtitlesite": "শিরোনাম এবং সাইট অকেজো।",
 	"massmessage-content-invalidtitle": "শিরোনামটি অকেজো।",
 	"massmessage-content-invalidsite": "সাইটটি অবৈধ।",
 	"massmessage-content-adderror": "API ত্রুটি: $1",

@@ -85,7 +85,6 @@
 	"massmessage-content-addedlistheading": "Sidor tillagda:",
 	"massmessage-content-addeditem": "$1 på $2",
 	"massmessage-content-alreadyinlist": "Sidan är redan i listan.",
-	"massmessage-content-invalidtitlesite": "Titel och webbplatsen är ogiltig.",
 	"massmessage-content-invalidtitle": "Titeln är ogiltig.",
 	"massmessage-content-invalidsite": "Webbplatsen är ogiltig.",
 	"massmessage-content-adderror": "API-fel: $1",

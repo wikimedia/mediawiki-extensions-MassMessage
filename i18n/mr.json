@@ -63,7 +63,6 @@
 	"massmessage-content-addedlistheading": "पाने जोडलीत:",
 	"massmessage-content-addeditem": "$2 वर $1",
 	"massmessage-content-alreadyinlist": "हे पान पूर्वीसूनच यादीत आहे.",
-	"massmessage-content-invalidtitlesite": "हे शीर्षक व संकेतस्थळ अवैध आहे.",
 	"massmessage-content-invalidtitle": "हे शीर्षक अवैध आहे.",
 	"massmessage-content-invalidsite": "हे संकेतस्थळ अवैध आहे.",
 	"massmessage-content-adderror": "एपीआय(API) त्रुटी: $1",

@@ -70,7 +70,6 @@
 	"massmessage-content-addedlistheading": "Pagine aggiunte:",
 	"massmessage-content-addeditem": "$1 su $2",
 	"massmessage-content-alreadyinlist": "La pagina è già nell'elenco.",
-	"massmessage-content-invalidtitlesite": "Il titolo e il sito non sono validi.",
 	"massmessage-content-invalidtitle": "Il titolo non è valido.",
 	"massmessage-content-invalidsite": "Il sito non è valido.",
 	"massmessage-content-adderror": "Errore API: $1",

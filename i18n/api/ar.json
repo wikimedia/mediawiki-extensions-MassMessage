@@ -23,10 +23,6 @@
 	"apihelp-massmessage-example-1": "أرسل رسالة إلى القائمة على [[Signpost Spamlist]] بالموضوع \"New Signpost\" ، ونص الرسالة \"Please read it\".",
 	"apihelp-massmessage-example-2": "أرسل رسالة إلى القائمة في [[Signpost Spamlist]] بالموضوع \"New Signpost\" ، والرسالة كمحتوى الصفحة \"Help Page\".",
 	"apihelp-massmessage-example-3": "أرسل رسالة إلى القائمة الموجودة على [[Signpost Spamlist]] بالموضوع \"New Signpost\" ، ونص الرسالة \"Please read it\" مرفق بالمحتوى من صفحة \"Help Page\".",
-	"apihelp-query+mmsites-description": "تقديم طلبات الإكمال التلقائي لحقل الموقع في MassMessage.",
-	"apihelp-query+mmsites-summary": "تقديم طلبات الإكمال التلقائي لحقل الموقع في MassMessage.",
-	"apihelp-query+mmsites-param-term": "البادئة للبحث عنها.",
-	"apihelp-query+mmsites-example-1": "الإكمال التلقائي \"ar\"",
 	"apihelp-query+mmcontent-summary": "احصل على وصف وأهداف قائمة البريد العشوائي",
 	"apihelp-query+mmcontent-example-1": "الحصول على معلومات الصفحة وقائمة البريد العشوائي لـ [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "قائمة السخام المحددة غير صالحة."

@@ -86,7 +86,6 @@
 	"massmessage-content-addedlistheading": "Dodane strani:",
 	"massmessage-content-addeditem": "$1 na $2",
 	"massmessage-content-alreadyinlist": "Ta stran je že na seznamu.",
-	"massmessage-content-invalidtitlesite": "Naslov in stran sta neveljavna.",
 	"massmessage-content-invalidtitle": "Neveljaven naslov.",
 	"massmessage-content-invalidsite": "Neveljavna stran.",
 	"massmessage-content-adderror": "Napaka API: $1",

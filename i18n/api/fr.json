@@ -25,10 +25,6 @@
 	"apihelp-massmessage-example-1": "Envoyer un message à la liste [[Signpost Spamlist]] avec le sujet « Nouvel indicateur », et le corps de message « Merci de le lire ».",
 	"apihelp-massmessage-example-2": "Envoyer un message à la liste à [[Signpost Spamlist]] avec le sujet « Nouveau panneau », et le message comme contenu de la page « Page d’aide ».",
 	"apihelp-massmessage-example-3": "Envoyer un message à la liste à [[Signpost Spamlist]] avec le sujet « Nouveau panneau », et le corps du message de « Veuillez lire ceci » ajouté au contenu de la page « Page d’aide ».",
-	"apihelp-query+mmsites-description": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
-	"apihelp-query+mmsites-summary": "Proposer des demandes complétées automatiquement pour le champ de site dans MassMessage.",
-	"apihelp-query+mmsites-param-term": "Le préfixe à rechercher.",
-	"apihelp-query+mmsites-example-1": "Saisie semi-automatique \"en\"",
 	"apihelp-query+mmcontent-summary": "Obtenir la description et les cibles d'une liste de spam",
 	"apihelp-query+mmcontent-example-1": "Obtenir les informations sur les pages et les listes de spam de la [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "La liste spécifiée des pourriels n’est pas valide."

@@ -65,7 +65,6 @@
 	"massmessage-content-addedlistheading": "Páxinas engadidas:",
 	"massmessage-content-addeditem": "$1 en $2",
 	"massmessage-content-alreadyinlist": "A páxina xa se atopa na lista.",
-	"massmessage-content-invalidtitlesite": "O título e sitio non son válidos.",
 	"massmessage-content-invalidtitle": "O título non é válido.",
 	"massmessage-content-invalidsite": "O sitio non é válido.",
 	"massmessage-content-adderror": "Erro de API: $1",

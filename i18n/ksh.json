@@ -57,7 +57,6 @@
 	"massmessage-content-addedlistheading": "Derbei jedonn Sigge:",
 	"massmessage-content-addeditem": "$1 {{GENDER:en+Dativ|{{ucfirst:$2}}}}",
 	"massmessage-content-alreadyinlist": "Di Sigg es ald en dä Leß.",
-	"massmessage-content-invalidtitlesite": "De Övverschreff un de ẞait sin onjöltesch.",
 	"massmessage-content-invalidtitle": "De Övverschreff es onjöltesch.",
 	"massmessage-content-invalidsite": "De ẞait es onjöltesch.",
 	"massmessage-content-adderror": "Em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Application Programming Interface\">API</i> wohd ene Fähler jefonge: $1",

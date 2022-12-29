@@ -88,7 +88,6 @@
 	"massmessage-content-addedlistheading": "已加入的頁面：",
 	"massmessage-content-addeditem": "$1 於 $2",
 	"massmessage-content-alreadyinlist": "頁面已存在於清單。",
-	"massmessage-content-invalidtitlesite": "標題與網站無效。",
 	"massmessage-content-invalidtitle": "標題無效。",
 	"massmessage-content-invalidsite": "網站無效。",
 	"massmessage-content-adderror": "API 錯誤：$1",

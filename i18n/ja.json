@@ -73,7 +73,6 @@
 	"massmessage-content-addedlistheading": "追加したページ:",
 	"massmessage-content-addeditem": "$2 の $1",
 	"massmessage-content-alreadyinlist": "ページはリスト内に既にあります。",
-	"massmessage-content-invalidtitlesite": "ページ名とサイト名が無効です。",
 	"massmessage-content-invalidtitle": "ページ名が無効です。",
 	"massmessage-content-invalidsite": "サイトが無効です。",
 	"massmessage-content-adderror": "API エラー: $1",

@@ -11,6 +11,5 @@
 	"apihelp-editmassmessagelist-example-1": "Добавить [[User talk:Foo]] и [[Talk:Bar]] в список доставки [[Example]], а также удалить [[Talk:Baz]] из него",
 	"apihelp-massmessage-summary": "Отправить сообщение по списку страниц.",
 	"apihelp-massmessage-param-subject": "Тема сообщения.",
-	"apihelp-massmessage-param-message": "Текст сообщения.",
-	"apihelp-query+mmsites-param-term": "Префикс для поиска."
+	"apihelp-massmessage-param-message": "Текст сообщения."
 }

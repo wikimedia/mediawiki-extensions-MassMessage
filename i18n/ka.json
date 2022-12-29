@@ -36,7 +36,6 @@
 	"massmessage-content-addedlistheading": "დაემატა გვერდები:",
 	"massmessage-content-addeditem": "$1 $2-ზე",
 	"massmessage-content-alreadyinlist": "გვერდი უკვე არის სიაში.",
-	"massmessage-content-invalidtitlesite": "სათაური და საიტი არასწორია.",
 	"massmessage-content-invalidtitle": "სათაური არასწორია.",
 	"massmessage-content-invalidsite": "საიტი არასწორია.",
 	"massmessage-content-adderror": "API-ს შეცდომა: $1",

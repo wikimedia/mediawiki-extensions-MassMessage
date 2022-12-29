@@ -88,7 +88,6 @@
 	"massmessage-content-addedlistheading": "דפים שנוספו:",
 	"massmessage-content-addeditem": "$1 ב־$2",
 	"massmessage-content-alreadyinlist": "הדף כבר ברשימה.",
-	"massmessage-content-invalidtitlesite": "הכותרת והאתר אינם תקינים.",
 	"massmessage-content-invalidtitle": "הכותרת אינה תקינה.",
 	"massmessage-content-invalidsite": "האתר אינו תקין.",
 	"massmessage-content-adderror": "שגיאת API‏: $1",

@@ -61,7 +61,6 @@
 	"massmessage-content-addedlistheading": "Pampanid a nainayon:",
 	"massmessage-content-addeditem": "$1 iti $2",
 	"massmessage-content-alreadyinlist": "Ti panid ket addan iti listaan.",
-	"massmessage-content-invalidtitlesite": "Ti titulo ken sitio ket imbalido.",
 	"massmessage-content-invalidtitle": "Ti titulo ket imbalido.",
 	"massmessage-content-invalidsite": "Ti sitio ket imbalido.",
 	"massmessage-content-adderror": "Biddut ti API: $1",

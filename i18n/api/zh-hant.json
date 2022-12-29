@@ -24,10 +24,6 @@
 	"apihelp-massmessage-example-1": "以標題「New Signpost」以及訊息正文為「Please read it」，來發送訊息給位於 [[Signpost Spamlist]] 的清單。",
 	"apihelp-massmessage-example-2": "以標題「New Signpost」以及訊息正文為「Help Page」，來發送訊息給位於 [[Signpost Spamlist]] 的清單。",
 	"apihelp-massmessage-example-3": "以標題「New Signpost」以及訊息正文為「Please read it」，且附加來自頁面「Help Page」的內容，來發送訊息給位於 [[Signpost Spamlist]] 的清單。",
-	"apihelp-query+mmsites-description": "為大量訊息裡的站台欄位提供自動完成請求。",
-	"apihelp-query+mmsites-summary": "為大量訊息裡的站台欄位提供自動完成請求。",
-	"apihelp-query+mmsites-param-term": "要搜尋的字首。",
-	"apihelp-query+mmsites-example-1": "自動完成「en」",
 	"apihelp-query+mmcontent-summary": "取得垃圾黑名單的描述與目標",
 	"apihelp-query+mmcontent-example-1": "取得 [[Spam list]] 的垃圾黑名單資訊與頁面",
 	"apierror-massmessage-invalidspamlist": "指定的垃圾黑名單無效。"

@@ -60,7 +60,6 @@
 	"massmessage-content-addedlistheading": "اضافہ شدہ صفحات:",
 	"massmessage-content-addeditem": "$2 پر $1",
 	"massmessage-content-alreadyinlist": "صفحہ پہلے سے فہرست میں موجود ہے۔",
-	"massmessage-content-invalidtitlesite": "عنوان اور سائٹ دونوں درست نہیں ہیں۔",
 	"massmessage-content-invalidtitle": "عنوان درست نہیں۔",
 	"massmessage-content-invalidsite": "سائٹ درست نہیں ہے۔",
 	"massmessage-content-adderror": "API خطا: $1",

@@ -17,7 +17,5 @@
 	"apihelp-massmessage-param-spamlist": "صفحه‌ای حاوی فهرستی از صفحه‌هایی که پیام روی آن‌ها گذاشته خواهد شد.",
 	"apihelp-massmessage-param-subject": "عنوان پیام.",
 	"apihelp-massmessage-param-message": "متن بدنهٔ پیام",
-	"apihelp-massmessage-param-page-message": "صفحه‌ای برای ارسال به‌همراه متن پیام.",
-	"apihelp-query+mmsites-param-term": "پیشوندی که جستجو شود.",
-	"apihelp-query+mmsites-example-1": "تکمیل خودکار «en»"
+	"apihelp-massmessage-param-page-message": "صفحه‌ای برای ارسال به‌همراه متن پیام."
 }

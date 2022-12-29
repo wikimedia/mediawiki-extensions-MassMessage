@@ -93,7 +93,6 @@
 	"massmessage-content-addedlistheading": "Eklenen sayfalar:",
 	"massmessage-content-addeditem": "$2 vikide ki $1",
 	"massmessage-content-alreadyinlist": "Sayfa zaten listede var.",
-	"massmessage-content-invalidtitlesite": "Başlık ve site geçersiz.",
 	"massmessage-content-invalidtitle": "Başlık geçersiz.",
 	"massmessage-content-invalidsite": "Site geçersiz.",
 	"massmessage-content-adderror": "API Hatası: $1",

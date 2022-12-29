@@ -97,7 +97,6 @@
 	"massmessage-content-addedlistheading": "添加的页面：",
 	"massmessage-content-addeditem": "$2上的$1",
 	"massmessage-content-alreadyinlist": "此页面已存在于列表中。",
-	"massmessage-content-invalidtitlesite": "标题和网站无效。",
 	"massmessage-content-invalidtitle": "标题无效。",
 	"massmessage-content-invalidsite": "网站无效。",
 	"massmessage-content-adderror": "API错误：$1",

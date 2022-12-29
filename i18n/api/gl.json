@@ -18,9 +18,5 @@
 	"apihelp-massmessage-param-subject": "Liña de asunto da mensaxe.",
 	"apihelp-massmessage-param-message": "Texto da mensaxe.",
 	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"Signpost Novo\", e corpo da mensaxe \"Por favor léao\".",
-	"apihelp-query+mmsites-description": "Serve peticións autocompletas para o campo de sitio en MensaxesMasivas.",
-	"apihelp-query+mmsites-summary": "Serve peticións autocompletas para o campo de sitio en MensaxesMasivas.",
-	"apihelp-query+mmsites-param-term": "Prefixo polo cal procurar.",
-	"apihelp-query+mmsites-example-1": "Autocompletar \"en\"",
 	"apierror-massmessage-invalidspamlist": "A lista de spam especificada non é válida."
 }

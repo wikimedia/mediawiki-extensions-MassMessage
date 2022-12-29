@@ -16,6 +16,5 @@
 	"apihelp-massmessage-param-subject": "Beskedens emnefelt.",
 	"apihelp-massmessage-param-message": "Beskedens indhold.",
 	"apihelp-massmessage-example-1": "Send en besked til listen på [[Signpost Spamlist]] med emnet «New Signpost» og indholdteksten «Please read it»",
-	"apihelp-query+mmsites-param-term": "Præfikset, der skal søges efter.",
 	"apierror-massmessage-invalidspamlist": "Den angivne spamliste er ugyldig."
 }

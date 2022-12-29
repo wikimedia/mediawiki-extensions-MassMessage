@@ -85,7 +85,6 @@
 	"massmessage-content-addedlistheading": "Добавлены страницы:",
 	"massmessage-content-addeditem": "$1 на $2",
 	"massmessage-content-alreadyinlist": "Эта страница уже находится в списке.",
-	"massmessage-content-invalidtitlesite": "Заголовок и сайт являются недопустимыми.",
 	"massmessage-content-invalidtitle": "Некорректный заголовок.",
 	"massmessage-content-invalidsite": "Недопустимый сайт.",
 	"massmessage-content-adderror": "Ошибка API: $1",

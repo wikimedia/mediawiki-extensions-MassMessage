@@ -60,7 +60,6 @@
 	"massmessage-content-addsubmit": "Lap hozzáadása",
 	"massmessage-content-addedlistheading": "Hozzáadott lapok:",
 	"massmessage-content-alreadyinlist": "A lap már szerepel a listán.",
-	"massmessage-content-invalidtitlesite": "A lapcím és oldal érvénytelen.",
 	"massmessage-content-invalidtitle": "A lapcím érvénytelen.",
 	"massmessage-content-invalidsite": "Az oldal érvénytelen.",
 	"massmessage-content-adderror": "API hiba: $1",

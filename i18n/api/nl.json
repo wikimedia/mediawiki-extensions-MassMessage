@@ -18,6 +18,5 @@
 	"apihelp-massmessage-param-page-message": "Pagina te verzenden samen met het bericht.",
 	"apihelp-massmessage-example-1": "Stuur een boodschap naar de lijst via [[Signpost Spamlist]] met het onderwerp \"Nieuwe Signpost\", met de boodschap \"Lees aub\".",
 	"apihelp-massmessage-example-2": "Stuur een boodschap naar de lijst via [[Signpost Spamlist]] met het onderwerp \"Nieuwe Signpost\", en de boodschap als de inhoud van de pagina \"Help Pagina'.",
-	"apihelp-massmessage-example-3": "Stuur een boodschap naar de lijst [[Signpost Spamlist]] met als onderwerp \"Nieuwe Signpost\", met boodschap \"Aub lezen\" waaraan de inhoud van de \"Help Pagina\" aan toegevoegd is.",
-	"apihelp-query+mmsites-param-term": "Het voorvoegsel om op te zoeken."
+	"apihelp-massmessage-example-3": "Stuur een boodschap naar de lijst [[Signpost Spamlist]] met als onderwerp \"Nieuwe Signpost\", met boodschap \"Aub lezen\" waaraan de inhoud van de \"Help Pagina\" aan toegevoegd is."
 }

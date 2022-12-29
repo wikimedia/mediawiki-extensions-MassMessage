@@ -92,7 +92,6 @@
 	"massmessage-content-addedlistheading": "Додані сторінки:",
 	"massmessage-content-addeditem": "$1 на $2",
 	"massmessage-content-alreadyinlist": "Сторінка вже є у списку.",
-	"massmessage-content-invalidtitlesite": "Заголовок і сайт є недійсними.",
 	"massmessage-content-invalidtitle": "Назва є неприпустима.",
 	"massmessage-content-invalidsite": "Сайт є неприпустимим.",
 	"massmessage-content-adderror": "Помилка API: $1",

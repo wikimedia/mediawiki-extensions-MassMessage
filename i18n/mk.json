@@ -85,7 +85,6 @@
 	"massmessage-content-addedlistheading": "Додадени страници:",
 	"massmessage-content-addeditem": "$1 на $2",
 	"massmessage-content-alreadyinlist": "Страницата е веќе на списокот.",
-	"massmessage-content-invalidtitlesite": "Насловот и викито се неважечки.",
 	"massmessage-content-invalidtitle": "Насловот е неважечки.",
 	"massmessage-content-invalidsite": "Викито е неважечко.",
 	"massmessage-content-adderror": "Грешка во извршникот: $1",

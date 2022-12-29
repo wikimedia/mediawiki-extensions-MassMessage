@@ -64,7 +64,6 @@
 	"massmessage-content-addedlistheading": "Các trang được thêm:",
 	"massmessage-content-addeditem": "$1 tại $2",
 	"massmessage-content-alreadyinlist": "Trang đã nằm trong danh sách.",
-	"massmessage-content-invalidtitlesite": "Tên trang và dịch vụ là không hợp lệ.",
 	"massmessage-content-invalidtitle": "Tên trang không hợp lệ.",
 	"massmessage-content-invalidsite": "Dịch vụ không hợp lệ.",
 	"massmessage-content-adderror": "Lỗi API: $1",

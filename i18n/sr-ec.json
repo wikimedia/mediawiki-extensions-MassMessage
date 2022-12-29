@@ -66,7 +66,6 @@
 	"massmessage-content-addedlistheading": "Додате странице:",
 	"massmessage-content-addeditem": "$1 на $2",
 	"massmessage-content-alreadyinlist": "Страница је већ на листи.",
-	"massmessage-content-invalidtitlesite": "Наслов и сајт нису важећи.",
 	"massmessage-content-invalidtitle": "Наслов није важећи.",
 	"massmessage-content-invalidsite": "Сајт није важећи.",
 	"massmessage-content-adderror": "API грешка: $1",

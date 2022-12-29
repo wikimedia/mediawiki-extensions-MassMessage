@@ -24,9 +24,5 @@
 	"apihelp-massmessage-example-1": "[[Signpost Spamlist]] sayfasında listeye \"New Signpost\" konulu ve \"Please read it\" mesaj grubunu içeren bir mesaj gönderin.",
 	"apihelp-massmessage-example-2": "[[Signpost Spamlist]] içindeki listeye \"New Signpost\" konulu bir mesaj ve \"Help Page\" sayfasının içeriği olarak mesaj gönderin.",
 	"apihelp-massmessage-example-3": "[[Signpost Spamlist]] içindeki listeye \"New Signpost\" konusunu içeren bir mesaj ve \"Help Page\" sayfasındaki içerikle birlikte eklenen \"Please read it\" mesaj gövdesini gönderin.",
-	"apihelp-query+mmsites-description": "MassMessage'daki site alanı için otomatik tamamlama istekleri gönderin.",
-	"apihelp-query+mmsites-summary": "MassMessage'daki site alanı için otomatik tamamlama istekleri gönderin.",
-	"apihelp-query+mmsites-param-term": "Aranacak önek.",
-	"apihelp-query+mmsites-example-1": "Otomatik tamamla \"en\"",
 	"apierror-massmessage-invalidspamlist": "Belirtilen spam listesi geçersiz."
 }

@@ -61,7 +61,6 @@
 	"massmessage-content-addedlistheading": "Páxines amestaes:",
 	"massmessage-content-addeditem": "$1 en $2",
 	"massmessage-content-alreadyinlist": "La páxina ya ta na llista.",
-	"massmessage-content-invalidtitlesite": "El títulu ya'l sitiu son inválidos.",
 	"massmessage-content-invalidtitle": "El títulu ye inválidu.",
 	"massmessage-content-invalidsite": "El sitiu ye inválidu.",
 	"massmessage-content-adderror": "Error de la API: $1",

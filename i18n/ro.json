@@ -45,7 +45,6 @@
 	"massmessage-content-addedlistheading": "Pagini adăugate:",
 	"massmessage-content-addeditem": "$1 pe $2",
 	"massmessage-content-alreadyinlist": "Pagina este deja în listă.",
-	"massmessage-content-invalidtitlesite": "Titlul și site-ul sunt invalide.",
 	"massmessage-content-invalidtitle": "Titlul este invalid.",
 	"massmessage-content-invalidsite": "Site-ul este invalid.",
 	"massmessage-content-adderror": "Eroare API: $1",

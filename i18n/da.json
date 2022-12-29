@@ -64,7 +64,6 @@
 	"massmessage-content-addedlistheading": "Sider tilføjet:",
 	"massmessage-content-addeditem": "$1 på $2",
 	"massmessage-content-alreadyinlist": "Siden er allerede i listen.",
-	"massmessage-content-invalidtitlesite": "Titlen og sitet er ugyldigt.",
 	"massmessage-content-invalidtitle": "Titlen er ugyldig.",
 	"massmessage-content-invalidsite": "Sitet er ugyldigt",
 	"massmessage-content-adderror": "API-fejl: $1",
