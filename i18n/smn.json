@@ -9,7 +9,9 @@
 	"massmessage-content-remove": "siho",
 	"massmessage-content-removeyes": "Siho",
 	"massmessage-content-removeno": "Jooskâ",
+	"massmessage-create-description": "Kuvvim:",
 	"massmessage-create-source": "Käldee:",
+	"massmessage-edit-description": "Kuvvim:",
 	"massmessage-summary-add": "Lasettum [[:$1]]",
 	"massmessage-summary-remove": "[[:$1]] sikkum"
 }
