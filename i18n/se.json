@@ -6,5 +6,7 @@
 	},
 	"massmessage-content-remove": "sihko",
 	"massmessage-content-removeyes": "Sihko",
+	"massmessage-create-description": "Govvádus:",
+	"massmessage-edit-description": "Govvádus:",
 	"massmessage-summary-remove": "[[:$1]] sihkkojuvvon"
 }
