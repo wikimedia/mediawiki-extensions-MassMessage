@@ -7,6 +7,7 @@ use ExtensionRegistry;
 use Job;
 use LqtDispatch;
 use ManualLogEntry;
+use MediaWiki\MassMessage\Job\Hooks\HookRunner;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MessageBuilder;
@@ -39,6 +40,8 @@ class MassMessageJob extends Job {
 	private $useSenderUser = false;
 	/** @var MessageSender|null */
 	private $messageSender;
+	/** @var HookRunner */
+	private $hookRunner;
 
 	/**
 	 * @param Title $title
@@ -56,6 +59,10 @@ class MassMessageJob extends Job {
 		} else {
 			$this->title = $title;
 		}
+
+		$this->hookRunner = new HookRunner(
+			MediaWikiServices::getInstance()->getHookContainer()
+		);
 	}
 
 	/**
@@ -347,6 +354,25 @@ class MassMessageJob extends Job {
 			&& defined( 'NS_TOPIC' )
 			&& !$targetPage->inNamespace( NS_TOPIC );
 
+		$failureCallback = function ( $msg ) {
+			$this->logLocalFailure( $msg );
+		};
+		// Allow hooks to override processing
+		if ( !$this->hookRunner->onMassMessageJobBeforeMessageSent(
+			$failureCallback,
+			$targetPage,
+			$subject,
+			$message,
+			$pageSubject,
+			$pageMessage,
+			$comment
+		) ) {
+			// Hook returning false means that the hook handler
+			// sent the message and is asking us to not send the message ourselves.
+			// We still return true since the hook did successfully send the message.
+			return true;
+		}
+
 		// If the page is using a different discussion system, handle it specially
 		if ( $isLqtThreads || $isStructuredDiscussion ) {
 			$subject = $messageBuilder->buildPlaintextSubject( $subject, $pageSubject );
@@ -363,7 +389,6 @@ class MassMessageJob extends Job {
 				return $this->addFlowTopic( $message, $subject );
 			}
 		}
-
 		$subject = $messageBuilder->buildSubject( $subject, $pageSubject, $targetLanguage );
 		$message = $messageBuilder->buildMessage( $message, $pageMessage, $targetLanguage, $comment );
 		return $this->editPage( $message, $subject );
