@@ -61,7 +61,7 @@
 	"log-description-massmessage": "Ti dogodki sledijo uporabnike, ki pošiljajo sporočila.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|je poslal sporočilo|je poslala sporočilo|je poslal_a sporočilo}} uporabniku $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|je kot sporočilo poslal $5|je kot sporočilo poslala $5|je kot sporočilo poslal_a}} na stran $3",
-	"logentry-massmessage-failure": "Pošiljanje »$4« na stran $3 ni uspelo; koda napake: <code>$5</code>",
+	"logentry-massmessage-failure": "Pošiljanje »$4« na stran $3 ni uspelo; oznaka napake: <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Dostava »$4« na stran $3 je bila preskočena, ker je bil cilj v imenskem prostoru, v katerem ni mogoče objavljati",
 	"logentry-massmessage-skipoptout": "Dostava »$4« na stran $3 je bila preskočena, ker je cilj zavrnil dostavo sporočil",
 	"logentry-massmessage-skipnouser": "Dostava »$4« na $3 je bila preskočena, ker uporabniški račun ne obstaja",
