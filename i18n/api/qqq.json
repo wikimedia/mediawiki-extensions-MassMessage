@@ -13,6 +13,8 @@
 	"apihelp-editmassmessagelist-param-add": "{{doc-apihelp-param|editmassmessagelist|add}}",
 	"apihelp-editmassmessagelist-param-remove": "{{doc-apihelp-param|editmassmessagelist|remove}}",
 	"apihelp-editmassmessagelist-param-description": "{{doc-apihelp-param|editmassmessagelist|description}}",
+	"apihelp-editmassmessagelist-param-minor": "{{doc-apihelp-param|editmassmessagelist|minor}}",
+	"apihelp-editmassmessagelist-param-watchlist": "{{doc-apihelp-param|editmassmessagelist|watchlist}}\n\nSee also:\n* Same as {{msg-mw|apihelp-delete-param-watchlist}}.",
 	"apihelp-editmassmessagelist-example-1": "{{doc-apihelp-example|editmassmessagelist}}",
 	"apihelp-editmassmessagelist-example-2": "{{doc-apihelp-example|editmassmessagelist}}",
 	"apihelp-massmessage-description": "{{doc-apihelp-description|massmessage}}",

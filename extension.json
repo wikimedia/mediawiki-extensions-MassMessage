@@ -148,14 +148,16 @@
 				"oojs-ui-core",
 				"mediawiki.htmlform.ooui",
 				"mediawiki.jqueryMsg",
-				"mediawiki.widgets"
+				"mediawiki.widgets",
+				"mediawiki.confirmCloseWindow"
 			]
 		},
 		"ext.MassMessage.edit": {
 			"scripts": "ext.MassMessage.edit.js",
 			"dependencies": [
 				"oojs-ui",
-				"mediawiki.widgets.visibleLengthLimit"
+				"mediawiki.widgets.visibleLengthLimit",
+				"mediawiki.confirmCloseWindow"
 			]
 		}
 	},
@@ -217,7 +219,10 @@
 			"class": "MediaWiki\\MassMessage\\Specials\\SpecialEditMassMessageList",
 			"services": [
 				"UserOptionsLookup",
-				"RestrictionStore"
+				"RestrictionStore",
+				"WatchlistManager",
+				"PermissionManager",
+				"RevisionLookup"
 			]
 		}
 	},

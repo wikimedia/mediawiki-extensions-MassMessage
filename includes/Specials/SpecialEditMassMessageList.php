@@ -6,15 +6,18 @@ use EditPage;
 use FormSpecialPage;
 use Html;
 use HTMLForm;
+use IDBAccessObject;
 use LogEventsList;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Permissions\RestrictionStore;
+use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\Watchlist\WatchlistManager;
 use Status;
 use Title;
 
@@ -53,18 +56,36 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	/** @var RestrictionStore */
 	private $restrictionStore;
 
+	/** @var WatchlistManager */
+	private $watchlistManager;
+
+	/** @var PermissionManager */
+	private $permissionManager;
+
+	/** @var RevisionLookup */
+	private $revisionLookup;
+
 	/**
 	 * @param UserOptionsLookup $userOptionsLookup
 	 * @param RestrictionStore $restrictionStore
+	 * @param WatchlistManager $watchlistManager
+	 * @param PermissionManager $permissionManager
+	 * @param RevisionLookup $revisionLookup
 	 */
 	public function __construct(
 		UserOptionsLookup $userOptionsLookup,
-		RestrictionStore $restrictionStore
+		RestrictionStore $restrictionStore,
+		WatchlistManager $watchlistManager,
+		PermissionManager $permissionManager,
+		RevisionLookup $revisionLookup
 	) {
 		parent::__construct( 'EditMassMessageList' );
 
 		$this->userOptionsLookup = $userOptionsLookup;
 		$this->restrictionStore = $restrictionStore;
+		$this->watchlistManager = $watchlistManager;
+		$this->permissionManager = $permissionManager;
+		$this->revisionLookup = $revisionLookup;
 	}
 
 	public function doesWrites() {
@@ -87,16 +108,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				$this->errorMsgKey = 'massmessage-edit-invalidtitle';
 			} else {
 				$this->title = $title;
-				$services = MediaWikiServices::getInstance();
-				$revisionLookup = $services->getRevisionLookup();
-				if ( !$services->getPermissionManager()->userCan( 'edit',
+				if ( !$this->permissionManager->userCan( 'edit',
 					$this->getUser(), $title )
 				) {
 					$this->errorMsgKey = 'massmessage-edit-nopermission';
 				} else {
 					$revId = $this->getRequest()->getInt( 'oldid' );
 					if ( $revId > 0 ) {
-						$rev = $revisionLookup->getRevisionById( $revId );
+						$rev = $this->revisionLookup->getRevisionById( $revId );
 						if ( $rev
 							&& $title->equals( $rev->getPageAsLinkTarget() )
 							&& $rev->getSlot( SlotRecord::MAIN, RevisionRecord::RAW )
@@ -109,10 +128,10 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 						) {
 							$this->rev = $rev;
 						} else { // Use the latest revision for the title if $rev is invalid.
-							$this->rev = $revisionLookup->getRevisionByTitle( $title );
+							$this->rev = $this->revisionLookup->getRevisionByTitle( $title );
 						}
 					} else {
-						$this->rev = $revisionLookup->getRevisionByTitle( $title );
+						$this->rev = $this->revisionLookup->getRevisionByTitle( $title );
 					}
 				}
 			}
@@ -151,7 +170,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 
 			// Protection warnings; modified from EditPage::showHeader()
 			if ( $this->restrictionStore->isProtected( $this->title, 'edit' )
-				&& MediaWikiServices::getInstance()->getPermissionManager()
+				&& $this->permissionManager
 					->getNamespaceRestrictionLevels( $this->title->getNamespace() ) !== [ '' ]
 			) {
 				if ( $this->restrictionStore->isSemiProtected( $this->title ) ) {
@@ -174,7 +193,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			return [];
 		}
 
-		$this->getOutput()->addModules( 'ext.MassMessage.edit' );
+		$this->getOutput()->addModules( [ 'ext.MassMessage.edit', 'ext.MassMessage.styles' ] );
 
 		/**
 		 * @var MassMessageListContent $content
@@ -187,7 +206,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		$description = $content->getDescription();
 		$targets = $content->getTargetStrings();
 
-		return [
+		$fields = [
 			'description' => [
 				'type' => 'textarea',
 				'rows' => 5,
@@ -204,21 +223,56 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 				'type' => 'text',
 				'maxlength' => \CommentStore::COMMENT_CHARACTER_LIMIT,
 				'size' => 60,
-				'label-message' => 'massmessage-edit-summary',
+				'label-message' => 'summary',
+			],
+		];
+
+		if ( $this->permissionManager->userHasRight( $this->getUser(), 'minoredit' ) ) {
+			$fields['minor'] = [
+				'name' => 'minor',
+				'id' => 'wpMinoredit',
+				'type' => 'check',
+				'label-message' => 'minoredit',
+				'default' => false,
+			];
+		}
+
+		if ( $this->getUser()->isNamed() ) {
+			$fields['watch'] = [
+				'name' => 'watch',
+				'id' => 'wpWatchthis',
+				'type' => 'check',
+				'label-message' => 'watchthis',
+				'default' => $this->watchlistManager->isWatched( $this->getUser(), $this->title ) ||
+					$this->userOptionsLookup->getOption( $this->getUser(), 'watchdefault' ),
+			];
+		}
+
+		return $fields + [
+			'copyright' => [
+				'type' => 'info',
+				'default' => EditPage::getCopyrightWarning( $this->title, 'parse', $this ),
+				'raw' => true,
 			],
 		];
 	}
 
 	/**
-	 * Hide the form if the title is invalid or if the user can't edit the list.
+	 * Hide the form if the title is invalid or if the user can't edit the list. If neither
+	 * of these are true, then add a cancel button alongside the automatic save button. Also
+	 * add an ID to the form for targeting with CSS styles.
 	 *
 	 * @param HTMLForm $form
 	 */
 	protected function alterForm( HTMLForm $form ) {
 		if ( !$this->rev ) {
 			$form->setWrapperLegend( false );
-			$form->suppressDefaultSubmit( true );
+			$form->suppressDefaultSubmit();
+		} else {
+			$form->showCancel();
+			$form->setCancelTarget( $this->title );
 		}
+		$form->setId( 'mw-massmessage-edit-form' );
 	}
 
 	/**
@@ -246,7 +300,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			}
 
 			// Old revision warning
-			if ( $this->rev->getId() !== $this->title->getLatestRevID() ) {
+			if ( $this->rev->getId() !== $this->title->getLatestRevID( IDBAccessObject::READ_LATEST ) ) {
 				$html .= $this->msg( 'editingold' )->parseAsBlock();
 			}
 		} else {
@@ -254,19 +308,6 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$html = $this->msg( $this->errorMsgKey )->parseAsBlock();
 		}
 		return $html;
-	}
-
-	/**
-	 * Return a copyright warning to be displayed below the form.
-	 *
-	 * @return string
-	 */
-	protected function postHtml() {
-		if ( $this->rev ) {
-			return EditPage::getCopyrightWarning( $this->title, 'parse', $this );
-		} else {
-			return '';
-		}
 	}
 
 	/**
@@ -303,6 +344,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$data['description'],
 			$parseResult->value,
 			$data['summary'],
+			$this->permissionManager->userHasRight( $this->getUser(), 'minoredit' ) && $data['minor'],
+			$data['watch'] ? 'watch' : 'unwatch',
 			$this->getContext()
 		);
 

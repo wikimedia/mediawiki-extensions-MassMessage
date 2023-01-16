@@ -93,4 +93,19 @@ $( function () {
 		clearTimeout( checkSourceTimeout );
 		checkSourceTimeout = setTimeout( checkSource, 300 );
 	} );
+
+	// Uses the same method as ext.abuseFilter.edit.js from the AbuseFilter extension.
+	var warnOnLeave,
+		$form = $( '#mw-massmessage-create-form' ),
+		origValues = $form.serialize();
+
+	warnOnLeave = mw.confirmCloseWindow( {
+		test: function () {
+			return $form.serialize() !== origValues;
+		}
+	} );
+
+	$form.on( 'submit', function () {
+		warnOnLeave.release();
+	} );
 } );

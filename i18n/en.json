@@ -115,7 +115,6 @@
 	"massmessage-edit-title": "Title:",
 	"massmessage-edit-description": "Description:",
 	"massmessage-edit-content": "Target pages:",
-	"massmessage-edit-summary": "Edit summary:",
 	"massmessage-edit-header": "Use the form below to modify the list description or edit the list of target pages. For target pages, list one title per line.",
 	"massmessage-edit-headermulti": "Use the form below to modify the list description or edit the list of target pages. For target pages, list one title per line and use title@domain (e.g. User_talk:Example@en.wikipedia.org) to specify a page on a different wiki.",
 	"massmessage-edit-invalidtitle": "There is no valid mass message delivery list with this title.",

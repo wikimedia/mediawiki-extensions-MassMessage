@@ -3,6 +3,8 @@
 namespace MediaWiki\MassMessage\Api;
 
 use ApiBase;
+use ApiMain;
+use ApiWatchlistTrait;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
@@ -17,6 +19,16 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 
 class ApiEditMassMessageList extends ApiBase {
+
+	use ApiWatchlistTrait;
+
+	/** @inheritDoc */
+	public function __construct( ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
+		parent::__construct( $mainModule, $moduleName, $modulePrefix );
+
+		// Needed for ApiWatchlistTrait.
+		$this->watchlistExpiryEnabled = false;
+	}
 
 	public function execute() {
 		$data = $this->extractRequestParams();
@@ -114,6 +126,9 @@ class ApiEditMassMessageList extends ApiBase {
 				$description,
 				$newTargets,
 				$summary,
+				$this->getPermissionManager()->userHasRight( $this->getUser(), 'minoredit' ) &&
+					$data['minor'],
+				$data['watchlist'],
 				$this // APIs implement IContextSource
 			);
 			if ( !$editResult->isGood() ) {
@@ -270,8 +285,11 @@ class ApiEditMassMessageList extends ApiBase {
 				ParamValidator::PARAM_TYPE => 'string',
 				ParamValidator::PARAM_ISMULTI => true
 			],
-			'token' => null,
-		];
+			'minor' => [
+				ParamValidator::PARAM_TYPE => 'boolean',
+				ParamValidator::PARAM_DEFAULT => false
+			],
+		] + $this->getWatchlistParams() + [ 'token' => null ];
 	}
 
 	public function mustBePosted() {
