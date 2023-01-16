@@ -11,6 +11,8 @@
 	"apihelp-editmassmessagelist-param-add": "כותרות שיתווספו לרשימה.",
 	"apihelp-editmassmessagelist-param-remove": "כותרות שיוסרו מהרשימה.",
 	"apihelp-editmassmessagelist-param-description": "תיאור חדש לרשימת המסירה.",
+	"apihelp-editmassmessagelist-param-minor": "האם העריכה צריכה להיות מסומנת המשנית בהיסטוריה של הרשימה.",
+	"apihelp-editmassmessagelist-param-watchlist": "הוספה או הסרה של הדף ללא תנאי מרשימת המעקב של המשתמש הנוכחי, להשתמש בהעדפות (לא חל על משתמשי בוט), או לא לשנות את המעקב.",
 	"apihelp-editmassmessagelist-example-1": "הוספת [[User talk:Foo]] ו־[[Talk:Bar]] לרשימת המסירה [[Example]] והסרת [[Talk:Baz]] ממנה",
 	"apihelp-editmassmessagelist-example-2": "הגדרת תיאור לרשימת המסירה [[Example]] למחרוזת \"FooBar delivery services\"",
 	"apihelp-massmessage-description": "שליחת הודעה לרשימת דפים.",

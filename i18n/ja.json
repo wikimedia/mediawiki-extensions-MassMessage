@@ -96,7 +96,6 @@
 	"massmessage-edit-title": "ページ名:",
 	"massmessage-edit-description": "説明:",
 	"massmessage-edit-content": "宛先ページ:",
-	"massmessage-edit-summary": "編集の要約:",
 	"massmessage-edit-header": "以下のフォームで、リストの説明の変更や、宛先ページのリストの編集ができます。宛先ページは 1 行に 1 件ずつ入力してください。",
 	"massmessage-edit-headermulti": "以下のフォームで、リストの説明の変更や、宛先ページのリストの編集ができます。宛先ページは 1 行に 1 件ずつ入力してください。別のウィキのページを指定するには、ページ名@ドメイン の形式を使用してください (例: User_talk:Example@ja.wikipedia.org)。",
 	"massmessage-edit-invalidtitle": "指定したページ名には有効なメッセージ一斉配信リストがありません。",

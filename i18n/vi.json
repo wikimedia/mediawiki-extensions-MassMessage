@@ -91,7 +91,6 @@
 	"massmessage-edit-title": "Tên trang:",
 	"massmessage-edit-description": "Miêu tả:",
 	"massmessage-edit-content": "Các trang đích:",
-	"massmessage-edit-summary": "Tóm lược sửa đổi",
 	"massmessage-edit-header": "Điền biểu mẫu bên dưới để sửa miêu tả danh sách hoặc sửa danh sách các trang mục tiêu. Danh sách trang mục tiêu có mỗi dòng một tên trang.",
 	"massmessage-edit-headermulti": "Điền biểu mẫu bên dưới để sửa miêu tả danh sách hoặc sửa danh sách các trang mục tiêu. Danh sách trang mục tiêu có mỗi dòng một tên trang. Hãy dùng định dạng tên@tên_miền (ví dụ Thảo_luận_Thành_viên:Ví_dụ@vi.wikipedia.org) để định rõ một trang trên wiki khác.",
 	"massmessage-edit-invalidtitle": "Không có danh sách gửi thông báo rộng rãi với tên đó.",

@@ -115,7 +115,6 @@
 	"massmessage-edit-title": "標題：",
 	"massmessage-edit-description": "描述：",
 	"massmessage-edit-content": "目標頁面：",
-	"massmessage-edit-summary": "編輯摘要：",
 	"massmessage-edit-header": "使用以下表單修改清單描述或編輯清單目標頁面。 目標頁面清單一個標題使用一行。",
 	"massmessage-edit-headermulti": "使用以下表單修改清單描述或編輯清單目標頁面。 目標頁面清單一個標題使用一行並使用 title@domain (例如 User_talk:Example@en.wikipedia.org) 來指定位於其他 Wiki 的頁面。",
 	"massmessage-edit-invalidtitle": "沒有有效的大量訊息傳遞清單使用此標題。",

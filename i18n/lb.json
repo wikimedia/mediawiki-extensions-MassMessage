@@ -66,7 +66,6 @@
 	"massmessage-edit-title": "Titel:",
 	"massmessage-edit-description": "Beschreiwung:",
 	"massmessage-edit-content": "Zilsäiten:",
-	"massmessage-edit-summary": "Resumé vun der Ännerung:",
 	"massmessage-edit-missingsummary": "Dir hutt kee Resumé vun der Ännerung uginn. Wann dir nach eng Kéier op \"{{int:htmlform-submit}}\" klickt, da gëtt Är Ännerung ouni e Resumé gespäichert.",
 	"massmessage-edit-nopermission": "Dir hutt net d'Recht fir d'Lëscht z'änneren.",
 	"massmessage-summary-addremove": "huet {{PLURAL:$1|Säit|Säiten}} dobäigesat {{PLURAL:$2|an eng Säit|a(n) $2 Säiten}} ewechgeholl",

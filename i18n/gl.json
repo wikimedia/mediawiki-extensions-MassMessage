@@ -92,7 +92,6 @@
 	"massmessage-edit-title": "Título:",
 	"massmessage-edit-description": "Descrición:",
 	"massmessage-edit-content": "Páxinas de destino:",
-	"massmessage-edit-summary": "Resumo de edición:",
 	"massmessage-edit-header": "Use o formulario de abaixo para modificar a descrición da lista ou editar a lista de páxinas destino. Para as páxinas destino, coloque un título por liña.",
 	"massmessage-edit-headermulti": "Use o formulario de abaixo para modificar a descrición da lista ou editar a lista de páxinas destino. Para as páxinas destino, coloque un título por liña e use título@dominio (p.ex. Conversa_usuario:Exemplo@gl.wikipedia.org) para indicar unha páxina nunha wiki diferente.",
 	"massmessage-edit-invalidtitle": "Non hai unha lista de envío en masa válida con ese título.",

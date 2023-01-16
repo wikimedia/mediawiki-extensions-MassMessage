@@ -123,7 +123,6 @@
 	"massmessage-edit-title": "Paginanaam:",
 	"massmessage-edit-description": "Beschrijving:",
 	"massmessage-edit-content": "Doelpagina's:",
-	"massmessage-edit-summary": "Bewerkingssamenvatting:",
 	"massmessage-edit-header": "Gebruik het onderstaande formulier om de lijstbeschrijving of de lijst met doelpagina's te bewerken. Vermeld één doelpagina per regel.",
 	"massmessage-edit-headermulti": "Gebruik het onderstaande formulier om de lijstbeschrijving of de lijst met doelpagina's te bewerken. Vermeld één doelpagina per regel en gebruik van paginanaam@domain om een pagina op een andere wiki aan te geven (bijvoorbeeld Overleg_gebruiker:Voorbeeld@nl.wikipedia.org).",
 	"massmessage-edit-invalidtitle": "Er is geen geldige afleverlijst op de pagina.",

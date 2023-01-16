@@ -88,7 +88,6 @@
 	"massmessage-edit-title": "শিরোনাম:",
 	"massmessage-edit-description": "বিবরণ:",
 	"massmessage-edit-content": "লক্ষ্য পাতা:",
-	"massmessage-edit-summary": "সম্পাদনা সারাংশ:",
 	"massmessage-edit-invalidtargets": "নিম্নলিখিত {{PLURAL:$1|পাতাটি|পাতাগুলি}} বৈধ নয়:\n$2",
 	"massmessage-edit-missingsummary": "আপনি সম্পাদনা সারাংশ প্রদান করেন নি। আপনি যদি আবার \"{{int:htmlform-submit}}\" ক্লিক করেন, তবে সারাংশ ছাড়াই আপনার সম্পাদনাটি সংরক্ষণ করা হবে।",
 	"massmessage-edit-nopermission": "আপনার এই তালিকাটি সম্পাদনা করার অনুমতি নেই।",

@@ -26,7 +26,6 @@
 	"massmessage-edit-title": "Nosaukums:",
 	"massmessage-edit-description": "Apraksts:",
 	"massmessage-edit-content": "Mērķa lapas:",
-	"massmessage-edit-summary": "Izmaiņu kopsavilkums:",
 	"massmessage-summary-add": "Pievienots [[:$1]]",
 	"massmessage-summary-addonsite": "Pievienots $1 uz $2",
 	"massmessage-summary-remove": "Noņemts [[:$1]]",

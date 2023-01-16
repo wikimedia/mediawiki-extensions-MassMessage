@@ -36,7 +36,6 @@
 	"massmessage-edit-pagetitle": "'$1' سنواريندي",
 	"massmessage-edit-title": "عنوان:",
 	"massmessage-edit-description": "تشريح:",
-	"massmessage-edit-summary": "سنوار جو تَتُ:",
 	"massmessage-summary-add": "وڌو [[:$1]]",
 	"massmessage-summary-addonsite": "$2 تي $1 وڌو ويو",
 	"massmessage-summary-addmulti": "$1 {{PLURAL:$1|صفحو|صفحا}} وڌا",

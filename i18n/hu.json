@@ -84,7 +84,6 @@
 	"massmessage-edit-title": "Cím:",
 	"massmessage-edit-description": "Leírás:",
 	"massmessage-edit-content": "Céllapok:",
-	"massmessage-edit-summary": "Szerkesztési összefoglaló:",
 	"massmessage-edit-invalidtitle": "Nem létezik érvényes tömegesüzenet-lista ezzel a névvel.",
 	"massmessage-edit-invalidtargets": "A következő {{PLURAL:$1|lap érvénytelen|lapok érvénytelenek}}:\n$2",
 	"massmessage-edit-missingsummary": "Nem adtál meg szerkesztési összefoglalót. Ha újra az „{{int:htmlform-submit}}” gombra kattintasz, az üzeneted e nélkül lesz elküldve.",

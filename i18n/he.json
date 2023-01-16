@@ -115,7 +115,6 @@
 	"massmessage-edit-title": "כותרת:",
 	"massmessage-edit-description": "תיאור:",
 	"massmessage-edit-content": "דפי היעד:",
-	"massmessage-edit-summary": "תקציר העריכה:",
 	"massmessage-edit-header": "השתמשו בטופס שלהלן כדי לשנות את התיאור של הרשימה או לערוך את רשימת דפי היעד. עבור דפי היעד, רִשמו כותרת אחת בכל שורה.",
 	"massmessage-edit-headermulti": "השתמשו בטופס שלהלן כדי לשנות את התיאור של הרשימה או לערוך את רשימת דפי היעד. עבור דפי היעד, רִשמו כותרת אחת בכל שורה והשתמשו בתחביר כותרת@תחום (למשל: שיחת_משתמש:דוגמה@he.wikipedia.org) כדי לציין דף באתר ויקי אחר.",
 	"massmessage-edit-invalidtitle": "אין רשימת מסירת הודעות המוניות תקינה עם הכותרת הזאת.",

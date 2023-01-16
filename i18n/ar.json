@@ -108,7 +108,6 @@
 	"massmessage-edit-title": "العنوان:",
 	"massmessage-edit-description": "الوصف:",
 	"massmessage-edit-content": "الصفحات المستهدفة:",
-	"massmessage-edit-summary": "ملخص التعديل:",
 	"massmessage-edit-header": "استخدم النموذج أدناه لتعديل وصف القائمة أو تحرير قائمة الصفحات المستهدفة، بالنسبة للصفحات المستهدفة، ضع عنوانا واحدا في كل سطر.",
 	"massmessage-edit-headermulti": "استخدم النموذج أدناه لتعديل وصف القائمة أو تحرير قائمة الصفحات المستهدفة، بالنسبة للصفحات المستهدفة، اكتب عنوانا واحدا في كل سطر واستخدم title@domain (على سبيل المثال User_talk:Example@en.wikipedia.org) لتحديد صفحة في ويكي مختلف.",
 	"massmessage-edit-invalidtitle": "لا توجد قائمة تسليم رسائل جماعية صالحة بهذا العنوان.",

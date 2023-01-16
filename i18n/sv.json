@@ -112,7 +112,6 @@
 	"massmessage-edit-title": "Titel:",
 	"massmessage-edit-description": "Beskrivning:",
 	"massmessage-edit-content": "Målsidor:",
-	"massmessage-edit-summary": "Redigeringssammanfattning:",
 	"massmessage-edit-header": "Använd formuläret nedan för att ändra listbeskrivningen eller ändra listan med målsidor. För målsidor, skriv en titel per rad.",
 	"massmessage-edit-headermulti": "Använd formuläret nedan för att modifiera listbeskrivningen eller redigera listan över målsidor. För målsidor listar du en titel per rad och använder titel@domain (t.ex. User_talk:Example@en.wikipedia.org) för att ange en sida på en annan wiki.",
 	"massmessage-edit-invalidtitle": "Det finns ingen giltig leveranslista för massmeddelanden med denna titel.",

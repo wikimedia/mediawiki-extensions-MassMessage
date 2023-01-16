@@ -120,7 +120,6 @@
 	"massmessage-edit-title": "Başlık:",
 	"massmessage-edit-description": "Açıklama:",
 	"massmessage-edit-content": "Hedef sayfalar:",
-	"massmessage-edit-summary": "Değişiklik özeti:",
 	"massmessage-edit-header": "Liste tanımını ve hedef sayfaları güncellemek için aşağıdaki formu kullanın. Hedef sayfalar için, her satıra bir başlık gelecek şekilde.",
 	"massmessage-edit-headermulti": "Liste tanımını ve hedef sayfaları güncellemek için aşağıdaki formu kullanın. Hedef sayfalar için, her satıra bir başlık gelecek şekilde ve baslik@adres (örn. Kullanıcı_mesaj:Ornek@tr.wikipedia.org) şeklinde başka bir vikiyi yazabilirsiniz.",
 	"massmessage-edit-invalidtitle": "Bu başlığa sahip geçerli bir toplu mesaj teslimat listesi yok.",

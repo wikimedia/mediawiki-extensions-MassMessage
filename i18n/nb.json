@@ -103,7 +103,6 @@
 	"massmessage-edit-title": "Tittel:",
 	"massmessage-edit-description": "Beskrivelse:",
 	"massmessage-edit-content": "Målsider:",
-	"massmessage-edit-summary": "Redigeringsforklaring:",
 	"massmessage-edit-header": "Bruk skjemaet nedenfor for å endre listebeskrivelsen eller redigere listen over målsider. For målsider, skriv én tittel per linje.",
 	"massmessage-edit-headermulti": "Bruk skjemaet nedenfor for å endre listebeskrivelsen eller redigere listen over målsider. For målsider, skriv én tittel per linje og bruk tittel@domene (f.eks. User_talk:Example@no.wikipedia.org) for å angi en side på en annen wiki.",
 	"massmessage-edit-invalidtitle": "Det er ingen gyldige leveringslister for massemeldinger med denne tittelen.",

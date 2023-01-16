@@ -91,7 +91,6 @@
 	"massmessage-edit-title": "Naslov:",
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-content": "Odredišne stranice:",
-	"massmessage-edit-summary": "Opis izmene:",
 	"massmessage-summary-addmulti": "Dodato stranica: {{PLURAL:$1|$1}}",
 	"massmessage-summary-removemulti": "Ukloljeno stranica: {{PLURAL:$1|$1}}",
 	"massmessage-list-category": "Spiskovi isporuke masovnih poruka",

@@ -12,6 +12,8 @@
 	"apihelp-editmassmessagelist-param-add": "Titel, die zur Liste hinzugefügt werden sollen.",
 	"apihelp-editmassmessagelist-param-remove": "Titel, die von der Liste entfernt werden sollen.",
 	"apihelp-editmassmessagelist-param-description": "Neue Beschreibung für die Zustellliste.",
+	"apihelp-editmassmessagelist-param-minor": "Ob die Änderung in der Versionsgeschichte als geringfügig gekennzeichnet werden soll.",
+	"apihelp-editmassmessagelist-param-watchlist": "Die Seite zur Beobachtungsliste des aktuellen Benutzers hinzufügen oder von ihr entfernen, die Standardeinstellungen (werden für Bot-Benutzer ignoriert) verwenden oder die Beobachtung nicht ändern.",
 	"apihelp-editmassmessagelist-example-1": "Fügt [[User talk:Foo]] und [[Talk:Bar]] zu der Versandliste [[Example]] hinzu und entfernt [[Talk:Baz]] von ihr",
 	"apihelp-editmassmessagelist-example-2": "Setzen der Beschreibung der Zustellliste [[Example]] auf „FooBar delivery services“.",
 	"apihelp-massmessage-description": "Sendet eine Nachricht an eine Liste von Seiten.",
@@ -23,5 +25,7 @@
 	"apihelp-massmessage-example-1": "Senden einer Nachricht an die Liste unter [[Signpost Spamlist]] mit dem Betreff „New Signpost“ und dem Nachrichtentext „Please read it“.",
 	"apihelp-massmessage-example-2": "Senden einer Nachricht an die Liste unter [[Signpost Spamlist]] mit dem Betreff „New Signpost“ und die Nachricht als Inhalt der Seite „Help Page“.",
 	"apihelp-massmessage-example-3": "Senden einer Nachricht an die Liste unter [[Signpost Spamlist]] mit dem Betreff „New Signpost“ und dem Nachrichtentext „Please read it“, angehängt an den Inhalt der Seite „Help Page“.",
+	"apihelp-query+mmcontent-summary": "Beschreibung und Ziele einer Spamliste abrufen",
+	"apihelp-query+mmcontent-example-1": "Seiten- und Spamlisteninformationen der [[Spam list]] abrufen",
 	"apierror-massmessage-invalidspamlist": "Die angegebene Spamliste ist ungültig."
 }

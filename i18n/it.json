@@ -97,7 +97,6 @@
 	"massmessage-edit-title": "Titolo:",
 	"massmessage-edit-description": "Descrizione:",
 	"massmessage-edit-content": "Pagine di destinazione:",
-	"massmessage-edit-summary": "Oggetto della modifica:",
 	"massmessage-edit-header": "Usa il modulo sottostante per modificare la descrizione dell'elenco o modificare l'elenco delle pagine di destinazione. Scrivi il titolo delle pagine di destinazione, uno per riga.",
 	"massmessage-edit-headermulti": "Usa il modulo sottostante per modificare la descrizione dell'elenco o modificare l'elenco delle pagine di destinazione. Scrivi il titolo delle pagine di destinazione, uno per riga, nella forma titolo@dominio (ad esempio Discussioni_utente:Esempio@it.wikipedia.org) per indicare una pagina su un wiki differente.",
 	"massmessage-edit-invalidtitle": "Non c'è un elenco di consegna valido a questo titolo.",

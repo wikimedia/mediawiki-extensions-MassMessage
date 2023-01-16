@@ -56,7 +56,6 @@
 	"massmessage-edit-title": "Naslov:",
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-content": "Ciljne stranice:",
-	"massmessage-edit-summary": "Sažetak uređivanja:",
 	"massmessage-list-category": "Popisi isporuka masovne poruke (MassMessage)",
 	"tag-massmessage-delivery": "isporuka masovne poruke",
 	"tag-massmessage-delivery-description": "Isporuka poruka uz pomoć dodatka [[:mw:Special:MyLanguage/Extension:MassMessage|MassMessage]]"

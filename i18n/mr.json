@@ -88,7 +88,6 @@
 	"massmessage-edit-title": "शीर्षक:",
 	"massmessage-edit-description": "वर्णन:",
 	"massmessage-edit-content": "लक्ष्य पाने:",
-	"massmessage-edit-summary": "संपादन सारांश:",
 	"massmessage-edit-header": "यादीचे वर्णन बदलविण्यास किंवा लक्ष्य पानांवरील यादी संपादनासाठी हे खालील आवेदन वापरा.लक्ष्य पानांसाठी, एका ओळीत एकच शीर्षक ठेवा.",
 	"massmessage-edit-headermulti": "यादीचे वर्णन बदलविण्यास किंवा लक्ष्य पानांवरील यादी संपादनासाठी हे खालील आवेदन वापरा.लक्ष्य पानांसाठी, एका ओळीत एकच शीर्षक ठेवा व वेगळ्या विकिवरील पान नमूद करण्यास title@domain (e.g. User_talk:Example@en.wikipedia.org) हे वापरा.",
 	"massmessage-edit-invalidtitle": "या शीर्षकाची कोणतीही वैध संदेश वितरण यादी नाही.",

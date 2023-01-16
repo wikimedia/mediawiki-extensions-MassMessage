@@ -64,7 +64,6 @@
 	"massmessage-edit-title": "Titlu:",
 	"massmessage-edit-description": "Descriere:",
 	"massmessage-edit-content": "Pagină țintă:",
-	"massmessage-edit-summary": "Rezumatul editării:",
 	"massmessage-edit-nopermission": "Nu aveți permisiunea să editați această listă.",
 	"massmessage-summary-add": "Adăugat [[:$1]]",
 	"massmessage-summary-addonsite": "Adăugat $1 pe $2",

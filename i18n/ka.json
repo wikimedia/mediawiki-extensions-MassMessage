@@ -54,7 +54,6 @@
 	"massmessage-edit-title": "სათაური:",
 	"massmessage-edit-description": "აღწერა:",
 	"massmessage-edit-content": "სამიზნე გვერდები:",
-	"massmessage-edit-summary": "რედაქტირების რეზიუმე:",
 	"massmessage-summary-add": "დაემატა [[:$1]]",
 	"massmessage-summary-addonsite": "დაემატა $1 $2-ზე",
 	"massmessage-summary-addmulti": "დაემატა $1 {{PLURAL:$1|გვერდი|გვერდი}}",

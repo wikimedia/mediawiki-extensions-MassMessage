@@ -111,7 +111,6 @@
 	"massmessage-edit-title": "Titulo:",
 	"massmessage-edit-description": "Description:",
 	"massmessage-edit-content": "Paginas de destination:",
-	"massmessage-edit-summary": "Summario del modification:",
 	"massmessage-edit-header": "Usa le formulario hic infra pro modificar le description del lista o le lista de paginas de destination. Pro paginas de destination, lista le titulos un per linea.",
 	"massmessage-edit-headermulti": "Usa le formulario hic infra pro modificar le description del lista o le lista de paginas de destination. Pro paginas de destination, lista le titulos un per linea e usa titulo@dominio (p.ex. User_talk:Exemplo@en.wikipedia.org) pro specificar un pagina sur un altere wiki.",
 	"massmessage-edit-invalidtitle": "Non existe un lista de livration de messages in massa valide que ha iste titulo.",

@@ -118,7 +118,6 @@
 	"massmessage-edit-title": "Titel:",
 	"massmessage-edit-description": "Beschreibung:",
 	"massmessage-edit-content": "Zielseiten:",
-	"massmessage-edit-summary": "Bearbeitungszusammenfassung:",
 	"massmessage-edit-header": "Verwende das unten stehende Formular zur Änderung der Listenbeschreibung oder Bearbeitung der Liste mit den Zielseiten. Liste für die Zielseiten einen Titel pro Zeile auf.",
 	"massmessage-edit-headermulti": "Verwende das unten stehende Formular zur Änderung der Listenbeschreibung oder Bearbeitung der Liste mit den Zielseiten. Liste für die Zielseiten einen Titel pro Zeile auf und benutze Titel@Domain (z.&nbsp;B. User_talk:Example@en.wikipedia.org), um eine Seite auf einem anderen Wiki anzugeben.",
 	"massmessage-edit-invalidtitle": "Es gibt unter dem Titel keine gültige Massennachrichten-Versandliste.",

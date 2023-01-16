@@ -113,7 +113,6 @@
 	"massmessage-edit-title": "Naslov:",
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-content": "Ciljne strani:",
-	"massmessage-edit-summary": "Povzetek urejanja:",
 	"massmessage-edit-header": "Za spreminjanje opisa seznama ali urejanje seznama ciljnih strani uporabite spodnji obrazec. Za ciljne strani navedite en naslov na vrstico.",
 	"massmessage-edit-headermulti": "Za spreminjanje opisa seznama ali urejanje seznama ciljnih strani uporabite spodnji obrazec. Za ciljne strani navedite en naslov na vrstico in določite stran v drugem vikiju s title@domain (npr. User_talk:Zgled@en.wikipedia.org).",
 	"massmessage-edit-invalidtitle": "Ni veljavnega seznama za pošiljanje množičnega sporočila s tem naslovom.",

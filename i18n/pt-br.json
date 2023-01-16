@@ -114,7 +114,6 @@
 	"massmessage-edit-title": "Título:",
 	"massmessage-edit-description": "Descrição:",
 	"massmessage-edit-content": "Páginas de destino:",
-	"massmessage-edit-summary": "Editar sumário:",
 	"massmessage-edit-header": "Use o formulário abaixo para modificar a descrição da lista ou editar a lista de páginas de destino. Para páginas de destino, coloque um título por linha.",
 	"massmessage-edit-headermulti": "Utilize o formulário abaixo para modificar a descrição da lista ou editar a lista de páginas de destino. Para páginas de destino, coloque um título por linha e use título@domínio (por exemplo, User_talk:Example@pt.wikipedia.org) para especificar uma página em diferentes wikis.",
 	"massmessage-edit-invalidtitle": "Não há nenhuma lista de entrega de mensagem em massa com este título.",

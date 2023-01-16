@@ -74,7 +74,6 @@
 	"massmessage-edit-title": "Övverschreff:",
 	"massmessage-edit-description": "Beschrevve als:",
 	"massmessage-edit-content": "Zihlsigge:",
-	"massmessage-edit-summary": "{{int:Summary}}:",
 	"massmessage-edit-invalidtitle": "Et jitt kein jöltijje Leß för  mass message met dä Övverschreff.",
 	"massmessage-edit-nopermission": "Do häs nit et Rääsch, di Leß ze ändere.",
 	"massmessage-summary-remove": "Fottjeschmeße [[:$1]]",

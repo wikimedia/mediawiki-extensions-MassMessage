@@ -119,7 +119,6 @@
 	"massmessage-edit-title": "Назва:",
 	"massmessage-edit-description": "Опис:",
 	"massmessage-edit-content": "Цільові сторінки:",
-	"massmessage-edit-summary": "Опис редагування:",
 	"massmessage-edit-header": "За допомогою форми внизу ви можете змінити список доставки повідомлення чи його опис. Цільові сторінки перелічуйте по одній на рядок.",
 	"massmessage-edit-headermulti": "За допомогою форми внизу ви можете змінити список доставки повідомлення чи його опис. Цільові сторінки перелічуйте по одній на рядок, для сторінок на сторонніх вікі використовуйте синтаксис title@domain (приміром, User_talk:Example@en.wikipedia.org).",
 	"massmessage-edit-invalidtitle": "З такою назвою немає допустимого списку масової розсилки повідомлення.",

@@ -121,7 +121,6 @@
 	"massmessage-edit-title": "Tytuł:",
 	"massmessage-edit-description": "Opis:",
 	"massmessage-edit-content": "Strony docelowe:",
-	"massmessage-edit-summary": "Opis zmian:",
 	"massmessage-edit-header": "Użyj poniższego formularza do zmodyfikowania opisu listy lub listy stron docelowych. Każdą stronę docelową należy wpisywać w oddzielnej linii.",
 	"massmessage-edit-headermulti": "Użyj poniższego formularza do zmodyfikowania opisu listy lub edycji listy stron docelowych. Każdą stronę docelową należy wpisywać w oddzielnej linii i korzystać z formatu tytuł@domena (np. User_talk:Example@en.wikipedia.org), aby określić stronę na innej wiki.",
 	"massmessage-edit-invalidtitle": "Nie ma prawidłowej listy odbiorców masowych wiadomości pod tym tytułem.",

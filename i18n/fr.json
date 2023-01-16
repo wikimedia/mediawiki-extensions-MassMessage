@@ -125,7 +125,6 @@
 	"massmessage-edit-title": "Titre :",
 	"massmessage-edit-description": "Description :",
 	"massmessage-edit-content": "Pages cibles :",
-	"massmessage-edit-summary": "Résumé des modifications :",
 	"massmessage-edit-header": "Utilisez le formulaire ci-dessous pour modifier la description de la liste ou modifier la liste des pages cibles. Pour les pages cible, indiquez un titre par ligne.",
 	"massmessage-edit-headermulti": "Utiliser le formulaire ci-dessous pour modifier la description de la liste ou modifier la liste des pages cible. Pour les pages cible, lister un titre par ligne et utiliser title@domain (par ex. User_talk:Example@en.wikipedia.org) pour spécifier une page sur un wiki différent.",
 	"massmessage-edit-invalidtitle": "Il n’y a aucune liste de diffusion de messages de masse valide correspondant à ce titre.",

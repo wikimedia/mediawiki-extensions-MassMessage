@@ -111,7 +111,6 @@
 	"massmessage-edit-title": "Título:",
 	"massmessage-edit-description": "Descripción:",
 	"massmessage-edit-content": "Páginas de destino:",
-	"massmessage-edit-summary": "Resumen de edición:",
 	"massmessage-edit-header": "Usa el siguiente formulario para modificar la descripción  de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea.",
 	"massmessage-edit-headermulti": "Usa el siguiente formulario para modificar la descripción de la lista o edita la lista de las páginas de destino. Para las páginas de destino, lista un título por línea y usa título@dominio (p. ej. Usuario_discusión:Ejemplo@es.wikipedia.org) para especificar una página en una wiki distinta.",
 	"massmessage-edit-invalidtitle": "No existe una lista de distribución de mensajes masivos válida con este título.",

@@ -71,7 +71,6 @@
 	"massmessage-edit-title": "ခေါင်းစဉ်:",
 	"massmessage-edit-description": "ဖော်ပြချက်:",
 	"massmessage-edit-content": "ဦးတည်စာမျက်နှာများ:",
-	"massmessage-edit-summary": "အကျဉ်းချုပ်ကို တည်းဖြတ်ရန်-",
 	"massmessage-edit-invalidtargets": "အောက်ပါ {{PLURAL:$1|စာမျက်နှာသည်|စာမျက်နှာများသည်}} အကျုံးမဝင်ပါ:\n$2",
 	"massmessage-edit-nopermission": "သင့်တွင် စာရင်းကိုပြင်ဆင်ရန် ခွင့်ပြုချက်မရှိပါ။",
 	"massmessage-summary-add": "[[:$1]] ကို ပေါင်းထည့်ခဲ့သည်",
