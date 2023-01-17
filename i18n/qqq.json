@@ -129,7 +129,7 @@
 	"massmessage-edit-header": "Instructions for [[Special:EditMassMessageList]]",
 	"massmessage-edit-headermulti": "Instructions for [[Special:EditMassMessageList]] if cross-wiki delivery is enabled",
 	"massmessage-edit-invalidtitle": "Error message shown on [[Special:EditMassMessageList]] when the title is invalid",
-	"massmessage-edit-invalidtargets": "Error message shown on [[Special:EditMassMessageList]] when one ore more targets are invalid\n* $1 is the number of invalid targets\n* $2 is a formatted list of invalid target strings.",
+	"massmessage-edit-invalidtargets": "Error message shown on [[Special:EditMassMessageList]] when one or more targets are invalid.\n* $1 is the number of invalid targets.\n* $2 is a formatted list of invalid target strings.",
 	"massmessage-edit-missingsummary": "Warning shown on [[Special:EditMassMessageList]] to users who have chosen to be prompted about blank edit summaries.\n\nRefers to {{msg-mw|Htmlform-submit}}.",
 	"massmessage-edit-nopermission": "Error message shown on [[Special:EditMassMessageList]] when the user cannot edit the list",
 	"massmessage-summary-addremove": "Edit summary when an API request both adds and removes target pages\n* $1 is the number of pages added\n* $2 is the number of pages removed",
