@@ -11,6 +11,8 @@
 	"apihelp-editmassmessagelist-param-add": "Títulos a adicionar à lista.",
 	"apihelp-editmassmessagelist-param-remove": "Títulos a remover da lista.",
 	"apihelp-editmassmessagelist-param-description": "Descrição nova para a lista de entrega.",
+	"apihelp-editmassmessagelist-param-minor": "Se a edição deve ser marcada como secundária no historial da lista.",
+	"apihelp-editmassmessagelist-param-watchlist": "Adicionar ou remover incondicionalmente a página da lista de páginas vigiadas do utilizador atual, usar as preferências (ignorado para robôs) ou não alterar o estado de vigilância.",
 	"apihelp-editmassmessagelist-example-1": "Adicionar as páginas [[User talk:Foo]] e [[Talk:Bar]] à lista de entrega [[Example]] e remover [[Talk:Baz]] desta lista",
 	"apihelp-editmassmessagelist-example-2": "Definir a descrição da lista de entrega [[Example]] como \"FooBar delivery services\"",
 	"apihelp-massmessage-description": "Enviar uma mensagem para uma lista de páginas.",

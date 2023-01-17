@@ -6,6 +6,8 @@
 		]
 	},
 	"apihelp-editmassmessagelist-param-add": "Naslovi, ki naj bodo dodani na seznam.",
+	"apihelp-editmassmessagelist-param-minor": "Ali naj bo urejanje v zgodovini seznama označeno kot manjše.",
+	"apihelp-editmassmessagelist-param-watchlist": "Brezpogojno dodajte ali odstranite stran s spiska nadzorov trenutnega uporabnika, uporabite nastavitve (prezrto za uporabnike botov) ali ne spremenite opazovanja.",
 	"apihelp-massmessage-param-subject": "Vrstica zadeve sporočila.",
 	"apihelp-massmessage-param-message": "Telo sporočila."
 }

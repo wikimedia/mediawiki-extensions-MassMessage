@@ -14,6 +14,7 @@
 	"apihelp-editmassmessagelist-param-add": "Títulos que añadir a la lista.",
 	"apihelp-editmassmessagelist-param-remove": "Títulos que quitar de la lista.",
 	"apihelp-editmassmessagelist-param-description": "Nueva descripción de la lista de entregas.",
+	"apihelp-editmassmessagelist-param-minor": "Indica si la edición debe marcarse como menor en el historial de la lista.",
 	"apihelp-editmassmessagelist-example-1": "Añadir [[User talk:Foo]] y [[Talk:Bar]] a la lista de entrega [[Example]], y a eliminar a [[Talk:Baz]] de ella",
 	"apihelp-massmessage-description": "Enviar un mensaje a una lista de páginas.",
 	"apihelp-massmessage-param-spamlist": "Página que contiene una lista de páginas en que se dejará un mensaje.",

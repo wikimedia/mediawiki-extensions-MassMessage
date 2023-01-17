@@ -5,6 +5,7 @@
 			"DreZhsh",
 			"Gomoko",
 			"Thibaut120094",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
@@ -14,6 +15,8 @@
 	"apihelp-editmassmessagelist-param-add": "Titres à ajouter à la liste.",
 	"apihelp-editmassmessagelist-param-remove": "Titres à supprimer de la liste.",
 	"apihelp-editmassmessagelist-param-description": "Nouvelle description pour la liste de destinataires.",
+	"apihelp-editmassmessagelist-param-minor": "Si la modification doit être marquée comme mineure dans l’historique de la liste.",
+	"apihelp-editmassmessagelist-param-watchlist": "Ajouter ou supprimer sans condition la page de la liste de suivi de l’utilisateur actuel, utiliser les préférences (ignoré pour les utilisateurs robots) ou ne pas modifier le suivi.",
 	"apihelp-editmassmessagelist-example-1": "Ajouter [[User talk:Foo]] et [[Talk:Bar]] à la liste de diffusion [[Example]] et y supprimer [[Talk:Baz]]",
 	"apihelp-editmassmessagelist-example-2": "Fixer la description de la liste de destinataires [[Example]] à « services de livraison de FooBar »",
 	"apihelp-massmessage-description": "Envoyer un message à une liste de pages.",

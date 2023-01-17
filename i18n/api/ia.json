@@ -10,6 +10,8 @@
 	"apihelp-editmassmessagelist-param-add": "Titulos a adder al lista.",
 	"apihelp-editmassmessagelist-param-remove": "Titulos a remover del lista.",
 	"apihelp-editmassmessagelist-param-description": "Nove description pro le lista de livration.",
+	"apihelp-editmassmessagelist-param-minor": "Indica si le modification debe esser marcate como minor in le historia del lista.",
+	"apihelp-editmassmessagelist-param-watchlist": "Adder o remover le pagina del observatorio del usator actual sin conditiones, usar le preferentias (ignorate pro usatores de robot) o non cambiar le observation.",
 	"apihelp-editmassmessagelist-example-1": "Adder [[User talk:Foo]] e [[Talk:Bar]] al lista de livration [[Example]] e remover [[Talk:Baz]] de illo",
 	"apihelp-editmassmessagelist-example-2": "Definir le description del lista de livration [[Example]] como \"FooBar delivery services\"",
 	"apihelp-massmessage-description": "Inviar un message a un lista de paginas.",
