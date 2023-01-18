@@ -27,5 +27,7 @@
 	"apihelp-query+mmsites-summary": "Stellt Autovervollständigungs-Anfragen für das Website-Feld in MassMessage zur Verfügung.",
 	"apihelp-query+mmsites-param-term": "Das Präfix, nach dem gesucht werden soll.",
 	"apihelp-query+mmsites-example-1": "„en“ vervollständigen",
+	"apihelp-query+mmcontent-summary": "Beschreibung und Ziele einer Spamliste abrufen",
+	"apihelp-query+mmcontent-example-1": "Seiten- und Spamlisteninformationen der [[Spam list]] abrufen",
 	"apierror-massmessage-invalidspamlist": "Die angegebene Spamliste ist ungültig."
 }
