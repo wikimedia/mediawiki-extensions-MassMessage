@@ -5,9 +5,26 @@
 			"Janezdrilc"
 		]
 	},
+	"apihelp-editmassmessagelist-description": "Urejanje seznama za pošiljanje množičnega sporočila.",
+	"apihelp-editmassmessagelist-summary": "Urejanje seznama za pošiljanje množičnega sporočila.",
+	"apihelp-editmassmessagelist-param-spamlist": "Naaslov seznama za pošiljanje za posodobitev.",
 	"apihelp-editmassmessagelist-param-add": "Naslovi, ki naj bodo dodani na seznam.",
+	"apihelp-editmassmessagelist-param-remove": "Naslovi za odstranitev s seznama.",
+	"apihelp-editmassmessagelist-param-description": "Nov opis seznama za pošiljanje.",
 	"apihelp-editmassmessagelist-param-minor": "Ali naj bo urejanje v zgodovini seznama označeno kot manjše.",
 	"apihelp-editmassmessagelist-param-watchlist": "Brezpogojno dodajte ali odstranite stran s spiska nadzorov trenutnega uporabnika, uporabite nastavitve (prezrto za uporabnike botov) ali ne spremenite opazovanja.",
+	"apihelp-editmassmessagelist-example-1": "Doda [[User talk:Foo]] in [[Talk:Bar]] na seznam za pošiljanje [[Example]] (Zgled) in z njega odstrani [[Talk:Baz]]",
+	"apihelp-editmassmessagelist-example-2": "Nastavitev opisa seznama za pošiljanje [[Example]] (Zgled) na »Storitve pošiljanja FooBar«",
+	"apihelp-massmessage-description": "Pošlje sporočilo na seznam strani.",
+	"apihelp-massmessage-summary": "Pošlje sporočilo na seznam strani.",
+	"apihelp-massmessage-param-spamlist": "Stran, ki vsebuje seznam strani, na katerih želite pustiti sporočilo.",
 	"apihelp-massmessage-param-subject": "Vrstica zadeve sporočila.",
-	"apihelp-massmessage-param-message": "Telo sporočila."
+	"apihelp-massmessage-param-message": "Telo sporočila.",
+	"apihelp-massmessage-param-page-message": "Stran, ki naj bo poslana skupaj s telesom sporočila.",
+	"apihelp-massmessage-example-1": "Pošljanje sporočila na seznam [[Signpost Spamlist]] z zadevo »Nov Kažipot« in telesom sporočila »Prosimo, preberite«.",
+	"apihelp-massmessage-example-2": "Pošljanje sporočila na seznam [[Signpost Spamlist]] z zadevo »Nov Kažipot« in sporočilom kot vsebino strani »Stran pomoči«.",
+	"apihelp-massmessage-example-3": "Pošljanje sporočila na seznam [[Signpost Spamlist]] z zadevo »Nov Kažipot« in telesom sporočila »Prosimo, preberite« z dodano vsebino s strani »Stran pomoči«.",
+	"apihelp-query+mmcontent-summary": "Pridobi opis in cilje seznama promocij",
+	"apihelp-query+mmcontent-example-1": "Pridobi informacije o strani in seznamu promocij [[Spam list]]",
+	"apierror-massmessage-invalidspamlist": "Predloženi seznam promocij je neveljaven."
 }
