@@ -76,7 +76,6 @@ class SpecialMassMessage extends FormSpecialPage {
 		$output = $this->getOutput();
 
 		$this->addHelpLink( 'Help:Extension:MassMessage' );
-		$this->outputHeader();
 
 		$output->addModules( 'ext.MassMessage.special.js' );
 		$output->addModuleStyles( 'ext.MassMessage.styles' );
