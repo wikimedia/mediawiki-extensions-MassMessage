@@ -21,7 +21,7 @@
 	},
 	"massmessage": "Toplu mesaj gönder",
 	"createmassmessagelist": "Toplu mesaj gönderme listesi oluştur",
-	"editmassmessagelist": "Toplu mesaj gönderme listesini düzenle",
+	"editmassmessagelist": "Toplu mesaj gönderme listesini değiştir",
 	"massmessage-desc": "Kullanıcıları belirli bir kullanıcı listesine kolayca mesaj göndermesini sağlar",
 	"massmessage-form-spamlist": "Mesaj bırakılacak sayfaları listesini barındıran kategori veya sayfa:",
 	"massmessage-form-subject": "Mesajın konusu (ayrıca düzenleme özeti olarak da kullanılır):",
