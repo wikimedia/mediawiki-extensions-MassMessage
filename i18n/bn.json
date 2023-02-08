@@ -7,7 +7,8 @@
 			"Bodhisattwa",
 			"Tauhid16",
 			"আফতাবুজ্জামান",
-			"খাত্তাব হাসান"
+			"খাত্তাব হাসান",
+			"Ahmad Kanik"
 		]
 	},
 	"massmessage": "গণবার্তা পাঠান",
@@ -39,6 +40,7 @@
 	"massmessage-parse-badurl": "\"$1\" কোন বৈধ সাইট নয়।",
 	"massmessage-parse-badpage": "\"$1\" কোন বৈধ পাতার শিরোনাম নয়।",
 	"massmessage-global-disallowed": "বার্তা শুধুমাত্র স্থানীয় পাতাসমূহে পাঠানো যেতে পারে।",
+	"right-massmessage": "একটি বার্তা একসাথে একাধিক ব্যবহারকারীর কাছে প্রেরণ করা",
 	"action-massmessage": "একাধিক ব্যবহারকারীকে একই সময়ে একটি বার্তা প্রেরণ করার",
 	"log-name-massmessage": "গণবার্তা লগ",
 	"log-description-massmessage": "এই ঘটনাগুলি ব্যবহারকারীদের বার্তা পাঠানো অনুসরণ করে।",
