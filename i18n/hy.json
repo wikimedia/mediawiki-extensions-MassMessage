@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
+	"massmessage-form-preview": "Նախադիտում",
+	"massmessage-fieldset-preview": "Նախադիտում",
 	"massmessage-content-removeno": "Չեղարկել",
 	"massmessage-content-addsubmit": "Ավելացնել էջ",
 	"massmessage-summary-add": "Ավելացվել է [[:$1]]"
