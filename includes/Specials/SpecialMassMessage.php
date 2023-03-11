@@ -450,7 +450,6 @@ class SpecialMassMessage extends FormSpecialPage {
 					'items' => [
 						new Widget( [
 							'content' => new HtmlSnippet(
-							// @phan-suppress-next-line SecurityCheck-DoubleEscaped false positive or bug
 								Html::element( 'pre', [], "== {$subjectText} ==\n\n$messageText" )
 							),
 						] ),
