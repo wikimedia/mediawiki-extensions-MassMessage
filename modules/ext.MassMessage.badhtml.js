@@ -56,7 +56,7 @@ function badHtml( $msg ) {
 					}
 				}
 			} else { // End tag
-				realTag = tag.substr( 1, tag.length );
+				realTag = tag.slice( 1, 1 + tag.length );
 				if ( hasOwn.call( tags, realTag ) ) {
 					tags[ realTag ]--;
 				} else {

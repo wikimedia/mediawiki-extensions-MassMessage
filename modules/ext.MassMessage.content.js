@@ -77,7 +77,7 @@ $( function () {
 		if ( site === '' ) {
 			if ( title.indexOf( '@' ) >= 0 ) { // Handle titles containing '@'
 				server = mw.config.get( 'wgServer' );
-				param = title + '@' + server.substr( server.indexOf( '//' ) + 2 );
+				param = title + '@' + server.slice( server.indexOf( '//' ) + 2 );
 			} else {
 				param = title;
 			}
