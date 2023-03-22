@@ -170,21 +170,16 @@ $specialPageAliases['vi'] = [
 	'EditMassMessageList' => [ 'Sửa_danh_sách_nhắn_tin_cho_nhiều_người' ],
 ];
 
-/** Chinese (中文) */
-$specialPageAliases['zh'] = [
-	'MassMessage' => [ '群发消息', '批量消息', '群發訊息' ],
-];
-
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = [
-	'MassMessage' => [ '群发信息', '批量消息' ],
+	'MassMessage' => [ '群发消息', '大量消息', '批量消息' ],
 	'CreateMassMessageList' => [ '创建群发消息递送列表' ],
 	'EditMassMessageList' => [ '编辑群发消息递送列表' ],
 ];
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = [
-	'MassMessage' => [ '大量訊息' ],
-	'CreateMassMessageList' => [ '建立群發訊息遞送清單' ],
-	'EditMassMessageList' => [ '編輯群發訊息遞送清單' ],
+	'MassMessage' => [ '大量訊息', '批量訊息', '群發訊息' ],
+	'CreateMassMessageList' => [ '建立大量訊息遞送清單', '建立群發訊息遞送清單' ],
+	'EditMassMessageList' => [ '編輯大量訊息遞送清單', '編輯群發訊息遞送清單' ],
 ];
