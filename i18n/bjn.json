@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ezagren"
+		]
+	},
+	"massmessage": "Kirim pasan massal",
+	"createmassmessagelist": "Ulah daptar panarima pasan massal",
+	"editmassmessagelist": "Babak daptar panarima pasan massal",
+	"massmessage-desc": "Ijinakan pamakai mangirimakan pasan nang mudah ka daptar pamakai tujuan",
+	"massmessage-form-spamlist": "Laman atawa tumbung nang baisi daptar laman tujuan pangiriman pasan:",
+	"massmessage-form-subject": "Subjék pasan (dipakai jua sabagai ringkasan babakan):",
+	"massmessage-form-message": "Isi pasan:",
+	"massmessage-form-page": "Laman nang pacangan dikirim sabagai pasan:",
+	"massmessage-form-preview": "Titilikan",
+	"massmessage-form-submit": "Kirim",
+	"massmessage-fieldset-preview": "Titilikan",
+	"massmessage-fieldset-info": "Maklumat",
+	"massmessage-preview-count": "Pasan Pian pacangan dikirim ka {{PLURAL:$1|$1 laman}}.",
+	"tag-massmessage-delivery": "Pangiriman PasanMassal"
+}
