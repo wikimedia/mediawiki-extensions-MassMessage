@@ -15,6 +15,7 @@ use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
 use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 
 /** @phpcs-require-sorted-array */
 return [

@@ -7,9 +7,9 @@ use ContentHandler;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\WikiMap\WikiMap;
 use Status;
 use Title;
-use WikiMap;
 
 /**
  * Fetches content from the local wiki

@@ -16,6 +16,7 @@ use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use Message;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
@@ -24,7 +25,6 @@ use OOUI\Widget;
 use Status;
 use TextContent;
 use Title;
-use WikiMap;
 
 /**
  * Form to allow users to send messages to a lot of users at once.

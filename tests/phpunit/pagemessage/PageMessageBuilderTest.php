@@ -9,10 +9,10 @@ use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
+use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use Status;
 use Title;
-use WikiMap;
 
 /** @coversDefaultClass \MediaWiki\MassMessage\PageMessage\PageMessageBuilder */
 class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {

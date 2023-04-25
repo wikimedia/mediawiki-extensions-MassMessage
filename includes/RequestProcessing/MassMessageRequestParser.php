@@ -8,9 +8,9 @@ use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\WikiMap\WikiMap;
 use Status;
 use Title;
-use WikiMap;
 use function wfMessage;
 
 /**

@@ -4,9 +4,9 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use Title;
 use WANObjectCache;
-use WikiMap;
 
 /**
  * Functions related to target processing

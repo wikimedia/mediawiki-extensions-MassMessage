@@ -16,9 +16,9 @@ use MediaWiki\MassMessage\PageMessage\PageMessageBuilderResult;
 use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use Title;
 use User;
-use WikiMap;
 
 /**
  * Job Queue class to send a message to a user.

@@ -4,8 +4,8 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use Category;
 use MediaWiki\MassMessage\UrlHelper;
+use MediaWiki\WikiMap\WikiMap;
 use Title;
-use WikiMap;
 
 class CategorySpamlistLookup extends SpamlistLookup {
 

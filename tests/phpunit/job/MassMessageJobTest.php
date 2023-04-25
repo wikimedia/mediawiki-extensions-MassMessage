@@ -7,6 +7,7 @@ use ExtensionRegistry;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RequestContext;
 use RuntimeException;
@@ -14,7 +15,6 @@ use SpecialPageLanguage;
 use TextContent;
 use Title;
 use User;
-use WikiMap;
 
 class MassMessageJobTest extends MassMessageTestCase {
 

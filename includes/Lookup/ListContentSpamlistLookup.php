@@ -5,8 +5,8 @@ namespace MediaWiki\MassMessage\Lookup;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\WikiMap\WikiMap;
 use Title;
-use WikiMap;
 
 class ListContentSpamlistLookup extends SpamlistLookup {
 

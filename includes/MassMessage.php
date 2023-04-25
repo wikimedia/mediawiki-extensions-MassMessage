@@ -13,10 +13,10 @@ use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use ParserOptions;
 use Title;
 use User;
-use WikiMap;
 
 /**
  * Some core functions needed by the extension.

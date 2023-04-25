@@ -4,7 +4,7 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 
 class DatabaseLookup {
 
