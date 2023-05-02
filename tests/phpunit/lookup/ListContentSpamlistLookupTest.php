@@ -4,8 +4,8 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use ContentHandler;
 use MediaWiki\MassMessage\MassMessageTestCase;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use Title;
 
 /**
  * Tests for MassMessage List Content related to target processing

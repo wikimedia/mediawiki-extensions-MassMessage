@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
-use Title;
+use MediaWiki\Title\Title;
 
 class UrlHelperTest extends MassMessageTestCase {
 

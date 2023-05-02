@@ -10,8 +10,8 @@ use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
+use MediaWiki\Title\Title;
 use Status;
-use Title;
 
 /**
  * Contains logic to interact with page being sent as a mesasges

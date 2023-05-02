@@ -4,7 +4,7 @@ namespace MediaWiki\MassMessage\Job\Hooks;
 
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MassMessage\LanguageAwareText;
-use Title;
+use MediaWiki\Title\Title;
 
 class HookRunner implements MassMessageJobBeforeSentHook {
 

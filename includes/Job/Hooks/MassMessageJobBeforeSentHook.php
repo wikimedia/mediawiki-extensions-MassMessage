@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage\Job\Hooks;
 
 use MediaWiki\MassMessage\LanguageAwareText;
-use Title;
+use MediaWiki\Title\Title;
 
 interface MassMessageJobBeforeSentHook {
 	/**

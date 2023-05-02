@@ -6,7 +6,7 @@ namespace MediaWiki\MassMessage\Api;
 use ApiQueryBase;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * API module to retrieve the content of a mass message distribution list

@@ -4,8 +4,8 @@ namespace MediaWiki\MassMessage\Job;
 
 use Job;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MWTimestamp;
-use Title;
 
 /**
  * JobQueue class to queue other jobs.

@@ -4,9 +4,9 @@ namespace MediaWiki\MassMessage;
 
 use ContentHandler;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use SiteConfiguration;
-use Title;
 use User;
 
 /**

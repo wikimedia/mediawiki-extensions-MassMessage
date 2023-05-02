@@ -5,8 +5,8 @@ namespace MediaWiki\MassMessage;
 use Maintenance;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use Title;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {

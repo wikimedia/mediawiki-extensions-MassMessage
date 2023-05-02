@@ -12,8 +12,8 @@ use DeferredUpdates;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\DerivativeRequest;
+use MediaWiki\Title\Title;
 use RequestContext;
-use Title;
 use User;
 use Wikimedia\ScopedCallback;
 

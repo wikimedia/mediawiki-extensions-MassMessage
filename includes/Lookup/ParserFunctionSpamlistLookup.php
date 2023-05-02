@@ -5,8 +5,8 @@ namespace MediaWiki\MassMessage\Lookup;
 use MediaWiki\MassMessage\MassMessageHooks;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 use TextContent;
-use Title;
 
 class ParserFunctionSpamlistLookup extends SpamlistLookup {
 

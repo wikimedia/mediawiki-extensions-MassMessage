@@ -3,9 +3,9 @@
 namespace MediaWiki\MassMessage\Logging;
 
 use LogFormatter;
+use MediaWiki\Title\Title;
 use Message;
 use SpecialPage;
-use Title;
 
 /**
  * Log formatter for 'send' entries on Special:Log/massmessage.

@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\MassMessage;
 
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Tests for the API module to query the content of a MassMessage delivery list.

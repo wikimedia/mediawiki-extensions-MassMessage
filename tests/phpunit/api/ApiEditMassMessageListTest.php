@@ -4,7 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use ContentHandler;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Tests for the API module to edit a MassMessage delivery list.

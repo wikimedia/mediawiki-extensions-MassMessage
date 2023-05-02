@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage;
 
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 class UrlHelper {
 

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\RequestProcessing;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Represents a request submitted by user for sending a mass message

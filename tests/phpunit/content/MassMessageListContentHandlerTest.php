@@ -5,7 +5,7 @@ namespace MediaWiki\MassMessage;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * This inherits ApiTestCase because MassMessageListContentHandler::edit goes through

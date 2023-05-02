@@ -4,8 +4,8 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use Title;
 use WANObjectCache;
 
 /**

@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\MassMessage\Stub;
 
 use Language;
+use MediaWiki\Title\Title;
 use PHPUnit\Framework\TestCase;
-use Title;
 
 /**
  * Returns a Title stub with given page language

@@ -16,6 +16,8 @@
  *
  */
 
+use MediaWiki\Title\Title;
+
 /**
  * Stub of LiquidThreads LqtDispatch class for phan
  */

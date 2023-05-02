@@ -5,7 +5,7 @@ namespace MediaWiki\MassMessage\Content;
 use JsonContent;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
-use Title;
+use MediaWiki\Title\Title;
 
 class MassMessageListContent extends JsonContent {
 

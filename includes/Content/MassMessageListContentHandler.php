@@ -18,6 +18,7 @@ use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWiki\Widget\TitleInputWidget;
 use OOUI\ActionFieldLayout;
 use OOUI\ButtonInputWidget;
@@ -28,7 +29,6 @@ use OutputPage;
 use ParserOutput;
 use RequestContext;
 use Status;
-use Title;
 
 class MassMessageListContentHandler extends JsonContentHandler {
 

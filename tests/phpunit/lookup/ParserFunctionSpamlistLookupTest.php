@@ -5,8 +5,8 @@ namespace MediaWiki\MassMessage\Lookup;
 use MediaWiki\MassMessage\MassMessageTest;
 use MediaWiki\MassMessage\MassMessageTestCase;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use Title;
 
 /**
  * Tests for Parser functions related to target processing

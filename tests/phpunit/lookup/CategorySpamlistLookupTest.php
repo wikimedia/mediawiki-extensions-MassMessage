@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\MassMessage\MassMessageTestCase;
-use Title;
+use MediaWiki\Title\Title;
 use WikitextContent;
 
 /**
