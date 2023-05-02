@@ -2,8 +2,10 @@
 
 namespace MediaWiki\MassMessage;
 
+use ChangeTags;
 use ContentHandler;
 use ExtensionRegistry;
+use FormatJson;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -22,10 +24,13 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * Runs a job to edit the given title
 	 * @param Title $title
 	 * @param array $additionalParams
+	 * @param string|null $subject Subject for the message; randomly generated if unspecified
 	 * @return array
 	 */
-	private function simulateJob( Title $title, array $additionalParams = [] ): array {
-		$subject = md5( MWCryptRand::generateHex( 15 ) );
+	private function simulateJob( Title $title, array $additionalParams = [], $subject = null ): array {
+		if ( $subject === null ) {
+			$subject = md5( MWCryptRand::generateHex( 15 ) );
+		}
 		$params = [
 			'subject' => $subject,
 			'message' => 'This is a message.',
@@ -120,6 +125,39 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\DedupeHelper::hasRecentlyDeliveredDuplicate
+	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
+	 */
+	public function testDedupe() {
+		$services = MediaWikiServices::getInstance();
+		$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+
+		$target = $this->getTargetTitle( 'Project:DedupeTest' );
+		list( $subject, ) = $this->simulateJob( $target );
+		// Send the same message again
+		$this->simulateJob( $target, [], $subject );
+		$target = Title::makeTitle( NS_PROJECT, 'DedupeTest' );
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
+		$text = $content->getText();
+		// There should only be one copy of the message
+		$this->assertEquals(
+			"== $subject ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
+			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
+			$text
+		);
+
+		$dedupe_hash = DedupeHelper::getDedupeHash( $subject, 'This is a message.', null, null );
+		$revision = $services->getRevisionStore()->getRevisionByTitle( $target );
+		$change_tags = ChangeTags::getTagsWithData( $dbr, null, $revision->getId() );
+		$this->assertEquals(
+			[ 'massmessage-delivery' => FormatJson::encode( [ 'dedupe_hash' => $dedupe_hash ] ) ],
+			$change_tags,
+		);
+	}
+
+	/**
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::addLQTThread
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
 	 * @covers \MediaWiki\MassMessage\MessageSender::addLQTThread
@@ -187,6 +225,46 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$this->assertStringContainsString(
 			$pageMessageContent,
 			$content->getText()
+		);
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
+	 * @covers \MediaWiki\MassMessage\DedupeHelper::hasRecentlyDeliveredDuplicate
+	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
+	 */
+	public function testDedupePageMessageSending() {
+		$pageMessageContent = 'Test page message.';
+		$pageMessageTitleStr = 'PageMessage';
+
+		$target = $this->getTargetTitle( 'Project:DedupePageMessageTest' );
+		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
+
+		list( $subject, ) = $this->simulateJob( $target, [
+			'page-message' => $pageMessageTitleStr,
+			'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
+			'isSourceTranslationPage' => false
+		] );
+		// Send the same message again
+		$this->simulateJob(
+			$target,
+			[
+				'page-message' => $pageMessageTitleStr,
+				'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
+				'isSourceTranslationPage' => false
+			],
+			$subject,
+		);
+
+		$target = Title::makeTitle( NS_PROJECT, 'DedupePageMessageTest' );
+		$content = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
+		$text = $content->getText();
+		// There should only be one copy of the message
+		$this->assertEquals(
+			"== $subject ==\n\nTest page message.\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
+			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
+			$text
 		);
 	}
 
