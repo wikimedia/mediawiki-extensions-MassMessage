@@ -2,12 +2,12 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use EditPage;
 use FormSpecialPage;
 use Html;
 use HTMLForm;
 use IDBAccessObject;
 use LogEventsList;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;

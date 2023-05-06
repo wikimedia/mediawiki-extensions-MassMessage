@@ -3,10 +3,10 @@
 namespace MediaWiki\MassMessage\Specials;
 
 use ContentHandler;
-use EditPage;
 use FormSpecialPage;
 use Html;
 use HTMLForm;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MessageBuilder;
