@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
-use Category;
+use MediaWiki\Category\Category;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
