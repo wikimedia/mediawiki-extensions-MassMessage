@@ -7,6 +7,7 @@ use ExtensionRegistry;
 use Job;
 use LqtDispatch;
 use ManualLogEntry;
+use MediaWiki\MassMessage\DedupeHelper;
 use MediaWiki\MassMessage\Job\Hooks\HookRunner;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MassMessage;
@@ -190,6 +191,15 @@ class MassMessageJob extends Job {
 		$logEntry->publish( $logid );
 
 		// stick it in the debug log
+		$this->logToDebugLog( $reason );
+	}
+
+	/**
+	 * Log metadata about a delivery to the debug log with the given reason.
+	 *
+	 * @param string $reason
+	 */
+	protected function logToDebugLog( $reason ) {
 		$text = 'Target: ' . $this->title->getPrefixedText();
 		$text .= ' Subject: ' . $this->params['subject'];
 		$text .= ' Reason: ' . $reason;
@@ -223,23 +233,36 @@ class MassMessageJob extends Job {
 			return true;
 		}
 
+		$subject = $this->params['subject'] ?? '';
+		$message = $this->params['message'] ?? '';
+		$pageSubject = $pageMessageBuilderResult ? $pageMessageBuilderResult->getPageSubject() : null;
+		$pageMessage = $pageMessageBuilderResult ? $pageMessageBuilderResult->getPageMessage() : null;
+
+		$dedupeHash = DedupeHelper::getDedupeHash( $subject, $message, $pageSubject, $pageMessage );
+		if ( DedupeHelper::hasRecentlyDeliveredDuplicate( $this->title, $dedupeHash ) ) {
+			$this->logToDebugLog( 'Delivery skipped because it is a duplicate of a recently delivered message.' );
+			return true;
+		}
+
 		return $this->deliverMessage(
 			$title,
-			$this->params['subject'] ?? '',
-			$this->params['message'] ?? '',
-			$pageMessageBuilderResult ? $pageMessageBuilderResult->getPageSubject() : null,
-			$pageMessageBuilderResult ? $pageMessageBuilderResult->getPageMessage() : null,
-			$this->params['comment']
+			$subject,
+			$message,
+			$pageSubject,
+			$pageMessage,
+			$this->params['comment'],
+			$dedupeHash,
 		);
 	}
 
 	/**
 	 * @param string $text
 	 * @param string $subject
+	 * @param string $dedupeHash
 	 * @return bool
 	 */
-	protected function editPage( string $text, string $subject ): bool {
-		return $this->messageSender->editPage( $this->title, $text, $subject, $this->getUser() );
+	protected function editPage( string $text, string $subject, string $dedupeHash ): bool {
+		return $this->messageSender->editPage( $this->title, $text, $subject, $this->getUser(), $dedupeHash );
 	}
 
 	/**
@@ -334,6 +357,7 @@ class MassMessageJob extends Job {
 	 * @param LanguageAwareText|null $pageSubject
 	 * @param LanguageAwareText|null $pageMessage
 	 * @param array $comment
+	 * @param string $dedupeHash
 	 * @return bool
 	 */
 	private function deliverMessage(
@@ -342,7 +366,8 @@ class MassMessageJob extends Job {
 		string $message,
 		?LanguageAwareText $pageSubject,
 		?LanguageAwareText $pageMessage,
-		array $comment
+		array $comment,
+		string $dedupeHash
 	): bool {
 		$targetLanguage = $targetPage->getPageLanguage();
 		$messageBuilder = new MessageBuilder();
@@ -391,6 +416,6 @@ class MassMessageJob extends Job {
 		}
 		$subject = $messageBuilder->buildSubject( $subject, $pageSubject, $targetLanguage );
 		$message = $messageBuilder->buildMessage( $message, $pageMessage, $targetLanguage, $comment );
-		return $this->editPage( $message, $subject );
+		return $this->editPage( $message, $subject, $dedupeHash );
 	}
 }

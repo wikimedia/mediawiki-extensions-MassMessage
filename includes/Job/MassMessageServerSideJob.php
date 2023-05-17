@@ -54,9 +54,10 @@ class MassMessageServerSideJob extends MassMessageJob {
 	/**
 	 * @param string $text
 	 * @param string $subject
+	 * @param string $dedupeHash
 	 * @return bool
 	 */
-	protected function editPage( string $text, string $subject ): bool {
+	protected function editPage( string $text, string $subject, string $dedupeHash ): bool {
 		$tries = 1;
 		$titleText = $this->title->getPrefixedText();
 		$user = MassMessage::getMessengerUser();

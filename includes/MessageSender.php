@@ -9,6 +9,7 @@ use ApiResult;
 use ApiUsageException;
 use ChangeTags;
 use DeferredUpdates;
+use FormatJson;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\DerivativeRequest;
@@ -46,13 +47,15 @@ class MessageSender {
 	 * @param string $message
 	 * @param string $subject
 	 * @param User $user
+	 * @param string $dedupeHash
 	 * @return bool
 	 */
 	public function editPage(
 		Title $target,
 		string $message,
 		string $subject,
-		User $user
+		User $user,
+		string $dedupeHash
 	): bool {
 		$params = [
 			'action' => 'edit',
@@ -82,8 +85,14 @@ class MessageSender {
 				&& $resultData['edit']['newrevid']
 			) {
 				$revId = $resultData['edit']['newrevid'];
-				DeferredUpdates::addCallableUpdate( static function () use ( $revId ) {
-					ChangeTags::addTags( 'massmessage-delivery', null, $revId );
+				DeferredUpdates::addCallableUpdate( static function () use ( $revId, $dedupeHash ) {
+					ChangeTags::addTags(
+						'massmessage-delivery',
+						null,
+						$revId,
+						null,
+						FormatJson::encode( [ 'dedupe_hash' => $dedupeHash ] ),
+					);
 				} );
 			}
 			return true;
