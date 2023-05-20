@@ -21,7 +21,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $strippedMessage );
 	}
 
-	public function provideStripTildes() {
+	public static function provideStripTildes() {
 		yield 'removes tildes if message has 4 tildes at end' => [
 			'hello ~~~~',
 			'hello '
@@ -46,10 +46,13 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 	public function testBuildMessage(
 		string $customMessageText,
 		?LanguageAwareText $pageContent,
-		?Language $targetLanguage,
+		?string $mockTargetLanguageCode,
+		?string $mockTargetLanguageDir,
 		?string $expectedMessage,
 		?array $expectedMessageContents
 	) {
+		$targetLanguage = $mockTargetLanguageCode === null
+			? null : $this->getLanguageStub( $mockTargetLanguageCode, $mockTargetLanguageDir );
 		$messageBuilder = new MessageBuilder();
 		$message = $messageBuilder->buildMessage(
 			$customMessageText,
@@ -71,11 +74,11 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	public function provideBuildMessage() {
+	public static function provideBuildMessage() {
 		yield 'message and page content are both present' => [
 			'hello world',
 			new LanguageAwareText( 'how are you', 'en', 'ltr' ),
-			$this->getLanguageStub( 'en', 'ltr' ),
+			'en', 'ltr',
 			null,
 			[ 'hello world', 'how are you' ]
 		];
@@ -83,7 +86,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'no language wrapping if message and target page language are same' => [
 			'',
 			new LanguageAwareText( 'how are you', 'fr', 'ltr' ),
-			$this->getLanguageStub( 'fr', 'ltr' ),
+			'fr', 'ltr',
 			'how are you',
 			null
 		];
@@ -91,7 +94,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'language wrapping if message and target page language are different' => [
 			'',
 			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
-			$this->getLanguageStub( 'fr', 'ltr' ),
+			'fr', 'ltr',
 			null,
 			[ 'dir="rtl"', 'lang="he"' ]
 		];
@@ -99,7 +102,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'language wrapping is applied if target language is null' => [
 			'',
 			new LanguageAwareText( 'how are you', 'en', 'ltr' ),
-			null,
+			null, null,
 			null,
 			[ 'dir="ltr"', 'lang="en"' ]
 		];
@@ -115,10 +118,12 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 	public function testBuildSubject(
 		string $customSubject,
 		?LanguageAwareText $pageSubject,
-		?Language $targetPageLanguage,
+		?string $mockTargetPageLanguageCode,
+		?string $mockTargetPageLanguageDir,
 		?string $expected,
 		?array $expectedContents
 	) {
+		$targetPageLanguage = $this->getLanguageStub( $mockTargetPageLanguageCode, $mockTargetPageLanguageDir );
 		$messageBuilder = new MessageBuilder();
 		$subject = $messageBuilder->buildSubject(
 			$customSubject,
@@ -137,11 +142,11 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	public function provideBuildSubject() {
+	public static function provideBuildSubject() {
 		yield 'custom subject is used if page subject is absent' => [
 			'hello world',
 			null,
-			$this->getLanguageStub( 'en', 'ltr' ),
+			'en', 'ltr',
 			'hello world',
 			null
 		];
@@ -149,7 +154,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'custom subject is ignored if page subject is present' => [
 			'hello world',
 			new LanguageAwareText( 'how are you', 'en', 'ltr' ),
-			$this->getLanguageStub( 'en', 'ltr' ),
+			'en', 'ltr',
 			'how are you',
 			null
 		];
@@ -157,7 +162,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'no language wrapping if target and page language are same' => [
 			'',
 			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
-			$this->getLanguageStub( 'he', 'rtl' ),
+			'he', 'rtl',
 			'how are you',
 			null
 		];
@@ -165,7 +170,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'language wrapping if message and target page language are same' => [
 			'',
 			new LanguageAwareText( 'how are you', 'he', 'rtl' ),
-			$this->getLanguageStub( 'fr', 'ltr' ),
+			'fr', 'ltr',
 			null,
 			[ 'dir="rtl"', 'lang="he"', '</span>' ]
 		];
@@ -173,7 +178,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'html tags are removed' => [
 			'',
 			new LanguageAwareText( 'hello <span>world</span>', 'en', 'ltr' ),
-			$this->getLanguageStub( 'en', 'rtl' ),
+			'en', 'rtl',
 			'hello world',
 			null
 		];
@@ -181,7 +186,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		yield 'language tags are still used if message has html tags' => [
 			'',
 			new LanguageAwareText( 'hello <span>world</span>', 'en', 'ltr' ),
-			$this->getLanguageStub( 'he', 'rtl' ),
+			'he', 'rtl',
 			null,
 			[ 'dir="ltr"', 'lang="en"', '</span>' ]
 		];
@@ -203,7 +208,7 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $subject );
 	}
 
-	public function provideBuildPlaintextSubject() {
+	public static function provideBuildPlaintextSubject() {
 		yield 'remove newlines and tags from page subject' => [
 			'',
 			new LanguageAwareText( "Hello World\n <br><hr>How are you? ", 'en', 'ltr' ),

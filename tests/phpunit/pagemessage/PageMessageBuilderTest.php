@@ -63,7 +63,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	public function provideGetContent() {
+	public static function provideGetContent() {
 		yield "subject and message sections" => [
 			'<section begin="sub" />Hello World<section end="sub" />' .
 			'<section begin="message" />This is the message<section end="message" /> Some more text',
@@ -155,12 +155,12 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expectedLanguageCode, $pageMessage->getLanguageCode() );
 	}
 
-	public function provideGetContentWithFallback() {
+	public static function provideGetContentWithFallback() {
 		$content = 'hello world';
 		$expectedLanguageCode = 'pt';
 
 		yield "fallback language is not used if target language is present" => [
-			$this->getContentProviderCallback( $content, $expectedLanguageCode, 'ltr' ),
+			self::getContentProviderCallback( $content, $expectedLanguageCode, 'ltr' ),
 			[ 'pt-br' ],
 			$expectedLanguageCode,
 			'en',
@@ -170,7 +170,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 
 		$expectedLanguageCode = 'pt-br';
 		yield "fallback language is used if target language is present" => [
-			$this->getContentProviderCallback( $content, $expectedLanguageCode, 'ltr' ),
+			self::getContentProviderCallback( $content, $expectedLanguageCode, 'ltr' ),
 			[ $expectedLanguageCode ],
 			'pt',
 			'en',
@@ -180,7 +180,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 
 		$expectedLanguageCode = 'en';
 		yield "source language is used if target or fallbacks are not present" => [
-			$this->getContentProviderCallback( $content, $expectedLanguageCode, 'ltr' ),
+			self::getContentProviderCallback( $content, $expectedLanguageCode, 'ltr' ),
 			[ 'pt-br' ],
 			'pt',
 			$expectedLanguageCode,
@@ -189,11 +189,11 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	private function getContentProviderCallback(
+	private static function getContentProviderCallback(
 		string $content, string $languageCode, string $languageDirection
 	) {
-		return function ( Title $title ) use ( $content, $languageCode, $languageDirection ) {
-			if ( $this->strEndsWith( $title->getPrefixedText(), "/$languageCode" ) ) {
+		return static function ( Title $title ) use ( $content, $languageCode, $languageDirection ) {
+			if ( self::strEndsWith( $title->getPrefixedText(), "/$languageCode" ) ) {
 				return Status::newGood(
 					new LanguageAwareText(
 						$content,
@@ -211,7 +211,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		};
 	}
 
-	private function strEndsWith( string $haystack, string $needle ): bool {
+	private static function strEndsWith( string $haystack, string $needle ): bool {
 		if ( function_exists( 'str_ends_with' ) ) {
 			str_ends_with( $haystack, $needle );
 		}

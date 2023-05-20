@@ -60,7 +60,7 @@ class LabeledSectionContentFetcherUnitTest extends MediaWikiUnitTestCase {
 		$this->assertArrayEquals( $expected, $actual );
 	}
 
-	public function provideGetSections() {
+	public static function provideGetSections() {
 		yield [
 			'a <section begin=x />b<section end=x /> c',
 			[ 'x' ],
