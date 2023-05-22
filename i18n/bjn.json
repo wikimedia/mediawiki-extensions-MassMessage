@@ -17,5 +17,7 @@
 	"massmessage-fieldset-preview": "Titilikan",
 	"massmessage-fieldset-info": "Maklumat",
 	"massmessage-preview-count": "Pasan Pian pacangan dikirim ka {{PLURAL:$1|$1 laman}}.",
+	"log-name-massmessage": "Catatan pasan massal",
+	"logentry-massmessage-skipnouser": "Pangiriman \"$4\" ka $3 dilalui haja maraga akun pamakai kadada",
 	"tag-massmessage-delivery": "Pangiriman PasanMassal"
 }
