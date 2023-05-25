@@ -193,7 +193,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		string $content, string $languageCode, string $languageDirection
 	) {
 		return static function ( Title $title ) use ( $content, $languageCode, $languageDirection ) {
-			if ( self::strEndsWith( $title->getPrefixedText(), "/$languageCode" ) ) {
+			if ( str_ends_with( $title->getPrefixedText(), "/$languageCode" ) ) {
 				return Status::newGood(
 					new LanguageAwareText(
 						$content,
@@ -209,14 +209,5 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 				WikiMap::getCurrentWikiId()
 			);
 		};
-	}
-
-	private static function strEndsWith( string $haystack, string $needle ): bool {
-		if ( function_exists( 'str_ends_with' ) ) {
-			str_ends_with( $haystack, $needle );
-		}
-
-		$length = strlen( $needle );
-		return $length > 0 ? substr( $haystack, -$length ) === $needle : true;
 	}
 }
