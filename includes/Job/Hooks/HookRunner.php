@@ -6,7 +6,7 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\Title\Title;
 
-class HookRunner implements MassMessageJobBeforeSentHook {
+class HookRunner implements MassMessageJobBeforeMessageSentHook {
 
 	/** @var HookContainer */
 	private $hookContainer;

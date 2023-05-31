@@ -5,7 +5,7 @@ namespace MediaWiki\MassMessage\Job\Hooks;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\Title\Title;
 
-interface MassMessageJobBeforeSentHook {
+interface MassMessageJobBeforeMessageSentHook {
 	/**
 	 * Hook runner for `MassMessageJobBeforeMessageSent` hook
 	 *
