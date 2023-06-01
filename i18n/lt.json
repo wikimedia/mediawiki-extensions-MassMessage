@@ -1,8 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
-			"Manvydasz"
+			"Manvydasz",
+			"Nokeoo"
 		]
 	},
+	"massmessage": "Siųsti masinę žinutę",
+	"createmassmessagelist": "Sukurti masinės žinutės adresatų sąrašą",
+	"editmassmessagelist": "Redaguoti masinės žinutės adresatų sąrašą",
+	"massmessage-desc": "Leidžia naudotojams lengvai išsiųsti žinutę naudotojų sąrašui",
+	"massmessage-form-spamlist": "Puslapis ar kategorija, kurioje yra puslapių sąrašas, kur palikti žinutę:",
+	"massmessage-form-subject": "Žinutės tema (taip pat naudojama kaip keitimo santrauka):",
+	"massmessage-form-subject-help": "Tai ignoruojama, jei puslapio skyrius pasirenkamas kaip tema siuntimui",
+	"massmessage-form-message": "Žinutės tekstas:",
+	"massmessage-form-page": "Puslapis, siuntimui kaip žinutė:",
+	"massmessage-form-page-help": "Žinutės tekstas, jei pateiktas, bus pridėtas pasirinkto puslapio turinio pabaigoje",
+	"massmessage-form-page-message-section": "Puslapio skyrius siuntimui kaip žinutė:",
+	"massmessage-form-page-message-section-help": "Pasirinkite puslapį ir peržiūrėkite formą, kad pamatytumėte galimų skyrių sąrašą. Jei pasirinktas skyrius, tik tai bus išsiųsta kaip žinutė.",
+	"massmessage-form-page-subject-section": "Puslapio skyrius siuntimui kaip žinutė:",
+	"massmessage-form-preview": "Peržiūra",
+	"massmessage-form-submit": "Siųsti",
+	"massmessage-fieldset-preview": "Peržiūra",
+	"massmessage-fieldset-wikitext-preview": "Vikiteksto peržiūra",
+	"massmessage-fieldset-info": "Informacija",
+	"massmessage-preview-count": "Jūsų žinutė bus išsiųsta į {{PLURAL:$1|$1 puslapį|$1 puslapius}}.",
+	"massmessage-translate-page-info": "Pasirinkote išvestą puslapį siuntimui kaip žinutė. Prenumeratoriai gaus puslapio turinį jų pageidaujama kalba arba antrine kalba, jei vertimas nepasiekiamas.",
+	"massmessage-submitted": "Jūsų žinutės pristatymas į {{PLURAL:$1|$1 puslapį|$1 puslapius}} eilėje.",
+	"massmessage-just-preview": "Tai tik peržiūra. Paspauskite „{{int:massmessage-form-submit}}“, kad išsiųstumėte žinutę.",
+	"massmessage-spamlist-doesnotexist": "Nurodytas adresatų sąrašo puslapis ar kategorija neegzistuoja.",
+	"massmessage-spamlist-invalid": "Nurodytame puslapyje nėra tinkamo adresatų sąrašo.",
+	"massmessage-empty-subject": "Nepateikta žinutės tema.",
+	"massmessage-empty-message": "Nėra žinutės teksto. Pateikite žinutės tekstą arba pasirinkite puslapį siuntimui kaip žinutė.",
 	"tag-massmessage-delivery-description": "Žinutė išsiųsta naudojant [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
 }
