@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"apihelp-editmassmessagelist-description": "Redaguoti masinės žinutės adresatų sąrašą.",
+	"apihelp-editmassmessagelist-summary": "Redaguoti masinės žinutės adresatų sąrašą.",
+	"apihelp-editmassmessagelist-param-spamlist": "Atnaujinamo adresatų sąrašo pavadinimas.",
+	"apihelp-editmassmessagelist-param-add": "Pavadinimai pridėjimui į sąrašą.",
+	"apihelp-editmassmessagelist-param-remove": "Pavadinimai pašalinimui iš sąrašo.",
+	"apihelp-editmassmessagelist-param-description": "Naujas adresatų sąrašo aprašymas.",
+	"apihelp-massmessage-description": "Siųsti žinutę puslapių sąrašui.",
+	"apihelp-massmessage-summary": "Siųsti žinutę puslapių sąrašui.",
+	"apihelp-massmessage-param-spamlist": "Puslapis, kuriame yra puslapių, kuriose palikti žinutę, sąrašas.",
+	"apihelp-massmessage-param-subject": "Žinutės tema.",
+	"apihelp-massmessage-param-message": "Žinutės tekstas.",
+	"apihelp-massmessage-param-page-message": "Puslapis siuntimui kartu su žinutės tekstu.",
+	"apierror-massmessage-invalidspamlist": "Nurodytas šlamšto sąrašas negalimas."
+}
