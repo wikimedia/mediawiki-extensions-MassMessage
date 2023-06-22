@@ -4,7 +4,8 @@
 			"Max20091",
 			"Minh Nguyen",
 			"NguoiDungKhongDinhDanh",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Flyplanevn27"
 		]
 	},
 	"massmessage": "Gửi thông báo rộng rãi",
@@ -50,7 +51,7 @@
 	"massmessage-content-pagesonsite": "Các trang trên $1:",
 	"massmessage-content-localpages": "Các trang trên wiki này:",
 	"massmessage-content-remove": "xóa",
-	"massmessage-content-removeerror": "Thất bại khi xóa trang; mã lỗi là $1.",
+	"massmessage-content-removeerror": "Có lỗi xảy ra khi xóa trang; mã lỗi là $1.",
 	"massmessage-content-removeconf": "Dời trang này khỏi danh sách?",
 	"massmessage-content-removeyes": "Xóa",
 	"massmessage-content-removeno": "Hủy bỏ",
