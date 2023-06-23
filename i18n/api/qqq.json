@@ -7,7 +7,6 @@
 			"Zoranzoki21"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "{{doc-apihelp-description|editmassmessagelist}}",
 	"apihelp-editmassmessagelist-summary": "{{doc-apihelp-summary|editmassmessagelist}}",
 	"apihelp-editmassmessagelist-param-spamlist": "{{doc-apihelp-param|editmassmessagelist|spamlist}}",
 	"apihelp-editmassmessagelist-param-add": "{{doc-apihelp-param|editmassmessagelist|add}}",
@@ -17,7 +16,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "{{doc-apihelp-param|editmassmessagelist|watchlist}}\n\nSee also:\n* Same as {{msg-mw|apihelp-delete-param-watchlist}}.",
 	"apihelp-editmassmessagelist-example-1": "{{doc-apihelp-example|editmassmessagelist}}",
 	"apihelp-editmassmessagelist-example-2": "{{doc-apihelp-example|editmassmessagelist}}",
-	"apihelp-massmessage-description": "{{doc-apihelp-description|massmessage}}",
 	"apihelp-massmessage-summary": "{{doc-apihelp-summary|massmessage}}",
 	"apihelp-massmessage-param-spamlist": "{{doc-apihelp-param|massmessage|spamlist}}",
 	"apihelp-massmessage-param-subject": "{{doc-apihelp-param|massmessage|subject}}",

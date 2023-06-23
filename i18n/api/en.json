@@ -5,7 +5,6 @@
 			"Zoranzoki21"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Edit a mass message delivery list.",
 	"apihelp-editmassmessagelist-summary": "Edit a mass message delivery list.",
 	"apihelp-editmassmessagelist-param-spamlist": "Title of the delivery list to update.",
 	"apihelp-editmassmessagelist-param-add": "Titles to add to the list.",
@@ -15,7 +14,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "Unconditionally add or remove the page from the current user's watchlist, use preferences (ignored for bot users) or do not change watch.",
 	"apihelp-editmassmessagelist-example-1": "Add [[User talk:Foo]] and [[Talk:Bar]] to the delivery list [[Example]] and remove [[Talk:Baz]] from it",
 	"apihelp-editmassmessagelist-example-2": "Set the description of the delivery list [[Example]] to be \"FooBar delivery services\"",
-	"apihelp-massmessage-description": "Send a message to a list of pages.",
 	"apihelp-massmessage-summary": "Send a message to a list of pages.",
 	"apihelp-massmessage-param-spamlist": "Page containing list of pages to leave a message on.",
 	"apihelp-massmessage-param-subject": "Subject line of the message.",
