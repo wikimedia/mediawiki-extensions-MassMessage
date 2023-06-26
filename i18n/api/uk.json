@@ -8,7 +8,6 @@
 			"Ата"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Редагувати список масової доставки повідомлень",
 	"apihelp-editmassmessagelist-summary": "Редагувати список доставки масових повідомлень.",
 	"apihelp-editmassmessagelist-param-spamlist": "Заголовок оновлюваного списку доставки.",
 	"apihelp-editmassmessagelist-param-add": "Рядки для додавання в список.",
@@ -16,7 +15,6 @@
 	"apihelp-editmassmessagelist-param-description": "Новий опис для списку доставки.",
 	"apihelp-editmassmessagelist-example-1": "Додати [[User talk:Foo]] та [[Talk:Bar]] до списку розсилки [[Example]] і вилучити з нього [[Talk:Baz]]",
 	"apihelp-editmassmessagelist-example-2": "Встановити опис для списку доставки [[Example]] у вигляді «Сервіс доставки FooBar»",
-	"apihelp-massmessage-description": "Надіслати повідомлення списку сторінок.",
 	"apihelp-massmessage-summary": "Надіслати повідомлення на список сторінок.",
 	"apihelp-massmessage-param-spamlist": "Сторінка, яка містить список сторінок, де треба залишити повідомлення.",
 	"apihelp-massmessage-param-subject": "Рядок теми повідомлення.",

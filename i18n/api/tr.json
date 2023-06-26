@@ -7,7 +7,6 @@
 			"Rapsar"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Toplu mesaj teslimat listesini düzenleyin.",
 	"apihelp-editmassmessagelist-summary": "Toplu mesaj teslimat listesini düzenleyin.",
 	"apihelp-editmassmessagelist-param-spamlist": "Güncellenecek teslimat listesinin başlığı.",
 	"apihelp-editmassmessagelist-param-add": "Listeye eklenecek başlıklar.",
@@ -15,7 +14,6 @@
 	"apihelp-editmassmessagelist-param-description": "Teslimat liste yeni açıklaması.",
 	"apihelp-editmassmessagelist-example-1": "[[User talk:Foo]] ve [[Talk:Bar]] ile teslim listesine [[Example]] ekleyin ve [[Talk:Baz]] ile kaldırın",
 	"apihelp-editmassmessagelist-example-2": "Dağıtım listesinin açıklamasını [[Example]] \"FooBar delivery services\" olarak ayarlayın",
-	"apihelp-massmessage-description": "Bir sayfa listesine mesaj gönderin.",
 	"apihelp-massmessage-summary": "Bir sayfa listesine mesaj gönderin.",
 	"apihelp-massmessage-param-spamlist": "Mesaj bırakılacak sayfaların listesini içeren sayfa.",
 	"apihelp-massmessage-param-subject": "Mesajın konu satırı.",

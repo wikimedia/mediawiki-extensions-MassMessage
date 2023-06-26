@@ -5,11 +5,9 @@
 			"СеніңШешең"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Жаппай хабарлама жеткізіп беру тізімін өңдеу.",
 	"apihelp-editmassmessagelist-param-spamlist": "Жеткізіп беру тізімі атауын жаңарту",
 	"apihelp-editmassmessagelist-param-add": "тізімге атауларын қосу",
 	"apihelp-editmassmessagelist-param-remove": "Тізімнен атауларды аластау",
-	"apihelp-massmessage-description": "Беттер тізіміне хабарламаларды жіберу.",
 	"apihelp-massmessage-param-spamlist": "Беттер тізімінен тұратын бетке хабарлама қалдыру.",
 	"apihelp-massmessage-param-subject": "Хабарламаның тақырып жолағы.",
 	"apihelp-massmessage-param-message": "Хабардың негізгі мәтіні."

@@ -9,7 +9,6 @@
 			"Wladek92"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Modifier une liste de diffusion de messages en masse",
 	"apihelp-editmassmessagelist-summary": "Modifier une liste de diffusion de messages en masse.",
 	"apihelp-editmassmessagelist-param-spamlist": "Le titre de la liste de diffusion à mettre à jour.",
 	"apihelp-editmassmessagelist-param-add": "Titres à ajouter à la liste.",
@@ -19,7 +18,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "Ajouter ou supprimer sans condition la page de la liste de suivi de l’utilisateur actuel, utiliser les préférences (ignoré pour les utilisateurs robots) ou ne pas modifier le suivi.",
 	"apihelp-editmassmessagelist-example-1": "Ajouter [[User talk:Foo]] et [[Talk:Bar]] à la liste de diffusion [[Example]] et en retirer [[Talk:Baz]]",
 	"apihelp-editmassmessagelist-example-2": "Définit la description de la liste de diffusion [[Example]] à « services de livraison de FooBar »",
-	"apihelp-massmessage-description": "Envoyer un message à une liste de pages.",
 	"apihelp-massmessage-summary": "Envoyer un message à une liste de pages.",
 	"apihelp-massmessage-param-spamlist": "Page contenant une liste de pages sur lesquelles laisser un message.",
 	"apihelp-massmessage-param-subject": "Ligne donnant l’objet du message.",

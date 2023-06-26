@@ -6,7 +6,6 @@
 			"WikiPhoenix"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Redigera leveranslista för massmeddelanden",
 	"apihelp-editmassmessagelist-summary": "Redigera leveranslista för massmeddelanden",
 	"apihelp-editmassmessagelist-param-spamlist": "Titeln på leveranslistan som ska uppdateras.",
 	"apihelp-editmassmessagelist-param-add": "Titlar att lägga till i listan.",
@@ -14,7 +13,6 @@
 	"apihelp-editmassmessagelist-param-description": "Ny beskrivning för leveranslistan.",
 	"apihelp-editmassmessagelist-example-1": "Lägg till [[User talk:Foo]] och [[Talk:Bar]] i leveranslistan [[Example]] och ta bort [[Talk:Baz]] från den",
 	"apihelp-editmassmessagelist-example-2": "Ange beskrivningen av leveranslistan [[Example]] till \"FooBar leveranstjänster\"",
-	"apihelp-massmessage-description": "Skicka ett meddelande till en lista över sidor.",
 	"apihelp-massmessage-summary": "Skicka ett meddelande till en lista över sidor.",
 	"apihelp-massmessage-param-spamlist": "Sida som innehåller en lista av sidor att lämna meddelande på.",
 	"apihelp-massmessage-param-subject": "Meddelandets ämnesrad.",

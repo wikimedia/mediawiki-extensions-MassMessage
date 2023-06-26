@@ -7,7 +7,6 @@
 			"Liuxinyu970226"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "編輯大量訊息傳遞清單。",
 	"apihelp-editmassmessagelist-summary": "編輯大量訊息傳遞清單。",
 	"apihelp-editmassmessagelist-param-spamlist": "要更新的傳遞清單標題。",
 	"apihelp-editmassmessagelist-param-add": "要加入至清單的標題。",
@@ -17,7 +16,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "無條件地將頁面加入至或移除自目前使用者的監視清單（略過機器人使用者），或是不更改監視。",
 	"apihelp-editmassmessagelist-example-1": "在傳遞清單 [[Example]] 添加 [[User talk:Foo]] 與 [[Talk:Bar]]，並從當中移除 [[Talk:Baz]]",
 	"apihelp-editmassmessagelist-example-2": "將傳遞清單 [[Example]] 的描述設定成「FooBar 傳遞服務」",
-	"apihelp-massmessage-description": "向列出的這些頁面傳送訊息。",
 	"apihelp-massmessage-summary": "向頁面清單傳送訊息。",
 	"apihelp-massmessage-param-spamlist": "頁面包含要留下訊息的頁面清單。",
 	"apihelp-massmessage-param-subject": "訊息主旨。",

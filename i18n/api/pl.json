@@ -6,7 +6,6 @@
 			"Woytecr"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Edytowanie listy odbiorców masowych wiadomości.",
 	"apihelp-editmassmessagelist-summary": "Zmienia listę odbiorców masowych wiadomości.",
 	"apihelp-editmassmessagelist-param-spamlist": "Tytuł strony z odbiorcami, którą edytować.",
 	"apihelp-editmassmessagelist-param-add": "Tytuły stron dodawanych do listy.",
@@ -14,7 +13,6 @@
 	"apihelp-editmassmessagelist-param-description": "Nowy opis dla listy odbiorców.",
 	"apihelp-editmassmessagelist-example-1": "Dodaj strony [[User talk:Foo]] i [[Talk:Bar]] na listę odbiorców [[Example]] i usuń z niej stronę [[Talk:Baz]]",
 	"apihelp-editmassmessagelist-example-2": "Ustaw opis „FooBar delivery services” dla listy odbiorców [[Example]]",
-	"apihelp-massmessage-description": "Wysyła wiadomość na strony z listy.",
 	"apihelp-massmessage-summary": "Wyślij wiadomość na strony z listy.",
 	"apihelp-massmessage-param-spamlist": "Strona zawierająca listę stron, na których zostawić wiadomość.",
 	"apihelp-massmessage-param-subject": "Tytuł (temat) wiadomości.",

@@ -6,13 +6,11 @@
 			"Elisardojm"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Editar unha lista de entrega de mensaxes en masa.",
 	"apihelp-editmassmessagelist-summary": "Editar unha lista de entrega de mensaxes en masa.",
 	"apihelp-editmassmessagelist-param-spamlist": "Título da lista de envío a actualizar.",
 	"apihelp-editmassmessagelist-param-add": "Títulos a engadir á lista.",
 	"apihelp-editmassmessagelist-param-remove": "Titulos a eliminar da lista.",
 	"apihelp-editmassmessagelist-example-1": "Engadir [[User talk:Foo]] e [[Talk:Bar]] á lista de envío [[Example]] e borrar a [[Talk:Baz]]",
-	"apihelp-massmessage-description": "Enviar unha mensaxe a unha lista de páxinas.",
 	"apihelp-massmessage-summary": "Enviar unha mensaxe a unha lista de páxinas.",
 	"apihelp-massmessage-param-spamlist": "Páxina que contén a lista de páxinas nas que deixar unha mensaxe.",
 	"apihelp-massmessage-param-subject": "Liña de asunto da mensaxe.",

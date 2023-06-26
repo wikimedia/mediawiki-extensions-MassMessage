@@ -7,7 +7,6 @@
 		]
 	},
 	"apihelp-editmassmessagelist-summary": "대량 메시지 수신자 목록을 편집합니다.",
-	"apihelp-massmessage-description": "문서 목록에 메시지를 보냅니다.",
 	"apihelp-massmessage-summary": "문서 목록에 메시지를 보냅니다.",
 	"apihelp-massmessage-param-spamlist": "메시지를 남길 문서 목록을 포함하는 문서입니다.",
 	"apihelp-massmessage-param-subject": "메시지의 제목 줄입니다.",

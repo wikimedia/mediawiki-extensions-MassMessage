@@ -4,7 +4,6 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Rediger en leveringsliste for massemeldinger.",
 	"apihelp-editmassmessagelist-summary": "Rediger en leveringsliste for massemeldinger.",
 	"apihelp-editmassmessagelist-param-spamlist": "Tittelen på leveringslista som skal oppdateres.",
 	"apihelp-editmassmessagelist-param-add": "Titler som skal legges til i lista.",
@@ -12,7 +11,6 @@
 	"apihelp-editmassmessagelist-param-description": "Ny beskrivelse for leveringslista.",
 	"apihelp-editmassmessagelist-example-1": "Legg til [[User talk:Foo]] og [[Talk:Bar]] til leveringslista [[Example]] og fjern [[Talk:Baz]] fra den",
 	"apihelp-editmassmessagelist-example-2": "Sett beskrivelsen til leveringslista [[Example]] til å være «FooBar delivery services»",
-	"apihelp-massmessage-description": "Send en melding til en liste over sider.",
 	"apihelp-massmessage-summary": "Send en melding til en liste over sider.",
 	"apihelp-massmessage-param-spamlist": "Side som inneholder lista over sider det skal leveres meldinger på.",
 	"apihelp-massmessage-param-subject": "Meldingens emnefelt.",

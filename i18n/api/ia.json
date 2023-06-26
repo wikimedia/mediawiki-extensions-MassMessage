@@ -4,7 +4,6 @@
 			"McDutchie"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Modificar un lista de livration de messages in massa.",
 	"apihelp-editmassmessagelist-summary": "Modificar un lista de livration de messages in massa.",
 	"apihelp-editmassmessagelist-param-spamlist": "Titulo del lista de livration a actualisar.",
 	"apihelp-editmassmessagelist-param-add": "Titulos a adder al lista.",
@@ -14,7 +13,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "Adder o remover le pagina del observatorio del usator actual sin conditiones, usar le preferentias (ignorate pro usatores de robot) o non cambiar le observation.",
 	"apihelp-editmassmessagelist-example-1": "Adder [[User talk:Foo]] e [[Talk:Bar]] al lista de livration [[Example]] e remover [[Talk:Baz]] de illo",
 	"apihelp-editmassmessagelist-example-2": "Definir le description del lista de livration [[Example]] como \"FooBar delivery services\"",
-	"apihelp-massmessage-description": "Inviar un message a un lista de paginas.",
 	"apihelp-massmessage-summary": "Inviar un message a un lista de paginas.",
 	"apihelp-massmessage-param-spamlist": "Pagina que contine un lista de paginas sur le quales lassar un message.",
 	"apihelp-massmessage-param-subject": "Linea de subjecto del message.",

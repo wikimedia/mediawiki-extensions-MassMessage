@@ -7,14 +7,12 @@
 			"PonkoSasuke"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Bewerk een afleverlijst.",
 	"apihelp-editmassmessagelist-param-spamlist": "Titel van de afleverlijst om bij te werken.",
 	"apihelp-editmassmessagelist-param-add": "Titels om aan de lijst toe te voegen.",
 	"apihelp-editmassmessagelist-param-remove": "Titels om van de lijst te verwijderen.",
 	"apihelp-editmassmessagelist-param-minor": "Of de bewerking in de geschiedenis van de lijst als klein moet worden aangemerkt.",
 	"apihelp-editmassmessagelist-param-watchlist": "Of de pagina onvoorwaardelijk toevoegen aan of verwijderen uit de volglijst van de huidige gebruiker, of diens voorkeuren gebruiken (genegeerd voor robotgebruikers), of de volgstatus niet wijzigen.",
 	"apihelp-editmassmessagelist-example-1": "Voeg [[User talk:Foo]] en [[Talk:Bar]] toe aan de afleverlijst [[Example]] en verwijder [[Talk:Baz]] van deze",
-	"apihelp-massmessage-description": "Stuur een bericht naar een lijst van pagina's.",
 	"apihelp-massmessage-summary": "Stuur een bericht naar een lijst van pagina's.",
 	"apihelp-massmessage-param-subject": "Onderwerpregel van het bericht.",
 	"apihelp-massmessage-param-message": "Berichttekst.",

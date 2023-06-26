@@ -4,7 +4,6 @@
 			"Bjankuloski06"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Уредување на список за масовна достава на пораки.",
 	"apihelp-editmassmessagelist-summary": "Уредување на список за масовна достава на пораки.",
 	"apihelp-editmassmessagelist-param-spamlist": "Наслов на списокот за масовна достава што треба да се поднови.",
 	"apihelp-editmassmessagelist-param-add": "Наслови за додавање во списокот.",
@@ -14,7 +13,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "Безусловно додавање или отстранување на страница од набљудуваните на тековниот корисник, употреба на нагодувања (се занемаруваат за ботови) или да не се менуваат набљудуваните.",
 	"apihelp-editmassmessagelist-example-1": "Додај ги [[User talk:Foo]] и [[Talk:Bar]] во списокот за достава [[Example]] и отстрани го [[Talk:Baz]] од него",
 	"apihelp-editmassmessagelist-example-2": "Задај го описот на доставниот список [[Example]] да биде „FooBar delivery services“",
-	"apihelp-massmessage-description": "Испрати порака на страници на список.",
 	"apihelp-massmessage-summary": "Испрати порака на страници на список.",
 	"apihelp-massmessage-param-spamlist": "Страница со список на страници на кои треба да се остави порака.",
 	"apihelp-massmessage-param-subject": "Наслов на пораката.",

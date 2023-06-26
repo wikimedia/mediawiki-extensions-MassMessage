@@ -6,7 +6,6 @@
 			"Metalhead64"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Massennachrichten-Versandliste bearbeiten",
 	"apihelp-editmassmessagelist-summary": "Bearbeitet eine Massennachrichten-Versandliste.",
 	"apihelp-editmassmessagelist-param-spamlist": "Titel der zu aktualisierenden Versandliste.",
 	"apihelp-editmassmessagelist-param-add": "Titel, die zur Liste hinzugefügt werden sollen.",
@@ -16,7 +15,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "Die Seite zur Beobachtungsliste des aktuellen Benutzers hinzufügen oder von ihr entfernen, die Standardeinstellungen (werden für Bot-Benutzer ignoriert) verwenden oder die Beobachtung nicht ändern.",
 	"apihelp-editmassmessagelist-example-1": "Fügt [[User talk:Foo]] und [[Talk:Bar]] zu der Versandliste [[Example]] hinzu und entfernt [[Talk:Baz]] von ihr",
 	"apihelp-editmassmessagelist-example-2": "Setzen der Beschreibung der Zustellliste [[Example]] auf „FooBar delivery services“.",
-	"apihelp-massmessage-description": "Sendet eine Nachricht an eine Liste von Seiten.",
 	"apihelp-massmessage-summary": "Sendet eine Nachricht an eine Liste von Seiten.",
 	"apihelp-massmessage-param-spamlist": "Seite, die eine Liste mit Seiten enthält, auf denen Nachrichten hinterlassen werden sollen.",
 	"apihelp-massmessage-param-subject": "Betreffzeile der Nachricht.",

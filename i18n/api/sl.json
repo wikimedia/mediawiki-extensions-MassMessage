@@ -5,7 +5,6 @@
 			"Janezdrilc"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "Urejanje seznama za pošiljanje množičnega sporočila.",
 	"apihelp-editmassmessagelist-summary": "Urejanje seznama za pošiljanje množičnega sporočila.",
 	"apihelp-editmassmessagelist-param-spamlist": "Naaslov seznama za pošiljanje za posodobitev.",
 	"apihelp-editmassmessagelist-param-add": "Naslovi, ki naj bodo dodani na seznam.",
@@ -15,7 +14,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "Brezpogojno dodajte ali odstranite stran s spiska nadzorov trenutnega uporabnika, uporabite nastavitve (prezrto za uporabnike botov) ali ne spremenite opazovanja.",
 	"apihelp-editmassmessagelist-example-1": "Doda [[User talk:Foo]] in [[Talk:Bar]] na seznam za pošiljanje [[Example]] (Zgled) in z njega odstrani [[Talk:Baz]]",
 	"apihelp-editmassmessagelist-example-2": "Nastavitev opisa seznama za pošiljanje [[Example]] (Zgled) na »Storitve pošiljanja FooBar«",
-	"apihelp-massmessage-description": "Pošlje sporočilo na seznam strani.",
 	"apihelp-massmessage-summary": "Pošlje sporočilo na seznam strani.",
 	"apihelp-massmessage-param-spamlist": "Stran, ki vsebuje seznam strani, na katerih želite pustiti sporočilo.",
 	"apihelp-massmessage-param-subject": "Vrstica zadeve sporočila.",

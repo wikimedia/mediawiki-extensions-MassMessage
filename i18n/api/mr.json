@@ -5,12 +5,10 @@
 			"ज्ञानदा गद्रे-फडके"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "एकगठ्ठा संदेश वितरण यादी संपादा.",
 	"apihelp-editmassmessagelist-param-spamlist": "अद्यतन करावयाचे संदेश वितरण यादीचे शीर्षक.",
 	"apihelp-editmassmessagelist-param-add": "यादीत जोडावयाची शीर्षके",
 	"apihelp-editmassmessagelist-param-remove": "यादीतून हटवावयाची शीर्षके.",
 	"apihelp-editmassmessagelist-example-1": "[[Example]] वितरण यादीत  [[User talk:Foo]] व [[Talk:Bar]] जोडा व [[Talk:Baz]] त्यातून हटवा",
-	"apihelp-massmessage-description": "पानांच्या यादीस संदेश पाठवा.",
 	"apihelp-massmessage-param-spamlist": "ज्यावर संदेश टाकावयाचा आहे अशी पानांची यादी असलेले पान.",
 	"apihelp-massmessage-param-subject": "संदेशाचा विषय.",
 	"apihelp-massmessage-param-message": "मायना मजकूर.",

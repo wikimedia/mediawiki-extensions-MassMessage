@@ -5,7 +5,6 @@
 			"Guycn2"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "עריכה רשימת מסירת הודעות המוניות.",
 	"apihelp-editmassmessagelist-summary": "עריכה של רשימת מסירה המונית.",
 	"apihelp-editmassmessagelist-param-spamlist": "כותרת רשימת המסירה שצריך לעדכן.",
 	"apihelp-editmassmessagelist-param-add": "כותרות שיתווספו לרשימה.",
@@ -15,7 +14,6 @@
 	"apihelp-editmassmessagelist-param-watchlist": "הוספה או הסרה של הדף ללא תנאי מרשימת המעקב של המשתמש הנוכחי, להשתמש בהעדפות (לא חל על משתמשי בוט), או לא לשנות את המעקב.",
 	"apihelp-editmassmessagelist-example-1": "הוספת [[User talk:Foo]] ו־[[Talk:Bar]] לרשימת המסירה [[Example]] והסרת [[Talk:Baz]] ממנה",
 	"apihelp-editmassmessagelist-example-2": "הגדרת תיאור לרשימת המסירה [[Example]] למחרוזת \"FooBar delivery services\"",
-	"apihelp-massmessage-description": "שליחת הודעה לרשימת דפים.",
 	"apihelp-massmessage-summary": "שליחת הודעה לרשימת דפים.",
 	"apihelp-massmessage-param-spamlist": "דף שמכיל רשימה של דפים שתושאר בהם הודעה.",
 	"apihelp-massmessage-param-subject": "שורת הנושא של ההודעה.",

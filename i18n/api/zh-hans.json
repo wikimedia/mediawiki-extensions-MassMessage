@@ -6,13 +6,11 @@
 			"坑触可"
 		]
 	},
-	"apihelp-editmassmessagelist-description": "编辑大量信息递送列表。",
 	"apihelp-editmassmessagelist-summary": "编辑大量信息递送列表。",
 	"apihelp-editmassmessagelist-param-spamlist": "要更新的递送列表标题。",
 	"apihelp-editmassmessagelist-param-add": "加入列表的标题。",
 	"apihelp-editmassmessagelist-param-remove": "从列表移除的标题。",
 	"apihelp-editmassmessagelist-example-1": "将[[User talk:Foo]]和[[Talk:Bar]]加入订阅列表[[Example]]中，并将[[Talk:Baz]]从列表中移除",
-	"apihelp-massmessage-description": "发送一条信息到列出的多个页面。",
 	"apihelp-massmessage-summary": "发送一条信息到列出的多个页面。",
 	"apihelp-massmessage-param-spamlist": "页面包含着要留下信息的页面名单。",
 	"apihelp-massmessage-param-subject": "消息的主题行。",
