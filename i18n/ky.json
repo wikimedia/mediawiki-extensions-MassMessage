@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Askar Nazyrov"
+			"Askar Nazyrov",
+			"Bosogo"
 		]
 	},
 	"massmessage-fieldset-info": "Маалымат",
-	"massmessage-preview-count": "Сиздин катыңыз {{PLURAL:$1|$1 page|$1 pages}} дарегине жөнөтүлөт."
+	"massmessage-preview-count": "Сиздин катыңыз {{PLURAL:$1|$1 page|$1 pages}} дарегине жөнөтүлөт.",
+	"massmessage-content-removeno": "Жокко чыгаруу"
 }
