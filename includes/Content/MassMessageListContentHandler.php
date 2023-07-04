@@ -54,10 +54,15 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	}
 
 	/**
-	 * @return string
+	 * @param IContextSource $context
+	 * @param array $options
+	 * @return MassMessageListSlotDiffRenderer
 	 */
-	protected function getDiffEngineClass() {
-		return MassMessageListDiffEngine::class;
+	public function getSlotDiffRendererWithOptions( IContextSource $context, $options = [] ) {
+		return new MassMessageListSlotDiffRenderer(
+			$this->createTextSlotDiffRenderer( $options ),
+			$context
+		);
 	}
 
 	/**
