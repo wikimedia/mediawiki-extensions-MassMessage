@@ -1,12 +1,17 @@
 $( function () {
 	'use strict';
 
-	var badHtml = require( './ext.MassMessage.badhtml.js' );
+	var badHtml = require( './ext.MassMessage.badhtml.js' ),
+		$textbox = $( '#mw-massmessage-form-message textarea' );
+
+	if ( !$textbox.length ) {
+		return;
+	}
 
 	// Limit edit summaries to 240 bytes
 	$( '#mw-massmessage-form-subject' ).byteLimit();
 
-	badHtml( $( '#mw-massmessage-form-message textarea' ) );
+	badHtml( $textbox );
 
 	/**
 	 * Fetch pages with a given title.
