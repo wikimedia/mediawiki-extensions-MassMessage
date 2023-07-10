@@ -9,6 +9,7 @@
 	"apihelp-editmassmessagelist-param-add": "Titler som skal legges til i lista.",
 	"apihelp-editmassmessagelist-param-remove": "Titler som skal fjernes fra lista.",
 	"apihelp-editmassmessagelist-param-description": "Ny beskrivelse for leveringslista.",
+	"apihelp-editmassmessagelist-param-minor": "Hvorvidt redigeringen skal markeres som en mindre endring i listehistorikken.",
 	"apihelp-editmassmessagelist-example-1": "Legg til [[User talk:Foo]] og [[Talk:Bar]] til leveringslista [[Example]] og fjern [[Talk:Baz]] fra den",
 	"apihelp-editmassmessagelist-example-2": "Sett beskrivelsen til leveringslista [[Example]] til å være «FooBar delivery services»",
 	"apihelp-massmessage-summary": "Send en melding til en liste over sider.",
