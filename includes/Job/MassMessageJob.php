@@ -339,7 +339,8 @@ class MassMessageJob extends Job {
 			)
 		) {
 			$user = User::newFromName( $title->getRootText() );
-			if ( !$user || !$user->getId() ) { // Does not exist
+			if ( !$user || !$user->isNamed() ) {
+				// Don't send to anonymous and temporary users
 				$this->logLocalSkip( 'skipnouser' );
 				return false;
 			}
