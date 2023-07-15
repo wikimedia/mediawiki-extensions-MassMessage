@@ -18,6 +18,9 @@ use SpecialPageLanguage;
 use TextContent;
 use User;
 
+/**
+ * @group Database
+ */
 class MassMessageJobTest extends MassMessageTestCase {
 
 	/**
@@ -45,23 +48,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		return [ $subject, $job->run() ];
 	}
 
-	/**
-	 * Returns title with a given string, while making sure that it does not actually exist.
-	 *
-	 * @param string $titleStr
-	 * @return Title
-	 */
-	private function getTargetTitle( string $titleStr ): Title {
-		$target = Title::newFromText( $titleStr );
-		if ( $target->exists() ) {
-			// Clear it
-			$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $target );
-			$wikipage->doDeleteArticleReal( 'reason', $this->getTestSysop()->getUser() );
-		}
-
-		return $target;
-	}
-
 	private function createPage( string $titleStr, string $pageContent ): Title {
 		$title = Title::newFromText( $titleStr );
 		$this->createPageByTitle( $title, $pageContent );
@@ -74,11 +60,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $pageContent, $title );
 
-		$status = $page->doUserEditContent(
-			$content,
-			$this->getTestSysop()->getUser(),
-			__METHOD__
-		);
+		$status = $this->editPage( $page, $content );
 
 		if ( !$status->isOK() ) {
 			throw new RuntimeException(
@@ -108,7 +90,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::editPage
 	 */
 	public function testMessageSending() {
-		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
 		list( $subj, ) = $this->simulateJob( $target );
 		$target = Title::makeTitle( NS_PROJECT, 'Testing1234' );
 		// Message was created
@@ -133,7 +115,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$services = MediaWikiServices::getInstance();
 		$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
-		$target = $this->getTargetTitle( 'Project:DedupeTest' );
+		$target = $this->getNonexistingTestPage( 'Project:DedupeTest' )->getTitle();
 		list( $subject, ) = $this->simulateJob( $target );
 		// Send the same message again
 		$this->simulateJob( $target, [], $subject );
@@ -208,7 +190,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$pageMessageContent = 'Test page message.';
 		$pageMessageTitleStr = 'PageMessage';
 
-		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
 		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
 
 		$this->simulateJob( $target, [
@@ -237,7 +219,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$pageMessageContent = 'Test page message.';
 		$pageMessageTitleStr = 'PageMessage';
 
-		$target = $this->getTargetTitle( 'Project:DedupePageMessageTest' );
+		$target = $this->getNonexistingTestPage( 'Project:DedupePageMessageTest' )->getTitle();
 		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
 
 		list( $subject, ) = $this->simulateJob( $target, [
@@ -276,7 +258,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$pageMessageContent = 'Test page message.';
 		$pageMessageTitleStr = 'PageMessage';
 
-		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
 		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
 		// Set a hook handler to make page editing fail and test that
 		// job fails without creating exceptions
@@ -306,7 +288,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$pageMessageTitleStr = 'PageMessage';
 
 		// Create target user talk page and change the page language.
-		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
 		$this->createPageByTitle( $target, '', 'fr' );
 
 		// Create the message page with /fr suffix
@@ -343,7 +325,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$pageMessageTitleStr = 'PageMessage - PT';
 
 		// Create target user talk page and change the page language.
-		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
 		$this->createPageByTitle( $target, '', 'pt-br' );
 
 		// Create the message page with /pt suffix
@@ -380,7 +362,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$pageMessageTitleStr = 'PageMessage - EN';
 
 		// Create target user talk page and change the page language.
-		$target = $this->getTargetTitle( 'Project:Testing1234' );
+		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
 		$this->createPageByTitle( $target, '', 'pt-br' );
 
 		// Create the message page with /en suffix
