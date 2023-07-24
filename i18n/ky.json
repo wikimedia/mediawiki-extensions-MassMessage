@@ -5,8 +5,12 @@
 			"Bosogo"
 		]
 	},
+	"massmessage-form-preview": "Алдын ала көрүү",
+	"massmessage-form-submit": "Жөнөтүү",
+	"massmessage-fieldset-preview": "Алдын ала көрүү",
 	"massmessage-fieldset-info": "Маалымат",
 	"massmessage-preview-count": "Сиздин катыңыз {{PLURAL:$1|$1 page|$1 pages}} дарегине жөнөтүлөт.",
 	"massmessage-content-removeno": "Жокко чыгаруу",
-	"massmessage-edit-pagetitle": "«‎$1» түзөтүлүүдө"
+	"massmessage-edit-pagetitle": "«‎$1» түзөтүлүүдө",
+	"massmessage-summary-add": "[[:$1]] кошулган"
 }
