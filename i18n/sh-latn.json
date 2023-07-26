@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"massmessage": "Slanje masovnih poruka",
+	"createmassmessagelist": "Pravljenje spiska isporuke masovnih poruka",
+	"editmassmessagelist": "Uređivanje spiska isporuke masovnih poruka",
+	"massmessage-desc": "Dozvoljava korisnicima da lako šalju poruku na spisak korisnika",
+	"massmessage-form-spamlist": "Stranica ili kategorija sa spiskom stranica na kojima treba ostaviti poruku:",
+	"massmessage-form-subject": "Naslov poruke. Koristi se i u sažetku izmjene.",
+	"massmessage-form-subject-help": "Ovo se zanemaruje ako je odeljak stranice odabran za slanje kao naslov",
+	"massmessage-form-message": "Tekst poruke:",
+	"massmessage-form-page": "Stranica koja će biti poslana kao poruka:",
+	"massmessage-form-page-help": "Tijelo poruke, ako je navedeno, bit će dodano na kraj sadržaja s odabrane stranice.",
+	"massmessage-form-preview": "Pregled",
+	"massmessage-form-submit": "Pošalji",
+	"massmessage-fieldset-preview": "Pregled",
+	"massmessage-fieldset-wikitext-preview": "Pregled vikiteksta",
+	"massmessage-fieldset-info": "Informacije",
+	"massmessage-preview-count": "Vaša poruka biće poslata na {{PLURAL:$1|1=jednu stranicu|$1 stranicu|$1 stranice|$1 stranica}}.",
+	"massmessage-submitted": "Isporuka poruke na {{PLURAL:$1|$1 stranicu|$1 stranice|$1 stranica}} stavljena je u red za čekanje.",
+	"massmessage-just-preview": "Ovo je samo pretpregled. Da biste poslali poruku pritisnite \"{{int:massmessage-form-submit}}\".",
+	"massmessage-spamlist-doesnotexist": "Navedena stranica ili kategorija ne postoji.",
+	"massmessage-spamlist-invalid": "Navedena stranica ne sadrži važeću listu isporuke.",
+	"log-name-massmessage": "Evidencija masovnih poruka",
+	"log-description-massmessage": "Ovi događaji prate slanje poruka korisnicima.",
+	"massmessage-content-removeno": "Otkaži"
+}
