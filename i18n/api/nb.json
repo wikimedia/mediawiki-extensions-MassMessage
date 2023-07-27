@@ -11,6 +11,7 @@
 	"apihelp-editmassmessagelist-param-remove": "Titler som skal fjernes fra lista.",
 	"apihelp-editmassmessagelist-param-description": "Ny beskrivelse for leveringslista.",
 	"apihelp-editmassmessagelist-param-minor": "Hvorvidt redigeringen skal markeres som en mindre endring i listehistorikken.",
+	"apihelp-editmassmessagelist-param-watchlist": "Legg til eller fjern siden fra den gjeldende brukerens overvåkningsliste, bruk innstillinger (ignoreres for botbrukere) eller ikke endre overvåkning.",
 	"apihelp-editmassmessagelist-example-1": "Legg til [[User talk:Foo]] og [[Talk:Bar]] til leveringslista [[Example]] og fjern [[Talk:Baz]] fra den",
 	"apihelp-editmassmessagelist-example-2": "Sett beskrivelsen til leveringslista [[Example]] til å være «FooBar delivery services»",
 	"apihelp-massmessage-description": "Send en melding til en liste over sider.",
@@ -22,5 +23,7 @@
 	"apihelp-massmessage-example-1": "Send en melding til lista på [[Signpost Spamlist]] med emnet «New Signpost» og innholdsteksten «Please read it».",
 	"apihelp-massmessage-example-2": "Send en melding til lista på [[Signpost Spamlist]] med emne «New Signpost», og innholdet på siden «Help Page» som meldingens innhold.",
 	"apihelp-massmessage-example-3": "Send en melding til lista på [[Signpost Spamlist]] med emnet «New Signpost», meldingsteksten «Please read it» samt innholdet til siden «Help Page».",
+	"apihelp-query+mmcontent-summary": "Hent beskrivelsen og målene til ei spamliste",
+	"apihelp-query+mmcontent-example-1": "Hent side- og spamlisteinformasjon for [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "Den angitte spamlista er ugyldig."
 }
