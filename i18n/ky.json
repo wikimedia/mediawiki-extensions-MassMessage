@@ -11,6 +11,8 @@
 	"massmessage-fieldset-info": "Маалымат",
 	"massmessage-preview-count": "Сиздин катыңыз {{PLURAL:$1|$1 page|$1 pages}} дарегине жөнөтүлөт.",
 	"massmessage-content-removeno": "Жокко чыгаруу",
+	"massmessage-content-addtitle": "Аталыш:",
+	"massmessage-content-addsubmit": "Барак кошуу",
 	"massmessage-edit-pagetitle": "«‎$1» түзөтүлүүдө",
 	"massmessage-summary-add": "[[:$1]] кошулган"
 }
