@@ -11,7 +11,8 @@
 			"Pacha Tchernof",
 			"Stjn",
 			"Striking Blue",
-			"Vlad5250"
+			"Vlad5250",
+			"Kareyac"
 		]
 	},
 	"massmessage": "Отправить массовое сообщение",
@@ -119,7 +120,7 @@
 	"massmessage-edit-missingsummary": "Вы не заполнили описания правки. Если вы снова нажмёте «{{int:htmlform-submit}}», ваша правка будет записана без него.",
 	"massmessage-edit-nopermission": "У вас нет прав для редактирования списка.",
 	"massmessage-summary-addremove": "Добавлен{{PLURAL:$1|а|ы|о}} $1 страниц{{PLURAL:$1|а|ы|}} и удален{{PLURAL:$2|а|ы|о}} $2 страниц{{PLURAL:$2|а|ы|}}",
-	"massmessage-summary-add": "Добавлено [[:$1]]",
+	"massmessage-summary-add": "Добавлено: [[:$1]]",
 	"massmessage-summary-addonsite": "Добавлена страница «$1» на сайте $2",
 	"massmessage-summary-addmulti": "{{PLURAL:$1|Добавлена $1 страница|Добавлены $1 страницы|Добавлено $1 страниц}}",
 	"massmessage-summary-remove": "Удалено: [[:$1]]",

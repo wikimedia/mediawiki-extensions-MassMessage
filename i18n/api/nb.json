@@ -25,5 +25,7 @@
 	"apihelp-query+mmsites-summary": "Gi autofullføringer for nettstedsfeltet i MassMessage.",
 	"apihelp-query+mmsites-param-term": "Prefikset det skal søkes etter.",
 	"apihelp-query+mmsites-example-1": "Autofullfør «en»",
+	"apihelp-query+mmcontent-summary": "Hent beskrivelsen og målene til ei spamliste",
+	"apihelp-query+mmcontent-example-1": "Hent side- og spamlisteinformasjon for [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "Den angitte spamlista er ugyldig."
 }
