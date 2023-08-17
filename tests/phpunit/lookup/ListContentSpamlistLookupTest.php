@@ -10,10 +10,22 @@ use MediaWiki\WikiMap\WikiMap;
 /**
  * Tests for MassMessage List Content related to target processing
  *
+ * @group Database
+ *
  * @covers \MediaWiki\MassMessage\Lookup\ListContentSpamlistLookup
  * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup
  */
 class ListContentSpamlistLookupTest extends MassMessageTestCase {
+
+	public function setUp(): void {
+		parent::setUp();
+		// FIXME: SiteConfigurations are not being taken into account when fetching spam list targets
+		$this->mergeMwGlobalArrayValue(
+			'wgMassMessageWikiAliases', [
+				'en.wikipedia.org' => 'enwiki'
+			]
+		);
+	}
 
 	public function testGetTargets() {
 		$text = '{"description":"","targets":['
