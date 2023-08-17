@@ -110,7 +110,8 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$request = new DerivativeRequest(
 			$context->getRequest(),
 			$requestParameters,
-			true // Treat data as POSTed
+			// Treat data as POSTed
+			true
 		);
 		$der->setRequest( $request );
 
@@ -181,7 +182,8 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		) {
 			$result['errors'][] = 'invalidtitle';
 		} else {
-			$result['title'] = $title->getPrefixedText(); // Use the canonical form.
+			// Use the canonical form.
+			$result['title'] = $title->getPrefixedText();
 		}
 
 		if ( $site !== null && $site !== UrlHelper::getBaseUrl( $config->get( 'CanonicalServer' ) ) ) {

@@ -94,7 +94,8 @@ class SendMessages extends Maintenance {
 			Title::newFromText( 'SendMassMessages' ),
 			$params
 		);
-		$submitJob->run(); // Just insert the individual jobs into the queue now.
+		// Just insert the individual jobs into the queue now.
+		$submitJob->run();
 		$count = count( $pages );
 		$this->output( "Queued $count jobs. Done!\n" );
 	}

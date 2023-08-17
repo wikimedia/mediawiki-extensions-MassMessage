@@ -32,7 +32,8 @@ class ApiQueryMMContentTest extends MassMessageApiTestCase {
 
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 
-		$this->pageid = $page->getId(); // Needed for later
+		// Needed for later
+		$this->pageid = $page->getId();
 
 		$this->mergeMwGlobalArrayValue(
 			'wgMassMessageWikiAliases', [

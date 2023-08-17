@@ -127,7 +127,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 							)
 						) {
 							$this->rev = $rev;
-						} else { // Use the latest revision for the title if $rev is invalid.
+						} else {
+							// Use the latest revision for the title if $rev is invalid.
 							$this->rev = $this->revisionLookup->getRevisionByTitle( $title );
 						}
 					} else {
@@ -175,7 +176,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			) {
 				if ( $this->restrictionStore->isSemiProtected( $this->title ) ) {
 					$noticeMsg = 'semiprotectedpagewarning';
-				} else { // Full protection
+				} else {
+					// Full protection
 					$noticeMsg = 'protectedpagewarning';
 				}
 				LogEventsList::showLogExtract( $out, 'protect', $this->title, '',
@@ -369,7 +371,8 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @return Status
 	 */
 	protected static function parseInput( $input ) {
-		$lines = array_filter( explode( "\n", $input ), 'trim' ); // Array of non-empty lines
+		// Array of non-empty lines
+		$lines = array_filter( explode( "\n", $input ), 'trim' );
 
 		$targets = [];
 		$invalidTargets = [];

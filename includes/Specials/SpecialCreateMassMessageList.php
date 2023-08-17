@@ -88,7 +88,8 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 			return Status::newFatal( 'massmessage-create-nopermission' );
 		}
 
-		if ( $data['content'] === 'import' ) { // Importing from an existing list
+		if ( $data['content'] === 'import' ) {
+			// We're importing from an existing list
 			$source = Title::newFromText( $data['source'] );
 			if ( !$source ) {
 				return Status::newFatal( 'massmessage-create-invalidsource' );
@@ -163,7 +164,10 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 	 * @return array|null
 	 */
 	protected function getTargets( Title $source ) {
-		$pages = SpamlistLookup::getTargets( $source, /* $normalize = */ false );
+		$pages = SpamlistLookup::getTargets(
+			$source,
+			/* $normalize = */ false
+		);
 		if ( $pages === null ) {
 			return null;
 		}

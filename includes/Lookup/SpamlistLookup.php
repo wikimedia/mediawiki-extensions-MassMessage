@@ -121,7 +121,8 @@ abstract class SpamlistLookup {
 				}
 				$title = UrlHelper::followRedirect( $title );
 				if ( $title === null ) {
-					continue; // Interwiki redirect
+					// Interwiki redirect
+					continue;
 				}
 				$target['title'] = $title->getPrefixedText();
 			}

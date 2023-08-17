@@ -70,7 +70,8 @@ class MassMessageHooks {
 	public static function storeDataParserFunction( Parser $parser, $page, $site = '' ) {
 		$data = MassMessage::processPFData( $page, $site );
 		if ( isset( $data['error'] ) ) {
-			return ''; // Output doesn't matter
+			// Output doesn't matter
+			return '';
 		}
 		$output = $parser->getOutput();
 		$current = $output->getExtensionData( 'massmessage-targets' );
@@ -124,9 +125,12 @@ class MassMessageHooks {
 	 */
 	public static function onBeforeEchoEventInsert( EchoEvent $event ) {
 		// Don't spam a user with mention notifications if it's a MassMessage
-		if ( ( $event->getType() === 'mention' || $event->getType() === 'flow-mention' ) &&
-				$event->getAgent() && // getAgent() can return null
-				$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId() ) {
+		if (
+			( $event->getType() === 'mention' || $event->getType() === 'flow-mention' ) &&
+			// getAgent() can return null, so guard against that
+			$event->getAgent() &&
+			$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId()
+		) {
 			return false;
 		}
 		return true;
@@ -147,7 +151,8 @@ class MassMessageHooks {
 			$request = $sktemplate->getRequest();
 			$direction = $request->getVal( 'direction' );
 			$diff = $request->getVal( 'diff' );
-			$oldid = $request->getInt( 'oldid' ); // Guaranteed to be an integer, 0 if invalid
+			// getInt is guaranteed to return an integer, 0 if invalid
+			$oldid = $request->getInt( 'oldid' );
 			$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
 			$oldRev = $revisionLookup->getRevisionById( $oldid );
 			if ( $direction === 'next' && $oldRev ) {
@@ -162,7 +167,8 @@ class MassMessageHooks {
 				} elseif ( $diff === 'next' && $oldRev ) {
 					$next = $revisionLookup->getNextRevision( $oldRev );
 					$revId = $next ? $next->getId() : $oldid;
-				} else { // diff is 'prev' or gibberish
+				} else {
+					// diff is 'prev' or gibberish
 					$revId = $oldid;
 				}
 			} else {
@@ -227,7 +233,8 @@ class MassMessageHooks {
 	public static function onEmailConfirmed( User $user, &$confirmed ) {
 		if ( $user->getId() === MassMessage::getMessengerUser()->getId() ) {
 			$confirmed = true;
-			return false; // Skip further checks
+			// Skip further checks
+			return false;
 		}
 		return true;
 	}

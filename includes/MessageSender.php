@@ -120,7 +120,8 @@ class MessageSender {
 			'subject' => $subject,
 			'text' => $message,
 			'token' => $user->getEditToken()
-		]; // LQT will automatically mark the edit as bot if we're a bot
+			// LQT will automatically mark the edit as bot if we're a bot, so don't set here
+		];
 
 		return (bool)$this->makeAPIRequest( $params, $user );
 	}
@@ -175,7 +176,8 @@ class MessageSender {
 		$wgRequest = new DerivativeRequest(
 			$wgRequest,
 			$params,
-			true // was posted?
+			// was posted?
+			true
 		);
 		// New user objects will use $wgRequest, so we set that
 		// to our DerivativeRequest, so we don't run into any issues.
@@ -191,14 +193,16 @@ class MessageSender {
 
 		$api = new ApiMain(
 			$wgRequest,
-			true // enable write?
+			// enable write?
+			true
 		);
 		try {
 			$attemptCount = 0;
 			while ( true ) {
 				try {
 					$api->execute();
-					break; // Continue after the while block if the API request succeeds
+					// Continue after the while block if the API request succeeds
+					break;
 				} catch ( ApiUsageException $e ) {
 					$attemptCount++;
 					$isEditConflict = false;

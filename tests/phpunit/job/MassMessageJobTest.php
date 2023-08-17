@@ -149,7 +149,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$this->markTestSkipped( 'broken test, T217553' );
 
 		$proj = MediaWikiServices::getInstance()->getContentLanguage()
-			->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
+			// Output changes based on wikiname
+			->getFormattedNsText( NS_PROJECT );
 
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' ) ) {
 			$this->markTestSkipped( "This test requires the LiquidThreads extension" );
@@ -172,7 +173,8 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$this->assertFalse( $fakejob->isOptedOut(
 			Title::makeTitle( NS_PROJECT, 'Some random page' )
 		) );
-		$this->simulateJob( $target ); // Try posting a message to this page
+		// Try posting a message to this page
+		$this->simulateJob( $target );
 		/** @var TextContent $content */
 		'@phan-var TextContent $content';
 		$content = $this->getServiceContainer()->getWikiPageFactory()

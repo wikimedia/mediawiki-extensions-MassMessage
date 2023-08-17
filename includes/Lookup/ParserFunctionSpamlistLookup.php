@@ -37,7 +37,8 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 		// Prep the parser
 		$parserOptions = $page->makeParserOptions( 'canonical' );
 		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
-		$parser->firstCallInit(); // So our initial parser function is added
+		// Do this so that our initial parser function is added
+		$parser->firstCallInit();
 		// Now overwrite it
 		$parser->setFunctionHook(
 			'target',
@@ -51,7 +52,8 @@ class ParserFunctionSpamlistLookup extends SpamlistLookup {
 		if ( $data ) {
 			return $data;
 		} else {
-			return []; // No parser functions on page
+			// No parser functions on page
+			return [];
 		}
 	}
 }

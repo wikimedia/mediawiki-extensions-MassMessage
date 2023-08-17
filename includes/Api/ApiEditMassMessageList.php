@@ -53,7 +53,9 @@ class ApiEditMassMessageList extends ApiBase {
 			->getContent( SlotRecord::MAIN );
 		$description = $content->getDescription();
 		$targets = $content->getTargets();
-		$newTargets = $targets; // Create a copy.
+
+		// Create a copy.
+		$newTargets = $targets;
 
 		if ( isset( $data['add'] ) ) {
 			$invalidAdd = [];
@@ -129,7 +131,8 @@ class ApiEditMassMessageList extends ApiBase {
 				$this->getPermissionManager()->userHasRight( $this->getUser(), 'minoredit' ) &&
 					$data['minor'],
 				$data['watchlist'],
-				$this // APIs implement IContextSource
+				// We can pass $this because APIs implement IContextSource
+				$this
 			);
 			if ( !$editResult->isGood() ) {
 				$this->dieStatus( $editResult );
