@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\Category\Category;
 use MediaWiki\MassMessage\UrlHelper;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
@@ -26,8 +27,6 @@ class CategorySpamlistLookup extends SpamlistLookup {
 	 * @return array[]
 	 */
 	public function fetchTargets() {
-		global $wgCanonicalServer;
-
 		$members = Category::newFromTitle( $this->spamlist )->getMembers();
 		$targets = [];
 		$currentWikiId = WikiMap::getCurrentWikiId();
@@ -37,7 +36,9 @@ class CategorySpamlistLookup extends SpamlistLookup {
 			$targets[] = [
 				'title' => $member->getPrefixedText(),
 				'wiki' => $currentWikiId,
-				'site' => UrlHelper::getBaseUrl( $wgCanonicalServer ),
+				'site' => UrlHelper::getBaseUrl(
+					MediaWikiServices::getInstance()->getMainConfig()->get( 'CanonicalServer' )
+				),
 			];
 		}
 		return $targets;

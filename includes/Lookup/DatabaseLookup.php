@@ -47,8 +47,8 @@ class DatabaseLookup {
 	 * @return string|null
 	 */
 	public static function getDBName( $host ) {
-		global $wgMassMessageWikiAliases;
+		$configuredAliases = MediaWikiServices::getInstance()->getMainConfig()->get( 'MassMessageWikiAliases' );
 		$mapping = self::getDatabases();
-		return $mapping[$host] ?? $wgMassMessageWikiAliases[$host] ?? null;
+		return $mapping[$host] ?? $configuredAliases[$host] ?? null;
 	}
 }

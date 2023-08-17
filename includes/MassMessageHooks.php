@@ -39,7 +39,7 @@ class MassMessageHooks {
 	 * @return array
 	 */
 	public static function outputParserFunction( Parser $parser, $page, $site = '' ) {
-		global $wgScript, $wgAllowGlobalMessaging;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$parser->addTrackingCategory( 'massmessage-list-category' );
 
@@ -49,9 +49,9 @@ class MassMessageHooks {
 		}
 
 		// Use a message so wikis can customize the output.
-		if ( $wgAllowGlobalMessaging ) {
+		if ( $config->get( 'AllowGlobalMessaging' ) ) {
 			$msg = wfMessage( 'massmessage-target' )
-				->params( $data['site'], $wgScript, $data['title'] )->plain();
+				->params( $data['site'], $config->get( 'Script' ), $data['title'] )->plain();
 		} else {
 			$msg = wfMessage( 'massmessage-target-local' )->params( $data['title'] )->plain();
 		}
@@ -89,8 +89,7 @@ class MassMessageHooks {
 	 * @param array &$reservedUsernames
 	 */
 	public static function onUserGetReservedNames( &$reservedUsernames ) {
-		global $wgMassMessageAccountUsername;
-		$reservedUsernames[] = $wgMassMessageAccountUsername;
+		$reservedUsernames[] = MediaWikiServices::getInstance()->getMainConfig()->get( 'MassMessageAccountUsername' );
 	}
 
 	/**
@@ -102,8 +101,7 @@ class MassMessageHooks {
 	 * @return bool|string
 	 */
 	public static function onRenameUserPreRename( $uid, $oldName, $newName ) {
-		global $wgMassMessageAccountUsername;
-		if ( $oldName == $wgMassMessageAccountUsername ) {
+		if ( $oldName == MediaWikiServices::getInstance()->getMainConfig()->get( 'MassMessageAccountUsername' ) ) {
 			return wfMessage( 'massmessage-cannot-rename' )->text();
 		}
 		return true;

@@ -28,9 +28,9 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 	 * @return array[]
 	 */
 	public function fetchTargets() {
-		global $wgCanonicalServer;
+		$services = MediaWikiServices::getInstance();
 
-		$targets = MediaWikiServices::getInstance()
+		$targets = $services
 			->getRevisionLookup()
 			->getRevisionByTitle( $this->spamlist )
 			->getContent( SlotRecord::MAIN )
@@ -40,7 +40,7 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 			if ( array_key_exists( 'site', $target ) ) {
 				$target['wiki'] = DatabaseLookup::getDBName( $target['site'] );
 			} else {
-				$target['site'] = UrlHelper::getBaseUrl( $wgCanonicalServer );
+				$target['site'] = UrlHelper::getBaseUrl( $services->getMainConfig()->get( 'CanonicalServer' ) );
 				$target['wiki'] = $currentWikiId;
 			}
 		}

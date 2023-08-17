@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage\Content;
 use JsonContent;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 class MassMessageListContent extends JsonContent {
@@ -92,13 +93,11 @@ class MassMessageListContent extends JsonContent {
 	 * @return array
 	 */
 	public function getValidTargets() {
-		global $wgAllowGlobalMessaging;
-
 		$targets = $this->getTargets();
 		$validTargets = [];
 		foreach ( $targets as $target ) {
 			if ( !array_key_exists( 'site', $target )
-				|| $wgAllowGlobalMessaging
+				|| MediaWikiServices::getInstance()->getMainConfig()->get( 'AllowGlobalMessaging' )
 				&& DatabaseLookup::getDBName( $target['site'] ) !== null
 			) {
 				$validTargets[] = $target;
@@ -113,8 +112,6 @@ class MassMessageListContent extends JsonContent {
 	 * @return array
 	 */
 	public function getTargetStrings() {
-		global $wgCanonicalServer;
-
 		$targets = $this->getTargets();
 		$targetStrings = [];
 		foreach ( $targets as $target ) {
@@ -123,7 +120,10 @@ class MassMessageListContent extends JsonContent {
 			} elseif ( strpos( $target['title'], '@' ) !== false ) {
 				// List the site if it'd otherwise be ambiguous
 				$targetStrings[] = $target['title'] . '@'
-					. UrlHelper::getBaseUrl( $wgCanonicalServer );
+					. UrlHelper::getBaseUrl(
+						MediaWikiServices::getInstance()->getMainConfig()
+							->get( 'CanonicalServer' )
+					);
 			} else {
 				$targetStrings[] = $target['title'];
 			}

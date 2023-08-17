@@ -105,7 +105,7 @@ abstract class SpamlistLookup {
 	 * @return array[]
 	 */
 	private static function normalizeTargets( array $data ) {
-		global $wgNamespacesToConvert;
+		$conversionNamespaces = MediaWikiServices::getInstance()->getMainConfig()->get( 'NamespacesToConvert' );
 
 		$currentWikiId = WikiMap::getCurrentWikiId();
 		foreach ( $data as &$target ) {
@@ -114,8 +114,9 @@ abstract class SpamlistLookup {
 				if ( $title === null ) {
 					continue;
 				}
-				if ( isset( $wgNamespacesToConvert[$title->getNamespace()] ) ) {
-					$title = Title::makeTitle( $wgNamespacesToConvert[$title->getNamespace()],
+				if ( isset( $conversionNamespaces[$title->getNamespace()] ) ) {
+					$title = Title::makeTitle(
+						$conversionNamespaces[$title->getNamespace()],
 						$title->getText() );
 				}
 				$title = UrlHelper::followRedirect( $title );

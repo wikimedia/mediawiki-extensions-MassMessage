@@ -160,7 +160,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	 * @return array Contains an 'errors' key for an array of errors if the string is invalid
 	 */
 	public static function extractTarget( $target ) {
-		global $wgCanonicalServer, $wgAllowGlobalMessaging;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$target = trim( $target );
 		$delimiterPos = strrpos( $target, '@' );
@@ -184,8 +184,8 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			$result['title'] = $title->getPrefixedText(); // Use the canonical form.
 		}
 
-		if ( $site !== null && $site !== UrlHelper::getBaseUrl( $wgCanonicalServer ) ) {
-			if ( !$wgAllowGlobalMessaging || DatabaseLookup::getDBName( $site ) === null ) {
+		if ( $site !== null && $site !== UrlHelper::getBaseUrl( $config->get( 'CanonicalServer' ) ) ) {
+			if ( !$config->get( 'AllowGlobalMessaging' ) || DatabaseLookup::getDBName( $site ) === null ) {
 				$result['errors'][] = 'invalidsite';
 			} else {
 				$result['site'] = $site;
@@ -228,8 +228,6 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		ContentParseParams $cpoParams,
 		ParserOutput &$output
 	) {
-		global $wgScript;
-
 		'@phan-var MassMessageListContent $content';
 		$services = MediaWikiServices::getInstance();
 
@@ -268,8 +266,9 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			if ( !array_key_exists( 'site', $target ) ) {
 				$output->addLink( Title::newFromText( $target['title'] ) );
 			} else {
-				$output->addExternalLink( '//' . $target['site'] . $wgScript . '?title='
-					. Title::newFromText( $target['title'] )->getPrefixedURL() );
+				$output->addExternalLink(
+					'//' . $target['site'] . $services->getMainConfig()->get( 'Script' )
+					. '?title=' . Title::newFromText( $target['title'] )->getPrefixedURL() );
 			}
 		}
 
@@ -286,7 +285,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	 * @return string
 	 */
 	private function getTargetsHtml( MassMessageListContent $content, Language $lang ) {
-		global $wgScript;
+		$services = MediaWikiServices::getInstance();
 
 		$html = Html::element( 'h2', [],
 			wfMessage( 'massmessage-content-pages' )->inLanguage( $lang )->text() );
@@ -302,7 +301,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 
 		// Use LinkBatch to cache existence for all local targets for later use by Linker.
 		if ( array_key_exists( 'local', $sites ) ) {
-			$lb = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
+			$lb = $services->getLinkBatchFactory()->newLinkBatch();
 			foreach ( $sites['local'] as $target ) {
 				$lb->addObj( Title::newFromText( $target ) );
 			}
@@ -311,7 +310,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 
 		// Determine whether there are targets on external wikis.
 		$printSites = count( $sites ) !== 1 || !array_key_exists( 'local', $sites );
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = $services->getLinkRenderer();
 		foreach ( $sites as $site => $targets ) {
 			if ( $printSites ) {
 				if ( $site === 'local' ) {
@@ -335,7 +334,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 					$targetLink = $linkRenderer->makeLink( $title );
 				} else {
 					$targetLink = Linker::makeExternalLink(
-						"//$site$wgScript?title=" . $title->getPrefixedURL(),
+						"//$site" . $services->getMainConfig()->get( 'Script' ) . '?title=' . $title->getPrefixedURL(),
 						$title->getPrefixedText()
 					);
 				}
@@ -391,7 +390,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	 * @return string
 	 */
 	private static function getAddForm( Language $lang ) {
-		global $wgAllowGlobalMessaging, $wgCanonicalServer;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$html = Html::openElement( 'div', [ 'id' => 'mw-massmessage-addpages' ] );
 		$html .= Html::element( 'h2', [],
@@ -404,7 +403,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			'label' => wfMessage( 'massmessage-content-addsubmit' )->inLanguage( $lang )->text(),
 		] );
 		$sites = DatabaseLookup::getDatabases();
-		if ( $wgAllowGlobalMessaging && count( $sites ) > 1 ) {
+		if ( $config->get( 'AllowGlobalMessaging' ) && count( $sites ) > 1 ) {
 			// Treat all 3 widgets as distinct items in the layout
 			$items = [
 				new FieldLayout(
@@ -418,7 +417,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 				new FieldLayout(
 					new ComboBoxInputWidget( [
 						'name' => 'site',
-						'placeholder' => UrlHelper::getBaseUrl( $wgCanonicalServer ),
+						'placeholder' => UrlHelper::getBaseUrl( $config->get( 'CanonicalServer' ) ),
 						'autocomplete' => true,
 						'options' => array_map(
 							static function ( $domain ) {

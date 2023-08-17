@@ -36,17 +36,19 @@ class MassMessage {
 	 * @return User
 	 */
 	public static function getMessengerUser() {
-		global $wgMassMessageAccountUsername;
-		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
-		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		$services = MediaWikiServices::getInstance();
+		$userGroupManager = $services->getUserGroupManager();
+		$userFactory = $services->getUserFactory();
+
+		$accountUsername = $services->getMainConfig()->get( 'MassMessageAccountUsername' );
 
 		// Only assign the bot flag if newSystemUser would either create
 		//  or steal the account with the username specified.
-		$user = $userFactory->newFromName( $wgMassMessageAccountUsername );
+		$user = $userFactory->newFromName( $accountUsername );
 		$shouldAssignBotFlag = !$user->isRegistered() || !$user->isSystemUser();
 
 		$user = User::newSystemUser(
-			$wgMassMessageAccountUsername, [ 'steal' => true ]
+			$accountUsername, [ 'steal' => true ]
 		);
 		// Make the user a bot so it doesn't look weird when the account was stolen
 		//  or created.
@@ -64,7 +66,8 @@ class MassMessage {
 	 * @return array
 	 */
 	public static function processPFData( $page, $site ) {
-		global $wgCanonicalServer, $wgAllowGlobalMessaging;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
 		$titleObj = Title::newFromText( $page );
 		if ( $titleObj === null ) {
 			return self::parserError( 'massmessage-parse-badpage', $page );
@@ -73,20 +76,20 @@ class MassMessage {
 		$currentWikiId = WikiMap::getCurrentWikiId();
 		$data = [ 'title' => $page, 'site' => trim( $site ) ];
 		if ( $data['site'] === '' ) {
-			$data['site'] = UrlHelper::getBaseUrl( $wgCanonicalServer );
+			$data['site'] = UrlHelper::getBaseUrl( $config->get( 'CanonicalServer' ) );
 			$data['wiki'] = $currentWikiId;
 		} else {
 			$data['wiki'] = DatabaseLookup::getDBName( $data['site'] );
 			if ( $data['wiki'] === null ) {
 				return self::parserError( 'massmessage-parse-badurl', $site );
 			}
-			if ( !$wgAllowGlobalMessaging && $data['wiki'] !== $currentWikiId ) {
+			if ( !$config->get( 'AllowGlobalMessaging' ) && $data['wiki'] !== $currentWikiId ) {
 				return self::parserError( 'massmessage-global-disallowed' );
 			}
 		}
 		if ( $data['wiki'] === $currentWikiId && $titleObj->isExternal() ) {
 			// interwiki links don't work
-			if ( $wgAllowGlobalMessaging ) {
+			if ( $config->get( 'AllowGlobalMessaging' ) ) {
 				// tell them they need to use the |site= parameter
 				return self::parserError( 'massmessage-parse-badexternal', $page );
 			}
