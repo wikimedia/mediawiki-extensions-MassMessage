@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 
 class MassMessageSubmitJobTest extends MediaWikiIntegrationTestCase {
@@ -19,7 +20,7 @@ class MassMessageSubmitJobTest extends MediaWikiIntegrationTestCase {
 			'pages' => $pages
 		];
 		$job = new MassMessageSubmitJob(
-			$this->createMock( \Title::class ),
+			$this->createMock( Title::class ),
 			$params
 		);
 
