@@ -20,7 +20,8 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	 */
 	public static function provideGetParserFunctionTargets() {
 		$proj = MediaWikiServices::getInstance()->getContentLanguage()
-			->getFormattedNsText( NS_PROJECT ); // Output changes based on wikiname
+			// Output changes based on wikiname
+			->getFormattedNsText( NS_PROJECT );
 
 		return [
 			// project page, no site provided
@@ -71,7 +72,8 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 			$this->assertSame( [], $data );
 		} else {
 			$data = array_values( $data );
-			$data = $data[0]; // We're just testing the first value
+			// We're just testing the first value
+			$data = $data[0];
 			foreach ( $check as $key => $value ) {
 				$this->assertEquals( $value, $data[$key] );
 			}

@@ -103,7 +103,8 @@ class SpecialMassMessage extends FormSpecialPage {
 		return $form
 			->setId( 'mw-massmessage-form' )
 			->setWrapperLegendMsg( 'massmessage' )
-			->suppressDefaultSubmit() // We use our own buttons.
+			// We use our own buttons, so supress the default one.
+			->suppressDefaultSubmit()
 			->setMethod( 'post' );
 	}
 
@@ -286,9 +287,11 @@ class SpecialMassMessage extends FormSpecialPage {
 		if ( $this->state === 'submit' ) {
 			$this->count = MassMessage::submit( $this->getUser(), $this->status->getValue() );
 			return $this->status;
-		} else { // $this->state can only be 'preview' here
+		} else {
+			// $this->state can only be 'preview' here
 			$this->preview( $this->status->getValue() );
-			return false; // No submission attempted
+			// No submission attempted
+			return false;
 		}
 	}
 

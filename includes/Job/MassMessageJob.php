@@ -143,7 +143,8 @@ class MassMessageJob extends Job {
 		if ( isset( $namespacesToConvert[$title->getNamespace()] ) ) {
 			$title = Title::makeTitle( $namespacesToConvert[$title->getNamespace()], $title->getText() );
 		}
-		$title = UrlHelper::followRedirect( $title ) ?: $title; // Try to follow redirects
+		// Try to follow redirects
+		$title = UrlHelper::followRedirect( $title ) ?: $title;
 		if (
 			!$title->isTalkPage() &&
 			!in_array( $title->getNamespace(), $mainConfig->get( 'NamespacesToPostIn' ) ) &&
@@ -216,7 +217,8 @@ class MassMessageJob extends Job {
 	protected function sendMessage(): bool {
 		$title = $this->normalizeTitle( $this->title );
 		if ( $title === null ) {
-			return true; // Skip it
+			// Skip it
+			return true;
 		}
 
 		$this->title = $title;
@@ -326,7 +328,8 @@ class MassMessageJob extends Job {
 	private function canDeliverMessage( Title $title ): bool {
 		if ( $this->isOptedOut( $this->title ) ) {
 			$this->logLocalSkip( 'skipoptout' );
-			return false; // Oh well.
+			// Oh well.
+			return false;
 		}
 
 		// If we're sending to a User:/User talk: page, make sure the user exists.

@@ -44,7 +44,9 @@ class MassMessageListContent extends JsonContent {
 	 * @return bool Whether the contents are valid
 	 */
 	public function isValid() {
-		$this->decode(); // Populate $this->description and $this->targets.
+		// Populate $this->description and $this->targets.
+		$this->decode();
+
 		if ( !is_string( $this->description ) || !is_array( $this->targets ) ) {
 			return false;
 		}
@@ -145,11 +147,13 @@ class MassMessageListContent extends JsonContent {
 			if ( isset( $data->targets ) && is_array( $data->targets ) ) {
 				$this->targets = [];
 				foreach ( $data->targets as $target ) {
-					if ( !is_object( $target ) ) { // There is a malformed target.
+					if ( !is_object( $target ) ) {
+						// There is a malformed target.
 						$this->targets = null;
 						break;
 					}
-					$this->targets[] = wfObjectToArray( $target ); // Convert to associative array.
+					// Convert to associative array.
+					$this->targets[] = wfObjectToArray( $target );
 				}
 			} else {
 				$this->targets = null;

@@ -130,7 +130,8 @@ class MassMessageRequestParser {
 		// Page exists, follow a redirect if possible
 		$target = UrlHelper::followRedirect( $spamlist );
 		if ( $target === null || !$target->exists() ) {
-			return 'massmessage-spamlist-invalid'; // Interwiki redirect or non-existent page.
+			// Interwiki redirect or non-existent page.
+			return 'massmessage-spamlist-invalid';
 		}
 		$spamlist = $target;
 

@@ -24,7 +24,8 @@ class UrlHelper {
 			return $target;
 		}
 
-		return null; // Interwiki redirect
+		// This must be an interwiki redirect
+		return null;
 	}
 
 	/**
