@@ -2,19 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"V.narsikar",
-			"ज्ञानदा गद्रे-फडके"
+			"ज्ञानदा गद्रे-फडके",
+			"Amire80"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "एकगठ्ठा संदेश वितरण यादी संपादा.",
 	"apihelp-editmassmessagelist-param-spamlist": "अद्यतन करावयाचे संदेश वितरण यादीचे शीर्षक.",
 	"apihelp-editmassmessagelist-param-add": "यादीत जोडावयाची शीर्षके",
 	"apihelp-editmassmessagelist-param-remove": "यादीतून हटवावयाची शीर्षके.",
-	"apihelp-editmassmessagelist-example-1": "[[Example]] वितरण यादीत  [[User talk:Foo]] व [[Talk:Bar]] जोडा व [[Talk:Baz]] त्यातून हटवा",
+	"apihelp-editmassmessagelist-example-1": "[[Example]] वितरण यादीत [[User talk:Foo]] व [[Talk:Bar]] जोडा व [[Talk:Baz]] त्यातून हटवा",
 	"apihelp-massmessage-description": "पानांच्या यादीस संदेश पाठवा.",
 	"apihelp-massmessage-param-spamlist": "ज्यावर संदेश टाकावयाचा आहे अशी पानांची यादी असलेले पान.",
 	"apihelp-massmessage-param-subject": "संदेशाचा विषय.",
 	"apihelp-massmessage-param-message": "मायना मजकूर.",
-	"apihelp-massmessage-example-1": " [[Signpost Spamlist]] वर असलेल्या यादीस संदेश पाठवा ज्याचा विषय \"New Signpost\" राहील व मायना हा  \"Please read it\" असा राहील.",
+	"apihelp-massmessage-example-1": " [[Signpost Spamlist]] वर असलेल्या यादीस संदेश पाठवा ज्याचा विषय \"New Signpost\" राहील व मायना हा \"Please read it\" असा राहील.",
 	"apihelp-query+mmsites-description": "एकगठ्ठा संदेशात असलेल्या संकेतस्थळाच्या क्षेत्रात, आपोआप पूर्ण करा ही विनंती सुरु करा.",
 	"apihelp-query+mmsites-param-term": "शोधावयाचे उपपद.",
 	"apihelp-query+mmsites-example-1": "\"en\" आपोआप पूर्ण करा"
