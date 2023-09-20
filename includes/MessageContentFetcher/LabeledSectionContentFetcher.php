@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\MassMessage\MessageContentFetcher;
 
 use MediaWiki\MassMessage\LanguageAwareText;
-use Status;
+use MediaWiki\Status\Status;
 
 /**
  * Fetches content from labeled sections

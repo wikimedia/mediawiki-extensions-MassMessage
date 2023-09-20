@@ -5,8 +5,8 @@ namespace MediaWiki\MassMessage\MessageContentFetcher;
 
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MassMessage\LanguageAwareText;
+use MediaWiki\Status\Status;
 use SiteConfiguration;
-use Status;
 
 /**
  * Fetches content from a remote wiki

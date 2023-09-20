@@ -16,28 +16,24 @@ class DatabaseLookup {
 	 * @return array
 	 */
 	public static function getDatabases() {
-		static $mapping = null;
-		if ( $mapping === null ) {
-			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 
-			$mapping = $cache->getWithSetCallback(
-				$cache->makeGlobalKey( 'massmessage', 'urltodb' ),
-				$cache::TTL_HOUR,
-				static function () {
-					global $wgConf;
+		return $cache->getWithSetCallback(
+			$cache->makeGlobalKey( 'massmessage', 'urltodb' ),
+			$cache::TTL_HOUR,
+			static function () {
+				global $wgConf;
 
-					$dbs = $wgConf->getLocalDatabases();
-					$mapping = [];
-					foreach ( $dbs as $dbname ) {
-						$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
-						$site = UrlHelper::getBaseUrl( $url );
-						$mapping[$site] = $dbname;
-					}
-					return $mapping;
+				$dbs = $wgConf->getLocalDatabases();
+				$mapping = [];
+				foreach ( $dbs as $dbname ) {
+					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
+					$site = UrlHelper::getBaseUrl( $url );
+					$mapping[$site] = $dbname;
 				}
-			);
-		}
-		return $mapping;
+				return $mapping;
+			}
+		);
 	}
 
 	/**

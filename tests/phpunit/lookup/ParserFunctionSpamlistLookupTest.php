@@ -10,6 +10,7 @@ use MediaWiki\WikiMap\WikiMap;
 
 /**
  * Tests for Parser functions related to target processing
+ * @group Database
  */
 class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 

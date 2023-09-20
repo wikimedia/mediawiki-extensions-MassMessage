@@ -7,9 +7,9 @@ use HTMLForm;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use Status;
 
 class SpecialCreateMassMessageList extends FormSpecialPage {
 

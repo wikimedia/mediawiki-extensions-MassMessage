@@ -16,10 +16,10 @@ use MediaWiki\Permissions\RestrictionStore;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\Watchlist\WatchlistManager;
-use Status;
 
 class SpecialEditMassMessageList extends FormSpecialPage {
 

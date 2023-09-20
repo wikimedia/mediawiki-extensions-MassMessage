@@ -4,6 +4,9 @@ namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\MassMessage\MassMessageTestCase;
 
+/**
+ * @group Database
+ */
 class DatabaseLookupTest extends MassMessageTestCase {
 
 	public static function provideGetDBName() {

@@ -7,8 +7,8 @@ use Job;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use Status;
 use TextContent;
 use WikitextContent;
 

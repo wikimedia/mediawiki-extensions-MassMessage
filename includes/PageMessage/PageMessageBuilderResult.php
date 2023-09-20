@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\MassMessage\PageMessage;
 
 use MediaWiki\MassMessage\LanguageAwareText;
+use MediaWiki\Status\Status;
 use Message;
-use Status;
 
 /**
  * Returned by PageMessageBuilder class: getContent and getContentWithFallback method

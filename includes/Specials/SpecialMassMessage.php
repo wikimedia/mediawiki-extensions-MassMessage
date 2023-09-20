@@ -16,6 +16,7 @@ use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
@@ -23,7 +24,6 @@ use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
 use OOUI\Widget;
-use Status;
 use TextContent;
 
 /**
