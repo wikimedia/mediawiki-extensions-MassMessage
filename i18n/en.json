@@ -67,7 +67,6 @@
 	"logentry-massmessage-skipbadns": "Delivery of \"$4\" to $3 was skipped because target was in a namespace that cannot be posted in",
 	"logentry-massmessage-skipoptout": "Delivery of \"$4\" to $3 was skipped because the target has opted-out of message delivery",
 	"logentry-massmessage-skipnouser": "Delivery of \"$4\" to $3 was skipped because the user account does not exist",
-	"massmessage-cannot-rename": "This is a system account and cannot be renamed.",
 	"massmessage-message-footer": "",
 	"massmessage-nextsteps": "[[Special:MassMessage|Send another message]].",
 	"massmessage-content-pages": "Pages in this list",

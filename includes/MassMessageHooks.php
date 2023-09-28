@@ -94,21 +94,6 @@ class MassMessageHooks {
 	}
 
 	/**
-	 * If someone is trying to rename the bot, don't let them.
-	 *
-	 * @param int $uid
-	 * @param string $oldName
-	 * @param string $newName
-	 * @return bool|string
-	 */
-	public static function onRenameUserPreRename( $uid, $oldName, $newName ) {
-		if ( $oldName == MediaWikiServices::getInstance()->getMainConfig()->get( 'MassMessageAccountUsername' ) ) {
-			return wfMessage( 'massmessage-cannot-rename' )->text();
-		}
-		return true;
-	}
-
-	/**
 	 * Add the number of queued messages to &meta=siteinfo&siprop=statistics.
 	 *
 	 * @param array &$result

@@ -77,7 +77,6 @@
 	"logentry-massmessage-skipbadns": "{{logentry}}\n* $4 - the subject line of the message",
 	"logentry-massmessage-skipoptout": "{{logentry}}\n* $4 - the subject line of the message",
 	"logentry-massmessage-skipnouser": "{{logentry}}\n* $4 - the subject line of the message",
-	"massmessage-cannot-rename": "Error message a user sees when they try renaming the bot account.",
 	"massmessage-message-footer": "{{notranslate}}\nThe footer that is by added at the end of every message. It is left blank so individual wikis can customize it.",
 	"massmessage-nextsteps": "Message after {{msg-mw|Massmessage-submitted}} on [[Special:MassMessage]] once the form has been submitted.",
 	"massmessage-content-pages": "Section title for the list of pages when viewing a delivery list",

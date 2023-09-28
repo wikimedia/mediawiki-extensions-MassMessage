@@ -70,7 +70,6 @@
 	"Hooks": {
 		"ParserFirstCallInit": "MediaWiki\\MassMessage\\MassMessageHooks::onParserFirstCallInit",
 		"APIQuerySiteInfoStatisticsInfo": "MediaWiki\\MassMessage\\MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo",
-		"RenameUserPreRename": "MediaWiki\\MassMessage\\MassMessageHooks::onRenameUserPreRename",
 		"UserGetReservedNames": "MediaWiki\\MassMessage\\MassMessageHooks::onUserGetReservedNames",
 		"BeforeEchoEventInsert": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforeEchoEventInsert",
 		"SkinTemplateNavigation::Universal": "MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation",
