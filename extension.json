@@ -68,15 +68,20 @@
 		}
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "MediaWiki\\MassMessage\\MassMessageHooks::onParserFirstCallInit",
-		"APIQuerySiteInfoStatisticsInfo": "MediaWiki\\MassMessage\\MassMessageHooks::onAPIQuerySiteInfoStatisticsInfo",
-		"UserGetReservedNames": "MediaWiki\\MassMessage\\MassMessageHooks::onUserGetReservedNames",
+		"ParserFirstCallInit": "main",
+		"APIQuerySiteInfoStatisticsInfo": "main",
+		"UserGetReservedNames": "main",
 		"BeforeEchoEventInsert": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforeEchoEventInsert",
-		"SkinTemplateNavigation::Universal": "MediaWiki\\MassMessage\\MassMessageHooks::onSkinTemplateNavigation",
-		"BeforePageDisplay": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforePageDisplay",
-		"ListDefinedTags": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags",
-		"ChangeTagsListActive": "MediaWiki\\MassMessage\\MassMessageHooks::onRegisterTags",
-		"RejectParserCacheValue": "MediaWiki\\MassMessage\\MassMessageHooks::onRejectParserCacheValue"
+		"SkinTemplateNavigation::Universal": "main",
+		"BeforePageDisplay": "main",
+		"ListDefinedTags": "main",
+		"ChangeTagsListActive": "main",
+		"RejectParserCacheValue": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\MassMessage\\MassMessageHooks"
+		}
 	},
 	"ContentHandlers": {
 		"MassMessageListContent": "MediaWiki\\MassMessage\\Content\\MassMessageListContentHandler"

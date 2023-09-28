@@ -1,9 +1,19 @@
 <?php
 
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 namespace MediaWiki\MassMessage;
 
 use EchoEvent;
+use MediaWiki\Api\Hook\APIQuerySiteInfoStatisticsInfoHook;
+use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
+use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
+use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Hook\ParserFirstCallInitHook;
+use MediaWiki\Hook\RejectParserCacheValueHook;
+use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use OutputPage;
 use Parser;
 use ParserOptions;
@@ -17,14 +27,23 @@ use WikiPage;
  * Hooks!
  */
 
-class MassMessageHooks {
+class MassMessageHooks implements
+	ParserFirstCallInitHook,
+	APIQuerySiteInfoStatisticsInfoHook,
+	UserGetReservedNamesHook,
+	SkinTemplateNavigation__UniversalHook,
+	BeforePageDisplayHook,
+	ListDefinedTagsHook,
+	ChangeTagsListActiveHook,
+	RejectParserCacheValueHook
+{
 
 	/**
 	 * Hook to load our parser function.
 	 *
 	 * @param Parser $parser
 	 */
-	public static function onParserFirstCallInit( Parser $parser ) {
+	public function onParserFirstCallInit( $parser ) {
 		$parser->setFunctionHook( 'target', [ __CLASS__, 'outputParserFunction' ] );
 	}
 
@@ -89,7 +108,7 @@ class MassMessageHooks {
 	 *
 	 * @param array &$reservedUsernames
 	 */
-	public static function onUserGetReservedNames( &$reservedUsernames ) {
+	public function onUserGetReservedNames( &$reservedUsernames ) {
 		$reservedUsernames[] = MediaWikiServices::getInstance()->getMainConfig()->get( 'MassMessageAccountUsername' );
 	}
 
@@ -98,7 +117,7 @@ class MassMessageHooks {
 	 *
 	 * @param array &$result
 	 */
-	public static function onAPIQuerySiteInfoStatisticsInfo( &$result ) {
+	public function onAPIQuerySiteInfoStatisticsInfo( &$result ) {
 		$result['queued-massmessages'] = MassMessage::getQueuedCount();
 	}
 
@@ -127,7 +146,7 @@ class MassMessageHooks {
 	 * @param \SkinTemplate $sktemplate
 	 * @param array &$links
 	 */
-	public static function onSkinTemplateNavigation( \SkinTemplate $sktemplate, &$links ) {
+	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {
 		$title = $sktemplate->getTitle();
 		if ( $title->hasContentModel( 'MassMessageListContent' )
 			&& array_key_exists( 'edit', $links['views'] )
@@ -173,7 +192,7 @@ class MassMessageHooks {
 	 * @param OutputPage $out
 	 * @param Skin $skin
 	 */
-	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
+	public function onBeforePageDisplay( $out, $skin ): void {
 		$title = $out->getTitle();
 		if ( $title->exists() && $title->hasContentModel( 'MassMessageListContent' ) ) {
 			$permManager = MediaWikiServices::getInstance()->getPermissionManager();
@@ -196,8 +215,8 @@ class MassMessageHooks {
 	 * @param ParserOptions $parserOptions
 	 * @return bool
 	 */
-	public static function onRejectParserCacheValue( ParserOutput $parserOutput, WikiPage $wikiPage,
-		ParserOptions $parserOptions
+	public function onRejectParserCacheValue( $parserOutput, $wikiPage,
+		$parserOptions
 	): bool {
 		if ( $wikiPage->getTitle()->hasContentModel( 'MassMessageListContent' ) &&
 			!in_array( 'ext.MassMessage.content', $parserOutput->getModules() )
@@ -229,7 +248,23 @@ class MassMessageHooks {
 	 *
 	 * @param array &$tags
 	 */
-	public static function onRegisterTags( &$tags ) {
+	public function onListDefinedTags( &$tags ) {
+		$this->addRegisterTags( $tags );
+	}
+
+	/**
+	 * Register the change tag for MassMessage delivery
+	 *
+	 * @param array &$tags
+	 */
+	public function onChangeTagsListActive( &$tags ) {
+		$this->addRegisterTags( $tags );
+	}
+
+	/**
+	 * @param array &$tags
+	 */
+	private function addRegisterTags( &$tags ) {
 		$tags[] = 'massmessage-delivery';
 	}
 }
