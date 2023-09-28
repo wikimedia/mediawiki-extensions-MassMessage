@@ -453,6 +453,8 @@ class SpecialMassMessage extends FormSpecialPage {
 					'items' => [
 						new Widget( [
 							'content' => new HtmlSnippet(
+								// @phan-suppress-next-next-line SecurityCheck-DoubleEscaped
+								// Intentionally including escaped HTML tags in the output
 								Html::element( 'pre', [], "== {$subjectText} ==\n\n$messageText" )
 							),
 						] ),
