@@ -48,7 +48,6 @@
 	"logentry-massmessage-skipbadns": "Sõnumi \"$4\" saatmine leheküljele $3 jäi vahele, sest lehekülg asub nimeruumis, kuhu ei saa postitada.",
 	"logentry-massmessage-skipoptout": "Sõnumi \"$4\" saatmine leheküljele $3 jäi vahele, sest saaja ei soovi sõnumeid.",
 	"logentry-massmessage-skipnouser": "Sõnumi \"$4\" saatmine leheküljele $3 jäi vahele, sest kasutajakontot pole olemas.",
-	"massmessage-cannot-rename": "See on süsteemikonto, mille nime ei saa muuta.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Saada teine sõnum]].",
 	"createmassmessagelist-legend": "Hulgasõnumi saatmisloendi koostamine",
 	"massmessage-create-title": "Pealkiri:",

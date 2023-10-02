@@ -71,7 +71,6 @@
 	"logentry-massmessage-skipbadns": "Der Versand von „$4“ an $3 wurde übersprungen, da sich das Ziel in einem Namensraum befindet, in dem keine Nachrichten gespeichert werden können.",
 	"logentry-massmessage-skipoptout": "Der Versand von „$4“ an $3 wurde übersprungen, da das Ziel vom Nachrichtenversand ausgeschlossen wurde.",
 	"logentry-massmessage-skipnouser": "Der Versand von „$4“ an $3 wurde übersprungen, da das Benutzerkonto nicht vorhanden ist.",
-	"massmessage-cannot-rename": "Dies ist ein Systemkonto und kann nicht umbenannt werden.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Eine weitere Nachricht versenden]].",
 	"massmessage-content-pages": "Seiten in dieser Liste",
 	"massmessage-content-pagesonsite": "Seiten auf $1:",

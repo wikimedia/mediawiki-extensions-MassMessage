@@ -34,7 +34,6 @@
 	"right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol.",
 	"action-massmessage": "kas ur gemennadenn da veur a implijer war un dro",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|en deus|he deus}} kaset ur gemennadenn da $3",
-	"massmessage-cannot-rename": "Homañ zo ur gont reizhiad ha ne c'hall ket bezañ adanvet.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Kas ur gemennadenn all]].",
 	"massmessage-content-pages": "Pajennoù er roll-mañ",
 	"massmessage-content-pagesonsite": "Pajennoù e $1 :",

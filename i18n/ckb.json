@@ -36,7 +36,6 @@
 	"action-massmessage": "ناردنی ھاوکاتی پەیامێک بۆ چەند بەکارھێنەر",
 	"log-name-massmessage": "لۆگی پەیامی بەکۆمەڵ",
 	"logentry-massmessage-send": "$1 پەیامێکی بۆ $3 نارد",
-	"massmessage-cannot-rename": "ئەمە ھەژماری سیستمە و ناتواندرێت ناوی بگۆڕدرێت.",
 	"massmessage-nextsteps": "[[Special:MassMessage|پەیامێکی تر بنێرە]] یان [[Special:Statistics|پەیامە ڕیزکراوەکان ببینە]].",
 	"massmessage-content-pages": "پەڕەکانی ئەم پێڕستە",
 	"massmessage-content-pagesonsite": "پەڕەکانی $1:",

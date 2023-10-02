@@ -49,7 +49,6 @@
 	"logentry-massmessage-skipbadns": "$3-এ \"$4\" বিলি করা এড়িয়ে যাওয়া হয়েছে কারণ লক্ষ্যটি এমন একটি নামস্থানে ছিল যেখানে প্রকাশ করা যাবে না",
 	"logentry-massmessage-skipoptout": "$3-এ \"$4\" বিলি করা এড়িয়ে যাওয়া হয়েছে কারণ লক্ষ্য বার্তার বিতরণে অংশ গ্রহণ করবেন না জানিয়েছেন",
 	"logentry-massmessage-skipnouser": "$3-এ \"$4\" বিলি করা এড়িয়ে যাওয়া হয়েছে কারণ ব্যবহারকারীর অ্যাকাউন্টটি বিদ্যমান নেই",
-	"massmessage-cannot-rename": "এটি একটি সিস্টেম অ্যাকাউন্ট এবং নাম পরিবর্তন করা যাবে না।",
 	"massmessage-nextsteps": "[[Special:MassMessage|আরেকটি বার্তা পাঠান]]।",
 	"massmessage-content-pages": "এই তালিকায় থাকা পাতাসমূহ",
 	"massmessage-content-pagesonsite": "$1-এ থাকা পাতাসমূহ:",

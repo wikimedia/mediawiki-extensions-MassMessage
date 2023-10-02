@@ -72,7 +72,6 @@
 	"logentry-massmessage-skipbadns": "Доставка \"$4\" до $3 була пропущена, бо ціль була в просторі імен, які не можуть бути розміщені в",
 	"logentry-massmessage-skipoptout": "Доставка \"$4\" до $3 була пропущена, бо ціль відмовила у доставці повідомлень",
 	"logentry-massmessage-skipnouser": "Доставка „$4“ до  $3  була пропущено, бо обліковий запис користувача відсутній",
-	"massmessage-cannot-rename": "Це - системний обліковий запис і його не можна перейменувати.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Надіслати інше повідомлення]].",
 	"massmessage-content-pages": "Сторінки у цьому списку",
 	"massmessage-content-pagesonsite": "Сторінки на $1:",

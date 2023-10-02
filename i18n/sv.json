@@ -65,7 +65,6 @@
 	"logentry-massmessage-skipbadns": "Leverans av \"$4\" till $3 hoppades över eftersom målet var i en namnrymd där det inte kan publiceras",
 	"logentry-massmessage-skipoptout": "Leverans av \"$4\" till $3 hoppades över eftersom målet har valt att inte ta emot meddelanden",
 	"logentry-massmessage-skipnouser": "Leverans av \"$4\" till $3 hoppades över eftersom användarkontot inte existerar",
-	"massmessage-cannot-rename": "Detta är ett systemkonto och kan inte byta namn.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Skicka ett annat meddelande]].",
 	"massmessage-content-pages": "Sidor i denna lista",
 	"massmessage-content-pagesonsite": "Sidor på $1:",

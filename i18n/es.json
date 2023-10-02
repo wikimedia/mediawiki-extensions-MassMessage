@@ -79,7 +79,6 @@
 	"logentry-massmessage-skipbadns": "Se omitió la entrega de «$4» a $3 porque el destino se encuentra en un espacio de nombres donde no se puede publicar",
 	"logentry-massmessage-skipoptout": "Se omitió la entrega de «$4» a $3 porque el usuario ha elegido no recibir mensajes",
 	"logentry-massmessage-skipnouser": "Se omitió la entrega de «$4» a $3 porque la cuenta de usuario no existe",
-	"massmessage-cannot-rename": "Esta es una cuenta del sistema y no se puede renombrar.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Envía otro mensaje]].",
 	"massmessage-content-pages": "Páginas en esta lista",
 	"massmessage-content-pagesonsite": "Páginas en $1:",

@@ -66,7 +66,6 @@
 	"logentry-massmessage-skipbadns": "Leveringen av «$4» til $3 ble hoppet over fordi målsiden var i et navnerom det ikke kan postes i",
 	"logentry-massmessage-skipoptout": "Leveringen av «$4» til $3 ble hoppet over fordi målet har valgt å ikke motta slike meldinger",
 	"logentry-massmessage-skipnouser": "Leveringen av «$4» til $3 ble hoppet over fordi brukerkontoen ikke finnes",
-	"massmessage-cannot-rename": "Dette er en systemkonto og kan ikke endres navn på.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Send en annen melding]].",
 	"massmessage-content-pages": "Sider i denne lista",
 	"massmessage-content-pagesonsite": "Sider på $1:",

@@ -45,7 +45,6 @@
 	"logentry-massmessage-skipbadns": "Isporuka poruke „$4” na stranicu $3 je preskočena; odredište je u imenskom prostoru u kom se ne može objavljivati",
 	"logentry-massmessage-skipoptout": "Isporuka poruke „$4” na stranicu $3 je preskočena; korisnik je odbio saglasnost isporuke poruka",
 	"logentry-massmessage-skipnouser": "Isporuka poruke „$4” na stranicu $3 je preskočena; korisnički nalog ne postoji",
-	"massmessage-cannot-rename": "Ovo je sistemski nalog; ne može da se preimenuje.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Pošaljite još jednu poruku]].",
 	"massmessage-content-pages": "Stranice u ovoj listi",
 	"massmessage-content-pagesonsite": "Stranice na $1:",

@@ -45,7 +45,6 @@
 	"logentry-massmessage-skipbadns": "A entrega de \"$4\" a $3 saltouse porque o destino estaba nun espazo de nomes no que non se pode publicar",
 	"logentry-massmessage-skipoptout": "A entrega de \"$4\" a $3 saltouse porque o destino retirouse da entrega de mensaxes",
 	"logentry-massmessage-skipnouser": "A entrega de \"$4\" a $3 saltouse porque a conta de usuario non existe",
-	"massmessage-cannot-rename": "Esta é unha conta do sistema e non se lle pode mudar o nome.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Envíe outra mensaxe]].",
 	"massmessage-content-pages": "Páxinas nesta lista",
 	"massmessage-content-pagesonsite": "Páxinas en $1:",

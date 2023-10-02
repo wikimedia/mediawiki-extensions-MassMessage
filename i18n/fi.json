@@ -43,7 +43,6 @@
 	"logentry-massmessage-skipbadns": "Viestiä ”$4” ei toimitettu kohteeseen $3, koska kohde on sellaisessa nimiavaruudessa, johon ei voi lähettää viestejä",
 	"logentry-massmessage-skipoptout": "Viestiä ”$4” ei toimitettu kohteeseen $3, koska kohde ei halua vastaanottaa viestejä",
 	"logentry-massmessage-skipnouser": "Viestiä ”$4” ei toimitettu kohteeseen $3, koska käyttäjätunnusta ei ole olemassa",
-	"massmessage-cannot-rename": "Tämä on järjestelmän käyttämä tunnus eikä sitä voi nimetä uudelleen.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Lähetä toinen viesti]].",
 	"massmessage-content-remove": "poista",
 	"massmessage-content-removeyes": "Poista",

@@ -57,7 +57,6 @@
 	"logentry-massmessage-skipbadns": "'A spedizione de \"$4\" a $3 ha state zumbate purcé 'a destinazione stè jndr'à 'nu namespace ca non ge pozze mannà",
 	"logentry-massmessage-skipoptout": "'A spedizione de \"$4\" a $3 ha state zumbate purcé 'a destinazione non ge vole le messàgge de masse",
 	"logentry-massmessage-skipnouser": "'A spedizione de \"$4\" a $3 ha state zumbate purcé 'u cunde utende non g'esiste",
-	"massmessage-cannot-rename": "Quiste jè 'nu cunde de sisteme e non ge pò essere renominate.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Manne 'n'otre messàgge]].",
 	"massmessage-content-pages": "Pàggene jndr'à st'elenghe",
 	"massmessage-content-pagesonsite": "Pàggene sus a $1:",

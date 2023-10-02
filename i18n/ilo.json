@@ -41,7 +41,6 @@
 	"logentry-massmessage-skipbadns": "Nalabsan idi ti pannakaipatulod iti \"$4\" idiay $3 gapu ta ti puntaan ket adda idi iti nagan ti espasio a saan a mabalin a pagipablaakan",
 	"logentry-massmessage-skipoptout": "Nalabsan idi ti pannakaipatulod iti \"$4\" idiay $3 gapu ta ti puntaan ket di nagkayat iti panangipatulod ti mensahe",
 	"logentry-massmessage-skipnouser": "Nalabsan idi ti pannakaipatulod iti \"$4\" idiay $3 gapu ta awan ti pakabilangan ti agar-aramat",
-	"massmessage-cannot-rename": "Daytoy ket pakabilangan ti sistema ken saan a mabalin a managanan manen.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Agipatulod pay ti sabali a mensahe]] wenno [[Special:Statistics|kitaen no mano kadagiti mensahe ti naiyur-uray]].",
 	"massmessage-content-pages": "Pampanid iti daytoy a listaan",
 	"massmessage-content-pagesonsite": "Pampanid iti $1:",

@@ -74,7 +74,6 @@
 	"logentry-massmessage-skipbadns": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که صفحهٔ هدف در فضای نامی بود که پیام نمی‌توانست در آن ارسال شود",
 	"logentry-massmessage-skipoptout": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که هدف از رسیدن پیام بیرون آمده‌است",
 	"logentry-massmessage-skipnouser": "رساندن «$4» به $3 نادیده گرفته‌شد به این دلیل که حساب کاربری موجود نیست",
-	"massmessage-cannot-rename": "این یک حساب سامانه است و نمی‌تواند تغییر نام یابد",
 	"massmessage-nextsteps": "[[Special:MassMessage|یک پیام دیگر ارسال کنید]].",
 	"massmessage-content-pages": "صفحه‌های داخل این فهرست",
 	"massmessage-content-pagesonsite": "صفحه‌های داخل $1:",

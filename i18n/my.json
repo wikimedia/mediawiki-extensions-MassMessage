@@ -34,7 +34,6 @@
 	"action-massmessage": "တစ်ကြိမ်တည်းဖြင့် အသုံးပြုသူများစွာသို့ မက်ဆေ့တစ်စောင်ပို့ရန်",
 	"log-name-massmessage": "အစုလိုက်အပြုံလိုက် မက်ဆေ့မှတ်တမ်း",
 	"logentry-massmessage-send": "$1 သည် $3 ဆီသို့ {{GENDER:$2|မက်ဆေ့တစ်စောင် ပို့ခဲ့သည်}}",
-	"massmessage-cannot-rename": "ဤသည် စနစ်အကောင့်ဖြစ်၍ အမည်ပြန်မမှည့်နိုင်ပါ။",
 	"massmessage-nextsteps": "[[Special:MassMessage|အခြားမက်ဆေ့ပို့ရန်]]။",
 	"massmessage-content-pages": "စာရင်းထဲရှိ စာမျက်နှာများ",
 	"massmessage-content-pagesonsite": "$1 ပေါ်ရှိစာမျက်နှာများ:",

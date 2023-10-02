@@ -73,7 +73,6 @@
 	"logentry-massmessage-skipbadns": "Hedef, gönderilemeyen bir ad alanında olduğundan \"$4\" konu mesajın $3 sayfasına teslimat atlandı",
 	"logentry-massmessage-skipoptout": "Hedef mesaj teslimini devre dışı bıraktığı için \"$4\" mesajın $3 sayfasına teslimi atlandı",
 	"logentry-massmessage-skipnouser": "\"$4\" konu mesajın $3 sayfasına teslimat, kullanıcı hesabı olmadığı için atlandı",
-	"massmessage-cannot-rename": "Bu bir sistem hesabıdır ve yeniden adlandırılamaz.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Başka bir ileti gönder]].",
 	"massmessage-content-pages": "Bu listedeki sayfalar",
 	"massmessage-content-pagesonsite": "$1 'daki sayfalar:",

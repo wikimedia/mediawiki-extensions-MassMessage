@@ -43,7 +43,6 @@
 	"logentry-massmessage-skipbadns": "$3 ला \"$4\" चे वितरण टाळल्या गेले कारण लक्ष्य हे अश्या नामविश्वात आहे जेथे टपालन होऊ शकत नाही",
 	"logentry-massmessage-skipoptout": "$3 ला \"$4\" चे वितरण टाळल्या गेले कारण लक्ष्याने 'संदेश वितरणातून बाहेर' या पर्यायाची निवड केली आहे",
 	"logentry-massmessage-skipnouser": "$3 ला \"$4\" चे वितरण टाळल्या गेले कारण ते सदस्य खाते अस्तित्वात नाही",
-	"massmessage-cannot-rename": "हे प्रणाली खाते आहे व त्याचे पुनर्नामाभिधान होऊ शकत नाही.",
 	"massmessage-nextsteps": "[[Special:MassMessage|दुसरा संदेश पाठवा]] किंवा [[Special:Statistics|किती संदेश रांगेत आहेत ते बघा]].",
 	"massmessage-content-pages": "यादीतील पाने",
 	"massmessage-content-pagesonsite": "$1 वरील पाने:",

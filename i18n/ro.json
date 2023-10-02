@@ -25,7 +25,6 @@
 	"massmessage-parse-badurl": "„$1” nu este un site valid.",
 	"massmessage-parse-badpage": "„$1” nu este un titlu de pagină valid.",
 	"log-name-massmessage": "Jurnal mesaje în masă",
-	"massmessage-cannot-rename": "Acesta este un cont de sistem și nu poate fi redenumit.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Trimiteți alt mesaj]].",
 	"massmessage-content-pages": "Pagini din această listă",
 	"massmessage-content-pagesonsite": "Pagini de pe $1:",

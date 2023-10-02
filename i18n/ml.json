@@ -43,7 +43,6 @@
 	"logentry-massmessage-skipbadns": "$3 നൽകാൻ കഴിയാത്ത നാമമേഖലയിലായതിനാൽ അവിടെ \"$4\" ന്റെ വിതരണം ഒഴിവാക്കി",
 	"logentry-massmessage-skipoptout": "സന്ദേശങ്ങൾ വേണ്ട എന്ന് ലക്ഷ്യം തിരഞ്ഞെടുത്തിട്ടുള്ളതിനാൽ $3 എന്നതിലേക്കുള്ള \"$4\" എന്നതിന്റെ വിതരണം ഒഴിവാക്കി",
 	"logentry-massmessage-skipnouser": "ഉപയോക്തൃ അംഗത്വം നിലവിലില്ലാത്തതിനാൽ $3 എന്നതിലേക്കുള്ള \"$4\" എന്നതിന്റെ വിതരണം ഒഴിവാക്കി",
-	"massmessage-cannot-rename": "സംവിധാനത്തിന്റെ ഭാഗമായ ഈ അംഗത്വം പുനർനാമകരണം ചെയ്യാനാവില്ല.",
 	"massmessage-nextsteps": "[[Special:MassMessage|മറ്റൊരു സന്ദേശം അയയ്ക്കുക]] അല്ലെങ്കിൽ [[Special:Statistics|എത്ര സന്ദേശങ്ങൾ പോകാനവശേഷിക്കുന്നുവെന്ന് കാണുക]].",
 	"massmessage-content-pages": "ഈ പട്ടികയിൽ ഉള്ള താളുകൾ",
 	"massmessage-content-pagesonsite": "$1 എന്നതിലുള്ള താളുകൾ.",

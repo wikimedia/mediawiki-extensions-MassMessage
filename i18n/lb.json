@@ -33,7 +33,6 @@
 	"action-massmessage": "e Message u verschidde Benotzer gläichzäiteg schécken",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|huet e Message}} un de(n) $3 geschéckt",
 	"logentry-massmessage-failure": "D'Schécke vu(n) \"$4\" op $3 huet net funktionéiert: de Feelercode ass <code>$5</code>",
-	"massmessage-cannot-rename": "Dëst ass a System-Benotzerkont, deen net kann ëmbenannt ginn.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Nach e Message schécken]].",
 	"massmessage-content-pages": "Säiten op dëser Lëscht",
 	"massmessage-content-pagesonsite": "Säiten op $1:",

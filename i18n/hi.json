@@ -46,7 +46,6 @@
 	"logentry-massmessage-skipbadns": "\"$4\" पृष्ठ पर $3 सन्देश नहीं भेजा गया क्योंकि लक्ष्य पृष्ठ ऐसे नामस्थान में है जिसमें सन्देश नहीं छोड़े जा सकते।",
 	"logentry-massmessage-skipoptout": "\"$4\" सन्देश $3 पृष्ठ पर नहीं भेजा गया क्योंकि लक्ष्य पृष्ठ ने सन्देश ना पाने का चयन किया है।",
 	"logentry-massmessage-skipnouser": "\"$4\" सन्देश $3 पृष्ठ पर नहीं भेजा गया क्योंकि सदस्य खाता मौजूद नहीं है।",
-	"massmessage-cannot-rename": "यह एक सिस्टम खाता है और इसका नाम नहीं बदला जा सकता है।",
 	"massmessage-nextsteps": "[[Special:MassMessage|एक और सन्देश भेजें]] या [[Special:Statistics|देखें कितने सन्देश कतार में हैं]]।",
 	"massmessage-content-pages": "इस सूची के पृष्ठ",
 	"massmessage-content-pagesonsite": "$1 पर पृष्ठ:",

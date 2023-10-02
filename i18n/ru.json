@@ -65,7 +65,6 @@
 	"logentry-massmessage-skipbadns": "Доставка «$4» для $3 была пропущена, поскольку целевая страница находится в недоступном пространстве имён",
 	"logentry-massmessage-skipoptout": "Доставка «$4» для $3 была пропущена, поскольку целевой страницей отказано в доставке сообщения",
 	"logentry-massmessage-skipnouser": "Доставка «$4» для $3 была пропущена, поскольку учётная запись пользователя не существует",
-	"massmessage-cannot-rename": "Это системная учётная запись, и она не может быть переименована.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Отправить другое сообщение]].",
 	"massmessage-content-pages": "Страницы в этом списке:",
 	"massmessage-content-pagesonsite": "Страницы в $1:",

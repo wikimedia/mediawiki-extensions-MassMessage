@@ -34,7 +34,6 @@
 	"logentry-massmessage-skipbadns": "Leveringa av «$4» til «$3» var hoppa over av di målet låg i eit namnerom som det ikkje kan sendast meldingar til",
 	"logentry-massmessage-skipoptout": "Leveringa av «$4» til «$3» vart hoppa over av di målet har valt bort meldingsmottak",
 	"logentry-massmessage-skipnouser": "Leveringa av «$4» til «$3» vart hoppa over av di brukarkontoen ikkje finst",
-	"massmessage-cannot-rename": "Dette er ein systemkonto og kan ikkje døypast om.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Send endå ei melding]] eller [[Special:Statistics|sjå kor mange meldingar som er i kø]].",
 	"massmessage-content-pages": "Sider i denne lista",
 	"massmessage-content-pagesonsite": "Sider på $1:",

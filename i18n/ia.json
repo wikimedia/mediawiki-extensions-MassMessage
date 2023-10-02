@@ -64,7 +64,6 @@
 	"logentry-massmessage-skipbadns": "Le livration de \"$4\" a $3 ha essite saltate perque le destination se trova in un spatio de nomines ubi non es possibile lassar messages",
 	"logentry-massmessage-skipoptout": "Le livration de \"$4\" a $3 ha essite saltate perque le destination ha optate pro non reciper messages",
 	"logentry-massmessage-skipnouser": "Le livration de \"$4\" a $3 ha essite saltate perque le conto de usator non existe",
-	"massmessage-cannot-rename": "Iste es un conto del systema e non pote esser renominate.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Inviar un altere message]].",
 	"massmessage-content-pages": "Paginas in iste lista",
 	"massmessage-content-pagesonsite": "Paginas sur $1:",

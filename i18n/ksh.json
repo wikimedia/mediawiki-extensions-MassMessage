@@ -38,7 +38,6 @@
 	"logentry-massmessage-skipbadns": "De Nohreesch „$4“ wohd nid op di Sigg „$3“ jedonn weil mer op di Sigge en dämm Appachtemang nit schrihve kann.",
 	"logentry-massmessage-skipoptout": "De Nohreesch „$4“ wohd nid op di Sigg „$3“ jedonn weil dä Metmaacher kein Nohreeschte krijje well.",
 	"logentry-massmessage-skipnouser": "De Nohreesch „$4“ wohd nid op di Sigg „$3“ jedonn weil et dä Metmaacher nit jitt.",
-	"massmessage-cannot-rename": "Dat es ene Nahme vun ene Metmaacher vum Wikki sällver, dä kam_mer nit ömdeufe.",
 	"massmessage-content-pages": "Sigge en dä Leß",
 	"massmessage-content-pagesonsite": "Sigge em Wikki $1:",
 	"massmessage-content-localpages": "Sigge en heh däm Wikki:",

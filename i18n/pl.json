@@ -74,7 +74,6 @@
 	"logentry-massmessage-skipbadns": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ miejsce docelowe znajdowało się w przestrzeni nazw, w której nie mogło być umieszczone",
 	"logentry-massmessage-skipoptout": "Dostarczenie „$4” do $3 zostało pominięte, ponieważ odbiorca wypisał się z listy odbiorców",
 	"logentry-massmessage-skipnouser": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ konto użytkownika nie istnieje",
-	"massmessage-cannot-rename": "To jest konto systemowe i jego nazwa nie może być zmieniona.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Wyślij kolejną wiadomość]].",
 	"massmessage-content-pages": "Strony na tej liście",
 	"massmessage-content-pagesonsite": "Strony w $1:",

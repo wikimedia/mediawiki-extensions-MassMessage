@@ -43,7 +43,6 @@
 	"logentry-massmessage-failure": "A(z) „$4” üzenet kézbesítése a(z) $3 lapra sikertelen volt <code>$5</code> hibakóddal",
 	"logentry-massmessage-skipbadns": "A(z) „$4” üzenet nem lett elküldve a(z) $3 lapra, mert a céllap olyan névtérben van, ahova nem lehet üzenetet küldeni.",
 	"logentry-massmessage-skipnouser": "A(z) „$4” üzenet nem lett elküldve a(z) $3 lapra, mert nem létezik ilyen felhasználó.",
-	"massmessage-cannot-rename": "Ez egy rendszerfiók és nem lehet átnevezni.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Küldj egy újabb üzenetet]].",
 	"massmessage-content-pages": "Lapok ezen a listán",
 	"massmessage-content-pagesonsite": "Lapok a(z) $1 wikin:",

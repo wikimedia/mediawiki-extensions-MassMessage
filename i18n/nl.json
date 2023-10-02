@@ -76,7 +76,6 @@
 	"logentry-massmessage-skipbadns": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat het doel zich in een naamruimte bevindt waarin geen berichten geplaatst kunnen worden",
 	"logentry-massmessage-skipoptout": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat er op de doelpagina geen berichten geplaatst mogen worden",
 	"logentry-massmessage-skipnouser": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat de gebruiker niet bestaat",
-	"massmessage-cannot-rename": "Dit is een systeemgebruiker die niet hernoemd kan worden.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Nog een bericht verzenden]].",
 	"massmessage-content-pages": "Pagina's in deze lijst",
 	"massmessage-content-pagesonsite": "Pagina's op $1:",

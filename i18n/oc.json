@@ -30,7 +30,6 @@
 	"log-description-massmessage": "Aqueles eveniments traçan los utilizaires qu'an mandat de messatges.",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|a mandat}} un messatge a $3",
 	"logentry-massmessage-failure": "La liurason de « $4 » sus $3 a fracassat amb un còdi d’error de <code>$5</code>",
-	"massmessage-cannot-rename": "Aquò's un compte sistèma que pòt pas èsser renomenat.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Mandar un autre messatge]] o [[Special:Statistics|veire quant de messatges son en espèra]].",
 	"massmessage-content-addheading": "Apondre de paginas",
 	"massmessage-content-addsubmit": "Apondre una pagina",

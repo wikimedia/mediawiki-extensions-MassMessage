@@ -41,7 +41,6 @@
 	"logentry-massmessage-skipbadns": "La entrega de \"$4\" a $3 saltóse porque'l destín taba nun espaciu de nomes nel que nun se pue publicar",
 	"logentry-massmessage-skipoptout": "La entrega de \"$4\" a $3 saltóse porque'l destinatariu escoyó nun recibir mensaxes",
 	"logentry-massmessage-skipnouser": "La entrega de \"$4\" a $3 saltóse porque la cuenta d'usuariu nun esiste",
-	"massmessage-cannot-rename": "Esta ye una cuenta del sistema y nun se-y pue camudar el nome.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Unviar otru mensaxe]] o [[Special:Statistics|ver cuántos mensaxes tan na cola]].",
 	"massmessage-content-pages": "Páxines nesta llista",
 	"massmessage-content-pagesonsite": "Páxines en $1:",

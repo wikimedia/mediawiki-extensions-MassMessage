@@ -68,7 +68,6 @@
 	"logentry-massmessage-skipbadns": "從「$4」至$3的傳遞已被略過，因目標所在的命名空間不允許發佈訊息。",
 	"logentry-massmessage-skipoptout": "傳遞訊息「$4」至$3已被略過，因目標為排除的訊息傳遞對象。",
 	"logentry-massmessage-skipnouser": "傳遞訊息「$4」至$3已被略過，因此使用者帳號不存在。",
-	"massmessage-cannot-rename": "這是系統帳號，無法重新命名。",
 	"massmessage-nextsteps": "[[Special:MassMessage|傳送另一則訊息]]。",
 	"massmessage-content-pages": "於此清單的頁面",
 	"massmessage-content-pagesonsite": "於 $1 的頁面：",

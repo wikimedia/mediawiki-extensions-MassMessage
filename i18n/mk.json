@@ -65,7 +65,6 @@
 	"logentry-massmessage-skipbadns": "Испраќањето на „$4“ на $3 е изоставено бидејќи целта беше во именски простор што не прима пораки",
 	"logentry-massmessage-skipoptout": "Испраќањето на „$4“ на $3 е изоставено бидејќи целната личност одлучила да не прима пораки",
 	"logentry-massmessage-skipnouser": "Испраќањето на „$4“ на $3 е изоставено бидејќи корисничката сметка не постои",
-	"massmessage-cannot-rename": "Ова е системска сметка и затоа не може да се преименува.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Испратете друга порака]].",
 	"massmessage-content-pages": "Страници на списков",
 	"massmessage-content-pagesonsite": "Страници на $1:",

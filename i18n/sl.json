@@ -66,7 +66,6 @@
 	"logentry-massmessage-skipbadns": "Dostava »$4« na stran $3 je bila preskočena, ker je bil cilj v imenskem prostoru, v katerem ni mogoče objavljati",
 	"logentry-massmessage-skipoptout": "Dostava »$4« na stran $3 je bila preskočena, ker je cilj zavrnil dostavo sporočil",
 	"logentry-massmessage-skipnouser": "Dostava »$4« na $3 je bila preskočena, ker uporabniški račun ne obstaja",
-	"massmessage-cannot-rename": "Ta račun je sistemski, zato ne more biti preimenovan.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Pošljite še eno sporočilo]].",
 	"massmessage-content-pages": "Strani na tem seznamu",
 	"massmessage-content-pagesonsite": "Strani na $1:",

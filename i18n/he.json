@@ -68,7 +68,6 @@
 	"logentry-massmessage-skipbadns": "מסירה של \"$4\" אל $3 לא התבצעה כי היעד נמצא במרחב שם שלא ניתן לשלוח אליו",
 	"logentry-massmessage-skipoptout": "מסירה של \"$4\" ל{{GRAMMAR:תחילית|$3}} לא התבצעה כי היעד ביקש שלא ימסרו לו הודעות",
 	"logentry-massmessage-skipnouser": "מסירה של \"$4\" אל $3 לא התבצעה כי חשבון המשתמש אינו קיים",
-	"massmessage-cannot-rename": "זה חשבון מערכת ולא ניתן לשנות את שמו.",
 	"massmessage-nextsteps": "[[Special:MassMessage|שליחת הודעה אחרת]].",
 	"massmessage-content-pages": "דפים ברשימה זו",
 	"massmessage-content-pagesonsite": "דפים ב־$1:",

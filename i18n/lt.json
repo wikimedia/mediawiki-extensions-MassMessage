@@ -59,7 +59,6 @@
 	"logentry-massmessage-skipbadns": "„$4“ pristatymas $3 praleistas, nes tikslas yra vardų srityje, kurioje negalima skelbti",
 	"logentry-massmessage-skipoptout": "„$4“ pristatymas $3 praleistas, nes tikslas turi žinučių pristatymo išimtį",
 	"logentry-massmessage-skipnouser": "„$4“ pristatymas $3 praleistas, nes naudotojo paskyra neegzistuoja",
-	"massmessage-cannot-rename": "Tai sistemos paskyra ir ji negali būti pervadinta.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Siųsti kitą žinutę]].",
 	"massmessage-content-pages": "Puslapiai šiame sąraše",
 	"massmessage-content-pagesonsite": "Puslapiai $1:",

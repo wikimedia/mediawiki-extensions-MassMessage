@@ -75,7 +75,6 @@
 	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
 	"logentry-massmessage-skipoptout": "توصيل \"$4\" إلى $3 تم تجاوزه لأن الهدف ألغى اشتراكه في توصيل الرسائل",
 	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
-	"massmessage-cannot-rename": "هذا حساب نظام ولا يمكن إعادة تسميته.",
 	"massmessage-nextsteps": "[[Special:MassMessage|أرسل رسالةً أُخرى]].",
 	"massmessage-content-pages": "الصفحات في القائمة",
 	"massmessage-content-pagesonsite": "الصفحات في $1:",
