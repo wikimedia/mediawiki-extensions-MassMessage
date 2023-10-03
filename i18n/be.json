@@ -11,6 +11,7 @@
 	"logentry-massmessage-failure": "Дастаўка «$4» для $3 пацярпела няўдачу з кодам памылкі <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Дастаўка «$4» для $3 была прапушчана, бо мэтавая старонка знаходзіцца ў недасягальнай прасторы назваў",
 	"logentry-massmessage-skipnouser": "Дастаўка «$4» для $3 была прапушчана, бо ўліковы запіс карыстальніка не існуе",
+	"massmessage-list-category-desc": "Старонка — спіс дастаўкі для пашырэння [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery": "дастаўка масавых паведамленняў",
 	"tag-massmessage-delivery-description": "Дастаўка паведамленняў з дапамогай [[:mw:Special:MyLanguage/Extension:MassMessage|пашырэння MassMessage]]",
 	"log-action-filter-massmessage": "Тып журнала",
