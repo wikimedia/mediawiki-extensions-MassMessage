@@ -3,13 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\MessageContentFetcher;
 
-use ContentHandler;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
+use TextContent;
 
 /**
  * Fetches content from the local wiki
@@ -55,7 +55,11 @@ class LocalMessageContentFetcher {
 			);
 		}
 
-		$wikitext = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
+		$content = $revision->getContent( SlotRecord::MAIN );
+		$wikitext = null;
+		if ( $content instanceof TextContent ) {
+			$wikitext = $content->getText();
+		}
 
 		if ( $wikitext === null ) {
 			return Status::newFatal(
