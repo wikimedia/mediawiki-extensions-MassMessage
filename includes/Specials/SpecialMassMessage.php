@@ -172,7 +172,7 @@ class SpecialMassMessage extends SpecialPage {
 			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-page',
 			'default' => $request->getText( 'page-message' ),
-			'help' => $this->msg( 'massmessage-form-page-help' )->text()
+			'help-message' => 'massmessage-form-page-help',
 		];
 
 		$options = [ '----' => '' ];
