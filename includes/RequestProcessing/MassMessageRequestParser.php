@@ -36,11 +36,11 @@ class MassMessageRequestParser {
 		$status = new Status();
 		$currentWikiId = WikiMap::getCurrentWikiId();
 
-		$data['page-message'] = $data['page-message'] ?? '';
-		$data['page-message-section'] = $data['page-message-section'] ?? '';
-		$data['page-subject-section'] = $data['page-subject-section'] ?? '';
-		$data['message'] = $data['message'] ?? '';
-		$data['subject'] = $data['subject'] ?? '';
+		$data['page-message'] ??= '';
+		$data['page-message-section'] ??= '';
+		$data['page-subject-section'] ??= '';
+		$data['message'] ??= '';
+		$data['subject'] ??= '';
 
 		if ( $data['subject'] === '' && $data['page-subject-section'] === '' ) {
 			$status->fatal( 'massmessage-empty-subject' );
