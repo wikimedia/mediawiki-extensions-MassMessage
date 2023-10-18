@@ -12,7 +12,8 @@
 			"Robby",
 			"Shirayuki",
 			"Umherirrender",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"MarcoAurelio"
 		]
 	},
 	"massmessage": "{{doc-special|MassMessage}}",
@@ -113,7 +114,7 @@
 	"massmessage-create-editsummary": "Edit summary for creating a delivery list",
 	"massmessage-create-editsummary-import": "Edit summary for creating a delivery list with imported targets\n* $1 - title of source page containing targets\n* $2 - revision ID of source page",
 	"massmessage-create-editsummary-catimport": "Edit summary for creating a delivery list with targets imported from a category\n* $1 - name of source category",
-	"massmessage-create-invalidtitle": "Error message shown on [[Special:CreateMassMessageList]] when the title is inavlid",
+	"massmessage-create-invalidtitle": "Error message shown on [[Special:CreateMassMessageList]] when the title is invalid",
 	"massmessage-create-exists": "Error message shown on [[Special:CreateMassMessageList]] when a page with the title already exists",
 	"massmessage-create-nopermission": "Error message shown on [[Special:CreateMassMessageList]] when the user cannot create a page with the title",
 	"massmessage-create-invalidsource": "Error message shown on [[Special:CreateMassMessageList]] when the source from which to import targets is invalid or empty",
