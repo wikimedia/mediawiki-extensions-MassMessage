@@ -50,7 +50,7 @@
 	"massmessage-page-message-no-revision-content": "De pagina \"$1\", geselecteerd om als boodschap te versturen, heeft geen versie met tekst. Versie-ID: \"$2\"",
 	"massmessage-page-message-wiki-not-found": "Kan wiki \"$1\" niet vinden om pagina \"$2\" op te halen dat geselecteerd is om als bericht te worden verzonden.",
 	"massmessage-page-message-fetch-error-in-wiki": "Er is een fout opgetreden bij het ophalen van de pagina \"$2\" van wiki \"$1\" dat geselecteerd is om als bericht te worden verzonden. Fout: $3",
-	"massmessage-page-message-parsing-error-in-wiki": "Er is een fout opgetreden bij het parsen van het JSON-antwoord van de wiki \"$1\", bij het ophalen van de pagina \"$2\" die geselecteerd is om als bericht te worden verzonden. Fout: $3",
+	"massmessage-page-message-parsing-error-in-wiki": "Er is een fout opgetreden bij het ontleden van het JSON-antwoord van de wiki “$1”, bij het ophalen van de pagina “$2” die geselecteerd is om als bericht te worden verzonden. Fout: $3",
 	"massmessage-page-message-not-found-in-wiki": "De pagina \"$1\" op de wiki \"$2\", geselecteerd om als boodschap te versturen, is niet gevonden.",
 	"massmessage-invalid-lang": "Ongeldige taalcode: \"$1\"",
 	"massmessage-page-message-parse-invalid-in-wiki": "Er is een ongeldig antwoord verzonden tijdens het ophalen van de pagina \"$2\" van de wiki \"$1\" die geselecteerd is om als bericht te worden verzonden. Reactie: $3",
