@@ -121,7 +121,7 @@ class ApiEditMassMessageList extends ApiBase {
 		}
 
 		// Make an edit only if there are added or removed pages, or the description changed
-		if ( !empty( $added ) || !empty( $removed ) || $descriptionChanged ) {
+		if ( $added || $removed || $descriptionChanged ) {
 			$summary = $this->getEditSummary( $added, $removed, $descriptionChanged );
 			$editResult = MassMessageListContentHandler::edit(
 				$spamlist,
@@ -210,13 +210,13 @@ class ApiEditMassMessageList extends ApiBase {
 	 */
 	protected function getEditSummary( $added, $removed, $descriptionChanged ) {
 		$msgChange = ( $descriptionChanged ? 'change' : '' );
-		if ( !empty( $added ) && !empty( $removed ) ) {
+		if ( $added && $removed ) {
 			// * massmessage-summary-addremove
 			// * massmessage-summary-addremovechange
 			$summaryMsg = $this->msg( 'massmessage-summary-addremove' . $msgChange )
 				->numParams( count( $added ) )
 				->numParams( count( $removed ) );
-		} elseif ( !empty( $added ) && empty( $removed ) ) {
+		} elseif ( $added && !$removed ) {
 			if ( count( $added ) === 1 ) {
 				if ( isset( $added[0]['site'] ) ) {
 					// * massmessage-summary-addonsite
@@ -240,7 +240,7 @@ class ApiEditMassMessageList extends ApiBase {
 				$summaryMsg = $this->msg( 'massmessage-summary-addmulti' . $msgChange )
 					->numParams( count( $added ) );
 			}
-		} elseif ( empty( $added ) && !empty( $removed ) ) {
+		} elseif ( !$added && $removed ) {
 			if ( count( $removed ) === 1 ) {
 				if ( isset( $removed[0]['site'] ) ) {
 					// * massmessage-summary-removeonsite

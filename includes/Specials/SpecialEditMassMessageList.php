@@ -385,7 +385,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		}
 
 		$result = new Status;
-		if ( empty( $invalidTargets ) ) {
+		if ( !$invalidTargets ) {
 			$result->setResult( true,
 				MassMessageListContentHandler::normalizeTargetArray( $targets ) );
 		} else {

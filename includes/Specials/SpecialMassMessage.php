@@ -474,7 +474,7 @@ class SpecialMassMessage extends FormSpecialPage {
 
 		// Check for unclosed HTML tags (Bug 54909)
 		$unclosedTags = $this->getUnclosedTags( $request->getMessage() );
-		if ( !empty( $unclosedTags ) ) {
+		if ( $unclosedTags ) {
 			$this->status->fatal(
 				$this->msg( 'massmessage-badhtml' )
 					->params( $this->getLanguage()->commaList(
