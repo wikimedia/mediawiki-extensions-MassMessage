@@ -15,7 +15,7 @@
 			"Reza1615"
 		]
 	},
-	"massmessage": "ارسال انبوه پیام",
+	"massmessage": "ارسال پیام انبوه",
 	"createmassmessagelist": "ایجاد فهرست رساندن پیام انبوه",
 	"editmassmessagelist": "ویرایش فهرست گیرندگان پیام انبوه",
 	"massmessage-desc": "اجازه می‌دهد کاربران به‌سادگی پیامی را به فهرستی از کاربران بفرستند",
@@ -62,6 +62,7 @@
 	"massmessage-badhtml": "پیام شما {{PLURAL:$2|یک|چند}} برچسپ بسته‌نشده اچ‌تی‌ام‌ال دارد: $1.",
 	"massmessage-parse-badurl": "«$1» وب‌گاه معتبری نیست.",
 	"massmessage-parse-badpage": "«$1» عنوان معتبری برای صفحه نیست.",
+	"massmessage-parse-badspamlist": "«$1» فهرستی معتبر از صفحه‌ها نیست.",
 	"massmessage-parse-badexternal": "«$1» عنوان معتبری برای صفحه نیست. هدف‌های میان‌ویکی باید با استفاده از پارامتر site مشخص شوند (نظیر <kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "پیام‌های فقط می‌تواند به صفحه‌های محلی ارسال شود.",
 	"right-massmessage": "ارسال یک دفعه پیامی به چندین کاربر",
@@ -120,6 +121,8 @@
 	"massmessage-edit-title": "عنوان:",
 	"massmessage-edit-description": "توضیحات:",
 	"massmessage-edit-content": "صفحه‌های هدف:",
+	"massmessage-edit-header": "برای تغییر توضیحات فهرست یا ویرایش فهرست صفحه‌های هدف از فرم زیر استفاده کنید. صفحه‌های هدف را یک به یک در سطرهای جداگانه فهرست کنید.",
+	"massmessage-edit-headermulti": "برای تغییر توضیحات فهرست یا ویرایش فهرست صفحه‌های هدف از فرم زیر استفاده کنید. صفحه‌های هدف را یک به یک در سطرهای جداگانه فهرست کنید و بری تعریف صفحه‌ای در یک ویکی دیگر از فرمت title@domain (برای مثال User_talk:Example@en.wikipedia.org) استفاده کنید.",
 	"massmessage-edit-invalidtitle": "فهرست معتبری از گیرندگان با این عنوان وجود ندارد.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|صفحهٔ|صفحه‌های}} مقابل نامعتبر {{PLURAL:$1|است|هستند}}:\n$2",
 	"massmessage-edit-missingsummary": "شما خلاصه ویرایشی وارد نکردید. اگر روی «{{int:htmlform-submit}}» دوباره کلیک کنید، ویرایش‌تان بدون خلاصه ویرایش ذخیره خواهد شد.",
