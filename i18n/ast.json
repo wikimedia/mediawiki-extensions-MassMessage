@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"massmessage": "Unviar un mensaxe en masa",
@@ -49,9 +50,9 @@
 	"massmessage-content-removeerror": "Falló'l desaniciu de la páxina col códigu d'error $1.",
 	"massmessage-content-removeconf": "¿Desaniciar esta páxina de la llista?",
 	"massmessage-content-removeyes": "Desaniciar",
-	"massmessage-content-removeno": "Encaboxar",
+	"massmessage-content-removeno": "Zarrar",
 	"massmessage-content-empty": "Nun hai páxines nesta llista.",
-	"massmessage-content-invalidtargets": "Esta llista contien destinos inválidos.",
+	"massmessage-content-invalidtargets": "Esta llista contién destinos inválidos.",
 	"massmessage-content-emptylist": "(nenguna)",
 	"massmessage-content-addheading": "Amestar páxines",
 	"massmessage-content-addtitle": "Títulu:",
