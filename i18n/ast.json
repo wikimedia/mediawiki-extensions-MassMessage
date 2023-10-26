@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"massmessage": "Unviar un mensaxe en masa",
@@ -19,7 +20,7 @@
 	"massmessage-submitted": "La entrega del to mensaxe a {{PLURAL:$1|una páxina|$1 páxines}} unvióse a la cola.",
 	"massmessage-just-preview": "Esto sólo ye una vista previa. Calca \"{{int:massmessage-form-submit}}\" pa unviar el mensaxe.",
 	"massmessage-spamlist-doesnotexist": "La páxina o categoría de llista d'entrega especificada nun esiste.",
-	"massmessage-spamlist-invalid": "La páxina especificada nun contien una llista d'entrega válida.",
+	"massmessage-spamlist-invalid": "La páxina especificada nun contién una llista d'entrega válida.",
 	"massmessage-empty-subject": "La llinia del asuntu ta balera.",
 	"massmessage-empty-message": "El cuerpu del mensaxe ta baleru.",
 	"massmessage-unescaped-langlinks": "Avisu: Hai enllaces de llingua ensin escapar nel so mensaxe.",
@@ -50,9 +51,9 @@
 	"massmessage-content-removeerror": "Falló'l desaniciu de la páxina col códigu d'error $1.",
 	"massmessage-content-removeconf": "¿Desaniciar esta páxina de la llista?",
 	"massmessage-content-removeyes": "Desaniciar",
-	"massmessage-content-removeno": "Encaboxar",
+	"massmessage-content-removeno": "Zarrar",
 	"massmessage-content-empty": "Nun hai páxines nesta llista.",
-	"massmessage-content-invalidtargets": "Esta llista contien destinos inválidos.",
+	"massmessage-content-invalidtargets": "Esta llista contién destinos inválidos.",
 	"massmessage-content-emptylist": "(nenguna)",
 	"massmessage-content-addheading": "Amestar páxines",
 	"massmessage-content-addtitle": "Títulu:",

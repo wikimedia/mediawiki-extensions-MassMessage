@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "Editar una llista d'entrega de mensaxes en masa",
@@ -12,7 +13,7 @@
 	"apihelp-editmassmessagelist-example-1": "Añadir [[User talk:Foo]] y [[Talk:Bar]] a la llista d'entrega [[Example]], y quitar a [[Talk:Baz]] d'ella",
 	"apihelp-massmessage-description": "Unviar un mensaxe a una llista de páxines.",
 	"apihelp-massmessage-summary": "Unviar un mensaxe a una llista de páxines.",
-	"apihelp-massmessage-param-spamlist": "Páxina que contien la llista de páxines nes que dexar un mensaxe.",
+	"apihelp-massmessage-param-spamlist": "Páxina que contién la llista de páxines nes que dexar un mensaxe.",
 	"apihelp-massmessage-param-subject": "Llinia d'asuntu del mensaxe.",
 	"apihelp-massmessage-param-message": "Testu del cuerpu del mensaxe.",
 	"apihelp-massmessage-example-1": "Unviar un mensaxe a la llista de [[Signpost Spamlist]] col asuntu \"New Signpost\", y col cuerpu de mensaxe \"Please read it\"",
