@@ -20,7 +20,7 @@
 	"massmessage-submitted": "La entrega del to mensaxe a {{PLURAL:$1|una páxina|$1 páxines}} unvióse a la cola.",
 	"massmessage-just-preview": "Esto sólo ye una vista previa. Calca \"{{int:massmessage-form-submit}}\" pa unviar el mensaxe.",
 	"massmessage-spamlist-doesnotexist": "La páxina o categoría de llista d'entrega especificada nun esiste.",
-	"massmessage-spamlist-invalid": "La páxina especificada nun contien una llista d'entrega válida.",
+	"massmessage-spamlist-invalid": "La páxina especificada nun contién una llista d'entrega válida.",
 	"massmessage-empty-subject": "La llinia del asuntu ta balera.",
 	"massmessage-empty-message": "El cuerpu del mensaxe ta baleru.",
 	"massmessage-unescaped-langlinks": "Avisu: Hai enllaces de llingua ensin escapar nel so mensaxe.",
