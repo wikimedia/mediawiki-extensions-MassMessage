@@ -4,7 +4,6 @@
 
 namespace MediaWiki\MassMessage;
 
-use EchoEvent;
 use MediaWiki\Api\Hook\APIQuerySiteInfoStatisticsInfoHook;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
@@ -119,25 +118,6 @@ class MassMessageHooks implements
 	 */
 	public function onAPIQuerySiteInfoStatisticsInfo( &$result ) {
 		$result['queued-massmessages'] = MassMessage::getQueuedCount();
-	}
-
-	/**
-	 * Echo!
-	 *
-	 * @param EchoEvent $event
-	 * @return bool
-	 */
-	public static function onBeforeEchoEventInsert( EchoEvent $event ) {
-		// Don't spam a user with mention notifications if it's a MassMessage
-		if (
-			( $event->getType() === 'mention' || $event->getType() === 'flow-mention' ) &&
-			// getAgent() can return null, so guard against that
-			$event->getAgent() &&
-			$event->getAgent()->getId() == MassMessage::getMessengerUser()->getId()
-		) {
-			return false;
-		}
-		return true;
 	}
 
 	/**

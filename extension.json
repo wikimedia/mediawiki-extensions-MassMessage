@@ -71,7 +71,7 @@
 		"ParserFirstCallInit": "main",
 		"APIQuerySiteInfoStatisticsInfo": "main",
 		"UserGetReservedNames": "main",
-		"BeforeEchoEventInsert": "MediaWiki\\MassMessage\\MassMessageHooks::onBeforeEchoEventInsert",
+		"BeforeEchoEventInsert": "echo",
 		"SkinTemplateNavigation::Universal": "main",
 		"BeforePageDisplay": "main",
 		"ListDefinedTags": "main",
@@ -81,6 +81,9 @@
 	"HookHandlers": {
 		"main": {
 			"class": "MediaWiki\\MassMessage\\MassMessageHooks"
+		},
+		"echo": {
+			"class": "MediaWiki\\MassMessage\\EchoHooks"
 		}
 	},
 	"ContentHandlers": {
