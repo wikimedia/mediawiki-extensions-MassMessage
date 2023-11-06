@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use EchoEvent;
 use MediaWiki\Extension\Notifications\Hooks\BeforeEchoEventInsertHook;
+use MediaWiki\Extension\Notifications\Model\Event;
 
 /**
  * All hooks from the Echo extension which is optional to use with this extension.
@@ -12,10 +12,10 @@ class EchoHooks implements
 	BeforeEchoEventInsertHook
 {
 	/**
-	 * @param EchoEvent $event
+	 * @param Event $event
 	 * @return bool
 	 */
-	public function onBeforeEchoEventInsert( EchoEvent $event ): bool {
+	public function onBeforeEchoEventInsert( Event $event ): bool {
 		// Don't spam a user with mention notifications if it's a MassMessage
 		if (
 			( $event->getType() === 'mention' || $event->getType() === 'flow-mention' ) &&

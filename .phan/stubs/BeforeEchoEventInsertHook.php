@@ -2,15 +2,15 @@
 
 namespace MediaWiki\Extension\Notifications\Hooks;
 
-use EchoEvent;
+use MediaWiki\Extension\Notifications\Model\Event;
 
 /**
  * Stub of Echo's BeforeEchoEventInsertHook interface for phan
  */
 interface BeforeEchoEventInsertHook {
 	/**
-	 * @param EchoEvent $event
+	 * @param Event $event
 	 * @return bool|void True or no return value to continue or false to abort
 	 */
-	public function onBeforeEchoEventInsert( EchoEvent $event );
+	public function onBeforeEchoEventInsert( Event $event );
 }
