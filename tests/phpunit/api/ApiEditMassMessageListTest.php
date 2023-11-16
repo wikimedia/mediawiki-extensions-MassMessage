@@ -21,8 +21,10 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$title = Title::newFromText( self::$spamlist );
-		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
-		$content = ContentHandler::getForModelID( 'MassMessageListContent' )->makeEmptyContent();
+		$services = MediaWikiServices::getInstance();
+		$page = $services->getWikiPageFactory()->newFromTitle( $title );
+		$content = $services->getContentHandlerFactory()->getContentHandler( 'MassMessageListContent' )
+			->makeEmptyContent();
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 
 		$this->mergeMwGlobalArrayValue(
