@@ -3,21 +3,27 @@
 		"authors": [
 			"Mainframe98",
 			"Mar(c)",
-			"PonkoSasuke"
+			"PonkoSasuke",
+			"McDutchie"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "Bewerk een afleverlijst.",
+	"apihelp-editmassmessagelist-summary": "Een bezorglijst voor massaberichten bewerken.",
 	"apihelp-editmassmessagelist-param-spamlist": "Titel van de afleverlijst om bij te werken.",
 	"apihelp-editmassmessagelist-param-add": "Titels om aan de lijst toe te voegen.",
 	"apihelp-editmassmessagelist-param-remove": "Titels om van de lijst te verwijderen.",
+	"apihelp-editmassmessagelist-param-description": "Nieuwe omschrijving voor de bezorglijst.",
 	"apihelp-editmassmessagelist-example-1": "Voeg [[User talk:Foo]] en [[Talk:Bar]] toe aan de afleverlijst [[Example]] en verwijder [[Talk:Baz]] van deze",
+	"apihelp-editmassmessagelist-example-2": "De beschrijving van de bezorglijst [[Example]] instellen op “FooBar delivery services”",
 	"apihelp-massmessage-description": "Stuur een bericht naar een lijst van pagina's.",
 	"apihelp-massmessage-summary": "Stuur een bericht naar een lijst van pagina's.",
+	"apihelp-massmessage-param-spamlist": "Pagina met een lijst met pagina’s om een bericht op achter te laten.",
 	"apihelp-massmessage-param-subject": "Onderwerpregel van het bericht.",
 	"apihelp-massmessage-param-message": "Berichttekst.",
 	"apihelp-massmessage-param-page-message": "Pagina te verzenden samen met het bericht.",
 	"apihelp-massmessage-example-1": "Stuur een boodschap naar de lijst via [[Signpost Spamlist]] met het onderwerp \"Nieuwe Signpost\", met de boodschap \"Lees aub\".",
 	"apihelp-massmessage-example-2": "Stuur een boodschap naar de lijst via [[Signpost Spamlist]] met het onderwerp \"Nieuwe Signpost\", en de boodschap als de inhoud van de pagina \"Help Pagina'.",
 	"apihelp-massmessage-example-3": "Stuur een boodschap naar de lijst [[Signpost Spamlist]] met als onderwerp \"Nieuwe Signpost\", met boodschap \"Aub lezen\" waaraan de inhoud van de \"Help Pagina\" aan toegevoegd is.",
-	"apihelp-query+mmsites-param-term": "Het voorvoegsel om op te zoeken."
+	"apihelp-query+mmsites-param-term": "Het voorvoegsel om op te zoeken.",
+	"apierror-massmessage-invalidspamlist": "De opgegeven spamlijst is ongeldig."
 }

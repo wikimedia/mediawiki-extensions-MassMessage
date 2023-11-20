@@ -141,6 +141,7 @@
 	"tag-massmessage-delivery": "MassMessage-bezorging",
 	"tag-massmessage-delivery-description": "Bulkbericht verzending met [[:mw:Special:MyLanguage/Extension:MassMessage|Uitbreiding:MassMessage]]",
 	"log-action-filter-massmessage": "Soort logboekregel",
+	"log-action-filter-massmessage-send": "Massaal verzenden van berichten",
 	"log-action-filter-massmessage-failure": "Mislukte verzending van massabericht",
 	"log-action-filter-massmessage-skipoptout": "Doel overslaan vanwege opt-out",
 	"log-action-filter-massmessage-skipnouser": "Doel overgeslagen omdat de gebruiker niet bestaat",
