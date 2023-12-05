@@ -55,7 +55,7 @@
 	"massmessage-unescaped-langlinks": "Увага: наявні неекрановані мовні посилання в повідомленні.",
 	"massmessage-no-timestamp": "Попередження: Ваше повідомлення не містить мітку часу або підпису.",
 	"massmessage-form-header": "Використовуйте форму нижче для надсилання повідомлення за вказаним списком. Всі поля обов'язкові для заповнення ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage додаткова інформація]).",
-	"massmessage-hidden-comment": "<!-- Повідомлення надіслано користувачем:$1@$2 використовується список у $3 -->",
+	"massmessage-hidden-comment": "<!-- Повідомлення надіслано користувачем $1@$2 з використанням списку розсилки на сторінці у $3 -->",
 	"massmessage-optout-category": "Відмова від доставки повідомлень",
 	"massmessage-badhtml": "Ваше повідомлення, можливо, має {{PLURAL:$2|1=незакритий тег HTML|незакриті теги HTML}}:  $1 .",
 	"massmessage-parse-badurl": "«$1» не є коректним сайтом.",

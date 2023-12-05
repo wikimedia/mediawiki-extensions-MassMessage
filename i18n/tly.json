@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Patriot Kur",
-			"Patriot Kor"
+			"Patriot Kor",
+			"Гусейн"
 		]
 	},
-	"massmessage-fieldset-info": "Malumot",
+	"massmessage-fieldset-info": "Məlumot",
 	"massmessage-content-removeno": "Ləğv karde",
 	"massmessage-content-addedlistheading": "Səhifon əlovə be:",
 	"massmessage-summary-add": "Əlovə [[:$1]]"
