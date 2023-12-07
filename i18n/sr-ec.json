@@ -41,10 +41,10 @@
 	"action-massmessage": "шаљете поруке већем броју корисника истовремено",
 	"log-name-massmessage": "Дневник масовних порука",
 	"log-description-massmessage": "Ови догађаји прате слање порука корисницима.",
-	"logentry-massmessage-send": "$1 је {{GENDER:$2|послао|послала|послао/ла}} поруку на страницу $3",
+	"logentry-massmessage-send": "$1 је {{GENDER:$2|послао|послала}} поруку на страницу $3",
 	"logentry-massmessage-failure": "Испорука поруке „$4” на страницу $3 није успела; дошло је до грешке <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Испорука поруке „$4” на страницу $3 је прескочена; одредиште је у именском простору у ком се не може објављивати",
-	"logentry-massmessage-skipoptout": "Испорука поруке „$4” на страницу $3 је прескочена; корисник је одбио сагласност испоруке порука",
+	"logentry-massmessage-skipoptout": "Порука „$4” није послата у $3; корисник је онемогућио примање порука",
 	"logentry-massmessage-skipnouser": "Испорука поруке „$4” на страницу $3 је прескочена; кориснички налог не постоји",
 	"massmessage-cannot-rename": "Ово је системски налог; не може да се преименује.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Пошаљите још једну поруку]].",
@@ -99,7 +99,7 @@
 	"log-action-filter-massmessage": "Тип ставке у дневнику",
 	"log-action-filter-massmessage-send": "Прослеђивање масовних порука",
 	"log-action-filter-massmessage-failure": "Неуспешна испорука масовне поруке",
-	"log-action-filter-massmessage-skipoptout": "Прескакање одредишта због одбијања сагласности",
+	"log-action-filter-massmessage-skipoptout": "Циљ прескочен због изузимања",
 	"log-action-filter-massmessage-skipnouser": "Циљ прескочен због непостојања циљног корисника",
 	"log-action-filter-massmessage-skipbadns": "Циљ прескочен због забрањеног именског простора"
 }
