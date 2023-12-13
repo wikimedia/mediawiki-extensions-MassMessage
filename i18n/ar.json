@@ -12,7 +12,8 @@
 			"زكريا",
 			"علاء",
 			"محمد أحمد عبد الفتاح",
-			"مشعل الحربي"
+			"مشعل الحربي",
+			"Karim185.3"
 		]
 	},
 	"massmessage": "إرسال رسالة جماعية",
@@ -70,7 +71,7 @@
 	"log-name-massmessage": "سجل الرسائل الجماعية",
 	"log-description-massmessage": "هذه الأحداث تتعقب المستخدمين الذين يرسلون الرسائل.",
 	"logentry-massmessage-send": "{{GENDER:$2|أرسل|أرسلت}} $1 رسالة إلى $3",
-	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2| أرسل الصفحة $5 كرسالة}} إلى $3",
+	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2| أرسل الصفحة $5 رسالةً}} إلى $3",
 	"logentry-massmessage-failure": "توصيل \"$4\" إلى $3 فشل بكود خطأ <code>$5</code>",
 	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
 	"logentry-massmessage-skipoptout": "توصيل \"$4\" إلى $3 تم تجاوزه لأن الهدف ألغى اشتراكه في توصيل الرسائل",
