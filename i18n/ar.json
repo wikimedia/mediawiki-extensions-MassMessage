@@ -13,7 +13,8 @@
 			"محمد أحمد عبد الفتاح",
 			"مشعل الحربي",
 			"Alshamiri1",
-			"Karim185.3"
+			"Karim185.3",
+			"Michel Bakni"
 		]
 	},
 	"massmessage": "إرسال رسالة جماعية",
@@ -37,7 +38,7 @@
 	"massmessage-fieldset-info": "معلومات",
 	"massmessage-preview-count": "سوف تُرسل رسالتك إلى {{PLURAL:$1|$1 صفحات|$1 صفحة}}",
 	"massmessage-translate-page-info": "لقد اخترت صفحة مترجمة لإرسال رسالة. سيتلقى المشتركون محتويات الصفحة بلغتهم المفضلة، أو بلغة احتياطيةٍ في حالة عدم توفر الترجمة.",
-	"massmessage-submitted": "تم وضع تسليم رسالتك إلى {{PLURAL:$1|$1 صفحات|$1 صفحة}} في قائمة الانتظار.",
+	"massmessage-submitted": "وُضِعت رسالتك إلى {{PLURAL:$1|$1 صفحات|$1 صفحة}} في قائمة الانتظار.",
 	"massmessage-just-preview": "هذه مجرد معاينة. اضغط \"{{int:massmessage-form-submit}}\" لإرسال الرسالة.",
 	"massmessage-spamlist-doesnotexist": "صفحة أو تصنيف قائمة التسليم المحددة غير موجودة.",
 	"massmessage-spamlist-invalid": "لا تحتوي الصفحة المحددة على قائمة تسليم صالحة.",
@@ -114,7 +115,7 @@
 	"massmessage-create-editsummary-catimport": "إنشاء قائمة تسليم رسائل جماعية بأهداف من [[$1]]",
 	"massmessage-create-invalidtitle": "العنوان المحدد غير صالح.",
 	"massmessage-create-exists": "توجد صفحة بالفعل بالعنوان المحدد.",
-	"massmessage-create-nopermission": "ليست لديك صلاحية إنشاء قائمة بهذا العنوان.",
+	"massmessage-create-nopermission": "ليس لديك صلاحية إنشاء قائمة بهذا العنوان.",
 	"massmessage-create-invalidsource": "المصدر المحدد ليس قائمة أو تصنيف تسليم صالحة بصفحة واحدة على الأقل.",
 	"massmessage-create-exists-short": "لقد تم استخدام العنوان من قبل",
 	"massmessage-create-invalidsource-short": "قائمة غير صالحة",
@@ -128,7 +129,7 @@
 	"massmessage-edit-invalidtitle": "لا توجد قائمة تسليم رسائل جماعية صالحة بهذا العنوان.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|الصفحة|الصفحات}} التالية غير صالحة:\n$2",
 	"massmessage-edit-missingsummary": "لم تقم بتقديم ملخص التعديل، إذا نقرت \"{{int:htmlform-submit}}\" مرة أخرى، فسيتم حفظ تعديلك بدون واحد.",
-	"massmessage-edit-nopermission": "ليست لديك صلاحية تحرير القائمة.",
+	"massmessage-edit-nopermission": "ليس لديك صلاحية تحرير القائمة.",
 	"massmessage-summary-addremove": "تمت إضافة $1 {{PLURAL:$1|صفحة}} وإزالة $2 {{PLURAL:$2|صفحة}}",
 	"massmessage-summary-add": "تمت إضافة [[:$1]]",
 	"massmessage-summary-addonsite": "تمت إضافة $1 في $2",
