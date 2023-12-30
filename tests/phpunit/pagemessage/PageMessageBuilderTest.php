@@ -34,7 +34,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 			->method( 'getContent' )
 			->willReturn( Status::newGood( new LanguageAwareText( $text, 'en', 'ltr' ) ) );
 
-		$this->pageMessageBuilder = new PageMessageBuilder(
+		$pageMessageBuilder = new PageMessageBuilder(
 			$localMessageContentFetcherMock,
 			new LabeledSectionContentFetcher(),
 			$this->createStub( RemoteMessageContentFetcher::class ),
@@ -43,7 +43,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 			WikiMap::getCurrentWikiId()
 		);
 
-		$result = $this->pageMessageBuilder
+		$result = $pageMessageBuilder
 			->getContent( 'hello', $sectionMessage, $sectionSubject, WikiMap::getCurrentWikiId() );
 
 		if ( $expectedMessage === null ) {
