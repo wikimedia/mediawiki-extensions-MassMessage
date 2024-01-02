@@ -4,6 +4,7 @@
 			"Arnaugir",
 			"Fitoschido",
 			"Jmarchn",
+			"SMP",
 			"Vriullop"
 		]
 	},
@@ -31,7 +32,7 @@
 	"massmessage-parse-badurl": "«$1» no és un lloc vàlid.",
 	"massmessage-parse-badpage": "«$1» no és un títol de pàgina vàlid.",
 	"massmessage-global-disallowed": "Només es poden enviar missatges a pàgines locals.",
-	"right-massmessage": "Enviament d'un missatge a diversos usuaris a la vegada",
+	"right-massmessage": "Enviar missatges a diversos usuaris a la vegada",
 	"action-massmessage": "enviar un missatge a diversos usuaris a la vegada",
 	"log-name-massmessage": "Registre de missatges massius",
 	"log-description-massmessage": "Accions registrades d'usuaris que han enviat missatges",
