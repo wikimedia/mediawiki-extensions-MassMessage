@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage;
 
-use CentralIdLookup;
 use Exception;
 use ExtensionRegistry;
 use ManualLogEntry;
@@ -14,9 +13,10 @@ use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use ParserOptions;
-use User;
 
 /**
  * Some core functions needed by the extension.

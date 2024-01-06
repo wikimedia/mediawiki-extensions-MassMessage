@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage;
 
-use Html;
 use Language;
+use MediaWiki\Html\Html;
 
 /**
  * Contains logic to build the message and subject to be posted

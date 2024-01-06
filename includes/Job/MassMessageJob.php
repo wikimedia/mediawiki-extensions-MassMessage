@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage\Job;
 
-use CentralIdLookup;
 use ExtensionRegistry;
 use Job;
 use LqtDispatch;
@@ -18,8 +17,9 @@ use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
-use User;
 
 /**
  * Job Queue class to send a message to a user.

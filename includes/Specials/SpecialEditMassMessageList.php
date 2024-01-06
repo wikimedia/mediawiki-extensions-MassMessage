@@ -2,12 +2,12 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use FormSpecialPage;
-use Html;
 use HTMLForm;
 use IDBAccessObject;
 use LogEventsList;
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\EditPage\EditPage;
+use MediaWiki\Html\Html;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
@@ -16,6 +16,7 @@ use MediaWiki\Permissions\RestrictionStore;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
@@ -223,7 +224,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			],
 			'summary' => [
 				'type' => 'text',
-				'maxlength' => \CommentStore::COMMENT_CHARACTER_LIMIT,
+				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
 				'size' => 60,
 				'label-message' => 'summary',
 			],

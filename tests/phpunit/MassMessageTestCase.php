@@ -3,11 +3,11 @@
 namespace MediaWiki\MassMessage;
 
 use ContentHandler;
+use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use SiteConfiguration;
-use User;
 
 /**
  * Abstract test case containing setup code and common functions

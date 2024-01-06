@@ -6,7 +6,7 @@ use ApiUsageException;
 use ContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use User;
+use MediaWiki\User\User;
 
 /**
  * Tests for the API module to send messages.

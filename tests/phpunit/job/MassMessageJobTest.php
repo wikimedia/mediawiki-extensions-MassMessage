@@ -9,14 +9,14 @@ use FormatJson;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Specials\SpecialPageLanguage;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RequestContext;
 use RuntimeException;
-use SpecialPageLanguage;
 use TextContent;
-use User;
 
 /**
  * @group Database

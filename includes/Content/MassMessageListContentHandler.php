@@ -8,16 +8,19 @@ use Content;
 use ContentHandler;
 use DerivativeContext;
 use FormatJson;
-use Html;
 use IContextSource;
 use JsonContentHandler;
 use Language;
-use Linker;
 use MediaWiki\Content\Renderer\ContentParseParams;
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\Linker;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Request\DerivativeRequest;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\Widget\TitleInputWidget;
 use OOUI\ActionFieldLayout;
@@ -25,10 +28,7 @@ use OOUI\ButtonInputWidget;
 use OOUI\ComboBoxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FormLayout;
-use OutputPage;
-use ParserOutput;
 use RequestContext;
-use Status;
 
 class MassMessageListContentHandler extends JsonContentHandler {
 

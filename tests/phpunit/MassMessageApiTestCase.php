@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage;
 
 use ApiTestCase;
-use SiteConfiguration;
+use MediaWiki\Config\SiteConfiguration;
 
 /**
  * Abstract test case containing setup code and common functions

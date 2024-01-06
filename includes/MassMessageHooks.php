@@ -12,14 +12,14 @@ use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RejectParserCacheValueHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Parser\ParserOutput;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Hook\UserGetReservedNamesHook;
-use OutputPage;
+use MediaWiki\User\User;
 use Parser;
 use ParserOptions;
-use ParserOutput;
 use Skin;
-use SpecialPage;
-use User;
 use WikiPage;
 
 /**

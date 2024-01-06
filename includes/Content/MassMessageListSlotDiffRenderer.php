@@ -5,9 +5,9 @@ namespace MediaWiki\MassMessage\Content;
 use Content;
 use IContextSource;
 use MediaWiki\Html\Html;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Title\Title;
 use MessageLocalizer;
-use OutputPage;
 use TextSlotDiffRenderer;
 
 class MassMessageListSlotDiffRenderer extends \SlotDiffRenderer {

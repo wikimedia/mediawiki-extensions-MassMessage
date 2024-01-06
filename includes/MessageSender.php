@@ -8,14 +8,14 @@ use ApiMessage;
 use ApiResult;
 use ApiUsageException;
 use ChangeTags;
-use DeferredUpdates;
 use FormatJson;
+use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\DerivativeRequest;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use RequestContext;
-use User;
 use Wikimedia\ScopedCallback;
 
 /**

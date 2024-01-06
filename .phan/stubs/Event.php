@@ -19,7 +19,7 @@ namespace MediaWiki\Extension\Notifications\Model;
  *
  */
 
-use User;
+use MediaWiki\User\User;
 
 /**
  * Stub of Echo's Event class for phan

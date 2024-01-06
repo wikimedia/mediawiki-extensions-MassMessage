@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\MessageContentFetcher;
 
+use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\Status\Status;
-use SiteConfiguration;
 
 /**
  * Fetches content from a remote wiki
