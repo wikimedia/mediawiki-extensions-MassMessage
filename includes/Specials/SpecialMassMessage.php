@@ -181,7 +181,7 @@ class SpecialMassMessage extends FormSpecialPage {
 			'tabindex' => $controlTabIndex++,
 			'label-message' => 'massmessage-form-page',
 			'default' => $request->getText( 'page-message' ),
-			'help-message' => $this->msg( 'massmessage-form-page-help' )->text(),
+			'help-message' => 'massmessage-form-page-help',
 			'required' => false
 		];
 
