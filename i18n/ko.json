@@ -106,6 +106,10 @@
 	"massmessage-list-category-desc": "[[Special:MassMessage|대량 메시지]] 확장 기능을 위한 수신자 목록입니다.",
 	"tag-massmessage-delivery": "대량 메시지 전송",
 	"tag-massmessage-delivery-description": "[[:mw:Special:MyLanguage/Extension:MassMessage|확장기능:대량메시지]]를 사용하여 전송한 알림",
+	"log-action-filter-massmessage": "기록 항목 유형",
 	"log-action-filter-massmessage-send": "대량 메시지 제출",
-	"log-action-filter-massmessage-failure": "대량 메시지 전송 실패"
+	"log-action-filter-massmessage-failure": "대량 메시지 전송 실패",
+	"log-action-filter-massmessage-skipoptout": "비활성화 설정으로 인한 대상 건너뛰기",
+	"log-action-filter-massmessage-skipnouser": "존재하지 않는 대상 사용자로 인한 대상 건너뛰기",
+	"log-action-filter-massmessage-skipbadns": "금지된 이름공간으로 인한 대상 건너뛰기"
 }
