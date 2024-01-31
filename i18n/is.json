@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Stefán Örvar Sigmundsson",
 			"Sveinn í Felli"
 		]
 	},
@@ -25,5 +26,6 @@
 	"massmessage-edit-title": "Titill:",
 	"massmessage-edit-description": "Lýsing:",
 	"massmessage-summary-add": "Bætti við [[:$1]]",
-	"massmessage-summary-remove": "Fjarlægði [[:$1]]"
+	"massmessage-summary-remove": "Fjarlægði [[:$1]]",
+	"massmessage-list-category": "MassMessage-afhendingarlistar"
 }
