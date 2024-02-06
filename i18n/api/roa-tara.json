@@ -10,6 +10,8 @@
 	"apihelp-editmassmessagelist-param-add": "Titole da aggiungere a l'elenghe.",
 	"apihelp-editmassmessagelist-param-remove": "Titole da luà da l'elenghe.",
 	"apihelp-editmassmessagelist-param-description": "Descriziona nove pe l'elenghe de invie.",
+	"apihelp-editmassmessagelist-param-minor": "Ce 'u cangiamende avène signate cumme stuèdeche jndr'à 'u cunde de l'elenghe.",
+	"apihelp-editmassmessagelist-param-watchlist": "Aggiunge o live incondizionatamende 'a pàgene da l'elenghe de le pàggene condrollate da l'utende de mò, ause le preferenze (cacate pe le utinde bot) o non ge cange 'ndrucamende.",
 	"apihelp-editmassmessagelist-example-1": "Aggiunge [[User talk:Foo]] e [[Talk:Bar]] a l'elenghe de conzegne[[Example]] e live [[Talk:Baz]] da jidde",
 	"apihelp-editmassmessagelist-example-2": "'Mboste 'a descrizione pe l'elenghe de invie [[Example]] cumme \"FooBar delivery services\"",
 	"apihelp-massmessage-description": "Manne 'nu messàgge a 'n'elenghe de pàggene.",
