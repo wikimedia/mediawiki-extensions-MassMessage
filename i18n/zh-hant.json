@@ -72,7 +72,7 @@
 	"massmessage-nextsteps": "[[Special:MassMessage|傳送另一則訊息]]。",
 	"massmessage-content-pages": "於此清單的頁面",
 	"massmessage-content-pagesonsite": "於 $1 的頁面：",
-	"massmessage-content-localpages": "於此 Wiki 的頁面：",
+	"massmessage-content-localpages": "於此 wiki 的頁面：",
 	"massmessage-content-remove": "移除",
 	"massmessage-content-removeerror": "移除頁面失敗，錯誤代碼 $1。",
 	"massmessage-content-removeconf": "自清單移除此頁面？",
