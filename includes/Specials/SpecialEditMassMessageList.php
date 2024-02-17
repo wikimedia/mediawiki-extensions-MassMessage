@@ -149,7 +149,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$out = $this->getOutput();
 
 			// Page title
-			$out->setPageTitle(
+			$out->setPageTitleMsg(
 				$this->msg( 'massmessage-edit-pagetitle', $this->title->getPrefixedText() )
 			);
 
