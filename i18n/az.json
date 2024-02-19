@@ -17,6 +17,7 @@
 	"massmessage-empty-message": "Mesaj yazmamısınız. Göndəriləcək mesajı yazın və ya mesaj olaraq göndəriləcək səhifəni seçin.",
 	"massmessage-form-header": "Seçilmiş siyahıya mesaj göndərmək üçün aşağıdakı formu istifadə et. Bütün bölmələri doldurmaq məcburidir ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage daha ətraflı]).",
 	"action-massmessage": "istifadəçilərə kütləvi şəkildə mesaj göndərmək",
+	"log-name-massmessage": "Kütləvi mesaj jurnalı",
 	"logentry-massmessage-send": "$1 $3 səhifəsinə {{GENDER:$2|mesaj göndərdi}}",
 	"logentry-massmessage-failure": "$3 səhifəsinə göndəriləcək \"$4\" <code>$5</code> xəta kodu ilə ləğv edildi",
 	"logentry-massmessage-skipoptout": "$3 səhifəsinə göndəriləcək \"$4\" ləğv edildi, çünki hədəf səhifə kütləvi ismarıc qəbulunu bağlayıb.",
