@@ -12,7 +12,8 @@
 			"Suyama",
 			"Tamaki Wakita",
 			"Whym",
-			"おはぐろ蜻蛉"
+			"おはぐろ蜻蛉",
+			"Chqaz"
 		]
 	},
 	"massmessage": "メッセージの一斉送信",
@@ -22,6 +23,7 @@
 	"massmessage-form-spamlist": "メッセージを書き込むページの一覧を含むページまたはカテゴリ:",
 	"massmessage-form-subject": "メッセージの件名 (編集の要約としても使用されます):",
 	"massmessage-form-message": "メッセージの本文:",
+	"massmessage-form-page": "メッセージとして送信するページ:",
 	"massmessage-form-preview": "プレビュー",
 	"massmessage-form-submit": "送信",
 	"massmessage-fieldset-preview": "プレビュー",
