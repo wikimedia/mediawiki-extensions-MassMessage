@@ -2,13 +2,13 @@
 
 namespace MediaWiki\MassMessage\Job;
 
-use Exception;
 use Job;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use RuntimeException;
 use TextContent;
 use WikitextContent;
 
@@ -89,11 +89,11 @@ class MassMessageServerSideJob extends MassMessageJob {
 			}
 
 			if ( !$status->hasMessage( 'edit-conflict' ) ) {
-				throw new Exception( "Error editing $titleText: {$status->getWikiText()}" );
+				throw new RuntimeException( "Error editing $titleText: {$status->getWikiText()}" );
 			}
 
 			if ( $tries > 5 ) {
-				throw new Exception(
+				throw new RuntimeException(
 					"Got 5 edit conflicts when trying to edit $titleText"
 				);
 			}

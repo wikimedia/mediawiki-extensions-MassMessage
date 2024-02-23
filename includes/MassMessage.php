@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use Exception;
 use ExtensionRegistry;
+use LogicException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\MassMessage\Job\MassMessageJob;
@@ -225,7 +225,6 @@ class MassMessage {
 	 * Modified from the Echo extension
 	 *
 	 * @return string regular expression fragment.
-	 * @throws Exception
 	 */
 	public static function getTimestampRegex() {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
@@ -258,7 +257,7 @@ class MassMessage {
 				}
 
 				if ( !preg_match( "/$output/u", $exemplarTimestamp ) ) {
-					throw new Exception( "Timestamp regex does not match exemplar" );
+					throw new LogicException( "Timestamp regex does not match exemplar" );
 				}
 
 				return "/$output/";
