@@ -51,6 +51,7 @@ class ApiEditMassMessageList extends ApiBase {
 			->getRevisionLookup()
 			->getRevisionByTitle( $spamlist )
 			->getContent( SlotRecord::MAIN );
+		'@phan-var MassMessageListContent $content';
 		$description = $content->getDescription();
 		$targets = $content->getTargets();
 

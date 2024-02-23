@@ -206,6 +206,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			RevisionRecord::FOR_THIS_USER,
 			$this->getUser()
 		);
+		'@phan-var MassMessageListContent $content';
 		$description = $content->getDescription();
 		$targets = $content->getTargetStrings();
 

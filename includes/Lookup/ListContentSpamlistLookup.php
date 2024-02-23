@@ -2,6 +2,7 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
@@ -30,11 +31,12 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 	public function fetchTargets() {
 		$services = MediaWikiServices::getInstance();
 
-		$targets = $services
+		$content = $services
 			->getRevisionLookup()
 			->getRevisionByTitle( $this->spamlist )
-			->getContent( SlotRecord::MAIN )
-			->getValidTargets();
+			->getContent( SlotRecord::MAIN );
+		'@phan-var MassMessageListContent $content';
+		$targets = $content->getValidTargets();
 		$currentWikiId = WikiMap::getCurrentWikiId();
 		foreach ( $targets as &$target ) {
 			if ( array_key_exists( 'site', $target ) ) {
