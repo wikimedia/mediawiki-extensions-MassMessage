@@ -19,6 +19,7 @@
 	"massmessage": "{{doc-special|MassMessage}}",
 	"createmassmessagelist": "{{doc-special|CreateMassMessageList}}",
 	"editmassmessagelist": "{{doc-special|EditMassMessageList}}",
+	"content-model-massmessagelistcontent": "Name for the mass message list content model. Used when describing what type of content a page contains.",
 	"massmessage-desc": "{{desc|name=Mass Message|url=https://www.mediawiki.org/wiki/Extension:MassMessage}}",
 	"massmessage-form-spamlist": "Label for an inputbox on [[Special:MassMessage]].",
 	"massmessage-form-subject": "Label for an inputbox on [[Special:MassMessage]]}}",
