@@ -14,6 +14,7 @@
 	"massmessage": "Massennachricht senden",
 	"createmassmessagelist": "Massennachrichten-Versandliste erstellen",
 	"editmassmessagelist": "Massennachrichten-Versandliste bearbeiten",
+	"content-model-massmessagelistcontent": "Massennachrichten-Versandliste",
 	"massmessage-desc": "Ermöglicht Benutzern das einfache Versenden von Nachrichten an eine Benutzerliste",
 	"massmessage-form-spamlist": "Seite oder Kategorie mit der Liste der Seiten, auf denen eine Nachricht hinterlassen werden soll:",
 	"massmessage-form-subject": "Betreff der Nachricht (wird auch für die Bearbeitungszusammenfassung verwendet):",
