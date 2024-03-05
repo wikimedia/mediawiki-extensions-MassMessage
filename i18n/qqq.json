@@ -62,7 +62,7 @@
 	"massmessage-target-local": "{{notranslate}}\nUsed to display the {{#target}} parserfunction on sites where global messaging is disabled.\n* $1 is the page title",
 	"massmessage-hidden-comment": "A hidden HTML comment that is appended after the message. Parameters:\n* $1 - the username of the user who sent the message\n* $2 - the database name of the wiki from where the message was sent\n* $3 - the URL of the input list that was used to send the message",
 	"massmessage-optout-category": "Name of category which users add pages to that will opt-it out of receiving messages.",
-	"massmessage-badhtml": "Shown in a JavaScript popup if we detect unclosed HTML tags\n\n* $1 - comma separated list of unclosed HTML tags\n* $2 - number of unclosed HTML tags",
+	"massmessage-badhtml": "Shown in a JavaScript popup if we detect unclosed HTML tags\n\n* $1 - comma-separated list of unclosed HTML tags\n* $2 - number of unclosed HTML tags",
 	"massmessage-parse-badurl": "Error message shown when the url that the user provides is invalid.\n* $1 is the url the user provided",
 	"massmessage-parse-badpage": "Error message shown when the page name that the user provides is invalid.\n* $1 is the page title the user provided",
 	"massmessage-parse-badspamlist": "Error message shown when the page name that the user provides is not a valid list of pages to sent the message to.\n* $1 - the page title the user provided.",
