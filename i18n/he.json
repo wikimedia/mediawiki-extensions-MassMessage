@@ -11,6 +11,7 @@
 	"massmessage": "שליחת הודעה לאנשים מרובים",
 	"createmassmessagelist": "יצירת רשימת מסירת הודעות המונית",
 	"editmassmessagelist": "עריכה רשימת מסירה המונית",
+	"content-model-massmessagelistcontent": "רשימות מסירה של הודעות המוניות",
 	"massmessage-desc": "אפשרות לשלוח בקלות הודעה לרשימת משתמשים",
 	"massmessage-form-spamlist": "דף או קטגוריה שמכיל רשימת דפים שההודעה תישלח אליהם:",
 	"massmessage-form-subject": "כותרת ההודעה (משמשת גם כתקציר עריכה):",
