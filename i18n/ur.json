@@ -40,7 +40,7 @@
 	"logentry-massmessage-send": "$1 نے $3 کو {{GENDER:$2|پیغام ارسال کیا}}",
 	"logentry-massmessage-failure": "\"$4\" کی $3 کو وصولی ناکام، خطا کوڈ <code>$5</code>",
 	"logentry-massmessage-skipnouser": "صارف کھاتہ موجود نہ ہونے کی وجہ سے \"$4\" $3 کو نہیں مل سکا",
-	"massmessage-nextsteps": "[[Special:MassMessage|دوسرا پیغام ارسال کریں]] یا [[Special:Statistics|قطار میں موجود پیغامات کی تعداد ملاحظہ کریں]]۔",
+	"massmessage-nextsteps": "[[Special:MassMessage|دوسرا پیغام ارسال کریں]]۔",
 	"massmessage-content-pages": "فہرست میں موجود صفحات",
 	"massmessage-content-pagesonsite": "$1 پر موجود صفحات:",
 	"massmessage-content-localpages": "اس ویکی پر موجود صفحات:",
