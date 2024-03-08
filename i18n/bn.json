@@ -15,6 +15,7 @@
 	"massmessage": "গণবার্তা পাঠান",
 	"createmassmessagelist": "গণবার্তা প্রেরণ তালিকা তৈরি করুন",
 	"editmassmessagelist": "গণবার্তা প্রেরণের তালিকা সম্পাদনা করুন",
+	"content-model-massmessagelistcontent": "গণবার্তা বিতরণ তালিকা",
 	"massmessage-desc": "একটি তালিকার ব্যবহারকারীদের সহজে কোনো বার্তা পাঠানোর সহজ ব্যবস্থা",
 	"massmessage-form-spamlist": "যেখানে বার্তা দিতে হবে তার তালিকা থাকা একটি পাতা বা বিষয়শ্রেণীর নাম:",
 	"massmessage-form-subject": "বার্তার বিষয় (সম্পাদনা সারাংশ হিসেবেও ব্যবহৃত হবে):",
