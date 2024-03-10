@@ -91,7 +91,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 */
 	public function testMessageSending() {
 		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
-		list( $subj, ) = $this->simulateJob( $target );
+		[ $subj, ] = $this->simulateJob( $target );
 		$target = Title::makeTitle( NS_PROJECT, 'Testing1234' );
 		// Message was created
 		/** @var TextContent $content */
@@ -116,7 +116,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$target = $this->getNonexistingTestPage( 'Project:DedupeTest' )->getTitle();
-		list( $subject, ) = $this->simulateJob( $target );
+		[ $subject, ] = $this->simulateJob( $target );
 		// Send the same message again
 		$this->simulateJob( $target, [], $subject );
 		$target = Title::makeTitle( NS_PROJECT, 'DedupeTest' );
@@ -158,7 +158,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$target = Title::makeTitle( NS_PROJECT, 'LQT test' );
 		// $this->assertTrue( LqtDispatch::isLqtPage( $target ) );
 		// Check that it worked
-		list( $subject, ) = $this->simulateJob( $target );
+		[ $subject, ] = $this->simulateJob( $target );
 		$this->assertTrue( Title::makeTitle( NS_LQT_THREAD, $proj . ':LQT test/' . $subject )->exists() );
 	}
 
@@ -224,7 +224,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$target = $this->getNonexistingTestPage( 'Project:DedupePageMessageTest' )->getTitle();
 		$pageMessageTitle = $this->createPage( $pageMessageTitleStr, $pageMessageContent );
 
-		list( $subject, ) = $this->simulateJob( $target, [
+		[ $subject, ] = $this->simulateJob( $target, [
 			'page-message' => $pageMessageTitleStr,
 			'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
 			'isSourceTranslationPage' => false
@@ -269,7 +269,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 			return false;
 		} );
-		list( , $result ) = $this->simulateJob( $target, [
+		[ , $result ] = $this->simulateJob( $target, [
 			'page-message' => $pageMessageTitleStr,
 			'pageMessageTitle' => $pageMessageTitle->getPrefixedText(),
 			'isSourceTranslationPage' => false

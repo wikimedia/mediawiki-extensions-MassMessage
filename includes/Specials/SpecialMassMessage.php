@@ -317,7 +317,7 @@ class SpecialMassMessage extends FormSpecialPage {
 
 		// Construct a set containing elements that do not need an end tag.
 		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
-		$voidElements = array_flip( [ 'area', 'base', 'br', 'col', 'command', 'embed','hr', 'img',
+		$voidElements = array_flip( [ 'area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img',
 			'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr' ] );
 
 		// Count start / end tags for each element, ignoring start tags of void elements.

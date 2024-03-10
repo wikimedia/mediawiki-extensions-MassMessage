@@ -296,14 +296,17 @@ class ApiEditMassMessageList extends ApiBase {
 		] + $this->getWatchlistParams() + [ 'token' => null ];
 	}
 
+	/** @inheritDoc */
 	public function mustBePosted() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function needsToken() {
 		return 'csrf';
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}

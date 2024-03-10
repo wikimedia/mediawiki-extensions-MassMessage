@@ -117,7 +117,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		$localMessageContentFetcherStub = $this->createStub( LocalMessageContentFetcher::class );
 		$localMessageContentFetcherStub
 			->method( 'getContent' )
-			->will( $this->returnCallback( $callback ) );
+			->willReturnCallback( $callback );
 
 		$languageNameUtilsStub = $this->createStub( LanguageNameUtils::class );
 		$languageNameUtilsStub

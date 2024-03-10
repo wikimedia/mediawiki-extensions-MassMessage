@@ -97,7 +97,7 @@ class MassMessageHooks implements
 			$output->setExtensionData( 'massmessage-targets', [ $data ] );
 		} else {
 			$output->setExtensionData( 'massmessage-targets',
-				array_merge( $current,  [ $data ] ) );
+				array_merge( $current, [ $data ] ) );
 		}
 		return '';
 	}

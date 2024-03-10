@@ -55,7 +55,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 		$title = Title::newFromText( self::$spamlist );
 		$targets = [
 			[ 'title' => 'A' ],
-			[ 'title' => 'B','site' => 'en.wikipedia.org' ]
+			[ 'title' => 'B', 'site' => 'en.wikipedia.org' ]
 		];
 		$result = MassMessageListContentHandler::edit(
 			$title,

@@ -65,7 +65,7 @@ class SendMessages extends Maintenance {
 		$this->output( "Reading from \"$list\".\n" );
 
 		$lineNum = 0;
-		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
+		// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
 		while ( $line = trim( fgets( $file ) ) ) {
 			$lineNum++;
 			$exp = explode( "\t", $line );
