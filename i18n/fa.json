@@ -18,6 +18,7 @@
 	"massmessage": "ارسال پیام انبوه",
 	"createmassmessagelist": "ایجاد فهرست رساندن پیام انبوه",
 	"editmassmessagelist": "ویرایش فهرست گیرندگان پیام انبوه",
+	"content-model-massmessagelistcontent": "فهرست تحویل پیام انبوه",
 	"massmessage-desc": "اجازه می‌دهد کاربران به‌سادگی پیامی را به فهرستی از کاربران بفرستند",
 	"massmessage-form-spamlist": "صفحه یا رده‌ای حاوی فهرستی از صفحه‌هایی که پیام رویشان گذاشته خواهد شد:",
 	"massmessage-form-subject": "عنوان پیام (همچنین در خلاصهٔ ویرایش استفاده خواهد شد):",
