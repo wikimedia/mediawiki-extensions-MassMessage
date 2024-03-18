@@ -117,5 +117,7 @@
 	"massmessage-list-category": "メッセージ一斉送信リスト",
 	"massmessage-list-category-desc": "[[Special:MassMessage|MassMessage]] 拡張機能向けの一斉送信リストのページです。",
 	"tag-massmessage-delivery": "一斉メッセージ配信",
-	"tag-massmessage-delivery-description": "[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]を使用した一斉メッセージ配信"
+	"tag-massmessage-delivery-description": "[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]を使用した一斉メッセージ配信",
+	"log-action-filter-massmessage": "記録の種類",
+	"log-action-filter-massmessage-skipbadns": "禁止された名前空間によるターゲットのスキップ"
 }
