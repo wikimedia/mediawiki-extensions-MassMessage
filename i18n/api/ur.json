@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-editmassmessagelist-description": "اجتماعی پیغام کی وصولی فہرست میں ترمیم کریں۔",
+	"apihelp-editmassmessagelist-summary": "اجتماعی پیغام رسانی کی فہرست میں ترمیم کرتا ہے۔",
 	"apihelp-editmassmessagelist-param-spamlist": "تجدید کے لیے وصولی فہرست کا عنوان۔",
 	"apihelp-editmassmessagelist-param-add": "فہرست میں درج کرنے کے لیے عناوین۔",
 	"apihelp-editmassmessagelist-param-remove": "فہرست سے حذف کرنے کے لیے عناوین۔",
