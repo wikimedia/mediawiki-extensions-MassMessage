@@ -7,6 +7,7 @@
 	"massmessage": "Inviar un message in massa",
 	"createmassmessagelist": "Crear un lista de livration de messages in massa",
 	"editmassmessagelist": "Modificar le lista de livration de messages in massa",
+	"content-model-massmessagelistcontent": "Lista pro livrar messages in massa",
 	"massmessage-desc": "Permitte que usatores invia facilemente un message a un lista de usatores",
 	"massmessage-form-spamlist": "Pagina o categoria que contine un lista de paginas sur le quales lassar un message:",
 	"massmessage-form-subject": "Subjecto del message (tamben usate como le summario de modification):",
