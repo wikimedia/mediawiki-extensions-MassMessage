@@ -9,6 +9,7 @@
 	"massmessage": "Masseutsendelse",
 	"createmassmessagelist": "Opprett en leveringsliste for massemeldinger",
 	"editmassmessagelist": "Rediger leveringsliste for massemeldinger",
+	"content-model-massmessagelistcontent": "Leveringsliste for massemeldinger",
 	"massmessage-desc": "Lar brukere enkelt sende en melding til en liste med brukere",
 	"massmessage-form-spamlist": "Side eller kategori som lister opp brukere meldingen skal sendes til:",
 	"massmessage-form-subject": "Meldingsemne (brukes også som redigeringsforklaring):",
