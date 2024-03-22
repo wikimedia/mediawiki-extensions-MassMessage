@@ -137,14 +137,13 @@ class MassMessageRequestParser {
 
 		$contentModel = $spamlist->getContentModel();
 
-		if ( $contentModel !== 'MassMessageListContent'
-			&& $contentModel !== CONTENT_MODEL_WIKITEXT
-			|| $contentModel === 'MassMessageListContent'
-			&& !MediaWikiServices::getInstance()
+		if ( ( $contentModel !== 'MassMessageListContent' && $contentModel !== CONTENT_MODEL_WIKITEXT )
+			|| ( $contentModel === 'MassMessageListContent' && !MediaWikiServices::getInstance()
 				->getRevisionLookup()
 				->getRevisionByTitle( $spamlist )
 				->getContent( SlotRecord::MAIN )
 				->isValid()
+			)
 		) {
 			return 'massmessage-spamlist-invalid';
 		}

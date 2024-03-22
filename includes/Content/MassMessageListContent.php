@@ -99,8 +99,8 @@ class MassMessageListContent extends JsonContent {
 		$validTargets = [];
 		foreach ( $targets as $target ) {
 			if ( !array_key_exists( 'site', $target )
-				|| MediaWikiServices::getInstance()->getMainConfig()->get( 'AllowGlobalMessaging' )
-				&& DatabaseLookup::getDBName( $target['site'] ) !== null
+				|| ( MediaWikiServices::getInstance()->getMainConfig()->get( 'AllowGlobalMessaging' )
+				&& DatabaseLookup::getDBName( $target['site'] ) !== null )
 			) {
 				$validTargets[] = $target;
 			}
