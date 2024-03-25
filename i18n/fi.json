@@ -7,7 +7,9 @@
 			"Pyscowicz",
 			"Silvonen",
 			"Stryn",
-			"Valtlait"
+			"Valtlait",
+			"Samoasambia",
+			"Valtlai"
 		]
 	},
 	"massmessage": "Lähetä joukkoviesti",
@@ -53,11 +55,14 @@
 	"massmessage-content-addsubmit": "Lisää sivu",
 	"massmessage-content-addedlistheading": "Sivuja lisätty:",
 	"createmassmessagelist-legend": "Luo joukkoviestin lähetysluettelo",
+	"massmessage-create-title": "Otsikko:",
 	"massmessage-create-description": "Kuvaus:",
 	"massmessage-create-content": "Sisältö:",
 	"massmessage-create-new": "Luo uusi vastaanottajien luettelo",
 	"massmessage-create-import": "Tuo sivut olemassa olevasta luettelosta tai luokasta",
 	"massmessage-create-source": "Lähde:",
+	"massmessage-edit-title": "Otsikko:",
+	"massmessage-edit-description": "Kuvaus:",
 	"massmessage-list-category": "Joukkoviestien lähetysluettelot",
 	"log-action-filter-massmessage": "Lokitietueen tyyppi",
 	"log-action-filter-massmessage-failure": "Massaviestin epäonnistuneet toimitukset"
