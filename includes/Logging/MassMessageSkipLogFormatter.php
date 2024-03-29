@@ -3,7 +3,6 @@
 namespace MediaWiki\MassMessage\Logging;
 
 use LogFormatter;
-use MediaWiki\MediaWikiServices;
 use Message;
 
 /**
@@ -26,7 +25,7 @@ class MassMessageSkipLogFormatter extends LogFormatter {
 		// Format the edit summary using CommentFormatter::format so that wikilinks
 		// and other simple things get parsed, but no HTML
 		$this->parsedParameters[3] = Message::rawParam(
-			MediaWikiServices::getInstance()->getCommentFormatter()->format(
+			$this->getCommentFormatter()->format(
 				// @phan-suppress-next-line PhanTypeMismatchArgumentReal
 				$this->parsedParameters[3],
 				$this->entry->getTarget()
