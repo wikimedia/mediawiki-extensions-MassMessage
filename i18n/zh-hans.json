@@ -21,12 +21,14 @@
 			"Yfdyh000",
 			"予弦",
 			"坑触可",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"沈澄心"
 		]
 	},
 	"massmessage": "发送大量信息",
 	"createmassmessagelist": "创建大量信息递送列表",
 	"editmassmessagelist": "编辑大量信息递送列表",
+	"content-model-massmessagelistcontent": "大量信息递送列表",
 	"massmessage-desc": "使用户可以轻松将信息发送给一个递送列表中的用户",
 	"massmessage-form-spamlist": "包含有要留言页面列表的页面或分类：",
 	"massmessage-form-subject": "信息主题（同时用作编辑摘要）：",
