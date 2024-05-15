@@ -20,6 +20,7 @@
 	"massmessage": "Bulkberichten verzenden",
 	"createmassmessagelist": "Afleverlijst aanmaken",
 	"editmassmessagelist": "Afleverlijst bewerken",
+	"content-model-massmessagelistcontent": "Lijst voor massale bezorging van berichten",
 	"massmessage-desc": "Maakt het mogelijk om berichten naar een lijst ontvangers te verzenden",
 	"massmessage-form-spamlist": "Pagina of categorie met een lijst met pagina's om een bericht op te plaatsen:",
 	"massmessage-form-subject": "Onderwerp voor bericht (ook gebruikt als bewerkingssamenvatting):",
