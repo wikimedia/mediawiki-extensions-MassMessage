@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Hakimi97"
 		]
 	},
 	"massmessage": "Hantar pesanan beramai-ramai",
@@ -9,7 +10,7 @@
 	"massmessage-form-spamlist": "Halaman yang mengandungi senarai halaman untuk ditinggalkan pesanan:",
 	"massmessage-form-subject": "Tajuk pesanan (juga digunakan sebagai ringkasan suntingan):",
 	"massmessage-form-message": "Isi kandungan pesanan:",
-	"massmessage-form-preview": "Pralihat",
+	"massmessage-form-preview": "Pratayang",
 	"massmessage-form-submit": "Hantar",
 	"massmessage-fieldset-preview": "Pralihat",
 	"massmessage-fieldset-info": "Maklumat",
