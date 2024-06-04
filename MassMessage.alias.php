@@ -137,6 +137,13 @@ $specialPageAliases['nn'] = [
 	'MassMessage' => [ 'Massemelding' ],
 ];
 
+/** Polish (polski) */
+$specialPageAliases['pl'] = [
+	'MassMessage' => [ 'Wiadomość_masowa' ],
+	'CreateMassMessageList' => [ 'Utwórz_listę_odbiorców_wiadomości_masowej' ],
+	'EditMassMessageList' => [ 'Edytuj_listę_odbiorców_wiadomości_masowej' ],
+];
+
 /** Portuguese (português) */
 $specialPageAliases['pt'] = [
 	'MassMessage' => [ 'Mensagens_em_massa', 'Mensagem_em_massa' ],
