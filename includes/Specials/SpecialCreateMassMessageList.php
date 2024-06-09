@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use HTMLForm;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MediaWikiServices;

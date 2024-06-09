@@ -9,13 +9,13 @@ use ApiResult;
 use ApiUsageException;
 use ChangeTags;
 use FormatJson;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\DerivativeRequest;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use RequestContext;
 use Wikimedia\ScopedCallback;
 
 /**

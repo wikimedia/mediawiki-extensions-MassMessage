@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use ApiTestCase;
 use MediaWiki\Config\SiteConfiguration;
+use MediaWiki\Tests\Api\ApiTestCase;
 
 /**
  * Abstract test case containing setup code and common functions

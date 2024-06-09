@@ -3,9 +3,9 @@
 namespace MediaWiki\MassMessage\Specials;
 
 use ContentHandler;
-use HTMLForm;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\MessageBuilder;
@@ -15,11 +15,11 @@ use MediaWiki\MassMessage\PageMessage\PageMessageBuilder;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use Message;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;

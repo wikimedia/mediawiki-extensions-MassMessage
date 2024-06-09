@@ -6,6 +6,7 @@ use ChangeTags;
 use ContentHandler;
 use ExtensionRegistry;
 use FormatJson;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -14,7 +15,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
-use RequestContext;
 use RuntimeException;
 use TextContent;
 

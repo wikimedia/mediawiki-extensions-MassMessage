@@ -3,7 +3,7 @@
 namespace MediaWiki\MassMessage\Logging;
 
 use LogFormatter;
-use Message;
+use MediaWiki\Message\Message;
 
 /**
  * Log formatter for 'skip*' entries on Special:Log/massmessage.

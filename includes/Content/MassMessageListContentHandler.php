@@ -6,12 +6,13 @@ use ApiMain;
 use ApiUsageException;
 use Content;
 use ContentHandler;
-use DerivativeContext;
 use FormatJson;
-use IContextSource;
 use JsonContentHandler;
 use Language;
 use MediaWiki\Content\Renderer\ContentParseParams;
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\IContextSource;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
@@ -28,7 +29,6 @@ use OOUI\ButtonInputWidget;
 use OOUI\ComboBoxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FormLayout;
-use RequestContext;
 
 class MassMessageListContentHandler extends JsonContentHandler {
 
