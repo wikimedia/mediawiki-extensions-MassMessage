@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Arystanbek",
-			"Hedeyohu22"
+			"Hedeyohu22",
+			"Casserium"
 		]
 	},
 	"massmessage": "Жаппай хабарлама жіберу",
@@ -96,5 +97,7 @@
 	"massmessage-summary-removeonsite": "$2 дегеннен $1 беті аласталды",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|бет}} аласталды",
 	"massmessage-list-category": "Жаппай хабарлама жеткізіп беру тізімдері",
-	"massmessage-list-category-desc": "[[Special:MassMessage|Жаппай хабарлама жіберу]] кеңейтілімі үшін жеткізіп беру тізімі беті"
+	"massmessage-list-category-desc": "[[Special:MassMessage|Жаппай хабарлама жіберу]] кеңейтілімі үшін жеткізіп беру тізімі беті",
+	"tag-massmessage-delivery": "Жаппай хабарлама жіберу",
+	"tag-massmessage-delivery-description": "[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]] арқылы хабарлама жіберу"
 }
