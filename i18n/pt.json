@@ -12,6 +12,7 @@
 	"massmessage": "Enviar mensagem em massa",
 	"createmassmessagelist": "Criar lista de entrega de mensagens em massa",
 	"editmassmessagelist": "Editar lista de entrega de mensagens em massa",
+	"content-model-massmessagelistcontent": "Lista de entrega de mensagens em massa",
 	"massmessage-desc": "Permite que os utilizadores enviem facilmente uma mensagem para uma lista de utilizadores",
 	"massmessage-form-spamlist": "Página ou categoria que contém a lista de páginas onde será deixada uma mensagem:",
 	"massmessage-form-subject": "Assunto da mensagem (também usado como resumo da edição):",
