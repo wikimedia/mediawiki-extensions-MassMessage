@@ -290,6 +290,13 @@ class SpecialMassMessage extends FormSpecialPage {
 		} else {
 			// $this->state can only be 'preview' here
 			$this->preview( $this->status->getValue() );
+
+			// Die on errors.
+			if ( !$this->status->isOK() ) {
+				$this->state = 'form';
+				return $this->status;
+			}
+
 			// No submission attempted
 			return false;
 		}
@@ -467,12 +474,12 @@ class SpecialMassMessage extends FormSpecialPage {
 		] );
 		$this->getOutput()->addHTML( $wikitextPreviewLayout );
 
-		// Check if we have unescaped langlinks (Bug 54846)
+		// Check if we have unescaped langlinks (T56846)
 		if ( $parserOutput->getLanguageLinks() ) {
 			$this->status->fatal( 'massmessage-unescaped-langlinks' );
 		}
 
-		// Check for unclosed HTML tags (Bug 54909)
+		// Check for unclosed HTML tags (T56909)
 		$unclosedTags = $this->getUnclosedTags( $request->getMessage() );
 		if ( $unclosedTags ) {
 			$this->status->fatal(
@@ -486,7 +493,7 @@ class SpecialMassMessage extends FormSpecialPage {
 
 		/** @var TextContent $content */
 		'@phan-var TextContent $content';
-		// Check for no timestamp (Bug 54848)
+		// Check for no timestamp (T56848)
 		if ( !preg_match( MassMessage::getTimestampRegex(), $content->getText() ) ) {
 			$this->status->fatal( 'massmessage-no-timestamp' );
 		}
