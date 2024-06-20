@@ -156,5 +156,6 @@
 	"log-action-filter-massmessage-failure": "{{doc-log-action-filter-type|massmessage|failure}}",
 	"log-action-filter-massmessage-skipoptout": "{{doc-log-action-filter-type|massmessage|skipoptout}}",
 	"log-action-filter-massmessage-skipnouser": "{{doc-log-action-filter-type|massmessage|skipnouser}}",
-	"log-action-filter-massmessage-skipbadns": "{{doc-log-action-filter-type|massmessage|skipbadns}}"
+	"log-action-filter-massmessage-skipbadns": "{{doc-log-action-filter-type|massmessage|skipbadns}}",
+	"massmessage-linter-error": "Warning shown if a linter error is detected\n* $1 is the linter error message"
 }

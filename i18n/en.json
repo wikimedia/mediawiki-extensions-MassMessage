@@ -145,5 +145,6 @@
 	"log-action-filter-massmessage-failure": "Mass message delivery failure",
 	"log-action-filter-massmessage-skipoptout": "Target skip because of opt-out",
 	"log-action-filter-massmessage-skipnouser": "Target skip because of non-existing target user",
-	"log-action-filter-massmessage-skipbadns": "Target skip because of forbidden namespace"
+	"log-action-filter-massmessage-skipbadns": "Target skip because of forbidden namespace",
+	"massmessage-linter-error": "Linter error: $1"
 }

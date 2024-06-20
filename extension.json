@@ -218,7 +218,10 @@
 			"services": [
 				"MassMessage:LabeledSectionContentFetcher",
 				"MassMessage:LocalMessageContentFetcher",
-				"MassMessage:PageMessageBuilder"
+				"MassMessage:PageMessageBuilder",
+				"_Parsoid",
+				"ParsoidPageConfigFactory",
+				"ExtensionRegistry"
 			]
 		},
 		"CreateMassMessageList": "MediaWiki\\MassMessage\\Specials\\SpecialCreateMassMessageList",
