@@ -148,5 +148,6 @@
 	"log-action-filter-massmessage-failure": "Massennachrichten-Versandfehler",
 	"log-action-filter-massmessage-skipoptout": "Auslassung eines Ziels aufgrund eines Opt-Outs",
 	"log-action-filter-massmessage-skipnouser": "Auslassung eines Ziels aufgrund eines nicht vorhandenen Zielbenutzers",
-	"log-action-filter-massmessage-skipbadns": "Auslassung eines Ziels aufgrund eines nicht erlaubten Namensraumes"
+	"log-action-filter-massmessage-skipbadns": "Auslassung eines Ziels aufgrund eines nicht erlaubten Namensraumes",
+	"massmessage-linter-error": "Linter-Fehler: $1"
 }

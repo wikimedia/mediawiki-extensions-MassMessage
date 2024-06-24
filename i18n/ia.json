@@ -141,5 +141,6 @@
 	"log-action-filter-massmessage-failure": "Fallimento de livration de messages in massa",
 	"log-action-filter-massmessage-skipoptout": "Salta destination perque non vole reciper messages",
 	"log-action-filter-massmessage-skipnouser": "Salta destination perque usator non existe",
-	"log-action-filter-massmessage-skipbadns": "Salta destination perque le spatio de nomines es prohibite"
+	"log-action-filter-massmessage-skipbadns": "Salta destination perque le spatio de nomines es prohibite",
+	"massmessage-linter-error": "Error de Lint: $1"
 }

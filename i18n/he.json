@@ -145,5 +145,6 @@
 	"log-action-filter-massmessage-failure": "כשל במסירת הודעה המונית",
 	"log-action-filter-massmessage-skipoptout": "דילוג על יעד בגלל ביטול רישום",
 	"log-action-filter-massmessage-skipnouser": "דילוג על יעד בגלל שמשתמש היעד אינו קיים",
-	"log-action-filter-massmessage-skipbadns": "דילוג על יעד בגלל מרחב שם אסור"
+	"log-action-filter-massmessage-skipbadns": "דילוג על יעד בגלל מרחב שם אסור",
+	"massmessage-linter-error": "שגיאות ניקיון: $1"
 }
