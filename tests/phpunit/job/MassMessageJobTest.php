@@ -4,7 +4,6 @@ namespace MediaWiki\MassMessage;
 
 use ChangeTags;
 use ContentHandler;
-use ExtensionRegistry;
 use FormatJson;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MassMessage\Job\MassMessageJob;
@@ -152,9 +151,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			// Output changes based on wikiname
 			->getFormattedNsText( NS_PROJECT );
 
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Liquid Threads' ) ) {
-			$this->markTestSkipped( "This test requires the LiquidThreads extension" );
-		}
+		$this->markTestSkippedIfExtensionNotLoaded( 'Liquid Threads' );
 		$target = Title::makeTitle( NS_PROJECT, 'LQT test' );
 		// $this->assertTrue( LqtDispatch::isLqtPage( $target ) );
 		// Check that it worked
