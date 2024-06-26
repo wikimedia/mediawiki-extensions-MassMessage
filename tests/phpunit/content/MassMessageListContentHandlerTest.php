@@ -66,7 +66,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			'preferences',
 			$this->apiContext
 		);
-		$this->assertTrue( $result->isGood() );
+		$this->assertStatusGood( $result );
 		$rev = MediaWikiServices::getInstance()->getRevisionLookup()->getRevisionByTitle( $title );
 		$content = $rev->getContent( SlotRecord::MAIN );
 		$this->assertEquals( 'description', $content->getDescription() );
@@ -88,7 +88,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			'preferences',
 			$this->apiContext
 		);
-		$this->assertFalse( $result->isGood() );
+		$this->assertStatusNotOK( $result );
 	}
 
 	/**
