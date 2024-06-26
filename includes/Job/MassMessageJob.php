@@ -360,7 +360,7 @@ class MassMessageJob extends Job {
 	 * @param string $message
 	 * @param LanguageAwareText|null $pageSubject
 	 * @param LanguageAwareText|null $pageMessage
-	 * @param array $comment
+	 * @param string[] $comment
 	 * @param string $dedupeHash
 	 * @return bool
 	 */

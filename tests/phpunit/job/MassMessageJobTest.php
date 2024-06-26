@@ -11,7 +11,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Specials\SpecialPageLanguage;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RuntimeException;
@@ -39,7 +38,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		];
 		$params = array_merge( $params, $additionalParams );
 		$params['comment'] = [
-			User::newFromName( 'Admin' ),
+			'Admin',
 			'metawiki',
 			'http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5'
 		];
