@@ -26,5 +26,6 @@
 	"massmessage-create-import": "Bar dizimdegi yamasa kategoriyadaǵı betlerdi import qılıw",
 	"massmessage-create-editsummary": "Ǵalabalıq túrde xabar jiberiw dizimin jaratıw",
 	"massmessage-edit-pagetitle": "$1 beti redaktorlanıp atır",
-	"massmessage-list-category-desc": "[[Special:MassMessage|Ǵalabalıq xabar jiberiw]] keńeytpesi ushın jetkerip beriw dizimi"
+	"massmessage-list-category-desc": "[[Special:MassMessage|Ǵalabalıq xabar jiberiw]] keńeytpesi ushın jetkerip beriw dizimi",
+	"tag-massmessage-delivery": "Ǵalabalıq xabar jiberiw"
 }
