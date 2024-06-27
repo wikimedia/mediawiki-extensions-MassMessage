@@ -16,6 +16,9 @@
 	"massmessage-empty-message": "Xabardıń tekst bólegi bos. Xabar tekstin kirgizińiz yamasa xabar retinde jiberiletuǵın betti saylańız.",
 	"massmessage-form-header": "Belgilengen dizimge xabar jiberiw ushın tómendegi formadan paydalanıńız. Barlıq maydanlardı toltırıw talap etiledi.\n([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]).",
 	"log-name-massmessage": "Ǵalabalıq xabarlar jurnalı",
+	"log-description-massmessage": "Bul ǵalabalıq xabarlar jiberiw háreketlerin baqlap barıwshı jurnal.",
+	"logentry-massmessage-failure": "<code>$5</code> kodlı qátelik sebepli $3 degenge «$4» jetkerip beriw orınlanbadı",
+	"massmessage-content-removeerror": "Betti óshiriw $1 kodlı qátelik sebepli orınlanbadı.",
 	"massmessage-content-removeno": "Biykar etiw",
 	"createmassmessagelist-legend": "Ǵalabalıq túrde xabar jiberiw dizimin jaratıw",
 	"massmessage-create-content": "Mazmunı:",
@@ -23,5 +26,6 @@
 	"massmessage-create-import": "Bar dizimdegi yamasa kategoriyadaǵı betlerdi import qılıw",
 	"massmessage-create-editsummary": "Ǵalabalıq túrde xabar jiberiw dizimin jaratıw",
 	"massmessage-edit-pagetitle": "$1 beti redaktorlanıp atır",
-	"massmessage-list-category-desc": "[[Special:MassMessage|Ǵalabalıq xabar jiberiw]] keńeytpesi ushın jetkerip beriw dizimi"
+	"massmessage-list-category-desc": "[[Special:MassMessage|Ǵalabalıq xabar jiberiw]] keńeytpesi ushın jetkerip beriw dizimi",
+	"tag-massmessage-delivery": "Ǵalabalıq xabar jiberiw"
 }

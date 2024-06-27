@@ -2,14 +2,24 @@
 	"@metadata": {
 		"authors": [
 			"NMW03",
-			"Şeyx Şamil"
+			"Şeyx Şamil",
+			"Nemoralis"
 		]
 	},
+	"massmessage": "Kütləvi mesaj göndər",
+	"createmassmessagelist": "Kütləvi mesajların çatdırılması siyahısını yarat",
+	"editmassmessagelist": "Kütləvi mesajların çatdırılması siyahısını redaktə et",
+	"content-model-massmessagelistcontent": "Kütləvi mesajların çatdırılması siyahısı",
+	"massmessage-desc": "İstifadəçilərə istifadəçilər siyahısına asanlıqla mesaj göndərmək imkanı verir",
 	"massmessage-form-spamlist": "Mesaj göndəriləcək səhifələrin siyahısı olan səhifə və ya kateqoriya",
 	"massmessage-form-subject": "Mesajın mövzusu (dəyişiklik izahı olaraq da istifadə olunacaq):",
+	"massmessage-form-subject-help": "Səhifənin bir bölməsi mövzu olaraq göndərilmək üçün seçilərsə, bu nəzərə alınmır",
 	"massmessage-form-message": "Mesaj:",
 	"massmessage-form-page": "Mesaj olaraq göndəriləcək səhifə:",
 	"massmessage-form-page-help": "Əgər varsa mesaj. Seçilmiş səhifədəki məzmunun sonuna əlavə ediləcək.",
+	"massmessage-form-page-message-section": "Mesaj olaraq göndəriləcək səhifənin bölməsi:",
+	"massmessage-form-page-message-section-help": "Səhifəni seçin və mövcud bölmələrin siyahısını görmək üçün formaya baxın. Bölmə seçilərsə sadəcə o mesaj olaraq göndəriləcək.",
+	"massmessage-form-page-subject-section": "Mövzu olaraq göndəriləcək səhifənin bölməsi:",
 	"massmessage-form-submit": "Göndər",
 	"massmessage-fieldset-info": "Məlumat",
 	"massmessage-spamlist-doesnotexist": "Göndəriləcək səhifələrin siyahısı müəyyən edilməyib.",
