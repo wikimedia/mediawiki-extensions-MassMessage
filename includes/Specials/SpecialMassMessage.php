@@ -331,15 +331,17 @@ class SpecialMassMessage extends FormSpecialPage {
 	 */
 	protected function getUnclosedTags( $message ) {
 		// For start tags, ignore ones that contain '/' (assume those are self-closing).
-		if ( !preg_match_all( '|\<([\w]+)[^/]*?>|', $message, $startTags ) &&
-			!preg_match_all( '|\</([\w]+)|', $message, $endTags )
-		) {
+		preg_match_all( '|\<([\w]+)[^/]*?>|', $message, $startTags );
+		preg_match_all( '|\</([\w]+)|', $message, $endTags );
+
+		// Stop and return an empty array if there are no HTML tags.
+		if ( !$startTags && !$endTags ) {
 			return [];
 		}
 
 		// Keep just the element names from the matched patterns.
 		$startTags = $startTags[1];
-		$endTags = $endTags[1] ?? [];
+		$endTags = $endTags[1];
 
 		// Construct a set containing elements that do not need an end tag.
 		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
