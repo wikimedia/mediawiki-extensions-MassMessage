@@ -113,7 +113,8 @@
 			],
 			"dependencies": [
 				"jquery.lengthLimit",
-				"mediawiki.jqueryMsg"
+				"mediawiki.jqueryMsg",
+				"oojs-ui-core"
 			]
 		},
 		"ext.MassMessage.content": {
