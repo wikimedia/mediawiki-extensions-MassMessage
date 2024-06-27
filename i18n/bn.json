@@ -116,5 +116,6 @@
 	"log-action-filter-massmessage": "লগ ভুক্তির ধরন",
 	"log-action-filter-massmessage-send": "গণবার্তা জমাদান",
 	"log-action-filter-massmessage-failure": "গণবার্তা প্রদান ব্যর্থ",
-	"log-action-filter-massmessage-skipnouser": "লক্ষ্য এড়িয়ে যাওয়া হয়েছে কারণ ব্যবহারকারীর অস্তিত্ব নেই"
+	"log-action-filter-massmessage-skipnouser": "লক্ষ্য এড়িয়ে যাওয়া হয়েছে কারণ ব্যবহারকারীর অস্তিত্ব নেই",
+	"massmessage-linter-error": "লিন্টার ত্রুটি: $1"
 }
