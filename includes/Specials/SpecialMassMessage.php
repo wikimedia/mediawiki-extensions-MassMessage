@@ -334,14 +334,14 @@ class SpecialMassMessage extends FormSpecialPage {
 		preg_match_all( '|\<([\w]+)[^/]*?>|', $message, $startTags );
 		preg_match_all( '|\</([\w]+)|', $message, $endTags );
 
+		// Keep just the element names from the matched patterns.
+		$startTags = $startTags[1] ?? [];
+		$endTags = $endTags[1] ?? [];
+
 		// Stop and return an empty array if there are no HTML tags.
 		if ( !$startTags && !$endTags ) {
 			return [];
 		}
-
-		// Keep just the element names from the matched patterns.
-		$startTags = $startTags[1];
-		$endTags = $endTags[1];
 
 		// Construct a set containing elements that do not need an end tag.
 		// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
