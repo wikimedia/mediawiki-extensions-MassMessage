@@ -26,7 +26,7 @@ interface MassMessageJobBeforeMessageSentHook {
 	 * @param string $message
 	 * @param ?LanguageAwareText $pageSubject
 	 * @param ?LanguageAwareText $pageMessage
-	 * @param array $comment Parameters to 'massmessage-hidden-comment' message
+	 * @param string[] $comment Parameters to 'massmessage-hidden-comment' message
 	 * @return bool|void True to have MassMessage send the message normally, false to not
 	 */
 	public function onMassMessageJobBeforeMessageSent(

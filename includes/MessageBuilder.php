@@ -41,7 +41,7 @@ class MessageBuilder {
 	 * @param string $customMessageText
 	 * @param LanguageAwareText|null $pageContent
 	 * @param Language|null $targetLanguage
-	 * @param array $commentParams
+	 * @param string[] $commentParams
 	 * @return string
 	 */
 	public function buildMessage(
