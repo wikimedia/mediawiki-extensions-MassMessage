@@ -8,7 +8,8 @@
 			"MGChecker",
 			"Man77",
 			"Metalhead64",
-			"Se4598"
+			"Se4598",
+			"TMg"
 		]
 	},
 	"massmessage": "Massennachricht senden",
@@ -54,7 +55,7 @@
 	"massmessage-unescaped-langlinks": "Warnung: Deine Nachricht enthält ungültige Sprachlinks.",
 	"massmessage-no-timestamp": "Warnung: Deine Nachricht enthält keinen Zeitstempel oder keine Signatur.",
 	"massmessage-form-header": "Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage weitere Informationen]).",
-	"massmessage-hidden-comment": "<!-- Nachricht versandt von Benutzer:$1@$2 durch Verwendung der Liste unter $3 -->",
+	"massmessage-hidden-comment": "<!-- Nachricht versandt von {{GENDER:$1|Benutzer|Benutzerin}}:$1@$2 durch Verwendung der Liste unter $3 -->",
 	"massmessage-optout-category": "Von der Nachrichtenzustellung abgemeldet",
 	"massmessage-badhtml": "Deine Nachricht enthält möglicherweise {{PLURAL:$2|ein nicht geschlossenes HTML-Tag|nicht geschlossene HTML-Tags}}: $1.",
 	"massmessage-parse-badurl": "„$1“ ist keine gültige Website",

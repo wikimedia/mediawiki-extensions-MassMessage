@@ -61,7 +61,7 @@
 	"massmessage-form-header": "Introduction text at the top of the form.",
 	"massmessage-target": "{{notranslate}}\nUsed to display the {{#target}} parserfunction.\n* $1 is the domain (example: \"en.wikipedia.org\")\n* $2 is <code>$wgScriptPath</code> (example: \"/w/index.php\")\n* $3 the page name (example: \"User talk:Example\")",
 	"massmessage-target-local": "{{notranslate}}\nUsed to display the {{#target}} parserfunction on sites where global messaging is disabled.\n* $1 is the page title",
-	"massmessage-hidden-comment": "A hidden HTML comment that is appended after the message. Parameters:\n* $1 - the username of the user who sent the message\n* $2 - the database name of the wiki from where the message was sent\n* $3 - the URL of the input list that was used to send the message",
+	"massmessage-hidden-comment": "A hidden HTML comment that is appended after the message. Parameters:\n* $1 - Username of the user who sent the message. Can be used for GENDER.\n* $2 - Short database name of the wiki from where the message was sent.\n* $3 - URL of the input list that was used to send the message.",
 	"massmessage-optout-category": "Name of category which users add pages to that will opt-it out of receiving messages.",
 	"massmessage-badhtml": "Shown in a JavaScript popup if we detect unclosed HTML tags\n\n* $1 - comma-separated list of unclosed HTML tags\n* $2 - number of unclosed HTML tags",
 	"massmessage-parse-badurl": "Error message shown when the url that the user provides is invalid.\n* $1 is the url the user provided",

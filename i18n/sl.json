@@ -10,7 +10,7 @@
 	"massmessage": "Pošlji množično sporočilo",
 	"createmassmessagelist": "Ustvari seznam za pošiljanje množičnega sporočila",
 	"editmassmessagelist": "Uredi seznam za pošiljanje množičnega sporočila",
-	"content-model-massmessagelistcontent": "Seznam za dostavo množicnega sporočila.",
+	"content-model-massmessagelistcontent": "seznam za dostavo množičnega sporočila",
 	"massmessage-desc": "Omogoča preprosto pošiljanje sporočila seznamu uporabnikov",
 	"massmessage-form-spamlist": "Stran ali kategorija, ki vsebuje seznam strani, na katerih želite pustiti sporočilo:",
 	"massmessage-form-subject": "Zadeva sporočila (uporabi se tudi za povzetek urejanja):",
