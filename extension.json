@@ -118,7 +118,7 @@
 				"ext.MassMessage.special.js",
 				"ext.MassMessage.badhtml.js"
 			],
-			"styles": "ext.MassMessage.validation.css",
+			"styles": "ext.MassMessage.validation.less",
 			"messages": [
 				"massmessage-badhtml",
 				"massmessage-parse-badpage",
@@ -161,7 +161,7 @@
 			"packageFiles": [
 				"ext.MassMessage.create.js"
 			],
-			"styles": "ext.MassMessage.validation.css",
+			"styles": "ext.MassMessage.validation.less",
 			"messages": [
 				"massmessage-create-exists-short",
 				"massmessage-create-invalidsource-short"
