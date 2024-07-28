@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use MediaWiki\MainConfigNames;
 use SpecialPageTestBase;
 use Wikimedia\TestingAccessWrapper;
 
@@ -19,9 +18,7 @@ class SpecialMassMessageTest extends SpecialPageTestBase {
 			$services->get( 'MassMessage:LabeledSectionContentFetcher' ),
 			$services->get( 'MassMessage:LocalMessageContentFetcher' ),
 			$services->get( 'MassMessage:PageMessageBuilder' ),
-			$services->get( '_Parsoid' ),
-			$services->getParsoidPageConfigFactory(),
-			$services->getExtensionRegistry()
+			$services->getLintErrorChecker(),
 		) );
 	}
 
@@ -44,31 +41,4 @@ class SpecialMassMessageTest extends SpecialPageTestBase {
 		$unclosedTags = $page->getUnclosedTags( $wikitext );
 		$this->assertEquals( [ '</div>' ], $unclosedTags );
 	}
-
-	public function testCheckForLintErrors() {
-		$this->overrideConfigValue( MainConfigNames::ParsoidSettings, [
-			'linting' => true
-		] );
-
-		$page = $this->newSpecialPage();
-
-		$wikitext = "test";
-		$lintErrors = $page->checkForLintErrors( $wikitext );
-		$this->assertCount( 0, $lintErrors );
-
-		$wikitext = "<div>tests</div>";
-		$lintErrors = $page->checkForLintErrors( $wikitext );
-		$this->assertCount( 0, $lintErrors );
-
-		$wikitext = "<div>tests";
-		$lintErrors = $page->checkForLintErrors( $wikitext );
-		$this->assertCount( 1, $lintErrors );
-		$this->assertEquals( 'missing-end-tag', $lintErrors[0]['type'] );
-
-		$wikitext = "tests</div>";
-		$lintErrors = $page->checkForLintErrors( $wikitext );
-		$this->assertCount( 1, $lintErrors );
-		$this->assertEquals( 'stripped-tag', $lintErrors[0]['type'] );
-	}
-
 }

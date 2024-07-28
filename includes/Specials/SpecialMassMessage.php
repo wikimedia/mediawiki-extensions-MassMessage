@@ -3,7 +3,6 @@
 namespace MediaWiki\MassMessage\Specials;
 
 use ContentHandler;
-use ExtensionRegistry;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
@@ -17,9 +16,7 @@ use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
-use MediaWiki\Parser\Parsoid\Config\PageConfigFactory;
-use MediaWiki\Revision\MutableRevisionRecord;
-use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Parser\Parsoid\LintErrorChecker;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
@@ -29,8 +26,6 @@ use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
 use OOUI\Widget;
 use TextContent;
-use Wikimedia\Parsoid\Parsoid;
-use WikitextContent;
 
 /**
  * Form to allow users to send messages to a lot of users at once.
@@ -55,34 +50,26 @@ class SpecialMassMessage extends FormSpecialPage {
 	/** @var PageMessageBuilder */
 	private $pageMessageBuilder;
 
-	private Parsoid $parsoid;
-	private PageConfigFactory $pageConfigFactory;
-	private ExtensionRegistry $extensionRegistry;
+	private LintErrorChecker $lintErrorChecker;
 
 	/**
 	 * @param LabeledSectionContentFetcher $labeledSectionContentFetcher
 	 * @param LocalMessageContentFetcher $localMessageContentFetcher
 	 * @param PageMessageBuilder $pageMessageBuilder
-	 * @param Parsoid $parsoid
-	 * @param PageConfigFactory $pageConfigFactory
-	 * @param ExtensionRegistry $extensionRegistry
+	 * @param LintErrorChecker $lintErrorChecker
 	 */
 	public function __construct(
 		LabeledSectionContentFetcher $labeledSectionContentFetcher,
 		LocalMessageContentFetcher $localMessageContentFetcher,
 		PageMessageBuilder $pageMessageBuilder,
-		Parsoid $parsoid,
-		PageConfigFactory $pageConfigFactory,
-		ExtensionRegistry $extensionRegistry
+		LintErrorChecker $lintErrorChecker
 	) {
 		parent::__construct( 'MassMessage', 'massmessage' );
 		$this->labeledSectionContentFetcher = $labeledSectionContentFetcher;
 		$this->localMessageContentFetcher = $localMessageContentFetcher;
 		$this->messageBuilder = new MessageBuilder();
 		$this->pageMessageBuilder = $pageMessageBuilder;
-		$this->parsoid = $parsoid;
-		$this->pageConfigFactory = $pageConfigFactory;
-		$this->extensionRegistry = $extensionRegistry;
+		$this->lintErrorChecker = $lintErrorChecker;
 	}
 
 	public function doesWrites() {
@@ -522,44 +509,11 @@ class SpecialMassMessage extends FormSpecialPage {
 		}
 
 		// Check for Linter errors (T358818)
-		$lintErrors = $this->checkForLintErrors( $request->getMessage() );
+		$lintErrors = $this->lintErrorChecker->check( $request->getMessage() );
 		foreach ( $lintErrors as $e ) {
 			$msg = $this->msg( "linterror-{$e['type']}" )->parse();
 			$this->status->fatal( 'massmessage-linter-error', $msg );
 		}
-	}
-
-	/**
-	 * TODO: Very similar to SignatureValidator::checkLintErrors(),
-	 * can be rolled up into a service.
-	 */
-	private function checkForLintErrors( string $message ): array {
-		$disabled = [];
-		if (
-			// T360809
-			$this->extensionRegistry->isLoaded( 'Linter' )
-		) {
-			$linterCategories = $this->getConfig()->get( 'LinterCategories' );
-			foreach ( $linterCategories as $name => $cat ) {
-				if ( $cat['priority'] === 'none' ) {
-					$disabled[] = $name;
-				}
-			}
-		}
-
-		$page = Title::newMainPage();
-		$fakeRevision = new MutableRevisionRecord( $page );
-		$fakeRevision->setSlot(
-			SlotRecord::newUnsaved(
-				SlotRecord::MAIN,
-				new WikitextContent( $message )
-			)
-		);
-
-		return $this->parsoid->wikitext2lint(
-			$this->pageConfigFactory->create( $page, null, $fakeRevision ),
-			[ 'linterOverrides' => [ 'disabled' => $disabled ] ]
-		);
 	}
 
 	/**
