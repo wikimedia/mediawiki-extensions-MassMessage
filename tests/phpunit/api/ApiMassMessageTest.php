@@ -6,7 +6,6 @@ use ApiUsageException;
 use ContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
 
 /**
  * Tests for the API module to send messages.
@@ -27,11 +26,11 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$spamlist = Title::newFromText( self::$spamlist );
-		self::updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );
+		$this->updatePage( $spamlist, '{{#target:Project:ApiTest1}}' );
 		$emptyspamlist = Title::newFromText( self::$emptyspamlist );
-		self::updatePage( $emptyspamlist, 'rawr' );
+		$this->updatePage( $emptyspamlist, 'rawr' );
 		$pageMessage = Title::newFromText( self::$pageMessage );
-		self::updatePage( $pageMessage, 'Hello World!' );
+		$this->updatePage( $pageMessage, 'Hello World!' );
 	}
 
 	/**
@@ -39,11 +38,10 @@ class ApiMassMessageTest extends MassMessageApiTestCase {
 	 * @param Title $title
 	 * @param string $text
 	 */
-	public static function updatePage( $title, $text ) {
-		$user = new User();
+	public function updatePage( $title, $text ) {
 		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
-		$page->doUserEditContent( $content, $user, "summary" );
+		$page->doUserEditContent( $content, $this->getTestUser()->getUser(), "summary" );
 	}
 
 	/**

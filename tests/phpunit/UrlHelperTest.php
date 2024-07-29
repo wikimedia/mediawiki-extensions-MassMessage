@@ -38,9 +38,9 @@ class UrlHelperTest extends MassMessageTestCase {
 	 */
 	public function testFollowRedirect() {
 		$title = Title::newfromtext( 'R1' );
-		self::updatePage( $title, '#REDIRECT [[R2]]' );
+		$this->updatePage( $title, '#REDIRECT [[R2]]' );
 		$title2 = Title::newfromtext( 'R2' );
-		self::updatePage( $title2, 'foo' );
+		$this->updatePage( $title2, 'foo' );
 
 		$this->assertEquals(
 			$title2->getFullText(),

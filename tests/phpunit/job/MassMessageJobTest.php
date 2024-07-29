@@ -164,7 +164,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	public function testOptOut() {
 		$fakejob = new MassMessageJob( Title::newMainPage(), [] );
 		$target = Title::makeTitle( NS_PROJECT, 'Opt out test page' );
-		self::updatePage( $target, '[[Category:Opted-out of message delivery]]' );
+		$this->updatePage( $target, '[[Category:Opted-out of message delivery]]' );
 		$this->assertTrue( $fakejob->isOptedOut( $target ) );
 		$this->assertFalse( $fakejob->isOptedOut(
 			Title::makeTitle( NS_PROJECT, 'Some random page' )

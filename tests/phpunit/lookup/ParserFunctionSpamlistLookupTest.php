@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
-use MediaWiki\MassMessage\MassMessageTest;
 use MediaWiki\MassMessage\MassMessageTestCase;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -65,7 +64,7 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	 */
 	public function testGetTargets( $text, $check ) {
 		$title = Title::newFromText( 'Input list' );
-		MassMessageTest::updatePage( $title, $text );
+		$this->updatePage( $title, $text );
 		$data = SpamlistLookup::getTargets( $title );
 
 		if ( $check === [] ) {

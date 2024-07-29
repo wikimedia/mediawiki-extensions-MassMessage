@@ -6,7 +6,6 @@ use ContentHandler;
 use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -41,9 +40,9 @@ abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 		$wgLqtPages[] = $proj . ':LQT test';
 		// Create a redirect
 		$r = Title::makeTitle( NS_USER_TALK, 'Redirect target' );
-		self::updatePage( $r, 'blank' );
+		$this->updatePage( $r, 'blank' );
 		$r2 = Title::makeTitle( NS_USER_TALK, 'Is a redirect' );
-		self::updatePage( $r2, '#REDIRECT [[User talk:Redirect target]]' );
+		$this->updatePage( $r2, '#REDIRECT [[User talk:Redirect target]]' );
 	}
 
 	/**
@@ -51,10 +50,9 @@ abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 	 * @param Title $title
 	 * @param string $text
 	 */
-	public static function updatePage( $title, $text ) {
-		$user = new User();
+	public function updatePage( $title, $text ) {
 		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
-		$page->doUserEditContent( $content, $user, "summary" );
+		$page->doUserEditContent( $content, $this->getTestUser()->getUser(), "summary" );
 	}
 }
