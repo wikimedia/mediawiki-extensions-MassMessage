@@ -2,6 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
@@ -20,16 +21,8 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	protected static $spamlist = 'MassMessageListCHTest_spamlist';
 
 	protected function setUp(): void {
-		global $wgGroupPermissions;
 		parent::setUp();
-		$this->mergeMwGlobalArrayValue(
-			'wgGroupPermissions', [
-				'*' => array_merge(
-					$wgGroupPermissions['*'],
-					[ 'editcontentmodel' => true ]
-				)
-			]
-		);
+		$this->setGroupPermissions( '*', 'editcontentmodel', true );
 		$this->mergeMwGlobalArrayValue(
 			'wgMassMessageWikiAliases', [
 				'en.wikipedia.org' => 'enwiki',
@@ -180,7 +173,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 */
 	public function testExtractTarget( $targetString, $expected ) {
 		// Temporarily set $wgCanonicalServer for this test so its value is predictable.
-		$this->setMwGlobals( 'wgCanonicalServer', 'http://test.wikipedia.org' );
+		$this->overrideConfigValue( MainConfigNames::CanonicalServer, 'http://test.wikipedia.org' );
 		$this->assertEquals(
 			$expected,
 			MassMessageListContentHandler::extractTarget( $targetString )

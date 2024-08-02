@@ -2,6 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 
 /**
@@ -97,7 +98,7 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	 */
 	public function testGetTargetStrings() {
 		// Temporarily set $wgCanonicalServer for this test so its value is predictable.
-		$this->setMwGlobals( 'wgCanonicalServer', 'http://test.wikipedia.org' );
+		$this->overrideConfigValue( MainConfigNames::CanonicalServer, 'http://test.wikipedia.org' );
 		$text = '{"description":"","targets":['
 			. '{"title":"User talk:A"},'
 			. '{"title":"User talk:B@en.wikipedia.org"},'

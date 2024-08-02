@@ -6,6 +6,7 @@ use ChangeTags;
 use ContentHandler;
 use FormatJson;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -278,9 +279,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testTranslatablePageMessageSending() {
-		$this->setMwGlobals( [
-			'wgPageLanguageUseDB' => true,
-		] );
+		$this->overrideConfigValue( MainConfigNames::PageLanguageUseDB, true );
 
 		$pageMessageContent = 'Test page message - FR.';
 		$pageMessageTitleStr = 'PageMessage';
@@ -315,9 +314,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testTranslatableFallback() {
-		$this->setMwGlobals( [
-			'wgPageLanguageUseDB' => true,
-		] );
+		$this->overrideConfigValue( MainConfigNames::PageLanguageUseDB, true );
 
 		$pageMessageContent = 'Test page message - PT.';
 		$pageMessageTitleStr = 'PageMessage - PT';
@@ -352,9 +349,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testTranslatableFallbackSource() {
-		$this->setMwGlobals( [
-			'wgPageLanguageUseDB' => true,
-		] );
+		$this->overrideConfigValue( MainConfigNames::PageLanguageUseDB, true );
 
 		$pageMessageContent = 'Test page message - EN.';
 		$pageMessageTitleStr = 'PageMessage - EN';
