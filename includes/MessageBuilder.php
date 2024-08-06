@@ -174,9 +174,7 @@ class MessageBuilder {
 			$elementToUse,
 			[
 				'lang' => $pageContent->getLanguageCode(),
-				'dir' => $pageContent->getLanguageDirection(),
-				// This class is needed for proper rendering of list items (and maybe more)
-				'class' => 'mw-content-' . $pageContent->getLanguageDirection()
+				'dir' => $pageContent->getLanguageDirection()
 			],
 			$content
 		);
