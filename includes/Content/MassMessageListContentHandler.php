@@ -254,8 +254,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$description = $output->getRawText();
 		$title = Title::castFromPageReference( $page );
 		$pageLang = $title->getPageLanguage();
-		$attribs = [ 'lang' => $pageLang->getHtmlCode(), 'dir' => $pageLang->getDir(),
-			'class' => 'mw-content-' . $pageLang->getDir() ];
+		$attribs = [ 'lang' => $pageLang->getHtmlCode(), 'dir' => $pageLang->getDir() ];
 
 		$output->setEnableOOUI( true );
 		OutputPage::setupOOUI();
