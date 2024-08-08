@@ -64,6 +64,8 @@
 	"massmessage-edit-title": "Otsikko:",
 	"massmessage-edit-description": "Kuvaus:",
 	"massmessage-list-category": "Joukkoviestien lähetysluettelot",
+	"tag-massmessage-delivery": "Joukkoviestin toimitus",
+	"tag-massmessage-delivery-description": "Viestin toimitus käyttäen [[:mw:Special:MyLanguage/Extension:MassMessage|MassMessage]]-laajennusta",
 	"log-action-filter-massmessage": "Lokitietueen tyyppi",
 	"log-action-filter-massmessage-failure": "Massaviestin epäonnistuneet toimitukset"
 }
