@@ -15,6 +15,7 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
@@ -186,7 +187,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			$result['title'] = $title->getPrefixedText();
 		}
 
-		if ( $site !== null && $site !== UrlHelper::getBaseUrl( $config->get( 'CanonicalServer' ) ) ) {
+		if ( $site !== null && $site !== UrlHelper::getBaseUrl( $config->get( MainConfigNames::CanonicalServer ) ) ) {
 			if ( !$config->get( 'AllowGlobalMessaging' ) || DatabaseLookup::getDBName( $site ) === null ) {
 				$result['errors'][] = 'invalidsite';
 			} else {
@@ -268,7 +269,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 				$output->addLink( Title::newFromText( $target['title'] ) );
 			} else {
 				$output->addExternalLink(
-					'//' . $target['site'] . $services->getMainConfig()->get( 'Script' )
+					'//' . $target['site'] . $services->getMainConfig()->get( MainConfigNames::Script )
 					. '?title=' . Title::newFromText( $target['title'] )->getPrefixedURL() );
 			}
 		}
@@ -334,8 +335,9 @@ class MassMessageListContentHandler extends JsonContentHandler {
 				if ( $site === 'local' ) {
 					$targetLink = $linkRenderer->makeLink( $title );
 				} else {
+					$script = $services->getMainConfig()->get( MainConfigNames::Script );
 					$targetLink = Linker::makeExternalLink(
-						"//$site" . $services->getMainConfig()->get( 'Script' ) . '?title=' . $title->getPrefixedURL(),
+						"//$site$script?title=" . $title->getPrefixedURL(),
 						$title->getPrefixedText()
 					);
 				}
@@ -418,7 +420,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 				new FieldLayout(
 					new ComboBoxInputWidget( [
 						'name' => 'site',
-						'placeholder' => UrlHelper::getBaseUrl( $config->get( 'CanonicalServer' ) ),
+						'placeholder' => UrlHelper::getBaseUrl( $config->get( MainConfigNames::CanonicalServer ) ),
 						'autocomplete' => true,
 						'options' => array_map(
 							static function ( $domain ) {

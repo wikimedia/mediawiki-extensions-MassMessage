@@ -10,6 +10,7 @@ use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\RejectParserCacheValueHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
@@ -69,7 +70,7 @@ class MassMessageHooks implements
 		// Use a message so wikis can customize the output.
 		if ( $config->get( 'AllowGlobalMessaging' ) ) {
 			$msg = wfMessage( 'massmessage-target' )
-				->params( $data['site'], $config->get( 'Script' ), $data['title'] )->plain();
+				->params( $data['site'], $config->get( MainConfigNames::Script ), $data['title'] )->plain();
 		} else {
 			$msg = wfMessage( 'massmessage-target-local' )->params( $data['title'] )->plain();
 		}

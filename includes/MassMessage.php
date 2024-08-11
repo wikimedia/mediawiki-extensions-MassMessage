@@ -6,6 +6,7 @@ use ExtensionRegistry;
 use LogicException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
@@ -76,7 +77,7 @@ class MassMessage {
 		$currentWikiId = WikiMap::getCurrentWikiId();
 		$data = [ 'title' => $page, 'site' => trim( $site ) ];
 		if ( $data['site'] === '' ) {
-			$data['site'] = UrlHelper::getBaseUrl( $config->get( 'CanonicalServer' ) );
+			$data['site'] = UrlHelper::getBaseUrl( $config->get( MainConfigNames::CanonicalServer ) );
 			$data['wiki'] = $currentWikiId;
 		} else {
 			$data['wiki'] = DatabaseLookup::getDBName( $data['site'] );
