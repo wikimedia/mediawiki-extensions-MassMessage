@@ -6,6 +6,7 @@ namespace MediaWiki\MassMessage\MessageContentFetcher;
 use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MassMessage\LanguageAwareText;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Status\Status;
 
 /**
@@ -188,7 +189,8 @@ class RemoteMessageContentFetcher {
 			$configOpts
 		);
 
-		$apiPath = wfExpandUrl( $server . $scriptPath . '/api.php', PROTO_INTERNAL );
+		$urlUtils = MediaWikiServices::getInstance()->getUrlUtils();
+		$apiPath = $urlUtils->expand( $server . $scriptPath . '/api.php', PROTO_INTERNAL );
 
 		return $apiPath;
 	}
