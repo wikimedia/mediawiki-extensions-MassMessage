@@ -3,6 +3,7 @@
 namespace MediaWiki\MassMessage\Content;
 
 use JsonContent;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
@@ -124,7 +125,7 @@ class MassMessageListContent extends JsonContent {
 				$targetStrings[] = $target['title'] . '@'
 					. UrlHelper::getBaseUrl(
 						MediaWikiServices::getInstance()->getMainConfig()
-							->get( 'CanonicalServer' )
+							->get( MainConfigNames::CanonicalServer )
 					);
 			} else {
 				$targetStrings[] = $target['title'];

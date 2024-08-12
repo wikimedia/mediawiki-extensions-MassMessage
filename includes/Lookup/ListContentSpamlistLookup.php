@@ -2,6 +2,7 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
@@ -42,7 +43,9 @@ class ListContentSpamlistLookup extends SpamlistLookup {
 			if ( array_key_exists( 'site', $target ) ) {
 				$target['wiki'] = DatabaseLookup::getDBName( $target['site'] );
 			} else {
-				$target['site'] = UrlHelper::getBaseUrl( $services->getMainConfig()->get( 'CanonicalServer' ) );
+				$target['site'] = UrlHelper::getBaseUrl(
+					$services->getMainConfig()->get( MainConfigNames::CanonicalServer )
+				);
 				$target['wiki'] = $currentWikiId;
 			}
 		}

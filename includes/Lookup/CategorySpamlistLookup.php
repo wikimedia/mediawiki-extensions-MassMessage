@@ -3,6 +3,7 @@
 namespace MediaWiki\MassMessage\Lookup;
 
 use MediaWiki\Category\Category;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -37,7 +38,7 @@ class CategorySpamlistLookup extends SpamlistLookup {
 				'title' => $member->getPrefixedText(),
 				'wiki' => $currentWikiId,
 				'site' => UrlHelper::getBaseUrl(
-					MediaWikiServices::getInstance()->getMainConfig()->get( 'CanonicalServer' )
+					MediaWikiServices::getInstance()->getMainConfig()->get( MainConfigNames::CanonicalServer )
 				),
 			];
 		}
