@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Aefgh39622",
+			"Ekminarin",
 			"Geonuch",
 			"Horus",
 			"Nullzero"
@@ -25,5 +26,7 @@
 	"massmessage-optout-category": "หน้าที่ไม่รับข้อความ",
 	"right-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน",
 	"action-massmessage": "ส่งสารหาผู้ใช้หลายคนพร้อมกัน",
-	"log-name-massmessage": "ปูมส่งสารหมู่"
+	"log-name-massmessage": "ปูมส่งสารหมู่",
+	"tag-massmessage-delivery": "ส่งสารหมู่",
+	"tag-massmessage-delivery-description": "การส่งสารหมู่โดยใช้ [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]"
 }
