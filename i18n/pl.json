@@ -4,6 +4,7 @@
 			"Chrumps",
 			"Darellur",
 			"Matma Rex",
+			"Msz2001",
 			"Openbk",
 			"Peter Bowman",
 			"Rail",
@@ -18,6 +19,7 @@
 	"massmessage": "Wysyłanie masowej wiadomości",
 	"createmassmessagelist": "Utwórz listę masowych wiadomości",
 	"editmassmessagelist": "Edytuj listę masowych wiadomości",
+	"content-model-massmessagelistcontent": "Lista odbiorców wiadomości masowej",
 	"massmessage-desc": "Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników",
 	"massmessage-form-spamlist": "Strona albo kategoria zawierająca listę stron, na których zostawić wiadomość:",
 	"massmessage-form-subject": "Temat wiadomości (także używany jako podsumowanie edycji):",
@@ -62,6 +64,7 @@
 	"massmessage-badhtml": "W Twojej wiadomości {{PLURAL:$2|mógł się znaleźć niezamknięty znacznik HTML|mogły się znaleźć niezamknięte znaczniki HTML}}: $1.",
 	"massmessage-parse-badurl": "„$1” nie jest poprawną stroną.",
 	"massmessage-parse-badpage": "„$1” nie jest poprawnym tytułem strony.",
+	"massmessage-parse-badspamlist": "„$1” nie jest poprawną listą stron.",
 	"massmessage-parse-badexternal": "„$1” nie jest poprawnym tytułem strony. Dla stron docelowych z innych wiki należy określić parametr (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Można rozsyłać wiadomości tylko na lokalne strony.",
 	"right-massmessage": "Wysyłanie wiadomości do wielu użytkowników jednocześnie",
@@ -150,5 +153,6 @@
 	"log-action-filter-massmessage-failure": "Nieudane wysłanie masowej wiadomości",
 	"log-action-filter-massmessage-skipoptout": "Pominięta strona docelowa z powodu całkowitego wypisania się",
 	"log-action-filter-massmessage-skipnouser": "Strona pominięta z powodu nieistniejącego użytkownika",
-	"log-action-filter-massmessage-skipbadns": "Strona pominięta z powodu niedozwolonej przestrzeni nazw"
+	"log-action-filter-massmessage-skipbadns": "Strona pominięta z powodu niedozwolonej przestrzeni nazw",
+	"massmessage-linter-error": "Błąd lintera: $1"
 }
