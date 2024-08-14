@@ -12,7 +12,8 @@
 			"The Polish",
 			"WTM",
 			"Wiochman",
-			"Woytecr"
+			"Woytecr",
+			"Msz2001"
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
@@ -62,6 +63,7 @@
 	"massmessage-badhtml": "W Twojej wiadomości {{PLURAL:$2|mógł się znaleźć niezamknięty znacznik HTML|mogły się znaleźć niezamknięte znaczniki HTML}}: $1.",
 	"massmessage-parse-badurl": "„$1” nie jest poprawną stroną.",
 	"massmessage-parse-badpage": "„$1” nie jest poprawnym tytułem strony.",
+	"massmessage-parse-badspamlist": "„$1” nie jest poprawną listą stron.",
 	"massmessage-parse-badexternal": "„$1” nie jest poprawnym tytułem strony. Dla stron docelowych z innych wiki należy określić parametr (<kbd>|site=www.example.org</kbd>).",
 	"massmessage-global-disallowed": "Można rozsyłać wiadomości tylko na lokalne strony.",
 	"right-massmessage": "Wysyłanie wiadomości do wielu użytkowników jednocześnie",
