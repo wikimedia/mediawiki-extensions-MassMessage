@@ -101,6 +101,11 @@
 			]
 		},
 		"ext.MassMessage.special.js": {
+			"class": "MediaWiki\\ResourceLoader\\CodexModule",
+			"codexStyleOnly": true,
+			"codexComponents": [
+				"CdxMessage"
+			],
 			"packageFiles": [
 				"ext.MassMessage.special.js",
 				"ext.MassMessage.badhtml.js"

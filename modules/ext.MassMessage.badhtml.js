@@ -19,7 +19,15 @@ function badHtml( $msg ) {
 
 	$warnings = $( '<div>' )
 		.attr( 'id', 'mw-massmessage-form-warnings' )
-		.addClass( 'mw-message-box-warning mw-message-box' );
+		.attr( 'aria-live', 'polite' )
+		.addClass( 'cdx-message--block cdx-message--warning cdx-message' );
+	var $icon = $( '<span>' )
+		.addClass( 'cdx-message__icon' );
+	var $content = $( '<div>' )
+		.addClass( 'cdx-message__content' );
+	$warnings.append( $icon );
+	$warnings.append( $content );
+
 	$msg.after( $warnings );
 	$warnings.hide();
 
@@ -75,7 +83,7 @@ function badHtml( $msg ) {
 		}
 		if ( results.length > 0 ) {
 			$warnings.show();
-			$warnings.text( mw.message( 'massmessage-badhtml', results.join( ', ' ), results.length ).text() );
+			$content.text( mw.message( 'massmessage-badhtml', results.join( ', ' ), results.length ).text() );
 		} else {
 			$warnings.hide();
 		}
