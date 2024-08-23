@@ -29,10 +29,10 @@ class UrlHelper {
 	}
 
 	/**
-	 * Returns the basic hostname and port using wfParseUrl.
+	 * Returns the basic hostname and port using UrlUtils::parse.
 	 *
 	 * @param string $url
-	 * @return string
+	 * @return string|null
 	 */
 	public static function getBaseUrl( $url ) {
 		static $mapping = [];
@@ -41,7 +41,11 @@ class UrlHelper {
 			return $mapping[$url];
 		}
 
-		$parse = wfParseUrl( $url );
+		$urlUtils = MediaWikiServices::getInstance()->getUrlUtils();
+		$parse = $urlUtils->parse( $url );
+		if ( $parse === null ) {
+			return null;
+		}
 		$mapping[$url] = $parse['host'];
 		if ( isset( $parse['port'] ) ) {
 			$mapping[$url] .= ':' . $parse['port'];
