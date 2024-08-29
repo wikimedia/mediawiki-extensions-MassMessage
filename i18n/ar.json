@@ -14,7 +14,8 @@
 			"زكريا",
 			"علاء",
 			"محمد أحمد عبد الفتاح",
-			"مشعل الحربي"
+			"مشعل الحربي",
+			"Lolekek"
 		]
 	},
 	"massmessage": "إرسال رسالة جماعية",
@@ -60,7 +61,7 @@
 	"massmessage-no-timestamp": "تحذير: رسالتك لا تحتوي على توقيع أو طابع زمني.",
 	"massmessage-form-header": "استخدم النموذج أدناه لإرسال رسائل إلى قائمة معينة، جميع الحقول مطلوبة ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage مزيد من المعلومات]).",
 	"massmessage-hidden-comment": "<!-- الرسالة التي أرسلها User:$1@$2 باستخدام القائمة في $3 -->",
-	"massmessage-optout-category": "تم إلغاء الاشتراك في تسليم الرسالة",
+	"massmessage-optout-category": "ألغي الاشتراك في تسليم الرسالة",
 	"massmessage-badhtml": "قد تحتوي رسالتك على {{PLURAL:$2|وسم HTML غير مغلق|وسوم HTML غير مغلقة}}: $1.",
 	"massmessage-parse-badurl": "\"$1\" ليس موقعًا صحيحًا.",
 	"massmessage-parse-badpage": "\"$1\" ليس عنوان صفحة صحيح.",
