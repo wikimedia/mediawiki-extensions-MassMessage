@@ -154,5 +154,6 @@
 	"log-action-filter-massmessage-failure": "Mislukte verzending van massabericht",
 	"log-action-filter-massmessage-skipoptout": "Doel overslaan vanwege opt-out",
 	"log-action-filter-massmessage-skipnouser": "Doel overgeslagen omdat de gebruiker niet bestaat",
-	"log-action-filter-massmessage-skipbadns": "Doel overslaan vanwege verboden naamruimte"
+	"log-action-filter-massmessage-skipbadns": "Doel overslaan vanwege verboden naamruimte",
+	"massmessage-linter-error": "Lintfout: $1"
 }
