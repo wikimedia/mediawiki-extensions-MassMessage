@@ -196,6 +196,23 @@ class MassMessageJob extends Job {
 	}
 
 	/**
+	 * Log failures due to an invalid subject section from the source page.
+	 */
+	protected function logLocalSubjectSectionFailure(): void {
+		$logEntry = new ManualLogEntry( 'massmessage', 'failure-section' );
+		$logEntry->setPerformer( $this->getUser() );
+		$logEntry->setTarget( $this->title );
+		$logEntry->setParameters( [
+			'4::subject' => $this->params['subject'],
+			'5::subject_section' => $this->params[ 'page-subject-section' ] ?? null,
+			'6::source_page' => $this->params['pageMessageTitle'] ?? null,
+		] );
+
+		$logid = $logEntry->insert();
+		$logEntry->publish( $logid );
+	}
+
+	/**
 	 * Log metadata about a delivery to the debug log with the given reason.
 	 *
 	 * @param string $reason
@@ -405,6 +422,12 @@ class MassMessageJob extends Job {
 		// If the page is using a different discussion system, handle it specially
 		if ( $isLqtThreads || $isStructuredDiscussion ) {
 			$subject = $messageBuilder->buildPlaintextSubject( $subject, $pageSubject );
+
+			if ( $subject === '' ) {
+				$this->logLocalSubjectSectionFailure();
+				return false;
+			}
+
 			$message = $messageBuilder->buildMessage(
 				$messageBuilder->stripTildes( $message ),
 				$pageMessage,
@@ -420,6 +443,11 @@ class MassMessageJob extends Job {
 		}
 		$subject = $messageBuilder->buildSubject( $subject, $pageSubject, $targetLanguage );
 		$message = $messageBuilder->buildMessage( $message, $pageMessage, $targetLanguage, $comment );
+
+		if ( $subject === '' ) {
+			$this->logLocalSubjectSectionFailure();
+			return false;
+		}
 		return $this->editPage( $message, $subject, $dedupeHash );
 	}
 }
