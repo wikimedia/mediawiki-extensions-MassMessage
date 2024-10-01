@@ -62,6 +62,7 @@
 	"logentry-massmessage-send": "$1 ha {{GENDER:$2|inviate un message}} a $3",
 	"logentry-massmessage-send-page-message": "$1 ha {{GENDER:$2|inviate le pagina $5 como message}} a $3",
 	"logentry-massmessage-failure": "Le livration de \"$4\" a $3 ha fallite con un codice de error de <code>$5</code>",
+	"logentry-massmessage-failure-section": "Le livration de “$4” a $3 ha fallite perque le subjecto effective es vacue. Causa probabile: le section <code>$5</code> sur le pagina [[$6]] non es valide. Verifica que il non ha characteres “<” incorrecte.",
 	"logentry-massmessage-skipbadns": "Le livration de \"$4\" a $3 ha essite saltate perque le destination se trova in un spatio de nomines ubi non es possibile lassar messages",
 	"logentry-massmessage-skipoptout": "Le livration de \"$4\" a $3 ha essite saltate perque le destination ha optate pro non reciper messages",
 	"logentry-massmessage-skipnouser": "Le livration de \"$4\" a $3 ha essite saltate perque le conto de usator non existe",
