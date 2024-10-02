@@ -70,7 +70,7 @@
 	"logentry-massmessage-send": "$1 {{GENDER:$2|sandte eine Nachricht}} an $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|sandte Seite $5 als Nachricht}} an $3",
 	"logentry-massmessage-failure": "Versand von „$4“ nach $3 fehlgeschlagen mit dem Fehlercode <code>$5</code>",
-	"logentry-massmessage-failure-section": "Die Zustellung von „$4“ an $3 ist fehlgeschlagen, da der effektive Betreff leer ist. Mögliche Ursache: Der Abschnitt <code>$5</code> auf Seite [[$6]] ist ungültig. Überprüfe, ob unerwünschte „<“-Zeichen vorhanden sind.",
+	"logentry-massmessage-failure-section": "Die Zustellung von „$4“ an $3 ist fehlgeschlagen, da der effektive Betreff leer ist. Mögliche Ursache: Der Abschnitt <code>$5</code> auf Seite [[$6]] ist ungültig. Überprüfe, ob unerwünschte „&lt;“-Zeichen vorhanden sind.",
 	"logentry-massmessage-skipbadns": "Der Versand von „$4“ an $3 wurde übersprungen, da sich das Ziel in einem Namensraum befindet, in dem keine Nachrichten gespeichert werden können.",
 	"logentry-massmessage-skipoptout": "Der Versand von „$4“ an $3 wurde übersprungen, da das Ziel vom Nachrichtenversand ausgeschlossen wurde.",
 	"logentry-massmessage-skipnouser": "Der Versand von „$4“ an $3 wurde übersprungen, da das Benutzerkonto nicht vorhanden ist.",
