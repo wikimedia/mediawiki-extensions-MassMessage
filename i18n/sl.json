@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Dbc334",
 			"Eleassar",
 			"Janezdrilc",
@@ -65,7 +66,7 @@
 	"logentry-massmessage-send": "$1 {{GENDER:$2|je poslal sporočilo|je poslala sporočilo|je poslal_a sporočilo}} uporabniku $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|je kot sporočilo poslal $5|je kot sporočilo poslala $5|je kot sporočilo poslal_a}} na stran $3",
 	"logentry-massmessage-failure": "Pošiljanje »$4« na stran $3 ni uspelo; oznaka napake: <code>$5</code>",
-	"logentry-massmessage-failure-section": "Dostava »$4« do $3 ni uspela, ker je dejanska zadeva prazna. Verjeten vzrok: razdelek <code>$5</code> na strani [[$6]] ni veljaven. Preverite lažne znake »<«.",
+	"logentry-massmessage-failure-section": "Dostava »$4« do $3 ni uspela, ker je dejanska zadeva prazna. Verjeten vzrok: razdelek <code>$5</code> na strani [[$6]] ni veljaven. Preverite lažne znake »&lt;«.",
 	"logentry-massmessage-skipbadns": "Dostava »$4« na stran $3 je bila preskočena, ker je bil cilj v imenskem prostoru, v katerem ni mogoče objavljati",
 	"logentry-massmessage-skipoptout": "Dostava »$4« na stran $3 je bila preskočena, ker je cilj zavrnil dostavo sporočil",
 	"logentry-massmessage-skipnouser": "Dostava »$4« na $3 je bila preskočena, ker uporabniški račun ne obstaja",

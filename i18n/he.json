@@ -66,7 +66,7 @@
 	"logentry-massmessage-send": "$1 {{GENDER:$2|שלח|שלחה}} הודעה אל $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|שלח|שלחה}} את הדף $5 בתור הודעה לדף $3",
 	"logentry-massmessage-failure": "המסירה של \"$4\" אל $3 נכשלה עם הודעת השגיאה <code>$5</code>",
-	"logentry-massmessage-failure-section": "מסירת \"$4\" לדף $3 נכשלה מכיוון שהנושא שאמור להיות פעיל ריק עכשיו. סיבה סבירה: הפרק <code>$5</code> בדף [[$6]] אינו תקין. נא לבדוק אם התגנבו לשם תווי \"<\" לא נחוצים.",
+	"logentry-massmessage-failure-section": "מסירת \"$4\" לדף $3 נכשלה מכיוון שהנושא שאמור להיות פעיל ריק עכשיו. סיבה סבירה: הפרק <code>$5</code> בדף [[$6]] אינו תקין. נא לבדוק אם התגנבו לשם תווי \"&lt;\" לא נחוצים.",
 	"logentry-massmessage-skipbadns": "מסירה של \"$4\" אל $3 לא התבצעה כי היעד נמצא במרחב שם שלא ניתן לשלוח אליו",
 	"logentry-massmessage-skipoptout": "מסירה של \"$4\" ל{{GRAMMAR:תחילית|$3}} לא התבצעה כי היעד ביקש שלא ימסרו לו הודעות",
 	"logentry-massmessage-skipnouser": "מסירה של \"$4\" אל $3 לא התבצעה כי חשבון המשתמש אינו קיים",

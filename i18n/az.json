@@ -64,6 +64,7 @@
 	"logentry-massmessage-send": "$1 $3 səhifəsinə {{GENDER:$2|mesaj göndərdi}}",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|$5 səhifəsini mesaj olaraq}} $3 səhifəsinə göndərdi",
 	"logentry-massmessage-failure": "$3 səhifəsinə göndəriləcək \"$4\" <code>$5</code> xəta kodu ilə ləğv edildi",
+	"logentry-massmessage-failure-section": "Effektiv mövzu boş olduğu üçün \"$4\" mesajının $3 səhifəsinə çatdırılması uğursuz oldu. Ehtimal edilən səbəb: [[$6]] səhifəsində <code>$5</code> bölməsi etibarsızdır. Lazımsız \"&lt;\" simvollarının olub-olmadığını yoxlayın.",
 	"logentry-massmessage-skipbadns": "Hədəf yerləşdirilə bilməyən ad fəzasında olduğu üçün \"$4\" mesajının $3 səhifəsinə göndərilməsi alınmadı",
 	"logentry-massmessage-skipoptout": "$3 səhifəsinə göndəriləcək \"$4\" ləğv edildi, çünki hədəf səhifə kütləvi ismarıc qəbulunu bağlayıb.",
 	"logentry-massmessage-skipnouser": "$3 səhifəsinə göndəriləcək \"$4\" ləğv edildi, çünki bu istifadəçi hesabı mövcud deyil.",
