@@ -73,6 +73,7 @@
 	"logentry-massmessage-send": "$1 {{GENDER:$2|傳送一則訊息}}至 $3",
 	"logentry-massmessage-send-page-message": "$1{{GENDER:$2|將頁面$5作為訊息傳送}}至$3",
 	"logentry-massmessage-failure": "從「$4」至$3的傳遞失敗，錯誤代號為<code>$5</code>",
+	"logentry-massmessage-failure-section": "由於有效主旨為空，「$4」傳送到$3失敗。可能的原因：在[[$6]]頁面上的<code>$5</code>段落無效。請檢查是否有假的「&lt;」字元。",
 	"logentry-massmessage-skipbadns": "從「$4」至$3的傳遞已被略過，因目標所在的命名空間不允許發佈訊息。",
 	"logentry-massmessage-skipoptout": "傳遞訊息「$4」至$3已被略過，因目標為排除的訊息傳遞對象。",
 	"logentry-massmessage-skipnouser": "傳遞訊息「$4」至$3已被略過，因此使用者帳號不存在。",
