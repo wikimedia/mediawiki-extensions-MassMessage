@@ -64,6 +64,7 @@
 	"logentry-massmessage-send": "$1 {{GENDER:$2|sendte en melding}} til $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|sendte}} siden $5 som beskjed til $3",
 	"logentry-massmessage-failure": "Levering av «$4» til $3 mislyktes med feilkoden <code>$5</code>",
+	"logentry-massmessage-failure-section": "Leveringen av «$4» til $3 feilet fordi emnefeltet er tomt. Sannsynligvis er årsaken at seksjonen <code>$5</code> på siden [[$6]] er ugyldig. Se etter overflødige «&lt;»-tegn.",
 	"logentry-massmessage-skipbadns": "Leveringen av «$4» til $3 ble hoppet over fordi målsiden var i et navnerom det ikke kan postes i",
 	"logentry-massmessage-skipoptout": "Leveringen av «$4» til $3 ble hoppet over fordi målet har valgt å ikke motta slike meldinger",
 	"logentry-massmessage-skipnouser": "Leveringen av «$4» til $3 ble hoppet over fordi brukerkontoen ikke finnes",
