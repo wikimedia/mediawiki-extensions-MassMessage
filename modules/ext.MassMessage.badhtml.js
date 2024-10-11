@@ -21,14 +21,14 @@ function badHtml( $msg ) {
 		.attr( 'id', 'mw-massmessage-form-warnings' );
 
 	$msg.after( $warnings );
-	$warnings.hide();
 
 	$msg.on( 'keyup', OO.ui.debounce( function () {
 		var code, matches, tags, results, tagName;
 
+		$warnings.empty();
+
 		code = $msg.val().trim();
 		if ( code === '' ) {
-			$warnings.hide();
 			return;
 		}
 
@@ -36,7 +36,6 @@ function badHtml( $msg ) {
 		// (assume those are self closing).
 		matches = code.match( /<[\w/][^/]*?>/g );
 		if ( !matches ) {
-			$warnings.hide();
 			return;
 		}
 
@@ -74,15 +73,12 @@ function badHtml( $msg ) {
 			}
 		}
 		if ( results.length > 0 ) {
-			$warnings.show();
-			$warnings.empty().append(
+			$warnings.append(
 				mw.util.messageBox(
 					mw.message( 'massmessage-badhtml', results.join( ', ' ), results.length ).text(),
 					'warning'
 				)
 			);
-		} else {
-			$warnings.hide();
 		}
 	}, 500 ) );
 }
