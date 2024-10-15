@@ -7,7 +7,6 @@ use ApiMain;
 use ApiMessage;
 use ApiResult;
 use ApiUsageException;
-use ChangeTags;
 use FormatJson;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
@@ -86,8 +85,8 @@ class MessageSender {
 			) {
 				$revId = $resultData['edit']['newrevid'];
 				DeferredUpdates::addCallableUpdate( static function () use ( $revId, $dedupeHash ) {
-					ChangeTags::addTags(
-						'massmessage-delivery',
+					MediaWikiServices::getInstance()->getChangeTagsStore()->addTags(
+						[ 'massmessage-delivery' ],
 						null,
 						$revId,
 						null,
