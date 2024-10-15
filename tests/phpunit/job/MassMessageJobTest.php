@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage;
 
-use ChangeTags;
 use ContentHandler;
 use FormatJson;
 use MediaWiki\Context\RequestContext;
@@ -131,7 +130,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 		$dedupe_hash = DedupeHelper::getDedupeHash( $subject, 'This is a message.', null, null );
 		$revision = $services->getRevisionStore()->getRevisionByTitle( $target );
-		$change_tags = ChangeTags::getTagsWithData( $dbr, null, $revision->getId() );
+		$change_tags = $services->getChangeTagsStore()->getTagsWithData( $dbr, null, $revision->getId() );
 		$this->assertEquals(
 			[ 'massmessage-delivery' => FormatJson::encode( [ 'dedupe_hash' => $dedupe_hash ] ) ],
 			$change_tags,
