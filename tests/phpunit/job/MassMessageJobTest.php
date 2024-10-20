@@ -2,9 +2,10 @@
 
 namespace MediaWiki\MassMessage;
 
-use ContentHandler;
-use FormatJson;
+use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MediaWikiServices;
@@ -14,7 +15,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RuntimeException;
-use TextContent;
 
 /**
  * @group Database

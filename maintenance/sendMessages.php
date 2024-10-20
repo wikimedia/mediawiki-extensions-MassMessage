@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
-use Maintenance;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWiki\Title\Title;

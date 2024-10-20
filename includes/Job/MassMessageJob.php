@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage\Job;
 
-use ExtensionRegistry;
 use Job;
 use LqtDispatch;
 use ManualLogEntry;
@@ -16,6 +15,7 @@ use MediaWiki\MassMessage\PageMessage\PageMessageBuilderResult;
 use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;

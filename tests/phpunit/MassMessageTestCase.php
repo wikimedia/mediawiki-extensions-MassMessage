@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use ContentHandler;
 use MediaWiki\Config\SiteConfiguration;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;

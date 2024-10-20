@@ -2,7 +2,8 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use ContentHandler;
+use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\TextContent;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
@@ -25,7 +26,6 @@ use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
 use OOUI\Widget;
-use TextContent;
 
 /**
  * Form to allow users to send messages to a lot of users at once.

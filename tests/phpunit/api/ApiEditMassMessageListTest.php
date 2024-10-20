@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
-use ContentHandler;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 

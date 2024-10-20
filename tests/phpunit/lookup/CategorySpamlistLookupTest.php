@@ -2,9 +2,9 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\MassMessage\MassMessageTestCase;
 use MediaWiki\Title\Title;
-use WikitextContent;
 
 /**
  * Tests for Category Spamlist function related to target processing

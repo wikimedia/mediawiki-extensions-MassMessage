@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\Stub;
 
+use MediaWiki\Content\TextContent;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\RevisionStore;
 use PHPUnit\Framework\TestCase;
-use TextContent;
 
 /**
  * Returns a RevisionStore stub with a RevisonRecord stub

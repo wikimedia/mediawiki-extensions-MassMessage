@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage;
 
-use Language;
+use MediaWiki\Language\Language;
 use MediaWikiUnitTestCase;
 
 class MessageBuilderUnitTest extends MediaWikiUnitTestCase {

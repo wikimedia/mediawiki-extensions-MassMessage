@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage;
 
-use ApiUsageException;
-use ContentHandler;
+use MediaWiki\Api\ApiUsageException;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 

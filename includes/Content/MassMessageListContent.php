@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage\Content;
 
-use JsonContent;
+use MediaWiki\Content\JsonContent;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\UrlHelper;

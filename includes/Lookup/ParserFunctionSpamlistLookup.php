@@ -2,11 +2,11 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\Content\TextContent;
 use MediaWiki\MassMessage\MassMessageHooks;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
-use TextContent;
 
 class ParserFunctionSpamlistLookup extends SpamlistLookup {
 

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\Stub;
 
-use Language;
+use MediaWiki\Language\Language;
 use MediaWiki\Title\Title;
 use PHPUnit\Framework\TestCase;
 

@@ -2,9 +2,9 @@
 
 namespace MediaWiki\MassMessage\Api;
 
-use ApiBase;
-use ApiMain;
-use ApiWatchlistTrait;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiWatchlistTrait;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MediaWikiServices;

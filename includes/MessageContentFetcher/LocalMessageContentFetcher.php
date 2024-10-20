@@ -3,13 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\MessageContentFetcher;
 
+use MediaWiki\Content\TextContent;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use TextContent;
 
 /**
  * Fetches content from the local wiki

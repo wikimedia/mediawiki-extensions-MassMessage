@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use IDBAccessObject;
 use LogEventsList;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\EditPage\EditPage;
@@ -21,6 +20,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\Watchlist\WatchlistManager;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 class SpecialEditMassMessageList extends FormSpecialPage {
 

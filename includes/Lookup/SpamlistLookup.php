@@ -6,7 +6,7 @@ use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * Functions related to target processing

@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Content\Content;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;

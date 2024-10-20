@@ -2,18 +2,18 @@
 
 namespace MediaWiki\MassMessage\Content;
 
-use ApiMain;
-use ApiUsageException;
-use Content;
-use ContentHandler;
-use FormatJson;
-use JsonContentHandler;
-use Language;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiUsageException;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\JsonContentHandler;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
+use MediaWiki\Language\Language;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;

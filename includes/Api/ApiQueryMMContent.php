@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\Api;
 
-use ApiQueryBase;
+use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;

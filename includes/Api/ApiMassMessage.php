@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage\Api;
 
-use ApiBase;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequestParser;
 use Wikimedia\ParamValidator\ParamValidator;

@@ -3,13 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage;
 
-use ApiMain;
-use ApiMessage;
-use ApiResult;
-use ApiUsageException;
-use FormatJson;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiMessage;
+use MediaWiki\Api\ApiResult;
+use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\DerivativeRequest;

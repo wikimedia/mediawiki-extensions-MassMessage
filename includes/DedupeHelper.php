@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage;
 
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\SelectQueryBuilder;

@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
-use ContentHandler;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\MassMessage\MassMessageTestCase;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;

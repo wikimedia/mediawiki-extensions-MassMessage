@@ -15,11 +15,11 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MediaWiki\User\User;
-use ParserOptions;
 use Skin;
 use WikiPage;
 

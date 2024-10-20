@@ -2,7 +2,6 @@
 
 namespace MediaWiki\MassMessage;
 
-use ExtensionRegistry;
 use LogicException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
@@ -13,11 +12,12 @@ use MediaWiki\MassMessage\Lookup\DatabaseLookup;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MassMessage\RequestProcessing\MassMessageRequest;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
-use ParserOptions;
 
 /**
  * Some core functions needed by the extension.

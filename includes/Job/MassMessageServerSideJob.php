@@ -3,14 +3,14 @@
 namespace MediaWiki\MassMessage\Job;
 
 use Job;
+use MediaWiki\Content\TextContent;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use RuntimeException;
-use TextContent;
-use WikitextContent;
 
 /**
  * JobQueue class for jobs queued server side.
