@@ -75,6 +75,7 @@
 	"logentry-massmessage-send": "$1 {{GENDER:$2|heeft}} een bericht gezonden aan $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|stuurde pagina $5 als bericht}} naar $3",
 	"logentry-massmessage-failure": "Het afleveren van \"$4\" voor $3 is mislukt met de foutcode <code>$5</code>",
+	"logentry-massmessage-failure-section": "De aflevering van “$4” aan $3 is mislukt omdat het effectieve onderwerp leeg is. Waarschijnlijke oorzaak: de sectie <code>$5</code> op de pagina [[$6]] is onjuist. Controleer op verkeerde “&lt;”-tekens.",
 	"logentry-massmessage-skipbadns": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat het doel zich in een naamruimte bevindt waarin geen berichten geplaatst kunnen worden",
 	"logentry-massmessage-skipoptout": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat er op de doelpagina geen berichten geplaatst mogen worden",
 	"logentry-massmessage-skipnouser": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat de gebruiker niet bestaat",
