@@ -5,11 +5,15 @@ namespace MediaWiki\MassMessage\Api;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiWatchlistTrait;
+use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\Watchlist\WatchlistManager;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -22,12 +26,27 @@ class ApiEditMassMessageList extends ApiBase {
 
 	use ApiWatchlistTrait;
 
-	/** @inheritDoc */
-	public function __construct( ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
-		parent::__construct( $mainModule, $moduleName, $modulePrefix );
+	private RevisionLookup $revisionLookup;
+	private LinkBatchFactory $linkBatchFactory;
 
-		// Needed for ApiWatchlistTrait.
+	public function __construct(
+		ApiMain $mainModule,
+		string $moduleName,
+		RevisionLookup $revisionLookup,
+		LinkBatchFactory $linkBatchFactory,
+		WatchlistManager $watchlistManager,
+		UserOptionsLookup $userOptionsLookup
+	) {
+		parent::__construct( $mainModule, $moduleName );
+		$this->revisionLookup = $revisionLookup;
+		$this->linkBatchFactory = $linkBatchFactory;
+
+		// Variables needed in ApiWatchlistTrait trait
 		$this->watchlistExpiryEnabled = false;
+		$this->watchlistMaxDuration =
+			$this->getConfig()->get( MainConfigNames::WatchlistExpiryMaxDuration );
+		$this->watchlistManager = $watchlistManager;
+		$this->userOptionsLookup = $userOptionsLookup;
 	}
 
 	public function execute() {
@@ -47,9 +66,7 @@ class ApiEditMassMessageList extends ApiBase {
 		/**
 		 * @var MassMessageListContent $content
 		 */
-		$content = MediaWikiServices::getInstance()
-			->getRevisionLookup()
-			->getRevisionByTitle( $spamlist )
+		$content = $this->revisionLookup->getRevisionByTitle( $spamlist )
 			->getContent( SlotRecord::MAIN );
 		'@phan-var MassMessageListContent $content';
 		$description = $content->getDescription();
@@ -147,7 +164,7 @@ class ApiEditMassMessageList extends ApiBase {
 			$resultArray['added'] = $added;
 
 			// Use a LinkBatch to look up and cache existence for all local targets
-			$lb = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
+			$lb = $this->linkBatchFactory->newLinkBatch();
 			foreach ( $resultArray['added'] as $target ) {
 				if ( !isset( $target['site'] ) ) {
 					$lb->addObj( Title::newFromText( $target['title'] ) );

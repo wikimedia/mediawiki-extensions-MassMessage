@@ -48,7 +48,15 @@
 	},
 	"APIModules": {
 		"massmessage": "MediaWiki\\MassMessage\\Api\\ApiMassMessage",
-		"editmassmessagelist": "MediaWiki\\MassMessage\\Api\\ApiEditMassMessageList"
+		"editmassmessagelist": {
+			"class": "MediaWiki\\MassMessage\\Api\\ApiEditMassMessageList",
+			"services": [
+				"RevisionLookup",
+				"LinkBatchFactory",
+				"WatchlistManager",
+				"UserOptionsLookup"
+			]
+		}
 	},
 	"LogTypes": [
 		"massmessage"
