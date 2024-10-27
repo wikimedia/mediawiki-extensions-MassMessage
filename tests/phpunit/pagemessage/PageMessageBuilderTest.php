@@ -26,7 +26,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		string $sectionMessage,
 		?string $expectedSubject,
 		?string $expectedMessage,
-		string $expectedMsgKey = null
+		?string $expectedMsgKey = null
 	) {
 		$localMessageContentFetcherMock = $this->createMock( LocalMessageContentFetcher::class );
 		$localMessageContentFetcherMock

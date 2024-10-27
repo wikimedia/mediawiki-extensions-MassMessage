@@ -53,7 +53,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	private function createPageByTitle(
-		Title $title, string $pageContent, string $langCode = null
+		Title $title, string $pageContent, ?string $langCode = null
 	) {
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $pageContent, $title );
