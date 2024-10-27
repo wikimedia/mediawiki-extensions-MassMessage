@@ -319,7 +319,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * @param HTMLForm|null $form
 	 * @return Status
 	 */
-	public function onSubmit( array $data, HTMLForm $form = null ) {
+	public function onSubmit( array $data, ?HTMLForm $form = null ) {
 		if ( !$this->title ) {
 			return Status::newFatal( 'massmessage-edit-invalidtitle' );
 		}

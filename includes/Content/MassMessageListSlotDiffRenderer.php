@@ -34,7 +34,7 @@ class MassMessageListSlotDiffRenderer extends \SlotDiffRenderer {
 	 * @param Content|null $newContent
 	 * @return false|string
 	 */
-	public function getDiff( Content $oldContent = null, Content $newContent = null ) {
+	public function getDiff( ?Content $oldContent = null, ?Content $newContent = null ) {
 		$this->normalizeContents( $oldContent, $newContent, [ MassMessageListContent::class ] );
 		'@phan-var MassMessageListContent $oldContent'; /** @var MassMessageListContent $oldContent */
 		'@phan-var MassMessageListContent $newContent'; /** @var MassMessageListContent $newContent */
