@@ -17,7 +17,7 @@
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
-	"createmassmessagelist": "Utwórz listę masowych wiadomości",
+	"createmassmessagelist": "Utwórz listę odbiorców wiadomości masowej",
 	"editmassmessagelist": "Edytuj listę masowych wiadomości",
 	"content-model-massmessagelistcontent": "Lista odbiorców wiadomości masowej",
 	"massmessage-desc": "Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników",
