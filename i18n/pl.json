@@ -12,11 +12,12 @@
 			"The Polish",
 			"WTM",
 			"Wiochman",
-			"Woytecr"
+			"Woytecr",
+			"Msz2001"
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
-	"createmassmessagelist": "Utwórz listę masowych wiadomości",
+	"createmassmessagelist": "Utwórz listę odbiorców wiadomości masowej",
 	"editmassmessagelist": "Edytuj listę masowych wiadomości",
 	"massmessage-desc": "Pozwala użytkownikom na wysłanie wiadomości do określonej listy użytkowników",
 	"massmessage-form-spamlist": "Strona albo kategoria zawierająca listę stron, na których zostawić wiadomość:",
