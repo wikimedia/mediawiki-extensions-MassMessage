@@ -15,12 +15,14 @@
 			"Sherbrooke",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Mahabarata"
 		]
 	},
 	"massmessage": "Envoyer un message en masse",
 	"createmassmessagelist": "Créer une liste de diffusion de messages en masse",
 	"editmassmessagelist": "Modifier une liste de diffusion des messages en masse",
+	"content-model-massmessagelistcontent": "Liste de diffusion de messages en masse",
 	"massmessage-desc": "Permet aux utilisateurs d’envoyer facilement un message à une liste d’utilisateurs",
 	"massmessage-form-spamlist": "Page ou catégorie contenant la liste des pages sur lesquelles laisser un message :",
 	"massmessage-form-subject": "Sujet du message (utilisé également dans le résumé des modifications) :",
