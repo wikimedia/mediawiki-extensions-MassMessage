@@ -92,7 +92,7 @@
 	"massmessage-summary-add": "[[:$1]] беті қосылды",
 	"massmessage-summary-addonsite": "$2 дегенге $1 беті қосылды",
 	"massmessage-summary-addmulti": "$1 {{PLURAL:$1|бет}} қосылды",
-	"massmessage-summary-remove": "[[:$1]] беті аласталды",
+	"massmessage-summary-remove": "[[:$1]] беті алып тасталды",
 	"massmessage-summary-removeonsite": "$2 дегеннен $1 беті аласталды",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|бет}} аласталды",
 	"massmessage-list-category": "Жаппай хабарлама жеткізіп беру тізімдері",

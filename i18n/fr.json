@@ -15,12 +15,14 @@
 			"Sherbrooke",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Mahabarata"
 		]
 	},
 	"massmessage": "Envoyer un message en masse",
 	"createmassmessagelist": "Créer une liste de diffusion de messages en masse",
 	"editmassmessagelist": "Modifier une liste de diffusion des messages en masse",
+	"content-model-massmessagelistcontent": "Liste de diffusion de messages en masse",
 	"massmessage-desc": "Permet aux utilisateurs d’envoyer facilement un message à une liste d’utilisateurs",
 	"massmessage-form-spamlist": "Page ou catégorie contenant la liste des pages sur lesquelles laisser un message :",
 	"massmessage-form-subject": "Sujet du message (utilisé également dans le résumé des modifications) :",
@@ -75,6 +77,7 @@
 	"logentry-massmessage-send": "$1{{GENDER:$2|}} a envoyé un message à $3",
 	"logentry-massmessage-send-page-message": "$1{{GENDER:$2|}} a envoyé la page $5 comme message à $3",
 	"logentry-massmessage-failure": "La livraison de « $4 » sur $3 a échoué avec le code d’erreur <code>$5</code>",
+	"logentry-massmessage-failure-section": "La livraison de « $4 » à $3 a échoué car le sujet effectif est vide. Cause probable : la section <code>$5</code> de la page [[$6]] n'est pas valide. Vérifiez les caractères « &lt; » erronés.",
 	"logentry-massmessage-skipbadns": "La livraison de « $4 » à $3 a été sautée parce que la cible était dans un espace de noms qui ne peut pas recevoir de message",
 	"logentry-massmessage-skipoptout": "La livraison de « $4 » à $3 a été sautée parce que la cible a choisi de ne pas recevoir de messages",
 	"logentry-massmessage-skipnouser": "La livraison de « $4 » à $3 a été sautée parce que le compte utilisateur n’existe pas",
@@ -154,5 +157,6 @@
 	"log-action-filter-massmessage-failure": "Échec de distribution d’un message en masse",
 	"log-action-filter-massmessage-skipoptout": "Cible omise à cause d’une désinscription",
 	"log-action-filter-massmessage-skipnouser": "Cible omise à cause d’un utilisateur cible inexistant",
-	"log-action-filter-massmessage-skipbadns": "Cible omise à cause d’un espace de noms interdit"
+	"log-action-filter-massmessage-skipbadns": "Cible omise à cause d’un espace de noms interdit",
+	"massmessage-linter-error": "Erreur constatée : $1"
 }
