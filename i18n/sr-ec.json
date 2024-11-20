@@ -42,6 +42,7 @@
 	"log-name-massmessage": "Дневник масовних порука",
 	"log-description-massmessage": "Ови догађаји прате слање порука корисницима.",
 	"logentry-massmessage-send": "$1 је {{GENDER:$2|послао|послала}} поруку на страницу $3",
+	"logentry-massmessage-send-page-message": "$1 је {{GENDER:$2|послао|послала}} страницу $5 на $3",
 	"logentry-massmessage-failure": "Испорука поруке „$4” на страницу $3 није успела; дошло је до грешке <code>$5</code>",
 	"logentry-massmessage-skipbadns": "Испорука поруке „$4” на страницу $3 је прескочена; одредиште је у именском простору у ком се не може објављивати",
 	"logentry-massmessage-skipoptout": "Порука „$4” није послата у $3; корисник је онемогућио примање порука",
@@ -93,12 +94,13 @@
 	"massmessage-edit-content": "Одредишне странице:",
 	"massmessage-summary-addmulti": "Додато страница: {{PLURAL:$1|$1}}",
 	"massmessage-summary-removemulti": "Уклољено страница: {{PLURAL:$1|$1}}",
+	"massmessage-summary-change": "Промењен опис",
 	"massmessage-list-category": "Спискови испоруке масовних порука",
 	"tag-massmessage-delivery": "испорука масовне поруке",
-	"log-action-filter-massmessage": "Тип ставке у дневнику",
-	"log-action-filter-massmessage-send": "Прослеђивање масовних порука",
-	"log-action-filter-massmessage-failure": "Неуспешна испорука масовне поруке",
-	"log-action-filter-massmessage-skipoptout": "Циљ прескочен због изузимања",
-	"log-action-filter-massmessage-skipnouser": "Циљ прескочен због непостојања циљног корисника",
-	"log-action-filter-massmessage-skipbadns": "Циљ прескочен због забрањеног именског простора"
+	"log-action-filter-massmessage": "Врста ставке у дневнику",
+	"log-action-filter-massmessage-send": "прослеђивање масовних порука",
+	"log-action-filter-massmessage-failure": "неуспешна испорука масовне поруке",
+	"log-action-filter-massmessage-skipoptout": "циљ прескочен због изузимања",
+	"log-action-filter-massmessage-skipnouser": "циљ прескочен због непостојања циљног корисника",
+	"log-action-filter-massmessage-skipbadns": "циљ прескочен због забрањеног именског простора"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"NMW03",
 			"Şeyx Şamil",
-			"Nemoralis"
+			"Nemoralis",
+			"Əkrəm Cəfər"
 		]
 	},
 	"massmessage": "Kütləvi mesaj göndər",
@@ -64,7 +65,7 @@
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|$5 səhifəsini mesaj olaraq}} $3 səhifəsinə göndərdi",
 	"logentry-massmessage-failure": "$3 səhifəsinə göndəriləcək \"$4\" <code>$5</code> xəta kodu ilə ləğv edildi",
 	"logentry-massmessage-skipbadns": "Hədəf yerləşdirilə bilməyən ad fəzasında olduğu üçün \"$4\" mesajının $3 səhifəsinə göndərilməsi alınmadı",
-	"logentry-massmessage-skipoptout": "$3 səhifəsinə göndəriləcək \"$4\" ləğv edildi, çünki hədəf səhifə kütləvi ismarıc qəbulunu bağlayıb.",
+	"logentry-massmessage-skipoptout": "Hədəf səhifə kütləvi mesaj qəbulundan imtina etdiyi üçün \"$4\" mesajı $3 səhifəsinə göndərilmədi",
 	"logentry-massmessage-skipnouser": "$3 səhifəsinə göndəriləcək \"$4\" ləğv edildi, çünki bu istifadəçi hesabı mövcud deyil.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Başqa mesaj göndər]].",
 	"massmessage-content-pages": "Bu siyahıdakı səhifələr",
