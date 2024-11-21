@@ -16,15 +16,15 @@ class DatabaseLookup {
 	 * @return array
 	 */
 	public static function getDatabases() {
+		global $wgConf;
+		$dbs = $wgConf->getLocalDatabases();
+		$configHash = md5( implode( '|', $dbs ) );
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 
 		return $cache->getWithSetCallback(
-			$cache->makeGlobalKey( 'massmessage', 'urltodb' ),
+			$cache->makeGlobalKey( 'massmessage', 'urltodb', $configHash ),
 			$cache::TTL_HOUR,
-			static function () {
-				global $wgConf;
-
-				$dbs = $wgConf->getLocalDatabases();
+			static function () use ( $dbs ) {
 				$mapping = [];
 				foreach ( $dbs as $dbname ) {
 					$url = WikiMap::getWiki( $dbname )->getCanonicalServer();
