@@ -450,7 +450,8 @@ class SpecialMassMessage extends FormSpecialPage {
 				'items' => [
 					new Widget( [
 						'content' => new HtmlSnippet(
-							$parserOutput->getText( [ 'enableSectionEditLinks' => false ] )
+							$parserOutput->runOutputPipeline( $parserOptions, [ 'enableSectionEditLinks' => false ] )
+								->getContentHolderText()
 						),
 					] ),
 				],
