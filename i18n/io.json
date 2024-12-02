@@ -13,6 +13,7 @@
 	"massmessage-form-page": "Pagino por sendar kom mesajo:",
 	"massmessage-form-preview": "Previdado",
 	"massmessage-fieldset-preview": "Previdado",
+	"massmessage-fieldset-info": "Informo",
 	"massmessage-page-message-no-revision": "La pagino: \"$1\", selektata por sendar kom mesajo, ne havas uzebla revizo.",
 	"massmessage-invalid-lang": "Nevalida linguala kodexo: \"$1\"",
 	"massmessage-form-header": "Uzez la formulario adinfre por sendar mesaji por specifika listo. Omna blanki mustas kompleteskar ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage plusa informo]).",
