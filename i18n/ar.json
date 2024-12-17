@@ -21,6 +21,7 @@
 	"massmessage": "إرسال رسالة جماعية",
 	"createmassmessagelist": "إنشاء قائمة توصيل للرسائل الكمية",
 	"editmassmessagelist": "عدل قائمة تسليم الرسائل الكمية",
+	"content-model-massmessagelistcontent": "قائمة تسليم الرسائل الجماعية",
 	"massmessage-desc": "تسمح للمستخدمين بإرسال رسالة بسهولة إلى قائمة من المستخدمين",
 	"massmessage-form-spamlist": "صفحة تحتوي على قائمة صفحات يمكن ترك رسالة عليها:",
 	"massmessage-form-subject": "موضوع الرسالة (سيكون ملخص التحرير أيضًا):",
@@ -154,5 +155,6 @@
 	"log-action-filter-massmessage-failure": "فشل تسليم الرسالة الجماعية",
 	"log-action-filter-massmessage-skipoptout": "تخطي الهدف بسبب إلغاء الاشتراك",
 	"log-action-filter-massmessage-skipnouser": "تخطي الهدف لأن المستخدم الهدف غير موجود",
-	"log-action-filter-massmessage-skipbadns": "تخطي الهدف بسبب نطاق ممنوع"
+	"log-action-filter-massmessage-skipbadns": "تخطي الهدف بسبب نطاق ممنوع",
+	"massmessage-linter-error": "خطأ في التدقيق: $1"
 }
