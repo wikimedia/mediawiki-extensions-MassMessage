@@ -76,6 +76,7 @@
 	"logentry-massmessage-send": "{{GENDER:$2|أرسل|أرسلت}} $1 رسالة إلى $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2| أرسل الصفحة $5 رسالةً}} إلى $3",
 	"logentry-massmessage-failure": "توصيل \"$4\" إلى $3 فشل بكود خطأ <code>$5</code>",
+	"logentry-massmessage-failure-section": "فشل تسليم \"$4\" إلى $3 لأن الموضوع الفعال فارغ. السبب المحتمل: القسم <code>$5</code> في الصفحة [[$6]] غير صالح. تحقق من وجود أحرف \"&lt;\" زائفة.",
 	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
 	"logentry-massmessage-skipoptout": "توصيل \"$4\" إلى $3 تم تجاوزه لأن الهدف ألغى اشتراكه في توصيل الرسائل",
 	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
