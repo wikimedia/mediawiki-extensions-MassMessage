@@ -1,13 +1,17 @@
 /*
 Styles inline validation warnings
  */
+
+@import 'mediawiki.skin.variables.less';
+
 #mw-massmessage-form-spamlist-status.invalid,
 #mw-input-wptitle-status.invalid,
 #mw-massmessage-form-page-status.invalid {
-	border: 1px solid #d73333;
+	background-color: @background-color-error-subtle;
+	// Note, this is not the correct Codex error message color.
+	color: @color-emphasized;
+	border: @border-width-base @border-style-base @border-color-error;
 	border-bottom-right-radius: 0.8em;
 	border-top-right-radius: 0.8em;
-	background-color: #fee7e6;
-	color: #000;
 	padding: 2px 1em;
 }
