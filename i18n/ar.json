@@ -21,6 +21,7 @@
 	"massmessage": "إرسال رسالة جماعية",
 	"createmassmessagelist": "إنشاء قائمة توصيل للرسائل الكمية",
 	"editmassmessagelist": "عدل قائمة تسليم الرسائل الكمية",
+	"content-model-massmessagelistcontent": "قائمة تسليم الرسائل الجماعية",
 	"massmessage-desc": "تسمح للمستخدمين بإرسال رسالة بسهولة إلى قائمة من المستخدمين",
 	"massmessage-form-spamlist": "صفحة تحتوي على قائمة صفحات يمكن ترك رسالة عليها:",
 	"massmessage-form-subject": "موضوع الرسالة (سيكون ملخص التحرير أيضًا):",
@@ -49,9 +50,9 @@
 	"massmessage-page-message-not-found": "لم يتم العثور على الصفحة \" $1 \" التي تم اختيارها لإرسالها كرسالة.",
 	"massmessage-page-message-no-revision": "الصفحة \" $1 \" ، المحددة لإرسالها كرسالة ، ليس بها مراجعة قابلة للاستخدام.",
 	"massmessage-page-message-no-revision-content": "الصفحة \" $1 \" ، المحددة لإرسالها كرسالة ، ليس بها محتوى مراجعة. معرّف المراجعة: \" $2 \"",
-	"massmessage-page-message-wiki-not-found": "تعذر العثور على wiki \" $1 \" لجلب الصفحة \" $2 \" المحددة لإرسالها كرسالة.",
-	"massmessage-page-message-fetch-error-in-wiki": "حدث خطأ أثناء إحضار الصفحة \" $2 \" ، المحددة لإرسالها كرسالة ، من wiki \" $1 \". الخطأ: $3",
-	"massmessage-page-message-parsing-error-in-wiki": "حدث خطأ أثناء تحليل استجابة JSON من wiki: \" $1 \" ، عند جلب الصفحة: تم تحديد \" $2 \" ليتم إرسالها كرسالة. الخطأ: $3",
+	"massmessage-page-message-wiki-not-found": "تعذر العثور على الويكي \"$1\" لجلب الصفحة \"$2\" المحددة لإرسالها كرسالة.",
+	"massmessage-page-message-fetch-error-in-wiki": "حدث خطأ أثناء إحضار الصفحة \"$2\"، المحددة لإرسالها كرسالة، من الويكي \"$1\". الخطأ: $3",
+	"massmessage-page-message-parsing-error-in-wiki": "حدث خطأ أثناء تحليل استجابة JSON من الويكي: \"$1\"، عند جلب الصفحة: تم تحديد \"$2\" ليتم إرسالها كرسالة. الخطأ: $3",
 	"massmessage-page-message-not-found-in-wiki": "الصفحة \" $2 \" ، من الويكي \" $1 \" ، التي تم اختيارها لإرسالها كرسالة ، لم يتم العثور عليها.",
 	"massmessage-invalid-lang": "كود لغة غير صحيح: \"$1\"",
 	"massmessage-page-message-parse-invalid-in-wiki": "تم إرسال رد غير صالح أثناء جلب الصفحة \" $2 \" ، المحددة لإرسالها كرسالة ، من الويكي \" $1 \". الرد: $3",
@@ -75,6 +76,7 @@
 	"logentry-massmessage-send": "{{GENDER:$2|أرسل|أرسلت}} $1 رسالة إلى $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2| أرسل الصفحة $5 رسالةً}} إلى $3",
 	"logentry-massmessage-failure": "توصيل \"$4\" إلى $3 فشل بكود خطأ <code>$5</code>",
+	"logentry-massmessage-failure-section": "فشل تسليم \"$4\" إلى $3 لأن الموضوع الفعال فارغ. السبب المحتمل: القسم <code>$5</code> في الصفحة [[$6]] غير صالح. تحقق من وجود أحرف \"&lt;\" زائفة.",
 	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
 	"logentry-massmessage-skipoptout": "توصيل \"$4\" إلى $3 تم تجاوزه لأن الهدف ألغى اشتراكه في توصيل الرسائل",
 	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
@@ -154,5 +156,6 @@
 	"log-action-filter-massmessage-failure": "فشل تسليم الرسالة الجماعية",
 	"log-action-filter-massmessage-skipoptout": "تخطي الهدف بسبب إلغاء الاشتراك",
 	"log-action-filter-massmessage-skipnouser": "تخطي الهدف لأن المستخدم الهدف غير موجود",
-	"log-action-filter-massmessage-skipbadns": "تخطي الهدف بسبب نطاق ممنوع"
+	"log-action-filter-massmessage-skipbadns": "تخطي الهدف بسبب نطاق ممنوع",
+	"massmessage-linter-error": "خطأ في التدقيق: $1"
 }

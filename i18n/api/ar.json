@@ -14,7 +14,7 @@
 	"apihelp-editmassmessagelist-param-description": "وصف جديد لقائمة التسليم.",
 	"apihelp-editmassmessagelist-param-minor": "ما إذا كان ينبغي وضع علامة على التعديل باعتباره طفيفًا في تاريخ القائمة.",
 	"apihelp-editmassmessagelist-param-watchlist": "أضف الصفحة أو أزلها دون قيد أو شرط من قائمة مراقبة المستخدم الحالي ، أو استخدم التفضيلات (التي تم تجاهلها لمستخدمي الروبوت) أو لا تغير الساعة.",
-	"apihelp-editmassmessagelist-example-1": "Addأضف [[User talk:Foo]] و[[Talk:Bar]] إلى قائمة التسليم [[Example]] وأزل [[Talk:Baz]] منها",
+	"apihelp-editmassmessagelist-example-1": "أضف [[User talk:Foo]] و[[Talk:Bar]] إلى قائمة التسليم [[Example]] وأزل [[Talk:Baz]] منها",
 	"apihelp-editmassmessagelist-example-2": "عيّن وصف قائمة التسليم [[Example]] ليكون \"خدمات توصيل FooBar\"",
 	"apihelp-massmessage-summary": "إرسال رسالة إلى قائمة صفحات.",
 	"apihelp-massmessage-param-spamlist": "صفحة تحتوي على قائمة الصفحات لترك رسالة فيها.",
