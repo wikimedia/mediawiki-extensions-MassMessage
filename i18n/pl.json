@@ -74,6 +74,7 @@
 	"logentry-massmessage-send": "$1 {{GENDER:$2|wysłał|wysłała}} wiadomość do $3",
 	"logentry-massmessage-send-page-message": "$1 {{GENDER:$2|wysłał|wysłała}} stronę $5 jako wiadomość do $3",
 	"logentry-massmessage-failure": "Dostarczenie „$4” do $3 nie powiodło się. Kod błędu: <code>$5</code>",
+	"logentry-massmessage-failure-section": "Dostarczenie „$4” do $3 nie powiodło się, ponieważ efektywny temat wiadomości jest pusty. Prawdopodobna przyczyna: sekcja <code>$5</code> na stronie [[$6]] jest nieprawidłowa. Sprawdź, czy nie występują niepożądane znaki „&lt;”.",
 	"logentry-massmessage-skipbadns": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ miejsce docelowe znajdowało się w przestrzeni nazw, w której nie mogło być umieszczone",
 	"logentry-massmessage-skipoptout": "Dostarczenie „$4” do $3 zostało pominięte, ponieważ odbiorca wypisał się z listy odbiorców",
 	"logentry-massmessage-skipnouser": "Dostarczanie wiadomości „$4” do $3 zostało pominięte, ponieważ konto użytkownika nie istnieje",
