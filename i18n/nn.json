@@ -5,6 +5,7 @@
 		]
 	},
 	"massmessage": "Send massemeldingar",
+	"content-model-massmessagelistcontent": "Leveringsliste for massemeldingar",
 	"massmessage-desc": "Gjer det mogeleg for brukarar å greitt kunna senda ei melding til ei liste med brukarar",
 	"massmessage-form-spamlist": "Side som inneheld ei liste over sider som det skal leggjast att ei melding på:",
 	"massmessage-form-subject": "Meldingsemne (vert òg brukt som endringssamandrag):",
