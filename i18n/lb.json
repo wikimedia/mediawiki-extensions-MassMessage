@@ -3,7 +3,8 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"massmessage": "Kollektiv Noriicht schécken",
@@ -50,6 +51,7 @@
 	"massmessage-content-addeditem": "$1 op $2",
 	"massmessage-content-alreadyinlist": "D'Säit ass schonn an der Lëscht.",
 	"massmessage-content-invalidtitle": "Den Titel ass net valabel.",
+	"massmessage-content-invalidsite": "D'Säit ass ongülteg.",
 	"massmessage-content-adderror": "API-Feeler: $1",
 	"massmessage-diff-descheader": "Ännerungen an der Beschreiwung:",
 	"massmessage-diff-targetsheader": "Ännerungen op de Säiten:",
