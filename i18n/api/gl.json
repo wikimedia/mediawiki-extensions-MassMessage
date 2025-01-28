@@ -3,18 +3,28 @@
 		"authors": [
 			"ArenaL5",
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-editmassmessagelist-summary": "Editar unha lista de entrega de mensaxes en masa.",
 	"apihelp-editmassmessagelist-param-spamlist": "Título da lista de envío a actualizar.",
 	"apihelp-editmassmessagelist-param-add": "Títulos a engadir á lista.",
 	"apihelp-editmassmessagelist-param-remove": "Titulos a eliminar da lista.",
+	"apihelp-editmassmessagelist-param-description": "Nova descrición para a lista de entrega.",
+	"apihelp-editmassmessagelist-param-minor": "Indica se a edición debe marcarse como pequena no historial da lista.",
+	"apihelp-editmassmessagelist-param-watchlist": "Engadir ou eliminar incondicionalmente a páxina da lista de vixilancia do usuario actual, usar as preferencias (ignórase para os usuarios que son bots) ou non cambiar a vixilancia.",
 	"apihelp-editmassmessagelist-example-1": "Engadir [[User talk:Foo]] e [[Talk:Bar]] á lista de envío [[Example]] e borrar a [[Talk:Baz]]",
+	"apihelp-editmassmessagelist-example-2": "Establecer a descrición da lista de entrega \"[[Example]]\" como \"FooBar delivery services\"",
 	"apihelp-massmessage-summary": "Enviar unha mensaxe a unha lista de páxinas.",
 	"apihelp-massmessage-param-spamlist": "Páxina que contén a lista de páxinas nas que deixar unha mensaxe.",
 	"apihelp-massmessage-param-subject": "Liña de asunto da mensaxe.",
 	"apihelp-massmessage-param-message": "Texto da mensaxe.",
-	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"Signpost Novo\", e corpo da mensaxe \"Por favor léao\".",
+	"apihelp-massmessage-param-page-message": "Páxina que se enviará xunto co corpo da mensaxe.",
+	"apihelp-massmessage-example-1": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"New Signpost\" e o corpo da mensaxe \"Please read it\".",
+	"apihelp-massmessage-example-2": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"New Signpost\" e o corpo da mensaxe como o contido da páxina \"Help Page\".",
+	"apihelp-massmessage-example-3": "Enviar unha mensaxe á lista de [[Signpost Spamlist]] co asunto \"New Signpost\" e o corpo da mensaxe \"Please read it\" anexado ao contido da páxina \"Help Page\".",
+	"apihelp-query+mmcontent-summary": "Obter a descrición e os obxectivos dunha lista de spam",
+	"apihelp-query+mmcontent-example-1": "Obter a información da páxina e da lista de spam de [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "A lista de spam especificada non é válida."
 }
