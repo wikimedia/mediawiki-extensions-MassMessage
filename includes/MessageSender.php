@@ -217,7 +217,7 @@ class MessageSender {
 					if ( !$isEditConflict || $attemptCount >= 5 ) {
 						foreach ( $e->getStatusValue()->getErrors() as $error ) {
 							if ( $this->failureCallback ) {
-								call_user_func( $this->failureCallback, ApiMessage::create( $error )->getApiCode() );
+								( $this->failureCallback )( ApiMessage::create( $error )->getApiCode() );
 							}
 							break;
 						}
