@@ -16,7 +16,8 @@
 			"ToprakM",
 			"Uncitoyen",
 			"Violetanka",
-			"Vito Genovese"
+			"Vito Genovese",
+			"Leo"
 		]
 	},
 	"massmessage": "Toplu mesaj gönder",
@@ -143,7 +144,7 @@
 	"massmessage-list-category": "Toplu mesaj gönderim listeleri",
 	"massmessage-list-category-desc": "Bu sayfa [[Special:MassMessage|MassMessage]] uzantısının için bir teslimat listesidir.",
 	"tag-massmessage-delivery": "Toplu mesaj teslimi",
-	"tag-massmessage-delivery-description": "[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]] kullanılarak mesaj teslimatı",
+	"tag-massmessage-delivery-description": "[[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]] kullanarak mesaj teslimi",
 	"log-action-filter-massmessage": "Mesaj türü",
 	"log-action-filter-massmessage-send": "Toplu mesaj gönderme",
 	"log-action-filter-massmessage-failure": "Toplu mesaj teslim hatası",
