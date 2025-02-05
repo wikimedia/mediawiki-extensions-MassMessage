@@ -39,15 +39,17 @@ class SendMessages extends Maintenance {
 			}
 
 			// Also include check if the file size before even reading the file
-			if ( $arg !== 'pagelist' && filesize( $this->getOption( $arg ) ) !== 0 ) {
-				$contents = file_get_contents( $option );
-				if ( $contents !== false ) {
-					$info[$arg] = trim( $contents );
+			if ( $arg !== 'pagelist' ) {
+				if ( filesize( $this->getOption( $arg ) ) !== 0 ) {
+					$contents = file_get_contents( $option );
+					if ( $contents !== false ) {
+						$info[$arg] = trim( $contents );
+					} else {
+						$this->fatalError( "Unable to read $option.\n" );
+					}
 				} else {
-					$this->fatalError( "Unable to read $option.\n" );
+					$this->fatalError( "$option is empty, must have some content.\n" );
 				}
-			} else {
-				$this->fatalError( "$option is empty, must have some content.\n" );
 			}
 		}
 
