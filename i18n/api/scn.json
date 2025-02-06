@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
-			"Sarvaturi"
+			"Sarvaturi",
+			"GianAntonucci"
 		]
 	},
-	"apihelp-editmassmessagelist-summary": "Cancia n'elencu di cunzigna pi missaggi massivi.",
-	"apihelp-editmassmessagelist-param-add": "Tìtuli d'agghiunciri a l'elencu.",
+	"apihelp-editmassmessagelist-summary": "Cancia na lista di cunzinna di missaggi di massa.",
+	"apihelp-editmassmessagelist-param-add": "Tìtuli di jùnciri â lista.",
 	"apihelp-massmessage-param-message": "Testu dû corpu dû missaggiu."
 }
