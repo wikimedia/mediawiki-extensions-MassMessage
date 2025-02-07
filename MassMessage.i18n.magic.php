@@ -20,6 +20,11 @@ $magicWords['arz'] = [
 	'target' => [ 0, 'هدف' ],
 ];
 
+/** Azerbaijani (Azərbaycanca) */
+$magicWords['az'] = [
+	'target' => [ 0, 'hədəf' ],
+];
+
 /** Bengali (বাংলা) */
 $magicWords['bn'] = [
 	'target' => [ 0, 'লক্ষ্য' ],

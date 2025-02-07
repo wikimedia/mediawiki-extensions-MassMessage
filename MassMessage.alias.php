@@ -27,6 +27,13 @@ $specialPageAliases['arz'] = [
 	'MassMessage' => [ 'رسايل_كتيره' ],
 ];
 
+/** Azerbaijani (Azərbaycanca) */
+$specialPageAliases['az'] = [
+	'MassMessage' => [ 'KütləviMesaj' ],
+	'CreateMassMessageList' => [ 'KütləviMesajSiyahısıYarat' ],
+	'EditMassMessageList' => [ 'KütləviMesajSiyahısınıRedaktə' ],
+];
+
 /** Western Balochi (بلوچی رخشانی) */
 $specialPageAliases['bgn'] = [
 	'MassMessage' => [ 'بَزین_پیام' ],
