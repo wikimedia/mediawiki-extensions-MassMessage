@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
-			"Sarvaturi"
+			"Sarvaturi",
+			"GianAntonucci"
 		]
 	},
 	"massmessage": "Manna missaggi massivamenti",
@@ -15,7 +16,7 @@
 	"massmessage-invalid-lang": "Còdici dâ lingua nun vàliddu: \"$1\"",
 	"massmessage-parse-badurl": "\"$1\" nun è nu situ vàliddu.",
 	"massmessage-parse-badpage": "\"$1\" nun è nu tìtulu di pàggina vàliddu.",
-	"massmessage-content-pages": "Pàggini n stu elencu",
+	"massmessage-content-pages": "Pàggini nna sta lista",
 	"massmessage-content-pagesonsite": "Pàggini supra $1:",
 	"massmessage-content-localpages": "Pàggini supra stu wiki:",
 	"massmessage-content-remove": "leva",
