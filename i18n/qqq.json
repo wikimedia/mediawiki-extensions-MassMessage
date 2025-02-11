@@ -13,7 +13,8 @@
 			"Robby",
 			"Shirayuki",
 			"Umherirrender",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"Matma Rex"
 		]
 	},
 	"massmessage": "{{doc-special|MassMessage}}",
@@ -75,11 +76,11 @@
 	"log-description-massmessage": "Log page description",
 	"logentry-massmessage-send": "$3 here is the title of a page containing a list of recipients, so an example log entry would look like \"Legoktm sent a message to Wikipedia:Wikipedia Signpost/Subscriptions (Signpost for Aug 14, 2013)\".\n----\n{{logentry}}",
 	"logentry-massmessage-send-page-message": "$3 is the title of a page containing a list of recipients, $5 is the page that was sent as a message. so an example log entry would look like \"Legoktm sent page WikiPage as message to Wikipedia:Wikipedia Signpost/Subscriptions (Signpost for Jun 21, 2021)\".\n----\n{{logentry}}",
-	"logentry-massmessage-failure": "{{logentry}}\n* $4 is the subject line of the message\n* $5 is the API error code. This will always be in English.",
-	"logentry-massmessage-failure-section": "{{logentry}}\n* $4 is the custom subject line of the message (might be empty)\n* $5 is the name of the section designated to be used as the of the page that was sent as the message\n* $6 is the page title whose sections were to be used as in the message.\n\n<code>&amp;lt;</code> will be shown as &lt;. Please copy it as is.",
-	"logentry-massmessage-skipbadns": "{{logentry}}\n* $4 - the subject line of the message",
-	"logentry-massmessage-skipoptout": "{{logentry}}\n* $4 - the subject line of the message",
-	"logentry-massmessage-skipnouser": "{{logentry}}\n* $4 - the subject line of the message",
+	"logentry-massmessage-failure": "{{logentry}}\nAdditional parameters:\n* $4 is the subject line of the message\n* $5 is the API error code. This will always be in English.",
+	"logentry-massmessage-failure-section": "{{logentry}}\nAdditional parameters:\n* $4 is the custom subject line of the message (might be empty)\n* $5 is the name of the section designated to be used as the of the page that was sent as the message\n* $6 is the page title whose sections were to be used as in the message.\n\n<code>&amp;lt;</code> will be shown as &lt;. Please copy it as is.",
+	"logentry-massmessage-skipbadns": "{{logentry}}\nAdditional parameters:\n* $4 - the subject line of the message",
+	"logentry-massmessage-skipoptout": "{{logentry}}\nAdditional parameters:\n* $4 - the subject line of the message",
+	"logentry-massmessage-skipnouser": "{{logentry}}\nAdditional parameters:\n* $4 - the subject line of the message",
 	"massmessage-message-footer": "{{notranslate}}\nThe footer that is by added at the end of every message. It is left blank so individual wikis can customize it.",
 	"massmessage-nextsteps": "Message after {{msg-mw|Massmessage-submitted}} on [[Special:MassMessage]] once the form has been submitted.",
 	"massmessage-content-pages": "Section title for the list of pages when viewing a delivery list",
