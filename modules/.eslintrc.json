@@ -1,15 +1,15 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es5",
+		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
-	"globals": {
-		"Promise": "readonly"
+	"env": {
+		"commonjs": true
 	},
 	"rules": {
 		"no-jquery/no-global-selector": "off",
-		"no-implicit-globals": "off"
+		"prefer-const": "warn"
 	}
 }

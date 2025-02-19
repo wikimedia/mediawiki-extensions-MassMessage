@@ -1,7 +1,7 @@
-$( function () {
+$( () => {
 	'use strict';
 
-	var badHtml = require( './ext.MassMessage.badhtml.js' ),
+	const badHtml = require( './ext.MassMessage.badhtml.js' ),
 		$textbox = $( '#mw-massmessage-form-message textarea' );
 
 	if ( !$textbox.length ) {
@@ -20,16 +20,14 @@ $( function () {
 	 * @return {Promise}
 	 */
 	function getPagesByTitle( pagetitle ) {
-		var api = new mw.Api();
+		const api = new mw.Api();
 
 		return api.get( {
 			action: 'query',
 			titles: pagetitle,
 			prop: 'info',
 			formatversion: 2
-		} ).done( function ( data ) {
-			return data;
-		} );
+		} ).done( ( data ) => data );
 	}
 
 	/**
@@ -40,7 +38,7 @@ $( function () {
 	 *  and of the OOUI label inside the widget.
 	 */
 	function addStatusField( $elem ) {
-		var message = new OO.ui.MessageWidget( {
+		const message = new OO.ui.MessageWidget( {
 			icon: 'error',
 			type: 'error',
 			inline: true,
@@ -64,15 +62,15 @@ $( function () {
 	 * @param $statusFieldLabel The label for the OOUI error message in $statusField
 	 */
 	function validateTitle( $elem, callback, $statusField, $statusFieldLabel ) {
-		var pagetitle = $( 'input', $elem ).val();
+		const pagetitle = $( 'input', $elem ).val();
 
 		if ( !pagetitle ) {
 			$statusField.hide();
 			return;
 		}
 
-		getPagesByTitle( pagetitle ).done( function ( data ) {
-			var result = false;
+		getPagesByTitle( pagetitle ).done( ( data ) => {
+			let result = false;
 			if ( data && data.query && !data.query.pages[ 0 ].missing ) {
 				result = callback( data.query.pages );
 			}
@@ -103,15 +101,15 @@ $( function () {
 	 * @param {Function} callback Called when we receive some pages in response.
 	 */
 	function addPageTitleValidation( $elem, callback ) {
-		var $result = addStatusField( $elem );
-		var $statusField = $result[ 0 ];
-		var $statusFieldLabel = $result[ 1 ];
+		const $result = addStatusField( $elem );
+		const $statusField = $result[ 0 ];
+		const $statusFieldLabel = $result[ 1 ];
 		validateTitle( $elem, callback, $statusField, $statusFieldLabel );
-		var widget = OO.ui.infuse( $( $elem ) );
+		const widget = OO.ui.infuse( $( $elem ) );
 		widget.on(
 			'change',
 			OO.ui.debounce(
-				function () {
+				() => {
 					validateTitle( $elem, callback, $statusField, $statusFieldLabel );
 				},
 				250
@@ -130,11 +128,11 @@ $( function () {
 
 	// Only bind once for 'blur' so that the user can fill it in without errors;
 	// after that, look at every change for immediate feedback.
-	$( $( '#mw-massmessage-form-spamlist input' ) ).one( 'blur', function () {
+	$( $( '#mw-massmessage-form-spamlist input' ) ).one( 'blur', () => {
 		addPageTitleValidation( $( '#mw-massmessage-form-spamlist' ), isValidSpamList );
 	} );
 
-	$( $( '#mw-massmessage-form-page input' ) ).one( 'blur', function () {
+	$( $( '#mw-massmessage-form-page input' ) ).one( 'blur', () => {
 		addPageTitleValidation( $( '#mw-massmessage-form-page' ), isValidPageMessage );
 	} );
 } );

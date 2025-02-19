@@ -9,7 +9,7 @@
  * @param {jQuery} $msg
  */
 function badHtml( $msg ) {
-	var voidElements, $warnings;
+	let voidElements, $warnings;
 
 	// Construct a set containing HTML singleton elements (do not need an end tag).
 	// List obtained from http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
@@ -22,8 +22,8 @@ function badHtml( $msg ) {
 
 	$msg.after( $warnings );
 
-	$msg.on( 'keyup', OO.ui.debounce( function () {
-		var code, matches, tags, results, tagName;
+	$msg.on( 'keyup', OO.ui.debounce( () => {
+		let code, matches, tags, results, tagName;
 
 		$warnings.empty();
 
@@ -40,8 +40,8 @@ function badHtml( $msg ) {
 		}
 
 		tags = {};
-		matches.forEach( function ( itm ) {
-			var realTag, tag,
+		matches.forEach( ( itm ) => {
+			let realTag, tag,
 				hasOwn = Object.prototype.hasOwnProperty;
 
 			// Keep just the element names and the starting '/', if exists.

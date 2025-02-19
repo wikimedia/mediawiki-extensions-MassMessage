@@ -1,7 +1,7 @@
-$( function () {
+$( () => {
 	'use strict';
 
-	var checkTitle, checkSource, pageIsValidSource,
+	let checkTitle, checkSource, pageIsValidSource,
 		checkSourceTimeout = -1,
 		queryTitleApiRequest,
 		titleWidget = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
@@ -10,7 +10,7 @@ $( function () {
 		sourceField = sourceWidget.getField();
 
 	checkTitle = function () {
-		var title = titleField.getValue();
+		const title = titleField.getValue();
 		if ( title ) {
 			if ( queryTitleApiRequest ) {
 				queryTitleApiRequest.abort();
@@ -21,7 +21,7 @@ $( function () {
 				prop: 'info',
 				titles: title,
 				formatversion: 2
-			} ).done( function ( data ) {
+			} ).done( ( data ) => {
 				if ( data &&
 					data.query &&
 					data.query.pages &&
@@ -41,14 +41,14 @@ $( function () {
 	};
 
 	checkSource = function () {
-		var source = sourceField.getValue();
+		const source = sourceField.getValue();
 		if ( source ) {
 			( new mw.Api() ).get( {
 				action: 'query',
 				prop: 'info|categoryinfo',
 				titles: source,
 				formatversion: 2
-			} ).done( function ( data ) {
+			} ).done( ( data ) => {
 				if ( pageIsValidSource( data ) ) {
 					// Clear validation error
 					sourceWidget.setErrors( [] );
@@ -62,7 +62,7 @@ $( function () {
 	};
 
 	pageIsValidSource = function ( response ) {
-		var page;
+		let page;
 		if ( !response || !response.query || !response.query.pages ) {
 			return true; // ignore if the API acts up
 		}
@@ -80,13 +80,13 @@ $( function () {
 	};
 
 	// Warn if page title is already in use
-	titleField.$input.one( 'blur', function () {
+	titleField.$input.one( 'blur', () => {
 		checkTitle();
 		titleField.on( 'change', checkTitle );
 	} );
 
 	// Warn if delivery list source is invalid
-	sourceField.on( 'change', function () {
+	sourceField.on( 'change', () => {
 		// Debouncing - don't want to make an API call per request, nor give an error
 		// when the user starts typing
 		sourceWidget.setErrors( [] );
@@ -95,7 +95,7 @@ $( function () {
 	} );
 
 	// Uses the same method as ext.abuseFilter.edit.js from the AbuseFilter extension.
-	var warnOnLeave,
+	let warnOnLeave,
 		$form = $( '#mw-massmessage-create-form' ),
 		origValues = $form.serialize();
 
@@ -105,7 +105,7 @@ $( function () {
 		}
 	} );
 
-	$form.on( 'submit', function () {
+	$form.on( 'submit', () => {
 		warnOnLeave.release();
 	} );
 } );

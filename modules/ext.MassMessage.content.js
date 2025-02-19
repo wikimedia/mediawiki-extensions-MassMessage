@@ -1,7 +1,7 @@
-$( function () {
+$( () => {
 	'use strict';
 
-	var listShown = false,
+	let listShown = false,
 		formLayout = OO.ui.infuse( $( '#mw-massmessage-addform' ) ),
 		titleWidget = OO.ui.infuse( $( '#mw-massmessage-addtitle' ) ),
 		titleField = titleWidget.getField(),
@@ -15,7 +15,7 @@ $( function () {
 
 	// Append an added page to the displayed list.
 	appendAdded = function ( title, site, missing ) {
-		var targetAttribs, targetLink, removeLink, $list = $( '#mw-massmessage-addedlist ul' );
+		let targetAttribs, targetLink, removeLink, $list = $( '#mw-massmessage-addedlist ul' );
 
 		if ( !listShown ) {
 			$( '#mw-massmessage-addedlist' ).show();
@@ -73,7 +73,7 @@ $( function () {
 
 	// Return a target page in title or title@site (if site is not empty) form.
 	getApiParam = function ( title, site ) {
-		var server, param;
+		let server, param;
 		if ( site === '' ) {
 			if ( title.indexOf( '@' ) >= 0 ) { // Handle titles containing '@'
 				server = mw.config.get( 'wgServer' );
@@ -89,7 +89,7 @@ $( function () {
 
 	// Handle remove links next to targets.
 	removeHandler = function ( e ) {
-		var param, $link = $( this );
+		let param, $link = $( this );
 
 		e.preventDefault();
 
@@ -102,11 +102,11 @@ $( function () {
 			action: 'editmassmessagelist',
 			spamlist: mw.config.get( 'wgPageName' ),
 			remove: param
-		} ).done( function () {
+		} ).done( () => {
 			// FIXME: Use CSS transition
 			// eslint-disable-next-line no-jquery/no-fade
-			$link.closest( 'li' ).fadeOut( 400, function () { // 400 is the default duration.
-				var $list = $link.closest( 'ul' );
+			$link.closest( 'li' ).fadeOut( 400, () => { // 400 is the default duration.
+				const $list = $link.closest( 'ul' );
 
 				// Replace empty lists with a message indicating the list is empty.
 				// eslint-disable-next-line no-jquery/no-sizzle
@@ -118,7 +118,7 @@ $( function () {
 					);
 				}
 			} );
-		} ).fail( function ( errorCode ) {
+		} ).fail( ( errorCode ) => {
 			OO.ui.alert( mw.message( 'massmessage-content-removeerror', errorCode ).text() );
 		} );
 	};
@@ -137,8 +137,8 @@ $( function () {
 	$( '.mw-massmessage-removelink a' ).confirmable( confirmableParams );
 
 	// Handle add pages form.
-	formLayout.on( 'submit', function () {
-		var title, site, apiResult, page;
+	formLayout.on( 'submit', () => {
+		let title, site, apiResult, page;
 
 		title = titleField.getValue().trim();
 		if ( siteField ) {
@@ -160,7 +160,7 @@ $( function () {
 			action: 'editmassmessagelist',
 			spamlist: mw.config.get( 'wgPageName' ),
 			add: getApiParam( title, site )
-		} ).done( function ( data ) {
+		} ).done( ( data ) => {
 			apiResult = data.editmassmessagelist;
 
 			if ( apiResult.result === 'Success' ) {
@@ -188,7 +188,7 @@ $( function () {
 					siteWidget.setErrors( [ mw.msg( 'massmessage-content-invalidsite' ) ] );
 				}
 			}
-		} ).fail( function ( errorCode ) {
+		} ).fail( ( errorCode ) => {
 			titleWidget.setErrors( [ mw.msg( 'massmessage-content-adderror', errorCode ) ] );
 		} );
 	} );

@@ -1,16 +1,16 @@
-$( function () {
+$( () => {
 	'use strict';
 
 	// Limit edit summaries to 240 bytes
 	// From ext.MassMessage.special.js
-	var $summary = $( '#mw-input-wpsummary' );
+	const $summary = $( '#mw-input-wpsummary' );
 
 	if ( $summary.length ) {
 		mw.widgets.visibleByteLimit( OO.ui.infuse( $summary ) );
 	}
 
 	// Uses the same method as ext.abuseFilter.edit.js from the AbuseFilter extension.
-	var warnOnLeave,
+	let warnOnLeave,
 		$form = $( '#mw-massmessage-edit-form' ),
 		origValues = $form.serialize();
 
@@ -20,7 +20,7 @@ $( function () {
 		}
 	} );
 
-	$form.on( 'submit', function () {
+	$form.on( 'submit', () => {
 		warnOnLeave.release();
 	} );
 } );
