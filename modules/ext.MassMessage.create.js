@@ -1,15 +1,14 @@
 $( () => {
 	'use strict';
 
-	let checkTitle, checkSource, pageIsValidSource,
-		checkSourceTimeout = -1,
-		queryTitleApiRequest,
-		titleWidget = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
+	let checkSourceTimeout = -1,
+		queryTitleApiRequest;
+	const titleWidget = OO.ui.infuse( $( '#mw-input-wptitle' ).closest( '.oo-ui-fieldLayout' ) ),
 		sourceWidget = OO.ui.infuse( $( '#mw-input-wpsource' ).closest( '.oo-ui-fieldLayout' ) ),
 		titleField = titleWidget.getField(),
 		sourceField = sourceWidget.getField();
 
-	checkTitle = function () {
+	function checkTitle() {
 		const title = titleField.getValue();
 		if ( title ) {
 			if ( queryTitleApiRequest ) {
@@ -38,9 +37,9 @@ $( () => {
 			// Don't display an error if there is no input
 			titleWidget.setErrors( [] );
 		}
-	};
+	}
 
-	checkSource = function () {
+	function checkSource() {
 		const source = sourceField.getValue();
 		if ( source ) {
 			( new mw.Api() ).get( {
@@ -59,17 +58,16 @@ $( () => {
 		} else {
 			sourceWidget.setErrors( [] );
 		}
-	};
+	}
 
-	pageIsValidSource = function ( response ) {
-		let page;
+	function pageIsValidSource( response ) {
 		if ( !response || !response.query || !response.query.pages ) {
 			return true; // ignore if the API acts up
 		}
 		if ( response.query.pages.length !== 1 ) {
 			return false; // there should be exactly one page
 		}
-		page = response.query.pages[ 0 ];
+		const page = response.query.pages[ 0 ];
 		if ( page.ns === 14 ) {
 			return Object.prototype.hasOwnProperty.call( page, 'categoryinfo' ); // non-empty category
 		} else {
@@ -77,7 +75,7 @@ $( () => {
 				( page.contentmodel === 'wikitext' ||
 				page.contentmodel === 'MassMessageListContent' );
 		}
-	};
+	}
 
 	// Warn if page title is already in use
 	titleField.$input.one( 'blur', () => {
@@ -95,11 +93,10 @@ $( () => {
 	} );
 
 	// Uses the same method as ext.abuseFilter.edit.js from the AbuseFilter extension.
-	let warnOnLeave,
-		$form = $( '#mw-massmessage-create-form' ),
+	const $form = $( '#mw-massmessage-create-form' ),
 		origValues = $form.serialize();
 
-	warnOnLeave = mw.confirmCloseWindow( {
+	const warnOnLeave = mw.confirmCloseWindow( {
 		test: function () {
 			return $form.serialize() !== origValues;
 		}

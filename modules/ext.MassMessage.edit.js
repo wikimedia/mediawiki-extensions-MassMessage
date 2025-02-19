@@ -10,11 +10,10 @@ $( () => {
 	}
 
 	// Uses the same method as ext.abuseFilter.edit.js from the AbuseFilter extension.
-	let warnOnLeave,
-		$form = $( '#mw-massmessage-edit-form' ),
+	const $form = $( '#mw-massmessage-edit-form' ),
 		origValues = $form.serialize();
 
-	warnOnLeave = mw.confirmCloseWindow( {
+	const warnOnLeave = mw.confirmCloseWindow( {
 		test: function () {
 			return $form.serialize() !== origValues;
 		}

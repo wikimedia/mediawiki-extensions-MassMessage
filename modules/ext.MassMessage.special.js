@@ -55,11 +55,12 @@ $( () => {
 	 * will show an appropriate error message under the
 	 * input.
 	 *
-	 * @param $elem The jQuery element for the OOUI title field to be validated
-	 * @param callback A callback function which is provided the list of pages by the title
-	 *  and which returns a boolean value of whether the title is valid (true for valid).
-	 * @param $statusField The OOUI error message for the field which may or may not be hidden
-	 * @param $statusFieldLabel The label for the OOUI error message in $statusField
+	 * @param {jQuery} $elem The jQuery element for the OOUI title field to be validated
+	 * @param {Function} callback A callback function which is provided the list of pages by the
+	 *  title and which returns a boolean value of whether the title is valid (true for valid).
+	 * @param {jQuery} $statusField The OOUI error message for the field
+	 *  which may or may not behidden
+	 * @param {jQuery} $statusFieldLabel The label for the OOUI error message in $statusField
 	 */
 	function validateTitle( $elem, callback, $statusField, $statusFieldLabel ) {
 		const pagetitle = $( 'input', $elem ).val();
