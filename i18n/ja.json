@@ -19,6 +19,7 @@
 	"massmessage": "メッセージの一斉送信",
 	"createmassmessagelist": "メッセージ一斉送信リストの作成",
 	"editmassmessagelist": "メッセージ一斉送信リストの編集",
+	"content-model-massmessagelistcontent": "メッセージ一斉送信リスト",
 	"massmessage-desc": "利用者が複数の利用者に簡単にメッセージを送信できるようにする",
 	"massmessage-form-spamlist": "メッセージを書き込むページの一覧を含むページまたはカテゴリ:",
 	"massmessage-form-subject": "メッセージの件名 (編集の要約としても使用されます):",
