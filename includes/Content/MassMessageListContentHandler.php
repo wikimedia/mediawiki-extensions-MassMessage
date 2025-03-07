@@ -239,7 +239,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$parserOptions = $cpoParams->getParserOptions();
 		// Parse the description text.
 		$output = $services->getParser()
-			->parse( $content->getDescription(), $page, $parserOptions, true, true, $revId );
+			->parse( $content->getDescription() ?? '', $page, $parserOptions, true, true, $revId );
 		$services->getTrackingCategories()->addTrackingCategory( $output, 'massmessage-list-category', $page );
 		$lang = $parserOptions->getUserLangObj();
 
