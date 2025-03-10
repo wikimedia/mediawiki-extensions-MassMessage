@@ -227,6 +227,11 @@
 	"AvailableRights": [
 		"massmessage"
 	],
+	"NotificationMiddleware": [
+		{
+			"class": "MediaWiki\\MassMessage\\Notifications\\SuppressMassMessageNotificationsMiddleware"
+		}
+	],
 	"SpecialPages": {
 		"MassMessage": {
 			"class": "MediaWiki\\MassMessage\\Specials\\SpecialMassMessage",
