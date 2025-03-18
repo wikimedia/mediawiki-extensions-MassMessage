@@ -5,7 +5,8 @@
 			"Halbast",
 			"Muhammed taha",
 			"Sarchia",
-			"Épine"
+			"Épine",
+			"Aram"
 		]
 	},
 	"massmessage": "ناردنی پەیامی بەکۆمەڵ",
@@ -19,8 +20,8 @@
 	"massmessage-form-submit": "ناردن",
 	"massmessage-fieldset-preview": "پێشبینین",
 	"massmessage-fieldset-info": "زانیاری",
-	"massmessage-preview-count": "پەیامەکەت بۆ $1 پەڕە دەنێردرێت.",
-	"massmessage-submitted": "پەیامەکەت بۆ $1 پەڕە نێردرا.",
+	"massmessage-preview-count": "پەیامەکەت بۆ {{PLURAL:$1|$1 پەڕە}} دەنێردرێت.",
+	"massmessage-submitted": "ناردنی پەیامەکەت بۆ {{PLURAL:$1|$1 پەڕە}} نۆرەیان گرتووە.",
 	"massmessage-just-preview": "ئەمە تەنیا پێشبینینێکە. کرتە لەسەر \"{{int:massmessage-form-submit}}\" بکە بۆ ناردنی پەیام.",
 	"massmessage-spamlist-doesnotexist": "پەڕەی ناوبراو کە گوایە پێڕستی پەڕەکان لەخۆ دەگرێت بوونی نییە.",
 	"massmessage-spamlist-invalid": "پەڕەی ناوبراو پێڕستێکی دروستی پەڕەکان لەخۆ ناگرێت.",
@@ -73,6 +74,6 @@
 	"massmessage-summary-addonsite": "$1ی بۆ $2 زیاددکرد",
 	"massmessage-summary-remove": "[[:$1]]ی لابرد",
 	"massmessage-summary-removeonsite": "$1ی لە $2 لابرد",
-	"massmessage-summary-removemulti": "$1 پەڕەی لابرد",
+	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|پەڕە}}ی لابرد",
 	"massmessage-list-category": "پێڕستەکانی پەیامی بەکۆمەڵ"
 }
