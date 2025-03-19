@@ -34,7 +34,7 @@
 		}
 	},
 	"requires": {
-		"MediaWiki": ">= 1.43.0"
+		"MediaWiki": ">= 1.44"
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
