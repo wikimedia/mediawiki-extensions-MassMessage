@@ -11,7 +11,7 @@
 	"apihelp-editmassmessagelist-param-remove": "Naslovi za odstranitev s seznama.",
 	"apihelp-editmassmessagelist-param-description": "Nov opis seznama za pošiljanje.",
 	"apihelp-editmassmessagelist-param-minor": "Ali naj bo urejanje v zgodovini seznama označeno kot manjše.",
-	"apihelp-editmassmessagelist-param-watchlist": "Brezpogojno dodajte ali odstranite stran s spiska nadzorov trenutnega uporabnika, uporabite nastavitve (prezrto za uporabnike botov) ali ne spremenite opazovanja.",
+	"apihelp-editmassmessagelist-param-watchlist": "Brezpogojno dodajte ali odstranite stran z nadzornega seznama trenutnega uporabnika, uporabite nastavitve (prezrto za uporabnike botov) ali ne spremenite opazovanja.",
 	"apihelp-editmassmessagelist-example-1": "Doda [[User talk:Foo]] in [[Talk:Bar]] na seznam za pošiljanje [[Example]] (Zgled) in z njega odstrani [[Talk:Baz]]",
 	"apihelp-editmassmessagelist-example-2": "Nastavitev opisa seznama za pošiljanje [[Example]] (Zgled) na »Storitve pošiljanja FooBar«",
 	"apihelp-massmessage-summary": "Pošlje sporočilo na seznam strani.",
