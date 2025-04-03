@@ -73,6 +73,7 @@ class SpecialMassMessage extends FormSpecialPage {
 		$this->lintErrorChecker = $lintErrorChecker;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

@@ -89,6 +89,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		$this->revisionLookup = $revisionLookup;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
