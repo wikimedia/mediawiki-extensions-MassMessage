@@ -17,6 +17,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		parent::__construct( 'CreateMassMessageList', 'editcontentmodel' );
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
