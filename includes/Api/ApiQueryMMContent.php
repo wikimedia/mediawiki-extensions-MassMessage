@@ -20,7 +20,7 @@ class ApiQueryMMContent extends ApiQueryBase {
 		$pageSet = $this->getPageSet();
 		$pageids = array_keys( $pageSet->getGoodPages() );
 		if ( !$pageids ) {
-			return true;
+			return;
 		}
 
 		$spamlists = [];
@@ -55,7 +55,6 @@ class ApiQueryMMContent extends ApiQueryBase {
 				$content->getTargetStrings()
 			);
 		}
-		return true;
 	}
 
 	/**
