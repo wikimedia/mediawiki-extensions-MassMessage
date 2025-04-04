@@ -17,6 +17,7 @@ use MediaWiki\Language\Language;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;
+use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
@@ -278,6 +279,60 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$output->addModules( [ 'ext.MassMessage.content' ] );
 	}
 
+	private function genTargetListItem( string $site, Title $title, string $targetLink, Language $lang ): string {
+		// Generate the HTML for the remove link.
+		$removeLink = Html::element( 'a',
+			[
+				'data-title' => $title->getPrefixedText(),
+				'data-site' => $site,
+				'href' => '#',
+			],
+			wfMessage( 'massmessage-content-remove' )->inLanguage( $lang )->text()
+		);
+
+		$html = Html::openElement( 'li' );
+		$html .= Html::rawElement( 'span', [ 'class' => 'mw-massmessage-targetlink' ],
+			$targetLink );
+		$html .= Html::rawElement( 'span', [ 'class' => 'mw-massmessage-removelink' ],
+			'(' . $removeLink . ')' );
+		$html .= Html::closeElement( 'li' );
+
+		return $html;
+	}
+
+	/**
+	 * @param array $targets Array of all local targets
+	 * @param int $offset Where to start from
+	 * @param int $length How many to process
+	 * @param Language $lang
+	 */
+	private function processLocalTargetBatch( array $targets, int $offset, int $length, Language $lang ): string {
+		$services = MediaWikiServices::getInstance();
+		$endOffset = $offset + $length;
+
+		// Use LinkBatch to cache existence for all local targets for later use by Linker.
+		$lb = $services->getLinkBatchFactory()->newLinkBatch();
+		$i = $offset;
+		while ( $i < $endOffset ) {
+			$lb->addObj( Title::newFromText( $targets[$i] ) );
+			$i++;
+		}
+		$lb->execute();
+
+		$linkRenderer = $services->getLinkRenderer();
+		$html = '';
+		$i = $offset;
+		while ( $i < $endOffset ) {
+			// Generate the HTML for the link to the target.
+			$title = Title::newFromText( $targets[$i] );
+			$targetLink = $linkRenderer->makeLink( $title );
+			$html .= $this->genTargetListItem( 'local', $title, $targetLink, $lang );
+			$i++;
+		}
+
+		return $html;
+	}
+
 	/**
 	 * Helper function for fillParserOutput; return HTML for displaying the list of pages.
 	 * Note that the function assumes that the contents are valid.
@@ -286,7 +341,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	 * @param Language $lang
 	 * @return string
 	 */
-	private function getTargetsHtml( MassMessageListContent $content, Language $lang ) {
+	private function getTargetsHtml( MassMessageListContent $content, Language $lang ): string {
 		$services = MediaWikiServices::getInstance();
 
 		$html = Html::element( 'h2', [],
@@ -301,65 +356,54 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			return $html;
 		}
 
-		// Use LinkBatch to cache existence for all local targets for later use by Linker.
-		if ( array_key_exists( 'local', $sites ) ) {
-			$lb = $services->getLinkBatchFactory()->newLinkBatch();
-			foreach ( $sites['local'] as $target ) {
-				$lb->addObj( Title::newFromText( $target ) );
-			}
-			$lb->execute();
-		}
-
 		// Determine whether there are targets on external wikis.
 		$printSites = count( $sites ) !== 1 || !array_key_exists( 'local', $sites );
-		$linkRenderer = $services->getLinkRenderer();
 		foreach ( $sites as $site => $targets ) {
-			if ( $printSites ) {
-				if ( $site === 'local' ) {
+			if ( $site === 'local' ) {
+				if ( $printSites ) {
 					$html .= Html::element( 'p', [],
 						wfMessage( 'massmessage-content-localpages' )->inLanguage( $lang )->text()
 					);
-				} else {
+				}
+				$html .= Html::openElement( 'ul' );
+
+				// Use a LinkBatch to look up and cache existence for all local targets.
+				// But, process them in batches of LINK_BATCH_SIZE (See T388935).
+				$numLocalTargets = count( $targets );
+				$i = 0;
+				while ( $i < $numLocalTargets ) {
+					$html .= $this->processLocalTargetBatch(
+						$targets,
+						$i,
+						min( $numLocalTargets - $i, MassMessage::LINK_BATCH_SIZE ),
+						$lang
+					);
+					$i += MassMessage::LINK_BATCH_SIZE;
+				}
+
+				$html .= Html::closeElement( 'ul' );
+			} else {
+				if ( $printSites ) {
 					$html .= Html::element( 'p', [],
 						wfMessage( 'massmessage-content-pagesonsite', $site )->inLanguage( $lang )
 						->text()
 					);
 				}
-			}
+				$html .= Html::openElement( 'ul' );
+				foreach ( $targets as $target ) {
+					$title = Title::newFromText( $target );
 
-			$html .= Html::openElement( 'ul' );
-			foreach ( $targets as $target ) {
-				$title = Title::newFromText( $target );
-
-				// Generate the HTML for the link to the target.
-				if ( $site === 'local' ) {
-					$targetLink = $linkRenderer->makeLink( $title );
-				} else {
+					// Generate the HTML for the link to the target.
 					$script = $services->getMainConfig()->get( MainConfigNames::Script );
 					$targetLink = Linker::makeExternalLink(
 						"//$site$script?title=" . $title->getPrefixedURL(),
 						$title->getPrefixedText()
 					);
+
+					$html .= $this->genTargetListItem( $site, $title, $targetLink, $lang );
 				}
-
-				// Generate the HTML for the remove link.
-				$removeLink = Html::element( 'a',
-					[
-						'data-title' => $title->getPrefixedText(),
-						'data-site' => $site,
-						'href' => '#',
-					],
-					wfMessage( 'massmessage-content-remove' )->inLanguage( $lang )->text()
-				);
-
-				$html .= Html::openElement( 'li' );
-				$html .= Html::rawElement( 'span', [ 'class' => 'mw-massmessage-targetlink' ],
-					$targetLink );
-				$html .= Html::rawElement( 'span', [ 'class' => 'mw-massmessage-removelink' ],
-					'(' . $removeLink . ')' );
-				$html .= Html::closeElement( 'li' );
+				$html .= Html::closeElement( 'ul' );
 			}
-			$html .= Html::closeElement( 'ul' );
 		}
 
 		return $html;

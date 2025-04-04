@@ -9,6 +9,7 @@ use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
+use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
@@ -163,21 +164,35 @@ class ApiEditMassMessageList extends ApiBase {
 		if ( isset( $data['add'] ) ) {
 			$resultArray['added'] = $added;
 
-			// Use a LinkBatch to look up and cache existence for all local targets
-			$lb = $this->linkBatchFactory->newLinkBatch();
-			foreach ( $resultArray['added'] as $target ) {
-				if ( !isset( $target['site'] ) ) {
-					$lb->addObj( Title::newFromText( $target['title'] ) );
+			// Use a LinkBatch to look up and cache existence for all local targets.
+			// But, process them in batches of LINK_BATCH_SIZE (See T388935).
+			$numTargets = count( $resultArray['added'] );
+			$i = 0;
+			while ( $i < $numTargets ) {
+				$startOffset = $i;
+				$lb = $this->linkBatchFactory->newLinkBatch();
+				$count = 0;
+				while ( $i < $numTargets && $count < MassMessage::LINK_BATCH_SIZE ) {
+					$target = $resultArray['added'][$i];
+					if ( !isset( $target['site'] ) ) {
+						$lb->addObj( Title::newFromText( $target['title'] ) );
+						$count++;
+					}
+					$i++;
 				}
-			}
-			$lb->execute();
+				$endOffset = $i;
+				$lb->execute();
 
-			// Add an empty "missing" attribute to new local targets that do not exist
-			foreach ( $resultArray['added'] as &$target ) {
-				if ( !isset( $target['site'] )
-					&& !Title::newFromText( $target['title'] )->exists()
-				) {
-					$target['missing'] = '';
+				// Add an empty "missing" attribute to new local targets that do not exist
+				$i = $startOffset;
+				while ( $i < $endOffset ) {
+					$target = &$resultArray['added'][$i];
+					if ( !isset( $target['site'] )
+						&& !Title::newFromText( $target['title'] )->exists()
+					) {
+						$target['missing'] = '';
+					}
+					$i++;
 				}
 			}
 

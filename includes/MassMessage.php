@@ -30,6 +30,13 @@ use MediaWiki\WikiMap\WikiMap;
 class MassMessage {
 
 	/**
+	 * LinkBatch is backed by an LRU cache with a capacity of 10K entries.
+	 * So, pick a batch size smaller than that.
+	 * See T388935 for an example of this impacting production deploys.
+	 */
+	public const LINK_BATCH_SIZE = 5000;
+
+	/**
 	 * Sets up the messenger account for our use if it hasn't been already.
 	 * Based on code from AbuseFilter
 	 * https://mediawiki.org/wiki/Extension:AbuseFilter
