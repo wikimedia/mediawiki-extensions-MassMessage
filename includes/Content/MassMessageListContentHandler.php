@@ -296,6 +296,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		$html .= Html::rawElement( 'span', [ 'class' => 'mw-massmessage-removelink' ],
 			'(' . $removeLink . ')' );
 		$html .= Html::closeElement( 'li' );
+		$html .= "\n";
 
 		return $html;
 	}
