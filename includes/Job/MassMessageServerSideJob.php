@@ -2,9 +2,9 @@
 
 namespace MediaWiki\MassMessage\Job;
 
-use Job;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Content\WikitextContent;
+use MediaWiki\JobQueue\Job;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;

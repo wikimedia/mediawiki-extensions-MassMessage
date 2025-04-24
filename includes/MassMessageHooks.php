@@ -14,14 +14,15 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Skin\Skin;
+use MediaWiki\Skin\SkinTemplate;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MediaWiki\User\User;
-use Skin;
-use WikiPage;
 
 /**
  * Hooks!
@@ -124,7 +125,7 @@ class MassMessageHooks implements
 	/**
 	 * Override the Edit tab for delivery lists.
 	 *
-	 * @param \SkinTemplate $sktemplate
+	 * @param SkinTemplate $sktemplate
 	 * @param array &$links
 	 */
 	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {

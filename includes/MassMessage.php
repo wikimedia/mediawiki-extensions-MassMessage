@@ -3,8 +3,8 @@
 namespace MediaWiki\MassMessage;
 
 use LogicException;
-use ManualLogEntry;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;

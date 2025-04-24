@@ -2,9 +2,9 @@
 
 namespace MediaWiki\MassMessage\Job;
 
-use Job;
 use LqtDispatch;
-use ManualLogEntry;
+use MediaWiki\JobQueue\Job;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MassMessage\DedupeHelper;
 use MediaWiki\MassMessage\Job\Hooks\HookRunner;
 use MediaWiki\MassMessage\LanguageAwareText;

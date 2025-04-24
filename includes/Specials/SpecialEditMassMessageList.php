@@ -2,11 +2,11 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use LogEventsList;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Logging\LogEventsList;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\DatabaseLookup;

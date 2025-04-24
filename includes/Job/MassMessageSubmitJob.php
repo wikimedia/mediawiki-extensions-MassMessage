@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage\Job;
 
-use Job;
+use MediaWiki\JobQueue\Job;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\Utils\MWTimestamp;
@@ -45,7 +45,7 @@ class MassMessageSubmitJob extends Job {
 	}
 
 	/**
-	 * @return \Job[][]
+	 * @return Job[][]
 	 */
 	public function getJobs() {
 		$data = $this->params['data'];
