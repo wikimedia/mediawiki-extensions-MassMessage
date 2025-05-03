@@ -78,7 +78,7 @@ $( () => {
 	const getApiParam = function ( title, site ) {
 		let server, param;
 		if ( site === '' ) {
-			if ( title.indexOf( '@' ) >= 0 ) { // Handle titles containing '@'
+			if ( title.includes( '@' ) ) { // Handle titles containing '@'
 				server = mw.config.get( 'wgServer' );
 				param = title + '@' + server.slice( server.indexOf( '//' ) + 2 );
 			} else {
