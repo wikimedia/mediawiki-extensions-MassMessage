@@ -8,6 +8,7 @@
 	"massmessage": "Дукха хаамаш кхехьийтар",
 	"createmassmessagelist": "Дукха дӀакхачоран могӀам кхоллар",
 	"editmassmessagelist": "Дукху дӀакхачоран могӀам хийцар",
+	"content-model-massmessagelistcontent": "Дукху хаамаш дӀакхачоран могӀам",
 	"massmessage-desc": "Дукху дкъашхошка атта хаамаш бахьийта таро хуьлуьйту",
 	"massmessage-form-spamlist": "Хаам бохуьйтуш болу агӀонийн могӀа болу категори йа агӀонийн могӀам:",
 	"massmessage-form-subject": "Хаамах лаьцна (кхин лелош йу хийцамах лаьцна йаздеш):",
@@ -131,5 +132,6 @@
 	"log-action-filter-massmessage-failure": "Дукха хаамаш дӀакхачорехь гӀалат",
 	"log-action-filter-massmessage-skipoptout": "Адресат тӀехдалийтина тӀейаздалар дӀадаккхар бахьнехь",
 	"log-action-filter-massmessage-skipnouser": "Адресат тӀехдалийтина, хӀунда аьлча декъашхо-адресат доцуш ду",
-	"log-action-filter-massmessage-skipbadns": "Адресат тӀехдалийтина, хӀунда аьлча, магийна йоцу цӀерийн меттиг бахьнехь"
+	"log-action-filter-massmessage-skipbadns": "Адресат тӀехдалийтина, хӀунда аьлча, магийна йоцу цӀерийн меттиг бахьнехь",
+	"massmessage-linter-error": "Линтеран гӀалат: $1."
 }
