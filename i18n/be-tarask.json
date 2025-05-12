@@ -10,7 +10,7 @@
 	"createmassmessagelist": "Стварэньне сьпісу масавай дастаўкі паведамленьняў",
 	"massmessage-form-subject": "Тэма паведамленьня (выкарыстоўваецца таксама як кароткае апісаньне зьменаў):",
 	"massmessage-form-message": "Тэкст паведамленьня:",
-	"right-massmessage": "адпраўка паведамленьня некалькім удзельнікам адначасова",
+	"right-massmessage": "Адсылка паведамленьня некалькім удзельнікам адначасова",
 	"log-name-massmessage": "Журнал масавых паведамленьняў",
 	"massmessage-create-exists-short": "Ужо выкарыстоўваецца",
 	"massmessage-create-invalidsource-short": "Няслушны сьпіс",
