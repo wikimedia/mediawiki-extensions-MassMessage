@@ -119,6 +119,7 @@ abstract class SpamlistLookup {
 						$conversionNamespaces[$title->getNamespace()],
 						$title->getText() );
 				}
+				$target['originalTitle'] = $title->getPrefixedText();
 				$title = UrlHelper::followRedirect( $title );
 				if ( $title === null ) {
 					// Interwiki redirect

@@ -63,6 +63,7 @@ class MassMessageSubmitJob extends Job {
 			// Store the title as plain text to avoid namespace/interwiki prefix
 			// collisions, see tasks T59464 and T60524
 			$data['title'] = $page['title'];
+			$data['originalTitle'] = $page['originalTitle'] ?? null;
 			$jobsByTarget[$page['wiki']][] = new $class( $title, $data );
 		}
 

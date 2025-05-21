@@ -50,6 +50,7 @@
 	"massmessage-form-header": "Use the form below to send messages to a specified list. All fields are required ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage more information]).",
 	"massmessage-target": "[//$1$2?title={{urlencode:$3|WIKI}} $3]",
 	"massmessage-target-local": "[[:$1]]",
+	"massmessage-redirect-notice": "(This message was sent to [[:$1]] and is being posted here due to a redirect.)",
 	"massmessage-hidden-comment": "<!-- Message sent by User:$1@$2 using the list at $3 -->",
 	"massmessage-optout-category": "Opted-out of message delivery",
 	"massmessage-badhtml": "Your message may have {{PLURAL:$2|an unclosed HTML tag|unclosed HTML tags}}: $1.",

@@ -5,6 +5,7 @@ namespace MediaWiki\MassMessage;
 
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
+use MediaWiki\Title\Title;
 
 /**
  * Contains logic to build the message and subject to be posted
@@ -42,13 +43,19 @@ class MessageBuilder {
 	 * @param LanguageAwareText|null $pageContent
 	 * @param Language|null $targetLanguage
 	 * @param string[] $commentParams
+	 * @param ?Title $originalTitle If the original Title was a redirect, include it
+	 * in this param so that a comment about the redirection can be appended to the
+	 * message. Null if the redirect message should not be included.
 	 * @return string
 	 */
 	public function buildMessage(
 		string $customMessageText,
 		?LanguageAwareText $pageContent,
 		?Language $targetLanguage,
-		array $commentParams
+		array $commentParams,
+		// @phpcs:disable MediaWiki.Commenting.FunctionComment.PHP71NullableDocOptionallArg
+		$originalTitle = null
+		// @phpcs:enable MediaWiki.Commenting.FunctionComment.PHP71NullableDocOptionallArg
 	): string {
 		$trimmedText = rtrim( $customMessageText );
 		$fullMessageText = '';
@@ -59,6 +66,16 @@ class MessageBuilder {
 
 		// If either is empty, the extra new lines will be trimmed
 		$fullMessageText = trim( $fullMessageText . "\n\n" . $trimmedText );
+
+		if ( $originalTitle ) {
+			$redirectMessage = wfMessage( 'massmessage-redirect-notice' )->params(
+				$originalTitle->getPrefixedText()
+			);
+			if ( $targetLanguage ) {
+				$redirectMessage = $redirectMessage->inLanguage( $targetLanguage );
+			}
+			$fullMessageText .= "\n\n" . $redirectMessage->text();
+		}
 
 		// $commentParams will always be present unless we are runnning tests.
 		if ( $commentParams ) {
