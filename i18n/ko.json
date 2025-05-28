@@ -12,12 +12,14 @@
 			"Revi",
 			"SeoJeongHo",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"YeBoy371"
 		]
 	},
 	"massmessage": "메시지 대량 보내기",
 	"createmassmessagelist": "대량 메시지 수신자 목록 만들기",
 	"editmassmessagelist": "대량 메시지 수신자 목록 편집하기",
+	"content-model-massmessagelistcontent": "대량 메시지 전달 목록",
 	"massmessage-desc": "목록에 있는 사용자에게 쉽게 메시지를 보낼 수 있습니다",
 	"massmessage-form-spamlist": "메시지를 남길 문서 또는 분류의 목록이 있는 문서:",
 	"massmessage-form-subject": "메시지의 제목 (편집 요약에도 쓰임):",
