@@ -4,7 +4,8 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
 			"Baloch Khan",
-			"Af420"
+			"Af420",
+			"شاه زمان پټان"
 		]
 	},
 	"massmessage": "ډله ايز پيغام لېږل",
@@ -14,7 +15,7 @@
 	"massmessage-form-submit": "لېږل",
 	"massmessage-fieldset-preview": "مخليدنه",
 	"massmessage-preview-count": "ستاسې پيغام به {{PLURAL:$1|$1 مخ|$1 مخونو}} ته ولېږل شي.",
-	"massmessage-submitted": "ستاسو پيغام ولېږل شو!",
+	"massmessage-submitted": "{{PLURAL:$1|$1 مخ|$1 مخونو}} ته ستاسو پيغام لېږل شوی.",
 	"massmessage-form-header": "لاندې بڼه وکاروئ ترڅو ستاسو پيغام و مشخص ليسټ ته ورسيږي. لاندې ټولي خاني بايد ډکې شي'''([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage نور ولولئ]).",
 	"log-name-massmessage": "ډله ايز پيغام يادښت",
 	"log-description-massmessage": "دا پېښې د کارنانو لېږل شوي پيغامونه څاري.",
