@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajiniyaz Nurniyazov"
+			"Ajiniyaz Nurniyazov",
+			"Janabaevazizbek"
 		]
 	},
 	"massmessage": "Ǵalabalıq túrde xabar jiberiw",
 	"createmassmessagelist": "Ǵalabalıq túrde xabar jiberiw dizimin jaratıw",
+	"content-model-massmessagelistcontent": "Ǵalabalıq xabar jetkerip beriw dizimi",
 	"massmessage-form-spamlist": "Xabar qaldırılıwı tiyis bolǵan betlerdiń dizimin óz ishine alǵan bet yamasa kategoriya:",
 	"massmessage-form-subject": "Xabardıń teması (redaktorlawdıń qısqasha túsindirmesi retinde de qollanıladı):",
 	"massmessage-form-message": "Xabardıń teksti:",
