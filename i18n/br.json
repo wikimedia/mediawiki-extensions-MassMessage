@@ -33,6 +33,7 @@
 	"massmessage-parse-badpage": "N'eo ket \"$1\" un titl reizh evit ar bajenn.",
 	"right-massmessage": "Kas ur gemennadenn da veur a implijer d'un taol.",
 	"action-massmessage": "kas ur gemennadenn da veur a implijer war un dro",
+	"log-name-massmessage": "Marilh Mass message",
 	"logentry-massmessage-send": "$1 {{GENDER:$2|en deus|he deus}} kaset ur gemennadenn da $3",
 	"massmessage-nextsteps": "[[Special:MassMessage|Kas ur gemennadenn all]].",
 	"massmessage-content-pages": "Pajennoù er roll-mañ",
