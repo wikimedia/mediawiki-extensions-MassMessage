@@ -42,7 +42,7 @@ abstract class SpamlistLookup {
 		}
 
 		$lookup = self::factory( $spamlist );
-		$callback = function ( $old = null, &$ttl = null ) use ( $lookup, $spamlist, $normalize ) {
+		$callback = function ( $old = null, &$ttl = null ) use ( $lookup, $normalize ) {
 			$targets = $lookup->fetchTargets();
 			if ( $targets && $normalize ) {
 				$value = self::normalizeTargets( $targets );
