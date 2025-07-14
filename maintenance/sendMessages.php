@@ -8,11 +8,13 @@ use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 /**
  * Script to send MassMessages server-side
@@ -103,5 +105,7 @@ class SendMessages extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = SendMessages::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd
