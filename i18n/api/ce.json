@@ -4,5 +4,8 @@
 			"Умар"
 		]
 	},
+	"apihelp-editmassmessagelist-param-add": "МогӀамна тӀетоха леррина кортош.",
+	"apihelp-editmassmessagelist-param-remove": "МогӀам чуьра дӀабаха леррина кортош.",
+	"apihelp-massmessage-param-subject": "Хаамийн тема.",
 	"apihelp-massmessage-param-message": "Хаамийн текст."
 }
