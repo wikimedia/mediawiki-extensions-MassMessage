@@ -51,6 +51,7 @@
 	"massmessage-unescaped-langlinks": "Xəbərdarlıq: Mesajınızda bağlanmamış dil keçidləri var.",
 	"massmessage-no-timestamp": "Xəbərdarlıq: Mesajınıza vaxt və ya imza daxil edilmir.",
 	"massmessage-form-header": "Seçilmiş siyahıya mesaj göndərmək üçün aşağıdakı formu istifadə et. Bütün bölmələri doldurmaq məcburidir ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage daha ətraflı]).",
+	"massmessage-redirect-notice": "(Bu mesaj əslində [[:$1]] ünvanına göndərilib və yönləndirmə səbəbindən buraya yerləşdirilib.)",
 	"massmessage-hidden-comment": "<!-- İstifadəçi:$1@$2 tərəfindən $3 siyahısını istifadə edərək göndərilmişdir -->",
 	"massmessage-optout-category": "Mesaj qəbulundan imtina etmiş",
 	"massmessage-badhtml": "Mesajınızda {{PLURAL:$2|qapalı olmayan HTML teqi|qapalı olmayan HTML teqləri}} ola bilər: $1.",

@@ -55,6 +55,7 @@
 	"massmessage-unescaped-langlinks": "Warnung: Deine Nachricht enthält ungültige Sprachlinks.",
 	"massmessage-no-timestamp": "Warnung: Deine Nachricht enthält keinen Zeitstempel oder keine Signatur.",
 	"massmessage-form-header": "Benutze das unten stehende Formular, um Nachrichten an eine angegebene Liste zu senden. Es sind alle Felder erforderlich ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage weitere Informationen]).",
+	"massmessage-redirect-notice": "(Diese Nachricht wurde an [[:$1]] gesendet und wird aufgrund einer Weiterleitung hier veröffentlicht.)",
 	"massmessage-hidden-comment": "<!-- Nachricht versandt von {{GENDER:$1|Benutzer|Benutzerin}}:$1@$2 durch Verwendung der Liste unter $3 -->",
 	"massmessage-optout-category": "Von der Nachrichtenzustellung abgemeldet",
 	"massmessage-badhtml": "Deine Nachricht enthält möglicherweise {{PLURAL:$2|ein nicht geschlossenes HTML-Tag|nicht geschlossene HTML-Tags}}: $1.",
