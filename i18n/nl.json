@@ -60,6 +60,7 @@
 	"massmessage-unescaped-langlinks": "Waarschuwing: uw bericht bevat onjuiste taalkoppelingen.",
 	"massmessage-no-timestamp": "Waarschuwing: uw bericht bevat geen tijdstempel of handtekening.",
 	"massmessage-form-header": "Gebruik het onderstaande formulier om berichten te verzenden aan een lijst ontvangers. Alle velden zijn verplicht ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage meer informatie]).",
+	"massmessage-redirect-notice": "(Dit bericht is verzonden naar [[:$1]] en wordt hier geplaatst vanwege een doorverwijzing.)",
 	"massmessage-hidden-comment": "<!-- Bericht verzonden door User:$1@$2 via de lijst op de pagina $3 -->",
 	"massmessage-optout-category": "Wil geen berichten ontvangen",
 	"massmessage-badhtml": "Uw bericht heeft mogelijk {{PLURAL:$2|een ongesloten HTML-label|ongesloten HTML-label}}: $1.",
