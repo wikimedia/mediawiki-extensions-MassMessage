@@ -31,6 +31,7 @@
 	"massmessage-invalid-lang": "Неважећи језички код: „$1”",
 	"massmessage-no-timestamp": "Упозорење: Ваша порука не укључује ни временску ознаку ни потпис.",
 	"massmessage-form-header": "Користите образац испод да бисте послали поруке наведеним корисницима са листе. Сва поља су обавезна ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage више информација]).",
+	"massmessage-redirect-notice": "(Ова порука је послата [[:$1]] и поставља се овде због преусмерења.)",
 	"massmessage-hidden-comment": "<!-- Пошиљалац поруке: Корисник:$1@$2; списак прималаца: $3 -->",
 	"massmessage-optout-category": "Одбили сагласност испоруке порука",
 	"massmessage-badhtml": "Ваша порука можда садржи {{PLURAL:$2|незатворену HTML ознаку|незатворене HTML ознаке}}: $1.",
