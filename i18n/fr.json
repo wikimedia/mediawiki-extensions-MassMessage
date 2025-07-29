@@ -3,6 +3,7 @@
 		"authors": [
 			"0x010C",
 			"DavidL",
+			"Derugon",
 			"Element303",
 			"Gomoko",
 			"Ltrlg",
@@ -62,6 +63,7 @@
 	"massmessage-unescaped-langlinks": "Attention : il y a des liens de langue non échappés dans votre message.",
 	"massmessage-no-timestamp": "Attention : votre message ne contient pas d’horodatage ou de signature.",
 	"massmessage-form-header": "Utilisez le formulaire ci-dessous pour envoyer des messages à une liste indiquée. Tous les champs sont obligatoires ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage plus d’informations]).",
+	"massmessage-redirect-notice": "(Ce message a été envoyé à [[:$1]] et est publié ici en raison d’une redirection.)",
 	"massmessage-hidden-comment": "<!-- Message envoyé par User:$1@$2 en utilisant la liste sur $3 -->",
 	"massmessage-optout-category": "Désinscrits de la livraison de messages",
 	"massmessage-badhtml": "Votre message semble contenir {{PLURAL:$2|une|des}} {{PLURAL:$2|balise|balises}} HTML mal {{PLURAL:$2|fermée|fermées}} : $1.",

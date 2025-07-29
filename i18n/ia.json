@@ -47,6 +47,7 @@
 	"massmessage-unescaped-langlinks": "Attention: Il ha ligamines de lingua non escappate in tu message.",
 	"massmessage-no-timestamp": "Attention: Tu message non include un data e hora o un signatura.",
 	"massmessage-form-header": "Usa le formulario hic infra pro inviar messages a un lista specificate. Tote le campos es obligatori ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage plus information]).",
+	"massmessage-redirect-notice": "(Iste message ha essite inviate a [[:$1]] e appare hic a causa de un redirection.)",
 	"massmessage-hidden-comment": "<!-- Message inviate per User:$1@$2 usante le lista sur $3 -->",
 	"massmessage-optout-category": "Non vole reciper messages",
 	"massmessage-badhtml": "Tu message pote haber {{PLURAL:$2|un etiquetta|etiquettas}} HTML non claudite: $1.",
