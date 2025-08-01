@@ -61,6 +61,7 @@
 	"massmessage-unescaped-langlinks": "تحذير: هناك وصلات لغة ملغاة في الرسالة الخاصة بك.",
 	"massmessage-no-timestamp": "تحذير: رسالتك لا تحتوي على توقيع أو طابع زمني.",
 	"massmessage-form-header": "استخدم النموذج أدناه لإرسال رسائل إلى قائمة معينة، جميع الحقول مطلوبة ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage مزيد من المعلومات]).",
+	"massmessage-redirect-notice": "(تم إرسال هذه الرسالة إلى [[:$1]] ويتم نشرها هنا بسبب إعادة التوجيه.)",
 	"massmessage-hidden-comment": "<!-- الرسالة التي أرسلها User:$1@$2 باستخدام القائمة في $3 -->",
 	"massmessage-optout-category": "ألغي الاشتراك في تسليم الرسالة",
 	"massmessage-badhtml": "قد تحتوي رسالتك على {{PLURAL:$2|وسم HTML غير مغلق|وسوم HTML غير مغلقة}}: $1.",
