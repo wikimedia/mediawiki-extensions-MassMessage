@@ -43,7 +43,7 @@ class MessageBuilder {
 	 * @param LanguageAwareText|null $pageContent
 	 * @param Language|null $targetLanguage
 	 * @param string[] $commentParams
-	 * @param ?Title $originalTitle If the original Title was a redirect, include it
+	 * @param Title|null $originalTitle If the original Title was a redirect, include it
 	 * in this param so that a comment about the redirection can be appended to the
 	 * message. Null if the redirect message should not be included.
 	 * @return string
@@ -53,9 +53,7 @@ class MessageBuilder {
 		?LanguageAwareText $pageContent,
 		?Language $targetLanguage,
 		array $commentParams,
-		// @phpcs:disable MediaWiki.Commenting.FunctionComment.PHP71NullableDocOptionallArg
 		$originalTitle = null
-		// @phpcs:enable MediaWiki.Commenting.FunctionComment.PHP71NullableDocOptionallArg
 	): string {
 		$trimmedText = rtrim( $customMessageText );
 		$fullMessageText = '';
