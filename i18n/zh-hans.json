@@ -22,7 +22,8 @@
 			"予弦",
 			"坑触可",
 			"沈澄心",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Stang"
 		]
 	},
 	"massmessage": "发送大量信息",
@@ -155,5 +156,6 @@
 	"log-action-filter-massmessage-failure": "大量信息递送失败",
 	"log-action-filter-massmessage-skipoptout": "因不接受订阅而跳过目标",
 	"log-action-filter-massmessage-skipnouser": "因目标用户不存在而跳过目标",
-	"log-action-filter-massmessage-skipbadns": "因命名空间被禁止而跳过目标"
+	"log-action-filter-massmessage-skipbadns": "因命名空间被禁止而跳过目标",
+	"massmessage-linter-error": "Linter 错误： $1"
 }
