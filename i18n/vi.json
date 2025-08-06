@@ -97,7 +97,7 @@
 	"massmessage-edit-headermulti": "Điền biểu mẫu bên dưới để sửa miêu tả danh sách hoặc sửa danh sách các trang mục tiêu. Danh sách trang mục tiêu có mỗi dòng một tên trang. Hãy dùng định dạng tên@tên_miền (ví dụ Thảo_luận_Thành_viên:Ví_dụ@vi.wikipedia.org) để định rõ một trang trên wiki khác.",
 	"massmessage-edit-invalidtitle": "Không có danh sách gửi thông báo rộng rãi với tên đó.",
 	"massmessage-edit-invalidtargets": "{{PLURAL:$1|Trang|Các trang}} sau là không hợp lệ:\n$2",
-	"massmessage-edit-missingsummary": "Bạn chưa tóm lược sửa đổi. Nếu bấm “{{int:htmlform-submit}}” lần nữa, sửa đổi của bạn sẽ được lưu và sẽ không có lời tóm lược.",
+	"massmessage-edit-missingsummary": "Bạn chưa điền tóm lược sửa đổi. Nếu bấm “{{int:htmlform-submit}}” lần nữa, sửa đổi của bạn sẽ được lưu và sẽ không có lời tóm lược.",
 	"massmessage-edit-nopermission": "Bạn không có quyền sửa đổi danh sách này.",
 	"massmessage-summary-addremove": "Đã thêm $1 trang và xóa $2 trang",
 	"massmessage-summary-add": "Đã thêm [[:$1]]",
