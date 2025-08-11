@@ -135,7 +135,7 @@
 	"massmessage-summary-removeonsitechange": "Fjernet $1 på $2 og endret beskrivelsen",
 	"massmessage-summary-removemultichange": "Fjernet {{PLURAL:$1|éi side|$1 sider}} og endret beskrivelsen",
 	"massmessage-summary-change": "Endret beskrivelsen",
-	"massmessage-list-category": "MassMessage leveringsliste",
+	"massmessage-list-category": "MassMessage-leveringsliste",
 	"massmessage-list-category-desc": "Siden er en leveringsliste for [[Special:MassMessage|MassMessage]]-utvidelsen.",
 	"tag-massmessage-delivery": "massemeldingslevering",
 	"tag-massmessage-delivery-description": "Meldingslevering med [[:mw:Special:MyLanguage/Extension:MassMessage|Extension:MassMessage]]",
