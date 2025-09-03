@@ -49,6 +49,7 @@
 	"massmessage-unescaped-langlinks": "Advarsel: Det er ubeskyttede språklenker i meldingen din.",
 	"massmessage-no-timestamp": "Advarsel: Meldingen din mangler tidsstempel eller signatur.",
 	"massmessage-form-header": "Bruk skjemaet under for å sende meldinger til en bestemt liste. Alle felt må fylles ut ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage mer informasjon]).",
+	"massmessage-redirect-notice": "(Denne meldingen ble sendt til [[:$1]], og postes her på grunn av en omdirigering.)",
 	"massmessage-hidden-comment": "<!-- Melding sendt av User:$1@$2 via listen $3 -->",
 	"massmessage-optout-category": "Valgt vekk fra meldingslevering",
 	"massmessage-badhtml": "Meldingen din kan ha {{PLURAL:$2|en uavsluttet HTML-tagg|uavsluttede HTML-tagger}}: $1.",
