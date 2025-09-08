@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"GilPe",
 			"Les Meloures",
 			"Robby",
 			"Soued031",
@@ -13,7 +14,7 @@
 	"content-model-massmessagelistcontent": "Massemessagen-Expeditiounslëscht",
 	"massmessage-desc": "Erlaabt et Benotzer fir einfach Messagen un eng Lëscht vu Benotzer ze schécken",
 	"massmessage-form-spamlist": "Säit oder Kategorie mat der Lëscht vu Säiten, op déi e Message geschriwwe gi soll:",
-	"massmessage-form-subject": "Sujet vum Message (gëtt och fir de Resumé vun der Ännerung benotzt):",
+	"massmessage-form-subject": "Sujet vum Message (gëtt och fir de Resümmee vun der Ännerung benotzt):",
 	"massmessage-form-message": "Text vum Message:",
 	"massmessage-form-page": "Säit, déi als Message geschéckt gi soll:",
 	"massmessage-form-preview": "Kucken ouni ze späicheren",
@@ -90,7 +91,7 @@
 	"massmessage-edit-content": "Zilsäiten:",
 	"massmessage-edit-invalidtitle": "Et gëtt keng gülteg Massemessagen-Expeditiounslëscht mat dësem Titel",
 	"massmessage-edit-invalidtargets": "Déi follgend {{PLURAL:$1|Säit ass|Säite sinn}} ongülteg:\n$2",
-	"massmessage-edit-missingsummary": "Dir hutt kee Resumé vun der Ännerung uginn. Wann dir nach eng Kéier op \"{{int:htmlform-submit}}\" klickt, da gëtt Är Ännerung ouni e Resumé gespäichert.",
+	"massmessage-edit-missingsummary": "Dir hutt kee Resümmee vun der Ännerung uginn. Wann dir nach eng Kéier op \"{{int:htmlform-submit}}\" klickt, da gëtt Är Ännerung ouni e Resümmee gespäichert.",
 	"massmessage-edit-nopermission": "Dir hutt net d'Recht fir d'Lëscht z'änneren.",
 	"massmessage-summary-addremove": "huet {{PLURAL:$1|Säit|Säiten}} dobäigesat {{PLURAL:$2|an eng Säit|a(n) $2 Säiten}} ewechgeholl",
 	"massmessage-summary-add": "[[:$1]] dobäigesat",
