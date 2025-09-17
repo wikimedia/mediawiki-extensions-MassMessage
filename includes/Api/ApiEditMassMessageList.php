@@ -22,7 +22,6 @@ use Wikimedia\ParamValidator\ParamValidator;
  *
  * @ingroup API
  */
-
 class ApiEditMassMessageList extends ApiBase {
 
 	use ApiWatchlistTrait;

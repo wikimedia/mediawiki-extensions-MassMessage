@@ -10,12 +10,10 @@ use MediaWiki\Utils\MWTimestamp;
 /**
  * JobQueue class to queue other jobs.
  *
- * @file
  * @ingroup JobQueue
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
 class MassMessageSubmitJob extends Job {
 	/**
 	 * @param Title $title

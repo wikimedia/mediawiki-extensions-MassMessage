@@ -10,12 +10,10 @@ use Wikimedia\ParamValidator\ParamValidator;
 /**
  * API module to send MassMessages.
  *
- * @file
  * @ingroup API
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
 class ApiMassMessage extends ApiBase {
 	public function execute() {
 		$this->checkUserRightsAny( 'massmessage' );

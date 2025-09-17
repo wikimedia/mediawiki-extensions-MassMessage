@@ -15,12 +15,10 @@ use RuntimeException;
 /**
  * JobQueue class for jobs queued server side.
  *
- * @file
  * @ingroup JobQueue
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
 class MassMessageServerSideJob extends MassMessageJob {
 	/**
 	 * @param Title $title

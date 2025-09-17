@@ -11,7 +11,6 @@ use Wikimedia\ObjectCache\WANObjectCache;
 /**
  * Functions related to target processing
  */
-
 abstract class SpamlistLookup {
 
 	/**

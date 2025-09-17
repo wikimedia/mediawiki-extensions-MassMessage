@@ -13,7 +13,6 @@ use MediaWiki\Title\Title;
  *
  * @ingroup API
  */
-
 class ApiQueryMMContent extends ApiQueryBase {
 
 	public function execute() {

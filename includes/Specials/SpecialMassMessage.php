@@ -34,7 +34,6 @@ use OOUI\Widget;
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
 class SpecialMassMessage extends FormSpecialPage {
 	/** @var Status */
 	protected $status;

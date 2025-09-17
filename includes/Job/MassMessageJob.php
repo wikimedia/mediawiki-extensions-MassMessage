@@ -27,12 +27,10 @@ use MediaWiki\WikiMap\WikiMap;
  * Based on code from TranslationNotifications
  * https://mediawiki.org/wiki/Extension:TranslationNotifications
  *
- * @file
  * @ingroup JobQueue
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
 class MassMessageJob extends Job {
 	/**
 	 * @var bool Whether to use sender account (if possible)

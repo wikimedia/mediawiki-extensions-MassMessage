@@ -1,7 +1,5 @@
 <?php
 
-// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
-
 namespace MediaWiki\MassMessage;
 
 use MediaWiki\Api\Hook\APIQuerySiteInfoStatisticsInfoHook;
@@ -27,7 +25,6 @@ use MediaWiki\User\User;
 /**
  * Hooks!
  */
-
 class MassMessageHooks implements
 	ParserFirstCallInitHook,
 	APIQuerySiteInfoStatisticsInfoHook,

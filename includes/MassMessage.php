@@ -22,11 +22,9 @@ use MediaWiki\WikiMap\WikiMap;
 /**
  * Some core functions needed by the extension.
  *
- * @file
  * @author Kunal Mehta
  * @license GPL-2.0-or-later
  */
-
 class MassMessage {
 
 	/**
