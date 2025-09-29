@@ -53,7 +53,7 @@
 	"massmessage-form-header": "Seçilmiş siyahıya mesaj göndərmək üçün aşağıdakı formu istifadə et. Bütün bölmələri doldurmaq məcburidir ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage daha ətraflı]).",
 	"massmessage-redirect-notice": "(Bu mesaj əslində [[:$1]] ünvanına göndərilib və yönləndirmə səbəbindən buraya yerləşdirilib.)",
 	"massmessage-hidden-comment": "<!-- İstifadəçi:$1@$2 tərəfindən $3 siyahısını istifadə edərək göndərilmişdir -->",
-	"massmessage-optout-category": "Mesaj qəbulundan imtina etmiş",
+	"massmessage-optout-category": "Mesaj qəbulundan imtina etmiş istifadəçilər",
 	"massmessage-badhtml": "Mesajınızda {{PLURAL:$2|qapalı olmayan HTML teqi|qapalı olmayan HTML teqləri}} ola bilər: $1.",
 	"massmessage-parse-badurl": "\"$1\" etibarlı sayt deyil.",
 	"massmessage-parse-badpage": "\"$1\" etibarlı səhifə başlığı deyil.",
