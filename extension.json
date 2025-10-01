@@ -84,7 +84,8 @@
 		"BeforePageDisplay": "main",
 		"ListDefinedTags": "main",
 		"ChangeTagsListActive": "main",
-		"RejectParserCacheValue": "main"
+		"RejectParserCacheValue": "main",
+		"CodeMirrorSpecialPage": "codemirror"
 	},
 	"HookHandlers": {
 		"main": {
@@ -92,6 +93,9 @@
 		},
 		"echo": {
 			"class": "MediaWiki\\MassMessage\\EchoHooks"
+		},
+		"codemirror": {
+			"class": "MediaWiki\\MassMessage\\CodeMirrorHooks"
 		}
 	},
 	"ContentHandlers": {
