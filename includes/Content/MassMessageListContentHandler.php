@@ -260,8 +260,12 @@ class MassMessageListContentHandler extends JsonContentHandler {
 
 		$output->setEnableOOUI( true );
 		OutputPage::setupOOUI();
-		$output->setText( $warning . Html::rawElement( 'div', $attribs, $description ) . self::getAddForm( $lang )
-			. $this->getTargetsHtml( $content, $lang ) );
+		$output->setContentHolderText(
+			$warning
+			. Html::rawElement( 'div', $attribs, $description )
+			. self::getAddForm( $lang )
+			. $this->getTargetsHtml( $content, $lang )
+		);
 
 		// Update the links table.
 		$targets = $content->getTargets();
