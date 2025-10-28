@@ -93,6 +93,7 @@
 	"massmessage-summary-change": "څرگنداوی بدل‌شو",
 	"massmessage-list-category": "ډله‌ييز‌پيغام لېږنې لړليکونه",
 	"tag-massmessage-delivery": "ډله‌ييز‌پيغام رسونه",
+	"tag-massmessage-delivery-description": "د [[:mw:Special:MyLanguage/Extension:MassMessage|شاتاړی:ډله‌ييزپيغام]] کارولو له لارې پيغام رسول.",
 	"log-action-filter-massmessage": "د ننوتلو يادښت ډول",
 	"log-action-filter-massmessage-send": "ډله‌ييز پيغام سپارنه",
 	"log-action-filter-massmessage-failure": "ډله‌ييز‌پيغام رسونې ناکامي"
