@@ -5,7 +5,8 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
 			"Baloch Khan",
-			"شاه زمان پټان"
+			"شاه زمان پټان",
+			"SaldırganSincap"
 		]
 	},
 	"massmessage": "ډله‌ييز پيغام لېږل",
@@ -32,7 +33,7 @@
 	"massmessage-submitted": "{{PLURAL:$1|$1 مخ|$1 مخونو}} ته ستاسو پيغام لېږل شوی.",
 	"massmessage-empty-subject": "پيغام لپاره کومه سکالو نه ده ورکړل شوې.",
 	"massmessage-invalid-lang": "ناچله ژب‌کوډ: \"$1\"",
-	"massmessage-form-header": "لاندې بڼه وکاروئ؛ ترڅو ستاسو پيغام يو مشخص لړليک ته ورسېږي. لاندې ټولي خانې بايد ډکې شي'''([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage نور ولولئ]).",
+	"massmessage-form-header": "لاندې بڼه وکاروئ؛ ترڅو ستاسو پيغام يو مشخص لړليک ته ورسېږي. لاندې ټولي خانې بايد ډکې شي ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage نور ولولئ]).",
 	"massmessage-parse-badurl": "\"$1\" باوري وېبځی نه دی.",
 	"massmessage-parse-badpage": "\"$1\" باوري مخ سرليک نه دی.",
 	"massmessage-parse-badspamlist": "\"$1\" باوري مخ لړليک نه دی.",
@@ -93,6 +94,7 @@
 	"massmessage-summary-change": "څرگنداوی بدل‌شو",
 	"massmessage-list-category": "ډله‌ييز‌پيغام لېږنې لړليکونه",
 	"tag-massmessage-delivery": "ډله‌ييز‌پيغام رسونه",
+	"tag-massmessage-delivery-description": "د [[:mw:Special:MyLanguage/Extension:MassMessage|شاتاړی:ډله‌ييزپيغام]] کارولو له لارې پيغام رسول.",
 	"log-action-filter-massmessage": "د ننوتلو يادښت ډول",
 	"log-action-filter-massmessage-send": "ډله‌ييز پيغام سپارنه",
 	"log-action-filter-massmessage-failure": "ډله‌ييز‌پيغام رسونې ناکامي"
