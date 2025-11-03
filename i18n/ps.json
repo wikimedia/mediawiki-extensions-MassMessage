@@ -5,7 +5,8 @@
 			"Amjad Khan",
 			"Baloch Khan",
 			"Af420",
-			"شاه زمان پټان"
+			"شاه زمان پټان",
+			"SaldırganSincap"
 		]
 	},
 	"massmessage": "ډله‌ييز پيغام لېږل",
@@ -31,7 +32,7 @@
 	"massmessage-submitted": "{{PLURAL:$1|$1 مخ|$1 مخونو}} ته ستاسو پيغام لېږل شوی.",
 	"massmessage-empty-subject": "پيغام لپاره کومه سکالو نه ده ورکړل شوې.",
 	"massmessage-invalid-lang": "ناچله ژب‌کوډ: \"$1\"",
-	"massmessage-form-header": "لاندې بڼه وکاروئ؛ ترڅو ستاسو پيغام يو مشخص لړليک ته ورسېږي. لاندې ټولي خانې بايد ډکې شي'''([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage نور ولولئ]).",
+	"massmessage-form-header": "لاندې بڼه وکاروئ؛ ترڅو ستاسو پيغام يو مشخص لړليک ته ورسېږي. لاندې ټولي خانې بايد ډکې شي ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage نور ولولئ]).",
 	"massmessage-parse-badurl": "\"$1\" باوري وېبځی نه دی.",
 	"massmessage-parse-badpage": "\"$1\" باوري مخ سرليک نه دی.",
 	"massmessage-global-disallowed": "پيغامونه يوازې ځايي مخونو ته لېږل کېدای شي.",
