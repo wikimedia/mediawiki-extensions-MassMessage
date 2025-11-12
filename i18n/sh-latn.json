@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Aca"
 		]
 	},
 	"massmessage": "Slanje masovnih poruka",
@@ -24,7 +25,7 @@
 	"massmessage-just-preview": "Ovo je samo pretpregled. Da biste poslali poruku pritisnite \"{{int:massmessage-form-submit}}\".",
 	"massmessage-spamlist-doesnotexist": "Navedena stranica ili kategorija ne postoji.",
 	"massmessage-spamlist-invalid": "Navedena stranica ne sadrži važeću listu isporuke.",
-	"log-name-massmessage": "Evidencija masovnih poruka",
+	"log-name-massmessage": "Dnevnik masovnih poruka",
 	"log-description-massmessage": "Ovi događaji prate slanje poruka korisnicima.",
 	"massmessage-content-removeno": "Otkaži"
 }

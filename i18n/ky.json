@@ -10,6 +10,8 @@
 	"massmessage-fieldset-preview": "Алдын ала көрүү",
 	"massmessage-fieldset-info": "Маалымат",
 	"massmessage-preview-count": "Сиздин катыңыз {{PLURAL:$1|$1 page|$1 pages}} дарегине жөнөтүлөт.",
+	"massmessage-content-remove": "алып салуу",
+	"massmessage-content-removeyes": "Алып салуу",
 	"massmessage-content-removeno": "Жокко чыгаруу",
 	"massmessage-content-addtitle": "Аталыш:",
 	"massmessage-content-addsubmit": "Барак кошуу",
