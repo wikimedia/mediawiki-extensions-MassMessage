@@ -15,26 +15,11 @@ use MediaWiki\Status\Status;
  * @license GPL-2.0-or-later
  */
 class PageMessageBuilderResult {
-	/** @var Status */
-	private $status;
-	/** @var LanguageAwareText|null */
-	private $pageMessage;
-	/** @var LanguageAwareText|null */
-	private $pageSubject;
-
-	/**
-	 * @param Status $status
-	 * @param LanguageAwareText|null $pageMessage
-	 * @param LanguageAwareText|null $pageSubject
-	 */
 	public function __construct(
-		Status $status,
-		?LanguageAwareText $pageMessage = null,
-		?LanguageAwareText $pageSubject = null
+		private readonly Status $status,
+		private readonly ?LanguageAwareText $pageMessage = null,
+		private readonly ?LanguageAwareText $pageSubject = null,
 	) {
-		$this->status = $status;
-		$this->pageMessage = $pageMessage;
-		$this->pageSubject = $pageSubject;
 	}
 
 	/**

@@ -18,16 +18,11 @@ use MediaWiki\WikiMap\WikiMap;
  * @license GPL-2.0-or-later
  */
 class LocalMessageContentFetcher {
-	/** @var RevisionStore */
-	private $revisionStore;
-	/** @var string */
-	private $currentWikiId;
+	private readonly string $currentWikiId;
 
-	/**
-	 * @param RevisionStore $revisionStore
-	 */
-	public function __construct( RevisionStore $revisionStore ) {
-		$this->revisionStore = $revisionStore;
+	public function __construct(
+		private readonly RevisionStore $revisionStore,
+	) {
 		$this->currentWikiId = WikiMap::getCurrentWikiId();
 	}
 

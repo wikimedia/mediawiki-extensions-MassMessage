@@ -41,35 +41,16 @@ class SpecialMassMessage extends FormSpecialPage {
 	protected $state;
 	/** @var int */
 	protected $count;
-	/** @var LocalMessageContentFetcher */
-	private $localMessageContentFetcher;
-	/** @var LabeledSectionContentFetcher */
-	private $labeledSectionContentFetcher;
-	/** @var MessageBuilder */
-	private $messageBuilder;
-	/** @var PageMessageBuilder */
-	private $pageMessageBuilder;
+	private readonly MessageBuilder $messageBuilder;
 
-	private LintErrorChecker $lintErrorChecker;
-
-	/**
-	 * @param LabeledSectionContentFetcher $labeledSectionContentFetcher
-	 * @param LocalMessageContentFetcher $localMessageContentFetcher
-	 * @param PageMessageBuilder $pageMessageBuilder
-	 * @param LintErrorChecker $lintErrorChecker
-	 */
 	public function __construct(
-		LabeledSectionContentFetcher $labeledSectionContentFetcher,
-		LocalMessageContentFetcher $localMessageContentFetcher,
-		PageMessageBuilder $pageMessageBuilder,
-		LintErrorChecker $lintErrorChecker
+		private readonly LabeledSectionContentFetcher $labeledSectionContentFetcher,
+		private readonly LocalMessageContentFetcher $localMessageContentFetcher,
+		private readonly PageMessageBuilder $pageMessageBuilder,
+		private readonly LintErrorChecker $lintErrorChecker,
 	) {
 		parent::__construct( 'MassMessage', 'massmessage' );
-		$this->labeledSectionContentFetcher = $labeledSectionContentFetcher;
-		$this->localMessageContentFetcher = $localMessageContentFetcher;
 		$this->messageBuilder = new MessageBuilder();
-		$this->pageMessageBuilder = $pageMessageBuilder;
-		$this->lintErrorChecker = $lintErrorChecker;
 	}
 
 	/** @inheritDoc */

@@ -47,46 +47,14 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 */
 	protected $errorMsgKey;
 
-	/**
-	 * Provides access to user options
-	 *
-	 * @var UserOptionsLookup
-	 */
-	private $userOptionsLookup;
-
-	/** @var RestrictionStore */
-	private $restrictionStore;
-
-	/** @var WatchlistManager */
-	private $watchlistManager;
-
-	/** @var PermissionManager */
-	private $permissionManager;
-
-	/** @var RevisionLookup */
-	private $revisionLookup;
-
-	/**
-	 * @param UserOptionsLookup $userOptionsLookup
-	 * @param RestrictionStore $restrictionStore
-	 * @param WatchlistManager $watchlistManager
-	 * @param PermissionManager $permissionManager
-	 * @param RevisionLookup $revisionLookup
-	 */
 	public function __construct(
-		UserOptionsLookup $userOptionsLookup,
-		RestrictionStore $restrictionStore,
-		WatchlistManager $watchlistManager,
-		PermissionManager $permissionManager,
-		RevisionLookup $revisionLookup
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly RestrictionStore $restrictionStore,
+		private readonly WatchlistManager $watchlistManager,
+		private readonly PermissionManager $permissionManager,
+		private readonly RevisionLookup $revisionLookup,
 	) {
 		parent::__construct( 'EditMassMessageList' );
-
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->restrictionStore = $restrictionStore;
-		$this->watchlistManager = $watchlistManager;
-		$this->permissionManager = $permissionManager;
-		$this->revisionLookup = $revisionLookup;
 	}
 
 	/** @inheritDoc */

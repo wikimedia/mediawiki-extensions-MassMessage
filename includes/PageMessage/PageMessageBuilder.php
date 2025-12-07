@@ -20,41 +20,14 @@ use MediaWiki\Title\Title;
  * @license GPL-2.0-or-later
  */
 class PageMessageBuilder {
-	/** @var string */
-	private $currentWikiId;
-	/** @var LocalMessageContentFetcher */
-	private $localMessageContentFetcher;
-	/** @var LabeledSectionContentFetcher */
-	private $labeledSectionContentFetcher;
-	/** @var RemoteMessageContentFetcher */
-	private $remoteMessageContentFetcher;
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var LanguageFallback */
-	private $languageFallback;
-
-	/**
-	 * @param LocalMessageContentFetcher $localMessageContentFetcher
-	 * @param LabeledSectionContentFetcher $labeledSectionContentFetcher
-	 * @param RemoteMessageContentFetcher $remoteMessageContentFetcher
-	 * @param LanguageNameUtils $languageNameUtils
-	 * @param LanguageFallback $languageFallback
-	 * @param string $currentWikiId
-	 */
 	public function __construct(
-		LocalMessageContentFetcher $localMessageContentFetcher,
-		LabeledSectionContentFetcher $labeledSectionContentFetcher,
-		RemoteMessageContentFetcher $remoteMessageContentFetcher,
-		LanguageNameUtils $languageNameUtils,
-		LanguageFallback $languageFallback,
-		string $currentWikiId
+		private readonly LocalMessageContentFetcher $localMessageContentFetcher,
+		private readonly LabeledSectionContentFetcher $labeledSectionContentFetcher,
+		private readonly RemoteMessageContentFetcher $remoteMessageContentFetcher,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly LanguageFallback $languageFallback,
+		private readonly string $currentWikiId,
 	) {
-		$this->localMessageContentFetcher = $localMessageContentFetcher;
-		$this->labeledSectionContentFetcher = $labeledSectionContentFetcher;
-		$this->remoteMessageContentFetcher = $remoteMessageContentFetcher;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->languageFallback = $languageFallback;
-		$this->currentWikiId = $currentWikiId;
 	}
 
 	/**

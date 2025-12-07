@@ -26,20 +26,15 @@ class ApiEditMassMessageList extends ApiBase {
 
 	use ApiWatchlistTrait;
 
-	private RevisionLookup $revisionLookup;
-	private LinkBatchFactory $linkBatchFactory;
-
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		RevisionLookup $revisionLookup,
-		LinkBatchFactory $linkBatchFactory,
+		private readonly RevisionLookup $revisionLookup,
+		private readonly LinkBatchFactory $linkBatchFactory,
 		WatchlistManager $watchlistManager,
 		UserOptionsLookup $userOptionsLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->revisionLookup = $revisionLookup;
-		$this->linkBatchFactory = $linkBatchFactory;
 
 		// Variables needed in ApiWatchlistTrait trait
 		$this->watchlistExpiryEnabled = false;

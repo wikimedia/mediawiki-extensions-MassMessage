@@ -16,18 +16,10 @@ use MediaWiki\Status\Status;
  * @license GPL-2.0-or-later
  */
 class RemoteMessageContentFetcher {
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
-	/** @var SiteConfiguration */
-	private $siteConfiguration;
-
-	/**
-	 * @param HttpRequestFactory $requestFactory
-	 * @param SiteConfiguration $siteConfiguration
-	 */
-	public function __construct( HttpRequestFactory $requestFactory, SiteConfiguration $siteConfiguration ) {
-		$this->httpRequestFactory = $requestFactory;
-		$this->siteConfiguration = $siteConfiguration;
+	public function __construct(
+		private readonly HttpRequestFactory $httpRequestFactory,
+		private readonly SiteConfiguration $siteConfiguration,
+	) {
 	}
 
 	/**

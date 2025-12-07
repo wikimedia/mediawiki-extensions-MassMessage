@@ -11,22 +11,10 @@ use MessageLocalizer;
 use TextSlotDiffRenderer;
 
 class MassMessageListSlotDiffRenderer extends \SlotDiffRenderer {
-	/** @var TextSlotDiffRenderer */
-	private $textSlotDiffRenderer;
-
-	/** @var MessageLocalizer */
-	private $localizer;
-
-	/**
-	 * @param TextSlotDiffRenderer $textSlotDiffRenderer
-	 * @param MessageLocalizer $localizer
-	 */
 	public function __construct(
-		TextSlotDiffRenderer $textSlotDiffRenderer,
-		MessageLocalizer $localizer
+		private readonly TextSlotDiffRenderer $textSlotDiffRenderer,
+		private readonly MessageLocalizer $localizer,
 	) {
-		$this->textSlotDiffRenderer = $textSlotDiffRenderer;
-		$this->localizer = $localizer;
 	}
 
 	/**

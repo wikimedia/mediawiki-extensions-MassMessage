@@ -24,20 +24,13 @@ use Wikimedia\ScopedCallback;
  * @license GPL-2.0-or-later
  */
 class MessageSender {
-	/** @var PermissionManager */
-	private $permissionManager;
 	/** @var callable|null */
 	private $failureCallback;
 
-	/**
-	 * @param PermissionManager $permissionManager
-	 * @param callable|null $failureCallback
-	 */
 	public function __construct(
-		PermissionManager $permissionManager,
+		private readonly PermissionManager $permissionManager,
 		?callable $failureCallback
 	) {
-		$this->permissionManager = $permissionManager;
 		$this->failureCallback = $failureCallback;
 	}
 

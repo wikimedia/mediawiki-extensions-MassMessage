@@ -19,12 +19,7 @@ use Psr\Container\ContainerInterface;
  * @license GPL-2.0-or-later
  */
 class Services implements ContainerInterface {
-	/** @var MediaWikiServices */
-	private $container;
-
-	/** @param MediaWikiServices $container */
-	private function __construct( MediaWikiServices $container ) {
-		$this->container = $container;
+	private function __construct( private readonly MediaWikiServices $container ) {
 	}
 
 	/** @return Services */
