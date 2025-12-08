@@ -23,7 +23,8 @@
 			"坑触可",
 			"神樂坂秀吉",
 			"沈澄心",
-			"Stang"
+			"Stang",
+			"Peterxy12"
 		]
 	},
 	"massmessage": "发送大量信息",
@@ -32,9 +33,14 @@
 	"massmessage-desc": "使用户可以轻松将信息发送给一个递送列表中的用户",
 	"massmessage-form-spamlist": "包含有要留言页面列表的页面或分类：",
 	"massmessage-form-subject": "信息主题（同时用作编辑摘要）：",
+	"massmessage-form-subject-help": "如果所选的页面段落要作为主旨发送，则会忽略此选项",
 	"massmessage-form-message": "信息正文：",
 	"massmessage-form-page": "作为信息发送的页面：",
 	"massmessage-form-page-help": "若提供了信息文本，则其将附加在所选页面内容的末尾。",
+	"massmessage-form-page-message-section": "要作为消息发送的页面段落：",
+	"massmessage-form-page-message-section-help": "选择一个页面并预览窗体来查看可用段落的清单。如果仅选一个段落，则该段落将作为信息发送。",
+	"massmessage-form-page-subject-section": "要作为主旨发送的页面段落：",
+	"massmessage-form-page-subject-section-help": "选择一个页面并预览表单来查看可用段落的清单。如果仅选一个段落，则该段落将作为主旨发送。换行符号与标签将会剔除掉。",
 	"massmessage-form-preview": "预览",
 	"massmessage-form-submit": "发送",
 	"massmessage-fieldset-preview": "预览",
@@ -59,6 +65,7 @@
 	"massmessage-invalid-lang": "无效的语言代码：“$1”",
 	"massmessage-page-message-parse-invalid-in-wiki": "从wiki“$1”获取页面“$2”时发送了无效响应，该页面被选择作为消息发送。回应：$3",
 	"massmessage-page-message-empty": "选择作为消息发送的页面“$1”没有内容。",
+	"massmessage-page-subject-empty": "在页面“$2”中所选要作为主旨发送的段落“$1”没有内容。",
 	"massmessage-unescaped-langlinks": "警告：在您的信息中有未转义的语言链接。",
 	"massmessage-no-timestamp": "警告：您的信息不包含时间戳或签名。",
 	"massmessage-form-header": "使用下面的表单以将信息发送到指定列表中。所有字段都是必需的（[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage 更多信息]）。",

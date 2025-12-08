@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Yfdyh000",
-			"坑触可"
+			"坑触可",
+			"Peterxy12"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "编辑大量信息递送列表。",
@@ -11,16 +12,23 @@
 	"apihelp-editmassmessagelist-param-spamlist": "要更新的递送列表标题。",
 	"apihelp-editmassmessagelist-param-add": "加入列表的标题。",
 	"apihelp-editmassmessagelist-param-remove": "从列表移除的标题。",
+	"apihelp-editmassmessagelist-param-description": "传送清单的新描述。",
 	"apihelp-editmassmessagelist-example-1": "将[[User talk:Foo]]和[[Talk:Bar]]加入订阅列表[[Example]]中，并将[[Talk:Baz]]从列表中移除",
+	"apihelp-editmassmessagelist-example-2": "将传递清单[[Example]]的描述设置成“FooBar传递服务”",
 	"apihelp-massmessage-description": "发送一条信息到列出的多个页面。",
 	"apihelp-massmessage-summary": "发送一条信息到列出的多个页面。",
 	"apihelp-massmessage-param-spamlist": "页面包含着要留下信息的页面名单。",
 	"apihelp-massmessage-param-subject": "消息的主题行。",
 	"apihelp-massmessage-param-message": "信息正文。",
+	"apihelp-massmessage-param-page-message": "与信息正文一起发送的页面。",
 	"apihelp-massmessage-example-1": "发送消息至位于[[Signpost Spamlist]]的列表，主题为“New Signpost”，消息正文“Please read it”。",
+	"apihelp-massmessage-example-2": "以标题“New Signpost”以及信息正文为“Help Page”，来发送信息给位于[[Signpost Spamlist]]的清单。",
+	"apihelp-massmessage-example-3": "以标题“New Signpost”以及信息正文为“Please read it”，且附加来自页面“Help Page”的内容，来发送信息给位于[[Signpost Spamlist]]的清单。",
 	"apihelp-query+mmsites-description": "为自动完成大量消息中网站字段的请求而提供服务。",
 	"apihelp-query+mmsites-summary": "为自动完成大量消息中网站字段的请求而提供服务。",
 	"apihelp-query+mmsites-param-term": "要搜索的前缀。",
 	"apihelp-query+mmsites-example-1": "自动完成“en”",
+	"apihelp-query+mmcontent-summary": "获取垃圾黑名单的描述和目标",
+	"apihelp-query+mmcontent-example-1": "获取[[Spam list]]的垃圾黑名单信息与页面",
 	"apierror-massmessage-invalidspamlist": "指定的spamlist无效。"
 }
