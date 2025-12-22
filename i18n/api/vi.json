@@ -3,12 +3,29 @@
 		"authors": [
 			"Max20091",
 			"Minh Nguyen",
-			"NguoiDungKhongDinhDanh"
+			"NguoiDungKhongDinhDanh",
+			"Nvdtn19"
 		]
 	},
 	"apihelp-editmassmessagelist-description": "Sửa một danh sách gửi thông báo rộng rãi.",
-	"apihelp-editmassmessagelist-param-add": "Tiêu đề để thêm vào danh sách.",
-	"apihelp-editmassmessagelist-param-remove": "Tên trang cần xóa khỏi danh sách.",
+	"apihelp-editmassmessagelist-summary": "Sửa danh sách gửi thông báo hàng loạt.",
+	"apihelp-editmassmessagelist-param-spamlist": "Tiêu đề của danh sách gửi thông báo cần cập nhật.",
+	"apihelp-editmassmessagelist-param-add": "Các tiêu đề cần thêm vào danh sách.",
+	"apihelp-editmassmessagelist-param-remove": "Các tiêu đề cần xóa khỏi danh sách.",
+	"apihelp-editmassmessagelist-param-description": "Miêu tả mới cho danh sách gửi thông báo.",
+	"apihelp-editmassmessagelist-example-1": "Thêm [[User talk:Foo]] và [[Talk:Bar]] vào danh sách gửi [[Example]] và xóa [[Talk:Baz]] khỏi đó",
+	"apihelp-editmassmessagelist-example-2": "Đặt miêu tả của danh sách gửi [[Example]] thành \"FooBar delivery services\"",
+	"apihelp-massmessage-summary": "Gửi thông báo đến một danh sách các trang.",
+	"apihelp-massmessage-param-spamlist": "Trang chứa danh sách các trang cần để lại thông báo.",
+	"apihelp-massmessage-param-subject": "Dòng tiêu đề của thông báo.",
+	"apihelp-massmessage-param-message": "Văn bản nội dung thông báo.",
+	"apihelp-massmessage-param-page-message": "Trang được gửi cùng với nội dung thông báo.",
+	"apihelp-massmessage-example-1": "Gửi thông báo đến danh sách tại [[Signpost Spamlist]] với tiêu đề \"New Signpost\", và nội dung thông báo là \"Please read it\".",
+	"apihelp-massmessage-example-2": "Gửi thông báo đến danh sách tại [[Signpost Spamlist]] với tiêu đề \"New Signpost\", và thông báo lấy từ nội dung của trang \"Help Page\".",
+	"apihelp-massmessage-example-3": "Gửi thông báo đến danh sách tại [[Signpost Spamlist]] với tiêu đề \"New Signpost\", và nội dung thông báo là \"Please read it\" kèm theo nội dung từ trang \"Help Page\".",
 	"apihelp-query+mmsites-param-term": "Tiền tố để tìm kiếm.",
-	"apihelp-query+mmsites-example-1": "Tự động điền “vi”"
+	"apihelp-query+mmsites-example-1": "Tự động điền “vi”",
+	"apihelp-query+mmcontent-summary": "Trích xuất miêu tả và trang đích của một danh sách gửi thư (spamlist)",
+	"apihelp-query+mmcontent-example-1": "Trích xuất thông tin trang và danh sách gửi thư của [[Spam list]]",
+	"apierror-massmessage-invalidspamlist": "Danh sách gửi thư (spamlist) đã chỉ định không hợp lệ."
 }
