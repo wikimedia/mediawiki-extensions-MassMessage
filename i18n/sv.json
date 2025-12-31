@@ -9,6 +9,7 @@
 			"Lokal Profil",
 			"Nirmos (Wikimedia)",
 			"Sabelöga",
+			"Stefan2255",
 			"WikiPhoenix"
 		]
 	},
@@ -32,7 +33,7 @@
 	"massmessage-just-preview": "Detta är bara en förhandsgranskning. Tryck på \"{{int:massmessage-form-submit}}\" för att skicka meddelandet.",
 	"massmessage-spamlist-doesnotexist": "Den angivna sidan eller kategorin för leveranslist finns inte.",
 	"massmessage-spamlist-invalid": "Den angivna sidan innehåller inte en giltig leveranslista.",
-	"massmessage-empty-subject": "Ämnesraden är tom.",
+	"massmessage-empty-subject": "Inget ämne har angetts för meddelandet.",
 	"massmessage-empty-message": "Meddelandetexten är tom. Ange meddelandetexten eller välj en sida som ska skickas som meddelande.",
 	"massmessage-page-message-invalid": "Sidan \"$1\", vald för att skickas som meddelande är ogiltig.",
 	"massmessage-page-message-not-found": "Sidan \"$1\", vald för att skickas som meddelande hittades inte.",
