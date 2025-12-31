@@ -35,7 +35,7 @@
 	"massmessage-just-preview": "Esta é apenas uma visualização. Pressione \"{{int:massmessage-form-submit}}\" para enviar a mensagem.",
 	"massmessage-spamlist-doesnotexist": "A página de lista de entrega ou categoria especificada não existe.",
 	"massmessage-spamlist-invalid": "A página especificada não contém uma lista de entrega válida.",
-	"massmessage-empty-subject": "O espaço do assunto está vazio.",
+	"massmessage-empty-subject": "Nenhum assunto foi fornecido para a mensagem.",
 	"massmessage-empty-message": "O corpo da mensagem está vazio. Forneça o corpo da mensagem ou selecione uma página a ser enviada como mensagem.",
 	"massmessage-page-message-invalid": "A página: \"$1\", selecionada para ser enviada como mensagem, é inválida.",
 	"massmessage-page-message-not-found": "A página: \"$1\", selecionada para ser enviada como mensagem, não foi encontrada.",
