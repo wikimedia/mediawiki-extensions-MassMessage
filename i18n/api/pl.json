@@ -22,6 +22,6 @@
 	"apihelp-massmessage-example-2": "Wyślij wiadomość na strony z listy [[Signpost Spamlist]] z tematem \"New Signpost\" i zawartością strony \"Help Page\" jako treścią wiadomości.",
 	"apihelp-massmessage-example-3": "Wyślij wiadomość na strony z listy [[Signpost Spamlist]] z tematem \"New Signpost\" i treścią \"Please read it\" z dołączoną zawartością strony \"Help Page\".",
 	"apihelp-query+mmcontent-summary": "Uzyskaj opis i cele listy antyspamowej",
-	"apihelp-query+mmcontent-example-1": "Uzyskaj informacje z listy antyspamowej",
+	"apihelp-query+mmcontent-example-1": "Uzyskaj informacje o stronie i liście antyspamowej [[Spam list]]",
 	"apierror-massmessage-invalidspamlist": "Lista określająca spam jest nieprawidłowa."
 }
