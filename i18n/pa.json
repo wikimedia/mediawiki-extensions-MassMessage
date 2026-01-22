@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Babanwalia",
-			"Tow"
+			"Tow",
+			"Cabal"
 		]
 	},
-	"massmessage-form-submit": "ਭੇਜੋ",
+	"massmessage-form-submit": "ਘੱਲੋ",
 	"massmessage-fieldset-preview": "ਝਲਕ",
 	"massmessage-fieldset-info": "ਜਾਣਕਾਰੀ",
 	"massmessage-content-removeyes": "ਹਟਾਓ",

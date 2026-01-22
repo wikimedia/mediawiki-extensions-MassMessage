@@ -3,7 +3,8 @@
 		"authors": [
 			"Hannarosendeloitte",
 			"Jopparn",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"apihelp-editmassmessagelist-summary": "Redigera leveranslista för massmeddelanden",
@@ -11,6 +12,8 @@
 	"apihelp-editmassmessagelist-param-add": "Titlar att lägga till i listan.",
 	"apihelp-editmassmessagelist-param-remove": "Titlar att ta bort från listan.",
 	"apihelp-editmassmessagelist-param-description": "Ny beskrivning för leveranslistan.",
+	"apihelp-editmassmessagelist-param-minor": "Om redigeringen ska markeras som mindre i listanhistoriken.",
+	"apihelp-editmassmessagelist-param-watchlist": "Lägg till eller ta bort sidan ovillkorligen från den aktuella användarens bevakningslista, använd inställningar (ignoreras för botanvändare) eller ändra inte bevakning.",
 	"apihelp-editmassmessagelist-example-1": "Lägg till [[User talk:Foo]] och [[Talk:Bar]] i leveranslistan [[Example]] och ta bort [[Talk:Baz]] från den",
 	"apihelp-editmassmessagelist-example-2": "Ange beskrivningen av leveranslistan [[Example]] till \"FooBar leveranstjänster\"",
 	"apihelp-massmessage-summary": "Skicka ett meddelande till en lista över sidor.",
@@ -21,5 +24,7 @@
 	"apihelp-massmessage-example-1": "Skicka ett meddelande till listan på [[Signpost Spamlist]] med subjektet \"Ny Signpost\" och meddelandetexten \"Vänligen läs\".",
 	"apihelp-massmessage-example-2": "Skicka ett meddelande till listan på [[Signpost Spamlist]] med subjektet \"Ny Signpost\" och meddelandet som innehållet på sidan \"Hjälpsida\".",
 	"apihelp-massmessage-example-3": "Skicka ett meddelande till listan på [[Signpost Spamlist]] med subjektet \"Ny Signpost\" och meddelandetexten \"Vänligen läs\" bifogas med innehållet från sidan \"Hjälpsida\"",
+	"apihelp-query+mmcontent-summary": "Få beskrivningen och målen för en spamlista",
+	"apihelp-query+mmcontent-example-1": "Hämta sid- och spamlist-information för [[Spam list|spamlista]]",
 	"apierror-massmessage-invalidspamlist": "Den angivna spamlistan är inte giltig."
 }
