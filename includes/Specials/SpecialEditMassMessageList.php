@@ -234,8 +234,6 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * Hide the form if the title is invalid or if the user can't edit the list. If neither
 	 * of these are true, then add a cancel button alongside the automatic save button. Also
 	 * add an ID to the form for targeting with CSS styles.
-	 *
-	 * @param HTMLForm $form
 	 */
 	protected function alterForm( HTMLForm $form ) {
 		if ( !$this->rev ) {

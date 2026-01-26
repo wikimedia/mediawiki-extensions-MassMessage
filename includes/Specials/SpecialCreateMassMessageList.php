@@ -65,8 +65,6 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	/**
 	 * Add an ID to the form for targeting with JS code.
-	 *
-	 * @param HTMLForm $form
 	 */
 	protected function alterForm( HTMLForm $form ) {
 		$form->setId( 'mw-massmessage-create-form' );

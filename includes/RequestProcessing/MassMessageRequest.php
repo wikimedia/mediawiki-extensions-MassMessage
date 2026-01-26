@@ -54,32 +54,26 @@ class MassMessageRequest {
 		$this->comment = $comment;
 	}
 
-	/** @return Title */
 	public function getSpamList(): Title {
 		return $this->spamList;
 	}
 
-	/** @return string */
 	public function getSubject(): string {
 		return $this->subject;
 	}
 
-	/** @return string */
 	public function getPageMessage(): string {
 		return $this->pageMessage;
 	}
 
-	/** @return string */
 	public function getPageMessageSection(): string {
 		return $this->pageMessageSection;
 	}
 
-	/** @return string */
 	public function getPageSubjectSection(): string {
 		return $this->pageSubjectSection;
 	}
 
-	/** @return string */
 	public function getMessage(): string {
 		return $this->message;
 	}
@@ -89,17 +83,14 @@ class MassMessageRequest {
 		return $this->comment;
 	}
 
-	/** @return bool */
 	public function hasPageMessage(): bool {
 		return $this->pageMessage !== '';
 	}
 
-	/** @return bool */
 	public function hasMessage(): bool {
 		return $this->message !== '';
 	}
 
-	/** @return array */
 	public function getSerializedData(): array {
 		return [
 			'spamList' => $this->getSpamList()->getPrefixedText(),

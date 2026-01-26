@@ -22,37 +22,22 @@ class PageMessageBuilderResult {
 	) {
 	}
 
-	/**
-	 * @return Status
-	 */
 	public function getStatus(): Status {
 		return $this->status;
 	}
 
-	/**
-	 * @return LanguageAwareText|null
-	 */
 	public function getPageMessage(): ?LanguageAwareText {
 		return $this->pageMessage;
 	}
 
-	/**
-	 * @return LanguageAwareText|null
-	 */
 	public function getPageSubject(): ?LanguageAwareText {
 		return $this->pageSubject;
 	}
 
-	/**
-	 * @return bool
-	 */
 	public function isOK(): bool {
 		return $this->status->isOK();
 	}
 
-	/**
-	 * @return Message
-	 */
 	public function getResultMessage(): Message {
 		return $this->status->getMessage();
 	}

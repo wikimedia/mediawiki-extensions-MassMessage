@@ -18,9 +18,6 @@ class MessageBuilder {
 
 	/**
 	 * Strip tildes at the end of the message
-	 *
-	 * @param string $customMessage
-	 * @return string
 	 */
 	public function stripTildes( string $customMessage ): string {
 		$strippedText = rtrim( $customMessage );

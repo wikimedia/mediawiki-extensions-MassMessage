@@ -30,17 +30,14 @@ class LanguageAwareText {
 		$this->languageDirection = $languageDirection;
 	}
 
-	/** @return string */
 	public function getWikitext(): string {
 		return $this->wikitext;
 	}
 
-	/** @return string */
 	public function getLanguageCode(): string {
 		return $this->languageCode;
 	}
 
-	/** @return string */
 	public function getLanguageDirection(): string {
 		return $this->languageDirection;
 	}

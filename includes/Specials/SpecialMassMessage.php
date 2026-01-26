@@ -499,9 +499,6 @@ class SpecialMassMessage extends FormSpecialPage {
 		}
 	}
 
-	/**
-	 * @param array $infoMessages
-	 */
 	protected function showPreviewInfo( array $infoMessages ) {
 		$infoListHtml = $infoMessages[0];
 		if ( count( $infoMessages ) > 1 ) {

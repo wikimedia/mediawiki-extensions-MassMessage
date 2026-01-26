@@ -44,10 +44,6 @@ class MassMessageJob extends Job {
 	/** @var Title The title before any page redirects. */
 	private $originalTitle;
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
 	public function __construct( Title $title, array $params ) {
 		parent::__construct( 'MassMessageJob', $title, $params );
 		$this->removeDuplicates = true;
@@ -235,8 +231,6 @@ class MassMessageJob extends Job {
 	/**
 	 * Send a message to a user.
 	 * Modified from the TranslationNotification extension.
-	 *
-	 * @return bool
 	 */
 	protected function sendMessage(): bool {
 		$title = $this->normalizeTitle( $this->title );

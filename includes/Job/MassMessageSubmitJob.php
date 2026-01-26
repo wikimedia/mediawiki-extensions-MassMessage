@@ -15,10 +15,7 @@ use MediaWiki\Utils\MWTimestamp;
  * @license GPL-2.0-or-later
  */
 class MassMessageSubmitJob extends Job {
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
+
 	public function __construct( Title $title, array $params ) {
 		if ( !isset( $params['timestamp'] ) ) {
 			$params['timestamp'] = MWTimestamp::now();

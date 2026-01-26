@@ -75,9 +75,6 @@ class MassMessageListSlotDiffRenderer extends \SlotDiffRenderer {
 		return $this->textSlotDiffRenderer->getExtraCacheKeys();
 	}
 
-	/**
-	 * @param OutputPage $output
-	 */
 	public function addModules( OutputPage $output ) {
 		$this->textSlotDiffRenderer->addModules( $output );
 	}

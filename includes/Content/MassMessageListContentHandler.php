@@ -48,9 +48,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		return new MassMessageListContent( '{"description":"","targets":[]}' );
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @inheritDoc */
 	protected function getContentClass() {
 		return MassMessageListContent::class;
 	}
