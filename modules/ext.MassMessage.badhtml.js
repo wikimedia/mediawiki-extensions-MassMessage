@@ -30,29 +30,21 @@ function badHtml( $msg ) {
 
 		// Ignore tags that have '/' outside of the first character
 		// (assume those are self closing).
-		const matches = code.match( /<[\w/][^/]*?>/g );
+		const matches = code.match( /<\/?\w+(?=[^/>]*>)/g );
 		if ( matches ) {
 			const tags = {};
 			matches.forEach( ( itm ) => {
-				const hasOwn = Object.prototype.hasOwnProperty;
-
 				// Keep just the element names and the starting '/', if exists.
-				const tag = itm.replace( /[<>]/g, '' ).split( ' ' )[ 0 ];
-				if ( tag.charAt( 0 ) !== '/' ) { // Start tag
-					if ( !hasOwn.call( voidElements, tag ) ) { // Ignore void elements
-						if ( hasOwn.call( tags, tag ) ) {
-							tags[ tag ]++;
-						} else {
-							tags[ tag ] = 1;
-						}
+				const tag = itm.slice( 1 );
+				if ( !tag.startsWith( '/' ) ) { // Start tag
+					if ( !( tag in voidElements ) ) { // Ignore void elements
+						tags[ tag ] = tags[ tag ] || 0;
+						tags[ tag ]++;
 					}
 				} else { // End tag
-					const realTag = tag.slice( 1, 1 + tag.length );
-					if ( hasOwn.call( tags, realTag ) ) {
-						tags[ realTag ]--;
-					} else {
-						tags[ realTag ] = -1;
-					}
+					const realTag = tag.slice( 1 );
+					tags[ realTag ] = tags[ realTag ] || 0;
+					tags[ realTag ]--;
 				}
 			} );
 

@@ -45,7 +45,7 @@ $( () => {
 			classes: [ 'mw-massmessage-form-error' ]
 		} );
 		message.$element.hide();
-		$( $elem ).closest( '.mw-htmlform-field-HTMLTitleTextField' ).append( message.$element );
+		$elem.closest( '.mw-htmlform-field-HTMLTitleTextField' ).append( message.$element );
 		return [ message.$element, message.$label ];
 	}
 
@@ -76,22 +76,16 @@ $( () => {
 				result = callback( data.query.pages );
 			}
 
-			if ( result ) {
-				$( $elem ).removeClass( 'oo-ui-flaggedElement-invalid' );
-				$statusField.hide();
-			} else {
-				$( $elem ).addClass( 'oo-ui-flaggedElement-invalid' );
-				if ( $elem.prop( 'id' ) === 'mw-massmessage-form-spamlist' ) {
-					$( $statusFieldLabel ).text(
-						mw.message( 'massmessage-parse-badspamlist', pagetitle ).text()
-					);
-				} else {
-					$( $statusFieldLabel ).text(
-						mw.message( 'massmessage-parse-badpage', pagetitle ).text()
-					);
-				}
-				$statusField.show();
+			$elem.toggleClass( 'oo-ui-flaggedElement-invalid', !result );
+			if ( !result ) {
+				const key = 'massmessage-parse-bad' +
+					( $elem.prop( 'id' ) === 'mw-massmessage-form-spamlist' ? 'spamlist' : 'page' );
+				// Messages used here:
+				// * massmessage-parse-badspamlist
+				// * massmessage-parse-badpage
+				$statusFieldLabel.text( mw.message( key, pagetitle ).text() );
 			}
+			$statusField.toggle( !result );
 		} );
 	}
 
@@ -106,7 +100,7 @@ $( () => {
 		const $statusField = $result[ 0 ];
 		const $statusFieldLabel = $result[ 1 ];
 		validateTitle( $elem, callback, $statusField, $statusFieldLabel );
-		const widget = OO.ui.infuse( $( $elem ) );
+		const widget = OO.ui.infuse( $elem );
 		widget.on(
 			'change',
 			OO.ui.debounce(
@@ -129,11 +123,11 @@ $( () => {
 
 	// Only bind once for 'blur' so that the user can fill it in without errors;
 	// after that, look at every change for immediate feedback.
-	$( $( '#mw-massmessage-form-spamlist input' ) ).one( 'blur', () => {
+	$( '#mw-massmessage-form-spamlist input' ).one( 'blur', () => {
 		addPageTitleValidation( $( '#mw-massmessage-form-spamlist' ), isValidSpamList );
 	} );
 
-	$( $( '#mw-massmessage-form-page input' ) ).one( 'blur', () => {
+	$( '#mw-massmessage-form-page input' ).one( 'blur', () => {
 		addPageTitleValidation( $( '#mw-massmessage-form-page' ), isValidPageMessage );
 	} );
 } );
