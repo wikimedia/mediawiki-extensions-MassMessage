@@ -7,10 +7,10 @@ use MediaWiki\MassMessage\Services;
 use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
+use StatusValue;
 use function wfMessage;
 
 /**
@@ -20,12 +20,8 @@ use function wfMessage;
  * @license GPL-2.0-or-later
  */
 class MassMessageRequestParser {
-	/**
-	 * @param array $data
-	 * @param UserIdentity $user
-	 * @return Status
-	 */
-	public function parseRequest( array $data, UserIdentity $user ): Status {
+
+	public function parseRequest( array $data, UserIdentity $user ): StatusValue {
 		// Trim all the things!
 		foreach ( $data as $k => $v ) {
 			if ( is_string( $v ) ) {
@@ -33,7 +29,7 @@ class MassMessageRequestParser {
 			}
 		}
 
-		$status = new Status();
+		$status = new StatusValue();
 		$currentWikiId = WikiMap::getCurrentWikiId();
 
 		$data['page-message'] ??= '';

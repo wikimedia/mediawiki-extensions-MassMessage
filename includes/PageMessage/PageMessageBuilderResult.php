@@ -6,6 +6,7 @@ namespace MediaWiki\MassMessage\PageMessage;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\Message\Message;
 use MediaWiki\Status\Status;
+use StatusValue;
 
 /**
  * Returned by PageMessageBuilder class: getContent and getContentWithFallback method
@@ -16,13 +17,13 @@ use MediaWiki\Status\Status;
  */
 class PageMessageBuilderResult {
 	public function __construct(
-		private readonly Status $status,
+		private readonly StatusValue $status,
 		private readonly ?LanguageAwareText $pageMessage = null,
 		private readonly ?LanguageAwareText $pageSubject = null,
 	) {
 	}
 
-	public function getStatus(): Status {
+	public function getStatus(): StatusValue {
 		return $this->status;
 	}
 
@@ -39,6 +40,6 @@ class PageMessageBuilderResult {
 	}
 
 	public function getResultMessage(): Message {
-		return $this->status->getMessage();
+		return Status::wrap( $this->status )->getMessage();
 	}
 }

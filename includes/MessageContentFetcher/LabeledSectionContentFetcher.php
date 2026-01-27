@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\MassMessage\MessageContentFetcher;
 
 use MediaWiki\MassMessage\LanguageAwareText;
-use MediaWiki\Status\Status;
+use StatusValue;
 
 /**
  * Fetches content from labeled sections
@@ -31,16 +31,12 @@ class LabeledSectionContentFetcher {
 
 	/**
 	 * Get content from a labeled section
-	 *
-	 * @param LanguageAwareText $content
-	 * @param string $label
-	 * @return Status
 	 */
-	public function getContent( LanguageAwareText $content, string $label ): Status {
+	public function getContent( LanguageAwareText $content, string $label ): StatusValue {
 		$matches = $this->getMatches( $content->getWikitext(), $label );
 
 		if ( $matches === null ) {
-			return Status::newFatal( 'massmessage-page-section-invalid' );
+			return StatusValue::newFatal( 'massmessage-page-section-invalid' );
 		}
 
 		// Include section tags for backwards compatibility.
@@ -54,21 +50,17 @@ class LabeledSectionContentFetcher {
 			$content->getLanguageDirection()
 		);
 
-		return Status::newGood( $sectionContent );
+		return StatusValue::newGood( $sectionContent );
 	}
 
 	/**
 	 * Get content from a labeled section without the section tags
-	 *
-	 * @param LanguageAwareText $content
-	 * @param string $label
-	 * @return Status
 	 */
-	public function getContentWithoutTags( LanguageAwareText $content, string $label ): Status {
+	public function getContentWithoutTags( LanguageAwareText $content, string $label ): StatusValue {
 		$matches = $this->getMatches( $content->getWikitext(), $label );
 
 		if ( $matches === null ) {
-			return Status::newFatal( 'massmessage-page-section-invalid' );
+			return StatusValue::newFatal( 'massmessage-page-section-invalid' );
 		}
 
 		$sectionContent = new LanguageAwareText(
@@ -77,7 +69,7 @@ class LabeledSectionContentFetcher {
 			$content->getLanguageDirection()
 		);
 
-		return Status::newGood( $sectionContent );
+		return StatusValue::newGood( $sectionContent );
 	}
 
 	/**

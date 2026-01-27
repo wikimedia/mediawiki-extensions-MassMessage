@@ -9,10 +9,10 @@ use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
+use StatusValue;
 
 /** @coversDefaultClass \MediaWiki\MassMessage\PageMessage\PageMessageBuilder */
 class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
@@ -32,7 +32,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 		$localMessageContentFetcherMock
 			->expects( $this->once() )
 			->method( 'getContent' )
-			->willReturn( Status::newGood( new LanguageAwareText( $text, 'en', 'ltr' ) ) );
+			->willReturn( StatusValue::newGood( new LanguageAwareText( $text, 'en', 'ltr' ) ) );
 
 		$pageMessageBuilder = new PageMessageBuilder(
 			$localMessageContentFetcherMock,
@@ -194,7 +194,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 	) {
 		return static function ( Title $title ) use ( $content, $languageCode, $languageDirection ) {
 			if ( str_ends_with( $title->getPrefixedText(), "/$languageCode" ) ) {
-				return Status::newGood(
+				return StatusValue::newGood(
 					new LanguageAwareText(
 						$content,
 						$languageCode,
@@ -203,7 +203,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 				);
 			}
 
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'massmessage-page-message-not-found',
 				'hello-world',
 				WikiMap::getCurrentWikiId()

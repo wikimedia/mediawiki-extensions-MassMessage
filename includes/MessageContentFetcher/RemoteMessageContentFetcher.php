@@ -7,7 +7,7 @@ use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Status\Status;
+use StatusValue;
 
 /**
  * Fetches content from a remote wiki
@@ -24,14 +24,11 @@ class RemoteMessageContentFetcher {
 
 	/**
 	 * Fetch remote content and return Status object. The Status value contains a LanguageAwareText object
-	 * @param string $pageTitle
-	 * @param string $wikiId
-	 * @return Status
 	 */
-	public function getContent( string $pageTitle, string $wikiId ): Status {
+	public function getContent( string $pageTitle, string $wikiId ): StatusValue {
 		$apiUrl = $this->getApiEndpoint( $wikiId );
 		if ( !$apiUrl ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'massmessage-page-message-wiki-not-found',
 				$wikiId,
 				$pageTitle
@@ -59,7 +56,7 @@ class RemoteMessageContentFetcher {
 		$status = $req->execute();
 		if ( !$status->isOK() ) {
 			// FIXME: Formatting is broken here, needs to be improved.
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				"massmessage-page-message-fetch-error-in-wiki",
 				$wikiId,
 				$pageTitle,
@@ -70,7 +67,7 @@ class RemoteMessageContentFetcher {
 		$json = $req->getContent();
 		$response = json_decode( $json, true );
 		if ( $response === null ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				"massmessage-page-message-parsing-error-in-wiki",
 				$wikiId,
 				$pageTitle,
@@ -81,19 +78,12 @@ class RemoteMessageContentFetcher {
 		return $this->parseQueryApiResponse( $response, $wikiId, $pageTitle, $json );
 	}
 
-	/**
-	 * @param array $response
-	 * @param string $wikiId
-	 * @param string $pageTitle
-	 * @param string $json
-	 * @return Status
-	 */
 	private function parseQueryApiResponse(
 		array $response,
 		string $wikiId,
 		string $pageTitle,
 		string $json
-	): Status {
+	): StatusValue {
 		// Example response:
 		// {
 		//   "batchcomplete": true,
@@ -124,7 +114,7 @@ class RemoteMessageContentFetcher {
 
 		$pages = $response['query']['pages'] ?? [];
 		if ( isset( $response['error']['info'] ) || count( $pages ) !== 1 ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'massmessage-page-message-parse-invalid-in-wiki',
 				$wikiId,
 				$pageTitle,
@@ -137,7 +127,7 @@ class RemoteMessageContentFetcher {
 
 		if ( isset( $page['missing'] ) ) {
 			// Page was not found
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'massmessage-page-message-not-found-in-wiki',
 				$wikiId,
 				$pageTitle
@@ -150,7 +140,7 @@ class RemoteMessageContentFetcher {
 			$page['pagelanguagedir']
 		);
 
-		return Status::newGood( $content );
+		return StatusValue::newGood( $content );
 	}
 
 	/**

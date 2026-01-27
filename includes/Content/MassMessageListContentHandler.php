@@ -23,7 +23,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Request\DerivativeRequest;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\Widget\TitleInputWidget;
 use OOUI\ActionFieldLayout;
@@ -31,6 +30,7 @@ use OOUI\ButtonInputWidget;
 use OOUI\ComboBoxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FormLayout;
+use StatusValue;
 
 class MassMessageListContentHandler extends JsonContentHandler {
 
@@ -81,7 +81,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 	 * @param bool $isMinor Is this a minor edit
 	 * @param string $watchlist Value to pass to the edit API for the watchlist parameter.
 	 * @param IContextSource $context The calling context
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public static function edit(
 		Title $title, $description, $targets, $summary, $isMinor, $watchlist, IContextSource $context
@@ -90,7 +90,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			[ 'description' => $description, 'targets' => $targets ]
 		);
 		if ( $jsonText === null ) {
-			return Status::newFatal( 'massmessage-ch-tojsonerror' );
+			return StatusValue::newFatal( 'massmessage-ch-tojsonerror' );
 		}
 
 		// Ensure that a valid context is provided to the API in unit tests
@@ -119,9 +119,9 @@ class MassMessageListContentHandler extends JsonContentHandler {
 			$api = new ApiMain( $der, true );
 			$api->execute();
 		} catch ( ApiUsageException $e ) {
-			return Status::wrap( $e->getStatusValue() );
+			return $e->getStatusValue();
 		}
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**

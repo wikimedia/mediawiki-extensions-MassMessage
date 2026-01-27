@@ -16,10 +16,10 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\FormSpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\Watchlist\WatchlistManager;
+use StatusValue;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 class SpecialEditMassMessageList extends FormSpecialPage {
@@ -284,11 +284,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	/**
 	 * @param array $data
 	 * @param HTMLForm|null $form
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function onSubmit( array $data, ?HTMLForm $form = null ) {
 		if ( !$this->title ) {
-			return Status::newFatal( 'massmessage-edit-invalidtitle' );
+			return StatusValue::newFatal( 'massmessage-edit-invalidtitle' );
 		}
 
 		// Parse input into target array.
@@ -297,7 +297,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			// Wikitext list of escaped invalid target strings
 			$invalidList = '* ' . implode( "\n* ", array_map( 'wfEscapeWikiText',
 				$parseResult->value ) );
-			return Status::newFatal( $this->msg( 'massmessage-edit-invalidtargets',
+			return StatusValue::newFatal( $this->msg( 'massmessage-edit-invalidtargets',
 				count( $parseResult->value ), $invalidList ) );
 		}
 
@@ -307,7 +307,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			&& !$this->getRequest()->getCheck( 'summarywarned' )
 		) {
 			$form->addHiddenField( 'summarywarned', 'true' );
-			return Status::newFatal( $this->msg( 'massmessage-edit-missingsummary' ) );
+			return StatusValue::newFatal( $this->msg( 'massmessage-edit-missingsummary' ) );
 		}
 
 		$editResult = MassMessageListContentHandler::edit(
@@ -325,7 +325,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		}
 
 		$this->getOutput()->redirect( $this->title->getFullURL() );
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	public function onSuccess() {
@@ -337,7 +337,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	 * If input contains invalid data, the value is the array of invalid target strings.
 	 *
 	 * @param string $input
-	 * @return Status
+	 * @return StatusValue
 	 */
 	protected static function parseInput( $input ) {
 		// Array of non-empty lines
@@ -353,7 +353,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$targets[] = $target;
 		}
 
-		$result = new Status;
+		$result = new StatusValue();
 		if ( !$invalidTargets ) {
 			$result->setResult( true,
 				MassMessageListContentHandler::normalizeTargetArray( $targets ) );

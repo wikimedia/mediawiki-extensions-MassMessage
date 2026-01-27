@@ -20,13 +20,13 @@ use MediaWiki\Message\Message;
 use MediaWiki\Parser\ParserOutputLinkTypes;
 use MediaWiki\Parser\Parsoid\LintErrorChecker;
 use MediaWiki\SpecialPage\FormSpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
 use OOUI\Widget;
+use StatusValue;
 
 /**
  * Form to allow users to send messages to a lot of users at once.
@@ -35,7 +35,7 @@ use OOUI\Widget;
  * @license GPL-2.0-or-later
  */
 class SpecialMassMessage extends FormSpecialPage {
-	/** @var Status */
+	/** @var StatusValue */
 	protected $status;
 	/** @var string */
 	protected $state;
@@ -69,7 +69,7 @@ class SpecialMassMessage extends FormSpecialPage {
 		$output->addModuleStyles( 'ext.MassMessage.styles' );
 
 		// Some variables...
-		$this->status = new Status();
+		$this->status = new StatusValue();
 
 		// Figure out what state we're in.
 		if ( $request->getCheck( 'submit-button' ) ) {
@@ -118,7 +118,7 @@ class SpecialMassMessage extends FormSpecialPage {
 		return $this->state;
 	}
 
-	/** @return Status */
+	/** @return StatusValue */
 	public function getStatus() {
 		return $this->status;
 	}
@@ -260,7 +260,7 @@ class SpecialMassMessage extends FormSpecialPage {
 	 * Decides whether to show the preview screen or the submitted message.
 	 *
 	 * @inheritDoc
-	 * @return Status|bool
+	 * @return StatusValue|bool
 	 */
 	public function onSubmit( array $data ) {
 		$requestParser = new MassMessageRequestParser();

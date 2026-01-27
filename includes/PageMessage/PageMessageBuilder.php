@@ -10,8 +10,8 @@ use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\RemoteMessageContentFetcher;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use StatusValue;
 
 /**
  * Contains logic to interact with page being sent as a mesasges
@@ -58,7 +58,7 @@ class PageMessageBuilder {
 		/** @var LanguageAwareText */
 		$pageContent = $pageContentStatus->getValue();
 		if ( $pageContent->getWikitext() === '' ) {
-			return new PageMessageBuilderResult( Status::newFatal( 'massmessage-page-message-empty', $pageName ) );
+			return new PageMessageBuilderResult( StatusValue::newFatal( 'massmessage-page-message-empty', $pageName ) );
 		}
 
 		$pageMessage = $pageContent;
@@ -73,7 +73,7 @@ class PageMessageBuilder {
 			$pageMessage = $this->parseGetSectionResponse(
 				$messageSectionStatus,
 				$finalStatus,
-				Status::newFatal( 'massmessage-page-message-empty', $pageName )
+				StatusValue::newFatal( 'massmessage-page-message-empty', $pageName )
 			);
 		}
 
@@ -83,7 +83,7 @@ class PageMessageBuilder {
 			$pageSubject = $this->parseGetSectionResponse(
 				$subjectSectionStatus,
 				$finalStatus,
-				Status::newFatal( 'massmessage-page-subject-empty', $pageSubjectSection, $pageName )
+				StatusValue::newFatal( 'massmessage-page-subject-empty', $pageSubjectSection, $pageName )
 			);
 		}
 
@@ -110,7 +110,7 @@ class PageMessageBuilder {
 		string $sourceWikiId
 	): PageMessageBuilderResult {
 		if ( !$this->languageNameUtils->isKnownLanguageTag( $targetLangCode ) ) {
-			return new PageMessageBuilderResult( Status::newFatal( 'massmessage-invalid-lang', $targetLangCode ) );
+			return new PageMessageBuilderResult( StatusValue::newFatal( 'massmessage-invalid-lang', $targetLangCode ) );
 		}
 
 		// Identify languages to fetch
@@ -147,18 +147,18 @@ class PageMessageBuilder {
 	/**
 	 * Helper method to parse response from get labeled section method and updates the passed status
 	 *
-	 * @param Status $sectionStatus Status from get labeled section
-	 * @param Status $statusToUpdate Status to update
-	 * @param Status $emptySectionErrorStatus Fatal status to use if section content is empty
+	 * @param StatusValue $sectionStatus Status from get labeled section
+	 * @param StatusValue $statusToUpdate Status to update
+	 * @param StatusValue $emptySectionErrorStatus Fatal status to use if section content is empty
 	 * @return LanguageAwareText|null
 	 */
 	private function parseGetSectionResponse(
-		Status $sectionStatus,
-		Status $statusToUpdate,
-		Status $emptySectionErrorStatus
+		StatusValue $sectionStatus,
+		StatusValue $statusToUpdate,
+		StatusValue $emptySectionErrorStatus
 	): ?LanguageAwareText {
 		if ( !$sectionStatus->isOK() ) {
-			$statusToUpdate = $statusToUpdate->merge( $sectionStatus );
+			$statusToUpdate->merge( $sectionStatus );
 		} else {
 			/** @var LanguageAwareText */
 			$sectionContent = $sectionStatus->getValue();
@@ -176,13 +176,13 @@ class PageMessageBuilder {
 	 *
 	 * @param string $titleStr
 	 * @param string $wikiId
-	 * @return Status Values is LanguageAwareText or null on failure
+	 * @return StatusValue Values is LanguageAwareText or null on failure
 	 */
-	private function getPageContent( string $titleStr, string $wikiId ): Status {
+	private function getPageContent( string $titleStr, string $wikiId ): StatusValue {
 		$isCurrentWiki = $this->currentWikiId === $wikiId;
 		$title = Title::newFromText( $titleStr );
 		if ( $title === null ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'massmessage-page-message-invalid', $titleStr
 			);
 		}
@@ -197,10 +197,10 @@ class PageMessageBuilder {
 	/**
 	 * Checks if a given Status is a not found error.
 	 *
-	 * @param Status $status
+	 * @param StatusValue $status
 	 * @return bool
 	 */
-	private function isNotFoundError( Status $status ): bool {
+	private function isNotFoundError( StatusValue $status ): bool {
 		$notFoundErrors = [
 			'massmessage-page-message-not-found', 'massmessage-page-message-not-found-in-wiki'
 		];

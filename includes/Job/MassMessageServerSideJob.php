@@ -8,9 +8,9 @@ use MediaWiki\JobQueue\Job;
 use MediaWiki\MassMessage\MassMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use RuntimeException;
+use StatusValue;
 
 /**
  * JobQueue class for jobs queued server side.
@@ -40,10 +40,9 @@ class MassMessageServerSideJob extends MassMessageJob {
 	 * Don't add any hidden comments.
 	 *
 	 * @param bool $stripTildes ignored
-	 * @return Status
 	 */
-	protected function makeText( bool $stripTildes = false ): Status {
-		return Status::newGood( $this->params['message'] );
+	protected function makeText( bool $stripTildes = false ): StatusValue {
+		return StatusValue::newGood( $this->params['message'] );
 	}
 
 	/**

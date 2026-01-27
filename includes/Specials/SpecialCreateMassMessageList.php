@@ -7,9 +7,9 @@ use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
 use MediaWiki\MassMessage\Lookup\SpamlistLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\FormSpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
+use StatusValue;
 
 class SpecialCreateMassMessageList extends FormSpecialPage {
 
@@ -72,31 +72,31 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	/**
 	 * @param array $data
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function onSubmit( array $data ) {
 		$title = Title::newFromText( $data['title'] );
 		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( !$title ) {
-			return Status::newFatal( 'massmessage-create-invalidtitle' );
+			return StatusValue::newFatal( 'massmessage-create-invalidtitle' );
 		} elseif ( $title->exists() ) {
-			return Status::newFatal( 'massmessage-create-exists' );
+			return StatusValue::newFatal( 'massmessage-create-exists' );
 		} elseif ( !$pm->userCan( 'edit', $this->getUser(), $title ) ||
 			!$pm->userCan( 'editcontentmodel', $this->getUser(), $title )
 		) {
-			return Status::newFatal( 'massmessage-create-nopermission' );
+			return StatusValue::newFatal( 'massmessage-create-nopermission' );
 		}
 
 		if ( $data['content'] === 'import' ) {
 			// We're importing from an existing list
 			$source = Title::newFromText( $data['source'] );
 			if ( !$source ) {
-				return Status::newFatal( 'massmessage-create-invalidsource' );
+				return StatusValue::newFatal( 'massmessage-create-invalidsource' );
 			}
 
 			$targets = $this->getTargets( $source );
 			if ( $targets === null || count( $targets ) === 0 ) {
-				return Status::newFatal( 'massmessage-create-invalidsource' );
+				return StatusValue::newFatal( 'massmessage-create-invalidsource' );
 			}
 			if ( $source->inNamespace( NS_CATEGORY ) ) {
 				$editSummaryMsg = $this->msg(
@@ -130,7 +130,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		}
 
 		$this->getOutput()->redirect( $title->getFullUrl() );
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	public function onSuccess() {
