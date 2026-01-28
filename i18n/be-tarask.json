@@ -3,7 +3,8 @@
 		"authors": [
 			"Jim-by",
 			"Red Winged Duck",
-			"Renessaince"
+			"Renessaince",
+			"Ucukor"
 		]
 	},
 	"massmessage": "Адправіць масавае паведамленьне",
@@ -12,7 +13,7 @@
 	"massmessage-form-message": "Тэкст паведамленьня:",
 	"right-massmessage": "Адсылка паведамленьня некалькім удзельнікам адначасова",
 	"log-name-massmessage": "Журнал масавых паведамленьняў",
-	"massmessage-create-exists-short": "Ужо выкарыстоўваецца",
+	"massmessage-create-exists-short": "Ужо ва ўжытку",
 	"massmessage-create-invalidsource-short": "Няслушны сьпіс",
 	"massmessage-list-category-desc": "Гэтая старонка зьяўляецца сьпісам дастаўкі для пашырэньня [[Special:MassMessage|MassMessage]].",
 	"tag-massmessage-delivery-description": "Дастаўка паведамленьняў з дапамогай [[:mw:Special:MyLanguage/Extension:MassMessage|пашырэньня MassMessage]]"
