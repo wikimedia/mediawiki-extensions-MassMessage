@@ -13,6 +13,7 @@
 	"massmessage-form-message": "Тэкст паведамленьня:",
 	"right-massmessage": "Адсылка паведамленьня некалькім удзельнікам адначасова",
 	"log-name-massmessage": "Журнал масавых паведамленьняў",
+	"massmessage-content-removeno": "Скасаваць",
 	"massmessage-create-exists-short": "Ужо ва ўжытку",
 	"massmessage-create-invalidsource-short": "Няслушны сьпіс",
 	"massmessage-list-category-desc": "Гэтая старонка зьяўляецца сьпісам дастаўкі для пашырэньня [[Special:MassMessage|MassMessage]].",
