@@ -151,8 +151,7 @@ class MessageSender {
 	 * @return ?ApiResult
 	 */
 	private function makeAPIRequest( array $params, User $ourUser ): ?ApiResult {
-		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
-		global $wgUser, $wgRequest;
+		global $wgRequest;
 
 		// Add our hook functions to make the MassMessage user IP block-exempt and email confirmed.
 		// Done here so that it's not unnecessarily called on every page load.
@@ -163,7 +162,6 @@ class MessageSender {
 		);
 
 		$oldRequest = $wgRequest;
-		$oldUser = $wgUser;
 
 		$wgRequest = new DerivativeRequest(
 			$wgRequest,
@@ -173,7 +171,6 @@ class MessageSender {
 		);
 		// New user objects will use $wgRequest, so we set that
 		// to our DerivativeRequest, so we don't run into any issues.
-		$wgUser = $ourUser;
 		$context = RequestContext::getMain();
 		// All further internal API requests will use the main
 		// RequestContext, so setting it here will fix it for
@@ -224,7 +221,6 @@ class MessageSender {
 			ScopedCallback::consume( $hookScope );
 			$context->setUser( $oldCUser );
 			$context->setRequest( $oldCRequest );
-			$wgUser = $oldUser;
 			$wgRequest = $oldRequest;
 		}
 	}
