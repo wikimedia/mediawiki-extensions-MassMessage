@@ -30,7 +30,7 @@
 	"massmessage-page-message-not-found": "D'Säit „$1“, déi ausgewielt gouf fir als Message verschéckt ze ginn, gouf net fonnt.",
 	"massmessage-page-message-no-revision": "D'Säit „$1“, déi ausgewielt gouf fir als Message verschéckt ze ginn, huet keng brauchbar Versioun.",
 	"massmessage-page-message-no-revision-content": "D'Säit „$1“, déi ausgewielt gouf fir als Message verschéckt ze ginn, huet an der Versioun keen Inhalt. Versiouns-ID: „$2“",
-	"massmessage-invalid-lang": "Net valabele Sproochecode: \"$1\"",
+	"massmessage-invalid-lang": "Ongültege Sproochecode: „$1“",
 	"massmessage-page-message-empty": "D'Säit „$1“, déi als ausgewielt gouf fir als Message verschéckt ze ginn, huet keen Inhalt.",
 	"massmessage-unescaped-langlinks": "Opgepasst: Et gëtt net valabel Sproochlinken an Ärem Message.",
 	"massmessage-no-timestamp": "Warnung: An Ärem Message ass Keen Zäitstempel oder keng Ënnerschrëft.",
