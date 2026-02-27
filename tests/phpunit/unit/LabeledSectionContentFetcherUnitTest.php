@@ -18,12 +18,12 @@ class LabeledSectionContentFetcherUnitTest extends MediaWikiUnitTestCase {
 		$status = $labeledSectionContentFetcher->getContent( $content, $label );
 
 		if ( $expectedGood !== null ) {
-			$this->assertTrue( $status->isOK() );
+			$this->assertStatusOK( $status );
 			$this->assertEquals( $expectedGood, $status->getValue()->getWikitext() );
 		}
 
 		if ( $expectedBad !== null ) {
-			$this->assertFalse( $status->isOK() );
+			$this->assertStatusNotOK( $status );
 		}
 	}
 
@@ -88,12 +88,12 @@ class LabeledSectionContentFetcherUnitTest extends MediaWikiUnitTestCase {
 		);
 
 		if ( $expectedGood !== null ) {
-			$this->assertTrue( $status->isOK() );
+			$this->assertStatusOK( $status );
 			$this->assertEquals( $expectedGood, $status->getValue()->getWikitext() );
 		}
 
 		if ( $expectedBad !== null ) {
-			$this->assertFalse( $status->isOK() );
+			$this->assertStatusNotOK( $status );
 		}
 	}
 

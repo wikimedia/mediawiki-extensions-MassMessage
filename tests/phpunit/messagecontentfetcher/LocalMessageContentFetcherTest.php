@@ -52,7 +52,7 @@ class LocalMessageContentFetcherTest extends MediaWikiIntegrationTestCase {
 
 		$titleStub = ( new TitleStubFactory() )->getExistingTitle( 'valid', $contentLanguage, $contentDir );
 		$status = $localContentFetcher->getContent( $titleStub );
-		$this->assertTrue( $status->isOK() );
+		$this->assertStatusOK( $status );
 
 		/** @var LanguageAwareText */
 		$languageAwareText = $status->getValue();

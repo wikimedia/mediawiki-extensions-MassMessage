@@ -147,7 +147,7 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 			WikiMap::getCurrentWikiId()
 		);
 
-		$this->assertTrue( $result->isOK() );
+		$this->assertStatusOK( $result->getStatus() );
 
 		/** @var LanguageAwareText */
 		$pageMessage = $result->getPageMessage();
