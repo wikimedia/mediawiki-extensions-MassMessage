@@ -202,9 +202,9 @@
 		}
 	},
 	"LogActionsHandlers": {
-		"massmessage/*": "LogFormatter",
+		"massmessage/*": "MediaWiki\\Logging\\LogFormatter",
 		"massmessage/send": "MediaWiki\\MassMessage\\Logging\\MassMessageSendLogFormatter",
-		"massmessage/failure": "WikitextLogFormatter",
+		"massmessage/failure": "MediaWiki\\Logging\\WikitextLogFormatter",
 		"massmessage/skipoptout": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter",
 		"massmessage/skipnouser": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter",
 		"massmessage/skipbadns": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter"
