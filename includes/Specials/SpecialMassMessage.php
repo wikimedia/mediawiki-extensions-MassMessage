@@ -442,7 +442,7 @@ class SpecialMassMessage extends FormSpecialPage {
 			'framed' => true,
 			'padded' => true,
 		] );
-		$this->getOutput()->addHTML( $previewLayout );
+		$this->getOutput()->addHTML( (string)$previewLayout );
 
 		$wikitextPreviewLayout = new PanelLayout( [
 			'content' => [
@@ -463,7 +463,7 @@ class SpecialMassMessage extends FormSpecialPage {
 			'framed' => true,
 			'padded' => true,
 		] );
-		$this->getOutput()->addHTML( $wikitextPreviewLayout );
+		$this->getOutput()->addHTML( (string)$wikitextPreviewLayout );
 
 		// Check if we have unescaped langlinks (T56846)
 		if ( $parserOutput->getLinkList( ParserOutputLinkTypes::LANGUAGE ) ) {
@@ -523,7 +523,7 @@ class SpecialMassMessage extends FormSpecialPage {
 			'padded' => true,
 		] );
 
-		$this->getOutput()->addHTML( $infoLayout );
+		$this->getOutput()->addHTML( (string)$infoLayout );
 	}
 
 	/**

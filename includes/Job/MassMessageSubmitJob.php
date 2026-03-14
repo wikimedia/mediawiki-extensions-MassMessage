@@ -49,7 +49,6 @@ class MassMessageSubmitJob extends Job {
 
 		// We want to deduplicate individual messages based on retries of the
 		// batch submit job if they happen
-		// @phan-suppress-next-line PhanTypeMismatchDimAssignment
 		$data['rootJobSignature'] = sha1( json_encode( $this->getDeduplicationInfo() ) );
 		$data['rootJobTimestamp'] = $this->params['timestamp'];
 
