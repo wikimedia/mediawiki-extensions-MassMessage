@@ -16,6 +16,7 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\Watchlist\WatchlistManager;
@@ -284,11 +285,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 	/**
 	 * @param array $data
 	 * @param HTMLForm|null $form
-	 * @return StatusValue
+	 * @return Status
 	 */
 	public function onSubmit( array $data, ?HTMLForm $form = null ) {
 		if ( !$this->title ) {
-			return StatusValue::newFatal( 'massmessage-edit-invalidtitle' );
+			return Status::newFatal( 'massmessage-edit-invalidtitle' );
 		}
 
 		// Parse input into target array.
@@ -297,7 +298,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			// Wikitext list of escaped invalid target strings
 			$invalidList = '* ' . implode( "\n* ", array_map( 'wfEscapeWikiText',
 				$parseResult->value ) );
-			return StatusValue::newFatal( $this->msg( 'massmessage-edit-invalidtargets',
+			return Status::newFatal( $this->msg( 'massmessage-edit-invalidtargets',
 				count( $parseResult->value ), $invalidList ) );
 		}
 
@@ -307,7 +308,7 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			&& !$this->getRequest()->getCheck( 'summarywarned' )
 		) {
 			$form->addHiddenField( 'summarywarned', 'true' );
-			return StatusValue::newFatal( $this->msg( 'massmessage-edit-missingsummary' ) );
+			return Status::newFatal( $this->msg( 'massmessage-edit-missingsummary' ) );
 		}
 
 		$editResult = MassMessageListContentHandler::edit(
@@ -321,11 +322,11 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 		);
 
 		if ( !$editResult->isGood() ) {
-			return $editResult;
+			return Status::wrap( $editResult );
 		}
 
 		$this->getOutput()->redirect( $this->title->getFullURL() );
-		return StatusValue::newGood();
+		return Status::newGood();
 	}
 
 	public function onSuccess() {
