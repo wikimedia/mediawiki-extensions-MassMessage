@@ -22,7 +22,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setGroupPermissions( '*', 'editcontentmodel', true );
+		$this->setGroupPermissions( '*', 'createwithcontentmodel', true );
 		$this->mergeMwGlobalArrayValue(
 			'wgMassMessageWikiAliases', [
 				'en.wikipedia.org' => 'enwiki',

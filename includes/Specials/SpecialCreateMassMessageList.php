@@ -14,7 +14,7 @@ use MediaWiki\WikiMap\WikiMap;
 class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	public function __construct() {
-		parent::__construct( 'CreateMassMessageList', 'editcontentmodel' );
+		parent::__construct( 'CreateMassMessageList', 'createwithcontentmodel' );
 	}
 
 	/** @inheritDoc */
@@ -82,7 +82,7 @@ class SpecialCreateMassMessageList extends FormSpecialPage {
 		} elseif ( $title->exists() ) {
 			return Status::newFatal( 'massmessage-create-exists' );
 		} elseif ( !$pm->userCan( 'edit', $this->getUser(), $title ) ||
-			!$pm->userCan( 'editcontentmodel', $this->getUser(), $title )
+			!$pm->userCan( 'createwithcontentmodel', $this->getUser(), $title )
 		) {
 			return Status::newFatal( 'massmessage-create-nopermission' );
 		}
