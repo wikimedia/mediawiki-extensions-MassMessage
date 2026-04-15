@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\MassMessage\PageMessage;
 
 use InvalidArgumentException;
-use MediaWiki\Languages\LanguageFallback;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageFallback;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher;
 use MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher;

@@ -2,7 +2,7 @@
 
 namespace MediaWiki\MassMessage\Specials;
 
-use SpecialPageTestBase;
+use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use Wikimedia\TestingAccessWrapper;
 
 /**
