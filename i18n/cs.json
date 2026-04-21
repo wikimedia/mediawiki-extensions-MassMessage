@@ -16,6 +16,7 @@
 	"massmessage": "Poslat hromadnou zprávu",
 	"createmassmessagelist": "Vytvořit distribuční seznam pro hromadné zprávy",
 	"editmassmessagelist": "Editovat distribuční seznam pro hromadné zprávy",
+	"content-model-massmessagelistcontent": "Distribuční seznam pro hromadné zprávy",
 	"massmessage-desc": "Umožňuje uživatelům snadno odesílat zprávy seznamu uživatelů",
 	"massmessage-form-spamlist": "Stránka nebo kategorie obsahující seznam stránek, na kterých se má zanechat zpráva:",
 	"massmessage-form-subject": "Předmět zprávy (použit také jako shrnutí editace):",
