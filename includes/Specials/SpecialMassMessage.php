@@ -49,8 +49,13 @@ class SpecialMassMessage extends FormSpecialPage {
 		private readonly PageMessageBuilder $pageMessageBuilder,
 		private readonly LintErrorChecker $lintErrorChecker,
 	) {
-		parent::__construct( 'MassMessage', 'massmessage' );
+		parent::__construct( 'MassMessage' );
 		$this->messageBuilder = new MessageBuilder();
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'massmessage';
 	}
 
 	/** @inheritDoc */

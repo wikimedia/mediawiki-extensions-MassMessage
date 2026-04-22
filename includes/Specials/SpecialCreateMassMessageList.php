@@ -14,7 +14,12 @@ use MediaWiki\WikiMap\WikiMap;
 class SpecialCreateMassMessageList extends FormSpecialPage {
 
 	public function __construct() {
-		parent::__construct( 'CreateMassMessageList', 'createwithcontentmodel' );
+		parent::__construct( 'CreateMassMessageList' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'createwithcontentmodel';
 	}
 
 	/** @inheritDoc */
