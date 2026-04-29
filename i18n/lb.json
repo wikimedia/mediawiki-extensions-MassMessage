@@ -83,7 +83,7 @@
 	"massmessage-create-exists": "Et gëtt schonn eng Säit mam Titel, deen ugi gouf.",
 	"massmessage-create-nopermission": "Dir hutt net d'Recht eng Lëscht mat dësem Titel unzeleeën.",
 	"massmessage-create-exists-short": "Gëtt scho benotzt",
-	"massmessage-create-invalidsource-short": "Keng valabel Lëscht",
+	"massmessage-create-invalidsource-short": "Keng gülteg Lëscht",
 	"editmassmessagelist-legend": "Massemessagen-Expeditiounslëscht änneren",
 	"massmessage-edit-pagetitle": "Ännere vu(n) $1",
 	"massmessage-edit-title": "Titel:",
