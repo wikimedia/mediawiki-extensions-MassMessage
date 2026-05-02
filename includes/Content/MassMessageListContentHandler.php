@@ -251,7 +251,7 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		}
 
 		// Mark the description language (may be different from user language used to render the rest of the page)
-		$description = $output->getRawText();
+		$description = $output->getContentHolderText();
 		$title = Title::castFromPageReference( $page );
 		$pageLang = $title->getPageLanguage();
 		$attribs = [ 'lang' => $pageLang->getHtmlCode(), 'dir' => $pageLang->getDir() ];
