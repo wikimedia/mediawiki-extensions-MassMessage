@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage\Specials;
 
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
@@ -19,6 +20,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Parser\ParserOutputLinkTypes;
 use MediaWiki\Parser\Parsoid\LintErrorChecker;
+use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
@@ -496,8 +498,13 @@ class SpecialMassMessage extends FormSpecialPage {
 			$this->status->fatal( 'massmessage-no-timestamp' );
 		}
 
+		$revision = MutableRevisionRecord::newFromContent(
+			Title::newMainPage(),
+			new WikitextContent( $request->getMessage() )
+		);
+
 		// Check for Linter errors (T358818)
-		$lintErrors = $this->lintErrorChecker->check( $request->getMessage() );
+		$lintErrors = $this->lintErrorChecker->check( $revision );
 		foreach ( $lintErrors as $e ) {
 			$msg = $this->msg( "linterror-{$e['type']}" )->parse();
 			$this->status->fatal( 'massmessage-linter-error', $msg );
