@@ -27,5 +27,6 @@
 	"massmessage-spamlist-invalid": "Navedena stranica ne sadrži ispravnu listu isporuke.",
 	"log-name-massmessage": "Dnevnik masovnih poruka",
 	"log-description-massmessage": "Ovi događaji prate slanje poruka korisnicima.",
-	"massmessage-content-removeno": "Otkaži"
+	"massmessage-content-removeno": "Otkaži",
+	"tag-massmessage-delivery": "dostava masovne poruke"
 }
