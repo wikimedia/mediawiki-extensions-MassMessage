@@ -4,7 +4,8 @@
 			"Mainframe98",
 			"Mar(c)",
 			"McDutchie",
-			"PonkoSasuke"
+			"PonkoSasuke",
+			"Siebrand"
 		]
 	},
 	"apihelp-editmassmessagelist-summary": "Een bezorglijst voor massaberichten bewerken.",
@@ -26,5 +27,5 @@
 	"apihelp-massmessage-example-3": "Stuur een boodschap naar de lijst [[Signpost Spamlist]] met als onderwerp \"Nieuwe Signpost\", met boodschap \"Aub lezen\" waaraan de inhoud van de \"Help Pagina\" aan toegevoegd is.",
 	"apihelp-query+mmcontent-summary": "De beschrijving en doelen van een spamlijst verkrijgen",
 	"apihelp-query+mmcontent-example-1": "Pagina- en spamlijstinformatie van [[Spam list]] verkrijgen",
-	"apierror-massmessage-invalidspamlist": "De opgegeven spamlijst is ongeldig."
+	"apierror-massmessage-invalidspamlist": "De opgegeven spamlijst is onjuist."
 }
