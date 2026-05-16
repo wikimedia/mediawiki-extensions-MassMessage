@@ -263,9 +263,7 @@
 	},
 	"TestAutoloadClasses": {
 		"MediaWiki\\MassMessage\\MassMessageTestCase": "tests/phpunit/MassMessageTestCase.php",
-		"MediaWiki\\MassMessage\\MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php",
-		"MediaWiki\\MassMessage\\Stub\\RevisionStoreStubFactory": "tests/phpunit/stub/RevisionStoreStubFactory.php",
-		"MediaWiki\\MassMessage\\Stub\\TitleStubFactory": "tests/phpunit/stub/TitleStubFactory.php"
+		"MediaWiki\\MassMessage\\MassMessageApiTestCase": "tests/phpunit/MassMessageApiTestCase.php"
 	},
 	"manifest_version": 2
 }
