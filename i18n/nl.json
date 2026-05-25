@@ -38,7 +38,7 @@
 	"massmessage-fieldset-wikitext-preview": "Voorvertoning wikitekst",
 	"massmessage-fieldset-info": "Informatie",
 	"massmessage-preview-count": "Uw bericht wordt naar {{PLURAL:$1|$1 pagina|$1 pagina's}} verzonden.",
-	"massmessage-translate-page-info": "Je hebt een vertaalde pagina geselecteerd als te verzenden boodschap. Abbonnees zullen de inhoud van de pagina ontvangen in hun taal van voorkeur, of in een terugschakeltaal als er geen vertaling beschikbaar is.",
+	"massmessage-translate-page-info": "U hebt een vertaalde pagina geselecteerd als te verzenden boodschap. Abonnees ontvangen de inhoud van de pagina in hun taal van voorkeur, of in een terugschakeltaal als er geen vertaling beschikbaar is.",
 	"massmessage-submitted": "Uw bericht voor {{PLURAL:$1|één pagina|$1 pagina's}} is in de wachtrij geplaatst.",
 	"massmessage-just-preview": "Dit is enkel een voorvertoning. Klik op \"{{int:massmessage-form-submit}}\" om het bericht te verzenden.",
 	"massmessage-spamlist-doesnotexist": "De opgegeven afleverlijst pagina of categorie bestaat niet.",
