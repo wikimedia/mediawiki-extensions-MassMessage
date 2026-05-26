@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"content-model-massmessagelistcontent": "Liiska gudbinta farriin guud",
+	"massmessage-form-spamlist": "Bog ama qayb ka kooban liiska bogaga lagu reebayo farriin:",
+	"massmessage-form-subject": "Mawduuca farriinta (sidoo kale waxaa loo isticmaalaa sida qoraalka kooban ee wax ka beddelka):",
+	"massmessage-content-remove": "Ka saar",
+	"massmessage-create-new": "Samee liis cusub oo gudbin ah",
+	"massmessage-create-editsummary-import": "Samee liis gudbinta farriin guud oo leh bartilmaameedyo ka yimid [[Special:Permalink/$2|$1]]",
+	"massmessage-create-editsummary-catimport": "Samee liis gudbinta farriin guud oo leh bartilmaameedyo ka yimid [[$1]]",
+	"tag-massmessage-delivery": "Dirista farriimaha tirada badan"
+}
