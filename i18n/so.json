@@ -10,5 +10,6 @@
 	"massmessage-content-remove": "Ka saar",
 	"massmessage-create-new": "Samee liis cusub oo gudbin ah",
 	"massmessage-create-editsummary-import": "Samee liis gudbinta farriin guud oo leh bartilmaameedyo ka yimid [[Special:Permalink/$2|$1]]",
-	"massmessage-create-editsummary-catimport": "Samee liis gudbinta farriin guud oo leh bartilmaameedyo ka yimid [[$1]]"
+	"massmessage-create-editsummary-catimport": "Samee liis gudbinta farriin guud oo leh bartilmaameedyo ka yimid [[$1]]",
+	"tag-massmessage-delivery": "Dirista farriimaha tirada badan"
 }
