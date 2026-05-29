@@ -170,6 +170,13 @@ $specialPageAliases['sr-el'] = [
 	'EditMassMessageList' => [ 'Izmeni_spisak_za_masovno_slanje_poruka' ],
 ];
 
+/** Ukrainian (Українська) */
+$specialPageAliases['uk'] = [
+	'MassMessage' => [ 'Масові_повідомлення' ],
+	'CreateMassMessageList' => [ 'Створити_список_масових_повідомлень' ],
+	'EditMassMessageList' => [ 'Редагувати_список_масових_повідомлень' ],
+];
+
 /** Urdu (اردو) */
 $specialPageAliases['ur'] = [
 	'MassMessage' => [ 'اجتماعی_پیغام' ],
