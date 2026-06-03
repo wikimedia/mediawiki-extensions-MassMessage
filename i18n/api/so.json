@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"apihelp-editmassmessagelist-summary": "Wax ka beddel liis gudbinta farriimaha guud.",
+	"apihelp-editmassmessagelist-param-spamlist": "Cinwaanka liiska gudbinta ee la cusboonaysiinayo.",
+	"apihelp-editmassmessagelist-param-add": "Cinwaannada lagu darayo liiska.",
+	"apihelp-editmassmessagelist-param-remove": "Cinwaannada laga saarayo liiska.",
+	"apihelp-editmassmessagelist-param-description": "Sharaxaad cusub oo loogu talagalay liiska gudbinta.",
+	"apihelp-editmassmessagelist-param-minor": "In wax ka beddelka loo calaamadeeyo mid yar taariikhda liiska.",
+	"apihelp-editmassmessagelist-param-watchlist": "Si aan shuruud lahayn u dar ama uga saar bogga liiska dabagalka ee isticmaalaha hadda, isticmaal doorbidyada (lama tixgeliyo isticmaaleyaasha bot-ka) ama ha beddelin dabagalka.",
+	"apihelp-editmassmessagelist-example-1": "Ku dar [[User talk:Foo]] iyo [[Talk:Bar]] liiska gudbinta [[Example]] oo ka saar [[Talk:Baz]] liiskaas",
+	"apihelp-editmassmessagelist-example-2": "U deji sharaxaadda liiska gudbinta [[Example]] inay noqoto \"Adeegyada gudbinta FooBar\"",
+	"apihelp-massmessage-summary": "U dir fariin liis bogag ah.",
+	"apihelp-massmessage-param-spamlist": "Bogga ay ku qoran yihiin liiska bogagga lagu reebayo fariinta.",
+	"apihelp-massmessage-param-subject": "Khadka mawduuca fariinta.",
+	"apihelp-massmessage-param-message": "Qoraalka fariinta.",
+	"apihelp-massmessage-param-page-message": "Bog lagu diri doono oo ay la socoto qoraalka fariinta.",
+	"apihelp-massmessage-example-1": "U dir fariin liiska ku yaal [[Signpost Spamlist]] oo leh mawduuca \"New Signpost\", iyo qoraalka fariinta \"Fadlan akhri\".",
+	"apihelp-massmessage-example-2": "U dir fariin liiska ku yaal [[Signpost Spamlist]] oo leh mawduuca \"New Signpost\", fariintuna ha noqoto nuxurka bogga \"Help Page\".",
+	"apihelp-massmessage-example-3": "U dir fariin liiska ku yaal [[Signpost Spamlist]] oo leh mawduuca \"New Signpost\", iyo qoraalka fariinta \"Please read it\" oo lagu lifaaqay nuxurka bogga \"Help Page\".",
+	"apihelp-query+mmcontent-summary": "Hel sharaxaadda iyo bartilmaameedyada liiska spamka",
+	"apihelp-query+mmcontent-example-1": "Hel macluumaadka bogga iyo liiska spam-ka ee [[Spam list]]",
+	"apierror-massmessage-invalidspamlist": "Liiska spam-ka ee la cayimay ma aha mid sax ah."
+}
