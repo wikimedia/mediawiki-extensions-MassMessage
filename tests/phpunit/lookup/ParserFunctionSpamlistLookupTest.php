@@ -63,7 +63,7 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	 * @param array $check Stuff to check against
 	 */
 	public function testGetTargets( $text, $check ) {
-		$title = Title::newFromText( 'Input list' );
+		$title = Title::makeTitle( NS_MAIN, 'Input list' );
 		$this->updatePage( $title, $text );
 		$data = SpamlistLookup::getTargets( $title );
 

@@ -24,7 +24,7 @@ class ApiQueryMMContentTest extends MassMessageApiTestCase {
 		parent::setUp();
 		$mwService = MediaWikiServices::getInstance();
 
-		$title = Title::newFromText( self::$spamlist );
+		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
 		$page = $mwService->getWikiPageFactory()->newFromTitle( $title );
 		$content = $mwService->getContentHandlerFactory()
 			->getContentHandler( 'MassMessageListContent' )

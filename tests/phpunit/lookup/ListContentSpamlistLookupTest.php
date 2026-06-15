@@ -34,7 +34,7 @@ class ListContentSpamlistLookupTest extends MassMessageTestCase {
 			. '{"title":"C","site":"invalid.org"}'
 			. ']}';
 		$content = ContentHandler::makeContent( $text, null, 'MassMessageListContent' );
-		$title = Title::newFromText( 'MassMessageListContent_spamlist' );
+		$title = Title::makeTitle( NS_MAIN, 'MassMessageListContent_spamlist' );
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$page->doUserEditContent(
 			$content,
@@ -58,7 +58,7 @@ class ListContentSpamlistLookupTest extends MassMessageTestCase {
 	 * @return Title
 	 */
 	private function createTestTitle( $namespace = NS_MAIN, $contentModel = CONTENT_MODEL_WIKITEXT ) {
-		$title = Title::newFromText( 'MassMessageTestTitle', $namespace );
+		$title = Title::makeTitle( $namespace, 'MassMessageTestTitle' );
 		$title->setContentModel( $contentModel );
 		return $title;
 	}

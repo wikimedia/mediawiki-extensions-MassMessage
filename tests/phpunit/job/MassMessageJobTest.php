@@ -48,7 +48,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	private function createPage( string $titleStr, string $pageContent ): Title {
-		$title = Title::newFromText( $titleStr );
+		$title = Title::makeTitle( NS_MAIN, $titleStr );
 		$this->createPageByTitle( $title, $pageContent );
 		return $title;
 	}
@@ -294,7 +294,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 		$this->simulateJob( $target, [
 			'page-message' => 'PageMessage',
-			'pageMessageTitle' => Title::newFromText( $pageMessageTitleStr )->getPrefixedText(),
+			'pageMessageTitle' => $pageMessageTitleStr,
 			'isSourceTranslationPage' => true,
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
@@ -329,7 +329,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 		$this->simulateJob( $target, [
 			'page-message' => 'PageMessage',
-			'pageMessageTitle' => Title::newFromText( $pageMessageTitleStr )->getPrefixedText(),
+			'pageMessageTitle' => $pageMessageTitleStr,
 			'isSourceTranslationPage' => true,
 			'originWiki' => WikiMap::getCurrentWikiId()
 		] );
@@ -364,7 +364,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 
 		$this->simulateJob( $target, [
 			'page-message' => 'PageMessage',
-			'pageMessageTitle' => Title::newFromText( $pageMessageTitleStr )->getPrefixedText(),
+			'pageMessageTitle' => $pageMessageTitleStr,
 			'isSourceTranslationPage' => true,
 			'translationPageSourceLanguage' => 'en',
 			'originWiki' => WikiMap::getCurrentWikiId()

@@ -20,7 +20,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$title = Title::newFromText( self::$spamlist );
+		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
 		$services = MediaWikiServices::getInstance();
 		$page = $services->getWikiPageFactory()->newFromTitle( $title );
 		$content = $services->getContentHandlerFactory()->getContentHandler( 'MassMessageListContent' )
@@ -64,7 +64,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = $this->getServiceContainer()->getWikiPageFactory()
-			->newFromTitle( Title::newFromText( self::$spamlist ) );
+			->newFromTitle( Title::makeTitle( NS_MAIN, self::$spamlist ) );
 		$page->doUserEditContent( $content, $sysop, 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
@@ -92,7 +92,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = $this->getServiceContainer()->getWikiPageFactory()
-			->newFromTitle( Title::newFromText( self::$spamlist ) );
+			->newFromTitle( Title::makeTitle( NS_MAIN, self::$spamlist ) );
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
@@ -114,7 +114,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = $this->getServiceContainer()->getWikiPageFactory()
-			->newFromTitle( Title::newFromText( self::$spamlist ) );
+			->newFromTitle( Title::makeTitle( NS_MAIN, self::$spamlist ) );
 		$page->doUserEditContent( $content, $this->getTestSysop()->getUser(), 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',
@@ -136,7 +136,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 			'MassMessageListContent'
 		);
 		$page = $this->getServiceContainer()->getWikiPageFactory()
-			->newFromTitle( Title::newFromText( self::$spamlist ) );
+			->newFromTitle( Title::makeTitle( NS_MAIN, self::$spamlist ) );
 		$page->doUserEditContent( $content, $sysop, 'summary' );
 		$result = $this->doApiRequestWithToken( [
 			'action' => 'editmassmessagelist',

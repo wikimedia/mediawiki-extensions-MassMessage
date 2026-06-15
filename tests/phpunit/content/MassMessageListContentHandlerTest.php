@@ -45,7 +45,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::edit
 	 */
 	public function testEdit() {
-		$title = Title::newFromText( self::$spamlist );
+		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
 		$targets = [
 			[ 'title' => 'A' ],
 			[ 'title' => 'B', 'site' => 'en.wikipedia.org' ]
@@ -71,7 +71,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::edit
 	 */
 	public function testInvalidEdit() {
-		$title = Title::newFromText( self::$spamlist );
+		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
 		$result = MassMessageListContentHandler::edit(
 			$title,
 			'description',

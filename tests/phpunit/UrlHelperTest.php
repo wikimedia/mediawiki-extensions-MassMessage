@@ -37,9 +37,9 @@ class UrlHelperTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\UrlHelper::followRedirect
 	 */
 	public function testFollowRedirect() {
-		$title = Title::newfromtext( 'R1' );
+		$title = Title::makeTitle( NS_MAIN, 'R1' );
 		$this->updatePage( $title, '#REDIRECT [[R2]]' );
-		$title2 = Title::newfromtext( 'R2' );
+		$title2 = Title::makeTitle( NS_MAIN, 'R2' );
 		$this->updatePage( $title2, 'foo' );
 
 		$this->assertEquals(
