@@ -193,7 +193,10 @@
 	},
 	"JobClasses": {
 		"MassMessageJob": "MediaWiki\\MassMessage\\Job\\MassMessageJob",
-		"MassMessageSubmitJob": "MediaWiki\\MassMessage\\Job\\MassMessageSubmitJob",
+		"MassMessageSubmitJob": {
+			"class": "MediaWiki\\MassMessage\\Job\\MassMessageSubmitJob",
+			"needsPage": false
+		},
 		"MassMessageServerSideJob": "MediaWiki\\MassMessage\\Job\\MassMessageServerSideJob"
 	},
 	"GroupPermissions": {

@@ -5,7 +5,6 @@ namespace MediaWiki\MassMessage;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
-use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
 // @codeCoverageIgnoreStart
@@ -94,10 +93,7 @@ class SendMessages extends Maintenance {
 			'class' => MassMessageServerSideJob::class,
 		];
 
-		$submitJob = new MassMessageSubmitJob(
-			Title::newFromText( 'SendMassMessages' ),
-			$params
-		);
+		$submitJob = new MassMessageSubmitJob( $params );
 		// Just insert the individual jobs into the queue now.
 		$submitJob->run();
 		$count = count( $pages );

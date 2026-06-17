@@ -16,11 +16,11 @@ use MediaWiki\Utils\MWTimestamp;
  */
 class MassMessageSubmitJob extends Job {
 
-	public function __construct( Title $title, array $params ) {
+	public function __construct( array $params ) {
 		if ( !isset( $params['timestamp'] ) ) {
 			$params['timestamp'] = MWTimestamp::now();
 		}
-		parent::__construct( 'MassMessageSubmitJob', $title, $params );
+		parent::__construct( 'MassMessageSubmitJob', $params );
 	}
 
 	/**

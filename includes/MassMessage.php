@@ -218,7 +218,7 @@ class MassMessage {
 			'class' => MassMessageJob::class,
 		];
 
-		$job = new MassMessageSubmitJob( $request->getSpamList(), $params );
+		$job = new MassMessageSubmitJob( $params );
 		$services->getJobQueueGroupFactory()->makeJobQueueGroup( $originWiki )->push( $job );
 
 		return count( $pages );
