@@ -43,9 +43,9 @@ $( () => {
 			// Use a message so we have something like "<title> on <site>".
 			targetLink = mw.message(
 				'massmessage-content-addeditem',
-				mw.html.element( 'a', targetAttribs, title ),
+				$( $.parseHTML( mw.html.element( 'a', targetAttribs, title ) ) ),
 				site
-			).text();
+			).parse();
 		}
 
 		const removeLink = mw.html.element( 'a', {
