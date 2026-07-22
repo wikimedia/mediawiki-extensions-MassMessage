@@ -31,6 +31,7 @@
 	"massmessage-fieldset-info": "مالومات",
 	"massmessage-preview-count": "ستاسې پيغام به {{PLURAL:$1|$1 مخ|$1 مخونو}} ته ولېږل شي.",
 	"massmessage-submitted": "{{PLURAL:$1|$1 مخ|$1 مخونو}} ته ستاسو پيغام لېږل شوی.",
+	"massmessage-spamlist-doesnotexist": "د مشخص شوې لېږد لړليک مخ يا وېشنيزه شتون نلري.",
 	"massmessage-empty-subject": "پيغام لپاره کومه سکالو نه ده ورکړل شوې.",
 	"massmessage-invalid-lang": "ناچله ژب‌کوډ: \"$1\"",
 	"massmessage-form-header": "لاندې بڼه وکاروئ؛ ترڅو ستاسو پيغام يو مشخص لړليک ته ورسېږي. لاندې ټولي خانې بايد ډکې شي ([https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:MassMessage نور ولولئ]).",
@@ -91,11 +92,16 @@
 	"massmessage-summary-remove": "[[:$1]] لرې‌شو",
 	"massmessage-summary-removeonsite": "$1 په $2 کې لرې‌شو",
 	"massmessage-summary-removemulti": "$1 {{PLURAL:$1|مخ لرې‌شو|مخونه لرې‌شول}}",
+	"massmessage-summary-addchange": "[[:$1]] ورگډ شو او څرگنداوی يې بدل شو",
+	"massmessage-summary-addonsitechange": "$1 په  $2 ورگډ شو او څرگنداوی يې بدل شو",
+	"massmessage-summary-removechange": "[[:$1]] لرې شو او څرگنداوی يې بدل شو",
+	"massmessage-summary-removeonsitechange": "$1 له $2 لرې شو او څرگنداوی يې بدل شو",
 	"massmessage-summary-change": "څرگنداوی بدل‌شو",
 	"massmessage-list-category": "ډله‌ييز‌پيغام لېږنې لړليکونه",
 	"tag-massmessage-delivery": "ډله‌ييز‌پيغام رسونه",
 	"tag-massmessage-delivery-description": "د [[:mw:Special:MyLanguage/Extension:MassMessage|شاتاړی:ډله‌ييزپيغام]] کارولو له لارې پيغام رسول.",
 	"log-action-filter-massmessage": "د ننوتلو يادښت ډول",
 	"log-action-filter-massmessage-send": "ډله‌ييز پيغام سپارنه",
-	"log-action-filter-massmessage-failure": "ډله‌ييز‌پيغام رسونې ناکامي"
+	"log-action-filter-massmessage-failure": "ډله‌ييز‌پيغام رسونې ناکامي",
+	"massmessage-linter-error": "لوست‌ارزونې تېروتنه: $1"
 }
