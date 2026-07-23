@@ -13,7 +13,8 @@
 			"The Polish",
 			"WTM",
 			"Wiochman",
-			"Woytecr"
+			"Woytecr",
+			"PanWor"
 		]
 	},
 	"massmessage": "Wysyłanie masowej wiadomości",
@@ -34,7 +35,7 @@
 	"massmessage-form-preview": "Podgląd",
 	"massmessage-form-submit": "Wyślij",
 	"massmessage-fieldset-preview": "Podgląd",
-	"massmessage-fieldset-wikitext-preview": "Podgląd wikitekstu",
+	"massmessage-fieldset-wikitext-preview": "Podgląd wikikodu",
 	"massmessage-fieldset-info": "Informacja",
 	"massmessage-preview-count": "Twoja wiadomość będzie wysłana do {{PLURAL:$1|$1 strony|$1 stron}}.",
 	"massmessage-translate-page-info": "Wybrano przetłumaczoną stronę do wysłania jako wiadomość. Subskrybenci otrzymają treść strony w preferowanym języku lub w języku zastępczym, jeśli tłumaczenie nie jest dostępne.",

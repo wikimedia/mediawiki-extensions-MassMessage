@@ -5,5 +5,7 @@
 		]
 	},
 	"massmessage": "Izsylanje masovyh soobčenij",
-	"createmassmessagelist": "Stvoriti spisok za masovo poručenje"
+	"createmassmessagelist": "Stvoriti spisok za masovo poručenje",
+	"createmassmessagelist-legend": "Stvoriti spisok za masovo poručenje",
+	"massmessage-create-editsummary": "Stvoriti spisok za masovo poručenje"
 }
