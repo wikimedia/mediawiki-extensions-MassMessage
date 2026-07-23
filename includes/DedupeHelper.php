@@ -59,7 +59,7 @@ class DedupeHelper {
 		$changeTagId = $services->getChangeTagDefStore()->acquireId( 'massmessage-delivery' );
 
 		// Connect to the primary to avoid issues with replication lag.
-		$dbw = $services->getDBLoadBalancerFactory()->getPrimaryDatabase();
+		$dbw = $services->getConnectionProvider()->getPrimaryDatabase();
 		$res = $dbw->newSelectQueryBuilder()
 			->select( 'ct_params' )
 			->from( 'revision' )

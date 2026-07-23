@@ -112,7 +112,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 */
 	public function testDedupe() {
 		$services = MediaWikiServices::getInstance();
-		$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $services->getConnectionProvider()->getReplicaDatabase();
 
 		$target = $this->getNonexistingTestPage( 'Project:DedupeTest' )->getTitle();
 		[ $subject, ] = $this->simulateJob( $target );
