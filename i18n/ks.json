@@ -1,9 +1,11 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Ayaat123"
+		]
 	},
-	"massmessage-form-preview": "نُمٲئش",
-	"massmessage-fieldset-preview": "نُمٲئش",
+	"massmessage-form-preview": "نُمٲیِش",
+	"massmessage-fieldset-preview": "نُمٲیِش",
 	"massmessage-create-title": "عَنوان:",
 	"massmessage-create-description": "تَفصیٖل:",
 	"massmessage-create-content": "مَواد:",
