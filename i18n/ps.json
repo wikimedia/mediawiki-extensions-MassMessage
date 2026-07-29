@@ -98,6 +98,7 @@
 	"massmessage-summary-removeonsitechange": "$1 له $2 لرې شو او څرگنداوی يې بدل شو",
 	"massmessage-summary-change": "څرگنداوی بدل‌شو",
 	"massmessage-list-category": "ډله‌ييز‌پيغام لېږنې لړليکونه",
+	"massmessage-list-category-desc": "دا مخ د [[Special:MassMessage|ډله‌ييزپيغام]] شاتاړي لېږد لړليک دی.",
 	"tag-massmessage-delivery": "ډله‌ييز‌پيغام رسونه",
 	"tag-massmessage-delivery-description": "د [[:mw:Special:MyLanguage/Extension:MassMessage|شاتاړی:ډله‌ييزپيغام]] کارولو له لارې پيغام رسول.",
 	"log-action-filter-massmessage": "د ننوتلو يادښت ډول",
