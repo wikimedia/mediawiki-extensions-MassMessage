@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ar choler",
 			"Fohanno",
 			"Fulup",
 			"Huñvreüs",
@@ -10,7 +11,7 @@
 	"massmessage": "Kas ur gemennadenn a-vras",
 	"massmessage-form-message": "Korf ar gemennadenn :",
 	"massmessage-form-page": "Pajenn da vezañ kaset evel kemennadenn :",
-	"massmessage-form-page-help": "Ouzhpennet e vo danvez ar bajenn diuzet da-heul ar gemennadenn, ma vez lakaet unan.",
+	"massmessage-form-page-help": "E dibenn endalc'hed ar bajenn diuzet e vo ouzhpennet korf ar c'hemenn, mard eo bet pourchaset.",
 	"massmessage-form-preview": "Rakwelet",
 	"massmessage-form-submit": "Kas",
 	"massmessage-fieldset-preview": "Rakwelet",
