@@ -4,13 +4,14 @@
 			"Fohanno",
 			"Fulup",
 			"Huñvreüs",
-			"Y-M D"
+			"Y-M D",
+			"Ar choler"
 		]
 	},
 	"massmessage": "Kas ur gemennadenn a-vras",
 	"massmessage-form-message": "Korf ar gemennadenn :",
 	"massmessage-form-page": "Pajenn da vezañ kaset evel kemennadenn :",
-	"massmessage-form-page-help": "Ouzhpennet e vo danvez ar bajenn diuzet da-heul ar gemennadenn, ma vez lakaet unan.",
+	"massmessage-form-page-help": "E dibenn endalc'had ar bajenn diuzet e vo ouzhpennet korf ar c'hemenn, mard eo bet pourchaset.",
 	"massmessage-form-preview": "Rakwelet",
 	"massmessage-form-submit": "Kas",
 	"massmessage-fieldset-preview": "Rakwelet",
