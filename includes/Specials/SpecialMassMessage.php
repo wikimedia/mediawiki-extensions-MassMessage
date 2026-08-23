@@ -410,8 +410,10 @@ class SpecialMassMessage extends FormSpecialPage {
 			null
 		);
 
-		// Use a mock target as the context for rendering the preview
-		$mockTarget = Title::makeTitle( NS_PROJECT, 'MassMessage:A page that should not exist' );
+		// Use a mock target as the context for rendering the preview. The page must not
+		// exist, so that its actual properties (e.g. language links via Wikidata) cannot
+		// leak into the preview (T150225). Use the main namespace so title validation passes (T317068).
+		$mockTarget = Title::makeTitle( NS_MAIN, 'MassMessage:A page that should not exist' );
 		$services = MediaWikiServices::getInstance();
 		$wikipage = $services->getWikiPageFactory()->newFromTitle( $mockTarget );
 
