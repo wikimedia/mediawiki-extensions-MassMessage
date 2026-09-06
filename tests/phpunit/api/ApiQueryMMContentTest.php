@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage;
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -22,7 +21,7 @@ class ApiQueryMMContentTest extends MassMessageApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$mwService = MediaWikiServices::getInstance();
+		$mwService = $this->getServiceContainer();
 
 		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
 		$page = $mwService->getWikiPageFactory()->newFromTitle( $title );

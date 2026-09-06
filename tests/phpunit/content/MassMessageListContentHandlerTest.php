@@ -4,7 +4,6 @@ namespace MediaWiki\MassMessage;
 
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Content\MassMessageListContentHandler;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 
@@ -60,7 +59,7 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 			$this->apiContext
 		);
 		$this->assertStatusGood( $result );
-		$rev = MediaWikiServices::getInstance()->getRevisionLookup()->getRevisionByTitle( $title );
+		$rev = $this->getServiceContainer()->getRevisionLookup()->getRevisionByTitle( $title );
 		$content = $rev->getContent( SlotRecord::MAIN );
 		$this->assertEquals( 'description', $content->getDescription() );
 		$this->assertEquals( $targets, $content->getTargets() );

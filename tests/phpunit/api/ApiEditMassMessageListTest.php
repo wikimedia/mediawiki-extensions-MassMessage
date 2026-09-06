@@ -3,7 +3,6 @@
 namespace MediaWiki\MassMessage;
 
 use MediaWiki\Content\ContentHandler;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -21,7 +20,7 @@ class ApiEditMassMessageListTest extends MassMessageApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$page = $services->getWikiPageFactory()->newFromTitle( $title );
 		$content = $services->getContentHandlerFactory()->getContentHandler( 'MassMessageListContent' )
 			->makeEmptyContent();

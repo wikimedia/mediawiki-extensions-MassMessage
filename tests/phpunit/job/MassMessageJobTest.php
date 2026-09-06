@@ -9,7 +9,6 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\Job\MassMessageJob;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Specials\SpecialPageLanguage;
 use MediaWiki\Title\Title;
@@ -111,7 +110,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
 	 */
 	public function testDedupe() {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$dbr = $services->getConnectionProvider()->getReplicaDatabase();
 
 		$target = $this->getNonexistingTestPage( 'Project:DedupeTest' )->getTitle();
@@ -147,7 +146,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 	public function testLQTMessageSending() {
 		$this->markTestSkipped( 'broken test, T217553' );
 
-		$proj = MediaWikiServices::getInstance()->getContentLanguage()
+		$proj = $this->getServiceContainer()->getContentLanguage()
 			// Output changes based on wikiname
 			->getFormattedNsText( NS_PROJECT );
 

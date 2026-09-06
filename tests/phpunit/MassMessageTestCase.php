@@ -4,7 +4,6 @@ namespace MediaWiki\MassMessage;
 
 use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\Content\ContentHandler;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 
@@ -35,7 +34,7 @@ abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 			],
 		];
 		$this->setMwGlobals( 'wgConf', $conf );
-		$proj = MediaWikiServices::getInstance()->getContentLanguage()
+		$proj = $this->getServiceContainer()->getContentLanguage()
 			->getFormattedNsText( NS_PROJECT );
 		$wgLqtPages[] = $proj . ':LQT test';
 		// Create a redirect
@@ -51,7 +50,7 @@ abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 	 * @param string $text
 	 */
 	public function updatePage( $title, $text ) {
-		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
 		$page->doUserEditContent( $content, $this->getTestUser()->getUser(), "summary" );
 	}
