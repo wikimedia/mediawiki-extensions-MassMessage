@@ -99,7 +99,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 			->newFromTitle( $target )->getContent( RevisionRecord::RAW );
 		$text = $content->getText();
 		$this->assertEquals(
-			"== $subj ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
+			"== $subj ==\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
 			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
 			$text
 		);
@@ -124,7 +124,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$text = $content->getText();
 		// There should only be one copy of the message
 		$this->assertEquals(
-			"== $subject ==\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
+			"== $subject ==\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
 			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
 			$text
 		);
@@ -243,7 +243,7 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$text = $content->getText();
 		// There should only be one copy of the message
 		$this->assertEquals(
-			"== $subject ==\n\nTest page message.\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
+			"== $subject ==\nTest page message.\n\nThis is a message.\n<!-- Message sent by User:Admin@metawiki" .
 			" using the list at http://meta.wikimedia.org/w/index.php?title=Spamlist&oldid=5 -->",
 			$text
 		);
