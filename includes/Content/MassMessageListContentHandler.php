@@ -10,7 +10,6 @@ use MediaWiki\Content\JsonContentHandler;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Language\Language;
@@ -210,16 +209,6 @@ class MassMessageListContentHandler extends JsonContentHandler {
 		// This class inherits from JsonContentHandler, which hardcodes English.
 		// Use the default method from ContentHandler instead to get the page/site language.
 		return ContentHandler::getPageLanguage( $title, $content );
-	}
-
-	/**
-	 * @param Title $title
-	 * @param Content|null $content
-	 * @return Language
-	 */
-	public function getPageViewLanguage( Title $title, ?Content $content = null ) {
-		// Most of the interface is rendered in user language
-		return RequestContext::getMain()->getLanguage();
 	}
 
 	/**
