@@ -316,8 +316,9 @@ class SpecialEditMassMessageList extends FormSpecialPage {
 			$data['description'],
 			$parseResult->value,
 			$data['summary'],
-			$this->permissionManager->userHasRight( $this->getUser(), 'minoredit' ) && $data['minor'],
-			$data['watch'] ? 'watch' : 'unwatch',
+			// Safely access optional form fields to prevent undefined array key warnings.
+			$this->permissionManager->userHasRight( $this->getUser(), 'minoredit' ) && !empty( $data['minor'] ),
+			!empty( $data['watch'] ) ? 'watch' : 'unwatch',
 			$this->getContext()
 		);
 

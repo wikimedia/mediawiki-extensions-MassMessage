@@ -12,9 +12,12 @@ use MediaWikiIntegrationTestCase;
  */
 abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 
-	protected function setUp(): void {
-		global $wgLqtPages;
-		parent::setUp();
+	/**
+	 * Create a pre-configured SiteConfiguration for test cases.
+	 *
+	 * @return SiteConfiguration
+	 */
+	public static function getTestSiteConfiguration(): SiteConfiguration {
 		$conf = new SiteConfiguration();
 		$conf->wikis = [ 'enwiki', 'dewiki', 'frwiki' ];
 		$conf->suffixes = [ 'wiki' ];
@@ -33,7 +36,13 @@ abstract class MassMessageTestCase extends MediaWikiIntegrationTestCase {
 				'default' => '/wiki/$1',
 			],
 		];
-		$this->setMwGlobals( 'wgConf', $conf );
+		return $conf;
+	}
+
+	protected function setUp(): void {
+		global $wgLqtPages;
+		parent::setUp();
+		$this->setMwGlobals( 'wgConf', self::getTestSiteConfiguration() );
 		$proj = $this->getServiceContainer()->getContentLanguage()
 			->getFormattedNsText( NS_PROJECT );
 		$wgLqtPages[] = $proj . ':LQT test';
