@@ -2,8 +2,8 @@
 
 namespace MediaWiki\MassMessage\Lookup;
 
+use MediaWiki\MainConfigNames;
 use MediaWiki\MassMessage\MassMessageTestCase;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
@@ -19,13 +19,9 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	 * @return array
 	 */
 	public static function provideGetParserFunctionTargets() {
-		$proj = MediaWikiServices::getInstance()->getContentLanguage()
-			// Output changes based on wikiname
-			->getFormattedNsText( NS_PROJECT );
-
 		return [
 			// project page, no site provided
-			[ '{{#target:Project:Example}}', [ 'title' => $proj . ':Example' ], ],
+			[ '{{#target:Project:Example}}', [ 'title' => 'MassMessageProject:Example' ], ],
 			// user talk page, no site provided
 			[ '{{#target:User talk:Example}}', [ 'title' => 'User talk:Example' ], ],
 			// local redirect being followed
@@ -63,6 +59,8 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	 * @param array $check Stuff to check against
 	 */
 	public function testGetTargets( $text, $check ) {
+		$this->overrideConfigValue( MainConfigNames::MetaNamespace, 'MassMessageProject' );
+
 		$title = Title::makeTitle( NS_MAIN, 'Input list' );
 		$this->updatePage( $title, $text );
 		$data = SpamlistLookup::getTargets( $title );
