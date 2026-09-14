@@ -67,6 +67,7 @@
 	"massmessage-hidden-comment": "A hidden HTML comment that is appended after the message. Parameters:\n* $1 - Username of the user who sent the message. Can be used for GENDER.\n* $2 - Short database name of the wiki from where the message was sent.\n* $3 - URL of the input list that was used to send the message.",
 	"massmessage-optout-category": "{{tracking category name}}\nName of category which users add pages to that will opt-it out of receiving messages.",
 	"massmessage-badhtml": "Shown in a JavaScript popup if we detect unclosed HTML tags\n\n* $1 - comma-separated list of unclosed HTML tags\n* $2 - number of unclosed HTML tags",
+	"massmessage-refs-warning": "Non-blocking warning shown when the message body has cite <ref> tags without a references list or common talk-page references template. Shown via the same UI as the bad-HTML warning.",
 	"massmessage-parse-badurl": "Error message shown when the url that the user provides is invalid.\n* $1 is the url the user provided",
 	"massmessage-parse-badpage": "Error message shown when the page name that the user provides is invalid.\n* $1 is the page title the user provided",
 	"massmessage-parse-badspamlist": "Error message shown when the page name that the user provides is not a valid list of pages to sent the message to.\n* $1 - the page title the user provided.",

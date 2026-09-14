@@ -31,46 +31,58 @@ function badHtml( $msg ) {
 		// Ignore tags that have '/' outside of the first character
 		// (assume those are self closing).
 		const matches = code.match( /<[\w/][^/]*?>/g );
-		if ( !matches ) {
-			return;
-		}
+		if ( matches ) {
+			const tags = {};
+			matches.forEach( ( itm ) => {
+				const hasOwn = Object.prototype.hasOwnProperty;
 
-		const tags = {};
-		matches.forEach( ( itm ) => {
-			const hasOwn = Object.prototype.hasOwnProperty;
-
-			// Keep just the element names and the starting '/', if exists.
-			const tag = itm.replace( /[<>]/g, '' ).split( ' ' )[ 0 ];
-			if ( tag.charAt( 0 ) !== '/' ) { // Start tag
-				if ( !hasOwn.call( voidElements, tag ) ) { // Ignore void elements
-					if ( hasOwn.call( tags, tag ) ) {
-						tags[ tag ]++;
+				// Keep just the element names and the starting '/', if exists.
+				const tag = itm.replace( /[<>]/g, '' ).split( ' ' )[ 0 ];
+				if ( tag.charAt( 0 ) !== '/' ) { // Start tag
+					if ( !hasOwn.call( voidElements, tag ) ) { // Ignore void elements
+						if ( hasOwn.call( tags, tag ) ) {
+							tags[ tag ]++;
+						} else {
+							tags[ tag ] = 1;
+						}
+					}
+				} else { // End tag
+					const realTag = tag.slice( 1, 1 + tag.length );
+					if ( hasOwn.call( tags, realTag ) ) {
+						tags[ realTag ]--;
 					} else {
-						tags[ tag ] = 1;
+						tags[ realTag ] = -1;
 					}
 				}
-			} else { // End tag
-				const realTag = tag.slice( 1, 1 + tag.length );
-				if ( hasOwn.call( tags, realTag ) ) {
-					tags[ realTag ]--;
-				} else {
-					tags[ realTag ] = -1;
+			} );
+
+			const results = [];
+			for ( const tagName in tags ) {
+				if ( tags[ tagName ] > 0 ) {
+					results.push( '<' + tagName + '>' );
+				} else if ( tags[ tagName ] < 0 ) {
+					results.push( '</' + tagName + '>' );
 				}
 			}
-		} );
-
-		const results = [];
-		for ( const tagName in tags ) {
-			if ( tags[ tagName ] > 0 ) {
-				results.push( '<' + tagName + '>' );
-			} else if ( tags[ tagName ] < 0 ) {
-				results.push( '</' + tagName + '>' );
+			if ( results.length > 0 ) {
+				$warnings.append(
+					mw.util.messageBox(
+						mw.message( 'massmessage-badhtml', results.join( ', ' ), results.length ).text(),
+						'warning'
+					)
+				);
 			}
 		}
-		if ( results.length > 0 ) {
+
+		// Warn when cite <ref> tags are present without a references list / template
+		// so footnotes stay with the message instead of at the bottom of the talk page.
+		// Matches <ref ...>, <ref ... />, and <ref/> (case-insensitive); not </ref>.
+		const hasRef = /<ref[\s/>]/i.test( code );
+		const hasReferencesList = /<references|\{\{talkrefs|\{\{reflist/i.test( code );
+		if ( hasRef && !hasReferencesList ) {
 			$warnings.append(
 				mw.util.messageBox(
-					mw.message( 'massmessage-badhtml', results.join( ', ' ), results.length ).text(),
+					mw.message( 'massmessage-refs-warning' ).text(),
 					'warning'
 				)
 			);

@@ -54,6 +54,7 @@
 	"massmessage-hidden-comment": "<!-- Message sent by User:$1@$2 using the list at $3 -->",
 	"massmessage-optout-category": "Opted-out of message delivery",
 	"massmessage-badhtml": "Your message may have {{PLURAL:$2|an unclosed HTML tag|unclosed HTML tags}}: $1.",
+	"massmessage-refs-warning": "This message contains <ref> tags but no references list. Consider adding <references/>, {{talkrefs}}, or {{reflist}} so footnotes display correctly.",
 	"massmessage-parse-badurl": "\"$1\" is not a valid site.",
 	"massmessage-parse-badpage": "\"$1\" is not a valid page title.",
 	"massmessage-parse-badspamlist": "\"$1\" is not a valid list of pages.",

@@ -125,6 +125,7 @@
 			"styles": "ext.MassMessage.validation.less",
 			"messages": [
 				"massmessage-badhtml",
+				"massmessage-refs-warning",
 				"massmessage-parse-badpage",
 				"massmessage-parse-badspamlist"
 			],
