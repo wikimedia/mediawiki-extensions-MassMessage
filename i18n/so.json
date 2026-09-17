@@ -51,6 +51,7 @@
 	"massmessage-hidden-comment": "<!-- Fariintan waxaa diray User:$1@$2 iyadoo la adeegsanayo liiska ku yaal $3 -->",
 	"massmessage-optout-category": "Ka baxay gudbinta fariimaha",
 	"massmessage-badhtml": "Fariintaada waxaa laga yaabaa inay leedahay {{PLURAL:$2|calaamada HTML oo aan la xirin|calaamadaha HTML oo aan la xirin}}: $1.",
+	"massmessage-refs-warning": "Fariintan waxay ka kooban tahay calaamadaha <ref> laakiin ma laha liiska tixraacyada. Tixgeli inaad ku darto <references/>, {{talkrefs}}, ama {{reflist}} si qoraallada hoose ay si sax ah ugu soo bandhigmaan.",
 	"massmessage-parse-badurl": "\"$1\" ma aha goob sax ah.",
 	"massmessage-parse-badpage": "\"$1\" ma aha cinwaan bog sax ah.",
 	"massmessage-parse-badspamlist": "\"$1\" ma aha liis bogag sax ah.",
