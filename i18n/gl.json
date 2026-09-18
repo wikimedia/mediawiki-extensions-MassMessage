@@ -55,6 +55,7 @@
 	"massmessage-hidden-comment": "<!-- Mensaxe enviada por User:$1@$2 mediante a lista presente en $3 -->",
 	"massmessage-optout-category": "Excluídos da recepción de mensaxes",
 	"massmessage-badhtml": "A túa mensaxe pode ter {{PLURAL:$2|unha etiqueta HTML|varias etiquetas HTML}} sen pechar: $1.",
+	"massmessage-refs-warning": "Esta mensaxe contén etiquetas <ref>, pero non ten a lista de referencias. Considera engadir <references/>, {{talkrefs}} ou {{reflist}} para que as notas ao pé se mostren correctamente.",
 	"massmessage-parse-badurl": "\"$1\" non é un sitio válido.",
 	"massmessage-parse-badpage": "\"$1\" non é un título de páxina válido.",
 	"massmessage-parse-badspamlist": "\"$1\" non é unha lista de páxinas válida.",

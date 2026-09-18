@@ -75,6 +75,7 @@
 	"massmessage-hidden-comment": "<!-- 信息由 User:$1@$2 发送，使用的列表为 $3 -->",
 	"massmessage-optout-category": "不接受信息递送",
 	"massmessage-badhtml": "您的信息可能含有{{PLURAL:$2|未闭合的HTML标签}}：$1。",
+	"massmessage-refs-warning": "此消息包含<ref>标签但没有参考文献列表。请考虑添加<references/>、{{talkrefs}}或{{reflist}}以正确显示脚注。",
 	"massmessage-parse-badurl": "“$1”不是一个有效的网站。",
 	"massmessage-parse-badpage": "“$1”不是一个有效的页面标题。",
 	"massmessage-parse-badspamlist": "“$1”不是有效的页面清单。",

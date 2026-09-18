@@ -55,6 +55,7 @@
 	"massmessage-hidden-comment": "<!-- İstifadəçi:$1@$2 tərəfindən $3 siyahısını istifadə edərək göndərilmişdir -->",
 	"massmessage-optout-category": "Mesaj qəbulundan imtina etmiş istifadəçilər",
 	"massmessage-badhtml": "Mesajınızda {{PLURAL:$2|qapalı olmayan HTML teqi|qapalı olmayan HTML teqləri}} ola bilər: $1.",
+	"massmessage-refs-warning": "Bu mesajda <ref> teqləri var, lakin istinadlar siyahısı yoxdur. Düzgün göstərilməsi üçün <references/>, {{talkrefs}} və ya {{reflist}} əlavə etməyi nəzərdən keçirin.",
 	"massmessage-parse-badurl": "\"$1\" etibarlı sayt deyil.",
 	"massmessage-parse-badpage": "\"$1\" etibarlı səhifə başlığı deyil.",
 	"massmessage-parse-badspamlist": "\"$1\" etibarlı səhifə siyahısı deyil.",
