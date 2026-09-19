@@ -216,7 +216,8 @@
 		"massmessage/failure": "MediaWiki\\Logging\\WikitextLogFormatter",
 		"massmessage/skipoptout": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter",
 		"massmessage/skipnouser": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter",
-		"massmessage/skipbadns": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter"
+		"massmessage/skipbadns": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter",
+		"massmessage/skiplocked": "MediaWiki\\MassMessage\\Logging\\MassMessageSkipLogFormatter"
 	},
 	"ActionFilteredLogs": {
 		"massmessage": {
@@ -231,6 +232,9 @@
 			],
 			"skipnouser": [
 				"skipnouser"
+			],
+			"skiplocked": [
+				"skiplocked"
 			],
 			"skipbadns": [
 				"skipbadns"

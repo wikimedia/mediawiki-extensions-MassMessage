@@ -15,6 +15,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\Utils\MWCryptRand;
 use MediaWiki\WikiMap\WikiMap;
 use RuntimeException;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @group Database
@@ -178,6 +179,44 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$text = $content->getText();
 		// Nothing should be updated.
 		$this->assertEquals( '[[Category:Opted-out of message delivery]]', $text );
+	}
+
+	public static function provideLockedUser() {
+		return [
+			'locked user is skipped' => [ true ],
+			'unlocked user receives the message' => [ false ],
+		];
+	}
+
+	/**
+	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::canDeliverMessage
+	 * @dataProvider provideLockedUser
+	 */
+	public function testLockedUser( bool $isLocked ) {
+		// Deliver with a regular edit even when LiquidThreads is installed
+		$this->overrideConfigValue( 'LqtTalkPages', false );
+		$user = $this->getMutableTestUser()->getUser();
+		$this->setTemporaryHook( 'UserIsLocked', static function ( $hookUser, &$locked ) use ( $user, $isLocked ) {
+			if ( $hookUser->getName() === $user->getName() ) {
+				$locked = $isLocked;
+			}
+		} );
+		$target = $user->getTalkPage();
+
+		[ , $result ] = $this->simulateJob( $target );
+
+		$this->assertTrue( $result );
+		$this->assertSame( !$isLocked, $target->exists( IDBAccessObject::READ_LATEST ) );
+		$this->newSelectQueryBuilder()
+			->select( 'COUNT(*)' )
+			->from( 'logging' )
+			->where( [
+				'log_type' => 'massmessage',
+				'log_action' => 'skiplocked',
+				'log_namespace' => $target->getNamespace(),
+				'log_title' => $target->getDBkey(),
+			] )
+			->assertFieldValue( $isLocked ? '1' : '0' );
 	}
 
 	/**

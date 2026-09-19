@@ -365,6 +365,11 @@ class MassMessageJob extends Job {
 				$this->logLocalSkip( 'skipnouser' );
 				return false;
 			}
+			if ( $user->isLocked() ) {
+				// Don't notify globally locked accounts (T340768)
+				$this->logLocalSkip( 'skiplocked' );
+				return false;
+			}
 		}
 
 		return true;

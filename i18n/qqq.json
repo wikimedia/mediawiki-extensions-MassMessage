@@ -84,6 +84,7 @@
 	"logentry-massmessage-skipbadns": "{{logentry}}\nAdditional parameters:\n* $4 - the subject line of the message",
 	"logentry-massmessage-skipoptout": "{{logentry}}\nAdditional parameters:\n* $4 - the subject line of the message",
 	"logentry-massmessage-skipnouser": "{{logentry}}\nAdditional parameters:\n* $4 - the subject line of the message",
+	"logentry-massmessage-skiplocked": "{{logentry}}\nAdditional parameters:\n* $4 - the subject line of the message",
 	"massmessage-message-footer": "{{notranslate}}\nThe footer that is by added at the end of every message. It is left blank so individual wikis can customize it.",
 	"massmessage-nextsteps": "Message after {{msg-mw|Massmessage-submitted}} on [[Special:MassMessage]] once the form has been submitted.",
 	"massmessage-content-pages": "Section title for the list of pages when viewing a delivery list",
@@ -161,6 +162,7 @@
 	"log-action-filter-massmessage-failure": "{{doc-log-action-filter-type|massmessage|failure}}",
 	"log-action-filter-massmessage-skipoptout": "{{doc-log-action-filter-type|massmessage|skipoptout}}",
 	"log-action-filter-massmessage-skipnouser": "{{doc-log-action-filter-type|massmessage|skipnouser}}",
+	"log-action-filter-massmessage-skiplocked": "{{doc-log-action-filter-type|massmessage|skiplocked}}",
 	"log-action-filter-massmessage-skipbadns": "{{doc-log-action-filter-type|massmessage|skipbadns}}",
 	"massmessage-linter-error": "Warning shown if a linter error is detected\n* $1 is the linter error message"
 }

@@ -71,6 +71,7 @@
 	"logentry-massmessage-skipbadns": "Delivery of \"$4\" to $3 was skipped because target was in a namespace that cannot be posted in",
 	"logentry-massmessage-skipoptout": "Delivery of \"$4\" to $3 was skipped because the target has opted-out of message delivery",
 	"logentry-massmessage-skipnouser": "Delivery of \"$4\" to $3 was skipped because the user account does not exist",
+	"logentry-massmessage-skiplocked": "Delivery of \"$4\" to $3 was skipped because the user account is locked",
 	"massmessage-message-footer": "",
 	"massmessage-nextsteps": "[[Special:MassMessage|Send another message]].",
 	"massmessage-content-pages": "Pages in this list",
@@ -148,6 +149,7 @@
 	"log-action-filter-massmessage-failure": "Mass message delivery failure",
 	"log-action-filter-massmessage-skipoptout": "Target skip because of opt-out",
 	"log-action-filter-massmessage-skipnouser": "Target skip because of non-existing target user",
+	"log-action-filter-massmessage-skiplocked": "Target skip because of locked account",
 	"log-action-filter-massmessage-skipbadns": "Target skip because of forbidden namespace",
 	"massmessage-linter-error": "Linter error: $1"
 }
