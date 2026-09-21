@@ -64,6 +64,7 @@
 	"massmessage-hidden-comment": "<!-- $3의 목록을 사용해 User:$1@$2님이 보낸 메시지 -->",
 	"massmessage-optout-category": "메시지 전달을 받지 않는 사용자",
 	"massmessage-badhtml": "당신의 메시지에 {{PLURAL:$2|닫히지 않은 HTML 태그}}가 포함되었을 수 있습니다: $1.",
+	"massmessage-refs-warning": "이 메시지에는 <ref> 태그는 있지만 각주 목록이 없습니다. 각주가 올바르게 표시되도록 <references/>, {{talkrefs}} 또는 {{reflist}}를 추가하는 것을 고려해 보세요.",
 	"massmessage-parse-badurl": "\"$1\"은 올바른 사이트가 아닙니다.",
 	"massmessage-parse-badpage": "\"$1\"은 올바른 문서 제목이 아닙니다.",
 	"massmessage-parse-badspamlist": "\"$1\"은 올바른 문서 목록이 아닙니다.",
