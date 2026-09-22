@@ -57,6 +57,7 @@
 	"massmessage-hidden-comment": "<!-- Besked sendt af Bruger:$1@$2 via listen på $3 -->",
 	"massmessage-optout-category": "Fravalg af beskedlevering",
 	"massmessage-badhtml": "Din besked kan have {{PLURAL:$2|en uafsluttet HTML tag|uafsluttede HTML tags}}:  $1.",
+	"massmessage-refs-warning": "Denne besked indeholder <ref> tags, men ingen referenceliste. Overvej at tilføje <references/>, {{talkrefs}} eller {{reflist}}, så fodnoter vises korrekt.",
 	"massmessage-parse-badurl": "\"$1\" er ikke et gyldigt websted.",
 	"massmessage-parse-badpage": "\"$1\" er ikke en gyldig sidetitel.",
 	"massmessage-parse-badspamlist": "\"$1\" er ikke en gyldig liste over sider.",
