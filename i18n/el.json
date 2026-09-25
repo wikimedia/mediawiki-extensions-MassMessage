@@ -6,7 +6,8 @@
 			"NikosLikomitros",
 			"Nikosgranturismogt",
 			"Norhorn",
-			"Protnet"
+			"Protnet",
+			"PrinceAzuka134"
 		]
 	},
 	"massmessage": "Αποστολή μαζικού μηνύματος",
@@ -40,6 +41,7 @@
 	"logentry-massmessage-skipoptout": "Παράδοση του \"$4\" στην $3 παραλείφθηκε επειδή ο στόχος έχει αποεπιλέξει την παράδοση μηνυμάτων",
 	"logentry-massmessage-skipnouser": "Παράδοση του \"$4\" στη $3 παραλείφθηκε επειδή ο λογαριασμός χρήστη δεν υπάρχει",
 	"massmessage-nextsteps": "[[Special:MassMessage|Στείλετε άλλο μήνυμα]] ή [[Special:Statistics|προβάλετε τον αριθμό των μηνυμάτων που βρίσκονται στην ουρά]].",
+	"massmessage-content-emptylist": "(κανένας)",
 	"massmessage-summary-addremovechange": "Προστέθηκε $1{{PLURAL:$1|σελίδα|σελίδες}}, αφαιρέθηκε $2{{PLURAL:$2|σελίδα|σελίδες}} και άλλαξε η περιγραφή",
 	"massmessage-summary-addchange": "Προστέθηκε [[:$1]] και άλλαξε η περιγραφή",
 	"massmessage-summary-addmultichange": "Προστέθηκε $1 {{PLURAL:$1|σελίδα|σελίδες}} και άλλαξε η περιγραφή",
