@@ -62,7 +62,12 @@
 		"massmessage"
 	],
 	"APIPropModules": {
-		"mmcontent": "MediaWiki\\MassMessage\\Api\\ApiQueryMMContent"
+		"mmcontent": {
+			"class": "MediaWiki\\MassMessage\\Api\\ApiQueryMMContent",
+			"services": [
+				"WikiPageFactory"
+			]
+		}
 	},
 	"MessagesDirs": {
 		"MassMessage": [

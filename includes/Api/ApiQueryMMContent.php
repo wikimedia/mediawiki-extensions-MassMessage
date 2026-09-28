@@ -3,9 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\MassMessage\Api;
 
+use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Title\Title;
 
 /**
@@ -14,6 +15,14 @@ use MediaWiki\Title\Title;
  * @ingroup API
  */
 class ApiQueryMMContent extends ApiQueryBase {
+
+	public function __construct(
+		ApiQuery $query,
+		string $moduleName,
+		private readonly WikiPageFactory $wikiPageFactory,
+	) {
+		parent::__construct( $query, $moduleName, '' );
+	}
 
 	public function execute() {
 		$pageSet = $this->getPageSet();
@@ -35,10 +44,9 @@ class ApiQueryMMContent extends ApiQueryBase {
 		}
 
 		$result = $this->getResult();
-		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 
 		foreach ( $spamlists as $pageid => $spamlist ) {
-			$content = $wikiPageFactory->newFromTitle( $spamlist )->getContent();
+			$content = $this->wikiPageFactory->newFromTitle( $spamlist )->getContent();
 			if ( !$content instanceof MassMessageListContent ) {
 				$this->dieWithError( 'apierror-massmessage-invalidspamlist', 'invalidspamlist' );
 			}
