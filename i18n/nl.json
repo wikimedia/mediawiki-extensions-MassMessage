@@ -64,6 +64,7 @@
 	"massmessage-hidden-comment": "<!-- Bericht verzonden door User:$1@$2 via de lijst op de pagina $3 -->",
 	"massmessage-optout-category": "Wil geen berichten ontvangen",
 	"massmessage-badhtml": "Uw bericht heeft mogelijk {{PLURAL:$2|een ongesloten HTML-label|ongesloten HTML-label}}: $1.",
+	"massmessage-refs-warning": "Dit bericht bevat <ref> tags, maar geen referentielijst. Overweeg om deze toe te voegen zodat voetnoten correct worden weergegeven. Mogelijkheden: <references/>, {{talkrefs}} of {{reflist}}.",
 	"massmessage-parse-badurl": "\"$1\" is geen geldige site.",
 	"massmessage-parse-badpage": "\"$1\" is geen geldige paginanaam.",
 	"massmessage-parse-badspamlist": "“$1” is geen geldige lijst met pagina’s.",
