@@ -7,7 +7,6 @@ use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\MassMessage\Content\MassMessageListContent;
 use MediaWiki\Page\WikiPageFactory;
-use MediaWiki\Title\Title;
 
 /**
  * API module to retrieve the content of a mass message distribution list
@@ -26,27 +25,18 @@ class ApiQueryMMContent extends ApiQueryBase {
 
 	public function execute() {
 		$pageSet = $this->getPageSet();
-		$pageids = array_keys( $pageSet->getGoodPages() );
-		if ( !$pageids ) {
+		$pages = $pageSet->getGoodPages();
+		if ( !$pages ) {
 			return;
 		}
 
-		$spamlists = [];
-		foreach ( $pageids as $pageid ) {
-			$spamlist = Title::newFromId( $pageid );
-			if ( $spamlist === null
-				|| !$spamlist->exists()
-				|| !$spamlist->hasContentModel( 'MassMessageListContent' )
-			) {
+		$result = $this->getResult();
+		foreach ( $pages as $pageid => $pageIdentity ) {
+			if ( !$pageIdentity->exists() ) {
 				$this->dieWithError( 'apierror-massmessage-invalidspamlist', 'invalidspamlist' );
 			}
-			$spamlists[ $pageid ] = $spamlist;
-		}
 
-		$result = $this->getResult();
-
-		foreach ( $spamlists as $pageid => $spamlist ) {
-			$content = $this->wikiPageFactory->newFromTitle( $spamlist )->getContent();
+			$content = $this->wikiPageFactory->newFromTitle( $pageIdentity )->getContent();
 			if ( !$content instanceof MassMessageListContent ) {
 				$this->dieWithError( 'apierror-massmessage-invalidspamlist', 'invalidspamlist' );
 			}
