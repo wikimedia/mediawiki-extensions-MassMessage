@@ -65,6 +65,7 @@
 	"massmessage-hidden-comment": "<!-- الرسالة التي أرسلها User:$1@$2 باستخدام القائمة في $3 -->",
 	"massmessage-optout-category": "ألغي الاشتراك في تسليم الرسالة",
 	"massmessage-badhtml": "قد تحتوي رسالتك على {{PLURAL:$2|وسم HTML غير مغلق|وسوم HTML غير مغلقة}}: $1.",
+	"massmessage-refs-warning": "تحتوي هذه الرسالة على<ref> الوسوم موجودة ولكن لا توجد قائمة مراجع. يُرجى إضافة الوسوم.<references/> ، {{talkrefs}}، أو {{reflist}} حتى يتم عرض الحواشي السفلية بشكل صحيح.",
 	"massmessage-parse-badurl": "\"$1\" ليس موقعًا صحيحًا.",
 	"massmessage-parse-badpage": "\"$1\" ليس عنوان صفحة صحيح.",
 	"massmessage-parse-badspamlist": "\" $1 \" ليست قائمة صفحات صالحة.",
