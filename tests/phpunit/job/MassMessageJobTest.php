@@ -19,6 +19,9 @@ use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @group Database
+ * @covers \MediaWiki\MassMessage\DedupeHelper
+ * @covers \MediaWiki\MassMessage\Job\MassMessageJob
+ * @covers \MediaWiki\MassMessage\MessageSender
  */
 class MassMessageJobTest extends MassMessageTestCase {
 
@@ -84,10 +87,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		}
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::editPage
-	 */
 	public function testMessageSending() {
 		$target = $this->getNonexistingTestPage( 'Project:Testing1234' )->getTitle();
 		[ $subj, ] = $this->simulateJob( $target );
@@ -105,11 +104,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		);
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\DedupeHelper::hasRecentlyDeliveredDuplicate
-	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
-	 */
 	public function testDedupe() {
 		$services = $this->getServiceContainer();
 		$dbr = $services->getConnectionProvider()->getReplicaDatabase();
@@ -138,12 +132,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		);
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::addLQTThread
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MessageSender::addLQTThread
-	 * @covers \MediaWiki\MassMessage\MessageSender::makeAPIRequest
-	 */
 	public function testLQTMessageSending() {
 		$this->markTestSkipped( 'broken test, T217553' );
 
@@ -159,9 +147,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$this->assertTrue( Title::makeTitle( NS_LQT_THREAD, $proj . ':LQT test/' . $subject )->exists() );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::isOptedOut
-	 */
 	public function testOptOut() {
 		$fakejob = new MassMessageJob( Title::newMainPage(), [] );
 		$target = Title::makeTitle( NS_PROJECT, 'Opt out test page' );
@@ -189,7 +174,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::canDeliverMessage
 	 * @dataProvider provideLockedUser
 	 */
 	public function testLockedUser( bool $isLocked ) {
@@ -219,10 +203,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 			->assertFieldValue( $isLocked ? '1' : '0' );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
-	 */
 	public function testPageMessageSending() {
 		$pageMessageContent = 'Test page message.';
 		$pageMessageTitleStr = 'PageMessage';
@@ -247,11 +227,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		);
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\DedupeHelper::hasRecentlyDeliveredDuplicate
-	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
-	 */
 	public function testDedupePageMessageSending() {
 		$pageMessageContent = 'Test page message.';
 		$pageMessageTitleStr = 'PageMessage';
@@ -287,10 +262,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		);
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
-	 */
 	public function testPageMessageSendingFailToEdit() {
 		$pageMessageContent = 'Test page message.';
 		$pageMessageTitleStr = 'PageMessage';
@@ -313,10 +284,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		$this->assertFalse( $result );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
-	 */
 	public function testTranslatablePageMessageSending() {
 		$this->overrideConfigValue( MainConfigNames::PageLanguageUseDB, true );
 
@@ -348,10 +315,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		);
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
-	 */
 	public function testTranslatableFallback() {
 		$this->overrideConfigValue( MainConfigNames::PageLanguageUseDB, true );
 
@@ -383,10 +346,6 @@ class MassMessageJobTest extends MassMessageTestCase {
 		);
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageJob::sendMessage
-	 * @covers \MediaWiki\MassMessage\MessageSender::editPage
-	 */
 	public function testTranslatableFallbackSource() {
 		$this->overrideConfigValue( MainConfigNames::PageLanguageUseDB, true );
 

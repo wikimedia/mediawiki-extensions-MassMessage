@@ -6,10 +6,12 @@ use MediaWiki\MassMessage\Job\MassMessageJob;
 use MediaWiki\MassMessage\Job\MassMessageSubmitJob;
 use MediaWikiIntegrationTestCase;
 
+/**
+ * @covers \MediaWiki\MassMessage\Job\MassMessageSubmitJob
+ */
 class MassMessageSubmitJobTest extends MediaWikiIntegrationTestCase {
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Job\MassMessageSubmitJob::getJobs
 	 * @dataProvider provideGetJobs
 	 */
 	public function testGetJobs( $data, $pages ) {

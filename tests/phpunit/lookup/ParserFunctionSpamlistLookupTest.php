@@ -10,6 +10,8 @@ use MediaWiki\WikiMap\WikiMap;
 /**
  * Tests for Parser functions related to target processing
  * @group Database
+ * @covers \MediaWiki\MassMessage\Lookup\ParserFunctionSpamlistLookup
+ * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup
  */
 class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 
@@ -51,9 +53,6 @@ class ParserFunctionSpamlistLookupTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup::getTargets
-	 * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup::normalizeTargets
-	 * @covers \MediaWiki\MassMessage\Lookup\ParserFunctionSpamlistLookup::fetchTargets
 	 * @dataProvider provideGetParserFunctionTargets
 	 * @param string $text Text of the page to create
 	 * @param array $check Stuff to check against

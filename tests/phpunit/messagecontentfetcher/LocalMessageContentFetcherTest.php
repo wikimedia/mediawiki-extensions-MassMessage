@@ -11,10 +11,10 @@ use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 
+/**
+ * @covers \MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher
+ */
 class LocalMessageContentFetcherTest extends MediaWikiIntegrationTestCase {
-	/**
-	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher::getContent
-	 */
 	public function testGetContentTitleNotFound() {
 		$revisionStoreStub = $this->getRevisionStoreWithoutRevisionRecord();
 		$titleStub = $this->getNonExistingTitle( 'not-found', 'en', 'ltr' );
@@ -76,9 +76,6 @@ class LocalMessageContentFetcherTest extends MediaWikiIntegrationTestCase {
 		return $titleStub;
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher::getContent
-	 */
 	public function testGetContentWithoutRevisionRecord() {
 		$revisionStoreStub = $this->getRevisionStoreWithoutRevisionRecord();
 		$titleStub = $this->getExistingTitle( 'valid', 'en', 'ltr' );
@@ -91,9 +88,6 @@ class LocalMessageContentFetcherTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LocalMessageContentFetcher::getContent
-	 */
 	public function testGetContent() {
 		$contentText = 'This is the text!';
 		$contentLanguage = 'he';

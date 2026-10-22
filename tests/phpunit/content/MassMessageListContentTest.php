@@ -7,6 +7,7 @@ use MediaWiki\MassMessage\Content\MassMessageListContent;
 
 /**
  * @group Database
+ * @covers \MediaWiki\MassMessage\Content\MassMessageListContent
  */
 class MassMessageListContentTest extends MassMessageTestCase {
 
@@ -22,7 +23,6 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::isValid
 	 * @dataProvider provideIsValid
 	 * @param string $text
 	 * @param bool $expected
@@ -42,7 +42,6 @@ class MassMessageListContentTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::hasInvalidTargets
 	 * @dataProvider provideHasInvalidTargets
 	 * @param string $text
 	 * @param bool $expected
@@ -52,17 +51,11 @@ class MassMessageListContentTest extends MassMessageTestCase {
 		$this->assertEquals( $expected, $content->hasInvalidTargets() );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getDescription
-	 */
 	public function testGetDescription() {
 		$content = new MassMessageListContent( '{"description":"foo","targets":[]}' );
 		$this->assertEquals( 'foo', $content->getDescription() );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getTargets
-	 */
 	public function testGetTargets() {
 		$text = '{"description":"","targets":['
 			. '{"title":"A"},'
@@ -76,9 +69,6 @@ class MassMessageListContentTest extends MassMessageTestCase {
 		$this->assertEquals( $expected, $content->getTargets() );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getValidTargets
-	 */
 	public function testGetValidTargets() {
 		$text = '{"description":"","targets":['
 			. '{"title":"A"},'
@@ -93,9 +83,6 @@ class MassMessageListContentTest extends MassMessageTestCase {
 		$this->assertEquals( $expected, $content->getValidTargets() );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContent::getTargetStrings
-	 */
 	public function testGetTargetStrings() {
 		// Temporarily set $wgCanonicalServer for this test so its value is predictable.
 		$this->overrideConfigValue( MainConfigNames::CanonicalServer, 'http://test.wikipedia.org' );

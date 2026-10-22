@@ -6,6 +6,7 @@ use MediaWiki\MassMessage\MassMessageTestCase;
 
 /**
  * @group Database
+ * @covers \MediaWiki\MassMessage\Lookup\DatabaseLookup
  */
 class DatabaseLookupTest extends MassMessageTestCase {
 
@@ -19,7 +20,6 @@ class DatabaseLookupTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Lookup\DatabaseLookup::getDBName
 	 * @dataProvider provideGetDBName
 	 * @param string $url
 	 * @param string $expected
@@ -31,9 +31,6 @@ class DatabaseLookupTest extends MassMessageTestCase {
 
 	/**
 	 * Integration test for T62075
-	 *
-	 * @covers \MediaWiki\MassMessage\Lookup\DatabaseLookup::getDBName
-	 * @covers \MediaWiki\MassMessage\Lookup\DatabaseLookup::getDatabases
 	 */
 	public function testCacheInvalidation() {
 		global $wgConf;

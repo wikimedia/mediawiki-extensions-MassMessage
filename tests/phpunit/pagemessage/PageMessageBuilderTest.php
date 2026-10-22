@@ -14,10 +14,9 @@ use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use StatusValue;
 
-/** @coversDefaultClass \MediaWiki\MassMessage\PageMessage\PageMessageBuilder */
+/** @covers \MediaWiki\MassMessage\PageMessage\PageMessageBuilder */
 class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 	/**
-	 * @covers \MediaWiki\MassMessage\PageMessage\PageMessageBuilder::getContent
 	 * @dataProvider provideGetContent
 	 */
 	public function testGetContent(
@@ -103,7 +102,6 @@ class PageMessageBuilderTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\PageMessage\PageMessageBuilder::getContentWithFallback
 	 * @dataProvider provideGetContentWithFallback
 	 */
 	public function testGetContentWithFallback(

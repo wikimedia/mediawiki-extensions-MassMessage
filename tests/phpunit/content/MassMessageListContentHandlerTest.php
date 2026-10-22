@@ -13,6 +13,7 @@ use MediaWiki\Title\Title;
  * @group API
  * @group Database
  * @group medium
+ * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler
  */
 class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 
@@ -40,9 +41,6 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 		return ( $par > 0 ) - ( $par < 0 );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::edit
-	 */
 	public function testEdit() {
 		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
 		$targets = [
@@ -66,9 +64,6 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 		$this->assertEquals( 'summary', $rev->getComment()->text );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::edit
-	 */
 	public function testInvalidEdit() {
 		$title = Title::makeTitle( NS_MAIN, self::$spamlist );
 		$result = MassMessageListContentHandler::edit(
@@ -83,9 +78,6 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 		$this->assertStatusNotOK( $result );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::normalizeTargetArray
-	 */
 	public function testNormalizeTargetArray() {
 		$input = [
 			[ 'title' => 'A', 'site' => 'en.wikipedia.org' ],
@@ -136,7 +128,6 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::compareTargets
 	 * @dataProvider provideCompareTargets
 	 * @param array $a
 	 * @param array $b
@@ -165,7 +156,6 @@ class MassMessageListContentHandlerTest extends MassMessageApiTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\Content\MassMessageListContentHandler::extractTarget
 	 * @dataProvider provideExtractTarget
 	 * @param string $targetString
 	 * @param array $expected Parsed target

@@ -4,6 +4,7 @@ namespace MediaWiki\MassMessage;
 
 /**
  * @group Database
+ * @covers \MediaWiki\MassMessage\MassMessage
  */
 class MassMessageTest extends MassMessageTestCase {
 	public static function provideGetMessengerUser() {
@@ -15,7 +16,6 @@ class MassMessageTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MassMessage::getMessengerUser
 	 * @dataProvider provideGetMessengerUser
 	 * @param string $name
 	 */

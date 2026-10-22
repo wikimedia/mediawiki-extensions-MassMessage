@@ -5,10 +5,9 @@ namespace MediaWiki\MassMessage\MessageContentFetcher;
 use MediaWiki\MassMessage\LanguageAwareText;
 use MediaWikiUnitTestCase;
 
-/** @coversDefaultClass \MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher */
+/** @covers \MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher */
 class LabeledSectionContentFetcherUnitTest extends MediaWikiUnitTestCase {
 	/**
-	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher::getContent
 	 * @dataProvider provideGetContent
 	 */
 	public function testGetContent( $text, $label, $expectedGood, $expectedBad ) {
@@ -51,7 +50,6 @@ class LabeledSectionContentFetcherUnitTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher::getSections
 	 * @dataProvider provideGetSections
 	 */
 	public function testGetSections( $text, $expected ) {
@@ -78,7 +76,6 @@ class LabeledSectionContentFetcherUnitTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MessageContentFetcher\LabeledSectionContentFetcher::getContentWithoutTags
 	 * @dataProvider provideGetContentWithoutTags
 	 */
 	public function testGetContentWithoutTags( $text, $label, $expectedGood, $expectedBad ) {

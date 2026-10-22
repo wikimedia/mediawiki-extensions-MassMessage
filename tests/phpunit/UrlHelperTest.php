@@ -6,6 +6,7 @@ use MediaWiki\Title\Title;
 
 /**
  * @group Database
+ * @covers \MediaWiki\MassMessage\UrlHelper
  */
 class UrlHelperTest extends MassMessageTestCase {
 
@@ -23,7 +24,6 @@ class UrlHelperTest extends MassMessageTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\UrlHelper::getBaseUrl
 	 * @dataProvider provideGetBaseUrl
 	 * @param string $url raw url to parse
 	 * @param string $expected expected value
@@ -33,9 +33,6 @@ class UrlHelperTest extends MassMessageTestCase {
 		$this->assertEquals( $expected, $output );
 	}
 
-	/**
-	 * @covers \MediaWiki\MassMessage\UrlHelper::followRedirect
-	 */
 	public function testFollowRedirect() {
 		$title = Title::makeTitle( NS_MAIN, 'R1' );
 		$this->updatePage( $title, '#REDIRECT [[R2]]' );

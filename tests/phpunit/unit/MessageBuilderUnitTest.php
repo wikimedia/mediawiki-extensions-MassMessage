@@ -6,9 +6,11 @@ namespace MediaWiki\MassMessage;
 use MediaWiki\Language\Language;
 use MediaWikiUnitTestCase;
 
+/**
+ * @covers \MediaWiki\MassMessage\MessageBuilder
+ */
 class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 	/**
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::stripTildes
 	 * @dataProvider provideStripTildes
 	 */
 	public function testStripTildes(
@@ -39,8 +41,6 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::buildMessage
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::wrapBasedOnLanguage
 	 * @dataProvider provideBuildMessage
 	 */
 	public function testBuildMessage(
@@ -109,10 +109,6 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::buildSubject
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::wrapBasedOnLanguage
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::needsWrapping
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::wrapContentWithLanguageAttributes
 	 * @dataProvider provideBuildSubject
 	 */
 	public function testBuildSubject(
@@ -193,8 +189,6 @@ class MessageBuilderUnitTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::buildPlaintextSubject
-	 * @covers \MediaWiki\MassMessage\MessageBuilder::sanitizeSubject
 	 * @dataProvider provideBuildPlaintextSubject
 	 */
 	public function testBuildPlaintextSubject(

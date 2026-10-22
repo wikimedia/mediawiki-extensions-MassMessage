@@ -10,13 +10,12 @@ use MediaWiki\Title\Title;
  * Tests for Category Spamlist function related to target processing
  *
  * @group Database
+ *
+ * @covers \MediaWiki\MassMessage\Lookup\CategorySpamlistLookup
+ * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup
  */
 class CategorySpamlistLookupTest extends MassMessageTestCase {
 
-	/**
-	 * @covers \MediaWiki\MassMessage\Lookup\SpamlistLookup::getTargets
-	 * @covers \MediaWiki\MassMessage\Lookup\CategorySpamlistLookup::fetchTargets
-	 */
 	public function testGetTargets() {
 		$page = Title::makeTitle( NS_TALK, 'Testing1234' );
 		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $page );
