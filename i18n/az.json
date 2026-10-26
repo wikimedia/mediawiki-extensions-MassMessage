@@ -72,6 +72,7 @@
 	"logentry-massmessage-skipbadns": "Hədəf yerləşdirilə bilməyən ad fəzasında olduğu üçün \"$4\" mesajının $3 səhifəsinə göndərilməsi alınmadı",
 	"logentry-massmessage-skipoptout": "Hədəf səhifə kütləvi mesaj qəbulundan imtina etdiyi üçün \"$4\" mesajı $3 səhifəsinə göndərilmədi",
 	"logentry-massmessage-skipnouser": "$3 səhifəsinə göndəriləcək \"$4\" ləğv edildi, çünki bu istifadəçi hesabı mövcud deyil.",
+	"logentry-massmessage-skiplocked": "$3 səhifəsinə göndəriləcək \"$4\" ləğv edildi, çünki bu istifadəçi hesabı kilidlənib.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Başqa mesaj göndər]].",
 	"massmessage-content-pages": "Bu siyahıdakı səhifələr",
 	"massmessage-content-pagesonsite": "$1 vikisindəki səhifələr:",
@@ -148,6 +149,7 @@
 	"log-action-filter-massmessage-failure": "Kütləvi mesajın çatdırılmasında uğursuzluq",
 	"log-action-filter-massmessage-skipoptout": "İmtina səbəbindən hədəfin atlanması",
 	"log-action-filter-massmessage-skipnouser": "Mövcud olmayan hədəf istifadəçiyə görə hədəfin atlanması",
+	"log-action-filter-massmessage-skiplocked": "Hesab kilidləndiyinə görə hədəf ötürüldü",
 	"log-action-filter-massmessage-skipbadns": "Qadağan olunmuş ad fəzasına görə hədəfin atlanması",
 	"massmessage-linter-error": "Linter xətası: $1"
 }

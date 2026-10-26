@@ -9,7 +9,8 @@
 			"Silvonen",
 			"Stryn",
 			"Valtlai",
-			"Valtlait"
+			"Valtlait",
+			"Wikipeedikko"
 		]
 	},
 	"massmessage": "Lähetä joukkoviesti",
@@ -115,5 +116,6 @@
 	"tag-massmessage-delivery": "Joukkoviestin toimitus",
 	"tag-massmessage-delivery-description": "Viestin toimitus käyttäen [[:mw:Special:MyLanguage/Extension:MassMessage|MassMessage]]-laajennusta",
 	"log-action-filter-massmessage": "Lokitietueen tyyppi",
-	"log-action-filter-massmessage-failure": "Massaviestin epäonnistuneet toimitukset"
+	"log-action-filter-massmessage-failure": "Massaviestin epäonnistuneet toimitukset",
+	"log-action-filter-massmessage-skiplocked": "Kohde ohitettu lukitun tilin vuoksi"
 }

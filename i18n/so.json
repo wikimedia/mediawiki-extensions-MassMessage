@@ -68,6 +68,7 @@
 	"logentry-massmessage-skipbadns": "Gudbinta \"$4\" ee $3 waa la dhaafay sababtoo ah bartilmaameedku wuxuu ku jiraa meel magac aan lagu diri karin farriin",
 	"logentry-massmessage-skipoptout": "Gudbinta \"$4\" ee $3 waa la dhaafay sababtoo ah bartilmaameedku wuu diiday helista farriimaha",
 	"logentry-massmessage-skipnouser": "Gudbinta \"$4\" ee $3 waa la dhaafay sababtoo ah koontada isticmaale ma jirto",
+	"logentry-massmessage-skiplocked": "$4Gudbinta \"$4\" ee loo dirayay $3 waa la dhaafay sababtoo ah akoonka isticmaalaha waa la qufulay",
 	"massmessage-nextsteps": "[[Special:MassMessage|Dir farriin kale]]",
 	"massmessage-content-pages": "Bogagga ku jira liiskan",
 	"massmessage-content-pagesonsite": "Bogagga ku yaal $1:",
@@ -144,6 +145,7 @@
 	"log-action-filter-massmessage-failure": "Fashilka gudbinta fariimaha guud",
 	"log-action-filter-massmessage-skipoptout": "Bartilmaameedka waa laga booday sababtoo ah wuu ka baxay",
 	"log-action-filter-massmessage-skipnouser": "Bartilmaameedka waa laga booday sababtoo ah isticmaale aan jirin",
+	"log-action-filter-massmessage-skiplocked": "Ka bood bartilmaameedka sababtoo ah akoonka waa la qufulay",
 	"log-action-filter-massmessage-skipbadns": "Bartilmaameedka waa laga booday sababtoo ah magac-meel waa la mamnuucay",
 	"massmessage-linter-error": "Khalad linter: $1"
 }

@@ -72,6 +72,7 @@
 	"logentry-massmessage-skipbadns": "A entrega de \"$4\" a $3 saltouse porque o destino estaba nun espazo de nomes no que non se pode publicar",
 	"logentry-massmessage-skipoptout": "A entrega de \"$4\" a $3 saltouse porque o destino retirouse da entrega de mensaxes",
 	"logentry-massmessage-skipnouser": "A entrega de \"$4\" a $3 saltouse porque a conta de usuario non existe",
+	"logentry-massmessage-skiplocked": "A entrega de \"$4\" a $3 saltouse porque a conta de usuario está bloqueada",
 	"massmessage-nextsteps": "[[Special:MassMessage|Envía outra mensaxe]].",
 	"massmessage-content-pages": "Páxinas nesta lista",
 	"massmessage-content-pagesonsite": "Páxinas en $1:",
@@ -148,6 +149,7 @@
 	"log-action-filter-massmessage-failure": "Erro de entrega dunha mensaxe en masa",
 	"log-action-filter-massmessage-skipoptout": "Destinatario ignorado por ter a opción de exclusión",
 	"log-action-filter-massmessage-skipnouser": "Destinatario ignorado por non existir o usuario obxectivo",
+	"log-action-filter-massmessage-skiplocked": "Destinatario ignorado por ter a conta bloqueada",
 	"log-action-filter-massmessage-skipbadns": "Destinatario ignorado por mor dun espazo de nomes prohibido",
 	"massmessage-linter-error": "Erro de Lint: $1"
 }

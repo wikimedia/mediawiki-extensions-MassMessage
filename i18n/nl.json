@@ -81,6 +81,7 @@
 	"logentry-massmessage-skipbadns": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat het doel zich in een naamruimte bevindt waarin geen berichten geplaatst kunnen worden",
 	"logentry-massmessage-skipoptout": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat er op de doelpagina geen berichten geplaatst mogen worden",
 	"logentry-massmessage-skipnouser": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat de gebruiker niet bestaat",
+	"logentry-massmessage-skiplocked": "Het afleveren van \"$4\" voor $3 is overgeslagen omdat het account is geblokkeerd",
 	"massmessage-nextsteps": "[[Special:MassMessage|Nog een bericht verzenden]].",
 	"massmessage-content-pages": "Pagina's in deze lijst",
 	"massmessage-content-pagesonsite": "Pagina's op $1:",
@@ -157,6 +158,7 @@
 	"log-action-filter-massmessage-failure": "Mislukte verzending van massabericht",
 	"log-action-filter-massmessage-skipoptout": "Doel overslaan vanwege opt-out",
 	"log-action-filter-massmessage-skipnouser": "Doel overgeslagen omdat de gebruiker niet bestaat",
+	"log-action-filter-massmessage-skiplocked": "Doel overgeslagen vanwege geblokkeerd account",
 	"log-action-filter-massmessage-skipbadns": "Doel overslaan vanwege verboden naamruimte",
 	"massmessage-linter-error": "Lintfout: $1"
 }

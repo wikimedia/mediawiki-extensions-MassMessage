@@ -76,6 +76,7 @@
 	"logentry-massmessage-skipbadns": "Der Versand von „$4“ an $3 wurde übersprungen, da sich das Ziel in einem Namensraum befindet, in dem keine Nachrichten gespeichert werden können.",
 	"logentry-massmessage-skipoptout": "Der Versand von „$4“ an $3 wurde übersprungen, da das Ziel vom Nachrichtenversand ausgeschlossen wurde.",
 	"logentry-massmessage-skipnouser": "Der Versand von „$4“ an $3 wurde übersprungen, da das Benutzerkonto nicht vorhanden ist.",
+	"logentry-massmessage-skiplocked": "Der Versand von „$4“ an $3 wurde übersprungen, da das Benutzerkonto geschlossen ist.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Eine weitere Nachricht versenden]].",
 	"massmessage-content-pages": "Seiten in dieser Liste",
 	"massmessage-content-pagesonsite": "Seiten auf $1:",
@@ -152,6 +153,7 @@
 	"log-action-filter-massmessage-failure": "Massennachrichten-Versandfehler",
 	"log-action-filter-massmessage-skipoptout": "Auslassung eines Ziels aufgrund eines Opt-Outs",
 	"log-action-filter-massmessage-skipnouser": "Auslassung eines Ziels aufgrund eines nicht vorhandenen Zielbenutzers",
+	"log-action-filter-massmessage-skiplocked": "Ziel übersprungen, da das Konto geschlossen ist",
 	"log-action-filter-massmessage-skipbadns": "Auslassung eines Ziels aufgrund eines nicht erlaubten Namensraumes",
 	"massmessage-linter-error": "Linter-Fehler: $1"
 }

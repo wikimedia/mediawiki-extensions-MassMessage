@@ -56,6 +56,7 @@
 	"massmessage-hidden-comment": "<!-- پيغام د کارن:$1@$2 له‌خوا د $3 لړليک کارولو سره لېږل شوی -->",
 	"massmessage-optout-category": "پيغام رسونې نه راوتل",
 	"massmessage-badhtml": "ستاسو پيغام ښايي {{PLURAL:$2|يو ناتړلی اېچ‌ټي‌اېم‌اېل نښلن|ناتړلي اېچ‌ټي‌اېم‌اېل نښلنونه}} ولري: $1.",
+	"massmessage-refs-warning": "دا پيغام <ref> نښلنونه لري؛ خو د سرچينو لړليک نشته. د <references/>، {{talkrefs}}، يا {{reflist}}ورگډولو په اړه يې غور وکړئ؛ ترڅو لمن‌ليکونه په سمه توگه ښکاره شي.",
 	"massmessage-parse-badurl": "\"$1\" باوري وېبځی نه دی.",
 	"massmessage-parse-badpage": "\"$1\" باوري مخ سرليک نه دی.",
 	"massmessage-parse-badspamlist": "\"$1\" باوري مخ لړليک نه دی.",
@@ -72,6 +73,7 @@
 	"logentry-massmessage-skipbadns": "$3 ته د \"$4\" رسولو نه ډډه وشوه؛ ځکه چې موخه يو داسې نوم‌تشيال کې وه چې پوسټ پکې نشو کېدای",
 	"logentry-massmessage-skipoptout": "$3 ته د \"$4\" رسول له پامه وغورځوله شول؛ ځکه موخه د پيغام رسولو څخه دباندې وتلې",
 	"logentry-massmessage-skipnouser": "$3 ته \"$4\" رسول د کارن د نشتون له کبله پرېښودل شول",
+	"logentry-massmessage-skiplocked": "$3 ته د \"$4\" وررسولو مخه ونيول شوه؛ ځکه چې د کارن گڼون کولپ‌شوی دی",
 	"massmessage-nextsteps": "[[Special:MassMessage|بل پيغام ولېږئ]].",
 	"massmessage-content-pages": "د دې لړليک مخونه",
 	"massmessage-content-pagesonsite": "د $1 مخونه:",
@@ -148,6 +150,7 @@
 	"log-action-filter-massmessage-failure": "ډله‌ييز‌پيغام رسونې ناکامي",
 	"log-action-filter-massmessage-skipoptout": "د ناچارنولو له کبله د موخې پرېښودل",
 	"log-action-filter-massmessage-skipnouser": "د موخې وړ کارن د نه شتون له کبله د موخې پرېښودل",
+	"log-action-filter-massmessage-skiplocked": "د کولپ‌شوي گڼون له کبله موخه پرېښودل شوه",
 	"log-action-filter-massmessage-skipbadns": "د منع شوي نوم‌تشيال له کبله د موخې پرېښودل",
 	"massmessage-linter-error": "لوست‌ارزونې تېروتنه: $1"
 }

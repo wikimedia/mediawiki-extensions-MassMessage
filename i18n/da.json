@@ -74,6 +74,7 @@
 	"logentry-massmessage-skipbadns": "Levering af \"$4\" til $3 blev sprunget over, fordi målsiden var i et navnerum, der ikke kan leveres beskeder til",
 	"logentry-massmessage-skipoptout": "Levering af \"$4\" til $3 blev sprunget over, fordi målet har fravalgt at modtage beskeder",
 	"logentry-massmessage-skipnouser": "Levering af \"$4\" til $3 blev sprunget over, fordi brugerkontoen ikke findes",
+	"logentry-massmessage-skiplocked": "Levering af \"$4\" til $3 blev sprunget over, fordi brugerkontoen er låst.",
 	"massmessage-nextsteps": "[[Special:MassMessage|Send en ny besked]].",
 	"massmessage-content-pages": "Sider i denne liste",
 	"massmessage-content-pagesonsite": "Sider på $1:",
@@ -150,6 +151,7 @@
 	"log-action-filter-massmessage-failure": "Masselevering mislykkes",
 	"log-action-filter-massmessage-skipoptout": "Mål springes over på grund af fravalg",
 	"log-action-filter-massmessage-skipnouser": "Målet blev springet over på grund af ikke-eksisterende målbruger",
+	"log-action-filter-massmessage-skiplocked": "Mål springes over på grund af låst konto",
 	"log-action-filter-massmessage-skipbadns": "Mål springes over på grund af forbudt navnerum",
 	"massmessage-linter-error": "Linter-fejl: $1"
 }
