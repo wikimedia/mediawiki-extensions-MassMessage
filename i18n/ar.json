@@ -82,6 +82,7 @@
 	"logentry-massmessage-skipbadns": "جرى تخطي توصيل \"$4\" إلى $3 لأن الهدف يقع في نطاق لا يمكن الكتابة فيه",
 	"logentry-massmessage-skipoptout": "توصيل \"$4\" إلى $3 تم تجاوزه لأن الهدف ألغى اشتراكه في توصيل الرسائل",
 	"logentry-massmessage-skipnouser": "جرى تخطي توصيل \"$4\" إلى $3 لأن حساب المستخدم غير موجود",
+	"logentry-massmessage-skiplocked": "تم تخطي توصيل المبلغ من $4 إلى $3 لأن حساب المستخدم مغلق",
 	"massmessage-nextsteps": "[[Special:MassMessage|أرسل رسالةً أُخرى]].",
 	"massmessage-content-pages": "الصفحات في القائمة",
 	"massmessage-content-pagesonsite": "الصفحات في $1:",
@@ -158,6 +159,7 @@
 	"log-action-filter-massmessage-failure": "فشل تسليم الرسالة الجماعية",
 	"log-action-filter-massmessage-skipoptout": "تخطي الهدف بسبب إلغاء الاشتراك",
 	"log-action-filter-massmessage-skipnouser": "تخطي الهدف لأن المستخدم الهدف غير موجود",
+	"log-action-filter-massmessage-skiplocked": "تم تخطي الهدف بسبب قفل الحساب",
 	"log-action-filter-massmessage-skipbadns": "تخطي الهدف بسبب نطاق ممنوع",
 	"massmessage-linter-error": "خطأ في التدقيق: $1"
 }
