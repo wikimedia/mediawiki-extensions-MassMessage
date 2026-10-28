@@ -56,6 +56,7 @@
 	"massmessage-hidden-comment": "<!-- پيغام د کارن:$1@$2 له‌خوا د $3 لړليک کارولو سره لېږل شوی -->",
 	"massmessage-optout-category": "پيغام رسونې نه راوتل",
 	"massmessage-badhtml": "ستاسو پيغام ښايي {{PLURAL:$2|يو ناتړلی اېچ‌ټي‌اېم‌اېل نښلن|ناتړلي اېچ‌ټي‌اېم‌اېل نښلنونه}} ولري: $1.",
+	"massmessage-refs-warning": "دا پيغام <ref> نښلنونه لري؛ خو د سرچينو لړليک نشته. د <references/>، {{talkrefs}}، يا {{reflist}}ورگډولو په اړه يې غور وکړئ؛ ترڅو لمن‌ليکونه په سمه توگه ښکاره شي.",
 	"massmessage-parse-badurl": "\"$1\" باوري وېبځی نه دی.",
 	"massmessage-parse-badpage": "\"$1\" باوري مخ سرليک نه دی.",
 	"massmessage-parse-badspamlist": "\"$1\" باوري مخ لړليک نه دی.",
