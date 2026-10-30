@@ -69,6 +69,7 @@
 	"logentry-massmessage-skipbadns": "Испраќањето на „$4“ на $3 е изоставено бидејќи целта беше во именски простор што не прима пораки",
 	"logentry-massmessage-skipoptout": "Испраќањето на „$4“ на $3 е изоставено бидејќи целната личност одлучила да не прима пораки",
 	"logentry-massmessage-skipnouser": "Испраќањето на „$4“ на $3 е изоставено бидејќи корисничката сметка не постои",
+	"logentry-massmessage-skiplocked": "Испраќањето на „$4“ на $3 е прескокнато бидејќи корисничката сметка е заклучена",
 	"massmessage-nextsteps": "[[Special:MassMessage|Испратете друга порака]].",
 	"massmessage-content-pages": "Страници на списков",
 	"massmessage-content-pagesonsite": "Страници на $1:",
@@ -145,6 +146,7 @@
 	"log-action-filter-massmessage-failure": "Неуспех во доставата на масовната порака",
 	"log-action-filter-massmessage-skipoptout": "Прескокнување цел поради изземање",
 	"log-action-filter-massmessage-skipnouser": "Прескокнување цел поради непотоечки целен корисник",
+	"log-action-filter-massmessage-skiplocked": "Прескокната цел поради заклучена сметка",
 	"log-action-filter-massmessage-skipbadns": "Прескокнување цел поради недозволен именски простор",
 	"massmessage-linter-error": "Грешка во Linter: $1"
 }
