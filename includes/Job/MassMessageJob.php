@@ -17,7 +17,6 @@ use MediaWiki\MassMessage\UrlHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
-use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
@@ -32,11 +31,6 @@ use MediaWiki\WikiMap\WikiMap;
  * @license GPL-2.0-or-later
  */
 class MassMessageJob extends Job {
-	/**
-	 * @var bool Whether to use sender account (if possible)
-	 * TODO: Expose this as a configurable option (T71954)
-	 */
-	private $useSenderUser = false;
 	/** @var MessageSender|null */
 	private $messageSender;
 	/** @var HookRunner */
@@ -95,19 +89,6 @@ class MassMessageJob extends Job {
 	 * @return User
 	 */
 	protected function getUser() {
-		if ( $this->useSenderUser && isset( $this->params['userId'] ) ) {
-			$services = MediaWikiServices::getInstance();
-			$user = $services
-				->getCentralIdLookup()
-				->localUserFromCentralId(
-					$this->params['userId'],
-					CentralIdLookup::AUDIENCE_RAW
-				);
-			if ( $user ) {
-				return $services->getUserFactory()->newFromUserIdentity( $user );
-			}
-		}
-
 		return MassMessage::getMessengerUser();
 	}
 
