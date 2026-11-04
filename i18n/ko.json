@@ -81,6 +81,7 @@
 	"logentry-massmessage-skipbadns": "\"$4\"에서 $3까지의 전달은 대상이 이름공간 내에 작성될 수 없기 때문에 건너뛰었습니다",
 	"logentry-massmessage-skipoptout": "\"$4\"에서 $3까지의 전달은 대상이 알림 전달을 받지 않도록 설정하였기 때문에 건너뛰었습니다",
 	"logentry-massmessage-skipnouser": "\"$4\"에서 $3까지의 전달은 사용자 계정이 존재하지 않기 때문에 건너뛰었습니다",
+	"logentry-massmessage-skiplocked": "\"$4\"에서 $3까지의 전달은 사용자 계정이 잠겨있기 때문에 건너뛰었습니다",
 	"massmessage-nextsteps": "[[Special:MassMessage|다른 메시지 보내기]].",
 	"massmessage-content-pages": "이 목록의 문서",
 	"massmessage-content-pagesonsite": "$1의 문서:",
@@ -157,6 +158,7 @@
 	"log-action-filter-massmessage-failure": "대량 메시지 전송 실패",
 	"log-action-filter-massmessage-skipoptout": "비활성화 설정으로 인한 대상 건너뛰기",
 	"log-action-filter-massmessage-skipnouser": "존재하지 않는 대상 사용자로 인한 대상 건너뛰기",
+	"log-action-filter-massmessage-skiplocked": "계정이 잠겨있어 대상 건너뜀",
 	"log-action-filter-massmessage-skipbadns": "금지된 이름공간으로 인한 대상 건너뛰기",
 	"massmessage-linter-error": "린터 오류: $1"
 }
